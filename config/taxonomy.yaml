@@ -268,6 +268,143 @@ openalex_queries:
     query: 'advertising effectiveness meta-analysis'
     subcategory_hint: review
 
+# ── Gap-filling queries (empty cells, run via proxy host) ────────────────────
+  - category: ai-marketing
+    query: '"artificial intelligence" marketing review'
+    subcategory_hint: review
+  - category: ai-marketing
+    query: '"artificial intelligence" marketing case study'
+    subcategory_hint: case-study
+  - category: ai-marketing
+    query: '"artificial intelligence" marketing theory'
+    subcategory_hint: theory
+  - category: ai-marketing
+    query: '"artificial intelligence" marketing measurement'
+    subcategory_hint: measurement
+  - category: digital-marketing
+    query: '"digital marketing" review'
+    subcategory_hint: review
+  - category: digital-marketing
+    query: '"digital marketing" case study'
+    subcategory_hint: case-study
+  - category: digital-marketing
+    query: '"digital marketing" theory'
+    subcategory_hint: theory
+  - category: social-media
+    query: '"social media" marketing framework'
+    subcategory_hint: framework
+  - category: social-media
+    query: '"social media" marketing review'
+    subcategory_hint: review
+  - category: social-media
+    query: '"social media" marketing theory'
+    subcategory_hint: theory
+  - category: social-media
+    query: '"social media" marketing measurement'
+    subcategory_hint: measurement
+  - category: content-marketing
+    query: '"content marketing" empirical evidence'
+    subcategory_hint: empirical
+  - category: content-marketing
+    query: '"content marketing" review'
+    subcategory_hint: review
+  - category: content-marketing
+    query: '"content marketing" case study'
+    subcategory_hint: case-study
+  - category: content-marketing
+    query: '"content marketing" measurement'
+    subcategory_hint: measurement
+  - category: consumer-behavior
+    query: '"consumer behavior" framework'
+    subcategory_hint: framework
+  - category: consumer-behavior
+    query: '"consumer behavior" review'
+    subcategory_hint: review
+  - category: consumer-behavior
+    query: '"consumer behavior" case study'
+    subcategory_hint: case-study
+  - category: consumer-behavior
+    query: '"consumer behavior" theory'
+    subcategory_hint: theory
+  - category: consumer-behavior
+    query: '"consumer behavior" measurement'
+    subcategory_hint: measurement
+  - category: brand
+    query: 'brand management framework'
+    subcategory_hint: framework
+  - category: brand
+    query: 'brand management review'
+    subcategory_hint: review
+  - category: brand
+    query: 'brand case study'
+    subcategory_hint: case-study
+  - category: brand
+    query: 'brand measurement equity'
+    subcategory_hint: measurement
+  - category: analytics
+    query: '"marketing analytics" empirical'
+    subcategory_hint: empirical
+  - category: analytics
+    query: '"marketing analytics" framework'
+    subcategory_hint: framework
+  - category: analytics
+    query: '"marketing analytics" review'
+    subcategory_hint: review
+  - category: analytics
+    query: '"marketing analytics" case study'
+    subcategory_hint: case-study
+  - category: analytics
+    query: '"marketing analytics" theory'
+    subcategory_hint: theory
+  - category: privacy-data
+    query: 'privacy advertising review'
+    subcategory_hint: review
+  - category: privacy-data
+    query: 'privacy advertising theory'
+    subcategory_hint: theory
+  - category: privacy-data
+    query: 'privacy advertising measurement'
+    subcategory_hint: measurement
+  - category: cx-retail
+    query: 'omnichannel retail empirical'
+    subcategory_hint: empirical
+  - category: cx-retail
+    query: '"customer experience" review'
+    subcategory_hint: review
+  - category: cx-retail
+    query: '"customer experience" theory'
+    subcategory_hint: theory
+  - category: cx-retail
+    query: '"customer experience" measurement'
+    subcategory_hint: measurement
+  - category: b2b
+    query: '"B2B marketing" framework'
+    subcategory_hint: framework
+  - category: b2b
+    query: '"B2B marketing" review'
+    subcategory_hint: review
+  - category: b2b
+    query: '"B2B marketing" theory'
+    subcategory_hint: theory
+  - category: b2b
+    query: '"B2B marketing" measurement'
+    subcategory_hint: measurement
+  - category: survey
+    query: 'marketing survey empirical study'
+    subcategory_hint: empirical
+  - category: survey
+    query: 'marketing research framework'
+    subcategory_hint: framework
+  - category: survey
+    query: 'marketing survey case study'
+    subcategory_hint: case-study
+  - category: survey
+    query: 'marketing theory conceptual'
+    subcategory_hint: theory
+  - category: survey
+    query: 'marketing research measurement'
+    subcategory_hint: measurement
+
 # ── GitHub repository discovery (fetch_github_repos.py) ─────────────────────
 # Each entry is a GitHub search query (topic:, keyword combos, stars:>N).
 # Optional keys: category, subcategory_hint, min_stars (per-query override).
