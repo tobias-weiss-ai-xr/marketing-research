@@ -12,6 +12,7 @@ Usage:
 import argparse
 import os
 import re
+import sys
 import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -19,24 +20,35 @@ from pathlib import Path
 import requests
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 OPENALEX_API = "https://api.openalex.org/works"
 MAILTO = os.environ.get("OPENALEX_MAILTO", "business@tobias-weiss.org")
 
 ARXIV_ID_PATTERN = re.compile(r"(\d{4}\.\d{4,5})(v\d+)?")
 
 def load_category_terms(cfg):
-    """Load (category, search term) pairs from config/taxonomy.yaml."""
+    """Load (category, search term, subcategory_hint) triples from config."""
     terms = []
     for item in cfg.get("openalex_queries", []):
-        terms.append((item.get("category", "method"), item.get("query", "")))
+        terms.append(
+            (
+                item.get("category", "method"),
+                item.get("query", ""),
+                item.get("subcategory_hint"),
+            )
+        )
     if not terms:
         short = cfg.get("topic", {}).get("short", "research")
-        terms = [("method", short)]
+        terms = [("method", short, None)]
     return terms
 
 
 def load_subcat_keywords(cfg):
-    """Subcategory keyword rules derived from the config taxonomy ids."""
+    """Subcategory keyword rules from config; falls back to taxonomy ids."""
+    kw = cfg.get("subcategory_keywords")
+    if isinstance(kw, dict) and kw:
+        return [(sub, list(words)) for sub, words in kw.items()]
     subs = cfg.get("taxonomy", {}).get("subcategories", [])
     return [(s.get("id", ""), [s.get("id", "")]) for s in subs]
 
@@ -105,7 +117,7 @@ def reconstruct_abstract(inverted):
     return " ".join(pos[i] for i in sorted(pos))
 
 
-def fetch_category(terms, months, per_category, sleep, subcat_keywords=None):
+def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, subcat_hint=None):
     """Cursor-paginated, relevance-sorted fetch for one category."""
     entries = []
     cursor = "*"
@@ -173,7 +185,7 @@ def fetch_category(terms, months, per_category, sleep, subcat_keywords=None):
                     "date": date,
                     "url": url,
                     "category": None,
-                    "subcategory": classify_subcategory(title, abstract, subcat_keywords),
+                    "subcategory": subcat_hint if subcat_hint else classify_subcategory(title, abstract, subcat_keywords),
                     "authors": [a.get("author", {}).get("display_name", "") for a in work.get("authorships", [])][:3],
                     "abstract": abstract[:200],
                     "venue": ((work.get("primary_location") or {}).get("source") or {}).get("display_name") or "",
@@ -218,13 +230,13 @@ def main():
 
     if args.categories:
         wanted = {c.strip() for c in args.categories.split(",") if c.strip()}
-        terms_list = [(c, t) for c, t in category_terms if c in wanted]
+        terms_list = [(c, t, h) for c, t, h in category_terms if c in wanted]
     else:
         terms_list = category_terms
 
-    for cat, terms in terms_list:
+    for cat, terms, hint in terms_list:
         print(f"\n=== [{cat}] {terms} ===", flush=True)
-        entries = fetch_category(terms, args.months, args.per_category, args.sleep, subcat_keywords)
+        entries = fetch_category(terms, args.months, args.per_category, args.sleep, subcat_keywords, hint)
         new = []
         for e in entries:
             m = ARXIV_ID_PATTERN.search(e["url"])

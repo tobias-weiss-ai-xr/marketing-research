@@ -1,4 +1,4 @@
-# ⚙️ Research Taxonomy & Discovery Config
+# ⚙️ Research Taxonomy & Discovery Config — Marketing Research
 #
 # This is the ONLY file you need to adapt for your own research topic.
 # Edit categories/subcategories + discovery queries, then re-run the pipeline.
@@ -7,118 +7,292 @@
 
 # ── Topic ────────────────────────────────────────────────────────────────────
 topic:
-  name: "Your Research Topic"          # shown in README header
-  short: "your-topic"                  # used in URLs, badges, docs paths
-  description: "Short description of the research field covered by this corpus."
+  name: "Marketing Research"
+  short: "marketing"
+  description: "Latest marketing trends and evidence: AI & generative marketing, digital & performance marketing, social media & creator economy, content, consumer behavior, brand, analytics & attribution, privacy-first data, omnichannel CX & retail, B2B."
+  openalex_mailto: "research@tobias-weiss-ai-xr.de"
 
 # ── Taxonomy ─────────────────────────────────────────────────────────────────
-# Categories = the main axis of your review (e.g. methods, applications, …).
-# Subcategories = the secondary axis (e.g. architectures, benchmarks, …).
+# Categories = the main axis (marketing domains / trend areas).
+# Subcategories = the secondary axis (research aspects).
 # Every paper in papers.yaml must carry one category + one subcategory.
 taxonomy:
-  categories:                           # ordered list
-    - id: method
-      display: "Methods & Architectures"
-    - id: application
-      display: "Applications"
-    - id: evaluation
-      display: "Evaluation & Benchmarks"
+  categories:
+    - id: ai-marketing
+      display: "AI & Marketing"
+    - id: digital-marketing
+      display: "Digital & Performance Marketing"
+    - id: social-media
+      display: "Social Media & Creator Marketing"
+    - id: content-marketing
+      display: "Content & Storytelling"
+    - id: consumer-behavior
+      display: "Consumer Behavior & Psychology"
+    - id: brand
+      display: "Brand Strategy & Management"
+    - id: analytics
+      display: "Analytics, Attribution & Measurement"
+    - id: privacy-data
+      display: "Data, Privacy & Cookieless Advertising"
+    - id: cx-retail
+      display: "Customer Experience, Omnichannel & Retail"
+    - id: b2b
+      display: "B2B & Account-Based Marketing"
     - id: survey
-      display: "Surveys & Taxonomies"
+      display: "Surveys, Trends & Meta-Studies"
   subcategories:
-    - id: agentic
-      display: "Agentic"
-    - id: non-agentic
-      display: "Non-Agentic"
-    - id: hybrid
-      display: "Hybrid"
+    - id: empirical
+      display: "Empirical Studies"
+    - id: framework
+      display: "Frameworks & Models"
+    - id: review
+      display: "Reviews & Surveys"
+    - id: case-study
+      display: "Case Studies & Practice"
+    - id: theory
+      display: "Theory & Conceptual"
+    - id: measurement
+      display: "Measurement & Methods"
+
+# Keyword rules for automatic subcategory classification (fetch scripts).
+# Fallback: if a query entry carries `subcategory_hint`, that hint wins.
+subcategory_keywords:
+  empirical:
+    - "experiment"
+    - "field study"
+    - "empirical"
+    - "evidence"
+    - "survey data"
+    - "randomized"
+    - "panel data"
+    - "large-scale"
+    - "natural experiment"
+    - "quasi-experimental"
+  framework:
+    - "framework"
+    - "conceptual model"
+    - "taxonomy"
+    - "typology"
+    - "architecture"
+    - "design principles"
+  review:
+    - "review"
+    - "meta-analysis"
+    - "systematic"
+    - "bibliometric"
+    - "state of the art"
+    - "research agenda"
+    - "literature"
+  case-study:
+    - "case study"
+    - "case analysis"
+    - "practical implications"
+    - "lessons learned"
+    - "insights from"
+    - "industry"
+  theory:
+    - "theory"
+    - "theoretical"
+    - "mechanism"
+    - "construct"
+    - "conceptualization"
+  measurement:
+    - "measurement"
+    - "metric"
+    - "attribution"
+    - "analytics"
+    - "instrument"
+    - "methodology"
+    - "modeling"
 
 # ── Discovery: arXiv queries (fetch_new_papers.py) ───────────────────────────
 # Each entry is an arXiv API query string (cat: + abs:/ti: operators).
-# Keep them topic-specific; the script deduplicates automatically.
+# Dict entries can carry optional category/subcategory_hint for auto-classification.
 arxiv_queries:
-  - 'cat:cs.AI AND (abs:"YOUR TOPIC A" OR abs:"YOUR TOPIC B")'
-  - 'cat:cs.CL AND (abs:"YOUR TOPIC C" AND abs:"agent")'
-  - 'cat:cs.LG AND abs:"YOUR TOPIC D"'
+  - query: 'cat:cs.CY AND (abs:"advertising" OR abs:"marketing" OR abs:"targeted ads")'
+    category: digital-marketing
+    subcategory_hint: empirical
+  - query: 'cat:cs.AI AND (abs:"marketing" OR abs:"recommendation advertising")'
+    category: ai-marketing
+    subcategory_hint: empirical
+  - query: 'cat:cs.SI AND (abs:"social media" AND (abs:"marketing" OR abs:"influencer" OR abs:"brand"))'
+    category: social-media
+    subcategory_hint: empirical
+  - query: 'cat:econ.GN AND (abs:"advertising" OR abs:"digital marketing" OR abs:"consumer")'
+    category: consumer-behavior
+    subcategory_hint: empirical
 
 # ── Discovery: multi-source queries (fetch_other_sources.py) ─────────────────
 # Each entry defines one query against a source (dblp, crossref, europepmc, …).
 other_sources_queries:
-  - source: dblp
-    query: your topic a
-    category: method
-    subcategory_hint: agentic
   - source: crossref
-    query: your topic b agent survey
-    category: survey
-    subcategory_hint: hybrid
+    query: generative artificial intelligence marketing consumer
+    category: ai-marketing
+    subcategory_hint: empirical
+  - source: crossref
+    query: digital marketing artificial intelligence personalization
+    category: ai-marketing
+    subcategory_hint: framework
+  - source: crossref
+    query: social media influencer marketing
+    category: social-media
+    subcategory_hint: empirical
+  - source: crossref
+    query: privacy personalization advertising trade-off
+    category: privacy-data
+    subcategory_hint: empirical
+  - source: crossref
+    query: marketing mix modeling advertising effectiveness
+    category: analytics
+    subcategory_hint: measurement
+  - source: crossref
+    query: omnichannel customer experience retail
+    category: cx-retail
+    subcategory_hint: framework
+  - source: dblp
+    query: social media marketing
+    category: social-media
+    subcategory_hint: empirical
+  - source: dblp
+    query: recommender systems advertising personalization
+    category: digital-marketing
+    subcategory_hint: measurement
+  - source: dblp
+    query: consumer behavior online
+    category: consumer-behavior
+    subcategory_hint: empirical
+  - source: europepmc
+    query: marketing consumer behavior digital
+    category: consumer-behavior
+    subcategory_hint: empirical
 
 # ── OpenAlex bulk fetch (fetch_openalex_bulk.py) ─────────────────────────────
-# Per-category OpenAlex search phrases.
+# Per-category OpenAlex search phrases (title_and_abstract.search semantics:
+# space-separated terms are ANDed; quoted phrases are matched as-is).
+# Optional key: subcategory_hint (overrides keyword classification).
 openalex_queries:
-  - category: method
-    query: "YOUR TOPIC method architecture"
-  - category: application
-    query: "YOUR TOPIC application system"
+  - category: ai-marketing
+    query: '"generative AI" marketing'
+    subcategory_hint: empirical
+  - category: ai-marketing
+    query: '"artificial intelligence" marketing personalization'
+    subcategory_hint: framework
+  - category: ai-marketing
+    query: 'marketing chatbots consumers'
+    subcategory_hint: empirical
+  - category: digital-marketing
+    query: '"digital marketing" strategy'
+    subcategory_hint: framework
+  - category: digital-marketing
+    query: 'performance marketing advertising effectiveness'
+    subcategory_hint: measurement
+  - category: digital-marketing
+    query: 'programmatic advertising'
+    subcategory_hint: empirical
+  - category: social-media
+    query: '"social media" marketing influencer'
+    subcategory_hint: empirical
+  - category: social-media
+    query: '"creator economy" marketing'
+    subcategory_hint: case-study
+  - category: social-media
+    query: '"social commerce" consumer'
+    subcategory_hint: empirical
+  - category: social-media
+    query: '"user-generated content" brand'
+    subcategory_hint: empirical
+  - category: content-marketing
+    query: '"content marketing" brand'
+    subcategory_hint: framework
+  - category: content-marketing
+    query: 'storytelling marketing brand narrative'
+    subcategory_hint: theory
+  - category: consumer-behavior
+    query: '"consumer behavior" online purchase intention'
+    subcategory_hint: empirical
+  - category: consumer-behavior
+    query: '"consumer engagement" social media brand'
+    subcategory_hint: empirical
+  - category: consumer-behavior
+    query: 'personalization consumer preferences'
+    subcategory_hint: empirical
+  - category: brand
+    query: '"brand equity" consumer'
+    subcategory_hint: empirical
+  - category: brand
+    query: '"brand loyalty" customer experience'
+    subcategory_hint: empirical
+  - category: brand
+    query: '"brand purpose" consumer'
+    subcategory_hint: theory
+  - category: analytics
+    query: '"marketing analytics"'
+    subcategory_hint: measurement
+  - category: analytics
+    query: '"marketing attribution"'
+    subcategory_hint: measurement
+  - category: analytics
+    query: '"marketing mix modeling"'
+    subcategory_hint: measurement
+  - category: privacy-data
+    query: 'cookieless advertising privacy'
+    subcategory_hint: framework
+  - category: privacy-data
+    query: 'privacy targeted advertising personalization'
+    subcategory_hint: empirical
+  - category: privacy-data
+    query: '"first-party data" marketing'
+    subcategory_hint: case-study
+  - category: cx-retail
+    query: 'omnichannel customer experience'
+    subcategory_hint: framework
+  - category: cx-retail
+    query: '"customer journey" marketing'
+    subcategory_hint: framework
+  - category: cx-retail
+    query: 'retail media advertising'
+    subcategory_hint: case-study
+  - category: b2b
+    query: 'B2B marketing buyer'
+    subcategory_hint: empirical
+  - category: b2b
+    query: '"account-based marketing"'
+    subcategory_hint: case-study
+  - category: survey
+    query: 'marketing literature review digital'
+    subcategory_hint: review
+  - category: survey
+    query: 'marketing research trends bibliometric'
+    subcategory_hint: review
+  - category: survey
+    query: 'advertising effectiveness meta-analysis'
+    subcategory_hint: review
 
 # ── GitHub repository discovery (fetch_github_repos.py) ─────────────────────
 # Each entry is a GitHub search query (topic:, keyword combos, stars:>N).
 # Optional keys: category, subcategory_hint, min_stars (per-query override).
-# If no queries are defined, the fetcher prints setup instructions and exits.
-# See: https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories
-#
-# Examples:
-# github_queries:
-#   - query: "topic:YOUR-TOPIC+stars:>100"
-#     category: application
-#   - query: "YOUR-KEYWORD+tool+stars:>200"
-#     category: method
-#   - query: "YOUR-KEYWORD+framework"
-#     category: method
-#     min_stars: 500          # per-query star threshold override
-#   - query: "YOUR-KEYWORD+awesome+stars:>50"
-#     category: survey
-
-# ── GitLab repository discovery (fetch_gitlab_repos.py) ──────────────────────
-# GitLab public API — no CLI required.  Optional keys: category,
-# subcategory_hint, min_stars, topics (list), language.
-# See: https://docs.gitlab.com/ee/api/projects.html#search-for-projects-by-name
-#
-# Examples:
-# gitlab_queries:
-#   - query: "YOUR TOPIC"
-#     category: application
-#   - query: "YOUR KEYWORD tool"
-#     category: method
-#     min_stars: 10
-#     topics:
-#       - "devops"
-#       - "ci-cd"
-
-# ── Codeberg repository discovery (fetch_codeberg_repos.py) ──────────────────
-# Gitea-compatible API.  Optional keys: category, subcategory_hint,
-# min_stars, language, owner (restrict to org/user).
-# Supports topic:TAG and language:LANG prefixes in query string.
-# See: https://codeberg.org/api/swagger
-#
-# Examples:
-# codeberg_queries:
-#   - query: "YOUR TOPIC"
-#     category: method
-#   - query: "YOUR KEYWORD tool topic:devops"
-#     category: application
-#     min_stars: 5
-#   - query: "YOUR KEYWORD"
-#     category: evaluation
-#     owner: "some-org"
+github_queries:
+  - query: "marketing+analytics+stars:>50"
+    category: analytics
+    subcategory_hint: measurement
+  - query: "marketing+automation+stars:>50"
+    category: digital-marketing
+    subcategory_hint: case-study
+  - query: "topic:marketing+stars:>100"
+    category: survey
+    subcategory_hint: review
+  - query: "advertising+personalization+stars:>50"
+    category: digital-marketing
+    subcategory_hint: measurement
 
 # ── Relevance signals for repo fetchers (optional) ──────────────────────────
 # Extra keyword tokens shared by ALL repo fetchers (github, gitlab, codeberg)
 # to filter out irrelevant repos from broad searches.
-# Also accepts ``github_signals`` as a legacy alias.
 # Auto-extracted from: topic.name, topic.description, taxonomy IDs.
-#
-# repo_signals:
-#   - "llm security"
-#   - "model context protocol"
-#   - "prompt injection"
+repo_signals:
+  - "marketing"
+  - "digital marketing"
+  - "marketing automation"
+  - "marketing analytics"
+  - "advertising"
+  - "customer journey"

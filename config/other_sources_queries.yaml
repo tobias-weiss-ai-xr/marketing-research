@@ -1,24 +1,43 @@
 # Multi-source discovery queries (fetch_other_sources.py)
-# Replace the example queries below with topic-specific ones.
 # Sources supported: dblp, crossref, europepmc, openalex, semantic_scholar
 
-- source: dblp
-  query: your topic a
-  category: method
-  subcategory_hint: agentic
 - source: crossref
-  query: your topic b agent survey
-  category: survey
-  subcategory_hint: hybrid
+  query: generative artificial intelligence marketing consumer
+  category: ai-marketing
+  subcategory_hint: empirical
+- source: crossref
+  query: digital marketing artificial intelligence personalization
+  category: ai-marketing
+  subcategory_hint: framework
+- source: crossref
+  query: social media influencer marketing
+  category: social-media
+  subcategory_hint: empirical
+- source: crossref
+  query: privacy personalization advertising trade-off
+  category: privacy-data
+  subcategory_hint: empirical
+- source: crossref
+  query: marketing mix modeling advertising effectiveness
+  category: analytics
+  subcategory_hint: measurement
+- source: crossref
+  query: omnichannel customer experience retail
+  category: cx-retail
+  subcategory_hint: framework
+- source: dblp
+  query: social media marketing
+  category: social-media
+  subcategory_hint: empirical
+- source: dblp
+  query: recommender systems advertising personalization
+  category: digital-marketing
+  subcategory_hint: measurement
+- source: dblp
+  query: consumer behavior online
+  category: consumer-behavior
+  subcategory_hint: empirical
 - source: europepmc
-  query: your topic c
-  category: application
-  subcategory_hint: non-agentic
-- source: openalex
-  query: your topic d evaluation benchmark
-  category: evaluation
-  subcategory_hint: hybrid
-- source: semantic_scholar
-  query: your topic e
-  category: method
-  subcategory_hint: agentic
+  query: marketing consumer behavior digital
+  category: consumer-behavior
+  subcategory_hint: empirical
