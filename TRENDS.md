@@ -1,6 +1,6 @@
 # 📈 Latest Marketing Trends — Evidence Brief
 
-**Source:** corpus of 5,068 papers (2024–2026, 1,600+ in the last 12 months)
+**Source:** corpus of 5,201 papers (2024–2026, 1,609 in the last 12 months)
 fetched from OpenAlex (via 3 proxy hosts), CrossRef, dblp & Europe PMC. Statistics
 in `statistics.json`, full review in `docs/research/trends.md` +
 `literature_review.md`.

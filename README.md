@@ -2007,20 +2007,71 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 ##### 2026
 
 - [2026] **ციფრული კონტენტის გავლენა ონლაინვაჭრობის მომხმარებელთა ქცევაზე** *Economics and Business* [[paper](https://doi.org/10.52340/eab.2026.18.02.08)]
+- [2026] **Digital Content Marketing for Enhancing Indonesia’s Tourism Industry** *IJBE (Integrated Journal of Business and Economics)* [[paper](https://doi.org/10.33019/ijbe.v10i2.1567)]
+- [2026] **The Commodification of Family Life: Child Protection and Ethical Dilemmas in Content Marketing** *Journal of Business and Technology* [[paper](https://doi.org/10.4038/jbt.v10i2.250)]
+- [2026] **Customer Engagement With Internet Service Providers: The Role of Branded Content Marketing** *SAGE Open* [[paper](https://doi.org/10.1177/21582440261461804)]
+- [2026] **MYKONOS CONTENT MARKETING COMMUNICATION STRATEGY ON INSTAGRAM TOWARDS INCREASING BRAND AWARENESS** *Journal Business Administration Entrepreneurship and Creative Industry* [[paper](https://doi.org/10.32734/jba.v5i2.25314)]
+- [2026] **Perancangan Strategi Content Marketing pada Instagram @Owlies.id untuk Meningkatkan Digital Branding** *Journal of Management and Creative Business* [[paper](https://doi.org/10.30640/jmcbus.v4i3.6934)]
+- [2026] **A Study on Personalized Content Marketing and its Impact on Brand Equity in E-Commerce Sites** *International Journal of Economic Practices and Theories* [[paper](https://doi.org/10.52783/ijept.671)]
+- [2026] **Content marketing and social media marketing as predictors of OZ Radio Bali brand awareness** *Priviet Social Sciences Journal* [[paper](https://doi.org/10.55942/pssj.v6i7.1963)]
+- [2026] **THE IMPACT OF DIGITAL MARKETING STRATEGIES ON ORGANIZATIONAL PERFORMANCE: THE FULL MEDIATING ROLE OF CONTENT MARKETING ACTIVITIES** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.21453983)]
 - [2026] **How Visual Indulgence Impacts Content Virality:the Role of Brand Luxury** *University of Birmingham Research Portal (University of Birmingham)* [[paper](https://research.birmingham.ac.uk/en/publications/a46583d4-c2e6-4e7a-be70-4dd8a57de1de)]
+- [2026] **Impact of Content Marketing on Brand Loyalty among Students with Special Reference to Physics Wallah** *Research Digest on Engineering Management and Social Innovations* [[paper](https://doi.org/10.46647/rdems0206016)]
+- [2026] **TikTok Content Marketing and Skintific Purchase Decisions among Generation Z: Three Mediating Consumer States** *Airlangga Journal of Innovation Management* [[paper](https://doi.org/10.20473/ajim.v7i2.88517)]
+- [2026] **OPTIMIZING CONTENT MARKETING STRATEGIES BASED ON SEARCH ENGINE ALGORITHMS AND ARTIFICIAL INTELLIGENCE TO INCREASE SEMANTIC RELEVANCE AND SEO EFFECTIVENESS** *Institutional repository of Lutsk National Technical University of Lutsk* [[paper](https://repository.lntu.edu.ua/handle/123456789/5846)]
+- [2026] **Generative artificial intelligence in content marketing production : Exploring acceptance and adoption in marketing agencies** *Osuva (University of Vaasa)* [[paper](https://osuva.uwasa.fi/handle/11111/20539)]
+- [2026] **Job Autonomy And Psychological Safety With Innovative Behavior Mediation On Content Marketing Performance Among MSMEs** *DFAME Digital Financial Accounting Management Economics Journal* [[paper](https://doi.org/10.61434/dfame.v4i2.340)]
+- [2026] **A Framework for Integrating Content Marketing and Social Media Engagement For More Effective University Branding** *DigitalCommons - Kennesaw State University (Kennesaw State University)* [[paper](https://digitalcommons.kennesaw.edu/ama_proceedings/2025/socialmedia/3)]
+- [2026] **The Influence of Influencer Endorsement, Content Marketing, and Live Streaming on Online Shop Sales Turnover in Palembang City** *Equivalent Journal Of Economic Accounting and Management* [[paper](https://doi.org/10.61994/equivalent.v4i1.1602)]
 - [2026] **The Moderating Role of Digital Media Usage Level in the Relationship Between Content Brand Attitude and Purchase Intention Among Senior Consumers** *Journal of Korea Culture Industry* [[paper](https://doi.org/10.35174/jkci.2026.03.26.1.45)]
+- [2026] **Analysis of Effectiveness of Video Content Marketing for Acquiring & Conversion of Prospective Students in NEET/JEE Coaching Centres** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.19147615)]
+- [2026] **The Effect of Short Video Content Marketing on Comic-Con Participation Intention: Focusing on the Mediating Effect of Flow Experience** *Journal & Article Management System* [[paper](https://doi.org/10.31927/asec.22.1.9)]
 - [2026] **A Strategic Content Marketing Plan for TOMS: An Application of Communication and Social Influence Theories &lt;br&gt;An Independent Report Featuring a Suggested Campaign Proposal** *SSRN Electronic Journal* [[paper](https://doi.org/10.2139/ssrn.7056958)]
 - [2026] **From Idea to Success: Modern Marketing Strategies for Startups** *SSRN Electronic Journal* [[paper](https://doi.org/10.2139/ssrn.6741398)]
 - [2026] **Driving Business Growth with the Best Digital Marketing Company in Hyderabad** *Figshare* [[paper](https://doi.org/10.6084/m9.figshare.31095271.v2)]
+- [2026] **Digital Food Content Marketing in Tourism: An Integrated Conceptual Framework of Informational, Emotional, Social and Identity-Based Content Dynamics.** *International Journal of Research and Innovation in Social Science* [[paper](https://doi.org/10.47772/ijriss.2026.10200009)]
+- [2026] **Digital Content Marketing: A Comprehensive Overview of Small and Medium-Sized Enterprises (SMEs) in Sultanate of Oman** *Contributions to finance and accounting* [[paper](https://doi.org/10.1007/978-3-032-13485-1_33)]
 
 ##### 2025
 
+- [2025] **From Clicks to Commitment: Exploring the Role of Digital Content Marketing in Fostering Customer–Brand Engagement and Brand Loyalty** *Global Business Review* [[paper](https://doi.org/10.1177/09721509251391522)]
+- [2025] **Content Marketing and Online Reputation Management** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.18047602)]
+- [2025] **Perancangan Strategi Pembuatan Konten Pemasaran Instagram Melalui 7 Tahap Content Marketing Framework (Studi Kasus Personality Kopi)** *RIGGS Journal of Artificial Intelligence and Digital Business* [[paper](https://doi.org/10.31004/riggs.v4i4.4301)]
+- [2025] **The Impact of Digital Content Marketing Strategies on Perceived Usefulness and VALORANT Game Acceptance** *ADI Bisnis Digital Interdisiplin Jurnal* [[paper](https://doi.org/10.34306/abdi.v6i2.1335)]
+- [2025] **The Influence of the New Media Digital Content Marketing Model in Live E-Commerce on Consumers' Purchasing Decisions** *Academic journal of management and social sciences* [[paper](https://doi.org/10.54097/3bq7y735)]
+- [2025] **Examining the Determinants of Generative AI Utilization for SEO and Content Marketing: A TOE Approach in the Bangladeshi Digital Space** [[paper](https://doi.org/10.1109/compas67506.2025.11381652)]
+- [2025] **Video Content Marketing of Intangible Cultural Heritage (ICH) Products Based on the SICAS Model** *Frontiers in Business Economics and Management* [[paper](https://doi.org/10.54097/zj89t803)]
+- [2025] **The Role of Celebrity-Driven Video Branded Podcasts in Content Marketing: A Study of Egyptian Real Estate Brands** *المجلة العلمية لبحوث العلاقات العامة و الإعلان* [[paper](https://doi.org/10.21608/sjocs.2025.465587)]
+- [2025] **IMPORTANCE OF CONTENT MARKETING IN BUILDING ONLINE BRANDS A STUDY ON DIGITAL STRATEGIES FOR ONLINE BRAND AWARENESS AND ENGAGEMENT** *International Journal of Engineering Research and Science & Technology* [[paper](https://doi.org/10.62643/ijerst.2025.v21.n4.pp319-323)]
+- [2025] **The Effectiveness of Content Marketing Strategies in Enhancing Brand Awareness of Local Coffee Products Among Indonesian Millennials** *Daengku Journal of Humanities and Social Sciences Innovation* [[paper](https://doi.org/10.35877/454ri.daengku4408)]
+- [2025] **Analyse der Potenziale und strategischen Anwendung generativer KI im Content Marketing am Beispiel der Spezialchemieindustrie** *IU Discussion Papers Marketing und Kommunikation* [[paper](https://doi.org/10.56250/4087)]
+- [2025] **SeqUDA-Rec: Sequential User Behavior Enhanced Recommendation via Global Unsupervised Data Augmentation for Personalized Content Marketing** *arXiv (Cornell University)* [[paper](https://arxiv.org/abs/2509.17361)]
+- [2025] **Linking Digital Content Marketing on Social Media to Intention to Visit: A Conceptual Framework with Customer Engagement as Mediator and E-Trust as Moderator** *International Journal of Academic Research in Business and Social Sciences* [[paper](https://doi.org/10.6007/ijarbss/v15-i7/25858)]
+- [2025] **Variety-Seeking Shopping Behaviours in the Age of Green Content Marketing, Affiliate Marketing, and Shopping Motives: An Agenda for Future Research Using a TCCM Approach** *Sustainability* [[paper](https://doi.org/10.3390/su17135708)]
+- [2025] **Optimizing Content Marketing Strategies with Reinforcement Learning: An A/B Testing Approach** [[paper](https://doi.org/10.1109/icnsoc66817.2025.00016)]
+- [2025] **A Strategic Content Marketing Plan for TOMS: An Application of Communication and Social Influence Theories** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.21198594)]
+- [2025] **Crafting Equity via Experience: A Stimulus-Organism-Response Study of Content Marketing in Pakistan** *Qlantic journal of social sciences.* [[paper](https://doi.org/10.55737/qjss.vi-ii.25329)]
+- [2025] **ACCELERATING BRAND AWARENESS OF LAUNDROMAT DISTRIBUTOR ALLIANCE LAUNDRY SYSTEMS THAILAND THROUGH YOUTUBE: CONTENT MARKETING** *European Journal of Management and Marketing Studies* [[paper](https://doi.org/10.46827/ejmms.v10i1.1956)]
+- [2025] **The Role of Digital Content Marketing on Social Media in Shaping Intention to Visit: A Conceptual Study in the Context of Jordanian Domestic Tourism** *International Journal of Academic Research in Business and Social Sciences* [[paper](https://doi.org/10.6007/ijarbss/v15-i6/25604)]
+- [2025] **Beyond Hallyu celebrity appeal: understanding celebrity attractiveness and content creativity as strategic marketing resources in Taiwan** *Asia Pacific Business Review* [[paper](https://doi.org/10.1080/13602381.2025.2512815)]
+- [2025] **Search Engine Optimization (SEO) and Content Marketing for Higher Education Institutions** [[paper](https://doi.org/10.71443/9789349552685-10)]
+- [2025] **Pengaruh GUX dan Content Marketing terhadap Satisfaction dan Loyalty Pemain Game Mobile** *Mutiara Jurnal Ilmiah Multidisiplin Indonesia* [[paper](https://doi.org/10.61404/mutiara.v3i2.397)]
 - [2025] **Pinterest Propaganda: Machiavellian Marketing Operationalized** *Figshare* [[paper](https://figshare.com/articles/preprint/Pinterest_Propaganda_Machiavellian_Marketing_Operationalized/30815885)]
+- [2025] **Enhancing Content Marketing Design through Design Thinking and the TPACK Framework** *International Journal of Information and Education Technology* [[paper](https://doi.org/10.18178/ijiet.2025.15.5.2305)]
+- [2025] **The Generative AI Effect on Content Marketing** *Saudi Journal of Economics and Finance* [[paper](https://doi.org/10.36348/sjef.2026.v10i01.002)]
+- [2025] **Content Marketing Process: Mastering the Symbiosis of Art and Science** *Contributions to management science* [[paper](https://doi.org/10.1007/978-3-031-91195-8_3)]
+- [2025] **MANAGING PROJECTS FOR DEVELOPING CROSS-PLATFORM COMMUNICATION STRATEGIES IN GLOBAL MARKETS WITH CONTENT MARKETING** *Eastern Europe economy business and management* [[paper](https://doi.org/10.32782/easterneurope.49-21)]
 
 ##### 2024
 
 - [2024] **Impact of Content Marketing Strategy on Brand Equity; Evidence from a Multi-Mediator and Multi-Moderator Model** *Journal of Management & Social Science* [[paper](https://doi.org/10.63075/s6ykfw68)]
 - [2024] **ANALISIS IMPLEMENTASI BRAND IMAGE, SOCIAL E-WOM DAN CONTENT MARKETING TERHADAP MINAT PEMBELIAN KEMBALI GOFOOD PADA APLIKASI GOJEK** *Digismantech (Jurnal Program Studi Bisnis Digital)* [[paper](https://doi.org/10.30813/digismantech.v4i2.7428)]
+- [2024] **How Content Marketing to Customer Advocacy Through Entertainment Intention Leverage in Social Media Platform?: The Evidence from Indonesia** [[paper](https://doi.org/10.1109/icicyta64807.2024.10913209)]
+- [2024] **The Role of Infographics in Content Marketing: Enhancing Understanding and Sharing** *International Research Journal of Education and Technology (IRJET).* [[paper](https://doi.org/10.70127/irjedt.vol.8.issue06.625)]
+- [2024] **Does Content Marketing on TikTok Impacts Female Gen Z’s Engagement?** *Jurnal Ilmiah Ecobuss* [[paper](https://doi.org/10.51747/ecobuss.v12i2.2175)]
+- [2024] **Brand Image Memediasi Peran Content Marketing Dan Online Customer Review Terhadap Minat Beli Eatsambel** *JURNAL NUSANTARA APLIKASI MANAJEMEN BISNIS* [[paper](https://dx.doi.org/10.29407/nusamba.v9i2.22210)]
+- [2024] **The Influence of Content Marketing on Customer Advocacy with Entertainment Intention as an Intervening Variable on Tiktok** *Formosa Journal of Multidisciplinary Research* [[paper](https://dx.doi.org/10.55927/fjmr.v3i5.9232)]
+- [2024] **Exploring ageing consumers’ usage of content marketing, content typology and online brand advocacy** *EuroMed Journal of Business* [[paper](https://doi.org/10.1108/emjb-10-2023-0283)]
 
 [⬆ Back to top](#paper-list)
 
@@ -2085,6 +2136,7 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 - [2025] **Content Marketing, Internet Experience, and Online Customer Review on Housewives’ Purchase Intention on Meesho** *Lecture notes in networks and systems* [[paper](https://doi.org/10.1007/978-981-97-8591-9_6)]
 - [2025] **Influence of Content Marketing, Live Streaming, and Online Customer Reviews on Purchase Decisions at TikTok Shop** [[paper](https://doi.org/10.21070/ups.7009)]
 - [2025] **PENGARUH CONTENT MARKETING, ONLINE CUSTOMER REVIEW DAN HARGA TERHADAP KEPUTUSAN PEMBELIANTIKTOK SHOP di SURABAYA** *Stiesia Repositories (Sekolah Tinggi Ilmu Ekonomi Indonesia)* [[paper](https://repository.stiesia.ac.id/id/eprint/8123/1/ABSTRAKSI.pdf)]
+- [2025] **PENGARUH BRAND IMAGE,CONTENT MARKETING, ONLINE CUSTOMERS REVIEW TERHADAP KEPUTUSAN PEMBELIAN PRODUK SOMETHINC SHOPEE** *Jurnal Ilmiah Ekonomi, Manajemen dan Bisnis* [[paper](https://doi.org/10.60023/df9wry58)]
 
 ##### 2024
 
@@ -4305,19 +4357,56 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 
 ##### 2026
 
+- [2026] **Intent Graphs: A Privacy-First Alternative to Identity-Based Advertising Systems A Session-Centric Graph Intelligence Framework for Post-Cookie Ad Targeting** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.21875398)]
+- [2026] **Balancing Personalization and Privacy in AI Advertising: An S-O-R Framework of Consumer Perception, Brand Attitude, and Purchase Intention** *Tamkang University Institutional Repository (TKUIR)* [[paper](https://tkuir.lib.tku.edu.tw/dspace/handle/987654321/129343)]
+- [2026] **Privacy-Aware AI Advertising Systems: A Federated Learning Framework for Cross-Platform Personalization** *International Journal of Artificial Intelligence Research* [[paper](https://doi.org/10.66280/ijair.v1i1.57)]
+- [2026] **A Theoretically‐Grounded Federated Attribution Framework with Adaptive Differential Privacy Budgets for Cross‐Device Social Commerce Advertising Systems** *Preprints.org* [[paper](https://doi.org/10.20944/preprints202603.2000.v1)]
+- [2026] **Playing with Privacy: Uncovering Everyday Judgments of Data Sensitivity Through an Arcade Machine Interface** [[paper](https://doi.org/10.1145/3742413.3789162)]
 - [2026] **Privacy-Robust Incrementality Estimation in Cookieless Settings via Uplift Modeling: Reproducible Evidence from the Hillstrom E-Mail Experiment** *Journal of Technology Informatics and Engineering* [[paper](https://doi.org/10.51903/jtie.v5i1.468)]
+- [2026] **Customer data privacy &amp; security as a firm strategy: financial implications, risks, and the role of product-market competition** *Journal of Business Research* [[paper](https://doi.org/10.1016/j.jbusres.2026.116070)]
+- [2026] **The M.A.T.H. Framework: A First-Principles Approach to Quant Marketing in High-Uncertainty Environments** *SSRN Electronic Journal* [[paper](https://doi.org/10.2139/ssrn.6258238)]
+- [2026] **Privacy-Preserving Machine Learning Pipelines For Publisher Data Collaboration: A Framework For Federated Inference In Post-Cookie Advertising Ecosystems** *International Journal of Artificial Intelligence and Machine Learning* [[paper](https://doi.org/10.51483/ijaiml.6.6s.2026.571-581)]
 
 ##### 2025
 
 - [2025] **AdTech and Data Primer** *Open MIND* [[paper](https://dataadtechprimer.us/)]
+- [2025] **Balancing privacy and platform power in the mobile ecosystem: The case of Apple’s App Tracking Transparency** *Computer law & security review* [[paper](https://doi.org/10.1016/j.clsr.2025.106255)]
+- [2025] **Religious Diversity and the Digital Economy: Legal–Academic Pathways to Harmonize Sharia and International Law** *International Journal of Law and Social Sciences* [[paper](https://doi.org/10.65960/ijlss.1.1.2025.8)]
+- [2025] **Blockchain-integrated AI framework for secure IoT-based digital advertising ecosystems** *Discover Internet of Things* [[paper](https://doi.org/10.1007/s43926-025-00262-x)]
 - [2025] **Post-Cookie Marketing Strategies for Total Quality Management in Hospitality** [[paper](https://doi.org/10.4018/979-8-3693-8608-8.ch010)]
+- [2025] **Data disclosure strategy: Navigating the balance between privacy and profit in a dynamic system** *Decision Support Systems* [[paper](https://doi.org/10.1016/j.dss.2025.114510)]
 - [2025] **ALTERNATIVE STRATEGIES FOR TARGETING AND MEASURING CAMPAIGN EFFECTIVENESS IN THE AGE OF COOKIELESS MARKETING** *Moscow Economic Journal* [[paper](https://doi.org/10.55186/2413046x_2025_10_7_175)]
+- [2025] **A Privacy-Preserving Framework for Advertising Personalization Incorporating Federated Learning and Differential Privacy** *arXiv (Cornell University)* [[paper](https://arxiv.org/abs/2507.12098)]
+- [2025] **Meta’s privacy practices on Facebook: compliance, integrity, and a framework for excellence** *Discover Artificial Intelligence* [[paper](https://doi.org/10.1007/s44163-025-00388-5)]
 - [2025] **"From Cookies to Context: Adapting Marketing Strategies in a Cookieless Digital Environment"** *European Economic Letters (EEL)* [[paper](https://doi.org/10.52783/eel.v15i2.3361)]
+- [2025] **Privacy and Polarization: An Inference-Based Framework** *Management Science* [[paper](https://doi.org/10.1287/mnsc.2024.06054)]
+- [2025] **Social Media and E-commerce: A Study of the Legal Issues in Influencer Marketing and Online Advertising with special reference to India** *International Journal For Multidisciplinary Research* [[paper](https://doi.org/10.36948/ijfmr.2025.v07i03.45519)]
+- [2025] **The cookie conundrum : Balancing privacy, compliance and user experience and the quest for strategic GDPR-compliant user privacy** *Journal of data protection & privacy.* [[paper](https://doi.org/10.69554/fzbc2768)]
+- [2025] **Navigating the privacy paradox in a digital age: balancing innovation, data collection and ethical responsibility** *Journal of Ethics in Entrepreneurship and Technology* [[paper](https://doi.org/10.1108/jeet-12-2024-0040)]
+- [2025] **Paying for Privacy? Evaluating Consumer Willingness to Pay for Data Ownership and Ad-Free Social Media Experiences on Pinterest** *SSRN Electronic Journal* [[paper](https://doi.org/10.2139/ssrn.5136645)]
+- [2025] **Harnessing IoT Data for Real-Time Marketing Insights and Consumer Engagement** *Springer proceedings in business and economics* [[paper](https://doi.org/10.1007/978-981-96-2548-2_18)]
 
 ##### 2024
 
+- [2024] **Privacy Preserving Conversion Modeling in Data Clean Room** [[paper](https://arxiv.org/abs/2505.14959)]
 - [2024] **Embracing cookieless advertising with AI** *Applied marketing analytics* [[paper](https://doi.org/10.69554/abjz3410)]
+- [2024] **Digital Enigma: Understanding Ethical Dilemmas in Design and Marketing** [[paper](https://doi.org/10.1108/s2754-586520240000003004)]
+- [2024] **Spending Programmed Bidding: Privacy-friendly Bid Optimization with ROI Constraint in Online Advertising** [[paper](https://doi.org/10.1145/3637528.3671540)]
+- [2024] **Federated Learning Optimizing Multi-Scenario Ad Targeting and Investment Returns in Digital Advertising** *Journal of Advanced Computing Systems* [[paper](https://doi.org/10.69987/jacs.2024.40806)]
+- [2024] **Within-Category Satiation and Cross-Category Spillover in Multiproduct Advertising** *Journal of Marketing* [[paper](https://doi.org/10.1177/00222429241274727)]
+- [2024] **Privacy, Data Protection and Data-driven Technologies** [[paper](https://doi.org/10.4324/9781003502791)]
+- [2024] **Research on Cross-Platform Digital Advertising User Behavior Analysis Framework Based on Federated Learning** *Artificial Intelligence and Machine Learning Review* [[paper](https://doi.org/10.69987/aimlr.2024.50304)]
+- [2024] **Data privacy regulation and cross-border e-commerce** *Empirica* [[paper](https://doi.org/10.1007/s10663-024-09624-0)]
+- [2024] **Unlocking the AI-powered customer experience: Personalized service, enhanced engagement, and data-driven strategies for e-commerce applications** *Journal of Infrastructure Policy and Development* [[paper](https://doi.org/10.24294/jipd.v8i7.4970)]
+- [2024] **DeepFake Technologies** *Advances in information security, privacy, and ethics book series* [[paper](https://doi.org/10.4018/979-8-3693-5298-4.ch004)]
 - [2024] **Conversions API and Other Signal Resilient Ad Products in a Cookieless World** *International Journal of Current Science Research and Review* [[paper](https://doi.org/10.47191/ijcsrr/v7-i6-75)]
+- [2024] **From User Insights to Actionable Metrics: A User-Focused Evaluation of Privacy-Preserving Browser Extensions** [[paper](https://doi.org/10.1145/3634737.3657028)]
+- [2024] **Re-Identification Attacks against the Topics API** *ACM Transactions on the Web* [[paper](https://doi.org/10.1145/3675400)]
+- [2024] **Guest editorial: A blockchain-based approach to marketing in the sharing economy** *Journal of Business Research* [[paper](https://doi.org/10.1016/j.jbusres.2024.114639)]
+- [2024] **Integration of Social Network Analysis in the Evaluation of Advertising Communication Effectiveness and Legal Compliance** *Journal of Electrical Systems* [[paper](https://dx.doi.org/10.52783/jes.1938)]
+- [2024] **CSChecker: Revisiting GDPR and CCPA Compliance of Cookie Banners on the Web** [[paper](https://doi.org/10.1145/3597503.3639159)]
+- [2024] **Ai-Powered Customer Experience: Personalization, Engagement, and Intelligent Decision-Making in Crm** *Journal of Electrical Systems* [[paper](https://doi.org/10.52783/jes.1832)]
+- [2024] **Internet of Metaverse Things (IoMT)** [[paper](https://doi.org/10.1201/9781032648309-11)]
 
 [⬆ Back to top](#paper-list)
 
@@ -5351,6 +5440,24 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 - [2024] **CLASSIFICATION OF TOOLS FOR DIGITAL PROMOTION OF GOODS AND SERVICES ON THE B2B MARKET** *Actual Problems of Economics* [[paper](https://doi.org/10.32752/1993-6788-2024-1-275-144-152)]
 - [2024] **Individuals in B2B Marketing** [[paper](https://dx.doi.org/10.4324/9781003388036)]
 - [2024] **Turning commitment into performance through buyer dependence: a dual pathway approach** *European Journal of Marketing* [[paper](https://doi.org/10.1108/ejm-02-2022-0084)]
+- [2024] **Making of a social buyer: the role of knowledge capital authenticity and inter-firm communication in B2B sales situations** *The Journal of Marketing Theory and Practice* [[paper](https://doi.org/10.1080/10696679.2023.2291713)]
+- [2024] **The role of conflict and opportunism on the duality of satisfaction in B2B sales relationships** *European Business Review* [[paper](https://doi.org/10.1108/ebr-06-2023-0189)]
+- [2024] **From buying centers to buying ecosystems: Advancing the B2B research journey** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.12.020)]
+- [2024] **Marketing and Business Ethics** [[paper](https://doi.org/10.1007/978-981-97-3553-2_13)]
+- [2024] **ТЕОРЕТИЧНІ ЗАСАДИ В2В МАРКЕТИНГУ НА СУЧАСНОМУ ЕТАПІ РОЗВИТКУ** *Scientific Bulletin of PUET Economic Sciences* [[paper](https://doi.org/10.37734/2409-6873-2024-4-12)]
+- [2024] **Popularity and Transaction Prices as Drivers of Price Dispersion on Two-Sided Digital Platforms** *BAR - Brazilian Administration Review* [[paper](https://doi.org/10.1590/1807-7692bar2024240127)]
+- [2024] **A Study On The Impact of Dual-Channel Marketing Strategy on Sellers’ Online Performance in B2b E-Commerce Platforms** *SSRN Electronic Journal* [[paper](https://dx.doi.org/10.2139/ssrn.4783418)]
+
+##### 2023
+
+- [2023] **Two Common B2B Content Marketing Types: White Papers and Case Studies** [[paper](https://dx.doi.org/10.4324/9781003369103-12)]
+- [2023] **INDUSTRIAL AND SERVICES MARKETING STRATEGIES: conceptual framework to analyze the impacts of B2B relationship in CNC machines segment** *GEPROS. Gestão da Produção, Operações e Sistemas* [[paper](https://doi.org/10.15675/gepros.2997)]
+- [2023] **Strategic Content Marketing** [[paper](https://dx.doi.org/10.4324/9781003369103)]
+- [2023] **Customer equity drivers and repurchase intent among B2B customers: the moderating role of perceived switching cost** *Journal of Business and Industrial Marketing* [[paper](https://doi.org/10.1108/jbim-02-2023-0084)]
+- [2023] **Examining the dark force consequences of AI as a new actor in B2B relationships** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.10.001)]
+- [2023] **Climate change risks, sustainability and luxury branding: Friend or a foe** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.09.008)]
+- [2023] **How LinkedIn can boost SMEs’ Digital Marketing Strategies on International Markets: A Case Study of an Apulian Tech-Intensive company** *European Conference on Knowledge Management* [[paper](https://doi.org/10.34190/eckm.24.2.1457)]
+- [2023] **Digital Marketing Dynamics in the Indian Context: A Journey through Time** *International Journal of Advanced Research in Science Communication and Technology* [[paper](https://doi.org/10.48175/ijarsct-13024)]
 
 [⬆ Back to top](#paper-list)
 
@@ -5434,6 +5541,19 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 - [2024] **GOI Online Public Transportation System's Customer Attitude related to Social Media Marketing and Brand Credibility** [[paper](https://dx.doi.org/10.4324/9781003489412-10)]
 - [2024] **Influence of Artificial Intelligence Competencies on Business Value: B2B Marketing Capabilities Context** *Productivity Press eBooks* [[paper](https://dx.doi.org/10.4324/9781032688305-8)]
 - [2024] **Impact of AI on Knowledge-based Marketing: A Study of B2B Markets** [[paper](https://doi.org/10.1108/978-1-80455-342-820241009)]
+- [2024] **The relationship between coopetition strategies and company performance under different levels of competitive intensity, market dynamism, and technological turbulence** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2024.02.005)]
+- [2024] **Exploring how to develop data-driven innovation capability of marketing within B2B firms: Toward a capability model and process-oriented approach** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.12.015)]
+- [2024] **The concept of discontinuity in project marketing research: emergence, dissipation and glimpses of the future** *Journal of Business and Industrial Marketing* [[paper](https://doi.org/10.1108/jbim-06-2023-0351)]
+- [2024] **Decoding Ai Adoption Intention in B2b Marketing: A Toe Framework Deep Dive** *SSRN Electronic Journal* [[paper](https://dx.doi.org/10.2139/ssrn.5008911)]
+- [2024] **Exploring the dark side of managerial upselling emphasis: Exploratory and exploitative learning's moderating roles in salesperson emotional exhaustion and performance** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2024.01.004)]
+
+##### 2023
+
+- [2023] **From greenwashing to green B2B marketing: A systematic literature review** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.10.002)]
+- [2023] **Marketing 4.0 analytics in the B2B sector: a state-of-the-art review and integrated framework** *Journal of Strategic Marketing* [[paper](https://doi.org/10.1080/0965254x.2023.2273501)]
+- [2023] **Ecosystem Well-Being and Resilience: Lessons from Crisis Management in Service Organizations** *Journal of Business-to-Business Marketing* [[paper](https://doi.org/10.1080/1051712x.2023.2289875)]
+- [2023] **Adoption of digital platforms by sponsoring organisations and NPOs for cause-related B2B marketing programs: a fsQCA exploration** *Journal of Business and Industrial Marketing* [[paper](https://doi.org/10.1108/jbim-09-2022-0429)]
+- [2023] **Credible vs. deceptive threat of market entry: Empirical evidence from the US airline industry** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.09.003)]
 
 [⬆ Back to top](#paper-list)
 
@@ -5485,6 +5605,12 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 - [2024] **A Comprehensive Review on the Implementation of Social Media in Business-to-Business (B2B) Marketing** [[paper](https://dx.doi.org/10.4324/9781032708294-3)]
 - [2024] **The Relationship Between Sustainable Logistics and Customer Experience - The Study of the Current Situation** *EUROPEAN RESEARCH STUDIES JOURNAL* [[paper](https://doi.org/10.35808/ersj/3736)]
 - [2024] **Research Tendency of Digital Marketing in the Period Of 2011 – 2022: a Bibliometric Analysis** *International Journal of Advanced Technology and Social Sciences* [[paper](https://dx.doi.org/10.59890/ijatss.v2i3.1572)]
+- [2024] **The Impact of Technological Advancements on B2B Marketing Strategies for Sustainable Economic Growth** *Studies in systems, decision and control* [[paper](https://doi.org/10.1007/978-3-031-62102-4_34)]
+- [2024] **Social Media &amp; Electronic Word-of-Mouth in Business-To-Business Marketing: A Systematic Review and Future Research Directions** *Journal of Informatics Education and Research* [[paper](https://dx.doi.org/10.52783/jier.v4i3.1464)]
+
+##### 2023
+
+- [2023] **The role of ethics in business-to-business marketing: An exploratory review and research agenda** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.10.013)]
 
 [⬆ Back to top](#paper-list)
 
@@ -5544,6 +5670,13 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 
 - [2024] **Where AI Meets Captivating Storytelling** *Advances in marketing, customer relationship management, and e-services book series* [[paper](https://dx.doi.org/10.4018/979-8-3693-2153-9.ch001)]
 - [2024] **Enterprise Account-Based Marketing Data Architecture Reference Model** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.19047579)]
+- [2024] **The Strategy Implementation of Account-Based Marketing (ABM)—The Stratio Case** *Lecture notes in networks and systems* [[paper](https://doi.org/10.1007/978-3-031-60221-4_8)]
+- [2024] **The role of account-based marketing in customer acquisition management in the B2B IT market** *eNTUKhPIIR Repository (Kharkiv Polytechnic Institute)* [[paper](https://repository.kpi.kharkov.ua/handle/KhPI-Press/83894)]
+- [2024] **Exploring the application of AI-driven account-based marketing as a sustainable approach for customer acquisition in the export of technological industrial products** *International Journal of Export Marketing* [[paper](https://doi.org/10.1504/ijexportm.2024.10071200)]
+
+##### 2023
+
+- [2023] **Sistem Pendukung Keputusan Menentukan Strategi Pemasaran Produk Menggunakan Metode MABAC** *Sistem Pendukung Keputusan dengan Aplikasi* [[paper](https://dx.doi.org/10.55537/spk.v2i2.637)]
 
 [⬆ Back to top](#paper-list)
 
@@ -5579,6 +5712,7 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 - [2025] **Basics of B2B Branding, Theory, and Practice** [[paper](https://doi.org/10.1007/978-3-031-94665-3_3)]
 - [2025] **The Challenging and Changing B2B Landscape** [[paper](https://doi.org/10.1007/978-3-031-91104-0_1)]
 - [2025] **The credibility of blogs written by generative AI : are artificial intelligence souraces considered more or less credible than human sources?** *MOspace Institutional Repository (University of Missouri)* [[paper](https://hdl.handle.net/10355/109707)]
+- [2025] **B2B Marketing&amp;#8212;Social Marketing** *Open Journal of Business and Management* [[paper](https://doi.org/10.4236/ojbm.2025.132047)]
 
 ##### 2024
 
@@ -5591,6 +5725,16 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 - [2024] **Unpacking the relationship between export coopetition activities and export sales performance** *International Marketing Review* [[paper](https://doi.org/10.1108/imr-02-2024-0030)]
 - [2024] **Modeling New Technology Readiness and Acceptance in the Case of B2B Marketing Employees** *Journal of Business-to-Business Marketing* [[paper](https://doi.org/10.1080/1051712x.2024.2364699)]
 - [2024] **Video-based sales interaction in cross-cultural B2B relationships: Potential (un)desired consequences** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2024.05.003)]
+- [2024] **COMPONENTS OF SERVICE-DOMINANT LOGIC IN B2B MARKETING** *Management* [[paper](https://dx.doi.org/10.30857/2415-3206.2023.1.5)]
+- [2024] **Exploring the dark side of managerial upselling emphasis : Exploratory and exploitative learning&apos;s moderating roles in salesperson emotional exhaustion and performance** *Osuva (University of Vaasa)* [[paper](https://osuva.uwasa.fi/handle/11111/1663)]
+
+##### 2023
+
+- [2023] **Founder's birth order and triple bottom line in B2B SMEs** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.12.010)]
+- [2023] **Implications of dynamic capabilities on triple bottom line performance after the COVID-19 pandemic: An empirical insight from B2B marketing perspective** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.10.005)]
+- [2023] **Masterful scholarly competences and the development of impactful B2B marketing theory: Contributions of Dr. Shelby D. Hunt** *Industrial Marketing Management* [[paper](https://doi.org/10.1016/j.indmarman.2023.10.006)]
+- [2023] **Relevance and its epistemic underpinnings in B2B marketing research: four axioms and nine relevance types** *Journal of Business and Industrial Marketing* [[paper](https://doi.org/10.1108/jbim-07-2022-0331)]
+- [2023] **Customer success management, customer health, and retention in B2B industries** *International Journal of Research in Marketing* [[paper](https://doi.org/10.1016/j.ijresmar.2023.09.002)]
 
 [⬆ Back to top](#paper-list)
 
@@ -5601,6 +5745,13 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 - [2026] **Les déterminants de la satisfaction client dans le marché business- to-business : le cas du secteur du recrutement** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.21806494)]
 - [2026] **Les déterminants de la satisfaction client dans le marché business-to-business le cas du secteur du recrutement** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.21510016)]
 - [2026] **Repeatable Prompt Sampling as a Measurement Standard for AI Brand Visibility: The LLMin8 Protocol** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.19823196)]
+- [2026] **OPTIMIZING THE USE OF INSTAGRAM TO ENHANCE B2B LEAD GENERATION : A CASE STUDY OF TELKOM DWS** *Jurnal Ilmiah Manajemen Ekonomi & Akuntansi (MEA)* [[paper](https://doi.org/10.31955/mea.v10i1.6861)]
+- [2026] **DEVELOPMENT AND IMPLEMENTATION OF A COMMERCIAL SEO LITERACY MODEL TO ENHANCE SALES EFFICIENCY: A CASE STUDY OF 7,000+ PROFESSIONALS AT SOLOCAL** *International Journal of Research In Commerce and Management Studies* [[paper](https://doi.org/10.38193/ijrcms.2026.8437)]
+
+##### 2025
+
+- [2025] **ВЕКТОРИ ВИКОРИСТАННЯ НЕЙРОМАРКЕТИНГУ ДЛЯ ОПТИМІЗАЦІЇ B2B-ТАРГЕТИНГУ У ЦИФРОВОМУ МАРКЕТИНГУ** *Herald of Khmelnytskyi National University Economic sciences* [[paper](https://doi.org/10.31891/2307-5740-2025-348-6-49)]
+- [2025] **"Transforming Digital Marketing: Key Trends and Strategies for Effective B2B/B2C Campaigns"** *INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT* [[paper](https://doi.org/10.55041/ijsrem45777)]
 
 [⬆ Back to top](#paper-list)
 

@@ -15,7 +15,8 @@ on:
       - 'config/'
       - 'requirements.txt'
   schedule:
-    - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC — discover new papers
+    - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC — incremental OpenAlex refresh
+  workflow_dispatch:     # manual trigger for testing the refresh
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -44,11 +45,13 @@ jobs:
         run: python3 scripts/generate_readme.py --check
 
   discover:
-    if: github.event_name == 'schedule'
+    # Incremental refresh: pull the last ~2 months of matches for every configured
+    # OpenAlex query, de-duplicate, auto-classify, and commit. The marketing corpus
+    # is OpenAlex/DOI-based (arXiv is a tiny slice), so this keeps it current.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
@@ -60,10 +63,23 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml requests
 
-      - name: Discover new papers from arXiv
+      - name: Refresh OpenAlex (recent papers)
         env:
-          GH_TOKEN: ${{ github.token }}
-        run: python3 scripts/fetch/fetch_new_papers.py --months 1 --create-pr
+          OPENALEX_MAILTO: research@tobias-weiss-ai-xr.de
+        run: python3 scripts/fetch/fetch_openalex_bulk.py --months 2 --per-category 20 --sleep 2
+
+      - name: Validate papers.yaml
+        run: python3 scripts/validate_papers.py
+
+      - name: Commit & push if changed
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet papers.yaml; then echo "no new papers"; exit 0; fi
+          git add papers.yaml
+          git commit -m "Weekly OpenAlex refresh (auto)"
+          git push origin main
 
   pages:
     runs-on: ubuntu-latest

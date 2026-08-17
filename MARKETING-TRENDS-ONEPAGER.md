@@ -1,6 +1,6 @@
 # 📄 Latest Marketing Trends — One-Pager (Bayesian Evidence)
 
-**Corpus:** 5,068 papers, 2024–2026 (1,605 in the last 12 months) · OpenAlex + CrossRef + dblp + Europe PMC
+**Corpus:** 5,201 papers, 2024–2026 (1,609 in the last 12 months) · OpenAlex + CrossRef + dblp + Europe PMC
 **Method:** exact conjugate Bayes — Beta-Binomial share-shift per category, Gamma-Poisson ratios per term; posterior medians with 95% credible intervals (CrI). No MCMC; reproducible via `scripts/bayesian_trends.py` (seed 42). Numbers: `docs/research/bayesian_trends.json`.
 
 ---

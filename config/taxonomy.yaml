@@ -387,7 +387,7 @@ openalex_queries:
     query: '"B2B marketing" theory'
     subcategory_hint: theory
   - category: b2b
-    query: '"B2B marketing" measurement'
+    query: '"B2B marketing" metrics'
     subcategory_hint: measurement
   - category: survey
     query: 'marketing survey empirical study'
@@ -404,6 +404,14 @@ openalex_queries:
   - category: survey
     query: 'marketing research measurement'
     subcategory_hint: measurement
+
+# ── Thin-cell top-ups (kept cells meaningful, not just >=1 paper) ───────────
+  - category: privacy-data
+    query: 'privacy advertising framework'
+    subcategory_hint: framework
+  - category: content-marketing
+    query: '"content marketing" framework'
+    subcategory_hint: framework
 
 # ── GitHub repository discovery (fetch_github_repos.py) ─────────────────────
 # Each entry is a GitHub search query (topic:, keyword combos, stars:>N).

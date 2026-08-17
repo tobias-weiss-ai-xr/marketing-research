@@ -4,122 +4,122 @@
       "cell": "Analytics, Attribution & Measurement",
       "recent": 266,
       "prior": 150,
-      "median": 2.67,
-      "cr95_low": 2.21,
-      "cr95_high": 3.23,
+      "median": 2.64,
+      "cr95_low": 2.18,
+      "cr95_high": 3.19,
       "p_gt_1": 1.0,
-      "share_recent_pct": 17.0,
+      "share_recent_pct": 16.5,
       "share_prior_pct": 6.3
     },
     {
       "cell": "B2B & Account-Based Marketing",
       "recent": 155,
-      "prior": 95,
-      "median": 2.46,
-      "cr95_low": 1.92,
-      "cr95_high": 3.15,
+      "prior": 96,
+      "median": 2.4,
+      "cr95_low": 1.88,
+      "cr95_high": 3.08,
       "p_gt_1": 1.0,
-      "share_recent_pct": 9.9,
+      "share_recent_pct": 9.6,
       "share_prior_pct": 4.0
     },
     {
       "cell": "Content & Storytelling",
-      "recent": 150,
-      "prior": 139,
-      "median": 1.63,
-      "cr95_low": 1.31,
-      "cr95_high": 2.03,
+      "recent": 181,
+      "prior": 158,
+      "median": 1.71,
+      "cr95_low": 1.39,
+      "cr95_high": 2.09,
       "p_gt_1": 1.0,
-      "share_recent_pct": 9.6,
-      "share_prior_pct": 5.9
+      "share_recent_pct": 11.2,
+      "share_prior_pct": 6.6
     },
     {
       "cell": "Data, Privacy & Cookieless Advertising",
-      "recent": 132,
-      "prior": 144,
-      "median": 1.38,
+      "recent": 144,
+      "prior": 157,
+      "median": 1.37,
       "cr95_low": 1.1,
-      "cr95_high": 1.74,
-      "p_gt_1": 0.997,
-      "share_recent_pct": 8.4,
-      "share_prior_pct": 6.1
+      "cr95_high": 1.7,
+      "p_gt_1": 0.998,
+      "share_recent_pct": 8.9,
+      "share_prior_pct": 6.5
     },
     {
       "cell": "Customer Experience, Omnichannel & Retail",
       "recent": 180,
       "prior": 270,
-      "median": 1.01,
-      "cr95_low": 0.84,
-      "cr95_high": 1.2,
-      "p_gt_1": 0.534,
-      "share_recent_pct": 11.5,
-      "share_prior_pct": 11.4
+      "median": 0.99,
+      "cr95_low": 0.83,
+      "cr95_high": 1.19,
+      "p_gt_1": 0.476,
+      "share_recent_pct": 11.2,
+      "share_prior_pct": 11.3
     },
     {
       "cell": "AI & Marketing",
       "recent": 145,
       "prior": 303,
-      "median": 0.72,
-      "cr95_low": 0.6,
-      "cr95_high": 0.87,
+      "median": 0.71,
+      "cr95_low": 0.59,
+      "cr95_high": 0.86,
       "p_gt_1": 0.0,
-      "share_recent_pct": 9.3,
-      "share_prior_pct": 12.8
+      "share_recent_pct": 9.0,
+      "share_prior_pct": 12.6
     },
     {
       "cell": "Social Media & Creator Marketing",
       "recent": 115,
       "prior": 242,
-      "median": 0.72,
-      "cr95_low": 0.58,
-      "cr95_high": 0.89,
+      "median": 0.71,
+      "cr95_low": 0.57,
+      "cr95_high": 0.88,
       "p_gt_1": 0.001,
-      "share_recent_pct": 7.3,
-      "share_prior_pct": 10.2
+      "share_recent_pct": 7.1,
+      "share_prior_pct": 10.1
     },
     {
       "cell": "Brand Strategy & Management",
       "recent": 127,
       "prior": 274,
-      "median": 0.7,
-      "cr95_low": 0.57,
-      "cr95_high": 0.85,
+      "median": 0.69,
+      "cr95_low": 0.56,
+      "cr95_high": 0.84,
       "p_gt_1": 0.0,
-      "share_recent_pct": 8.1,
-      "share_prior_pct": 11.6
+      "share_recent_pct": 7.9,
+      "share_prior_pct": 11.4
     },
     {
       "cell": "Consumer Behavior & Psychology",
       "recent": 107,
       "prior": 259,
-      "median": 0.63,
+      "median": 0.62,
       "cr95_low": 0.5,
-      "cr95_high": 0.77,
+      "cr95_high": 0.76,
       "p_gt_1": 0.0,
-      "share_recent_pct": 6.8,
-      "share_prior_pct": 11.0
+      "share_recent_pct": 6.7,
+      "share_prior_pct": 10.8
     },
     {
       "cell": "Surveys, Trends & Meta-Studies",
       "recent": 102,
       "prior": 259,
-      "median": 0.6,
-      "cr95_low": 0.48,
-      "cr95_high": 0.74,
+      "median": 0.59,
+      "cr95_low": 0.47,
+      "cr95_high": 0.73,
       "p_gt_1": 0.0,
-      "share_recent_pct": 6.5,
-      "share_prior_pct": 11.0
+      "share_recent_pct": 6.3,
+      "share_prior_pct": 10.8
     },
     {
       "cell": "Digital & Performance Marketing",
       "recent": 87,
       "prior": 230,
       "median": 0.57,
-      "cr95_low": 0.45,
+      "cr95_low": 0.44,
       "cr95_high": 0.72,
       "p_gt_1": 0.0,
-      "share_recent_pct": 5.6,
-      "share_prior_pct": 9.7
+      "share_recent_pct": 5.4,
+      "share_prior_pct": 9.6
     }
   ],
   "term_trends": [
@@ -129,7 +129,7 @@
       "prior": 1,
       "median": 5.16,
       "cr95_low": 1.25,
-      "cr95_high": 38.41,
+      "cr95_high": 38.55,
       "p_gt_1": 0.989
     },
     {
@@ -138,17 +138,17 @@
       "prior": 6,
       "median": 2.8,
       "cr95_low": 1.22,
-      "cr95_high": 7.29,
+      "cr95_high": 7.28,
       "p_gt_1": 0.993
     },
     {
       "cell": "incrementality",
       "recent": 7,
       "prior": 3,
-      "median": 2.08,
+      "median": 2.09,
       "cr95_low": 0.64,
-      "cr95_high": 8.15,
-      "p_gt_1": 0.887
+      "cr95_high": 8.14,
+      "p_gt_1": 0.886
     },
     {
       "cell": "mmm",
@@ -179,12 +179,12 @@
     },
     {
       "cell": "attribution",
-      "recent": 32,
+      "recent": 33,
       "prior": 20,
-      "median": 1.58,
-      "cr95_low": 0.92,
-      "cr95_high": 2.78,
-      "p_gt_1": 0.95
+      "median": 1.63,
+      "cr95_low": 0.95,
+      "cr95_high": 2.85,
+      "p_gt_1": 0.961
     },
     {
       "cell": "retail media",
@@ -234,20 +234,20 @@
     {
       "cell": "b2b",
       "recent": 114,
-      "prior": 93,
-      "median": 1.22,
-      "cr95_low": 0.93,
-      "cr95_high": 1.61,
-      "p_gt_1": 0.927
+      "prior": 94,
+      "median": 1.21,
+      "cr95_low": 0.92,
+      "cr95_high": 1.59,
+      "p_gt_1": 0.916
     },
     {
       "cell": "experiment",
       "recent": 14,
-      "prior": 12,
-      "median": 1.16,
-      "cr95_low": 0.55,
-      "cr95_high": 2.49,
-      "p_gt_1": 0.65
+      "prior": 13,
+      "median": 1.07,
+      "cr95_low": 0.51,
+      "cr95_high": 2.26,
+      "p_gt_1": 0.575
     },
     {
       "cell": "storytelling",
@@ -256,7 +256,7 @@
       "median": 1.03,
       "cr95_low": 0.65,
       "cr95_high": 1.63,
-      "p_gt_1": 0.546
+      "p_gt_1": 0.547
     },
     {
       "cell": "genai",
@@ -277,6 +277,15 @@
       "p_gt_1": 0.282
     },
     {
+      "cell": "privacy",
+      "recent": 70,
+      "prior": 79,
+      "median": 0.89,
+      "cr95_low": 0.64,
+      "cr95_high": 1.22,
+      "p_gt_1": 0.231
+    },
+    {
       "cell": "programmatic",
       "recent": 29,
       "prior": 33,
@@ -284,15 +293,6 @@
       "cr95_low": 0.54,
       "cr95_high": 1.44,
       "p_gt_1": 0.309
-    },
-    {
-      "cell": "privacy",
-      "recent": 60,
-      "prior": 71,
-      "median": 0.85,
-      "cr95_low": 0.6,
-      "cr95_high": 1.19,
-      "p_gt_1": 0.17
     },
     {
       "cell": "user-generated",
@@ -306,38 +306,38 @@
     {
       "cell": "ar ",
       "recent": 64,
-      "prior": 92,
-      "median": 0.7,
-      "cr95_low": 0.51,
-      "cr95_high": 0.96,
-      "p_gt_1": 0.013
-    },
-    {
-      "cell": "tiktok",
-      "recent": 28,
-      "prior": 43,
-      "median": 0.66,
-      "cr95_low": 0.41,
-      "cr95_high": 1.05,
-      "p_gt_1": 0.038
+      "prior": 94,
+      "median": 0.68,
+      "cr95_low": 0.5,
+      "cr95_high": 0.94,
+      "p_gt_1": 0.009
     },
     {
       "cell": "purpose",
-      "recent": 190,
-      "prior": 296,
-      "median": 0.64,
+      "recent": 192,
+      "prior": 298,
+      "median": 0.65,
       "cr95_low": 0.54,
       "cr95_high": 0.77,
       "p_gt_1": 0.0
     },
     {
       "cell": "recommend",
-      "recent": 21,
+      "recent": 22,
       "prior": 34,
-      "median": 0.62,
-      "cr95_low": 0.36,
-      "cr95_high": 1.06,
-      "p_gt_1": 0.041
+      "median": 0.65,
+      "cr95_low": 0.38,
+      "cr95_high": 1.1,
+      "p_gt_1": 0.055
+    },
+    {
+      "cell": "tiktok",
+      "recent": 29,
+      "prior": 46,
+      "median": 0.64,
+      "cr95_low": 0.4,
+      "cr95_high": 1.0,
+      "p_gt_1": 0.025
     },
     {
       "cell": "short-form",
@@ -356,6 +356,15 @@
       "cr95_low": 0.2,
       "cr95_high": 1.61,
       "p_gt_1": 0.151
+    },
+    {
+      "cell": "social commerce",
+      "recent": 27,
+      "prior": 47,
+      "median": 0.58,
+      "cr95_low": 0.36,
+      "cr95_high": 0.92,
+      "p_gt_1": 0.01
     },
     {
       "cell": "cookieless",
@@ -385,15 +394,6 @@
       "p_gt_1": 0.001
     },
     {
-      "cell": "social commerce",
-      "recent": 26,
-      "prior": 47,
-      "median": 0.56,
-      "cr95_low": 0.34,
-      "cr95_high": 0.89,
-      "p_gt_1": 0.007
-    },
-    {
       "cell": "metaverse",
       "recent": 16,
       "prior": 29,
@@ -404,11 +404,11 @@
     },
     {
       "cell": "personaliz",
-      "recent": 88,
-      "prior": 164,
-      "median": 0.54,
-      "cr95_low": 0.41,
-      "cr95_high": 0.69,
+      "recent": 92,
+      "prior": 165,
+      "median": 0.56,
+      "cr95_low": 0.43,
+      "cr95_high": 0.72,
       "p_gt_1": 0.0
     },
     {
@@ -422,21 +422,30 @@
     },
     {
       "cell": "influencer",
-      "recent": 53,
-      "prior": 121,
-      "median": 0.44,
-      "cr95_low": 0.32,
-      "cr95_high": 0.6,
+      "recent": 55,
+      "prior": 122,
+      "median": 0.45,
+      "cr95_low": 0.33,
+      "cr95_high": 0.62,
       "p_gt_1": 0.0
     },
     {
       "cell": "generative ai",
-      "recent": 29,
-      "prior": 75,
-      "median": 0.39,
-      "cr95_low": 0.25,
-      "cr95_high": 0.59,
+      "recent": 32,
+      "prior": 76,
+      "median": 0.43,
+      "cr95_low": 0.28,
+      "cr95_high": 0.64,
       "p_gt_1": 0.0
+    },
+    {
+      "cell": "community",
+      "recent": 7,
+      "prior": 17,
+      "median": 0.43,
+      "cr95_low": 0.18,
+      "cr95_high": 0.98,
+      "p_gt_1": 0.022
     },
     {
       "cell": "virtual influencer",
@@ -446,15 +455,6 @@
       "cr95_low": 0.14,
       "cr95_high": 0.88,
       "p_gt_1": 0.011
-    },
-    {
-      "cell": "community",
-      "recent": 6,
-      "prior": 17,
-      "median": 0.38,
-      "cr95_low": 0.14,
-      "cr95_high": 0.88,
-      "p_gt_1": 0.012
     },
     {
       "cell": "email",
@@ -471,7 +471,7 @@
     "recent": "2025-08"
   },
   "corpus_totals": {
-    "recent_window": 1566,
-    "prior_window": 2365
+    "recent_window": 1609,
+    "prior_window": 2398
   }
 }

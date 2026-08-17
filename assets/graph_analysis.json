@@ -55,22 +55,23 @@
   {
    "id": "b2b",
    "name": "B2B",
-   "count": 280,
+   "count": 324,
    "trajectory": {
-    "2024": 51,
-    "2025": 104,
-    "2026": 125
+    "2023": 20,
+    "2024": 70,
+    "2025": 107,
+    "2026": 127
    },
    "momentum": {
     "id": "b2b",
     "name": "B2B",
-    "total": 280,
-    "recent": 161,
-    "prior": 95,
-    "growth_pct": 69.5,
-    "recent_share": 0.575,
-    "papers_per_month": 13.4,
-    "score": 127.0
+    "total": 324,
+    "recent": 164,
+    "prior": 97,
+    "growth_pct": 69.1,
+    "recent_share": 0.506,
+    "papers_per_month": 13.7,
+    "score": 119.7
    }
   },
   {
@@ -128,22 +129,22 @@
   {
    "id": "content-marketing",
    "name": "Content Marketing",
-   "count": 334,
+   "count": 386,
    "trajectory": {
-    "2024": 89,
-    "2025": 150,
-    "2026": 95
+    "2024": 95,
+    "2025": 177,
+    "2026": 114
    },
    "momentum": {
     "id": "content-marketing",
     "name": "Content Marketing",
-    "total": 334,
-    "recent": 152,
-    "prior": 139,
-    "growth_pct": 9.4,
-    "recent_share": 0.455,
-    "papers_per_month": 12.7,
-    "score": 54.9
+    "total": 386,
+    "recent": 183,
+    "prior": 158,
+    "growth_pct": 15.8,
+    "recent_share": 0.474,
+    "papers_per_month": 15.2,
+    "score": 63.2
    }
   },
   {
@@ -193,25 +194,25 @@
   {
    "id": "privacy-data",
    "name": "Privacy Data",
-   "count": 328,
+   "count": 365,
    "trajectory": {
     "2016": 1,
     "2019": 1,
-    "2024": 92,
-    "2025": 143,
-    "2026": 90,
+    "2024": 109,
+    "2025": 155,
+    "2026": 98,
     "2027": 1
    },
    "momentum": {
     "id": "privacy-data",
     "name": "Privacy Data",
-    "total": 328,
-    "recent": 137,
-    "prior": 144,
-    "growth_pct": -4.9,
-    "recent_share": 0.418,
-    "papers_per_month": 11.4,
-    "score": 36.9
+    "total": 365,
+    "recent": 149,
+    "prior": 157,
+    "growth_pct": -5.1,
+    "recent_share": 0.408,
+    "papers_per_month": 12.4,
+    "score": 35.7
    }
   },
   {
@@ -268,32 +269,32 @@
   {
    "id": "case-study",
    "name": "Case Study",
-   "count": 720
+   "count": 724
   },
   {
    "id": "empirical",
    "name": "Empirical",
-   "count": 1319
+   "count": 1334
   },
   {
    "id": "framework",
    "name": "Framework",
-   "count": 779
+   "count": 877
   },
   {
    "id": "measurement",
    "name": "Measurement",
-   "count": 840
+   "count": 844
   },
   {
    "id": "review",
    "name": "Review",
-   "count": 792
+   "count": 796
   },
   {
    "id": "theory",
    "name": "Theory",
-   "count": 618
+   "count": 626
   }
  ],
  "timeline": [
@@ -548,6 +549,176 @@
    "empirical"
   ],
   [
+   "2023-09",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2023-09",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2023-09",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2023-09",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2023-09",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2023-09",
+   "b2b",
+   "theory"
+  ],
+  [
+   "2023-10",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2023-10",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2023-10",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2023-10",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2023-10",
+   "b2b",
+   "theory"
+  ],
+  [
+   "2023-10",
+   "b2b",
+   "theory"
+  ],
+  [
+   "2023-10",
+   "b2b",
+   "theory"
+  ],
+  [
+   "2023-11",
+   "b2b",
+   "case-study"
+  ],
+  [
+   "2023-11",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2023-11",
+   "b2b",
+   "review"
+  ],
+  [
+   "2023-12",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2023-12",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2023-12",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2023-12",
+   "b2b",
+   "theory"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "case-study"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "case-study"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "case-study"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "review"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "review"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "theory"
+  ],
+  [
+   "2024-01",
+   "b2b",
+   "theory"
+  ],
+  [
    "2024-01",
    "consumer-behavior",
    "empirical"
@@ -604,6 +775,31 @@
   ],
   [
    "2024-02",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2024-02",
+   "b2b",
+   "empirical"
+  ],
+  [
+   "2024-02",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2024-02",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2024-02",
+   "b2b",
+   "framework"
+  ],
+  [
+   "2024-02",
    "brand",
    "empirical"
   ],
@@ -1050,6 +1246,11 @@
   [
    "2024-03",
    "content-marketing",
+   "framework"
+  ],
+  [
+   "2024-03",
+   "content-marketing",
    "review"
   ],
   [
@@ -2236,6 +2437,31 @@
    "2024-04",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2024-04",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-04",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-04",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-04",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-04",
+   "privacy-data",
+   "framework"
   ],
   [
    "2024-04",
@@ -3111,6 +3337,11 @@
    "2024-05",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2024-05",
+   "content-marketing",
+   "framework"
   ],
   [
    "2024-05",
@@ -4471,6 +4702,16 @@
    "2024-06",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2024-06",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-06",
+   "privacy-data",
+   "framework"
   ],
   [
    "2024-06",
@@ -5496,10 +5737,35 @@
    "2024-07",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2024-07",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-07",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-07",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-07",
+   "privacy-data",
+   "framework"
   ],
   [
    "2024-07",
    "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-07",
+   "privacy-data",
    "measurement"
   ],
   [
@@ -6346,6 +6612,21 @@
    "2024-08",
    "privacy-data",
    "case-study"
+  ],
+  [
+   "2024-08",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-08",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2024-08",
+   "privacy-data",
+   "framework"
   ],
   [
    "2024-08",
@@ -7286,6 +7567,11 @@
    "2024-09",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2024-09",
+   "privacy-data",
+   "framework"
   ],
   [
    "2024-09",
@@ -7981,6 +8267,16 @@
    "2024-10",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2024-10",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2024-10",
+   "content-marketing",
+   "framework"
   ],
   [
    "2024-10",
@@ -8271,6 +8567,11 @@
    "2024-10",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2024-10",
+   "privacy-data",
+   "framework"
   ],
   [
    "2024-10",
@@ -8956,6 +9257,11 @@
    "2024-11",
    "content-marketing",
    "case-study"
+  ],
+  [
+   "2024-11",
+   "content-marketing",
+   "framework"
   ],
   [
    "2024-11",
@@ -9876,6 +10182,11 @@
    "2024-12",
    "content-marketing",
    "case-study"
+  ],
+  [
+   "2024-12",
+   "content-marketing",
+   "framework"
   ],
   [
    "2024-12",
@@ -11156,6 +11467,11 @@
    "2025-01",
    "b2b",
    "review"
+  ],
+  [
+   "2025-01",
+   "b2b",
+   "theory"
   ],
   [
    "2025-01",
@@ -11656,6 +11972,26 @@
    "2025-01",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2025-01",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-01",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-01",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-01",
+   "content-marketing",
+   "framework"
   ],
   [
    "2025-01",
@@ -11671,6 +12007,11 @@
    "2025-01",
    "content-marketing",
    "measurement"
+  ],
+  [
+   "2025-01",
+   "content-marketing",
+   "review"
   ],
   [
    "2025-01",
@@ -12321,6 +12662,21 @@
    "2025-01",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2025-01",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2025-01",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2025-01",
+   "privacy-data",
+   "framework"
   ],
   [
    "2025-01",
@@ -13336,6 +13692,11 @@
    "2025-02",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2025-02",
+   "privacy-data",
+   "framework"
   ],
   [
    "2025-02",
@@ -14701,6 +15062,11 @@
    "2025-04",
    "b2b",
    "framework"
+  ],
+  [
+   "2025-04",
+   "b2b",
+   "measurement"
   ],
   [
    "2025-04",
@@ -14961,6 +15327,16 @@
    "2025-04",
    "content-marketing",
    "case-study"
+  ],
+  [
+   "2025-04",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-04",
+   "content-marketing",
+   "framework"
   ],
   [
    "2025-04",
@@ -15951,6 +16327,11 @@
    "2025-05",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2025-05",
+   "privacy-data",
+   "framework"
   ],
   [
    "2025-05",
@@ -16581,10 +16962,45 @@
    "2025-06",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2025-06",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-06",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-06",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-06",
+   "content-marketing",
+   "framework"
   ],
   [
    "2025-06",
    "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-06",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-06",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-06",
+   "content-marketing",
    "measurement"
   ],
   [
@@ -16820,6 +17236,11 @@
   [
    "2025-06",
    "privacy-data",
+   "framework"
+  ],
+  [
+   "2025-06",
+   "privacy-data",
    "measurement"
   ],
   [
@@ -17301,6 +17722,11 @@
    "2025-07",
    "content-marketing",
    "case-study"
+  ],
+  [
+   "2025-07",
+   "content-marketing",
+   "framework"
   ],
   [
    "2025-07",
@@ -17481,6 +17907,11 @@
    "2025-07",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2025-07",
+   "privacy-data",
+   "framework"
   ],
   [
    "2025-07",
@@ -17490,6 +17921,11 @@
   [
    "2025-07",
    "privacy-data",
+   "framework"
+  ],
+  [
+   "2025-07",
+   "privacy-data",
    "measurement"
   ],
   [
@@ -18056,6 +18492,11 @@
    "2025-08",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2025-08",
+   "privacy-data",
+   "framework"
   ],
   [
    "2025-08",
@@ -18491,6 +18932,11 @@
    "2025-09",
    "content-marketing",
    "case-study"
+  ],
+  [
+   "2025-09",
+   "content-marketing",
+   "framework"
   ],
   [
    "2025-09",
@@ -19121,6 +19567,36 @@
    "2025-10",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2025-10",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-10",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-10",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-10",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-10",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-10",
+   "content-marketing",
+   "framework"
   ],
   [
    "2025-10",
@@ -19981,6 +20457,11 @@
    "2025-11",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2025-11",
+   "privacy-data",
+   "framework"
   ],
   [
    "2025-11",
@@ -20340,6 +20821,11 @@
   [
    "2025-12",
    "b2b",
+   "measurement"
+  ],
+  [
+   "2025-12",
+   "b2b",
    "theory"
   ],
   [
@@ -20451,6 +20937,31 @@
    "2025-12",
    "content-marketing",
    "case-study"
+  ],
+  [
+   "2025-12",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-12",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-12",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-12",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2025-12",
+   "content-marketing",
+   "framework"
   ],
   [
    "2025-12",
@@ -20616,6 +21127,16 @@
    "2025-12",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2025-12",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2025-12",
+   "privacy-data",
+   "framework"
   ],
   [
    "2025-12",
@@ -21356,6 +21877,11 @@
    "2026-01",
    "b2b",
    "framework"
+  ],
+  [
+   "2026-01",
+   "b2b",
+   "measurement"
   ],
   [
    "2026-01",
@@ -21696,6 +22222,16 @@
    "2026-01",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2026-01",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-01",
+   "content-marketing",
+   "framework"
   ],
   [
    "2026-01",
@@ -22101,6 +22637,16 @@
    "2026-01",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2026-01",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2026-01",
+   "privacy-data",
+   "framework"
   ],
   [
    "2026-01",
@@ -22546,6 +23092,11 @@
    "2026-02",
    "b2b",
    "framework"
+  ],
+  [
+   "2026-02",
+   "b2b",
+   "measurement"
   ],
   [
    "2026-02",
@@ -22666,6 +23217,16 @@
    "2026-02",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2026-02",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-02",
+   "content-marketing",
+   "framework"
   ],
   [
    "2026-02",
@@ -22831,6 +23392,11 @@
    "2026-02",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2026-02",
+   "privacy-data",
+   "framework"
   ],
   [
    "2026-02",
@@ -23346,6 +23912,21 @@
    "2026-03",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2026-03",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2026-03",
+   "privacy-data",
+   "framework"
+  ],
+  [
+   "2026-03",
+   "privacy-data",
+   "framework"
   ],
   [
    "2026-03",
@@ -23696,6 +24277,16 @@
    "2026-04",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2026-04",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-04",
+   "content-marketing",
+   "framework"
   ],
   [
    "2026-04",
@@ -23821,6 +24412,11 @@
    "2026-04",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2026-04",
+   "privacy-data",
+   "framework"
   ],
   [
    "2026-04",
@@ -24221,6 +24817,16 @@
    "2026-05",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2026-05",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-05",
+   "content-marketing",
+   "framework"
   ],
   [
    "2026-05",
@@ -24746,6 +25352,21 @@
    "2026-06",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2026-06",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-06",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-06",
+   "content-marketing",
+   "framework"
   ],
   [
    "2026-06",
@@ -25221,6 +25842,21 @@
    "2026-07",
    "content-marketing",
    "empirical"
+  ],
+  [
+   "2026-07",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-07",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-07",
+   "content-marketing",
+   "framework"
   ],
   [
    "2026-07",
@@ -25230,6 +25866,31 @@
   [
    "2026-07",
    "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-07",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-07",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-07",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-07",
+   "content-marketing",
+   "framework"
+  ],
+  [
+   "2026-07",
+   "content-marketing",
    "measurement"
   ],
   [
@@ -25356,6 +26017,11 @@
    "2026-07",
    "privacy-data",
    "empirical"
+  ],
+  [
+   "2026-07",
+   "privacy-data",
+   "framework"
   ],
   [
    "2026-07",
@@ -25641,26 +26307,30 @@
  "venues": [
   {
    "name": "Zenodo (CERN European Organization for Nuclear Research)",
-   "papers": 118
+   "papers": 123
   },
   {
    "name": "SSRN Electronic Journal",
-   "papers": 109
+   "papers": 113
   },
   {
    "name": "Sustainability",
-   "papers": 76
+   "papers": 77
+  },
+  {
+   "name": "Journal of Business Research",
+   "papers": 44
   },
   {
    "name": "Journal of Retailing and Consumer Services",
    "papers": 42
   },
   {
-   "name": "Advances in marketing, customer relationship management, and e-services book series",
+   "name": "Industrial Marketing Management",
    "papers": 42
   },
   {
-   "name": "Journal of Business Research",
+   "name": "Advances in marketing, customer relationship management, and e-services book series",
    "papers": 42
   },
   {
@@ -25669,7 +26339,7 @@
   },
   {
    "name": "INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT",
-   "papers": 39
+   "papers": 40
   },
   {
    "name": "Journal of Marketing Analytics",
@@ -25677,7 +26347,7 @@
   },
   {
    "name": "International Journal For Multidisciplinary Research",
-   "papers": 37
+   "papers": 38
   },
   {
    "name": "Asia Pacific Journal of Marketing and Logistics",
@@ -25688,15 +26358,11 @@
    "papers": 33
   },
   {
-   "name": "Industrial Marketing Management",
-   "papers": 30
+   "name": "Journal of Business and Industrial Marketing",
+   "papers": 33
   },
   {
    "name": "Advances in Economics Management and Political Sciences",
-   "papers": 29
-  },
-  {
-   "name": "Psychology and Marketing",
    "papers": 29
   }
  ],
@@ -25705,92 +26371,92 @@
    "keyword": "agentic",
    "recent": 8,
    "total": 9,
-   "burst_score": 2.81,
-   "recent_share": 0.005
+   "burst_score": 2.8,
+   "recent_share": 0.0048
   },
   {
    "keyword": "hierarchical",
    "recent": 6,
    "total": 7,
-   "burst_score": 2.71,
-   "recent_share": 0.0037
+   "burst_score": 2.7,
+   "recent_share": 0.0036
   },
   {
    "keyword": "benchmark",
    "recent": 4,
    "total": 5,
-   "burst_score": 2.53,
-   "recent_share": 0.0025
+   "burst_score": 2.52,
+   "recent_share": 0.0024
   },
   {
    "keyword": "simulation",
    "recent": 6,
    "total": 9,
-   "burst_score": 2.11,
-   "recent_share": 0.0037
+   "burst_score": 2.1,
+   "recent_share": 0.0036
   },
   {
    "keyword": "scalable",
    "recent": 6,
    "total": 9,
-   "burst_score": 2.11,
-   "recent_share": 0.0037
+   "burst_score": 2.1,
+   "recent_share": 0.0036
   },
   {
    "keyword": "diffusion",
    "recent": 4,
    "total": 6,
-   "burst_score": 2.11,
-   "recent_share": 0.0025
+   "burst_score": 2.1,
+   "recent_share": 0.0024
   },
   {
    "keyword": "dataset",
    "recent": 9,
    "total": 14,
    "burst_score": 2.03,
-   "recent_share": 0.0056
+   "recent_share": 0.0055
   },
   {
    "keyword": "explainab",
    "recent": 9,
    "total": 14,
    "burst_score": 2.03,
-   "recent_share": 0.0056
+   "recent_share": 0.0055
   },
   {
    "keyword": "uncertainty",
-   "recent": 8,
-   "total": 14,
-   "burst_score": 1.8,
-   "recent_share": 0.005
+   "recent": 9,
+   "total": 15,
+   "burst_score": 1.89,
+   "recent_share": 0.0055
   },
   {
    "keyword": "bayesian",
    "recent": 9,
    "total": 16,
-   "burst_score": 1.78,
-   "recent_share": 0.0056
+   "burst_score": 1.77,
+   "recent_share": 0.0055
   },
   {
    "keyword": "agent",
    "recent": 20,
    "total": 36,
    "burst_score": 1.75,
-   "recent_share": 0.0125
+   "recent_share": 0.0121
   },
   {
    "keyword": "causal",
    "recent": 15,
    "total": 27,
    "burst_score": 1.75,
-   "recent_share": 0.0093
+   "recent_share": 0.0091
   },
   {
    "keyword": "federated",
-   "recent": 4,
-   "total": 8,
+   "recent": 7,
+   "total": 14,
    "burst_score": 1.58,
-   "recent_share": 0.0025
+   "recent_share": 0.0042
   },
   {
    "keyword": "retrieval",

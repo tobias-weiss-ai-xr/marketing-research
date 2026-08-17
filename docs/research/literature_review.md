@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-08-16  
-**Corpus:** 5,068 papers across 11 categories
+**Generated:** 2026-08-17  
+**Corpus:** 5,201 papers across 11 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -21,7 +21,7 @@
 | 8 | Digital & Performance Marketing | 428 |
 
 **Time span:** 1987–2027 (median year 2017)
-**Dominant aspects:** Empirical Studies (1319), Measurement & Methods (840), Reviews & Surveys (792)
+**Dominant aspects:** Empirical Studies (1334), Frameworks & Models (877), Measurement & Methods (844)
 
 ---
 
@@ -30,9 +30,9 @@
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
 | Analytics | 475 | 271 | 150 | +81% | 57% | 22.6 |
-| B2B | 280 | 161 | 95 | +70% | 57% | 13.4 |
-| Content Marketing | 334 | 152 | 139 | +9% | 46% | 12.7 |
-| Privacy Data | 328 | 137 | 144 | -5% | 42% | 11.4 |
+| B2B | 324 | 164 | 97 | +69% | 51% | 13.7 |
+| Content Marketing | 386 | 183 | 158 | +16% | 47% | 15.2 |
+| Privacy Data | 365 | 149 | 157 | -5% | 41% | 12.4 |
 | Cx Retail | 552 | 186 | 270 | -31% | 34% | 15.5 |
 | Ai Marketing | 574 | 149 | 303 | -51% | 26% | 12.4 |
 | Social Media | 524 | 118 | 242 | -51% | 22% | 9.8 |
@@ -47,14 +47,14 @@
 
 | Cell | Papers |
 |------|--------:|
-| `b2b/measurement` | 3 |
-| `privacy-data/framework` | 7 |
-| `content-marketing/framework` | 9 |
+| `b2b/measurement` | 7 |
 | `digital-marketing/review` | 29 |
 | `content-marketing/empirical` | 32 |
-| `b2b/theory` | 34 |
 | `analytics/theory` | 35 |
-| `b2b/review` | 38 |
+| `consumer-behavior/theory` | 41 |
+| `b2b/review` | 41 |
+| `content-marketing/measurement` | 42 |
+| `b2b/theory` | 42 |
 
 ---
 
@@ -159,7 +159,7 @@
 
 ### Content & Storytelling (`content-marketing`)
 
-**Corpus size:** 334 papers
+**Corpus size:** 386 papers
 
 **Recent papers:**
 
@@ -171,7 +171,7 @@
 
 ### Data, Privacy & Cookieless Advertising (`privacy-data`)
 
-**Corpus size:** 328 papers
+**Corpus size:** 365 papers
 
 **Recent papers:**
 
@@ -183,7 +183,7 @@
 
 ### B2B & Account-Based Marketing (`b2b`)
 
-**Corpus size:** 280 papers
+**Corpus size:** 324 papers
 
 **Recent papers:**
 
