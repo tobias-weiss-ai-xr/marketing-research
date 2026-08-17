@@ -4,10 +4,10 @@
 <h3 align="center">Latest marketing trends: AI & generative marketing, digital/performance, social & creator, privacy-first data, analytics/MMM, B2B/ABM</h3>
 
 <div align="center">
-  [![GitHub](https://img.shields.io/badge/GitHub-tobias-weiss-ai-xr/marketing--research-181717.svg?logo=github)](https://github.com/tobias-weiss-ai-xr/marketing-research)
-  [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-  [![CI](https://img.shields.io/github/actions/workflow/status/tobias-weiss-ai-xr/marketing--research/validate.yml?label=CI&logo=github)](https://github.com/tobias-weiss-ai-xr/marketing-research/actions/workflows/validate.yml)
-  [![Business Dev](https://img.shields.io/badge/Business Dev-business--development--research-blue.svg?logo=github)](https://github.com/tobias-weiss-ai-xr/business-development-research) [![AI Literacy](https://img.shields.io/badge/AI Literacy-ai--literacy--research-blue.svg?logo=github)](https://github.com/tobias-weiss-ai-xr/ai-literacy-research)
+  [**GitHub**](https://github.com/tobias-weiss-ai-xr/marketing-research)
+  [**License**](LICENSE)
+  [**CI**](https://github.com/tobias-weiss-ai-xr/marketing-research/actions/workflows/validate.yml)
+  [**Business Dev**](https://github.com/tobias-weiss-ai-xr/business-development-research) [**AI Literacy**](https://github.com/tobias-weiss-ai-xr/ai-literacy-research)
 </div>
 
 > 📢 **Marketing research corpus:** AI & generative marketing, digital & performance,
