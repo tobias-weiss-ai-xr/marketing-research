@@ -9,6 +9,7 @@ Usage:
     python3 scripts/generate_readme.py --check   # CI: fail if out of date
 """
 
+STATS_ONLY = False  # Set True to skip full paper list generation
 import argparse
 import json
 import sys
@@ -94,8 +95,8 @@ def render_paper_list(papers, cfg):
 def generate_readme(papers, readme_path, cfg, check_mode=False):
     readme_text = readme_path.read_text(encoding="utf-8")
 
-    start_marker = "## 📚 Paper list"
-    end_marker = "## 📖 Citation"
+    start_marker = "## 📚 Paper list"  # (paper list replaced with stats)
+    end_marker = "## 📖 Citation"  # (paper list replaced with stats)
 
     start_idx = readme_text.find(start_marker)
     end_idx = readme_text.find(end_marker)
