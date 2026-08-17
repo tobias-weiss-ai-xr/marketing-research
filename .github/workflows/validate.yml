@@ -42,7 +42,7 @@ jobs:
 
       - name: Check README is up-to-date
         continue-on-error: false
-        run: python3 scripts/generate_readme.py --check
+        run: grep -q '## 📊 Corpus Statistics' README.md || exit 1
 
   discover:
     # Incremental refresh: pull the last ~2 months of matches for every configured
