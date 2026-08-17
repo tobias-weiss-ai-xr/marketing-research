@@ -3,12 +3,14 @@
 </h1>
 <h3 align="center">Latest marketing trends: AI & generative marketing, digital/performance, social & creator, privacy-first data, analytics/MMM, B2B/ABM</h3>
 
-<div align="center">
-  [**GitHub**](https://github.com/tobias-weiss-ai-xr/marketing-research)
-  [**License**](LICENSE)
-  [**CI**](https://github.com/tobias-weiss-ai-xr/marketing-research/actions/workflows/validate.yml)
-  [**Business Dev**](https://github.com/tobias-weiss-ai-xr/business-development-research) [**AI Literacy**](https://github.com/tobias-weiss-ai-xr/ai-literacy-research)
-</div>
+### 🔗 Links
+
+- **GitHub**: https://github.com/tobias-weiss-ai-xr/marketing-research
+- **License**: https://github.com/tobias-weiss-ai-xr/marketing-research/blob/main/LICENSE
+- **CI**: https://github.com/tobias-weiss-ai-xr/marketing-research/actions/workflows/validate.yml
+- **Business Dev**: https://github.com/tobias-weiss-ai-xr/business-development-research
+- **AI Literacy**: https://github.com/tobias-weiss-ai-xr/ai-literacy-research
+
 
 > 📢 **Marketing research corpus:** AI & generative marketing, digital & performance,
 > social media & creator economy, content marketing, consumer behavior, brand,
