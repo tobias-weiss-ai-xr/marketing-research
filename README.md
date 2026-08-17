@@ -122,9 +122,9 @@ Full paper list: [GitHub Pages site](https://tobias-weiss-ai-xr.github.io/market
 
 | Year | Papers | |
 |------|--------|-|
+| 2024 | 2,035 | ███████░░░░░ |
 | 2025 | 2,087 | ███████░░░░░ |
-| 2026 | 3,185 | ████████████ |
-| 2027 | 1 | ░░░░░░░░░░░░ |
+| 2026 | 3,186 | ████████████ |
 
 
 ### Momentum (hottest categories)
@@ -178,7 +178,8 @@ Full paper list: [GitHub Pages site](https://tobias-weiss-ai-xr.github.io/market
 
 
 
-*Generated 2027-01 by `scripts/standard_stats.py`.*
+*Generated 2026-08 by `scripts/standard_stats.py`.*
+
 
 ## 📖 Citation
 

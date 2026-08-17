@@ -200,8 +200,7 @@
     "2019": 1,
     "2024": 109,
     "2025": 155,
-    "2026": 129,
-    "2027": 1
+    "2026": 130
    },
    "momentum": {
     "id": "privacy-data",
@@ -36646,7 +36645,7 @@
   [
    "2026-08",
    "privacy-data",
-   "framework"
+   "empirical"
   ],
   [
    "2026-08",
@@ -36666,7 +36665,7 @@
   [
    "2026-08",
    "privacy-data",
-   "review"
+   "framework"
   ],
   [
    "2026-08",
@@ -36676,6 +36675,11 @@
   [
    "2026-08",
    "privacy-data",
+   "review"
+  ],
+  [
+   "2026-08",
+   "privacy-data",
    "theory"
   ],
   [
@@ -37182,11 +37186,6 @@
    "2026-08",
    "survey",
    "theory"
-  ],
-  [
-   "2027-01",
-   "privacy-data",
-   "empirical"
   ]
  ],
  "venues": [

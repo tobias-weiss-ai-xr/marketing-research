@@ -18,6 +18,21 @@ import re
 import sys
 import time
 from datetime import datetime
+
+def clamp_future_date(yyyymm):
+    """QUALITY GATE: clamp a YYYY-MM date to today — no future dates allowed.
+    Forthcoming articles (e.g. 2027 book chapters from Crossref) are pulled back
+    to the current month instead of polluting the corpus with impossible dates."""
+    if not yyyymm or not isinstance(yyyymm, str) or len(yyyymm) < 7:
+        return yyyymm
+    try:
+        y, m = int(yyyymm[:4]), int(yyyymm[5:7])
+    except (ValueError, IndexError):
+        return yyyymm
+    now = datetime.now()
+    if (y, m) > (now.year, now.month):
+        return now.strftime("%Y-%m")
+    return yyyymm
 from pathlib import Path
 
 import requests
@@ -161,7 +176,7 @@ def fetch_dblp(query, max_results=20):
                     break
             results.append({
                 "title": title,
-                "date": f"{year}-01" if year and year.isdigit() else "",
+                "date": clamp_future_date(f"{year}-01" if year and year.isdigit() else ""),
                 "url": url, "authors": authors, "abstract": "",
                 "venue": venue, "doi": doi,
             })
@@ -206,7 +221,7 @@ def fetch_crossref(query, max_results=10):
             if title:
                 results.append({
                     "title": title,
-                    "date": (f"{year}-{month}" if year.isdigit() else ""),
+                    "date": clamp_future_date(f"{year}-{month}" if year.isdigit() else ""),
                     "url": url, "authors": authors,
                     "abstract": abstract[:300], "venue": venue, "doi": doi,
                 })
@@ -250,7 +265,7 @@ def fetch_europe_pmc(query, max_results=10):
                 url = ""
             results.append({
                 "title": title,
-                "date": f"{year}-01" if year and year.isdigit() else "",
+                "date": clamp_future_date(f"{year}-01" if year and year.isdigit() else ""),
                 "url": url, "authors": authors,
                 "abstract": abstract[:300], "venue": src, "doi": doi,
             })
@@ -292,7 +307,7 @@ def append_to_yaml(yaml_path, new_papers):
     for e in new_papers:
         entry = {
             "title": e["title"],
-            "date": e.get("date", ""),
+            "date": clamp_future_date(e.get("date", "")),
             "url": e["url"],
             "category": e["category"],
             "subcategory": e["subcategory"],
