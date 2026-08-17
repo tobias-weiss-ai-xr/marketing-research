@@ -104,8 +104,7 @@ jobs:
 
       - name: Generate papers.json + stats
         run: |
-          python3 scripts/generate_readme.py
-          python3 scripts/standard_stats.py
+          python3 scripts/generate_readme.py --skip-readme
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3

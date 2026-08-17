@@ -149,6 +149,9 @@ def main():
     parser.add_argument(
         "--skip-json", action="store_true", help="Skip generating papers.json"
     )
+    parser.add_argument(
+        "--skip-readme", action="store_true", help="Skip regenerating README.md (write papers.json only)"
+    )
     args = parser.parse_args()
 
     base = Path(__file__).parent.parent
@@ -159,7 +162,8 @@ def main():
     papers = research_config.load_papers(papers_yaml)
     cfg = research_config.load_config()
 
-    generate_readme(papers, readme_path, cfg, check_mode=args.check)
+    if not args.skip_readme:
+        generate_readme(papers, readme_path, cfg, check_mode=args.check)
 
     if not args.check and not args.skip_json:
         generate_json(papers, json_path)
