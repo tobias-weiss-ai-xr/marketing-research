@@ -37259,102 +37259,102 @@
    "recent_share": 0.005
   },
   {
-   "keyword": "diffusion",
-   "recent": 17,
-   "total": 19,
-   "burst_score": 1.72,
-   "recent_share": 0.0044
+   "keyword": "incrementality",
+   "recent": 7,
+   "total": 10,
+   "burst_score": 1.35,
+   "recent_share": 0.0018
   },
   {
-   "keyword": "dataset",
-   "recent": 39,
-   "total": 44,
-   "burst_score": 1.71,
-   "recent_share": 0.0102
+   "keyword": "genai",
+   "recent": 31,
+   "total": 46,
+   "burst_score": 1.3,
+   "recent_share": 0.0081
   },
   {
-   "keyword": "hierarchical",
-   "recent": 8,
-   "total": 9,
-   "burst_score": 1.71,
-   "recent_share": 0.0021
+   "keyword": "creator",
+   "recent": 30,
+   "total": 45,
+   "burst_score": 1.28,
+   "recent_share": 0.0078
   },
   {
-   "keyword": "benchmark",
-   "recent": 6,
-   "total": 7,
-   "burst_score": 1.65,
-   "recent_share": 0.0016
+   "keyword": "cx",
+   "recent": 32,
+   "total": 49,
+   "burst_score": 1.26,
+   "recent_share": 0.0084
   },
   {
-   "keyword": "explainab",
-   "recent": 16,
-   "total": 21,
-   "burst_score": 1.47,
-   "recent_share": 0.0042
-  },
-  {
-   "keyword": "uncertainty",
+   "keyword": "account-based",
    "recent": 18,
-   "total": 24,
-   "burst_score": 1.45,
+   "total": 28,
+   "burst_score": 1.24,
    "recent_share": 0.0047
   },
   {
-   "keyword": "scalable",
-   "recent": 9,
-   "total": 12,
-   "burst_score": 1.45,
-   "recent_share": 0.0024
+   "keyword": "llm",
+   "recent": 26,
+   "total": 41,
+   "burst_score": 1.22,
+   "recent_share": 0.0068
   },
   {
-   "keyword": "reward",
-   "recent": 3,
-   "total": 4,
-   "burst_score": 1.45,
-   "recent_share": 0.0008
+   "keyword": "tiktok",
+   "recent": 94,
+   "total": 153,
+   "burst_score": 1.18,
+   "recent_share": 0.0246
   },
   {
-   "keyword": "multi-agent",
-   "recent": 3,
-   "total": 4,
-   "burst_score": 1.45,
-   "recent_share": 0.0008
-  },
-  {
-   "keyword": "agent",
-   "recent": 46,
-   "total": 62,
-   "burst_score": 1.43,
-   "recent_share": 0.012
-  },
-  {
-   "keyword": "simulation",
-   "recent": 8,
-   "total": 11,
-   "burst_score": 1.4,
-   "recent_share": 0.0021
-  },
-  {
-   "keyword": "retrieval",
-   "recent": 5,
-   "total": 7,
-   "burst_score": 1.38,
-   "recent_share": 0.0013
-  },
-  {
-   "keyword": "causal",
+   "keyword": "experiment",
    "recent": 24,
-   "total": 36,
-   "burst_score": 1.28,
+   "total": 40,
+   "burst_score": 1.16,
    "recent_share": 0.0063
   },
   {
-   "keyword": "memory",
-   "recent": 4,
-   "total": 6,
-   "burst_score": 1.28,
-   "recent_share": 0.001
+   "keyword": "abm",
+   "recent": 12,
+   "total": 20,
+   "burst_score": 1.16,
+   "recent_share": 0.0031
+  },
+  {
+   "keyword": "first-party",
+   "recent": 6,
+   "total": 10,
+   "burst_score": 1.16,
+   "recent_share": 0.0016
+  },
+  {
+   "keyword": "attribution",
+   "recent": 36,
+   "total": 61,
+   "burst_score": 1.14,
+   "recent_share": 0.0094
+  },
+  {
+   "keyword": "short-form",
+   "recent": 12,
+   "total": 21,
+   "burst_score": 1.1,
+   "recent_share": 0.0031
+  },
+  {
+   "keyword": "sustainability",
+   "recent": 128,
+   "total": 231,
+   "burst_score": 1.07,
+   "recent_share": 0.0334
+  },
+  {
+   "keyword": "recommend",
+   "recent": 55,
+   "total": 99,
+   "burst_score": 1.07,
+   "recent_share": 0.0144
   }
  ]
 }

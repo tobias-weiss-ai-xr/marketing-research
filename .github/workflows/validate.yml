@@ -48,7 +48,12 @@ jobs:
     # Incremental refresh: pull the last ~2 months of matches for every configured
     # OpenAlex query, de-duplicate, auto-classify, and commit. The marketing corpus
     # is OpenAlex/DOI-based (arXiv is a tiny slice), so this keeps it current.
+    # Own concurrency group: the commit below triggers a new run, and we must NOT
+    # let that cancel this job mid-push (would intermittently break weekly refresh).
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: discover-${{ github.ref }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -68,6 +73,9 @@ jobs:
           OPENALEX_MAILTO: research@tobias-weiss-ai-xr.de
         run: python3 scripts/fetch/fetch_openalex_bulk.py --months 2 --per-category 20 --sleep 2
 
+      - name: Regenerate stats + README section
+        run: python3 scripts/standard_stats.py
+
       - name: Validate papers.yaml
         run: python3 scripts/validate_papers.py
 
@@ -76,8 +84,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet papers.yaml; then echo "no new papers"; exit 0; fi
-          git add papers.yaml
+          if git diff --quiet papers.yaml README.md assets/graph_analysis.json; then echo "no new papers"; exit 0; fi
+          git add papers.yaml README.md assets/graph_analysis.json
           git commit -m "Weekly OpenAlex refresh (auto)"
           git push origin main
 
