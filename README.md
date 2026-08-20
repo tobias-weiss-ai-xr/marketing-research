@@ -97,24 +97,24 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 
 ## 📊 Corpus Statistics
 
-**7,378 papers** across **11 categories**.
-Sources: **arXiv** 46 (1%) · **DOI** 7017 (95%) · **Other** 315 (4%).
+**7,521 papers** across **11 categories**.
+Sources: **arXiv** 46 (1%) · **DOI** 7156 (95%) · **Other** 319 (4%).
 Full paper list: [GitHub Pages site](https://tobias-weiss-ai-xr.github.io/marketing-research).
 
 ### Top categories
 
 | Category | Papers | Recent | |
 |----------|--------|--------|-
-| ai-marketing | **886** | 461 | ████████████ |
-| consumer-behavior | **871** | 463 | ████████████ |
-| brand | **857** | 441 | ████████████ |
-| social-media | **839** | 433 | ███████████░ |
-| survey | **808** | 402 | ███████████░ |
-| cx-retail | **799** | 433 | ███████████░ |
-| digital-marketing | **647** | 307 | █████████░░░ |
-| analytics | **508** | 304 | ███████░░░░░ |
-| content-marketing | **437** | 234 | ██████░░░░░░ |
-| privacy-data | **396** | 180 | █████░░░░░░░ |
+| ai-marketing | **910** | 485 | ████████████ |
+| consumer-behavior | **889** | 481 | ████████████ |
+| brand | **882** | 466 | ████████████ |
+| social-media | **859** | 453 | ███████████░ |
+| survey | **825** | 419 | ███████████░ |
+| cx-retail | **814** | 448 | ███████████░ |
+| digital-marketing | **660** | 320 | █████████░░░ |
+| analytics | **513** | 309 | ███████░░░░░ |
+| content-marketing | **441** | 238 | ██████░░░░░░ |
+| privacy-data | **398** | 182 | █████░░░░░░░ |
 | b2b | **330** | 170 | ████░░░░░░░░ |
 
 ### By year
@@ -139,43 +139,43 @@ Full paper list: [GitHub Pages site](https://tobias-weiss-ai-xr.github.io/market
 | 2021 | 6 | ░░░░░░░░░░░░ |
 | 2022 | 2 | ░░░░░░░░░░░░ |
 | 2023 | 32 | ░░░░░░░░░░░░ |
-| 2024 | 2035 | ████████░░░░ |
+| 2024 | 2035 | ███████░░░░░ |
 | 2025 | 2087 | ████████░░░░ |
-| 2026 | 3186 | ████████████ |
+| 2026 | 3329 | ████████████ |
 
 ### Momentum (hottest categories)
 
 | Category | Total | Rate | Recent | Score |
 |----------|-------|------|--------|-------|
-| analytics | 508 | 25.3/mo | 59% | 162.5 |
-| consumer-behavior | 871 | 38.6/mo | 53% | 132.0 |
-| social-media | 839 | 36.1/mo | 51% | 130.5 |
+| analytics | 513 | 25.8/mo | 60% | 166.2 |
+| social-media | 859 | 37.8/mo | 52% | 139.9 |
+| consumer-behavior | 889 | 40.1/mo | 54% | 139.8 |
 | b2b | 330 | 14.2/mo | 51% | 126.8 |
-| cx-retail | 799 | 36.1/mo | 54% | 114.6 |
+| brand | 882 | 38.8/mo | 52% | 122.9 |
 
 ### Trending keywords
 
 | Keyword | Papers | Burst |
 |---------|--------|-------|
-| agentic | 20 | 1.83 |
-| incrementality | 10 | 1.35 |
-| genai | 46 | 1.3 |
-| creator | 45 | 1.28 |
-| cx | 49 | 1.26 |
-| account-based | 28 | 1.24 |
-| llm | 41 | 1.22 |
-| tiktok | 153 | 1.18 |
+| agentic | 20 | 1.8 |
+| incrementality | 10 | 1.33 |
+| genai | 46 | 1.28 |
+| creator | 45 | 1.26 |
+| cx | 49 | 1.24 |
+| account-based | 28 | 1.22 |
+| llm | 41 | 1.2 |
+| tiktok | 156 | 1.18 |
 
 ### Top venues
 
 | Venue | Papers |
 |-------|--------|
-| Zenodo (CERN European Organization for Nuclear Research) | 425 |
+| Zenodo (CERN European Organization for Nuclear Research) | 446 |
 | SSRN Electronic Journal | 113 |
 | Sustainability | 80 |
-| Journal of theoretical and applied electronic commerce research | 58 |
-| International Journal For Multidisciplinary Research | 49 |
-| Journal of Marketing Analytics | 49 |
+| Journal of theoretical and applied electronic commerce research | 59 |
+| International Journal For Multidisciplinary Research | 50 |
+| Journal of Marketing Analytics | 50 |
 | Journal of Business Research | 49 |
 | Journal of Retailing and Consumer Services | 48 |
 
