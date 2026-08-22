@@ -210,7 +210,8 @@ def append_papers(yaml_path, new_papers):
 
 def main():
     parser = argparse.ArgumentParser(description="Bulk-fetch papers from OpenAlex per category (config-driven)")
-    parser.add_argument("--months", type=int, default=36)
+    parser.add_argument("--months", type=int, default=1)
+    parser.add_argument("--full-history", action="store_true", help="Use --months 6 for initial fetch")
     parser.add_argument("--per-category", type=int, default=500)
     parser.add_argument("--sleep", type=float, default=1.5)
     parser.add_argument("--dry-run", action="store_true")
@@ -234,9 +235,11 @@ def main():
     else:
         terms_list = category_terms
 
+    # Use 6 months if --full-history, otherwise use args.months
+    months = 6 if args.full_history else args.months
     for cat, terms in terms_list:
         print(f"\n=== [{cat}] {terms} ===", flush=True)
-        entries = fetch_category(terms, args.months, args.per_category, args.sleep, subcat_keywords, mailto)
+        entries = fetch_category(terms, months, args.per_category, args.sleep, subcat_keywords, mailto)
         new = []
         for e in entries:
             m = ARXIV_ID_PATTERN.search(e["url"])
