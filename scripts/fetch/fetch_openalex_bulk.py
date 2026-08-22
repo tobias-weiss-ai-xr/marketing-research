@@ -292,7 +292,7 @@ def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mai
         results = data.get("results", [])
         cursor = data.get("meta", {}).get("next_cursor")
         if not results:
-            print(f"  Category '{cat}' has no results, skipping", flush=True)
+            print(f"  Query '{terms}' has no results, skipping", flush=True)
             break
         for work in results:
             title = work.get("title") or ""
