@@ -211,7 +211,7 @@ def append_papers(yaml_path, new_papers):
 def main():
     parser = argparse.ArgumentParser(description="Bulk-fetch papers from OpenAlex per category (config-driven)")
     parser.add_argument("--months", type=int, default=36)
-    parser.add_argument("--per-category", type=int, default=100)
+    parser.add_argument("--per-category", type=int, default=500)
     parser.add_argument("--sleep", type=float, default=1.5)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--categories", default=None, help="Comma-separated subset of category keys")
