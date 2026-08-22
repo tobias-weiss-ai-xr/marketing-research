@@ -360,7 +360,11 @@ def main():
     except ImportError:
         print("Using built-in classify_subcategory", flush=True)
 
-    yaml_path = BASE / "papers.yaml"
+    # Use local papers.yaml if --local flag is set
+    if args.local:
+        yaml_path = Path("papers.yaml")
+    else:
+        yaml_path = BASE / "papers.yaml"
     by_id, titles_lower = load_existing_papers(yaml_path)
     print(f"Loaded {len(titles_lower)} existing papers", flush=True)
 
