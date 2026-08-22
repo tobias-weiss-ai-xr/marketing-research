@@ -114,6 +114,9 @@ def reconstruct_abstract(inverted):
 
 def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mailto=None):
     """Cursor-paginated, relevance-sorted fetch for one category."""
+    import requests
+    session = requests.Session()
+    session.headers.update({"User-Agent": "research-runner/1.0"})
     entries = []
     cursor = "*"
     search_filter = f"title_and_abstract.search:{terms}"
@@ -123,16 +126,16 @@ def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mai
                 f"from_publication_date:{date_filter(months)},"
                 f"{search_filter}"
             ),
-            "per-page": 100,
+            "per-page": 200,
             "mailto": mailto or "research@tobias-weiss-ai-xr.de",
             "cursor": cursor,
         }
         data = None
         for attempt in range(4):
             try:
-                resp = requests.get(OPENALEX_API, params=params, timeout=30)
+                resp = session.get(OPENALEX_API, params=params, timeout=30)
                 if resp.status_code == 429:
-                    wait = 5 * (attempt + 1)
+                    wait = int(resp.headers.get('Retry-After', 5 * (attempt + 1)))
                     print(f"    rate-limited (429), waiting {wait}s...", flush=True)
                     time.sleep(wait)
                     continue
@@ -209,7 +212,7 @@ def main():
     parser = argparse.ArgumentParser(description="Bulk-fetch papers from OpenAlex per category (config-driven)")
     parser.add_argument("--months", type=int, default=36)
     parser.add_argument("--per-category", type=int, default=100)
-    parser.add_argument("--sleep", type=float, default=5.0)
+    parser.add_argument("--sleep", type=float, default=1.5)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--categories", default=None, help="Comma-separated subset of category keys")
 
