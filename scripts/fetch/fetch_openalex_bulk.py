@@ -10,6 +10,8 @@ Usage:
 """
 
 import argparse
+import hashlib
+import pickle
 import re
 import time
 from datetime import datetime, timedelta, timezone
@@ -18,6 +20,10 @@ import sys
 
 import requests
 import yaml
+
+# Cache configuration
+CACHE_DIR = Path.home() / ".cache" / "research-runner" / "openalex"
+CACHE_TTL = 86400  # 24 hours
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -112,11 +118,147 @@ def reconstruct_abstract(inverted):
     return " ".join(pos[i] for i in sorted(pos))
 
 
-def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mailto=None):
+def get_cache_key(query, params):
+    """Generate cache key for a query."""
+    key_str = f"{query}:{params.get('filter', '')}:{params.get('per-page', '')}"
+    return hashlib.md5(key_str.encode()).hexdigest()
+
+def get_cached(query, params):
+    """Get cached response if valid."""
+    cache_file = CACHE_DIR / f"{get_cache_key(query, params)}.pkl"
+    if cache_file.exists():
+        mtime = cache_file.stat().st_mtime
+        if time.time() - mtime < CACHE_TTL:
+            try:
+                with open(cache_file, 'rb') as f:
+                    return pickle.load(f)
+            except Exception:
+                pass
+    return None
+
+def cache_response(query, params, data):
+    """Cache API response."""
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    cache_file = CACHE_DIR / f"{get_cache_key(query, params)}.pkl"
+    with open(cache_file, 'wb') as f:
+        pickle.dump(data, f)
+
+
+def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mailto=None, use_cache=True):
     """Cursor-paginated, relevance-sorted fetch for one category."""
     import requests
     session = requests.Session()
     session.headers.update({"User-Agent": "research-runner/1.0"})
+    
+    # Try cache first
+    search_filter = f"title_and_abstract.search:{terms}"
+    cache_params = {
+        "filter": f"from_publication_date:{date_filter(months)},{search_filter}",
+        "per-page": 200,
+        "mailto": mailto or "research@tobias-weiss-ai-xr.de",
+        "cursor": "*"
+    }
+    
+    if use_cache:
+        cached = get_cached(search_filter, cache_params)
+        if cached:
+            print(f"  Using cached response", flush=True)
+            results = cached.get("results", [])
+            cursor = cached.get("meta", {}).get("next_cursor")
+            # Process cached results
+            entries = []
+            for work in results[:per_category]:
+                title = work.get("title") or ""
+                if not title:
+                    continue
+                url = ""
+                for loc in work.get("locations", []):
+                    src = (loc.get("source") or {}).get("id", "")
+                    lurl = loc.get("landing_page_url") or ""
+                    if "arxiv" in src or "arxiv" in lurl:
+                        url = lurl.replace("http://", "https://").replace("https://arxiv.org/abs/", "https://arxiv.org/abs/")
+                        url = re.sub(r"(arxiv\.org/abs/\d{4}\.\d{4,5})v\d+", r"\1", url)
+                        break
+                if not url:
+                    primary = work.get("primary_location") or {}
+                    url = (primary.get("landing_page_url") or "").replace("http://", "https://")
+                if not url:
+                    url = work.get("doi") or ""
+                if not url:
+                    continue
+                mdoi = re.match(r"https?://doi\.org/10\.48550/arxiv\.(\d{4}\.\d{4,5})", url)
+                if mdoi:
+                    url = "https://arxiv.org/abs/" + mdoi.group(1)
+                date = sanitize_date(work.get("publication_date") or "")
+                if not date:
+                    date = sanitize_date(str(work.get("publication_year") or ""))
+                abstract = reconstruct_abstract(work.get("abstract_inverted_index"))
+                entries.append({
+                    "title": title,
+                    "date": date,
+                    "url": url,
+                    "category": None,
+                    "subcategory": classify_subcategory(title, abstract, subcat_keywords),
+                    "authors": [a.get("author", {}).get("display_name", "") for a in work.get("authorships", [])][:3],
+                    "abstract": abstract,
+                    "venue": ((work.get("primary_location") or {}).get("source") or {}).get("display_name") or "",
+                })
+            # Check if we need to continue pagination
+            while len(entries) < per_category and cursor:
+                params = {
+                    "filter": f"from_publication_date:{date_filter(months)},{search_filter}",
+                    "per-page": 200,
+                    "mailto": mailto or "research@tobias-weiss-ai-xr.de",
+                    "cursor": cursor,
+                }
+                resp = session.get(OPENALEX_API, params=params, timeout=30)
+                if resp.status_code == 429:
+                    wait = int(resp.headers.get('Retry-After', 5))
+                    time.sleep(wait)
+                    continue
+                data = resp.json()
+                results = data.get("results", [])
+                cursor = data.get("meta", {}).get("next_cursor")
+                for work in results:
+                    if len(entries) >= per_category:
+                        break
+                    title = work.get("title") or ""
+                    if not title:
+                        continue
+                    url = ""
+                    for loc in work.get("locations", []):
+                        src = (loc.get("source") or {}).get("id", "")
+                        lurl = loc.get("landing_page_url") or ""
+                        if "arxiv" in src or "arxiv" in lurl:
+                            url = lurl.replace("http://", "https://").replace("https://arxiv.org/abs/", "https://arxiv.org/abs/")
+                            url = re.sub(r"(arxiv\.org/abs/\d{4}\.\d{4,5})v\d+", r"\1", url)
+                            break
+                    if not url:
+                        primary = work.get("primary_location") or {}
+                        url = (primary.get("landing_page_url") or "").replace("http://", "https://")
+                    if not url:
+                        url = work.get("doi") or ""
+                    if not url:
+                        continue
+                    mdoi = re.match(r"https?://doi\.org/10\.48550/arxiv\.(\d{4}\.\d{4,5})", url)
+                    if mdoi:
+                        url = "https://arxiv.org/abs/" + mdoi.group(1)
+                    date = sanitize_date(work.get("publication_date") or "")
+                    if not date:
+                        date = sanitize_date(str(work.get("publication_year") or ""))
+                    abstract = reconstruct_abstract(work.get("abstract_inverted_index"))
+                    entries.append({
+                        "title": title,
+                        "date": date,
+                        "url": url,
+                        "category": None,
+                        "subcategory": classify_subcategory(title, abstract, subcat_keywords),
+                        "authors": [a.get("author", {}).get("display_name", "") for a in work.get("authorships", [])][:3],
+                        "abstract": abstract,
+                        "venue": ((work.get("primary_location") or {}).get("source") or {}).get("display_name") or "",
+                    })
+            return entries[:per_category]
+    
     entries = []
     cursor = "*"
     search_filter = f"title_and_abstract.search:{terms}"
