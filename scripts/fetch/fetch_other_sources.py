@@ -273,10 +273,138 @@ def fetch_europe_pmc(query, max_results=10):
     return fetch_with_retry(_do)
 
 
+def fetch_semantic_scholar(query, max_results=12):
+    """Discover papers from Semantic Scholar (free API, no key required for
+    the public graph endpoint). Rich coverage of AI/music venues."""
+    def _do():
+        r = session.get(
+            "https://api.semanticscholar.org/graph/v1/paper/search",
+            params={"query": query, "limit": str(max_results),
+                    "fields": "title,year,externalIds,abstract,venue,authors,abstract,openAccessPdf"},
+            timeout=30,
+        )
+        r.raise_for_status()
+        hits = r.json().get("data", [])
+        results = []
+        for h in hits:
+            title = h.get("title", "")
+            if not title:
+                continue
+            year = h.get("year")
+            doi = (h.get("externalIds") or {}).get("DOI", "")
+            arxiv_id = (h.get("externalIds") or {}).get("ArXiv", "")
+            pdf = (h.get("openAccessPdf") or {}).get("url", "")
+            url = pdf or ""
+            if doi:
+                url = f"https://doi.org/{doi}"
+            elif arxiv_id:
+                url = f"https://arxiv.org/abs/{arxiv_id}"
+            elif pdf:
+                url = pdf
+            if not url:
+                continue
+            authors = [a.get("name", "") for a in (h.get("authors") or [])[:3]]
+            results.append({
+                "title": title,
+                "date": clamp_future_date(f"{year}-01" if year else ""),
+                "url": url, "authors": authors,
+                "abstract": (h.get("abstract") or "")[:300],
+                "venue": h.get("venue") or "", "doi": doi or "",
+            })
+        return results
+    return fetch_with_retry(_do)
+
+
+def fetch_openalex(query, max_results=12):
+    """Discover papers from OpenAlex — broad scholarly coverage including
+    preprints, theses, and cross-domain music work."""
+    def _do():
+        r = session.get(
+            "https://api.openalex.org/works",
+            params={"search": query, "per-page": str(max_results),
+                    "mailto": os.environ.get("OPENALEX_MAILTO", "")},
+            timeout=30,
+        )
+        r.raise_for_status()
+        hits = r.json().get("results", [])
+        results = []
+        for w in hits:
+            title = w.get("title", "") or ""
+            if not title:
+                continue
+            doi = (w.get("doi") or "").replace("https://doi.org/", "") or ""
+            oa = (w.get("open_access") or {}).get("oa_url", "") or ""
+            url = oa or ""
+            if doi:
+                url = f"https://doi.org/{doi}"
+            if not url:
+                url = f"https://api.openalex.org/works/{(w.get('id') or '').rsplit('/', 1)[-1]}"
+            pub_year = (w.get("publication_date") or "")[:4]
+            authorships = w.get("authorships", []) or []
+            authors = []
+            for a in authorships[:4]:
+                if not isinstance(a, dict):
+                    continue
+                author = a.get("author") or {}
+                nm = author.get("display_name", "")
+                if nm:
+                    authors.append(nm)
+            results.append({
+                "title": title,
+                "date": clamp_future_date(f"{pub_year}-01" if pub_year.isdigit() else ""),
+                "url": url, "authors": authors[:3],
+                "abstract": "",
+                "venue": ((w.get("primary_location") or {}).get("source") or {}).get("display_name", "") or "",
+                "doi": doi,
+            })
+        return results
+    return fetch_with_retry(_do)
+
+
+def fetch_zenodo(query, max_results=12):
+    """Discover papers/datasets from Zenodo (free API, no key for public
+    records). Music-specific: hosts ISMIR proceedings and MIR datasets
+    (MAESTRO, Lakh, FMA, etc.)."""
+    def _do():
+        r = session.get(
+            "https://zenodo.org/api/records",
+            params={"q": query, "size": str(max_results),
+                    "type": "publication"},
+            timeout=30,
+        )
+        r.raise_for_status()
+        hits = r.json().get("hits", {}).get("hits", [])
+        results = []
+        for h in hits:
+            meta = h.get("metadata", {}) or {}
+            title = meta.get("title", "") or ""
+            if not title:
+                continue
+            doi = h.get("doi", "") or ""
+            pub_date = (meta.get("publication_date") or "")[:4]
+            creators = meta.get("creators", []) or []
+            authors = [c.get("name", "") for c in creators[:3]]
+            desc = (meta.get("description") or "")[:300]
+            # strip html tags from description
+            desc = re.sub(r"<[^>]+>", " ", desc)
+            url = f"https://doi.org/{doi}" if doi else h.get("links", {}).get("self", h.get("id", ""))
+            results.append({
+                "title": title,
+                "date": clamp_future_date(f"{pub_date}-01" if pub_date.isdigit() else ""),
+                "url": url, "authors": authors,
+                "abstract": desc, "venue": "Zenodo", "doi": doi,
+            })
+        return results
+    return fetch_with_retry(_do)
+
+
 FETCHERS = {
     "dblp": fetch_dblp,
     "crossref": fetch_crossref,
     "europepmc": fetch_europe_pmc,
+    "semantic_scholar": fetch_semantic_scholar,
+    "openalex": fetch_openalex,
+    "zenodo": fetch_zenodo,
 }
 
 
@@ -338,6 +466,8 @@ def main():
     parser.add_argument("--config", type=str, default=None,
                         help="Path to query config YAML (default: "
                              "config/other_sources_queries.yaml)")
+    parser.add_argument("--local", action="store_true",
+                        help="Write to local ./papers.yaml instead of repo BASE")
     args = parser.parse_args()
 
     config_path = Path(args.config) if args.config else DEFAULT_CONFIG
