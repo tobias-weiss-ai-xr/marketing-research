@@ -1,0 +1,717 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "term": "AI & Marketing",
+      "kind": "taxonomy",
+      "df": 910
+    },
+    {
+      "id": 1,
+      "term": "Consumer Behavior & Psychology",
+      "kind": "taxonomy",
+      "df": 889
+    },
+    {
+      "id": 2,
+      "term": "Brand Strategy & Management",
+      "kind": "taxonomy",
+      "df": 882
+    },
+    {
+      "id": 3,
+      "term": "Social Media & Creator Marketing",
+      "kind": "taxonomy",
+      "df": 859
+    },
+    {
+      "id": 4,
+      "term": "Surveys, Trends & Meta-Studies",
+      "kind": "taxonomy",
+      "df": 825
+    },
+    {
+      "id": 5,
+      "term": "Customer Experience, Omnichannel & Retail",
+      "kind": "taxonomy",
+      "df": 814
+    },
+    {
+      "id": 6,
+      "term": "Digital & Performance Marketing",
+      "kind": "taxonomy",
+      "df": 660
+    },
+    {
+      "id": 7,
+      "term": "framework",
+      "kind": "curated",
+      "df": 521
+    },
+    {
+      "id": 8,
+      "term": "Analytics, Attribution & Measurement",
+      "kind": "taxonomy",
+      "df": 513
+    },
+    {
+      "id": 9,
+      "term": "Content & Storytelling",
+      "kind": "taxonomy",
+      "df": 441
+    },
+    {
+      "id": 10,
+      "term": "case study",
+      "kind": "curated",
+      "df": 436
+    },
+    {
+      "id": 11,
+      "term": "Data, Privacy & Cookieless Advertising",
+      "kind": "taxonomy",
+      "df": 398
+    },
+    {
+      "id": 12,
+      "term": "literature review",
+      "kind": "curated",
+      "df": 332
+    },
+    {
+      "id": 13,
+      "term": "B2B & Account-Based Marketing",
+      "kind": "taxonomy",
+      "df": 330
+    },
+    {
+      "id": 14,
+      "term": "systematic review",
+      "kind": "curated",
+      "df": 173
+    },
+    {
+      "id": 15,
+      "term": "qualitative",
+      "kind": "curated",
+      "df": 91
+    },
+    {
+      "id": 16,
+      "term": "quantitative",
+      "kind": "curated",
+      "df": 76
+    },
+    {
+      "id": 17,
+      "term": "survey",
+      "kind": "curated",
+      "df": 68
+    },
+    {
+      "id": 18,
+      "term": "dataset",
+      "kind": "curated",
+      "df": 39
+    },
+    {
+      "id": 19,
+      "term": "peer review",
+      "kind": "curated",
+      "df": 9
+    },
+    {
+      "id": 20,
+      "term": "grounded theory",
+      "kind": "curated",
+      "df": 7
+    },
+    {
+      "id": 21,
+      "term": "experiment",
+      "kind": "curated",
+      "df": 5
+    },
+    {
+      "id": 22,
+      "term": "mixed methods",
+      "kind": "curated",
+      "df": 4
+    },
+    {
+      "id": 23,
+      "term": "taxonomy",
+      "kind": "curated",
+      "df": 4
+    },
+    {
+      "id": 24,
+      "term": "benchmark",
+      "kind": "curated",
+      "df": 3
+    },
+    {
+      "id": 25,
+      "term": "research gap",
+      "kind": "curated",
+      "df": 3
+    },
+    {
+      "id": 26,
+      "term": "interview",
+      "kind": "curated",
+      "df": 2
+    },
+    {
+      "id": 27,
+      "term": "reproducibility",
+      "kind": "curated",
+      "df": 2
+    },
+    {
+      "id": 28,
+      "term": "triangulation",
+      "kind": "curated",
+      "df": 1
+    },
+    {
+      "id": 29,
+      "term": "meta analysis",
+      "kind": "curated",
+      "df": 0
+    },
+    {
+      "id": 30,
+      "term": "open access",
+      "kind": "curated",
+      "df": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 7,
+      "weight": 46
+    },
+    {
+      "source": 0,
+      "target": 12,
+      "weight": 36
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "weight": 23
+    },
+    {
+      "source": 0,
+      "target": 15,
+      "weight": 12
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "weight": 2
+    },
+    {
+      "source": 0,
+      "target": 14,
+      "weight": 30
+    },
+    {
+      "source": 7,
+      "target": 14,
+      "weight": 14
+    },
+    {
+      "source": 0,
+      "target": 10,
+      "weight": 17
+    },
+    {
+      "source": 0,
+      "target": 17,
+      "weight": 6
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "weight": 14
+    },
+    {
+      "source": 0,
+      "target": 16,
+      "weight": 4
+    },
+    {
+      "source": 10,
+      "target": 15,
+      "weight": 15
+    },
+    {
+      "source": 7,
+      "target": 17,
+      "weight": 2
+    },
+    {
+      "source": 0,
+      "target": 18,
+      "weight": 2
+    },
+    {
+      "source": 0,
+      "target": 23,
+      "weight": 3
+    },
+    {
+      "source": 17,
+      "target": 18,
+      "weight": 13
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "weight": 70
+    },
+    {
+      "source": 1,
+      "target": 17,
+      "weight": 11
+    },
+    {
+      "source": 1,
+      "target": 16,
+      "weight": 6
+    },
+    {
+      "source": 1,
+      "target": 15,
+      "weight": 4
+    },
+    {
+      "source": 15,
+      "target": 22,
+      "weight": 3
+    },
+    {
+      "source": 1,
+      "target": 14,
+      "weight": 29
+    },
+    {
+      "source": 1,
+      "target": 10,
+      "weight": 57
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "weight": 9
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "weight": 37
+    },
+    {
+      "source": 1,
+      "target": 19,
+      "weight": 2
+    },
+    {
+      "source": 1,
+      "target": 18,
+      "weight": 8
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "weight": 7
+    },
+    {
+      "source": 10,
+      "target": 18,
+      "weight": 2
+    },
+    {
+      "source": 16,
+      "target": 17,
+      "weight": 4
+    },
+    {
+      "source": 2,
+      "target": 19,
+      "weight": 2
+    },
+    {
+      "source": 2,
+      "target": 14,
+      "weight": 17
+    },
+    {
+      "source": 2,
+      "target": 10,
+      "weight": 134
+    },
+    {
+      "source": 2,
+      "target": 15,
+      "weight": 17
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "weight": 61
+    },
+    {
+      "source": 2,
+      "target": 12,
+      "weight": 37
+    },
+    {
+      "source": 2,
+      "target": 16,
+      "weight": 15
+    },
+    {
+      "source": 7,
+      "target": 16,
+      "weight": 4
+    },
+    {
+      "source": 2,
+      "target": 20,
+      "weight": 2
+    },
+    {
+      "source": 10,
+      "target": 16,
+      "weight": 7
+    },
+    {
+      "source": 2,
+      "target": 17,
+      "weight": 3
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "weight": 5
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "weight": 7
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "weight": 44
+    },
+    {
+      "source": 3,
+      "target": 18,
+      "weight": 9
+    },
+    {
+      "source": 7,
+      "target": 18,
+      "weight": 2
+    },
+    {
+      "source": 3,
+      "target": 15,
+      "weight": 11
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "weight": 34
+    },
+    {
+      "source": 3,
+      "target": 16,
+      "weight": 11
+    },
+    {
+      "source": 3,
+      "target": 17,
+      "weight": 11
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "weight": 20
+    },
+    {
+      "source": 12,
+      "target": 15,
+      "weight": 4
+    },
+    {
+      "source": 3,
+      "target": 26,
+      "weight": 2
+    },
+    {
+      "source": 7,
+      "target": 26,
+      "weight": 2
+    },
+    {
+      "source": 4,
+      "target": 12,
+      "weight": 95
+    },
+    {
+      "source": 4,
+      "target": 14,
+      "weight": 29
+    },
+    {
+      "source": 4,
+      "target": 15,
+      "weight": 4
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "weight": 86
+    },
+    {
+      "source": 4,
+      "target": 16,
+      "weight": 8
+    },
+    {
+      "source": 4,
+      "target": 10,
+      "weight": 43
+    },
+    {
+      "source": 4,
+      "target": 17,
+      "weight": 17
+    },
+    {
+      "source": 4,
+      "target": 18,
+      "weight": 3
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "weight": 52
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "weight": 35
+    },
+    {
+      "source": 5,
+      "target": 10,
+      "weight": 10
+    },
+    {
+      "source": 5,
+      "target": 14,
+      "weight": 20
+    },
+    {
+      "source": 5,
+      "target": 16,
+      "weight": 7
+    },
+    {
+      "source": 5,
+      "target": 17,
+      "weight": 5
+    },
+    {
+      "source": 5,
+      "target": 18,
+      "weight": 8
+    },
+    {
+      "source": 5,
+      "target": 19,
+      "weight": 4
+    },
+    {
+      "source": 5,
+      "target": 15,
+      "weight": 4
+    },
+    {
+      "source": 6,
+      "target": 16,
+      "weight": 6
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "weight": 24
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "weight": 83
+    },
+    {
+      "source": 6,
+      "target": 15,
+      "weight": 13
+    },
+    {
+      "source": 6,
+      "target": 17,
+      "weight": 7
+    },
+    {
+      "source": 6,
+      "target": 18,
+      "weight": 4
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "weight": 11
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "weight": 4
+    },
+    {
+      "source": 6,
+      "target": 22,
+      "weight": 2
+    },
+    {
+      "source": 16,
+      "target": 22,
+      "weight": 2
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "weight": 73
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "weight": 25
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "weight": 7
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "weight": 14
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "weight": 24
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "weight": 13
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "weight": 16
+    },
+    {
+      "source": 9,
+      "target": 16,
+      "weight": 12
+    },
+    {
+      "source": 9,
+      "target": 14,
+      "weight": 6
+    },
+    {
+      "source": 9,
+      "target": 12,
+      "weight": 16
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "weight": 18
+    },
+    {
+      "source": 8,
+      "target": 18,
+      "weight": 3
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "weight": 5
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "weight": 8
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "weight": 6
+    },
+    {
+      "source": 8,
+      "target": 15,
+      "weight": 8
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "weight": 53
+    },
+    {
+      "source": 9,
+      "target": 15,
+      "weight": 12
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "weight": 4
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "weight": 5
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "weight": 9
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "weight": 5
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "weight": 2
+    }
+  ],
+  "stats": {
+    "concepts": 31,
+    "edges": 104,
+    "papers": 7521
+  }
+}

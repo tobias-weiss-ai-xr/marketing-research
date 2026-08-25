@@ -1,0 +1,32 @@
+# Curated concept seeds for THIS research corpus.
+# Optional: repo-specific important concepts/ideas, added on top of the
+# taxonomy categories (associated structurally) and the statistically-mined
+# emergent bigrams. Leave empty to rely on taxonomy + emergent terms only.
+# Portable across all *-research repos: copy tools/extract_concepts.py,
+# tools/relate_concepts.py and tools/analyze_concept_graph.py as-is; only
+# papers.yaml is required.
+#
+# This skeleton ships with a generic research-methods seed set so the
+# selective concept graph (config/extraction.yaml: mode=selective) has a
+# meaningful curated layer on top of the taxonomy backbone.
+concepts:
+  - literature review
+  - systematic review
+  - meta analysis
+  - case study
+  - qualitative
+  - quantitative
+  - mixed methods
+  - experiment
+  - survey
+  - interview
+  - dataset
+  - benchmark
+  - reproducibility
+  - research gap
+  - grounded theory
+  - triangulation
+  - framework
+  - taxonomy
+  - open access
+  - peer review

@@ -1,0 +1,560 @@
+{
+  "count": 31,
+  "concepts": [
+    {
+      "term": "AI & Marketing",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 910,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "ai-marketing"
+      },
+      "top_cells": [
+        "ai-marketing/empirical",
+        "ai-marketing/framework",
+        "ai-marketing/case-study",
+        "ai-marketing/theory"
+      ],
+      "papers": 910
+    },
+    {
+      "term": "Consumer Behavior & Psychology",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 889,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "consumer-behavior"
+      },
+      "top_cells": [
+        "consumer-behavior/empirical",
+        "consumer-behavior/framework",
+        "consumer-behavior/case-study",
+        "consumer-behavior/measurement"
+      ],
+      "papers": 889
+    },
+    {
+      "term": "Brand Strategy & Management",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 882,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "brand"
+      },
+      "top_cells": [
+        "brand/empirical",
+        "brand/framework",
+        "brand/case-study",
+        "brand/review"
+      ],
+      "papers": 882
+    },
+    {
+      "term": "Social Media & Creator Marketing",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 859,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "social-media"
+      },
+      "top_cells": [
+        "social-media/empirical",
+        "social-media/framework",
+        "social-media/measurement",
+        "social-media/theory"
+      ],
+      "papers": 859
+    },
+    {
+      "term": "Surveys, Trends & Meta-Studies",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 825,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "survey"
+      },
+      "top_cells": [
+        "survey/review",
+        "survey/case-study",
+        "survey/empirical",
+        "survey/framework"
+      ],
+      "papers": 825
+    },
+    {
+      "term": "Customer Experience, Omnichannel & Retail",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 814,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "cx-retail"
+      },
+      "top_cells": [
+        "cx-retail/framework",
+        "cx-retail/review",
+        "cx-retail/theory",
+        "cx-retail/measurement"
+      ],
+      "papers": 814
+    },
+    {
+      "term": "Digital & Performance Marketing",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 660,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "digital-marketing"
+      },
+      "top_cells": [
+        "digital-marketing/framework",
+        "digital-marketing/case-study",
+        "digital-marketing/measurement",
+        "digital-marketing/theory"
+      ],
+      "papers": 660
+    },
+    {
+      "term": "framework",
+      "kind": "curated",
+      "seed": true,
+      "df": 521,
+      "match": {
+        "type": "text",
+        "forms": [
+          "framework"
+        ]
+      },
+      "papers": 521,
+      "top_cells": [
+        "consumer-behavior/framework",
+        "brand/framework",
+        "survey/framework",
+        "analytics/measurement"
+      ]
+    },
+    {
+      "term": "Analytics, Attribution & Measurement",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 513,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "analytics"
+      },
+      "top_cells": [
+        "analytics/measurement",
+        "analytics/empirical",
+        "analytics/review",
+        "analytics/case-study"
+      ],
+      "papers": 513
+    },
+    {
+      "term": "Content & Storytelling",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 441,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "content-marketing"
+      },
+      "top_cells": [
+        "content-marketing/theory",
+        "content-marketing/review",
+        "content-marketing/case-study",
+        "content-marketing/framework"
+      ],
+      "papers": 441
+    },
+    {
+      "term": "case study",
+      "kind": "curated",
+      "seed": true,
+      "df": 436,
+      "match": {
+        "type": "text",
+        "forms": [
+          "case study"
+        ]
+      },
+      "papers": 436,
+      "top_cells": [
+        "brand/case-study",
+        "digital-marketing/case-study",
+        "consumer-behavior/case-study",
+        "content-marketing/case-study"
+      ]
+    },
+    {
+      "term": "Data, Privacy & Cookieless Advertising",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 398,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "privacy-data"
+      },
+      "top_cells": [
+        "privacy-data/empirical",
+        "privacy-data/review",
+        "privacy-data/theory",
+        "privacy-data/framework"
+      ],
+      "papers": 398
+    },
+    {
+      "term": "literature review",
+      "kind": "curated",
+      "seed": true,
+      "df": 332,
+      "match": {
+        "type": "text",
+        "forms": [
+          "literature review"
+        ]
+      },
+      "papers": 332,
+      "top_cells": [
+        "survey/review",
+        "brand/review",
+        "cx-retail/review",
+        "consumer-behavior/review"
+      ]
+    },
+    {
+      "term": "B2B & Account-Based Marketing",
+      "kind": "taxonomy",
+      "seed": true,
+      "df": 330,
+      "match": {
+        "type": "field",
+        "field": "category",
+        "value": "b2b"
+      },
+      "top_cells": [
+        "b2b/empirical",
+        "b2b/framework",
+        "b2b/case-study",
+        "b2b/theory"
+      ],
+      "papers": 330
+    },
+    {
+      "term": "systematic review",
+      "kind": "curated",
+      "seed": true,
+      "df": 173,
+      "match": {
+        "type": "text",
+        "forms": [
+          "systematic review"
+        ]
+      },
+      "papers": 173,
+      "top_cells": [
+        "consumer-behavior/review",
+        "cx-retail/review",
+        "survey/review",
+        "social-media/review"
+      ]
+    },
+    {
+      "term": "qualitative",
+      "kind": "curated",
+      "seed": true,
+      "df": 91,
+      "match": {
+        "type": "text",
+        "forms": [
+          "qualitative"
+        ]
+      },
+      "papers": 91,
+      "top_cells": [
+        "content-marketing/theory",
+        "brand/case-study",
+        "digital-marketing/framework",
+        "ai-marketing/empirical"
+      ]
+    },
+    {
+      "term": "quantitative",
+      "kind": "curated",
+      "seed": true,
+      "df": 76,
+      "match": {
+        "type": "text",
+        "forms": [
+          "quantitative"
+        ]
+      },
+      "papers": 76,
+      "top_cells": [
+        "social-media/empirical",
+        "content-marketing/measurement",
+        "consumer-behavior/empirical",
+        "brand/empirical"
+      ]
+    },
+    {
+      "term": "survey",
+      "kind": "curated",
+      "seed": true,
+      "df": 68,
+      "match": {
+        "type": "text",
+        "forms": [
+          "survey"
+        ]
+      },
+      "papers": 68,
+      "top_cells": [
+        "survey/case-study",
+        "survey/empirical",
+        "consumer-behavior/theory",
+        "ai-marketing/empirical"
+      ]
+    },
+    {
+      "term": "dataset",
+      "kind": "curated",
+      "seed": true,
+      "df": 39,
+      "match": {
+        "type": "text",
+        "forms": [
+          "dataset"
+        ]
+      },
+      "papers": 39,
+      "top_cells": [
+        "social-media/empirical",
+        "consumer-behavior/measurement",
+        "cx-retail/measurement",
+        "cx-retail/review"
+      ]
+    },
+    {
+      "term": "peer review",
+      "kind": "curated",
+      "seed": true,
+      "df": 9,
+      "match": {
+        "type": "text",
+        "forms": [
+          "peer review"
+        ]
+      },
+      "papers": 9,
+      "top_cells": [
+        "cx-retail/empirical",
+        "consumer-behavior/review",
+        "brand/review",
+        "survey/measurement"
+      ]
+    },
+    {
+      "term": "grounded theory",
+      "kind": "curated",
+      "seed": true,
+      "df": 7,
+      "match": {
+        "type": "text",
+        "forms": [
+          "grounded theory"
+        ]
+      },
+      "papers": 7,
+      "top_cells": [
+        "brand/framework",
+        "ai-marketing/theory",
+        "privacy-data/theory",
+        "cx-retail/theory"
+      ]
+    },
+    {
+      "term": "experiment",
+      "kind": "curated",
+      "seed": true,
+      "df": 5,
+      "match": {
+        "type": "text",
+        "forms": [
+          "experiment"
+        ]
+      },
+      "papers": 5,
+      "top_cells": [
+        "privacy-data/framework",
+        "consumer-behavior/case-study",
+        "brand/measurement",
+        "cx-retail/empirical"
+      ]
+    },
+    {
+      "term": "mixed methods",
+      "kind": "curated",
+      "seed": true,
+      "df": 4,
+      "match": {
+        "type": "text",
+        "forms": [
+          "mixed methods"
+        ]
+      },
+      "papers": 4,
+      "top_cells": [
+        "digital-marketing/framework",
+        "social-media/theory",
+        "consumer-behavior/framework"
+      ]
+    },
+    {
+      "term": "taxonomy",
+      "kind": "curated",
+      "seed": true,
+      "df": 4,
+      "match": {
+        "type": "text",
+        "forms": [
+          "taxonomy"
+        ]
+      },
+      "papers": 4,
+      "top_cells": [
+        "ai-marketing/empirical",
+        "survey/review"
+      ]
+    },
+    {
+      "term": "benchmark",
+      "kind": "curated",
+      "seed": true,
+      "df": 3,
+      "match": {
+        "type": "text",
+        "forms": [
+          "benchmark"
+        ]
+      },
+      "papers": 3,
+      "top_cells": [
+        "survey/review",
+        "cx-retail/framework",
+        "digital-marketing/case-study"
+      ]
+    },
+    {
+      "term": "research gap",
+      "kind": "curated",
+      "seed": true,
+      "df": 3,
+      "match": {
+        "type": "text",
+        "forms": [
+          "research gap"
+        ]
+      },
+      "papers": 3,
+      "top_cells": [
+        "brand/measurement",
+        "social-media/review",
+        "consumer-behavior/case-study"
+      ]
+    },
+    {
+      "term": "interview",
+      "kind": "curated",
+      "seed": true,
+      "df": 2,
+      "match": {
+        "type": "text",
+        "forms": [
+          "interview"
+        ]
+      },
+      "papers": 2,
+      "top_cells": [
+        "social-media/framework"
+      ]
+    },
+    {
+      "term": "reproducibility",
+      "kind": "curated",
+      "seed": true,
+      "df": 2,
+      "match": {
+        "type": "text",
+        "forms": [
+          "reproducibility"
+        ]
+      },
+      "papers": 2,
+      "top_cells": [
+        "ai-marketing/measurement",
+        "brand/case-study"
+      ]
+    },
+    {
+      "term": "triangulation",
+      "kind": "curated",
+      "seed": true,
+      "df": 1,
+      "match": {
+        "type": "text",
+        "forms": [
+          "triangulation"
+        ]
+      },
+      "papers": 1,
+      "top_cells": [
+        "brand/framework"
+      ]
+    },
+    {
+      "term": "meta analysis",
+      "kind": "curated",
+      "seed": true,
+      "df": 0,
+      "match": {
+        "type": "text",
+        "forms": [
+          "meta analysis"
+        ]
+      },
+      "papers": 0,
+      "top_cells": []
+    },
+    {
+      "term": "open access",
+      "kind": "curated",
+      "seed": true,
+      "df": 0,
+      "match": {
+        "type": "text",
+        "forms": [
+          "open access"
+        ]
+      },
+      "papers": 0,
+      "top_cells": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# Concept extraction mode for this repository.
+#
+# broad     — taxonomy (structural) + curated seeds (config/concepts.yaml)
+#             + emergent noun bigrams mined from title+abstract.
+#             Largest, noisiest graph; good for open discovery.
+#
+# selective — taxonomy (structural) + curated seeds ONLY.
+#             Skips the noisy emergent bigrams, yielding a clean,
+#             high-signal concept graph driven by the curated concept list.
+#             The feedback loop (tools/feedback_concepts.py) keeps growing
+#             the curated set from the graph analysis.
+mode: selective
