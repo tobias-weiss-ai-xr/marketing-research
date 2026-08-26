@@ -19,7 +19,15 @@ from pathlib import Path
 import sys
 
 import requests
+import hashlib
+import os
+import pickle
+
 import yaml
+try:
+    from yaml import CSafeLoader as _LOADER
+except ImportError:
+    _LOADER = yaml.SafeLoader
 
 # Cache configuration
 CACHE_DIR = Path.home() / ".cache" / "research-runner" / "openalex"
@@ -53,12 +61,32 @@ def load_subcat_keywords(cfg):
     return research_config.get_subcategory_keywords(cfg)
 
 
+# ── Dedup cache ────────────────────────────────────────────────────────
+_DEDUP_DIR = Path(os.environ.get("XDG_CACHE_HOME", "~/.cache")) / "research-runner/dedup"
+
+
+def _cache_path(yaml_path):
+    """Return pickle cache path keyed to yaml_path + mtime + size."""
+    st = yaml_path.stat()
+    h = f"{yaml_path}_{st.st_mtime:.0f}_{st.st_size}"
+    return _DEDUP_DIR / f"{hashlib.md5(h.encode()).hexdigest()}.pkl"
+
+
 def load_existing_papers(yaml_path):
-    """Load existing papers and build lookup structures."""
+    """Load existing papers and build lookup structures.
+
+    Uses a pickle cache keyed to papers.yaml mtime+size so that
+    subsequent runs on unchanged files skip the YAML parse entirely.
+    """
     if not yaml_path.exists():
         return {}, []
+    cp = _cache_path(yaml_path)
+    if cp.exists():
+        with open(cp, "rb") as f:
+            return pickle.load(f)
+    # Cold path: parse YAML + build dedup structures
     with open(yaml_path, "r", encoding="utf-8") as f:
-        data = yaml.safe_load(f) or {}
+        data = yaml.load(f, Loader=_LOADER) or {}
     papers = data.get("papers", [])
     by_id = {}
     titles_lower = []
@@ -70,6 +98,10 @@ def load_existing_papers(yaml_path):
         else:
             by_id.setdefault(url, p)
         titles_lower.append((p.get("title") or "").lower().strip())
+    # Cache for next run
+    _DEDUP_DIR.mkdir(parents=True, exist_ok=True)
+    with open(cp, "wb") as f:
+        pickle.dump((by_id, titles_lower), f, protocol=pickle.HIGHEST_PROTOCOL)
     return by_id, titles_lower
 
 
@@ -363,7 +395,7 @@ def main():
     parser.add_argument("--local", action="store_true", help="Run locally without modifying remote repos")
     args = parser.parse_args()
 
-    cfg = research_config.load_config()
+    cfg = research_config.require_valid_config()
     category_terms = load_category_terms(cfg)
     subcat_keywords = load_subcat_keywords(cfg)
     mailto = research_config.get_openalex_mailto(cfg)
