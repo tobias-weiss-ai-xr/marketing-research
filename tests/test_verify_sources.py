@@ -78,6 +78,33 @@ def test_run_rate_limit_is_botblock_not_broken(tmp_path):
     assert totals["broken"] == 0 and totals["botblock"] == 1 and status == 0
 
 
+def test_run_fails_early_on_first_broken(tmp_path):
+    papers = [
+        {"title": "B", "url": "https://dead.example/b"},
+        {"title": "A", "url": "https://ok.example/a"},
+    ]
+    cfg = {
+        "inputs": [{"file": "papers.yaml", "format": "yaml", "list_key": "papers",
+                    "id_field": "title", "url_fields": ["url"]}],
+        "settings": {"browser": False, "fail_on_broken": True, "fail_early": True,
+                     "workers": 1, "per_host_delay": 0,
+                     "report": str(tmp_path / "r.json")},
+    }
+    (tmp_path / "papers.yaml").write_text(__import__("json").dumps({"papers": papers}))
+    calls = {"n": 0}
+    orig = vs.http_check
+
+    def counting(url, timeout, ua):
+        calls["n"] += 1
+        return orig(url, timeout, ua)
+
+    with mock.patch("requests.get", side_effect=_fake_get):
+        with mock.patch.object(vs, "http_check", side_effect=counting):
+            totals, results, status = vs.run(cfg, str(tmp_path / "x.json"))
+    assert status == 1
+    assert calls["n"] == 1  # only the broken link is checked; the rest is cancelled
+
+
 def test_resolve_verdict():
     assert vs.resolve_verdict("ok", None) == "ok"
     assert vs.resolve_verdict("broken", None) == "broken"
@@ -91,8 +118,8 @@ def _write_cfg(tmp_path, papers):
     return {
         "inputs": [{"file": "papers.yaml", "format": "yaml", "list_key": "papers",
                     "id_field": "title", "url_fields": ["url", "code_url"]}],
-        "settings": {"browser": False, "fail_on_broken": True,
-                     "report": str(tmp_path / "r.json")},
+        "settings": {"browser": False, "fail_on_broken": True, "per_host_delay": 0,
+                     "workers": 4, "report": str(tmp_path / "r.json")},
     }
 
 

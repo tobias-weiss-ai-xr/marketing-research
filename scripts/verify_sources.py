@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""verify_sources.py — repo-agnostic link-liveness verifier.
-
-Turns an ad-hoc "are my source links still alive?" check into a repeatable,
-config-driven workflow. Works for any catalog that is "a list of entries, each
-with one or more URL fields" — e.g. a funding catalogue (``catalog.json`` →
-``quelle``) or a paper corpus (``papers.yaml`` → ``url``/``code_url``/``project_url``).
+"""verify_sources.py — repo-agnostic, polite, fail-early link verifier.
 
 Two-stage check (the second stage only runs when needed):
   1) HTTP (requests):  classify each URL as OK / BROKEN / UNCERTAIN.
@@ -12,36 +7,41 @@ Two-stage check (the second stage only runs when needed):
        2xx/3xx → OK       404/410 → BROKEN
        401/403  → BOTBLOCK (warn, never fails)   other → BROKEN
 
-UNCERTAIN without a browser (e.g. in CI) is reported as BOTBLOCK (warn), so the
-pipeline stays stable while still catching *definitively* dead links (404/410,
-5xx, connection errors). This is deliberate: 403/Cloudflare blocks on official
-portals (ec.europa.eu, DAAD, NIH, HFSP, …) are not broken links.
+Politeness — "don't hammer":
+  - Limited concurrency (``workers``, default 4).
+  - Per-host throttle: at most one request per ``per_host_delay`` seconds to
+    any single host (default 1.0s) — avoids rate-limiting doi.org / github.
+  - On HTTP 429, honours ``Retry-After`` and backs off before retrying.
+  401/403/timeout without a browser are reported as BOTBLOCK (warn), so CI
+  stays stable while still catching definitively-dead links (404/410/5xx/
+  connection errors).
+
+Fail early:
+  When ``fail_on_broken`` is set, the scan aborts as soon as the first
+  ``BROKEN`` link is confirmed (remaining checks are cancelled). Use
+  ``--no-fail-early`` to collect every result first.
 
 Config (JSON or YAML). Paths are resolved relative to the config file.
 
     inputs:
-      - file: catalog.json
-        format: json                 # json | yaml (inferred from extension)
-        list_key: programme          # key holding the list (omit for object-map)
-        id_field: id                # stable id (fallback: "<file>#<idx>")
-        url_fields: [quelle]        # URL fields to check (empty strings skipped)
-      - file: sources.json
-        object_map: true            # iterate dict *values*; id from the key
-        id_field: key
-        url_fields: [url]
+      - file: papers.yaml
+        format: yaml
+        list_key: papers
+        id_field: title
+        url_fields: [url, code_url, project_url]
     settings:
       timeout: 20
-      workers: 12
+      workers: 4
+      per_host_delay: 1.0
       user_agent: "Mozilla/5.0 (...) Chrome/126.0.0.0 Safari/537.36"
-      browser: false                # enable Playwright recheck of UNCERTAIN
-      fail_on_broken: true          # exit 1 if any BROKEN remains
+      browser: false
+      fail_on_broken: true
+      fail_early: true
       report: verify-sources-report.json
 
 Usage:
     verify_sources.py CONFIG.yaml
-    verify_sources.py CONFIG.json --browser --no-fail
-
-Exit code: 0 if no BROKEN (after browser recheck), else 1 (when fail_on_broken).
+    verify_sources.py CONFIG.json --browser --no-fail --no-fail-early
 """
 from __future__ import annotations
 
@@ -49,17 +49,45 @@ import argparse
 import json
 import os
 import sys
-from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass, field
-from typing import Any
-
+import threading
 import time
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
+from typing import Any
+from urllib.parse import urlparse
 
 DEFAULT_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 )
+
+# ── politeness state (shared across worker threads) ──────────────────────────
+_host_locks: dict[str, threading.Lock] = {}
+_registry_lock = threading.Lock()
+_host_last: dict[str, float] = {}
+
+
+def _host_lock_for(host: str) -> threading.Lock:
+    with _registry_lock:
+        lock = _host_locks.get(host)
+        if lock is None:
+            lock = threading.Lock()
+            _host_locks[host] = lock
+        return lock
+
+
+def _throttle(host: str, per_host_delay: float) -> None:
+    """Serialise requests to one host: never closer than ``per_host_delay`` s."""
+    if per_host_delay <= 0:
+        return
+    lock = _host_lock_for(host)
+    with lock:
+        last = _host_last.get(host, 0.0)
+        wait = per_host_delay - (time.monotonic() - last)
+        if wait > 0:
+            time.sleep(wait)
+        _host_last[host] = time.monotonic()
 
 
 # --------------------------------------------------------------------------- IO
@@ -153,15 +181,24 @@ def http_check(url: str, timeout: int, ua: str) -> dict:
                 return {"status": s, "kind": "ok", "note": ""}
             if s in (401, 403):
                 return {"status": s, "kind": "uncertain", "note": f"bot-block likely ({s})"}
-            if s == 429:  # rate-limited by bulk CI scan: transient, NOT a dead link
+            if s == 429:  # rate-limited by bulk scan: transient, NOT a dead link
+                ra = r.headers.get("Retry-After")
+                if ra and attempt < 2:
+                    try:
+                        time.sleep(min(float(ra), 30))
+                    except ValueError:
+                        time.sleep(1.5 * (attempt + 1))
+                    continue
                 if attempt < 2:
-                    time.sleep(1.5 * (attempt + 1)); continue
+                    time.sleep(1.5 * (attempt + 1))
+                    continue
                 return {"status": s, "kind": "uncertain", "note": "rate-limited (429)"}
             if s in (400, 404, 405, 406, 410):
                 return {"status": s, "kind": "broken", "note": f"HTTP {s}"}
             if 500 <= s < 600:  # transient server error -> one retry
                 if attempt < 2:
-                    time.sleep(1.5 * (attempt + 1)); continue
+                    time.sleep(1.5 * (attempt + 1))
+                    continue
                 return {"status": s, "kind": "broken", "note": f"server error {s}"}
             return {"status": s, "kind": "broken", "note": f"HTTP {s}"}
         except requests.exceptions.SSLError:
@@ -215,14 +252,18 @@ def run(config: dict, cfg_path: str = "") -> tuple[Counter, list[Result], int]:
     base = os.path.dirname(os.path.abspath(cfg_path)) if cfg_path else os.getcwd()
     settings = config.get("settings", {})
     timeout = int(settings.get("timeout", 20))
-    workers = int(settings.get("workers", 12))
+    workers = int(settings.get("workers", 4))
+    per_host_delay = float(settings.get("per_host_delay", 1.0))
     ua = settings.get("user_agent", DEFAULT_UA)
     use_browser = bool(settings.get("browser", False))
+    fail = bool(settings.get("fail_on_broken", True))
+    fail_early = bool(settings.get("fail_early", True))
 
     items = [i for inp in config.get("inputs", []) for i in iter_entries(inp, base)]
 
     def check_one(item):
         eid, url, field, label = item
+        _throttle(urlparse(url).netloc, per_host_delay)
         h = http_check(url, timeout, ua)
         b = None
         if h["kind"] == "uncertain":
@@ -232,23 +273,28 @@ def run(config: dict, cfg_path: str = "") -> tuple[Counter, list[Result], int]:
                 b = {"kind": "botblock",
                      "note": "no browser recheck; 401/403/timeout -> bot-block (warn)"}
         verdict = resolve_verdict(h["kind"], (b or {}).get("kind"))
-        res = Result(
+        return Result(
             source=label, id=eid, field=field, url=url,
             http_status=h["status"], http_kind=h["kind"],
             browser_kind=(b or {}).get("kind"),
-            verdict=verdict,
-            note=(b or {}).get("note") or h["note"],
+            verdict=verdict, note=(b or {}).get("note") or h["note"],
         )
-        return res
 
     results: list[Result] = []
+    broken = False
     with ThreadPoolExecutor(max_workers=workers) as ex:
-        for res in ex.map(check_one, items):
+        futures = {ex.submit(check_one, it): it for it in items}
+        for fut in as_completed(futures):
+            res = fut.result()
             results.append(res)
+            if fail and res.verdict == "broken" and fail_early:
+                broken = True
+                for f in futures:  # cancel pending checks, stop hammering
+                    f.cancel()
+                break
 
     totals = Counter(r.verdict for r in results)
-    broken = totals.get("broken", 0)
-    status = 0 if broken == 0 or not settings.get("fail_on_broken", True) else 1
+    status = 0 if not broken else 1
     return totals, results, status
 
 
@@ -286,16 +332,20 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--no-browser", dest="browser", action="store_false")
     ap.add_argument("--fail", dest="fail", action="store_true", default=None)
     ap.add_argument("--no-fail", dest="fail", action="store_false")
+    ap.add_argument("--fail-early", dest="fail_early", action="store_true", default=None,
+                    help="abort on first BROKEN link (default)")
+    ap.add_argument("--no-fail-early", dest="fail_early", action="store_false")
     ap.add_argument("--report", default=None, help="override report output path")
     args = ap.parse_args(argv)
 
     config = load_config(args.config)
-    # CLI overrides
     config.setdefault("settings", {})
     if args.browser is not None:
         config["settings"]["browser"] = args.browser
     if args.fail is not None:
         config["settings"]["fail_on_broken"] = args.fail
+    if args.fail_early is not None:
+        config["settings"]["fail_early"] = args.fail_early
     if args.report:
         config["settings"]["report"] = args.report
 
