@@ -287,11 +287,12 @@ def run(config: dict, cfg_path: str = "") -> tuple[Counter, list[Result], int]:
         for fut in as_completed(futures):
             res = fut.result()
             results.append(res)
-            if fail and res.verdict == "broken" and fail_early:
+            if fail and res.verdict == "broken":
                 broken = True
-                for f in futures:  # cancel pending checks, stop hammering
-                    f.cancel()
-                break
+                if fail_early:  # abort remaining checks; stop hammering
+                    for f in futures:
+                        f.cancel()
+                    break
 
     totals = Counter(r.verdict for r in results)
     status = 0 if not broken else 1
