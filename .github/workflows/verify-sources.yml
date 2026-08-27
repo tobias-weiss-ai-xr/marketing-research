@@ -1,0 +1,50 @@
+name: Verify Sources
+
+# Repo-agnostic link-liveness audit for the paper corpus (papers.yaml).
+# Two-stage verifier (scripts/verify_sources.py): HTTP check + optional
+# Playwright recheck of uncertain URLs. Catches definitively-dead links
+# (404/410/5xx/connection errors); 403/Cloudflare bot-blocks are warnings.
+#
+# Runs report-only (--no-fail) here because this *template* repo still holds
+# placeholder example papers with non-resolving URLs. Forks with a real corpus
+# should drop --no-fail to make the workflow fail on dead links.
+
+on:
+  schedule:
+    - cron: '30 7 * * 1'          # Monday 07:30 UTC — weekly link audit
+  workflow_dispatch:
+  push:
+    paths:
+      - 'papers.yaml'
+      - 'repos.yaml'
+      - 'scripts/verify_sources.py'
+      - 'verify-sources.yaml'
+      - '.github/workflows/verify-sources.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml requests
+
+      - name: Verify paper links (report-only; template has placeholder URLs)
+        run: python scripts/verify_sources.py verify-sources.yaml --no-fail
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-sources-report
+          path: verify-sources-report.json
