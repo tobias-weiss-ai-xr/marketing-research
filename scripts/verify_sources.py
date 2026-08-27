@@ -54,6 +54,8 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Any
 
+import time
+
 DEFAULT_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
@@ -139,29 +141,38 @@ class Result:
 def http_check(url: str, timeout: int, ua: str) -> dict:
     import requests  # lazy: only when actually checking
 
-    try:
-        r = requests.get(
-            url, headers={"User-Agent": ua}, timeout=timeout,
-            allow_redirects=True, verify=True,
-        )
-        s = r.status_code
-        if 200 <= s < 400:
-            return {"status": s, "kind": "ok", "note": ""}
-        if s in (401, 403):
-            return {"status": s, "kind": "uncertain", "note": f"bot-block likely ({s})"}
-        if s in (400, 404, 405, 406, 410):
+    last: dict | None = None
+    for attempt in range(3):
+        try:
+            r = requests.get(
+                url, headers={"User-Agent": ua}, timeout=timeout,
+                allow_redirects=True, verify=True,
+            )
+            s = r.status_code
+            if 200 <= s < 400:
+                return {"status": s, "kind": "ok", "note": ""}
+            if s in (401, 403):
+                return {"status": s, "kind": "uncertain", "note": f"bot-block likely ({s})"}
+            if s == 429:  # rate-limited by bulk CI scan: transient, NOT a dead link
+                if attempt < 2:
+                    time.sleep(1.5 * (attempt + 1)); continue
+                return {"status": s, "kind": "uncertain", "note": "rate-limited (429)"}
+            if s in (400, 404, 405, 406, 410):
+                return {"status": s, "kind": "broken", "note": f"HTTP {s}"}
+            if 500 <= s < 600:  # transient server error -> one retry
+                if attempt < 2:
+                    time.sleep(1.5 * (attempt + 1)); continue
+                return {"status": s, "kind": "broken", "note": f"server error {s}"}
             return {"status": s, "kind": "broken", "note": f"HTTP {s}"}
-        if 500 <= s < 600:
-            return {"status": s, "kind": "broken", "note": f"server error {s}"}
-        return {"status": s, "kind": "broken", "note": f"HTTP {s}"}
-    except requests.exceptions.SSLError:
-        return {"status": None, "kind": "uncertain", "note": "SSL error"}
-    except requests.exceptions.Timeout:
-        return {"status": None, "kind": "uncertain", "note": "timeout"}
-    except requests.exceptions.ConnectionError:
-        return {"status": None, "kind": "broken", "note": "connection error"}
-    except Exception as e:  # noqa: BLE001 - classify everything else as uncertain
-        return {"status": None, "kind": "uncertain", "note": type(e).__name__}
+        except requests.exceptions.SSLError:
+            return {"status": None, "kind": "uncertain", "note": "SSL error"}
+        except requests.exceptions.Timeout:
+            return {"status": None, "kind": "uncertain", "note": "timeout"}
+        except requests.exceptions.ConnectionError:
+            return {"status": None, "kind": "broken", "note": "connection error"}
+        except Exception as e:  # noqa: BLE001 - classify everything else as uncertain
+            return {"status": None, "kind": "uncertain", "note": type(e).__name__}
+    return last or {"status": None, "kind": "uncertain", "note": "unknown"}
 
 
 def browser_check(url: str, ua: str) -> dict:
