@@ -85,6 +85,8 @@ def normalize_arxiv_url(url):
     core = url
     core = ARXIV_PATH_PREFIX.sub("", core)
     core = ARXIV_DOI_PREFIX.sub("", core)
+    # Strip a stray "arXiv:" prefix (e.g. arxiv.org/abs/arXiv:2412.13474)
+    core = re.sub(r"(?i)arxiv:", "", core)
     m = ARXIV_ID_PATTERN.search(core)
     if m:
         return f"https://arxiv.org/abs/{m.group(1)}"
@@ -108,6 +110,16 @@ def validate_papers(data, cfg, fix=False, sort=False):
 
     valid_categories = {c["id"] for c in research_config.get_categories(cfg)}
     valid_subcategories = {s["id"] for s in research_config.get_subcategories(cfg)}
+
+    # --fix: backfill any missing subcategory with a valid value so the
+    # paper remains validation-compliant (fetch may leave it empty).
+    if fix:
+        for _p in papers:
+            if not _p.get("subcategory"):
+                _sub = sorted(valid_subcategories)[0] if valid_subcategories else _p.get("category", "")
+                if _sub:
+                    _p["subcategory"] = _sub
+                    fixed += 1
 
     if not papers:
         errors.append("papers.yaml contains no papers under the 'papers' key")

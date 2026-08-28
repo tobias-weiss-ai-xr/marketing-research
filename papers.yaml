@@ -103838,3 +103838,65 @@ papers:
     8 percent of that saving. The results show that pricing rules, information disclosure,
     and ownership structure determine how much of the gains from decentralized electricity
     trading are realized.'
+- title: 'AI agents in Algorithmic Electricity Markets: On the Emergence of Tacit
+    Collusion'
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.26896
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Jakub Seredyński
+  - Georgios Tsaousoglou
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'As electricity market participants increasingly adopt learning-based
+    agents for their bidding strategies, electricity markets are becoming algorithmic.
+    Evidence from algorithmic markets in other domains shows that tacit collusion
+    can arise purely through independent learning. Moreover, electricity markets are
+    typically oligopolistic and feature repeated interaction among a small number
+    of participants, making them structurally susceptible to non-competitive behavior.
+    In the face of these observations, this paper investigates the hypothesis that
+    tacit collusion may emerge in electricity markets where participants'' actions
+    are controlled by autonomous learning-based algorithms. We model strategic bidding
+    as a repeated game with imperfect public monitoring, and model the participants''
+    emergent behavior using multi-agent reinforcement learning. We propose a multi-dimensional
+    set of criteria (going beyond profit comparisons against Nash equilibria) to assess
+    whether the resulting behavior constitutes tacit collusion. Our experimental results
+    showcase that such a danger is realistic for electricity markets: there are cases
+    where agents do learn to sustain supra-competitive outcomes that are supportive
+    of tacit collusion indicators, even though the agents were never instructed to
+    collude.'
+- title: Hybrid Machine Learning Framework for Herd-Level Cattle Growth Pattern and
+    Weight Gain Forecasting in Grazing-Based Production Systems
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.06001
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Muhammad Riaz Hasib Hossain
+  - Rafiqul Islam
+  - Shawn R. McGrath
+  - Md Zahidul Islam
+  - David W. Lamb
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Commercial grazing systems yield irregular livestock observations, which
+    challenge cattle growth forecasting. This study developed a hybrid machine learning
+    framework for herd level cattle weight forecasting using automated sensing observations
+    collected between 2022 and 2024 in southeastern Australia. Weekly live weight
+    observations, demographic variables, and lagged environmental predictors were
+    integrated into structured forecasting datasets. Herd level forecasting trajectories
+    were generated through temporal aggregation of animal level predictions. Four
+    hybrid architecture families were evaluated, including residual, stacked, cascade,
+    and ensemble assisted frameworks. ARIMA, LSTM, and GRU models were used as comparative
+    baselines. Independent testing demonstrated strong predictive agreement across
+    multiple forecasting horizons. The cascade GB to RF to NN architecture achieved
+    the best performance, with a test R^2 of 0.889, RMSE of 21.319 kg, and MAE of
+    15.462 kg. Hybrid architectures maintained greater robustness than recurrent sequential
+    models under sparse observation conditions. Forecasting error increased progressively
+    across extended prediction horizons. Feature importance analysis identified animal
+    age, rainfall, and temperature as dominant predictors influencing herd level growth
+    forecasting. The proposed framework may support feed allocation, grazing management,
+    and livestock marketing decisions under heterogeneous sensing environments.
