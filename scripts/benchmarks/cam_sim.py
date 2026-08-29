@@ -32,6 +32,7 @@ Author: Tobias Weiss (2026)
 """
 
 import argparse
+import bisect
 import json
 import random
 import sys
@@ -137,6 +138,7 @@ class ActionResult:
     long_term_value: float = 0.0
     context_match: bool = False
     latency_ms: float = 0.0
+    skipped: bool = False  # action not executed (budget exhausted)
 
     @property
     def profit(self) -> float:
@@ -199,6 +201,8 @@ ENVIRONMENT_PRESETS: Dict[str, dict] = {
         'match_penalty': -0.3,    # reward change when action mismatches
         'bid_eff_scale': 1.0,     # scales bid-efficiency adjustments (+.3/+.1/-.2)
         'competitive_scale': 0.5, # competitive discount factor
+        'budget_per_episode': None,  # runner-level: media budget cap per episode
+        'bid_return_alpha': None,    # env-level: concave returns to bid exponent
     },
     'uniform_situations': {
         'situation_weights': [1 / 6] * 6,
@@ -219,6 +223,12 @@ ENVIRONMENT_PRESETS: Dict[str, dict] = {
         'match_bonus': 0.25,
         'match_penalty': -0.15,
         'bid_eff_scale': 0.5,     # environment pays WEAKLY for context matching
+    },
+    'budget_constrained': {
+        'budget_per_episode': 250.0,  # media budget cap per 200-action episode
+    },
+    'concave_returns': {
+        'bid_return_alpha': 0.5,  # concave returns to bid: reward *= (bid/optimal)^0.5
     },
 }
 
@@ -331,6 +341,123 @@ class CAMInferred(Agent):
     def decide(self, context: FullContext) -> Action:
         self.actions_taken += 1
         situation = infer_situation_from_intent(context.audience_intent_strength)
+        action_type = IDEAL_ACTION[situation]
+        channel = SITUATION_CHANNEL[situation]
+        bid = self._engine._bid(situation, context)
+        return Action(self.actions_taken, action_type, channel, round(bid, 2))
+
+
+# ---------------------------------------------------------------------------
+# Learned situation classifier (supervised, then deployed without oracle).
+#
+# Since audience intent is the ONLY situation-informative observable in the
+# generator, the Bayes-optimal classifier on observable signals is an interval
+# rule on intent. We therefore learn interval thresholds from a LABELED
+# calibration sample (greedy top-down splitting, deterministic). This enables
+# the F5 remedy test: recalibrate the classifier per situation distribution.
+# ---------------------------------------------------------------------------
+
+def fit_intent_classifier(samples, max_splits: int = 5):
+    """Fit an interval classifier intent -> SituationType from labeled samples.
+
+    Greedy top-down: repeatedly split the interval at the point that most
+    reduces classification error, until max_splits splits. Deterministic.
+    Returns (thresholds, interval_labels).
+    """
+    pts = sorted(samples, key=lambda t: t[0])
+
+    def best_split(p):
+        classes = {}
+        for _, s in p:
+            classes[s] = classes.get(s, 0) + 1
+        total = len(p)
+        e0 = total - max(classes.values())
+        left = {}
+        best_gain, best_j = 0.0, None
+        for j in range(1, total):
+            s = p[j - 1][1]
+            left[s] = left.get(s, 0) + 1
+            if p[j][0] == p[j - 1][0]:
+                continue
+            nl, nr = j, total - j
+            ml = max(left.values())
+            mr = max((n - left.get(c, 0) for c, n in classes.items()))
+            gain = e0 - ((nl - ml) + (nr - mr))
+            if gain > best_gain:
+                best_gain, best_j = gain, j
+        return best_gain, best_j
+
+    intervals = [pts]
+    while len(intervals) < max_splits + 1:
+        cand = [(best_split(p), i) for i, p in enumerate(intervals) if len(p) >= 2]
+        cand = [(g, j, i) for (g, j), i in cand if j is not None]
+        if not cand:
+            break
+        gain, j, i = max(cand)
+        if gain <= 0:
+            break
+        p = intervals[i]
+        intervals[i:i + 1] = [p[:j], p[j:]]
+
+    def majority(p):
+        counts = {}
+        for _, s in p:
+            counts[s] = counts.get(s, 0) + 1
+        return max(counts.items(), key=lambda kv: (kv[1], kv[0].value))[0]
+
+    labels = [majority(p) for p in intervals]
+    thresholds = [round((intervals[k - 1][-1][0] + intervals[k][0][0]) / 2, 4)
+                  for k in range(1, len(intervals))]
+    return thresholds, labels
+
+
+def _fit_learner_for_config(config_overrides, calib_seed: int = 999_999, n: int = 2000):
+    """Draw a labeled calibration sample from the given env config and fit."""
+    cfg = dict(ENVIRONMENT_PRESETS['default'])
+    if config_overrides:
+        cfg.update(config_overrides)
+    env = SimulationEnvironment(seed=calib_seed, config=cfg)
+    samples = []
+    for _ in range(n):
+        c = env.generate_context()
+        samples.append((c.audience_intent_strength, c.situation))
+    return fit_intent_classifier(samples)
+
+
+_DEFAULT_LEARNER = None
+
+
+def make_cam_learned() -> "CAMLearned":
+    """Classifier fit ONCE on the default distribution (lazy, deterministic)."""
+    global _DEFAULT_LEARNER
+    if _DEFAULT_LEARNER is None:
+        _DEFAULT_LEARNER = _fit_learner_for_config(None)
+    return CAMLearned(*_DEFAULT_LEARNER, name="cam_learned")
+
+
+class CAMLearned(Agent):
+    """CAM agent with a LEARNED situation classifier.
+
+    Fit on a labeled calibration sample drawn from a (possibly different)
+    situation distribution, then deployed without oracle access. Compared to
+    `cam_inferred` (hand-set thresholds), this tests whether the F5 bias
+    problem is an artifact of hand-tuning or intrinsic to distribution shift —
+    and whether per-environment recalibration fixes it.
+    """
+
+    def __init__(self, thresholds, interval_labels, name: str = "cam_learned"):
+        super().__init__(name)
+        self.thresholds = list(thresholds)
+        self.interval_labels = list(interval_labels)
+        self._engine = CAMOracle(name + "_engine")
+
+    def classify(self, intent: float) -> SituationType:
+        idx = bisect.bisect_right(self.thresholds, intent)
+        return self.interval_labels[idx]
+
+    def decide(self, context: FullContext) -> Action:
+        self.actions_taken += 1
+        situation = self.classify(context.audience_intent_strength)
         action_type = IDEAL_ACTION[situation]
         channel = SITUATION_CHANNEL[situation]
         bid = self._engine._bid(situation, context)
@@ -468,6 +595,11 @@ class SimulationEnvironment:
         w = cfg['situation_weights']
         if abs(sum(w) - 1.0) > 1e-6:
             raise ValueError(f"situation_weights must sum to 1.0 (got {sum(w)})")
+        if 'budget_per_episode' in cfg and (cfg['budget_per_episode'] is not None) and cfg['budget_per_episode'] <= 0:
+            raise ValueError("budget_per_episode must be positive")
+        a = cfg.get('bid_return_alpha')
+        if a is not None and not (0.0 < a < 1.0):
+            raise ValueError("bid_return_alpha must be in (0, 1)")
         self.cfg = cfg
         self.situation_weights = list(w)
         self.action_costs = {ch: c * cfg['cost_multiplier']
@@ -535,6 +667,14 @@ class SimulationEnvironment:
 
         competitive_factor = 1.0 - context.competitive_density * cfg['competitive_scale']
         total_reward = (base_reward + context_bonus + bid_efficiency) * competitive_factor
+
+        # Optional concave returns to bid: reward scales sublinearly with the
+        # bid relative to the clearing price, creating an interior optimal bid.
+        alpha = cfg.get('bid_return_alpha')
+        if alpha and optimal_bid > 0:
+            ret_mult = max(0.0, min(2.0, (action.bid / optimal_bid) ** alpha))
+            total_reward *= ret_mult
+
         cost = self.action_costs[action.channel] * action.bid
         long_term_value = total_reward * 0.2 * context.audience_intent_strength
         latency_ms = self.rng.uniform(50, 500)
@@ -558,14 +698,33 @@ class BenchmarkRunner:
         self.env = env
         self.contexts: List[FullContext] = []
 
-    def run_benchmark(self, agents: List[Agent], contexts: List[FullContext]) -> Dict[str, List[ActionResult]]:
-        """Run every agent against the SAME context sequence (fair pairing)."""
+    def run_benchmark(self, agents: List[Agent], contexts: List[FullContext],
+                      budget: Optional[float] = None) -> Dict[str, List[ActionResult]]:
+        """Run every agent against the SAME context sequence (fair pairing).
+
+        If budget is set, an agent's cumulative spend is tracked per episode;
+        once exhausted, further moments are SKIPPED (recorded as zero-value,
+        non-matching results). Agents are budget-unaware — the constraint
+        tests who spends efficiently, not who plans ahead.
+        """
         all_results = {}
         for agent in agents:
             agent.reset()
+            remaining = budget
             results = []
             for context in contexts:
                 action = agent.decide(context)
+                if remaining is not None:
+                    est_cost = self.env.action_costs[action.channel] * action.bid
+                    if est_cost > remaining + 1e-9:
+                        results.append(ActionResult(
+                            context_id=context.context_id,
+                            action_id=action.action_id,
+                            action_type=action.action_type,
+                            reward=0.0, cost=0.0, long_term_value=0.0,
+                            context_match=False, latency_ms=0.0, skipped=True))
+                        continue
+                    remaining -= est_cost
                 results.append(self.env.evaluate_action(context, action))
             all_results[agent.name] = results
         return all_results
@@ -583,6 +742,7 @@ class BenchmarkRunner:
             total_ltv = sum(r.long_term_value for r in agent_results)
             total_profit = total_reward + total_ltv - total_cost
             context_match_rate = sum(1 for r in agent_results if r.context_match) / total_actions
+            actions_skipped = sum(1 for r in agent_results if r.skipped)
 
             # Aggregate ROAS: total value returned per unit of spend. Guard
             # against near-zero spend instead of producing inf.
@@ -599,6 +759,7 @@ class BenchmarkRunner:
                 'avg_cost': round(total_cost / total_actions, 2),
                 'avg_reward': round(total_reward / total_actions, 3),
                 'profit_per_cost': round(total_profit / total_cost, 3) if total_cost > 1e-9 else None,
+                'actions_skipped': actions_skipped,
             }
         return metrics
 
@@ -610,12 +771,13 @@ AGENT_REGISTRY = {
     'noisy50': lambda: NoisyCAM(0.5, 'noisy50'),
     'noisy80': lambda: NoisyCAM(0.8, 'noisy80'),
     'cam_inferred': CAMInferred,
+    'cam_learned': make_cam_learned,
     'oracle': CAMOracle,
 }
 
-DEFAULT_AGENTS = ['baseline', 'channel_only', 'situation_only', 'noisy50', 'noisy80', 'cam_inferred', 'oracle']
+DEFAULT_AGENTS = ['baseline', 'channel_only', 'situation_only', 'noisy50', 'noisy80', 'cam_inferred', 'cam_learned', 'oracle']
 
-METRIC_KEYS = ['context_match_rate', 'total_profit', 'roas_aggregate', 'profit_per_cost', 'avg_reward']
+METRIC_KEYS = ['context_match_rate', 'total_profit', 'roas_aggregate', 'profit_per_cost', 'avg_reward', 'actions_skipped']
 
 
 def compute_statistics(values_a: list, values_b: list) -> Optional[dict]:
@@ -738,11 +900,12 @@ def stats_vs_baseline(per_seed_values, agent_names, metric_keys):
     return statistics
 
 
-def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False):
+def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False, extra_agent_factory=None):
     """Run all agents across seeds within ONE environment configuration.
 
-    env_config=None means the default preset. Returns
-    (aggregate, statistics, per_seed_values, last_metrics, sample_contexts).
+    env_config=None means the default preset. extra_agent_factory (optional)
+    appends one additional per-config agent (e.g. a recalibrated classifier).
+    Returns (aggregate, statistics, per_seed_values, last_metrics, sample_contexts).
     """
     metric_keys = list(METRIC_KEYS)
     per_seed_values = {m: {n: [] for n in agent_names} for m in metric_keys}
@@ -761,26 +924,63 @@ def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False):
             sample_contexts = contexts[:10]
 
         agents = [AGENT_REGISTRY[n]() for n in agent_names]
-        results = runner.run_benchmark(agents, contexts)
+        if extra_agent_factory is not None:
+            agents.append(extra_agent_factory())
+        budget = env.cfg.get('budget_per_episode')
+        results = runner.run_benchmark(agents, contexts, budget=budget)
         metrics = runner.get_metrics(results)
         last_metrics = metrics
 
-        for name in agent_names:
+        for name in metrics:
+            if name not in per_seed_values[metric_keys[0]]:
+                for k in metric_keys:
+                    per_seed_values[k][name] = []
             for key in metric_keys:
                 value = metrics[name][key]
                 per_seed_values[key][name].append(value if value is not None else float('nan'))
 
-    return (aggregate_seeds(per_seed_values, agent_names, metric_keys),
-            stats_vs_baseline(per_seed_values, agent_names, metric_keys),
+    all_names = list(per_seed_values[next(iter(per_seed_values))].keys())
+    return (aggregate_seeds(per_seed_values, all_names, metric_keys),
+            stats_vs_baseline(per_seed_values, all_names, metric_keys),
             per_seed_values, last_metrics, sample_contexts)
 
 
-def check_ladder(profits: Dict[str, float]) -> Optional[bool]:
-    """H4 dose-response: noisy50 < cam_inferred < noisy80 < oracle."""
-    needed = ['noisy50', 'cam_inferred', 'noisy80', 'oracle']
+def check_ladder(profits: Dict[str, float], inferred_key: str = 'cam_inferred') -> Optional[bool]:
+    """H4 dose-response by label ordering: noisy50 < <inferred_key> < noisy80 < oracle."""
+    needed = ['noisy50', inferred_key, 'noisy80', 'oracle']
     if not all(a in profits and profits[a] is not None for a in needed):
         return None
-    return profits['noisy50'] < profits['cam_inferred'] < profits['noisy80'] < profits['oracle']
+    return profits['noisy50'] < profits[inferred_key] < profits['noisy80'] < profits['oracle']
+
+
+def check_recal_healthy(profits: Dict[str, float]) -> Optional[bool]:
+    """Recalibration remedy (F5): recal classifier must beat unbiased 50% noise.
+
+    (Deliberately NOT a strict ladder check: a recalibrated classifier with
+    >80% accuracy SHOULD exceed noisy80 — performance must follow perception
+    quality, which the Spearman dose-response check below measures properly.)
+    """
+    if not all(a in profits and profits[a] is not None for a in ('cam_recalibrated', 'noisy50')):
+        return None
+    return profits['cam_recalibrated'] > profits['noisy50']
+
+
+def dose_response_spearman(aggregate: Dict[str, dict]):
+    """Agent-level dose-response: Spearman(match rate, profit) across agents.
+
+    The proper H4 test: profit must increase with ACTUAL perception quality,
+    regardless of agent labels.
+    """
+    xs, ys = [], []
+    for v in aggregate.values():
+        m, p = v.get('context_match_rate_mean'), v.get('total_profit_mean')
+        if m is not None and p is not None and np.isfinite(m) and np.isfinite(p):
+            xs.append(m)
+            ys.append(p)
+    if len(xs) < 3:
+        return None, None
+    rho, pval = scipy.stats.spearmanr(xs, ys)
+    return float(rho), float(pval)
 
 
 def check_f3(profits: Dict[str, float]) -> Optional[bool]:
@@ -800,23 +1000,36 @@ def run_robustness_sweep(seeds, scenarios, agent_names, quiet=False):
     for env_name, overrides in ENVIRONMENT_PRESETS.items():
         cfg = dict(ENVIRONMENT_PRESETS['default'])
         cfg.update(overrides)
-        aggregate, _, _, _, _ = run_env(cfg, seeds, scenarios, agent_names)
-        profits = {n: aggregate[n]['total_profit_mean'] for n in agent_names}
+        # Per-environment RECALIBRATED classifier: fit on a labeled calibration
+        # sample drawn from THIS distribution (F5 remedy test).
+        th, lb = _fit_learner_for_config(overrides)
+        extra_factory = lambda: CAMLearned(th, lb, name='cam_recalibrated')  # noqa: E731
+        aggregate, _, _, _, _ = run_env(cfg, seeds, scenarios, agent_names,
+                                        extra_agent_factory=extra_factory)
+        profits = {n: aggregate[n]['total_profit_mean'] for n in aggregate}
+        rho, rho_p = dose_response_spearman(aggregate)
         row = {
             'env': env_name,
-            'config_overrides': {k: v for k, v in cfg.items() if k != 'situation_weights'},
+            'config_overrides': {k: v for k, v in cfg.items() if k not in ('situation_weights',)},
             'situation_weights': [round(w, 4) for w in cfg['situation_weights']],
             'profits': profits,
-            'ladder_ok': check_ladder(profits),
+            'ladder_ok': check_ladder(profits, 'cam_inferred'),
+            'recal_healthy': check_recal_healthy(profits),
             'f3_ok': check_f3(profits),
+            'dose_response_spearman_rho': round(rho, 4) if rho is not None else None,
+            'dose_response_spearman_p': rho_p,
+            'recal_thresholds': th,
+            'hand_thresholds': [0.35, 0.65, 0.78],
         }
         rows.append(row)
         if not quiet:
             ladder = 'OK  ' if row['ladder_ok'] else 'FAIL'
+            recal = 'OK  ' if row['recal_healthy'] else 'FAIL'
             f3 = 'OK  ' if row['f3_ok'] else 'FAIL'
             print(f"  {env_name:<20} situation_only {profits['situation_only']:>+9.2f}   "
                   f"oracle {profits['oracle']:>+9.2f}   "
-                  f"baseline {profits['baseline']:>+9.2f}   ladder={ladder}  F3={f3}")
+                  f"baseline {profits['baseline']:>+9.2f}   "
+                  f"hand={ladder} recal={recal}  F3={f3}  rho={row['dose_response_spearman_rho']}")
     return rows
 
 
@@ -830,20 +1043,26 @@ def write_robustness_md(path: Path, seeds: List[int], scenarios: int, rows: List
         f"Environments: {[r['env'] for r in rows]}  |  Seeds: {len(seeds)}  |  Scenarios/seed: {scenarios}",
         "",
         "Situation->action language held fixed; ECONOMICS vary (situation distribution,",
-        "reward scale, media costs, strength of context-matching payoffs).",
+        "reward scale, media costs, budget caps, bid-return curvature, context-payoff strength).",
+        "cam_recalibrated = classifier fit per environment on a labeled calibration sample.",
         "",
-        "| Environment | " + " | ".join(agents) + " | ladder OK | F3 OK |",
-        "|-------------|" + "|".join(["--------"] * len(agents)) + "|------|------|",
+        "| Environment | " + " | ".join(agents) + " | ladder (hand) | recal>noisy50 | F3 OK | rho(match,profit) |",
+        "|-------------|" + "|".join(["--------"] * len(agents)) + "|------|------|------|------|",
     ]
     for r in rows:
-        cells = " | ".join(f"{r['profits'][a]:+.1f}" for a in agents)
-        ladder = "yes" if r['ladder_ok'] else "**NO**"
+        cells = " | ".join(f"{r['profits'].get(a, float('nan')):+.1f}" for a in agents)
+        lh = "yes" if r['ladder_ok'] else "**NO**"
+        lr = "yes" if r['recal_healthy'] else "**NO**"
         f3 = "yes" if r['f3_ok'] else "**NO**"
-        lines.append(f"| {r['env']} | {cells} | {ladder} | {f3} |")
+        rho = r.get('dose_response_spearman_rho')
+        rho_s = f"{rho:.2f}" if rho is not None else "n/a"
+        lines.append(f"| {r['env']} | {cells} | {lh} | {lr} | {f3} | {rho_s} |")
     lines += [
         "",
-        "ladder = noisy50 < cam_inferred < noisy80 < oracle (H4 dose-response);",
-        "F3 = situation_only > oracle (action selection dominates bid modulation).",
+        "ladder (hand) = noisy50 < cam_inferred < noisy80 < oracle (H4, label ordering);",
+        "recal>noisy50 = per-env recalibrated classifier beats unbiased 50% perception (F5 remedy);",
+        "F3 = situation_only > oracle (action selection dominates bid modulation);",
+        "rho = Spearman(context match rate, profit) across agents — the label-free dose-response test.",
         "",
     ]
     path.write_text("\n".join(lines), encoding="utf-8")
