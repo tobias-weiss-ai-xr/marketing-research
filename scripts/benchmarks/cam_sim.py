@@ -1004,10 +1004,16 @@ def run_robustness_sweep(seeds, scenarios, agent_names, quiet=False):
         # sample drawn from THIS distribution (F5 remedy test).
         th, lb = _fit_learner_for_config(overrides)
         extra_factory = lambda: CAMLearned(th, lb, name='cam_recalibrated')  # noqa: E731
-        aggregate, _, _, _, _ = run_env(cfg, seeds, scenarios, agent_names,
-                                        extra_agent_factory=extra_factory)
+        aggregate, _, per_seed, _, _ = run_env(cfg, seeds, scenarios, agent_names,
+                                               extra_agent_factory=extra_factory)
         profits = {n: aggregate[n]['total_profit_mean'] for n in aggregate}
         rho, rho_p = dose_response_spearman(aggregate)
+        # F3 needs a REAL test, not just a point-estimate comparison:
+        # paired seed-level situation_only vs oracle (both exist in all runs).
+        f3_stats = None
+        if 'situation_only' in per_seed['total_profit'] and 'oracle' in per_seed['total_profit']:
+            f3_stats = compute_statistics(per_seed['total_profit']['oracle'],
+                                          per_seed['total_profit']['situation_only'])
         row = {
             'env': env_name,
             'config_overrides': {k: v for k, v in cfg.items() if k not in ('situation_weights',)},
@@ -1016,6 +1022,7 @@ def run_robustness_sweep(seeds, scenarios, agent_names, quiet=False):
             'ladder_ok': check_ladder(profits, 'cam_inferred'),
             'recal_healthy': check_recal_healthy(profits),
             'f3_ok': check_f3(profits),
+            'f3_paired': f3_stats,
             'dose_response_spearman_rho': round(rho, 4) if rho is not None else None,
             'dose_response_spearman_p': rho_p,
             'recal_thresholds': th,
@@ -1029,7 +1036,8 @@ def run_robustness_sweep(seeds, scenarios, agent_names, quiet=False):
             print(f"  {env_name:<20} situation_only {profits['situation_only']:>+9.2f}   "
                   f"oracle {profits['oracle']:>+9.2f}   "
                   f"baseline {profits['baseline']:>+9.2f}   "
-                  f"hand={ladder} recal={recal}  F3={f3}  rho={row['dose_response_spearman_rho']}")
+                  f"hand={ladder} recal={recal}  F3={f3}  rho={row['dose_response_spearman_rho']}" +
+                  (f"  F3-p={row['f3_paired']['p_value']:.1e}" if f3_stats else ""))
     return rows
 
 
@@ -1053,7 +1061,11 @@ def write_robustness_md(path: Path, seeds: List[int], scenarios: int, rows: List
         cells = " | ".join(f"{r['profits'].get(a, float('nan')):+.1f}" for a in agents)
         lh = "yes" if r['ladder_ok'] else "**NO**"
         lr = "yes" if r['recal_healthy'] else "**NO**"
-        f3 = "yes" if r['f3_ok'] else "**NO**"
+        fp = r.get('f3_paired')
+        if r['f3_ok']:
+            f3 = f"yes (p={fp['p_value']:.0e})" if fp else "yes"
+        else:
+            f3 = f"**NO** (p={fp['p_value']:.0e})" if fp else "**NO**"
         rho = r.get('dose_response_spearman_rho')
         rho_s = f"{rho:.2f}" if rho is not None else "n/a"
         lines.append(f"| {r['env']} | {cells} | {lh} | {lr} | {f3} | {rho_s} |")
