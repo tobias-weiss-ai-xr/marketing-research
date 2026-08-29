@@ -200,6 +200,20 @@ def cache_response(query, params, data):
         pickle.dump(data, f)
 
 
+def norm_arxiv_url(url):
+    """Canonicalize an arXiv URL to https://arxiv.org/abs/<id> (pdf/ -> abs/,
+    strip version suffix). Non-arXiv URLs are returned unchanged."""
+    if not url:
+        return url
+    m = re.search(r"arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5}(?:v\d+)?)", url, re.IGNORECASE)
+    if m:
+        return f"https://arxiv.org/abs/{m.group(1)}"
+    m2 = re.match(r"https?://doi\.org/10\.48550/arxiv\.(\d{4}\.\d{4,5})", url, re.IGNORECASE)
+    if m2:
+        return f"https://arxiv.org/abs/{m2.group(1)}"
+    return url
+
+
 def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mailto=None, use_cache=True):
     """Cursor-paginated, relevance-sorted fetch for one category."""
     import requests
@@ -252,7 +266,7 @@ def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mai
                 entries.append({
                     "title": title,
                     "date": date,
-                    "url": url,
+                    "url": norm_arxiv_url(url),
                     "category": None,
                     "subcategory": classify_subcategory(title, abstract, subcat_keywords),
                     "authors": [a.get("author", {}).get("display_name", "") for a in work.get("authorships", [])][:3],
@@ -320,7 +334,7 @@ def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mai
                     entries.append({
                         "title": title,
                         "date": date,
-                        "url": url,
+                        "url": norm_arxiv_url(url),
                         "category": None,
                         "subcategory": classify_subcategory(title, abstract, subcat_keywords),
                         "authors": [a.get("author", {}).get("display_name", "") for a in work.get("authorships", [])][:3],
@@ -397,7 +411,7 @@ def fetch_category(terms, months, per_category, sleep, subcat_keywords=None, mai
                 {
                     "title": title,
                     "date": date,
-                    "url": url,
+                    "url": norm_arxiv_url(url),
                     "category": None,
                     "subcategory": classify_subcategory(title, abstract, subcat_keywords),
                     "authors": [a.get("author", {}).get("display_name", "") for a in work.get("authorships", [])][:3],
