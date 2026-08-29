@@ -3,23 +3,23 @@
   {
    "id": "ai-marketing",
    "name": "AI & Marketing",
-   "count": 1002,
+   "count": 1004,
    "trajectory": {
     "2021": 1,
     "2024": 259,
     "2025": 250,
-    "2026": 492
+    "2026": 494
    },
    "momentum": {
     "id": "ai-marketing",
     "name": "Ai Marketing",
-    "total": 1002,
-    "recent": 577,
+    "total": 1004,
+    "recent": 579,
     "prior": 303,
-    "growth_pct": 90.4,
-    "recent_share": 0.576,
-    "papers_per_month": 48.1,
-    "score": 148.0
+    "growth_pct": 91.1,
+    "recent_share": 0.577,
+    "papers_per_month": 48.2,
+    "score": 148.8
    }
   },
   {
@@ -273,7 +273,7 @@
   {
    "id": "empirical",
    "name": "Empirical Studies",
-   "count": 2207
+   "count": 2209
   },
   {
    "id": "framework",
@@ -36750,6 +36750,16 @@
   [
    "2026-08",
    "ai-marketing",
+   "empirical"
+  ],
+  [
+   "2026-08",
+   "ai-marketing",
+   "empirical"
+  ],
+  [
+   "2026-08",
+   "ai-marketing",
    "framework"
   ],
   [
@@ -39257,10 +39267,10 @@
   },
   {
    "keyword": "dataset",
-   "recent": 69,
-   "total": 74,
+   "recent": 70,
+   "total": 75,
    "burst_score": 1.72,
-   "recent_share": 0.0163
+   "recent_share": 0.0166
   },
   {
    "keyword": "scalable",
@@ -39274,14 +39284,14 @@
    "recent": 86,
    "total": 107,
    "burst_score": 1.48,
-   "recent_share": 0.0204
+   "recent_share": 0.0203
   },
   {
    "keyword": "autonomous",
-   "recent": 30,
-   "total": 38,
-   "burst_score": 1.45,
-   "recent_share": 0.0071
+   "recent": 31,
+   "total": 39,
+   "burst_score": 1.46,
+   "recent_share": 0.0073
   },
   {
    "keyword": "human",
@@ -39292,17 +39302,17 @@
   },
   {
    "keyword": "framework",
-   "recent": 450,
-   "total": 665,
+   "recent": 451,
+   "total": 666,
    "burst_score": 1.25,
-   "recent_share": 0.1065
+   "recent_share": 0.1067
   },
   {
    "keyword": "system",
-   "recent": 632,
-   "total": 966,
+   "recent": 633,
+   "total": 967,
    "burst_score": 1.2,
-   "recent_share": 0.1496
+   "recent_share": 0.1497
   },
   {
    "keyword": "survey",
@@ -39313,10 +39323,10 @@
   },
   {
    "keyword": "model",
-   "recent": 487,
-   "total": 794,
+   "recent": 489,
+   "total": 796,
    "burst_score": 1.13,
-   "recent_share": 0.1152
+   "recent_share": 0.1157
   },
   {
    "keyword": "tool",
@@ -39327,17 +39337,17 @@
   },
   {
    "keyword": "analysis",
-   "recent": 386,
-   "total": 728,
+   "recent": 387,
+   "total": 729,
    "burst_score": 0.98,
-   "recent_share": 0.0913
+   "recent_share": 0.0915
   },
   {
    "keyword": "learning",
-   "recent": 153,
-   "total": 293,
-   "burst_score": 0.96,
-   "recent_share": 0.0362
+   "recent": 155,
+   "total": 295,
+   "burst_score": 0.97,
+   "recent_share": 0.0367
   },
   {
    "keyword": "novel",
