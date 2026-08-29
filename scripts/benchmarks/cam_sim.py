@@ -180,6 +180,49 @@ def infer_situation_from_intent(intent: float) -> SituationType:
     return SituationType.DECISION
 
 
+# ---------------------------------------------------------------------------
+# Environment configurations (robustness presets)
+#
+# The situation->ideal-action LANGUAGE is held fixed across environments
+# (IDEAL_ACTION / SITUATION_CHANNEL); what varies is the ECONOMICS: situation
+# distribution, reward scale, media costs, and how strongly the environment
+# pays for context-matching. This addresses reward-design circularity: if the
+# headline findings replicate across presets, they are not artifacts of one
+# hand-designed reward table.
+# ---------------------------------------------------------------------------
+ENVIRONMENT_PRESETS: Dict[str, dict] = {
+    'default': {
+        'situation_weights': [0.35, 0.30, 0.15, 0.05, 0.05, 0.10],
+        'reward_scale': 1.0,
+        'cost_multiplier': 1.0,
+        'match_bonus': 0.5,       # reward added when action matches situation
+        'match_penalty': -0.3,    # reward change when action mismatches
+        'bid_eff_scale': 1.0,     # scales bid-efficiency adjustments (+.3/+.1/-.2)
+        'competitive_scale': 0.5, # competitive discount factor
+    },
+    'uniform_situations': {
+        'situation_weights': [1 / 6] * 6,
+    },
+    'decision_heavy': {
+        'situation_weights': [0.15, 0.20, 0.35, 0.10, 0.10, 0.10],
+    },
+    'crisis_heavy': {
+        'situation_weights': [0.15, 0.20, 0.15, 0.25, 0.10, 0.15],
+    },
+    'retention_heavy': {
+        'situation_weights': [0.15, 0.15, 0.15, 0.05, 0.05, 0.45],
+    },
+    'high_costs': {
+        'cost_multiplier': 2.0,   # expensive-media regime
+    },
+    'weak_signal_bonus': {
+        'match_bonus': 0.25,
+        'match_penalty': -0.15,
+        'bid_eff_scale': 0.5,     # environment pays WEAKLY for context matching
+    },
+}
+
+
 class Agent(ABC):
     """Abstract base class for marketing agents."""
 
@@ -413,13 +456,26 @@ class SimulationEnvironment:
         (ActionType.LOYALTY, SituationType.RETENTION): 2.0,
     }
 
-    def __init__(self, seed: Optional[int] = None):
+    def __init__(self, seed: Optional[int] = None, config: Optional[dict] = None):
         self.rng = np.random.RandomState(seed)
         self.scenario_counter = 0
+        cfg = dict(ENVIRONMENT_PRESETS['default'])
+        if config:
+            unknown = set(config) - set(cfg)
+            if unknown:
+                raise ValueError(f"Unknown environment config keys: {unknown}")
+            cfg.update(config)
+        w = cfg['situation_weights']
+        if abs(sum(w) - 1.0) > 1e-6:
+            raise ValueError(f"situation_weights must sum to 1.0 (got {sum(w)})")
+        self.cfg = cfg
+        self.situation_weights = list(w)
+        self.action_costs = {ch: c * cfg['cost_multiplier']
+                             for ch, c in self.ACTION_COSTS.items()}
 
     def _random_situation(self) -> SituationType:
         situations = list(SituationType)
-        choice = self.rng.choice(len(situations), p=self.SITUATION_WEIGHTS)
+        choice = self.rng.choice(len(situations), p=self.situation_weights)
         return situations[int(choice)]
 
     def _get_intent_strength(self, situation: SituationType) -> float:
@@ -461,10 +517,11 @@ class SimulationEnvironment:
 
     def evaluate_action(self, context: FullContext, action: Action) -> ActionResult:
         """Evaluate the result of taking an action in a context."""
-        base_reward = self.BASE_REWARDS[(action.action_type, context.situation)]
+        cfg = self.cfg
+        base_reward = self.BASE_REWARDS[(action.action_type, context.situation)] * cfg['reward_scale']
 
         context_match = (action.action_type == IDEAL_ACTION[context.situation])
-        context_bonus = 0.5 if context_match else -0.3
+        context_bonus = cfg['match_bonus'] if context_match else cfg['match_penalty']
 
         optimal_bid = 1.0 * context.audience_intent_strength * context.channel_quality
         bid_ratio = action.bid / optimal_bid if optimal_bid > 0 else 0
@@ -474,10 +531,11 @@ class SimulationEnvironment:
             bid_efficiency = 0.1
         else:
             bid_efficiency = -0.2
+        bid_efficiency *= cfg['bid_eff_scale']
 
-        competitive_factor = 1.0 - context.competitive_density * 0.5
+        competitive_factor = 1.0 - context.competitive_density * cfg['competitive_scale']
         total_reward = (base_reward + context_bonus + bid_efficiency) * competitive_factor
-        cost = self.ACTION_COSTS[action.channel] * action.bid
+        cost = self.action_costs[action.channel] * action.bid
         long_term_value = total_reward * 0.2 * context.audience_intent_strength
         latency_ms = self.rng.uniform(50, 500)
 
@@ -649,6 +707,148 @@ def write_markdown_report(path: Path, seeds: List[int], scenarios: int,
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def aggregate_seeds(per_seed_values, agent_names, metric_keys):
+    """Aggregate per-seed metric lists into means/SDs/95% CIs (nan-safe)."""
+    aggregate = {}
+    for name in agent_names:
+        agg = {}
+        for key in metric_keys:
+            arr = np.asarray(per_seed_values[key][name], dtype=float)
+            finite = arr[np.isfinite(arr)]
+            agg[key + '_mean'] = round(float(finite.mean()), 4) if len(finite) else None
+            agg[key + '_std'] = round(float(finite.std(ddof=1)), 4) if len(finite) > 1 else None
+            if len(finite) > 1:
+                se = finite.std(ddof=1) / np.sqrt(len(finite))
+                agg[key + '_ci95'] = [round(float(finite.mean() - 1.96 * se), 4),
+                                      round(float(finite.mean() + 1.96 * se), 4)]
+        aggregate[name] = agg
+    return aggregate
+
+
+def stats_vs_baseline(per_seed_values, agent_names, metric_keys):
+    """Seed-level paired statistics vs baseline for every other agent."""
+    statistics = {}
+    if 'baseline' in agent_names:
+        for name in agent_names:
+            if name == 'baseline':
+                continue
+            statistics[name] = {key: compute_statistics(per_seed_values[key]['baseline'],
+                                                        per_seed_values[key][name])
+                                for key in metric_keys}
+    return statistics
+
+
+def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False):
+    """Run all agents across seeds within ONE environment configuration.
+
+    env_config=None means the default preset. Returns
+    (aggregate, statistics, per_seed_values, last_metrics, sample_contexts).
+    """
+    metric_keys = list(METRIC_KEYS)
+    per_seed_values = {m: {n: [] for n in agent_names} for m in metric_keys}
+    last_metrics = None
+    sample_contexts = []
+    for seed in seeds:
+        # Seed BOTH the environment (numpy) and the agents (stdlib random).
+        random.seed(seed)
+        env = SimulationEnvironment(seed=seed, config=env_config)
+        runner = BenchmarkRunner(env)
+
+        # Generate the context sequence ONCE per seed -> every agent faces
+        # identical scenarios (fair pairing).
+        contexts = [env.generate_context() for _ in range(scenarios)]
+        if capture_sample and not sample_contexts:
+            sample_contexts = contexts[:10]
+
+        agents = [AGENT_REGISTRY[n]() for n in agent_names]
+        results = runner.run_benchmark(agents, contexts)
+        metrics = runner.get_metrics(results)
+        last_metrics = metrics
+
+        for name in agent_names:
+            for key in metric_keys:
+                value = metrics[name][key]
+                per_seed_values[key][name].append(value if value is not None else float('nan'))
+
+    return (aggregate_seeds(per_seed_values, agent_names, metric_keys),
+            stats_vs_baseline(per_seed_values, agent_names, metric_keys),
+            per_seed_values, last_metrics, sample_contexts)
+
+
+def check_ladder(profits: Dict[str, float]) -> Optional[bool]:
+    """H4 dose-response: noisy50 < cam_inferred < noisy80 < oracle."""
+    needed = ['noisy50', 'cam_inferred', 'noisy80', 'oracle']
+    if not all(a in profits and profits[a] is not None for a in needed):
+        return None
+    return profits['noisy50'] < profits['cam_inferred'] < profits['noisy80'] < profits['oracle']
+
+
+def check_f3(profits: Dict[str, float]) -> Optional[bool]:
+    """F3: flat-bid perfect matching beats the oracle's context-inflated bidding."""
+    if not all(a in profits and profits[a] is not None for a in ('situation_only', 'oracle')):
+        return None
+    return profits['situation_only'] > profits['oracle']
+
+
+def run_robustness_sweep(seeds, scenarios, agent_names, quiet=False):
+    """Run the ablation ladder across ALL environment presets."""
+    rows = []
+    if not quiet:
+        print("\n" + "=" * 78)
+        print(f"ROBUSTNESS SWEEP: {len(ENVIRONMENT_PRESETS)} environments x {len(seeds)} seeds")
+        print("=" * 78)
+    for env_name, overrides in ENVIRONMENT_PRESETS.items():
+        cfg = dict(ENVIRONMENT_PRESETS['default'])
+        cfg.update(overrides)
+        aggregate, _, _, _, _ = run_env(cfg, seeds, scenarios, agent_names)
+        profits = {n: aggregate[n]['total_profit_mean'] for n in agent_names}
+        row = {
+            'env': env_name,
+            'config_overrides': {k: v for k, v in cfg.items() if k != 'situation_weights'},
+            'situation_weights': [round(w, 4) for w in cfg['situation_weights']],
+            'profits': profits,
+            'ladder_ok': check_ladder(profits),
+            'f3_ok': check_f3(profits),
+        }
+        rows.append(row)
+        if not quiet:
+            ladder = 'OK  ' if row['ladder_ok'] else 'FAIL'
+            f3 = 'OK  ' if row['f3_ok'] else 'FAIL'
+            print(f"  {env_name:<20} situation_only {profits['situation_only']:>+9.2f}   "
+                  f"oracle {profits['oracle']:>+9.2f}   "
+                  f"baseline {profits['baseline']:>+9.2f}   ladder={ladder}  F3={f3}")
+    return rows
+
+
+def write_robustness_md(path: Path, seeds: List[int], scenarios: int, rows: List[dict]) -> None:
+    """Write a robustness report from actual sweep output."""
+    agents = list(rows[0]['profits'].keys()) if rows else []
+    lines = [
+        "# CAM-Sim Robustness Sweep (auto-generated)",
+        "",
+        f"Generated: {datetime.utcnow().isoformat()}  ",
+        f"Environments: {[r['env'] for r in rows]}  |  Seeds: {len(seeds)}  |  Scenarios/seed: {scenarios}",
+        "",
+        "Situation->action language held fixed; ECONOMICS vary (situation distribution,",
+        "reward scale, media costs, strength of context-matching payoffs).",
+        "",
+        "| Environment | " + " | ".join(agents) + " | ladder OK | F3 OK |",
+        "|-------------|" + "|".join(["--------"] * len(agents)) + "|------|------|",
+    ]
+    for r in rows:
+        cells = " | ".join(f"{r['profits'][a]:+.1f}" for a in agents)
+        ladder = "yes" if r['ladder_ok'] else "**NO**"
+        f3 = "yes" if r['f3_ok'] else "**NO**"
+        lines.append(f"| {r['env']} | {cells} | {ladder} | {f3} |")
+    lines += [
+        "",
+        "ladder = noisy50 < cam_inferred < noisy80 < oracle (H4 dose-response);",
+        "F3 = situation_only > oracle (action selection dominates bid modulation).",
+        "",
+    ]
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="CAM-Sim: Context-Aware Agentic Marketing Simulation"
@@ -663,6 +863,8 @@ def main():
                         help="JSON output path")
     parser.add_argument("--output-md", type=str, default=None,
                         help="Markdown report output path (e.g. results/cam_sim_results.md)")
+    parser.add_argument("--robustness", "-R", action="store_true",
+                        help="Run the ablation across ALL environment presets (robustness sweep)")
     parser.add_argument("--quiet", "-q", action="store_true")
 
     args = parser.parse_args()
@@ -682,57 +884,14 @@ def main():
         print(f"Seeds: {seeds}")
         print()
 
-    metric_keys = [m for m in METRIC_KEYS if m != 'roas_aggregate'] + ['roas_aggregate']
-    per_seed_values = {m: {n: [] for n in selected_names} for m in metric_keys}
-    last_metrics = None
-    sample_contexts = []
+    aggregate, statistics, per_seed_values, last_metrics, sample_contexts = run_env(
+        None, seeds, args.scenarios, selected_names, capture_sample=True)
 
-    for seed in seeds:
-        # Seed BOTH the environment (numpy) and the agents (stdlib random).
-        random.seed(seed)
-        env = SimulationEnvironment(seed=seed)
-        runner = BenchmarkRunner(env)
-
-        # Generate the context sequence ONCE per seed -> every agent faces
-        # identical scenarios (fair pairing).
-        contexts = [env.generate_context() for _ in range(args.scenarios)]
-        if not sample_contexts:
-            sample_contexts = contexts[:10]
-
-        agents = [AGENT_REGISTRY[n]() for n in selected_names]
-        results = runner.run_benchmark(agents, contexts)
-        metrics = runner.get_metrics(results)
-        last_metrics = metrics
-
-        for name in selected_names:
-            for key in metric_keys:
-                value = metrics[name][key]
-                per_seed_values[key][name].append(value if value is not None else float('nan'))
-
-    # Aggregate across seeds (nan-safe)
-    aggregate = {}
-    for name in selected_names:
-        agg = {}
-        for key in metric_keys:
-            arr = np.asarray(per_seed_values[key][name], dtype=float)
-            finite = arr[np.isfinite(arr)]
-            agg[key + '_mean'] = round(float(finite.mean()), 4) if len(finite) else None
-            agg[key + '_std'] = round(float(finite.std(ddof=1)), 4) if len(finite) > 1 else None
-            if len(finite) > 1:
-                se = finite.std(ddof=1) / np.sqrt(len(finite))
-                agg[key + '_ci95'] = [round(float(finite.mean() - 1.96 * se), 4),
-                                      round(float(finite.mean() + 1.96 * se), 4)]
-        aggregate[name] = agg
-
-    # Seed-level paired statistics: every agent vs baseline
-    statistics = {}
-    if 'baseline' in selected_names:
-        for name in selected_names:
-            if name == 'baseline':
-                continue
-            statistics[name] = {key: compute_statistics(per_seed_values[key]['baseline'],
-                                                        per_seed_values[key][name])
-                                for key in metric_keys}
+    # ---- Robustness sweep (optional) ----
+    robustness_rows = None
+    if args.robustness:
+        robustness_rows = run_robustness_sweep(seeds, args.scenarios, selected_names,
+                                               quiet=args.quiet)
 
     # ---- Print ----
     if not args.quiet:
@@ -769,6 +928,7 @@ def main():
         'design': 'shared-context-sequence-per-seed; both RNGs seeded; oracle=labeled upper bound',
         'aggregate_across_seeds': aggregate,
         'statistics_vs_baseline': statistics,
+        'robustness_sweep': robustness_rows,
         'last_seed_metrics': last_metrics,
         'sample_contexts': [c.to_dict() for c in sample_contexts],
     }
@@ -780,6 +940,11 @@ def main():
         md_path = Path(args.output_md)
         md_path.parent.mkdir(parents=True, exist_ok=True)
         write_markdown_report(md_path, seeds, args.scenarios, aggregate, statistics)
+        if robustness_rows is not None:
+            rb_path = md_path.with_name(md_path.stem + '_robustness.md')
+            write_robustness_md(rb_path, seeds, args.scenarios, robustness_rows)
+            if not args.quiet:
+                print(f"✅ Robustness report: {rb_path}")
         if not args.quiet:
             print(f"\n✅ Markdown report: {md_path}")
 

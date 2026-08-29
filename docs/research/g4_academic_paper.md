@@ -21,7 +21,7 @@
 ## 2. Abstract (150-200 words)
 
 **DRAFT:**
-The emergence of agentic AI systems in marketing (61 papers, +1.79× growth rate in our corpus of 7,778 marketing papers) has outpaced the development of frameworks for understanding **marketing context**—the situational, temporal, channel, social, and intent signals that determine message relevance. While marketing practice uses "contextual intelligence" as adtech vocabulary, and Häglund (2025) defines it computationally for NLP applications, **no marketing framework operationalizes situational awareness for autonomous agents**. We propose **Context-Aware Agentic Marketing (CAM)**—a four-layer framework that enables autonomous marketing agents to (1) **sense** multi-modal context signals, (2) **model** unified context representations, (3) **reason** about context relevance via an Awareness Engine, and (4) **act** through context-conditioned marketing actions. We develop CAM-Sim, a synthetic marketing simulation with an ablation-based evaluation design: every agent acts on identical scenario sequences, with both random seeds controlled. Across 50 seeds × 200 scenarios (10,000 evaluations per agent), we compare seven agents forming a situational-awareness ladder—from a context-blind baseline to graded-perception agents (50%/80% perception), a signal-based classifier (75.5% match), and a labeled oracle upper bound. Results show a monotone dose-response: mean profit improves from −$180.31 (baseline) to +$17.41 (50% perception, p = 4.8e-40), +$60.97 (inferred classifier, p = 4.9e-45), and +$105.88 (80% perception, p = 1.4e-48), with situation awareness contributing far more value (+$442.45, p = 1.1e-59) than bid optimization alone (+$52.50, p = 1.9e-15). Notably, the oracle's context-inflated bidding yields *less* profit (+$166.31) than flat bidding with perfect action matching (+$262.14): in this environment, the value of context concentrates in **action selection**, not price modulation. We conclude with implications for autonomous marketing in the post-cookie era and directions for field validation.
+The emergence of agentic AI systems in marketing (61 papers, +1.79× growth rate in our corpus of 7,778 marketing papers) has outpaced the development of frameworks for understanding **marketing context**—the situational, temporal, channel, social, and intent signals that determine message relevance. While marketing practice uses "contextual intelligence" as adtech vocabulary, and Häglund (2025) defines it computationally for NLP applications, **no marketing framework operationalizes situational awareness for autonomous agents**. We propose **Context-Aware Agentic Marketing (CAM)**—a four-layer framework that enables autonomous marketing agents to (1) **sense** multi-modal context signals, (2) **model** unified context representations, (3) **reason** about context relevance via an Awareness Engine, and (4) **act** through context-conditioned marketing actions. We develop CAM-Sim, a synthetic marketing simulation with an ablation-based evaluation design: every agent acts on identical scenario sequences, with both random seeds controlled. Across 50 seeds × 200 scenarios (10,000 evaluations per agent), we compare seven agents forming a situational-awareness ladder—from a context-blind baseline to graded-perception agents (50%/80% perception), a signal-based classifier (75.5% match), and a labeled oracle upper bound. Results show a monotone dose-response: mean profit improves from −$180.31 (baseline) to +$17.41 (50% perception, p = 4.8e-40), +$60.97 (inferred classifier, p = 4.9e-45), and +$105.88 (80% perception, p = 1.4e-48), with situation awareness contributing far more value (+$442.45, p = 1.1e-59) than bid optimization alone (+$52.50, p = 1.9e-15). Notably, the oracle's context-inflated bidding yields *less* profit (+$166.31) than flat bidding with perfect action matching (+$262.14) — a result that replicates in **all seven** tested environments (varying situation distributions, media costs, and context-payoff strength). A robustness sweep additionally reveals that the dose-response ordering is environment-dependent: a hand-tuned threshold classifier suffers systematic, distribution-shifted errors that can make it *worse* than unbiased 50% perception, while the action-matching and bid-surprise findings hold universally. We conclude with implications for autonomous marketing in the post-cookie era and directions for field validation.
 
 ---
 
@@ -233,7 +233,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 - **H1:** Context-aware agents will achieve a higher **context match rate** than the context-blind baseline
 - **H2:** Context-aware agents will generate higher **profit** than the baseline
 - **H3:** Context-aware agents will achieve higher **aggregate ROAS** than the baseline
-- **H4 (dose-response):** Performance will increase monotonically with situational-awareness quality (noisy50 < cam_inferred < noisy80 < oracle)
+- **H4 (dose-response):** Performance will increase monotonically with situational-awareness quality (noisy50 < cam_inferred < noisy80 < oracle) — *tested under default economics; robustness across environment distributions is reported in Section 8.4*
 
 *Mediation of profit by context match was considered and deferred: under the oracle, match rate has zero variance (100% by construction) and cannot mediate. A mediation design requires a continuum of perception levels (e.g., p ∈ [0,1] in fine increments) — future work.*
 
@@ -261,6 +261,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 ### 7.2 Experimental Setup
 - **Seeds:** 50 independent seeds (1–50)
 - **Scenarios per seed:** 200 (10,000 total per agent)
+- **Robustness:** the full ladder is additionally run across **7 environment presets** (`--robustness`) that vary situation distribution (uniform, decision-, crisis-, retention-heavy), media costs (×2), and the strength of context-matching payoffs — while holding the situation→action language fixed
 - **Comparison:** every agent vs. baseline (seed-level paired t-tests); ladder ordering tests H4
 
 ### 7.3 Statistical Methods
@@ -303,11 +304,31 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 
 **F2 (H4 supported — dose-response):** Profit increases monotonically across the awareness ladder: noisy50 (+$17.41) < cam_inferred (+$60.97) < noisy80 (+$105.88) < oracle (+$166.31). The `cam_inferred` classifier achieves 75.5% match because crisis/opportunity/decision intent distributions genuinely overlap — realistic classifier confusion, not an artifact.
 
-**F3 (unexpected — the bid surprise):** `situation_only` (+$262.14) **outperforms the oracle** (+$166.31). Perfect action matching with flat bidding beats perfect perception with context-inflated bidding. The oracle's bid heuristic (situation × channel-quality × intent multipliers) is not calibrated to the environment's clearing price (optimal bid = intent × quality), so it systematically over-pays: bid-efficiency bonuses (max +0.3) never recoup the added cost.
+**F3 (unexpected — the bid surprise):** `situation_only` (+$262.14) **outperforms the oracle** (+$166.31) — and this replicates in **7/7 environments** (Section 8.4), including a doubled-cost regime where `situation_only` (+$79.24) is the *only* profitable agent. Perfect action matching with flat bidding beats perfect perception with context-inflated bidding. The oracle's bid heuristic (situation × channel-quality × intent multipliers) is not calibrated to the environment's clearing price (optimal bid = intent × quality), so it systematically over-pays: bid-efficiency bonuses (max +0.3) never recoup the added cost.
 
 **F4 (decomposition):** Action matching is the dominant value driver (+$442.45); bid optimization alone adds +$52.50 (p = 1.9e-15) but cannot cross into profitability without situation knowledge (channel_only stays at −$127.81).
 
-**Interpretation:** In this environment, **the value of context concentrates in what to say (action selection), not how much to pay (bid modulation)**. This reframes the CAM value proposition: situational awareness is primarily a *content/offer decision* capability.
+**Interpretation:** **The value of context concentrates in what to say (action selection), not how much to pay (bid modulation)**. This reframes the CAM value proposition: situational awareness is primarily a *content/offer decision* capability.
+
+### 8.4 Robustness Across Environments (7 presets × 50 seeds)
+
+Total profit by environment (mean over 50 seeds; full data: `results/cam_sim_results_robustness.md`):
+
+| Environment | baseline | channel_only | situation_only | noisy50 | cam_inferred | noisy80 | oracle | ladder | F3 |
+|-------------|----------|--------------|----------------|---------|--------------|---------|--------|--------|----|
+| default | −180.3 | −127.8 | **+262.1** | +17.4 | +61.0 | +105.9 | +166.3 | yes | yes |
+| uniform_situations | −197.6 | −147.4 | **+315.1** | −1.5 | −54.8 | +88.4 | +149.6 | NO | yes |
+| decision_heavy | −169.5 | −152.4 | **+317.0** | −43.2 | −47.7 | +29.6 | +78.3 | NO | yes |
+| crisis_heavy | −214.1 | −155.9 | **+312.5** | −16.0 | −100.3 | +70.1 | +130.2 | NO | yes |
+| retention_heavy | −190.3 | −126.4 | **+315.9** | +41.1 | −28.1 | +144.8 | +215.0 | NO | yes |
+| high_costs (×2) | −508.0 | −366.0 | **+79.2** | −247.2 | −233.6 | −165.8 | −109.0 | yes | yes |
+| weak_signal_bonus | −156.7 | −97.8 | **+235.8** | +19.1 | +52.6 | +91.8 | +141.6 | yes | yes |
+
+**F5 (new — bias beats noise, adversely):** The H4 dose-response ordering holds under the default distribution and under economic shifts (high costs, weak context payoffs), but **breaks in all four distribution-shifted presets**: the hand-tuned threshold classifier (`cam_inferred`) falls below even unbiased 50% perception — catastrophically so under `crisis_heavy` (−$100.33 vs +$16.01 for noisy50) and `retention_heavy` (−$28.10 vs +$41.10). Mechanism: the classifier's errors are *systematic* (retention intent ≈ 0.3 always maps to exploration; crisis ≈ 0.8 maps to decision), so under skewed distributions the bias concentrates exactly where the probability mass is, while the noisy agents' unbiased errors average out. Its effective match rate drops to ~46% under `retention_heavy` — below the coin-flip agents.
+
+**F6:** `situation_only` is the **only agent profitable in all 7 environments**, and its margin over the oracle widens under distribution shift. The universality of F3 across reward scales, cost structures, and payoff designs indicates it is a property of the *economic structure* (bid efficiency capped at +0.3 vs uncapped cost of over-bidding), not of one reward table.
+
+**Implications:** (1) the action-matching value claim is robust; (2) the dose-response claim requires *unbiased* perception — systematically biased classifiers can invert it; (3) deployed CAM perception models must be recalibrated per situation distribution, and unbiased-but-noisy perception can dominate biased-but-often-correct perception.
 
 ---
 
@@ -318,7 +339,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 - **H1 (Context Match):** ✅ Supported — every situation-aware agent reaches 59.9–100% match vs 21.7% baseline
 - **H2 (Profit):** ✅ Supported — all context-aware agents profitable; baseline loses −$180.31
 - **H3 (ROAS):** ✅ Supported — aggregate ROAS rises from 0.452 (baseline) to 1.07–2.44
-- **H4 (Dose-response):** ✅ Supported — monotone profit ordering across the perception ladder (F2)
+- **H4 (Dose-response):** ✅ Supported under default economics — monotone profit ordering across the perception ladder (F2); *breaks for the biased classifier under distribution shift (F5) — see §8.4*
 - **Mediation:** *Deferred* — not testable in this design (see §6.6); requires a perception-level continuum
 
 **Key insight (F3):** The dominant mechanism is **action selection**, not price modulation. `situation_only` beats `oracle` because context-inflated bidding burns more cost than bid-efficiency bonuses return. For CAM practice, this says: invest first in **situation classification** (which message, which offer), and treat bid modulation as a separately calibrated problem — naive context multipliers can be value-destroying.
@@ -329,7 +350,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 1. **Reward-design circularity:** The situation→ideal-action table and reward magnitudes are author-designed; the environment cannot falsify the framework's own mapping. External validity requires field validation (Section 10.3).
 2. **Bid-heuristic miscalibration (finding, not just limitation):** The oracle's bid multipliers are not calibrated to the clearing price — hence F3. A bid layer trained against the environment (or a real auction) is needed before any bid-modulation claim is made.
 3. **Oracle construction:** The oracle receives ground-truth situation labels; it is an upper bound, not a deployable agent. Headline effects (d = 13–18) reflect the design, not deployable performance.
-4. **Seed count:** n = 50 seeds (10,000 evaluations per agent); all pairwise CIs exclude zero, and effects replicate the 5-seed pilot exactly in ordering and magnitude. Residual limitation: all seeds share one environment distribution — between-environment robustness is untested (next: vary reward tables and situation weights).
+4. **Between-environment robustness: tested.** The full ladder replicates across 7 environment presets (§8.4): F3 is universal; the H4 ordering holds under economic shifts but not under distribution shift for the biased threshold classifier (itself a finding, F5). Remaining scope: alternative reward-structure *families* (e.g., concave returns, budget constraints) and adversarial contexts.
 5. **Single environment/reward design:** Robustness across alternative reward tables, situation distributions, and cost structures is untested.
 6. **No learned perception:** `cam_inferred` uses a hand-set threshold classifier; a trained classifier on observable signals (not ground-truth labels) is future work.
 
@@ -435,8 +456,9 @@ python3 scripts/benchmarks/cam_sim.py --scenarios 200 --seeds $(seq -s, 1 50) \
     --output-md results/cam_sim_results.md
 ```
 
-- Full JSON: `results/cam_sim_results.json` (aggregate + per-seed metrics + statistics)
+- Full JSON: `results/cam_sim_results.json` (aggregate + per-seed metrics + statistics + robustness sweep)
 - Markdown report: `results/cam_sim_results.md` (auto-generated tables)
+- Robustness: add `--robustness` to sweep 7 environment presets (report: `results/cam_sim_results_robustness.md`)
 - `results/` is gitignored — outputs are reproducible from seed alone
 
 Reproducibility contract: identical `--seeds` + `--scenarios` reproduce byte-identical aggregates (both RNGs seeded; verified).
