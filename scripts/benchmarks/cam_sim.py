@@ -411,16 +411,28 @@ def fit_intent_classifier(samples, max_splits: int = 5):
     return thresholds, labels
 
 
-def _fit_learner_for_config(config_overrides, calib_seed: int = 999_999, n: int = 2000):
-    """Draw a labeled calibration sample from the given env config and fit."""
+def _fit_learner_for_config(config_overrides, calib_seed: int = 999_999, n: int = 2000,
+                            label_noise: float = 0.0):
+    """Draw a labeled calibration sample from the given env config and fit.
+
+    label_noise: probability of flipping each label to a uniformly random
+    OTHER situation (deployment realism: clean labels are an idealization;
+    this parameterizes how fast the recalibration remedy degrades).
+    """
     cfg = dict(ENVIRONMENT_PRESETS['default'])
     if config_overrides:
         cfg.update(config_overrides)
     env = SimulationEnvironment(seed=calib_seed, config=cfg)
+    rng = np.random.RandomState(calib_seed + 1)
+    all_situations = list(SituationType)
     samples = []
     for _ in range(n):
         c = env.generate_context()
-        samples.append((c.audience_intent_strength, c.situation))
+        situation = c.situation
+        if label_noise > 0 and rng.random_sample() < label_noise:
+            choices = [s for s in all_situations if s != c.situation]
+            situation = choices[rng.randint(len(choices))]
+        samples.append((c.audience_intent_strength, situation))
     return fit_intent_classifier(samples)
 
 
@@ -598,8 +610,8 @@ class SimulationEnvironment:
         if 'budget_per_episode' in cfg and (cfg['budget_per_episode'] is not None) and cfg['budget_per_episode'] <= 0:
             raise ValueError("budget_per_episode must be positive")
         a = cfg.get('bid_return_alpha')
-        if a is not None and not (0.0 < a < 1.0):
-            raise ValueError("bid_return_alpha must be in (0, 1)")
+        if a is not None and not (0.0 < a <= 2.0):
+            raise ValueError("bid_return_alpha must be in (0, 2]")
         self.cfg = cfg
         self.situation_weights = list(w)
         self.action_costs = {ch: c * cfg['cost_multiplier']
@@ -764,6 +776,110 @@ class BenchmarkRunner:
         return metrics
 
 
+class BidCalibratedAgent(Agent):
+    """Oracle situation knowledge + bid calibrated to the environment MECHANISM.
+
+    Unlike CAMOracle (hand-set bid multipliers), this agent knows the reward
+    table, match bonus, cost table, competitive scale, and returns-to-bid
+    curvature, and numerically maximizes expected profit per context (coarse
+    grid + local refinement over the bid). It is the per-mechanism profit
+    CEILING: it tests whether the F3 surprise (flat bidding beats heuristic
+    bidding) survives when bidding is actually optimal, and whether the
+    'oracle' was ever a real upper bound. Deterministic — no RNG draws, so
+    appending it does not perturb the other agents' random streams.
+    """
+
+    def __init__(self, env: "SimulationEnvironment", name: str = 'bid_calibrated'):
+        super().__init__(name)
+        self.env = env
+        self._counter = 0
+
+    def _expected_profit(self, bid, intent, quality, channel_cost, comp, base, bonus):
+        cfg = self.env.cfg
+        optimal_bid = intent * quality
+        ratio = bid / optimal_bid if optimal_bid > 0 else 0.0
+        if 0.8 <= ratio <= 1.2:
+            be = 0.3
+        elif 0.5 <= ratio <= 1.5:
+            be = 0.1
+        else:
+            be = -0.2
+        be *= cfg['bid_eff_scale']
+        total = (base + bonus + be) * comp
+        alpha = cfg.get('bid_return_alpha')
+        if alpha and optimal_bid > 0:
+            total *= max(0.0, min(2.0, (bid / optimal_bid) ** alpha))
+        # profit = reward + ltv - cost, with ltv = reward * 0.2 * intent
+        return total * (1.0 + 0.2 * intent) - channel_cost * bid
+
+    def decide(self, context: FullContext) -> Action:
+        situation = context.situation
+        action_type = IDEAL_ACTION[situation]
+        channel = SITUATION_CHANNEL[situation]
+        cfg = self.env.cfg
+        base = self.env.BASE_REWARDS[(action_type, situation)] * cfg['reward_scale']
+        bonus = cfg['match_bonus']  # always picks the ideal action -> always a match
+        comp = 1.0 - context.competitive_density * cfg['competitive_scale']
+        channel_cost = self.env.action_costs[channel]
+        intent, quality = context.audience_intent_strength, context.channel_quality
+
+        best_bid, best_val = 1.0, -float('inf')
+        for i in range(1, 251):  # coarse grid: 0.02 .. 5.00
+            bid = 0.02 * i
+            v = self._expected_profit(bid, intent, quality, channel_cost, comp, base, bonus)
+            if v > best_val:
+                best_bid, best_val = bid, v
+        lo = max(0.01, best_bid - 0.02)
+        for i in range(1, 20):  # local refinement at 0.001 resolution
+            bid = lo + 0.001 * i
+            v = self._expected_profit(bid, intent, quality, channel_cost, comp, base, bonus)
+            if v > best_val:
+                best_bid, best_val = bid, v
+        self._counter += 1
+        return Action(action_id=f"a_{self.name}_{self._counter}", action_type=action_type,
+                      channel=channel, bid=round(best_bid, 3))
+
+
+class BudgetPacedAgent(Agent):
+    """Wrap any agent with a standard adtech EVEN-PACING rule: per moment, the
+    bid may not exceed (remaining budget / remaining moments) / channel cost.
+
+    Addresses the 'budget-unaware agents' limitation: the wrapped agent still
+    decides channel and action exactly as before; only the bid is rationed so
+    spend spreads across the episode instead of hitting a hard truncation
+    cliff. Spend is estimated from the known cost table (cost = channel_cost
+    x bid; the environment does not alter bids, so estimates are exact).
+    """
+
+    def __init__(self, inner: Agent, budget: float, n_moments: int, cost_table: dict):
+        super().__init__(f"{inner.name}_paced")
+        self.inner = inner
+        self.budget = float(budget)
+        self._n_moments = int(n_moments)
+        self.cost_table = cost_table
+        self.reset()
+
+    def reset(self):
+        super().reset()
+        self.inner.reset()
+        self.remaining = self.budget
+        self.moments_left = self._n_moments
+
+    def decide(self, context: FullContext) -> Action:
+        action = self.inner.decide(context)
+        cost_unit = self.cost_table[action.channel]
+        if self.moments_left > 0 and self.remaining > 0 and cost_unit > 0:
+            allowance = self.remaining / self.moments_left  # $ per moment
+            max_bid = allowance / cost_unit
+            bid = round(min(action.bid, max_bid), 3)
+        else:
+            bid = 0.0  # budget exhausted: zero-cost zero-reward residue
+        self.remaining -= cost_unit * bid
+        self.moments_left -= 1
+        return Action(action_id=action.action_id, action_type=action.action_type,
+                      channel=action.channel, bid=bid, content=action.content)
+
+
 AGENT_REGISTRY = {
     'baseline': BaselineAgent,
     'channel_only': ChannelOnly,
@@ -773,9 +889,12 @@ AGENT_REGISTRY = {
     'cam_inferred': CAMInferred,
     'cam_learned': make_cam_learned,
     'oracle': CAMOracle,
+    # env-aware: run_env special-cases this name and constructs with the env
+    'bid_calibrated': lambda: BidCalibratedAgent(SimulationEnvironment(seed=0)),
 }
 
-DEFAULT_AGENTS = ['baseline', 'channel_only', 'situation_only', 'noisy50', 'noisy80', 'cam_inferred', 'cam_learned', 'oracle']
+DEFAULT_AGENTS = ['baseline', 'channel_only', 'situation_only', 'noisy50', 'noisy80',
+                  'cam_inferred', 'cam_learned', 'oracle', 'bid_calibrated']
 
 METRIC_KEYS = ['context_match_rate', 'total_profit', 'roas_aggregate', 'profit_per_cost', 'avg_reward', 'actions_skipped']
 
@@ -923,7 +1042,12 @@ def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False, ext
         if capture_sample and not sample_contexts:
             sample_contexts = contexts[:10]
 
-        agents = [AGENT_REGISTRY[n]() for n in agent_names]
+        agents = []
+        for n in agent_names:
+            if n == 'bid_calibrated':
+                agents.append(BidCalibratedAgent(env))
+            else:
+                agents.append(AGENT_REGISTRY[n]())
         if extra_agent_factory is not None:
             agents.append(extra_agent_factory())
         budget = env.cfg.get('budget_per_episode')
@@ -943,6 +1067,101 @@ def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False, ext
     return (aggregate_seeds(per_seed_values, all_names, metric_keys),
             stats_vs_baseline(per_seed_values, all_names, metric_keys),
             per_seed_values, last_metrics, sample_contexts)
+
+
+def run_alpha_sweep(seeds, scenarios, quiet=False, alphas=(0.0, 0.25, 0.5, 0.75, 1.0, 1.5)):
+    """F8 follow-up: locate WHERE the F3 reversal starts as returns-to-bid vary.
+
+    alpha=0.0 means no concavity (default economics). Agents: the
+    bidding-relevant subset. Answers two questions: (1) at which curvature
+    does calibrated bidding overtake flat bidding, and (2) does
+    bid_calibrated (the true mechanism-aware ceiling) dominate everywhere —
+    i.e. was the hand-set 'oracle' ever a real upper bound?
+    """
+    agent_names = ['baseline', 'situation_only', 'oracle', 'bid_calibrated']
+    rows = []
+    for alpha in alphas:
+        cfg = {'bid_return_alpha': alpha} if alpha > 0 else None
+        aggregate, _, per_seed, _, _ = run_env(cfg, seeds, scenarios, agent_names)
+        profits = {n: aggregate[n]['total_profit_mean'] for n in agent_names}
+        so = per_seed['total_profit']['situation_only']
+        orc = per_seed['total_profit']['oracle']
+        bc = per_seed['total_profit']['bid_calibrated']
+        row = {
+            'alpha': alpha,
+            'profits': profits,
+            'situation_vs_oracle': compute_statistics(orc, so),
+            'situation_vs_calibrated': compute_statistics(bc, so),
+            'oracle_vs_calibrated': compute_statistics(bc, orc),
+        }
+        rows.append(row)
+        if not quiet:
+            print(f"  alpha={alpha:<5} situation_only {profits['situation_only']:>+9.2f}   "
+                  f"oracle {profits['oracle']:>+9.2f}   bid_calibrated {profits['bid_calibrated']:>+9.2f}")
+    return rows
+
+
+def run_label_noise_study(seeds, scenarios, quiet=False,
+                          envs=('crisis_heavy', 'retention_heavy', 'uniform_situations'),
+                          epsilons=(0.0, 0.05, 0.1, 0.2, 0.3)):
+    """Deployment-realism check for the F6 remedy: recalibration trained on
+    NOISY labels (each label flipped to a random other situation with prob
+    epsilon). How fast does the remedy degrade as labeling quality drops?
+    """
+    rows = []
+    for env_name in envs:
+        overrides = dict(ENVIRONMENT_PRESETS[env_name])
+        for eps in epsilons:
+            th, lb = _fit_learner_for_config(overrides, label_noise=eps)
+            factory = lambda th=th, lb=lb: CAMLearned(th, lb, name='cam_recalibrated')
+            aggregate, _, _, _, _ = run_env(overrides, seeds, scenarios,
+                                            ['noisy50'],
+                                            extra_agent_factory=factory)
+            rec = aggregate['cam_recalibrated']
+            row = {'env': env_name, 'epsilon': eps,
+                   'match_rate': rec['context_match_rate_mean'],
+                   'profit': rec['total_profit_mean'],
+                   'profit_ci95': rec['total_profit_ci95'],
+                   'thresholds': th}
+            rows.append(row)
+            if not quiet:
+                print(f"  {env_name:<18} eps={eps:<5} recal match {rec['context_match_rate_mean']:5.1f}%  "
+                      f"profit {rec['total_profit_mean']:>+8.2f}")
+    return rows
+
+
+def run_budget_pacing_study(seeds, scenarios, quiet=False):
+    """Limitation 'budget-unaware agents': does a standard EVEN-PACING rule
+    (bid <= remaining/moments_left, per channel cost) change the conclusions
+    under budget_constrained? Same wrapping logic for baseline, situation_only
+    and oracle; each paced agent is paired against its unpaced twin.
+    """
+    overrides = dict(ENVIRONMENT_PRESETS['budget_constrained'])
+    budget = overrides['budget_per_episode']
+    names = ['baseline', 'situation_only', 'oracle']
+    metric_keys = list(METRIC_KEYS)
+    all_names = names + [f'{n}_paced' for n in names]
+    per_seed_values = {m: {n: [] for n in all_names} for m in metric_keys}
+    for seed in seeds:
+        random.seed(seed)
+        env = SimulationEnvironment(seed=seed, config=overrides)
+        runner = BenchmarkRunner(env)
+        contexts = [env.generate_context() for _ in range(scenarios)]
+        agents = [AGENT_REGISTRY[n]() for n in names]
+        agents += [BudgetPacedAgent(AGENT_REGISTRY[n](), budget, scenarios, env.action_costs)
+                   for n in names]
+        results = runner.run_benchmark(agents, contexts, budget=budget)
+        metrics = runner.get_metrics(results)
+        for n in all_names:
+            for key in metric_keys:
+                per_seed_values[key][n].append(metrics[n][key])
+    aggregate = aggregate_seeds(per_seed_values, all_names, metric_keys)
+    if not quiet:
+        for n in all_names:
+            a = aggregate[n]
+            print(f"  {n:<20} profit {a['total_profit_mean']:>+9.2f}  "
+                  f"skipped {a['actions_skipped_mean']:5.1f}")
+    return aggregate
 
 
 def check_ladder(profits: Dict[str, float], inferred_key: str = 'cam_inferred') -> Optional[bool]:
@@ -1014,6 +1233,21 @@ def run_robustness_sweep(seeds, scenarios, agent_names, quiet=False):
         if 'situation_only' in per_seed['total_profit'] and 'oracle' in per_seed['total_profit']:
             f3_stats = compute_statistics(per_seed['total_profit']['oracle'],
                                           per_seed['total_profit']['situation_only'])
+        # Per-seed Spearman rho across agents (paired design: 50 replicates
+        # of a 9-agent ranking) -> mean + 95% CI, instead of a single
+        # pseudo-inferential p-value on non-independent agents.
+        agent_list = list(aggregate.keys())
+        seed_rhos = []
+        n_seeds = len(per_seed['total_profit'][agent_list[0]])
+        for i in range(n_seeds):
+            xs = [per_seed['context_match_rate'][n][i] for n in agent_list]
+            ys = [per_seed['total_profit'][n][i] for n in agent_list]
+            if all(np.isfinite(xs)) and all(np.isfinite(ys)):
+                seed_rhos.append(scipy.stats.spearmanr(xs, ys)[0])
+        rho_seed_mean = float(np.mean(seed_rhos)) if seed_rhos else None
+        rho_seed_ci = ([round(float(np.percentile(seed_rhos, 2.5)), 4),
+                        round(float(np.percentile(seed_rhos, 97.5)), 4)]
+                       if len(seed_rhos) > 1 else None)
         row = {
             'env': env_name,
             'config_overrides': {k: v for k, v in cfg.items() if k not in ('situation_weights',)},
@@ -1025,6 +1259,8 @@ def run_robustness_sweep(seeds, scenarios, agent_names, quiet=False):
             'f3_paired': f3_stats,
             'dose_response_spearman_rho': round(rho, 4) if rho is not None else None,
             'dose_response_spearman_p': rho_p,
+            'rho_per_seed_mean': round(rho_seed_mean, 4) if rho_seed_mean is not None else None,
+            'rho_per_seed_ci95': rho_seed_ci,
             'recal_thresholds': th,
             'hand_thresholds': [0.35, 0.65, 0.78],
         }
@@ -1096,6 +1332,12 @@ def main():
                         help="Markdown report output path (e.g. results/cam_sim_results.md)")
     parser.add_argument("--robustness", "-R", action="store_true",
                         help="Run the ablation across ALL environment presets (robustness sweep)")
+    parser.add_argument("--alpha-sweep", action="store_true",
+                        help="F8 stress test: vary returns-to-bid curvature alpha and locate the F3 reversal")
+    parser.add_argument("--label-noise", action="store_true",
+                        help="Stress test: recalibration with noisy calibration labels (deployment realism)")
+    parser.add_argument("--budget-pacing", action="store_true",
+                        help="Stress test: even-pacing wrappers under budget_constrained (budget-awareness)")
     parser.add_argument("--quiet", "-q", action="store_true")
 
     args = parser.parse_args()
@@ -1123,6 +1365,21 @@ def main():
     if args.robustness:
         robustness_rows = run_robustness_sweep(seeds, args.scenarios, selected_names,
                                                quiet=args.quiet)
+
+    # ---- Stress tests (optional) ----
+    alpha_rows = label_rows = pacing_aggregate = None
+    if args.alpha_sweep:
+        if not args.quiet:
+            print("\nALPHA SWEEP (returns-to-bid curvature; alpha=0 = default economics)")
+        alpha_rows = run_alpha_sweep(seeds, args.scenarios, quiet=args.quiet)
+    if args.label_noise:
+        if not args.quiet:
+            print("\nLABEL-NOISE STUDY (recalibration under imperfect labeling)")
+        label_rows = run_label_noise_study(seeds, args.scenarios, quiet=args.quiet)
+    if args.budget_pacing:
+        if not args.quiet:
+            print("\nBUDGET PACING STUDY (even-pacing wrappers, budget_constrained env)")
+        pacing_aggregate = run_budget_pacing_study(seeds, args.scenarios, quiet=args.quiet)
 
     # ---- Print ----
     if not args.quiet:
@@ -1160,6 +1417,9 @@ def main():
         'aggregate_across_seeds': aggregate,
         'statistics_vs_baseline': statistics,
         'robustness_sweep': robustness_rows,
+        'alpha_sweep': alpha_rows,
+        'label_noise': label_rows,
+        'budget_pacing': pacing_aggregate,
         'last_seed_metrics': last_metrics,
         'sample_contexts': [c.to_dict() for c in sample_contexts],
     }
@@ -1176,6 +1436,48 @@ def main():
             write_robustness_md(rb_path, seeds, args.scenarios, robustness_rows)
             if not args.quiet:
                 print(f"✅ Robustness report: {rb_path}")
+        stress_lines = []
+        if alpha_rows is not None:
+            stress_lines += [
+                "", "## Alpha sweep: where does the F3 reversal start?", "",
+                "alpha = returns-to-bid exponent (0 = no concavity = default economics).", "",
+                "| alpha | baseline | situation_only | oracle | bid_calibrated | F3 (sit>oracle) p | sit-vs-calib p |",
+                "|-------|----------|----------------|--------|----------------|-------------------|----------------|",
+            ]
+            for r in alpha_rows:
+                p = r['profits']
+                stress_lines.append(
+                    f"| {r['alpha']} | {p['baseline']:+.1f} | {p['situation_only']:+.1f} | "
+                    f"{p['oracle']:+.1f} | {p['bid_calibrated']:+.1f} | "
+                    f"{r['situation_vs_oracle']['p_value']:.1e} | "
+                    f"{r['situation_vs_calibrated']['p_value']:.1e} |")
+            stress_lines += ["", f"(auto-generated from {len(seeds)} seeds x {args.scenarios} scenarios)", ""]
+        if label_rows is not None:
+            stress_lines += [
+                "", "## Label-noise study: recalibration under imperfect labeling", "",
+                "| env | epsilon | recal match % | recal profit | noisy50 (ref) |",
+                "|-----|---------|---------------|--------------|----------------|",
+            ]
+            for r in label_rows:
+                stress_lines.append(
+                    f"| {r['env']} | {r['epsilon']} | {r['match_rate']:.1f} | "
+                    f"{r['profit']:+.1f} | see robustness table |")
+            stress_lines += [""]
+        if pacing_aggregate is not None:
+            stress_lines += [
+                "", "## Budget pacing: even-pacing wrappers under budget_constrained", "",
+                "| agent | profit | skipped/200 |",
+                "|-------|--------|-------------|",
+            ]
+            for n, a in pacing_aggregate.items():
+                stress_lines.append(
+                    f"| {n} | {a['total_profit_mean']:+.1f} | {a['actions_skipped_mean']:.1f} |")
+            stress_lines += [""]
+        if stress_lines:
+            with open(md_path, 'a', encoding='utf-8') as f:
+                f.write("\n".join(stress_lines))
+            if not args.quiet:
+                print(f"✅ Stress-test sections appended: {md_path}")
         if not args.quiet:
             print(f"\n✅ Markdown report: {md_path}")
 
