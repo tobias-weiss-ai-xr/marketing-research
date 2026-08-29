@@ -10,6 +10,7 @@ Usage:
 """
 
 import argparse
+import os
 import re
 import sys
 from datetime import datetime
@@ -257,10 +258,12 @@ def main():
             print(f"  - {w}", flush=True)
 
     if fixed > 0 or args.sort:
-        with open(yaml_path, "w", encoding="utf-8") as f:
-            yaml.dump(
+        _tmp = yaml_path.parent / f".papers.yaml.tmp.{os.getpid()}"
+        with open(_tmp, "w", encoding="utf-8") as f:
+            yaml.safe_dump(
                 data, f, default_flow_style=False, allow_unicode=True, sort_keys=False
             )
+        os.replace(_tmp, yaml_path)
         if fixed > 0:
             print(f"FIXED: {fixed} issue(s) fixed", flush=True)
         if args.sort:

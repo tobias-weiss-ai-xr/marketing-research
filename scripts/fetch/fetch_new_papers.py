@@ -384,14 +384,12 @@ def main():
                     }
                 )
             data["papers"] = papers
-            with open(yaml_path, "w", encoding="utf-8") as f:
-                yaml.dump(
-                    data,
-                    f,
-                    default_flow_style=False,
-                    allow_unicode=True,
-                    sort_keys=False,
+            _tmp = yaml_path.parent / f".papers.yaml.tmp.{os.getpid()}"
+            with open(_tmp, "w", encoding="utf-8") as f:
+                yaml.safe_dump(
+                    data, f, default_flow_style=False, allow_unicode=True, sort_keys=False
                 )
+            os.replace(_tmp, yaml_path)
             print(f"Saved {len(papers) - before} new papers to papers.yaml", flush=True)
         except Exception as e:
             print(f"ERROR: local write failed: {e}", flush=True)
@@ -427,14 +425,12 @@ def main():
                     }
                 )
             data["papers"] = papers
-            with open(yaml_path, "w", encoding="utf-8") as f:
-                yaml.dump(
-                    data,
-                    f,
-                    default_flow_style=False,
-                    allow_unicode=True,
-                    sort_keys=False,
+            _tmp = yaml_path.parent / f".papers.yaml.tmp.{os.getpid()}"
+            with open(_tmp, "w", encoding="utf-8") as f:
+                yaml.safe_dump(
+                    data, f, default_flow_style=False, allow_unicode=True, sort_keys=False
                 )
+            os.replace(_tmp, yaml_path)
             subprocess.run(
                 ["git", "add", "papers.yaml"], check=True, cwd=yaml_path.parent
             )
