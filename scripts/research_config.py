@@ -123,10 +123,21 @@ def get_subcategory_keywords(cfg):
     mapping with ``id`` (matching a subcategory id) and ``keywords`` (list).
     Falls back to an empty list (callers then use heuristic rules).
     """
+    raw = cfg.get("subcategory_keywords", [])
     out = []
-    for item in cfg.get("subcategory_keywords", []):
+    if isinstance(raw, dict):
+        # Schema: {subcat_id: [keywords]} (dict map)
+        items = [{"id": k, "keywords": v if isinstance(v, list) else [v]} for k, v in raw.items()]
+    elif isinstance(raw, list):
+        # Schema: [{id, keywords}] or [id, ...] (bare ids)
+        items = [i if isinstance(i, dict) else {"id": i, "keywords": []} for i in raw]
+    else:
+        items = []
+    for item in items:
         sid = item.get("id", "")
         kws = item.get("keywords", [])
+        if not isinstance(kws, list):
+            kws = [kws]
         if sid and kws:
             out.append((sid, kws))
     return out
