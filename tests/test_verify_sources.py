@@ -15,6 +15,7 @@ from unittest import mock
 
 import pytest
 import requests
+import socket
 
 import verify_sources as vs
 
@@ -56,6 +57,8 @@ def _fake_get(url, **kw):
         return _FakeResp(429)
     if "down.example" in url:
         raise requests.exceptions.ConnectionError("x")
+    if "nodns.example" in url:
+        raise requests.exceptions.ConnectionError("x") from socket.gaierror("nodename")
     if "slow.example" in url:
         raise requests.exceptions.Timeout("x")
     return _FakeResp(200)
@@ -67,7 +70,10 @@ def test_http_check_classification():
         assert vs.http_check("https://dead.example", 5, vs.DEFAULT_UA)["kind"] == "broken"
         assert vs.http_check("https://block.example", 5, vs.DEFAULT_UA)["kind"] == "uncertain"
         assert vs.http_check("https://rate.example", 5, vs.DEFAULT_UA)["kind"] == "uncertain"
-        assert vs.http_check("https://down.example", 5, vs.DEFAULT_UA)["kind"] == "broken"
+        # Mehrdeutiger Verbindungsabbruch (Bulk-Scan-Throttling) -> UNCERTAIN
+        assert vs.http_check("https://down.example", 5, vs.DEFAULT_UA)["kind"] == "uncertain"
+        # DNS-Fehler = Domain existiert nicht mehr -> definitiv tot
+        assert vs.http_check("https://nodns.example", 5, vs.DEFAULT_UA)["kind"] == "broken"
 
 
 def test_run_rate_limit_is_botblock_not_broken(tmp_path):
