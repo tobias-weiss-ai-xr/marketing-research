@@ -97388,15 +97388,15 @@ papers:
     converts compute capital K_c into effective units of cognitive labor L_A. Once
     this is recognized, the elastic-supply margin that anchors the equilibrium wage
     migrates from the labor market to the compute capital market. Building on the
-    classic factor-pricing framework \citep{mankiw2020}, we derive a Compute-Anchored
-    Wage (CAW) bound stating that, on tasks where human and agent-produced cognitive
-    labor are substitutes, the competitive human wage is bounded above by λ\cdot k
-    \cdot r_c, where r_c is the rental rate of compute capital, k is the compute intensity
-    of one effective agent-produced cognitive labor unit, and λ is the relative human-to-agent
-    productivity. We generalize the result through constant elasticity of substitution
-    (CES) aggregation, separate substitutable from complementary tasks, and discuss
-    factor-share consequences. The conclusion is concise: the price-setter for cognitive
-    labor is no longer the labor market.'
+    classic factor-pricing framework, we derive a Compute-Anchored Wage (CAW) bound
+    stating that, on tasks where human and agent-produced cognitive labor are substitutes,
+    the competitive human wage is bounded above by λ\cdot k \cdot r_c, where r_c is
+    the rental rate of compute capital, k is the compute intensity of one effective
+    agent-produced cognitive labor unit, and λ is the relative human-to-agent productivity.
+    We generalize the result through constant elasticity of substitution (CES) aggregation,
+    separate substitutable from complementary tasks, and discuss factor-share consequences.
+    The conclusion is concise: the price-setter for cognitive labor is no longer the
+    labor market.'
 - title: How Large Language Models Source Brand Reputation Across Languages and Markets
   date: 2026-06
   url: https://arxiv.org/abs/2606.25787
@@ -97418,7 +97418,7 @@ papers:
     overwhelmingly in third-party sources: 85.7% of citations point to sites the brand
     does not own, against 14.3% owned. Second, the source base is concentrated and
     long-tailed: 80% of citations come from about 18% of domains, fitting a Zipf law
-    (alpha = 0.86, R^2 = 0.983). Third, one reference site dominates almost everywhere:
+    (alpha = 0.86, R² = 0.983). Third, one reference site dominates almost everywhere:
     Wikipedia is the most-cited domain in 11 of 12 languages, the exception being
     Lithuanian, where the business daily vz.lt edges it (4.38%). Fourth, the source
     mix is market-specific at the margin: for 46 Polish national brands the most-cited
@@ -99199,25 +99199,25 @@ papers:
   code_url: ''
   project_url: ''
   abstract: Artificial intelligence (AI) and renewable energy are increasingly being
-    described as a \mbox{``power couple,''} based on the idea that rapid growth in
-    AI will spur clean-energy investment. Yet growing AI demand could also deepen
-    reliance on fossil power. We study when each outcome arises in a game in which
-    renewable-capacity investment and AI scaling interact. The key is how the market
-    value of greater AI capability grows relative to the energy needed to achieve
-    it. When value grows at least as fast as energy use (market-led scaling), the
-    developer pushes toward frontier capability even when additional electricity comes
-    from fossil sources. Renewable investment can then enable further AI growth without
-    eliminating fossil use. As climate damages increase, AI becomes more valuable
-    for adaptation, strengthening incentives to sustain frontier capability despite
-    the associated emissions. We call this the ``adaptation trap.'' When energy requirements
-    grow faster than capability value (resource-led scaling), energy costs place greater
-    limits on AI expansion. Renewable investment then makes additional capability
-    less costly while also reducing emissions. As climate damages rise, the growing
-    value of AI for adaptation can justify enough clean-capacity expansion to support
-    AI entirely with renewable power. We call this the ``adaptation pathway.'' A calibrated
-    case study shows that both mechanisms can arise at empirically plausible magnitudes.
-    The results suggest that decarbonizing AI requires renewable capacity to keep
-    pace with the growth of compute demand.
+    described as a "power couple," based on the idea that rapid growth in AI will
+    spur clean-energy investment. Yet growing AI demand could also deepen reliance
+    on fossil power. We study when each outcome arises in a game in which renewable-capacity
+    investment and AI scaling interact. The key is how the market value of greater
+    AI capability grows relative to the energy needed to achieve it. When value grows
+    at least as fast as energy use (market-led scaling), the developer pushes toward
+    frontier capability even when additional electricity comes from fossil sources.
+    Renewable investment can then enable further AI growth without eliminating fossil
+    use. As climate damages increase, AI becomes more valuable for adaptation, strengthening
+    incentives to sustain frontier capability despite the associated emissions. We
+    call this the "adaptation trap." When energy requirements grow faster than capability
+    value (resource-led scaling), energy costs place greater limits on AI expansion.
+    Renewable investment then makes additional capability less costly while also reducing
+    emissions. As climate damages rise, the growing value of AI for adaptation can
+    justify enough clean-capacity expansion to support AI entirely with renewable
+    power. We call this the "adaptation pathway." A calibrated case study shows that
+    both mechanisms can arise at empirically plausible magnitudes. The results suggest
+    that decarbonizing AI requires renewable capacity to keep pace with the growth
+    of compute demand.
 - title: 'Simpson''s Paradox in Behavioral Curves: How Aggregation Distorts Parametric
     Models of User Dynamics'
   date: 2026-05
@@ -101037,7 +101037,7 @@ papers:
     the gap between surface-level language fluency and genuine probabilistic reasoning
     under live market uncertainty, and establish PolyBench as a contamination-proof,
     financially-grounded evaluation standard for future LLM research. Our dataset
-    and code available at \underline{\href{https://github.com/PolyBench/PolyBench}{https://github.com/PolyBench/PolyBench}}.'
+    and code available at https://github.com/PolyBench/PolyBench.'
 - title: Deep Reinforcement Learning Framework for Diversified Portfolio Management
     Across Global Equity Markets
   date: 2026-05
@@ -101490,8 +101490,8 @@ papers:
   abstract: 'Financial and tabular question answering requires more than fluent reasoning:
     answers must be grounded in the exact facts, formulas, units, signs, and scales
     that support them. A single misread cell or incorrect operation can silently produce
-    a plausible but wrong result. We introduce \textsc{MOCA-Agent}, a market-of-claims
-    code agent that replaces free-form multi-agent debate with claim-level verification.
+    a plausible but wrong result. We introduce MOCA-Agent, a market-of-claims code
+    agent that replaces free-form multi-agent debate with claim-level verification.
     The system decomposes each question into typed atomic claims, asks specialist
     trader agents to buy or sell those claims, clears their orders into confidence-weighted
     accept/reject decisions, and synthesizes an executable Python program from market-supported
@@ -101499,12 +101499,11 @@ papers:
     consistency, and common financial reasoning errors, with at most one market-aware
     repair round. Across ten public benchmarks spanning financial numerical reasoning,
     general tabular reasoning, ESG question answering, and multimodal chart reasoning,
-    \textsc{MOCA-Agent} achieves strong performance using a fixed Qwen3.6-27B backbone,
-    including 78.3\% on FinQA, 76.0\% on FinanceMath, 71.2\% on MultiHiertt, 86.9\%
-    on ESGenius, and 85.6\% average on FinChart-Bench. These results show that aggregating
-    evidence at the level of atomic claims, rather than whole answers, improves robustness
-    in high-stakes numerical reasoning.\footnote{The code and data are available:
-    https://github.com/UBC-NLP/MoCA-Agent.'
+    MOCA-Agent achieves strong performance using a fixed Qwen3.6-27B backbone, including
+    78.3\% on FinQA, 76.0\% on FinanceMath, 71.2\% on MultiHiertt, 86.9\% on ESGenius,
+    and 85.6\% average on FinChart-Bench. These results show that aggregating evidence
+    at the level of atomic claims, rather than whole answers, improves robustness
+    in high-stakes numerical reasoning. The code and data are available: https://github.com/UBC-NLP/MoCA-Agent.'
 - title: Relational Multi-Agent Reinforcement Learning for Dynamic Pricing in High-Speed
     Railway Markets
   date: 2026-07
@@ -101900,19 +101899,19 @@ papers:
     and regional balance to global capacity slacks, under which stable matchings often
     fail to exist. This raises a fundamental question: how to distribute unavoidable
     instability across agents while preserving strategy-proofness? To address this,
-    we propose \texttt{MenuNet}, a strategy-proof mechanism design framework based
-    on a neural representation of menus. Rather than directly constructing assignments,
-    \texttt{MenuNet} learns to generate personalized probabilistic menus, from which
-    assignments are realized via a structured sequential choice rule that guarantees
-    strategy-proofness by construction. By decomposing stability into fairness (no
-    envy) and non-wastefulness, our approach models these properties as vector-valued
-    quantities and optimizes their distribution through differentiable objectives,
-    providing a principled trade-off between competing axioms. Empirically, \texttt{MenuNet}
-    navigates this trade-off effectively: it consistently outperforms Random Serial
-    Dictatorship (RSD) in terms of envy and Deferred Acceptance (DA) in terms of waste,
-    while maintaining scalability and computational efficiency. These results suggest
-    that learning-based menu mechanisms provide a flexible and scalable paradigm for
-    mechanism design in highly constrained, real-world environments.'
+    we propose MenuNet, a strategy-proof mechanism design framework based on a neural
+    representation of menus. Rather than directly constructing assignments, MenuNet
+    learns to generate personalized probabilistic menus, from which assignments are
+    realized via a structured sequential choice rule that guarantees strategy-proofness
+    by construction. By decomposing stability into fairness (no envy) and non-wastefulness,
+    our approach models these properties as vector-valued quantities and optimizes
+    their distribution through differentiable objectives, providing a principled trade-off
+    between competing axioms. Empirically, MenuNet navigates this trade-off effectively:
+    it consistently outperforms Random Serial Dictatorship (RSD) in terms of envy
+    and Deferred Acceptance (DA) in terms of waste, while maintaining scalability
+    and computational efficiency. These results suggest that learning-based menu mechanisms
+    provide a flexible and scalable paradigm for mechanism design in highly constrained,
+    real-world environments.'
 - title: Ex Ante Evaluation of AI-Induced Idea Diversity Collapse
   date: 2026-05
   url: https://arxiv.org/abs/2605.06540
@@ -102512,17 +102511,17 @@ papers:
     indicating some human anchoring to initial opinions even after repeated exposure
     to AI-generated arguments. Interestingly, NLP analyses revealed that both humans
     and LLMs relied on fallacious reasoning in 1 conversational quip every 6, countering
-    the ``LLMs as superior systems" stereotype behind LLMs'' cognitive surrender.
-    LLMs'' perceived humanness was most learnable from sociodemographic, psychological
-    and engagement features (R^2=0.44), followed by opinion change (R^2=0.34), conviction
-    (R^2=0.26) and personal endowment (R^2=0.24). Crucially, explainable AI (XAI)
-    indicated: (i) the presence of individuals more susceptible to LLM-based opinion
-    changes; (ii) psychological susceptibility to LLM-convincing consisted of having
-    more trust in LLMs, being more agreeable and extraverted and with a higher need
-    for cognition. A multiverse approach with mixed-effects models confirmed XAI results,
-    alongside strong individual differences. Talk2AI provides a grounded framework
-    and evidence for detecting how GenAI can influence human opinions via multiple
-    psycho-social pathways in AI-human digital platforms.'
+    the "LLMs as superior systems" stereotype behind LLMs'' cognitive surrender. LLMs''
+    perceived humanness was most learnable from sociodemographic, psychological and
+    engagement features (R²=0.44), followed by opinion change (R²=0.34), conviction
+    (R²=0.26) and personal endowment (R²=0.24). Crucially, explainable AI (XAI) indicated:
+    (i) the presence of individuals more susceptible to LLM-based opinion changes;
+    (ii) psychological susceptibility to LLM-convincing consisted of having more trust
+    in LLMs, being more agreeable and extraverted and with a higher need for cognition.
+    A multiverse approach with mixed-effects models confirmed XAI results, alongside
+    strong individual differences. Talk2AI provides a grounded framework and evidence
+    for detecting how GenAI can influence human opinions via multiple psycho-social
+    pathways in AI-human digital platforms.'
 - title: Stochastic Choice with Advertising
   date: 2026-08
   url: https://arxiv.org/abs/2608.03504
@@ -103431,7 +103430,7 @@ papers:
     with Newey-West HAC standard errors and Hansen J-test, recovering an empirical
     slope kappa-hat_inf = 0.087 (HAC s.e. 0.021) which lies within one standard error
     of the structural prediction. A scaling regression over 50 rolling-window subwindows
-    yields b-hat = 0.987 (R^2 = 0.998), consistent with a near-unit-elasticity pass-through.
+    yields b-hat = 0.987 (R² = 0.998), consistent with a near-unit-elasticity pass-through.
     A G7 reduced-form panel with Driscoll-Kraay HAC standard errors yields b-hat^G7
     = 0.094 (s.e. 0.026), and a Wald test fails to reject cross-country homogeneity
     (p = 0.78). The framework provides a single equilibrium scaffold for the joint
@@ -103893,8 +103892,8 @@ papers:
     and ensemble assisted frameworks. ARIMA, LSTM, and GRU models were used as comparative
     baselines. Independent testing demonstrated strong predictive agreement across
     multiple forecasting horizons. The cascade GB to RF to NN architecture achieved
-    the best performance, with a test R^2 of 0.889, RMSE of 21.319 kg, and MAE of
-    15.462 kg. Hybrid architectures maintained greater robustness than recurrent sequential
+    the best performance, with a test R² of 0.889, RMSE of 21.319 kg, and MAE of 15.462
+    kg. Hybrid architectures maintained greater robustness than recurrent sequential
     models under sparse observation conditions. Forecasting error increased progressively
     across extended prediction horizons. Feature importance analysis identified animal
     age, rainfall, and temperature as dominant predictors influencing herd level growth

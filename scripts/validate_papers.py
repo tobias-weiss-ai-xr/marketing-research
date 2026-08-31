@@ -60,6 +60,9 @@ VANITY_DOMAINS = re.compile(
 )
 
 
+_SUPERSCRIPT = str.maketrans("0123456789", "\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079")
+
+
 def clean_latex_artifacts(text):
     """Clean common LaTeX artifacts from a string."""
     if not text:
@@ -72,11 +75,28 @@ def clean_latex_artifacts(text):
     text = re.sub(r"\\\[(.+?)\\\]", r"\1", text)
     # Remove ${...}$ patterns
     text = re.sub(r"\$\{([^}]+)\}\$", r"\1", text)
-    # Remove \textit{...}, \textbf{...}, \emph{...} etc.
-    text = re.sub(r"\\(?:textit|textbf|emph|text|mathrm|mathbf)\{([^}]+)\}", r"\1", text)
-    # Clean up double spaces
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
+    # \href{url}{text} -> text (before the generic command pass)
+    text = re.sub(r"\\href\{[^{}]*\}\{([^{}]*)\}", r"\1", text)
+    # \footnote{...} -> drop entirely (supplementary); unterminated
+    # \footnote{... (truncated source) -> keep the trailing text
+    text = re.sub(r"\s*\\footnote\{[^}]*\}", "", text)
+    text = re.sub(r"\\footnote\{", " ", text)
+    # Citation commands \cite/\citet/\citep{...} -> drop (incl. leading space)
+    text = re.sub(r"\s*\\cite[pt*]*\{[^}]*\}", "", text)
+    # Generic \command{...} / \command*{...} -> contents; loop handles
+    # nesting (e.g. \underline{\texttt{x}}) innermost-first
+    prev = None
+    while prev != text:
+        prev = text
+        text = re.sub(r"\\[a-zA-Z]+\*?\{([^{}]*)\}", r"\1", text)
+    # LaTeX double quotes ``...'' -> "..."
+    text = text.replace("``", '"').replace("''", '"')
+    # Caret superscripts: R^2 -> R²
+    text = re.sub(r"\^(\d)", lambda m: m.group(1).translate(_SUPERSCRIPT), text)
+    # Clean up double spaces and space-before-punctuation
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r" +([,.;:!?])", r"\1", text)
+    return text.strip()
 
 
 def normalize_arxiv_url(url):
