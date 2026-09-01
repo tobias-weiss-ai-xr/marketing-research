@@ -86,7 +86,7 @@ def load_subcat_keywords(cfg):
 
 
 # ── Dedup cache ────────────────────────────────────────────────────────
-_DEDUP_DIR = Path(os.environ.get("XDG_CACHE_HOME", "~/.cache")) / "research-runner/dedup"
+_DEDUP_DIR = Path(os.path.expanduser(os.environ.get("XDG_CACHE_HOME", "~/.cache"))) / "research-runner/dedup"
 
 
 def _cache_path(yaml_path):
