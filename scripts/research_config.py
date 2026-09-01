@@ -146,7 +146,7 @@ def get_subcategory_keywords(cfg):
 def get_openalex_mailto(cfg):
     """Return the OpenAlex polite-pool email from config or env."""
     cfg_mailto = cfg.get("topic", {}).get("openalex_mailto", "")
-    return os.environ.get("OPENALEX_MAILTO", cfg_mailto or "research@tobias-weiss-ai-xr.de")
+    return os.environ.get("OPENALEX_MAILTO", cfg_mailto or "tobias@tobias-weiss.org")
 
 
 def load_papers(path=None):
