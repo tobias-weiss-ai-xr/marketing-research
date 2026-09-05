@@ -456,7 +456,7 @@ def append_papers(yaml_path, new_papers):
     data["papers"] = papers
     tmp = yaml_path.with_suffix(yaml_path.suffix + ".tmp")
     with open(tmp, "w", encoding="utf-8") as f:
-        yaml.safe_dump(data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+        yaml.dump(data, f, default_flow_style=False, allow_unicode=True, sort_keys=False, width=120)
     os.replace(tmp, yaml_path)
 
 
