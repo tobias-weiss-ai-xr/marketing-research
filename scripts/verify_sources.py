@@ -4,17 +4,21 @@
 Two-stage check (the second stage only runs when needed):
   1) HTTP (requests):  classify each URL as OK / BROKEN / UNCERTAIN.
   2) Browser (Playwright, optional, --browser):  re-check UNCERTAIN URLs.
-       2xx/3xx → OK       404/410 → BROKEN
-       401/403  → BOTBLOCK (warn, never fails)   other → BROKEN
+       2xx/3xx → OK       404/410/400 → BROKEN
+       401/403/405/406/418 → BOTBLOCK (warn, never fails)
+       429/503 (transient) & connection-drops → UNCERTAIN (warn)
 
 Politeness — "don't hammer":
   - Limited concurrency (``workers``, default 4).
   - Per-host throttle: at most one request per ``per_host_delay`` seconds to
     any single host (default 1.0s) — avoids rate-limiting doi.org / github.
-  - On HTTP 429, honours ``Retry-After`` and backs off before retrying.
-  401/403/timeout without a browser are reported as BOTBLOCK (warn), so CI
-  stays stable while still catching definitively-dead links (404/410/5xx/
-  connection errors).
+  - On HTTP 429 (and 503), honours ``Retry-After`` and backs off before
+    retrying.
+  401/403/405/406/418 without a browser are reported as BOTBLOCK (warn);
+  429/503 and connection drops (bulk-scan throttling from CI IPs, e.g. on
+  doi.org/dblp) are transient => UNCERTAIN. CI stays stable while still
+  catching definitively-dead links: 400/404/410, 5xx-after-retries
+  (except 503) and DNS failures (domain gone).
 
 Fail early:
   When ``fail_on_broken`` is set, the scan aborts as soon as the first
@@ -166,6 +170,28 @@ class Result:
         }
 
 
+def _is_dns_error(e: BaseException | None) -> bool:
+    """True, wenn die Ursachenkette einen DNS-Auflösungsfehler enthält.
+
+    requests/urllib3 kapseln DNS-Fehler unterschiedlich tief
+    (gaierror direkt, oder MaxRetryError -> NameResolutionError).
+    """
+    import socket as _socket
+
+    cur: BaseException | None = e
+    seen: set[int] = set()
+    while cur is not None:
+        if id(cur) in seen:
+            return False
+        seen.add(id(cur))
+        if isinstance(cur, _socket.gaierror) or isinstance(cur, _socket.herror):
+            return True
+        if type(cur).__name__ == "NameResolutionError":
+            return True
+        cur = cur.__cause__ if cur.__cause__ is not None else cur.__context__
+    return False
+
+
 def http_check(url: str, timeout: int, ua: str) -> dict:
     import requests  # lazy: only when actually checking
 
@@ -193,20 +219,47 @@ def http_check(url: str, timeout: int, ua: str) -> dict:
                     time.sleep(1.5 * (attempt + 1))
                     continue
                 return {"status": s, "kind": "uncertain", "note": "rate-limited (429)"}
-            if s in (400, 404, 405, 406, 410):
+            if s in (400, 404, 410):  # definitiv tot
                 return {"status": s, "kind": "broken", "note": f"HTTP {s}"}
-            if 500 <= s < 600:  # transient server error -> one retry
+            if s in (401, 403, 405, 406, 418):  # Anti-Bot-Familie (405/406/418 wie 403)
+                return {"status": s, "kind": "uncertain",
+                        "note": f"anti-bot likely ({s})"}
+            if s in (429, 503):  # transient (rate limit / Service Unavailable) -> retry
+                ra = r.headers.get("Retry-After")
+                if ra and attempt < 2:
+                    try:
+                        time.sleep(min(float(ra), 30))
+                    except ValueError:
+                        time.sleep(1.5 * (attempt + 1))
+                    continue
+                if attempt < 2:
+                    time.sleep(1.5 * (attempt + 1))
+                    continue
+                return {"status": s, "kind": "uncertain", "note": f"transient ({s})"}
+            if 500 <= s < 600:  # sonstige Serverfehler -> retry, dann tot
                 if attempt < 2:
                     time.sleep(1.5 * (attempt + 1))
                     continue
                 return {"status": s, "kind": "broken", "note": f"server error {s}"}
-            return {"status": s, "kind": "broken", "note": f"HTTP {s}"}
+            return {"status": s, "kind": "uncertain",  # nicht-standard Codes (z. B. 468)
+                    "note": f"HTTP {s} (nonstandard)"}
         except requests.exceptions.SSLError:
             return {"status": None, "kind": "uncertain", "note": "SSL error"}
         except requests.exceptions.Timeout:
             return {"status": None, "kind": "uncertain", "note": "timeout"}
-        except requests.exceptions.ConnectionError:
-            return {"status": None, "kind": "broken", "note": "connection error"}
+        except requests.exceptions.ConnectionError as e:
+            # DNS-Fehler = Domain existiert nicht mehr -> definitiv tot.
+            # Andere Verbindungsabbrüche (reset/refused bei Bulk-Scans von
+            # z. B. doi.org/dblp aus CI-IPs) sind mehrdeutig: Host könnte
+            # Throttlen. Mehrdeutig => retry, dann UNCERTAIN (nie BROKEN).
+            if _is_dns_error(e):
+                return {"status": None, "kind": "broken",
+                        "note": "DNS: domain does not resolve"}
+            if attempt < 2:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            return {"status": None, "kind": "uncertain",
+                    "note": "connection dropped after retries (host may throttle bulk scans)"}
         except Exception as e:  # noqa: BLE001 - classify everything else as uncertain
             return {"status": None, "kind": "uncertain", "note": type(e).__name__}
     return last or {"status": None, "kind": "uncertain", "note": "unknown"}

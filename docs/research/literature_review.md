@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-08-31  
-**Corpus:** 7,778 papers across 11 categories
+**Generated:** 2026-10-05  
+**Corpus:** 9,994 papers across 11 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,17 +11,17 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | AI & Marketing | 1004 |
-| 2 | Consumer Behavior & Psychology | 937 |
-| 3 | Brand Strategy & Management | 882 |
-| 4 | Social Media & Creator Marketing | 876 |
-| 5 | Surveys, Trends & Meta-Studies | 825 |
-| 6 | Customer Experience, Omnichannel & Retail | 814 |
-| 7 | Digital & Performance Marketing | 758 |
+| 1 | AI & Marketing | 2171 |
+| 2 | Surveys, Trends & Meta-Studies | 1503 |
+| 3 | Consumer Behavior & Psychology | 1032 |
+| 4 | Social Media & Creator Marketing | 970 |
+| 5 | Digital & Performance Marketing | 962 |
+| 6 | Brand Strategy & Management | 878 |
+| 7 | Customer Experience, Omnichannel & Retail | 808 |
 | 8 | Analytics, Attribution & Measurement | 513 |
 
 **Time span:** 1987–2026 (median year 2016)
-**Dominant aspects:** Empirical Studies (2209), Frameworks & Models (1378), Reviews & Surveys (1186)
+**Dominant aspects:** Empirical Studies (3484), Frameworks & Models (1722), Reviews & Surveys (1468)
 
 ---
 
@@ -29,17 +29,17 @@
 
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
-| Analytics | 513 | 309 | 150 | +106% | 60% | 25.8 |
-| Consumer Behavior | 937 | 529 | 259 | +104% | 56% | 44.1 |
-| Ai Marketing | 1004 | 579 | 303 | +91% | 58% | 48.2 |
-| Social Media | 876 | 470 | 242 | +94% | 54% | 39.2 |
-| Digital Marketing | 758 | 418 | 230 | +82% | 55% | 34.8 |
-| B2B | 330 | 170 | 97 | +75% | 52% | 14.2 |
-| Brand | 882 | 466 | 274 | +70% | 53% | 38.8 |
-| Cx Retail | 814 | 448 | 270 | +66% | 55% | 37.3 |
-| Survey | 825 | 419 | 259 | +62% | 51% | 34.9 |
-| Content Marketing | 441 | 238 | 158 | +51% | 54% | 19.8 |
-| Privacy Data | 398 | 182 | 157 | +16% | 46% | 15.2 |
+| Survey | 1503 | 1080 | 229 | +372% | 72% | 90.0 |
+| Consumer Behavior | 1032 | 530 | 275 | +93% | 51% | 44.2 |
+| Brand | 878 | 447 | 242 | +85% | 51% | 37.2 |
+| Analytics | 513 | 286 | 160 | +79% | 56% | 23.8 |
+| Digital Marketing | 962 | 471 | 255 | +85% | 49% | 39.2 |
+| Social Media | 970 | 459 | 261 | +76% | 47% | 38.2 |
+| Cx Retail | 808 | 423 | 252 | +68% | 52% | 35.2 |
+| B2B | 325 | 156 | 98 | +59% | 48% | 13.0 |
+| Ai Marketing | 2171 | 985 | 704 | +40% | 45% | 82.1 |
+| Content Marketing | 436 | 211 | 165 | +28% | 48% | 17.6 |
+| Privacy Data | 396 | 162 | 160 | +1% | 41% | 13.5 |
 
 ---
 
@@ -50,7 +50,7 @@
 | `b2b/measurement` | 7 |
 | `content-marketing/empirical` | 32 |
 | `analytics/theory` | 35 |
-| `b2b/review` | 41 |
+| `b2b/review` | 40 |
 | `content-marketing/measurement` | 42 |
 | `b2b/theory` | 42 |
 | `brand/theory` | 46 |
@@ -63,55 +63,19 @@
 
 ### AI & Marketing (`ai-marketing`)
 
-**Corpus size:** 1004 papers
+**Corpus size:** 2171 papers
 
 **Recent papers:**
 
-- [2026-08] Institutional archetypes of resistance to artificial intelligence — https://doi.org/10.3389/fhumd.2026.1871733
-- [2026-08] The The use of artificial intelligence and big data in advertising — https://doi.org/10.18568/cmc.2026.e3133
-- [2026-08] Market response, individual-level choice and diffusion models: from Frank Bass to artificial in — https://doi.org/10.1007/s11002-026-09834-5
-
----
-
-### Consumer Behavior & Psychology (`consumer-behavior`)
-
-**Corpus size:** 937 papers
-
-**Recent papers:**
-
-- [2026-08] CONSUMER BEHAVIOR AND THE MEDIATING ROLE OF PURCHASE INTENTION IN ONLINE PURCHASE DECISIONS AMO — https://doi.org/10.23969/jrbm.v19i2.42283
-- [2026-08] Digital marketing and its influence on consumer behavior: A social sciences perspective from Ka — https://doi.org/10.21511/im.22(3).2026.13
-- [2026-08] <b>Factors Influencing Online Purchase Intention in the Sultanate of Oman: An Integrated Model  — https://doi.org/10.6084/m9.figshare.33201105.v1
-
----
-
-### Brand Strategy & Management (`brand`)
-
-**Corpus size:** 882 papers
-
-**Recent papers:**
-
-- [2026-08] Challenges of scaling without compromise: The Whole Truth journey — https://doi.org/10.1108/eemcs-07-2025-0394
-- [2026-08] Critical success factors in supply chain management at high technology companies. — https://eprints.usq.edu.au/151/
-- [2026-08] Bibliometric Analysis of Higher Education Brand Equity — https://doi.org/10.51768/dbr.v27i1.271202602
-
----
-
-### Social Media & Creator Marketing (`social-media`)
-
-**Corpus size:** 876 papers
-
-**Recent papers:**
-
-- [2026-08] Artificial Intelligence and the Transformation of Influencer Marketing and the Creator Economy — https://doi.org/10.4018/979-8-3373-8084-1.ch009
-- [2026-08] Online influencer persona, content quality, and the path to purchase: an SEM investigation — https://doi.org/10.1007/s11135-026-03052-x
-- [2026-08] User Engagement Data for Social Media (Experience and Behavior Dimensions) — https://doi.org/10.17632/ffsfrb3mm2.2
+- [2026-09] Competitive Market Behavior of LLMs — https://arxiv.org/abs/2609.02580
+- [2026-09] Generative Marketing Mix Modeling: A Causal Inference Framework Linking GEO and GEM to Business — https://arxiv.org/abs/2609.11915
+- [2026-09] Shopping by algorithm: How agentic AI deploys human heuristics as a surrogate consumer — https://arxiv.org/abs/2609.28372
 
 ---
 
 ### Surveys, Trends & Meta-Studies (`survey`)
 
-**Corpus size:** 825 papers
+**Corpus size:** 1503 papers
 
 **Recent papers:**
 
@@ -121,27 +85,63 @@
 
 ---
 
-### Customer Experience, Omnichannel & Retail (`cx-retail`)
+### Consumer Behavior & Psychology (`consumer-behavior`)
 
-**Corpus size:** 814 papers
+**Corpus size:** 1032 papers
 
 **Recent papers:**
 
-- [2026-08] Online retail sales events: Examining the consequences of intrusive social media advertising — https://doi.org/10.1016/j.jretconser.2026.105045
-- [2026-08] Adoption of Omnichannel Strategies in Retail Business - An Empirical Study — https://doi.org/10.52403/ijrr.20260810
-- [2026-08] Trust as an Omnichannel-to-Advocacy Transmission Mechanism in Mandatory Health care Services: E — https://doi.org/10.12688/f1000research.183317.3
+- [2026-09] Whom Do AI Agents Work For? Role Assignment Induces Sponsorship Bias in LLM Recommenders — https://arxiv.org/abs/2609.17989
+- [2026-09] The consequences of high SMR operating costs in electricity markets — https://arxiv.org/abs/2609.08929
+- [2026-09] Buy Now, Pay Later: Academic Insights and Open Policy Questions — https://arxiv.org/abs/2609.09323
+
+---
+
+### Social Media & Creator Marketing (`social-media`)
+
+**Corpus size:** 970 papers
+
+**Recent papers:**
+
+- [2026-09] Digital Persuasion: Understanding the Impact of Online Influencers on Public Opinion — https://arxiv.org/abs/2609.16062
+- [2026-09] Influence Ranking Improvement via Link Addition in Social Networks — https://arxiv.org/abs/2609.36791
+- [2026-09] OranSim: Simulating Consumer Response to Social Media Campaigns Before Launch — https://arxiv.org/abs/2609.28388
 
 ---
 
 ### Digital & Performance Marketing (`digital-marketing`)
 
-**Corpus size:** 758 papers
+**Corpus size:** 962 papers
 
 **Recent papers:**
 
-- [2026-08] Implementation of Programmatic Advertising by Vidverto: Challenges and Opportunities in the Dig — https://doi.org/10.46806/jib.v15i2.2361
-- [2026-08] Fit-for-Purpose AI-Generative Digital Marketing Strategies — https://doi.org/10.5772/intechopen.1016175
-- [2026-08] A Study On the Impact and Effectiveness of Digital Marketing Strategies in Bangalore — https://doi.org/10.5281/zenodo.21900312
+- [2026-10] Architecture Without an Architect? Global Governance of Artificial Intelligence in a Divided Wo — https://arxiv.org/abs/2610.01716
+- [2026-09] Seeing Is Not Perceiving: When Synthetic Consumers Can and Cannot Pretest Visual Marketing — https://arxiv.org/abs/2609.25677
+- [2026-09] Price Dislocations, News Citations, and Epistemic Leverage on Polymarket — https://arxiv.org/abs/2609.06005
+
+---
+
+### Brand Strategy & Management (`brand`)
+
+**Corpus size:** 878 papers
+
+**Recent papers:**
+
+- [2026-08] Challenges of scaling without compromise: The Whole Truth journey — https://doi.org/10.1108/eemcs-07-2025-0394
+- [2026-08] Critical success factors in supply chain management at high technology companies. — https://eprints.usq.edu.au/151/
+- [2026-08] Bibliometric Analysis of Higher Education Brand Equity — https://doi.org/10.51768/dbr.v27i1.271202602
+
+---
+
+### Customer Experience, Omnichannel & Retail (`cx-retail`)
+
+**Corpus size:** 808 papers
+
+**Recent papers:**
+
+- [2026-10] MANAGING OMNICHANNEL CUSTOMER EXPERIENCE IN APPAREL RETAIL THROUGH CUSTOMER JOURNEY MAPPING — https://doi.org/10.46299/j.isjmef.20260505.05
+- [2026-08] Online retail sales events: Examining the consequences of intrusive social media advertising — https://doi.org/10.1016/j.jretconser.2026.105045
+- [2026-08] Adoption of Omnichannel Strategies in Retail Business - An Empirical Study — https://doi.org/10.52403/ijrr.20260810
 
 ---
 
@@ -159,7 +159,7 @@
 
 ### Content & Storytelling (`content-marketing`)
 
-**Corpus size:** 441 papers
+**Corpus size:** 436 papers
 
 **Recent papers:**
 
@@ -171,7 +171,7 @@
 
 ### Data, Privacy & Cookieless Advertising (`privacy-data`)
 
-**Corpus size:** 398 papers
+**Corpus size:** 396 papers
 
 **Recent papers:**
 
@@ -183,7 +183,7 @@
 
 ### B2B & Account-Based Marketing (`b2b`)
 
-**Corpus size:** 330 papers
+**Corpus size:** 325 papers
 
 **Recent papers:**
 
