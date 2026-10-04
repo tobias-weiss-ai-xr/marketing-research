@@ -1,46 +1,46 @@
 # Trends (12-Month View)
 
-**Generated:** 2026-08-29  
-**Window:** since 2025-08 — 4228 of 7778 papers
+**Generated:** 2026-10-05  
+**Window:** since 2025-10 — 5210 of 9994 papers
 
 ## 🔥 Keyword Bursts
 
 | Keyword | Recent | Total | Burst |
 |---------|--------|-------|-------|
-| benchmark | 49 | 50 | 1.8× |
-| agentic | 40 | 41 | 1.8× |
-| multi-agent | 20 | 21 | 1.8× |
-| supervised | 9 | 9 | 1.8× |
-| stochastic | 6 | 6 | 1.8× |
-| simulator | 4 | 4 | 1.8× |
-| unsupervised | 4 | 4 | 1.8× |
-| world model | 1 | 1 | 1.8× |
-| teaming | 1 | 1 | 1.8× |
-| dataset | 70 | 75 | 1.7× |
-| simulation | 36 | 39 | 1.7× |
-| diffusion | 24 | 26 | 1.7× |
-| reward | 13 | 14 | 1.7× |
-| hierarchical | 13 | 14 | 1.7× |
-| agent | 125 | 141 | 1.6× |
+| world model | 2 | 2 | 1.9× |
+| teaming | 2 | 2 | 1.9× |
+| agentic | 64 | 70 | 1.8× |
+| benchmark | 93 | 113 | 1.6× |
+| embodied | 5 | 6 | 1.6× |
+| survey | 357 | 471 | 1.5× |
+| agent | 226 | 294 | 1.5× |
+| uncertainty | 50 | 64 | 1.5× |
+| multi-agent | 35 | 44 | 1.5× |
+| retrieval | 33 | 43 | 1.5× |
+| hierarchical | 26 | 34 | 1.5× |
+| policy | 225 | 303 | 1.4× |
+| imitation | 126 | 174 | 1.4× |
+| simulation | 67 | 92 | 1.4× |
+| diffusion | 47 | 65 | 1.4× |
 
 ## 📈 Fastest-Growing Cells
 
 | Cell | Recent | Total | Recent Share |
 |------|--------|-------|--------------|
 | `b2b/measurement` | 6 | 7 | 86% |
-| `analytics/empirical` | 60 | 74 | 81% |
+| `survey/empirical` | 369 | 429 | 86% |
+| `survey/framework` | 240 | 284 | 85% |
+| `analytics/empirical` | 57 | 72 | 79% |
 | `content-marketing/empirical` | 25 | 32 | 78% |
-| `analytics/theory` | 27 | 35 | 77% |
-| `b2b/case-study` | 37 | 50 | 74% |
-| `digital-marketing/empirical` | 147 | 201 | 73% |
-| `consumer-behavior/measurement` | 69 | 100 | 69% |
-| `cx-retail/empirical` | 58 | 84 | 69% |
-| `social-media/case-study` | 42 | 62 | 68% |
-| `ai-marketing/measurement` | 63 | 93 | 68% |
-| `analytics/framework` | 31 | 47 | 66% |
-| `ai-marketing/theory` | 70 | 110 | 64% |
-| `ai-marketing/empirical` | 252 | 400 | 63% |
-| `content-marketing/framework` | 38 | 61 | 62% |
-| `privacy-data/case-study` | 33 | 53 | 62% |
+| `b2b/case-study` | 34 | 48 | 71% |
+| `analytics/theory` | 25 | 35 | 71% |
+| `consumer-behavior/measurement` | 67 | 100 | 67% |
+| `social-media/case-study` | 39 | 62 | 63% |
+| `cx-retail/empirical` | 53 | 84 | 63% |
+| `survey/review` | 277 | 447 | 62% |
+| `cx-retail/measurement` | 60 | 96 | 62% |
+| `content-marketing/framework` | 36 | 59 | 61% |
+| `digital-marketing/empirical` | 214 | 354 | 60% |
+| `survey/case-study` | 90 | 149 | 60% |
 
 Regenerate with `python3 tools/trend_scanner.py --months 12`.
