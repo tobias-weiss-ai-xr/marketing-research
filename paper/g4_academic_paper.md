@@ -279,7 +279,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 
 ## 8. Results
 
-> All numbers in this section are auto-generated from CAM-Sim v0.3.1 (`scripts/benchmarks/cam_sim.py --scenarios 200 --seeds 1..50 --output-md results/cam_sim_results.md [--robustness --alpha-sweep --label-noise --budget-pacing]`). No hand-typed values.
+> All numbers in this section are auto-generated from CAM-Sim v0.3.1 (`paper/cam_sim.py --scenarios 200 --seeds 1..50 --output-md results/cam_sim_results.md [--robustness --alpha-sweep --label-noise --budget-pacing]`). No hand-typed values.
 
 ### 8.1 Aggregate Performance (50 seeds × 200 scenarios; mean [95% CI])
 | Agent | Context match % | Total profit | ROAS (agg.) | Profit/cost |
@@ -483,7 +483,7 @@ We introduced **Context-Aware Agentic Marketing (CAM)** — the first framework 
 ### A.1 Simulation Environment
 - **Language:** Python 3.11+
 - **Dependencies:** numpy, scipy
-- **Code:** `scripts/benchmarks/cam_sim.py`
+- **Code:** `paper/cam_sim.py`
 - **Tested:** 50 seeds × 200 scenarios (10,000 evaluations per agent); byte-reproducible; adding `bid_calibrated` (no RNG draws) leaves all prior-agent results byte-identical (verified)
 - **Environment presets (9):** default, uniform_situations, decision_heavy, crisis_heavy, retention_heavy, high_costs (×2), weak_signal_bonus, budget_constrained ($250/episode), concave_returns (α = 0.5)
 - **Calibration:** `cam_learned`/`cam_recalibrated` fit on 2,000 labeled context samples (env seed 999999), interval classifier via greedy error-minimizing splits; `cam_recalibrated` refit per environment; label-noise stress test at ε ∈ {0, .05, .1, .2, .3}
@@ -517,7 +517,7 @@ We introduced **Context-Aware Agentic Marketing (CAM)** — the first framework 
 Raw per-seed data is **never hand-maintained**. Regenerate with:
 
 ```bash
-python3 scripts/benchmarks/cam_sim.py --scenarios 200 --seeds $(seq -s, 1 50) \
+python3 paper/cam_sim.py --scenarios 200 --seeds $(seq -s, 1 50) \
     --robustness --alpha-sweep --label-noise --budget-pacing \
     --output-md results/cam_sim_results.md
 ```

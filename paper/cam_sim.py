@@ -25,8 +25,8 @@ NOT real-world performance. The informative comparisons are cam_inferred and
 the noisy agents against each other (dose-response of situational awareness).
 
 Usage:
-    python3 scripts/benchmarks/cam_sim.py --scenarios 200 --seeds 1,2,3,4,5
-    python3 scripts/benchmarks/cam_sim.py --agents baseline,cam_inferred,oracle --output-md results/cam_sim_results.md
+    python3 paper/cam_sim.py --scenarios 200 --seeds 1,2,3,4,5
+    python3 paper/cam_sim.py --agents baseline,cam_inferred,oracle --output-md results/cam_sim_results.md
 
 Author: Tobias Weiss (2026)
 """

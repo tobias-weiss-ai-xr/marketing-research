@@ -12,7 +12,9 @@ for a research topic: papers live in `papers.yaml`, everything else is generated
 1. **Never edit `README.md` by hand.** It is auto-generated from `papers.yaml`
    via `scripts/generate_readme.py`. Edit `papers.yaml`, then regenerate.
 2. **Never edit `docs/papers.json`, `statistics.json`, or `docs/research/*.md`
-   by hand.** They are pipeline outputs.
+   by hand.** They are pipeline outputs. (The hand-authored academic papers —
+   G4 CAM, G4 framework, G6 B2B-CI, G6 Haas integration, gaps deep-dive, and
+   the CAM-Sim benchmark — live in `paper/`, not `docs/research/`.)
 3. **Never invent papers.** Every entry in `papers.yaml` must have a real,
    verifiable `url`. If you cannot verify a paper exists, do not add it.
 4. **After any `papers.yaml` change, run the full pipeline** and make sure it
@@ -52,6 +54,9 @@ scripts/analysis/generate_reports.py → docs/research/{literature_review,trends
 scripts/fetch/                ← arXiv/OpenAlex/dblp/crossref/europepmc/GitHub/GitLab/Codeberg discovery
 tools/                        ← topic_planner, trend_scanner, landscape_analyzer, brief_generator
 docs/index.html               ← GitHub Pages paper browser (reads docs/papers.json)
+paper/                        ← hand-authored academic content (G4 CAM paper, G4/G6 frameworks,
+                                gaps deep-dive, CAM-Sim benchmark) — NOT pipeline output
+paper/cam_sim.py              ← CAM-Sim benchmark (run: python3 paper/cam_sim.py ...)
 ```
 
 ## Common agent tasks
