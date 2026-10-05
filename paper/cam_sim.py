@@ -1407,6 +1407,52 @@ def run_budget_pacing_study(seeds, scenarios, quiet=False):
     return aggregate
 
 
+def run_convergence(scenarios, seed_counts=(10, 20, 30, 40, 50), agents=None):
+    """Run the sim at increasing seed counts and test metric stabilization.
+
+    For each seed count N, runs seeds 1..N and reports the overall mean of three
+    metrics plus whether each STABLE: the mean over the last 10 seeds differs
+    from the overall mean by less than 5%. Rho is computed per seed as the
+    Spearman correlation between context match rate and profit across agents,
+    then averaged (same label-free dose-response statistic as the robustness
+    sweep, but per seed so the last-10 window is well defined).
+    """
+    if agents is None:
+        agents = list(DEFAULT_AGENTS)
+    metric_keys = ('cam_multisignal_profit', 'rho', 'baseline_profit')
+    rows = []
+    for n in seed_counts:
+        seeds = list(range(1, n + 1))
+        _, _, per_seed, _, _ = run_env(None, seeds, scenarios, agents)
+        seed_rhos = []
+        for i in range(n):
+            xs = [per_seed['context_match_rate'][a][i] for a in agents]
+            ys = [per_seed['total_profit'][a][i] for a in agents]
+            if all(np.isfinite(xs)) and all(np.isfinite(ys)):
+                seed_rhos.append(scipy.stats.spearmanr(xs, ys)[0])
+        metric_values = {
+            'cam_multisignal_profit': per_seed['total_profit'].get('cam_multisignal', []),
+            'rho': seed_rhos,
+            'baseline_profit': per_seed['total_profit'].get('baseline', []),
+        }
+        row = {'seeds': n, 'values': {}, 'stable': {}}
+        for key in metric_keys:
+            vals = [float(v) for v in metric_values[key] if np.isfinite(v)]
+            overall = float(np.mean(vals)) if vals else None
+            last = vals[-10:] if len(vals) >= 10 else vals
+            last_mean = float(np.mean(last)) if last else None
+            if overall is None or last_mean is None:
+                stable = None
+            elif abs(overall) < 1e-9:
+                stable = abs(last_mean - overall) < 1e-9
+            else:
+                stable = abs(last_mean - overall) / abs(overall) < 0.05
+            row['values'][key] = round(overall, 4) if overall is not None else None
+            row['stable'][key] = stable
+        rows.append(row)
+    return rows
+
+
 def check_ladder(profits: Dict[str, float], inferred_key: str = 'cam_inferred') -> Optional[bool]:
     """H4 dose-response by label ordering: noisy50 < <inferred_key> < noisy80 < oracle."""
     needed = ['noisy50', inferred_key, 'noisy80', 'oracle']
@@ -1565,6 +1611,9 @@ def write_robustness_md(path: Path, seeds: List[int], scenarios: int, rows: List
 
 
 def main():
+    # Windows consoles default to cp1252; progress lines use ✅, so force UTF-8.
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser(
         description="CAM-Sim: Context-Aware Agentic Marketing Simulation"
     )
@@ -1588,6 +1637,9 @@ def main():
                         help="Stress test: even-pacing wrappers under budget_constrained (budget-awareness)")
     parser.add_argument("--bootstrap", type=int, default=0,
                         help="Bootstrap resamples for BCa CIs of per-seed agent profit (0=off)")
+    parser.add_argument("--convergence", action="store_true",
+                        help="Run seeds 1..N for N in [10,20,30,40,50] and report whether "
+                             "cam_multisignal profit, Spearman rho and baseline profit have stabilized")
     parser.add_argument("--quiet", "-q", action="store_true")
     parser.add_argument("--self-check", action="store_true",
                         help="Verify byte-reproducibility (2 seeds, same output) and exit")
@@ -1711,6 +1763,34 @@ def main():
             print(f"  {name:<16} {b['mean']:>10.2f} {b['bca_ci95'][0]:>10.2f} "
                   f"{b['bca_ci95'][1]:>10.2f} {nlo} {nhi}")
 
+    # ---- Convergence diagnostic (optional) ----
+    convergence_rows = None
+    if args.convergence:
+        conv_agents = list(selected_names)
+        for required in ('baseline', 'cam_multisignal'):
+            if required not in conv_agents:
+                conv_agents.append(required)
+        convergence_rows = run_convergence(args.scenarios, agents=conv_agents)
+
+        def _fmt(value, spec, fallback='n/a'):
+            return format(value, spec) if value is not None else fallback
+
+        def _mark(stable):
+            return 'YES' if stable else ('NO' if stable is False else 'n/a')
+
+        print("\n" + "=" * 78)
+        print("CONVERGENCE CHECK (seeds 1..N; mean of last 10 seeds vs overall, <5% = stable)")
+        print("=" * 78)
+        print(f"  {'seeds':>5} | {'cam_multisignal':>16} | {'rho':>7} | {'baseline':>10} "
+              f"| stable cam/rho/base")
+        print("  " + "-" * 72)
+        for row in convergence_rows:
+            v, s = row['values'], row['stable']
+            print(f"  {row['seeds']:>5} | {_fmt(v['cam_multisignal_profit'], '+16.2f'):>16} "
+                  f"| {_fmt(v['rho'], '7.3f'):>7} | {_fmt(v['baseline_profit'], '+10.2f'):>10} "
+                  f"| {_mark(s['cam_multisignal_profit'])} / {_mark(s['rho'])} / "
+                  f"{_mark(s['baseline_profit'])}")
+
     # ---- Save JSON ----
     output_data = {
         'timestamp': datetime.now(timezone.utc).isoformat(),
@@ -1725,6 +1805,7 @@ def main():
         'label_noise': label_rows,
         'budget_pacing': pacing_aggregate,
         'bootstrap_cis': bootstrap_cis,
+        'convergence': convergence_rows,
         'last_seed_metrics': last_metrics,
         'sample_contexts': [c.to_dict() for c in sample_contexts],
     }
