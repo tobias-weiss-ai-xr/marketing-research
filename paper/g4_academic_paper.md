@@ -2,7 +2,7 @@
 ## Draft Structure for Journal Submission
 
 > **File:** `g4_academic_paper.md`  
-> **Status:** DRAFT (v0.4) — results section auto-generated from CAM-Sim v0.4; no hand-typed numbers  
+> **Status:** DRAFT (v0.5) — results auto-generated from CAM-Sim v0.4; peer-reviewed (stats-audit, citation-audit, threats-to-validity); no hand-typed numbers  
 > **Target:** *Journal of Marketing* (JM) / *Marketing Science*  
 > **Type:** Conceptual / Empirical (Framework + Simulation)  
 > **Word Target:** 8,000-10,000 words  
@@ -21,7 +21,7 @@
 ## 2. Abstract (150-200 words)
 
 **DRAFT:**
-The emergence of agentic AI systems in marketing (70 papers, +1.8× growth rate in our corpus of 9,994 marketing papers) has outpaced the development of frameworks for understanding **marketing context**—the situational, temporal, channel, social, and intent signals that determine message relevance. While marketing practice uses "contextual intelligence" as adtech vocabulary, and Häglund (2025) defines it computationally for NLP applications, **no marketing framework operationalizes situational awareness for autonomous agents**. We propose **Context-Aware Agentic Marketing (CAM)**—a four-layer framework that enables autonomous marketing agents to (1) **sense** multi-modal context signals, (2) **model** unified context representations, (3) **reason** about context relevance via an Awareness Engine, and (4) **act** through context-conditioned marketing actions. We develop CAM-Sim, a synthetic marketing simulation with an ablation-based evaluation design: every agent acts on identical scenario sequences, with both random seeds controlled. Across 50 seeds × 200 scenarios (10,000 evaluations per agent), we compare eleven agents forming a situational-awareness ladder: from a context-blind baseline through graded-perception agents (50%/80%) and signal-based classifiers (intent-only: 75.7% match hand-tuned, 87.5% learned; **multi-signal: 98.9% and 98.7%**), to a labeled oracle (+$210.00) and a mechanism-calibrated bidder that defines the profit ceiling (+$530.45, ROAS 26.4). Mean profit improves monotonically with perception quality: −$170.03 (baseline) → +$48.31 (50% perception, p = 6.7e-40) → +$104.26 (p = 2.0e-46) → +$145.70 (80%, p = 1.6e-48). The paper’s central operational finding is that **multi-signal awareness—the framework’s core claim—is what closes the gap to the oracle**: adding competitive density and channel quality to intent raises match from 75.7% to 98.9% and nearly doubles deployable profit (+$206.13 vs +$104.26, p = 5.4e-46 vs cam_inferred; p = 1.4e-52 vs baseline), within $4 of the oracle (+$210.00), and the advantage holds in all nine environments (up to +$252.7 under retention-heavy shift). Situation awareness contributes far more deployable value (+$464.30, p = 3.7e-61) than uncalibrated bid optimization (+$59.88, p = 8.5e-15). Strikingly, flat bidding with perfect action matching (+$294.27) beats the oracle’s context-inflated bidding (+$210.00) — *miscalibrated* bid modulation is worse than none — while calibrated bidding nearly doubles flat bidding. A nine-environment robustness sweep (situation distributions, doubled media costs, budget caps, a concave-returns curvature, weakened context payoffs) and a separate curvature sweep (α ∈ [0, 1.5], §8.5.1) yield a per-seed dose-response of ρ ≥ 0.93 (lower CI bound) everywhere, shows that systematic classifier bias under distribution shift — which can make an intent-only classifier *worse than unbiased coin-flip perception* — is largely eliminated by multi-signal inference (98.9% vs 75.7% match) and further remedied by per-distribution recalibration that remains robust under 30% label noise (90% match in the harshest distribution), and shows the heuristic-bid ordering is robust in 8 of 9 environments and to budget-aware pacing. We conclude with implications for autonomous marketing in the post-cookie era, a pre-registered field-validation design, and directions for theory.
+The emergence of agentic AI in marketing (70 papers, +1.8× growth in our corpus of 9,994) has outpaced frameworks for marketing context — the situational, temporal, channel, and intent signals that determine message relevance. While practice uses "contextual intelligence" as adtech vocabulary and Häglund (2025) defines it computationally for NLP, no marketing framework operationalizes situational awareness for autonomous agents. We propose **Context-Aware Agentic Marketing (CAM)**, a four-layer framework (sense → model → reason → act) grounded in Endsley's situational awareness model. We evaluate it in CAM-Sim, a paired-seed synthetic benchmark: 50 seeds × 200 scenarios (10,000 evaluations per agent), eleven agents on a situational-awareness ladder from context-blind baseline through graded-perception (50%/80%) and signal-based classifiers (intent-only 75.7%, multi-signal 98.9%) to a labeled oracle and mechanism-calibrated bidder. Multi-signal awareness — the framework's core claim — raises match from 75.7% to 98.9% and profit from +$104 to +$206 (p = 5.4e-46), within $4 of the oracle. The advantage holds across nine environments (per-seed ρ ≥ 0.93), survives 30% label noise and budget pacing, and is confirmed by bootstrap BCa CIs (200 resamples) and seed-count convergence (stable from 10 seeds). Miscalibrated bid modulation is worse than none; calibrated bidding nearly doubles flat bidding (+$530 vs +$294). We contribute a reproducible benchmark, dose-response evidence, and a pre-registered field-validation design.
 
 ---
 
@@ -129,7 +129,7 @@ From our marketing-research corpus (9,994 papers):
 - Paper: "Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation" (2026-08, AI-Marketing) — **superficial mention**
 - **No paper** systematically bridges the two concepts
 
-### 5.4 HAAGLUND (2025) — NLP Cs/N
+### 5.4 Häglund (2025) — CS/NLP
 **Key Differentiation:**
 | Aspect | Häglund (2025) | This Work (CAM) |
 |--------|---------------|------------------|
@@ -208,6 +208,8 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 | **Context Predictor** | Predict next context state | LSTM-based sequence model | Temporal prediction |
 | **Action Mapper** | Map situation → optimal action set | Rule-based + learned mapping | Decision theory |
 
+> **Implementation note:** The framework specifies RandomForest and LSTM components; CAM-Sim (§7) implements simplified surrogates — nearest-centroid classification (3 signals) and threshold/interval rules — to isolate the value of signal structure without conflating it with classifier capacity. The Context Predictor (Level-3 projection) is specified but not benchmarked (§6.6).
+
 **Situational Archetypes (6):**
 - **Exploration:** Early research, low intent, high curiosity
 - **Consideration:** Active evaluation, medium intent
@@ -274,7 +276,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 - **Paired t-test** (scipy.stats.ttest_rel) across seeds for each agent-vs-baseline metric comparison
 - **Cohen's d** (between-group pooled, d_pooled) for effect size; paired within-subject d_z = |t|/√n is 1.4–1.5× smaller (e.g., cam_multisignal: d_pooled = 16.65, d_z = 10.78)
 - **95% CIs** from seed-level standard error (mean ± 1.96·SE; at n = 50 the t-quantile t(49, 0.975) = 2.01 differs by 2.5%, negligible at these effect sizes)
-- **Bootstrap BCa CIs** (§8.2.1, 200 resamples) confirm the normal-approximation CIs
+- **Bootstrap BCa CIs** (§9.2.2, 200 resamples) confirm the normal-approximation CIs
 - **α = 0.05**; p-values reported in scientific notation
 - **Multiplicity:** 10 agents × 6 metrics vs baseline per environment; the smallest p-value is 3.3e-70 and the largest is 8.5e-15, both far below a Bonferroni-corrected α = 0.05/60 = 8.3e-4, so all reported comparisons survive familywise correction
 - ROAS computed at **aggregate level** (total value / total spend), not as a mean of per-action ratios (which is unstable under near-zero-cost actions)
@@ -465,30 +467,31 @@ Pacing eliminates the truncation cliff for everyone: the baseline's losses shrin
 
 ### 9.3 Practical Implications
 **For Marketers:**
-- **Context > Profile:** Situational awareness outperforms identity-based targeting
-- **Agentic First:** Marketing organizations should prioritize agentic capabilities over traditional automation
-- **Privacy Safe:** CAM works without PII, aligning with cookieless future
+- **Multi-signal awareness > single-signal:** Adding competitive density and channel quality to intent nearly doubles deployable profit (+$206 vs +$104, p = 5.4e-46)
+- **Calibrate bidding to the mechanism:** Miscalibrated context-inflated bidding is worse than flat bidding (oracle +$210 vs situation_only +$294); calibrated bidding nearly doubles flat (+$530)
+- **Recalibrate per distribution:** Per-environment recalibration recovers F5 losses (crisis −$67 → +$27); multi-signal inference avoids the bias altogether
+- **Privacy-safe by design:** CAM uses context signals (intent, competitive density, channel quality), not PII — aligned with cookieless targeting
 
 **For Researchers:**
-- **White Space Confirmed:** Agentic + Contextual marketing is under-researched
-- **Framework Available:** CAM provides extensible foundation for future work
-- **Benchmark Available:** CAM-Sim allows reproducible comparison of new approaches
+- **White space confirmed:** 0 papers connect agentic + situational awareness in marketing (§5.3)
+- **Framework available:** CAM's four-layer architecture (sense → model → reason → act) is extensible
+- **Benchmark available:** CAM-Sim is reproducible (fixed seeds, byte-identical), with bootstrap BCa CIs and seed-count convergence diagnostics
 
 ### 9.4 Theoretical Implications
 **For Situational Awareness Theory:**
-- Endsley's model applies to marketing agents
-- Level-3 projection (future context) may be key differentiator
+- Endsley's Level 1–2 model applies to marketing agents: perception quality (match rate) and comprehension (situation classification) drive measurable profit differences (per-seed ρ ≥ 0.93)
+- Level-3 projection (future context) is specified but not benchmarked — a candidate differentiator for future work (§10.3)
 
 **For Agent Theory:**
-- Rational agents in marketing benefit from situational awareness
-- Non-context-aware agents are suboptimal by design
+- Situational awareness is the dominant value driver (+$464 from action matching vs +$60 from bid optimization alone)
+- Non-context-aware agents are suboptimal by design: the baseline loses $170/episode
 
 ---
 
 ## 10. Conclusion & Future Work
 
 ### 10.1 Summary
-We introduced **Context-Aware Agentic Marketing (CAM)** — the first framework connecting agentic AI with marketing situational awareness. Across multiple seeds and scenarios, CAM **significantly outperforms** non-context-aware baseline agents.
+We introduced **Context-Aware Agentic Marketing (CAM)** — the first framework connecting agentic AI with marketing situational awareness. Across 50 seeds × 200 scenarios (10,000 evaluations per agent), multi-signal situation classification (intent + competitive density + channel quality) raises match from 75.7% to 98.9% and deployable profit from +$104 to +$206 (p = 5.4e-46), within $4 of a labeled oracle. The advantage replicates across 9 environments (per-seed ρ ≥ 0.93), survives 30% label noise and budget pacing, and is confirmed by bootstrap BCa CIs and seed-count convergence. The central practical finding: invest first in **multi-signal situation classification**, then in **mechanism-calibrated bidding** — unvalidated bid heuristics are worse than not bidding at all.
 
 ### 10.2 Contributions
 1. **Theoretical:** Grounded CAM in Endsley's SA model (Levels 1–3 situational awareness applied to marketing automation)
@@ -591,4 +594,4 @@ Reproducibility contract: identical `--seeds` + `--scenarios` reproduce byte-ide
 
 ---
 
-*Paper structure ready for submission. Next: Populate references with full citations from papers.yaml; Extend CAM-Sim to 100+ seeds and field-validate with a B2B partner (§10.3); Identify JM special issue on AI.*
+*Reproducibility: all numbers regenerate from `paper/cam_sim.py` with fixed seeds. Peer reviews: `reviews/stats-audit.md`, `reviews/threats-to-validity.md`, `reviews/citation-audit.md`. Next steps: populate references with full citations from papers.yaml; field-validate with a B2B partner (§10.3).*
