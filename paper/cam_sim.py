@@ -1129,6 +1129,44 @@ def compute_statistics(values_a: list, values_b: list) -> Optional[dict]:
     }
 
 
+def bca_ci(values, n_resamples: int, rng, alpha: float = 0.05):
+    """BCa confidence interval for the mean of per-seed values.
+
+    Bias-correction z0: proportion of bootstrap means below the observed mean,
+    mapped through the normal quantile. Acceleration: jackknife (leave-one-out)
+    estimate of skewness-adjusted influence. Resamples n values with
+    replacement n times (n = number of seeds).
+    """
+    x = np.asarray(values, dtype=float)
+    x = x[np.isfinite(x)]
+    n = len(x)
+    if n < 2:
+        return None
+    theta_hat = float(x.mean())
+    boot = x[rng.randint(0, n, size=(n_resamples, n))].mean(axis=1)
+    prop = float(np.mean(boot < theta_hat))
+    prop = min(max(prop, 1.0 / n_resamples), 1.0 - 1.0 / n_resamples)
+    z0 = float(scipy.stats.norm.ppf(prop))
+    # Jackknife leave-one-out estimates and their acceleration.
+    jack = (x.sum() - x) / (n - 1)
+    diffs = jack.mean() - jack
+    denom = 6.0 * float(np.sum(diffs ** 2)) ** 1.5
+    accel = float(np.sum(diffs ** 3) / denom) if denom > 0 else 0.0
+
+    def adj(z):
+        return float(scipy.stats.norm.cdf(z0 + (z0 + z) / (1.0 - accel * (z0 + z))))
+
+    z_lo = scipy.stats.norm.ppf(alpha / 2)
+    z_hi = scipy.stats.norm.ppf(1.0 - alpha / 2)
+    return {
+        'mean': theta_hat,
+        'z0': z0,
+        'acceleration': accel,
+        'low': float(np.percentile(boot, 100.0 * adj(z_lo))),
+        'high': float(np.percentile(boot, 100.0 * adj(z_hi))),
+    }
+
+
 def write_markdown_report(path: Path, seeds: List[int], scenarios: int,
                           aggregate: Dict[str, dict], statistics: Dict[str, dict]) -> None:
     """Generate a markdown results report from actual run output."""
@@ -1548,6 +1586,8 @@ def main():
                         help="Stress test: recalibration with noisy calibration labels (deployment realism)")
     parser.add_argument("--budget-pacing", action="store_true",
                         help="Stress test: even-pacing wrappers under budget_constrained (budget-awareness)")
+    parser.add_argument("--bootstrap", type=int, default=0,
+                        help="Bootstrap resamples for BCa CIs of per-seed agent profit (0=off)")
     parser.add_argument("--quiet", "-q", action="store_true")
     parser.add_argument("--self-check", action="store_true",
                         help="Verify byte-reproducibility (2 seeds, same output) and exit")
@@ -1644,6 +1684,33 @@ def main():
                       f"p={st['p_value']:.2e}  d={st['effect_size_cohens_d'] if st['effect_size_cohens_d'] is not None else 'n/a'}  "
                       f"sig={sig}")
 
+    # ---- Bootstrap BCa confidence intervals (optional) ----
+    bootstrap_cis = None
+    if args.bootstrap > 0:
+        rng = np.random.RandomState(12345)
+        bootstrap_cis = {}
+        for name in selected_names:
+            res = bca_ci(per_seed_values['total_profit'][name], args.bootstrap, rng)
+            if res is None:
+                continue
+            bootstrap_cis[name] = {
+                'mean': round(res['mean'], 4),
+                'bca_ci95': [round(res['low'], 4), round(res['high'], 4)],
+                'normal_ci95': aggregate[name].get('total_profit_ci95'),
+                'bias_correction_z0': round(res['z0'], 4),
+                'acceleration': round(res['acceleration'], 4),
+            }
+        print("\n" + "=" * 78)
+        print(f"BOOTSTRAP BCa 95% CIs (per-seed total profit, {args.bootstrap} resamples)")
+        print("=" * 78)
+        print(f"  {'agent':<16} {'mean':>10} {'BCa low':>10} {'BCa high':>10} {'normal low':>11} {'normal high':>11}")
+        for name, b in bootstrap_cis.items():
+            nrm = b['normal_ci95']
+            nlo = f"{nrm[0]:>11.2f}" if nrm else f"{'n/a':>11}"
+            nhi = f"{nrm[1]:>11.2f}" if nrm else f"{'n/a':>11}"
+            print(f"  {name:<16} {b['mean']:>10.2f} {b['bca_ci95'][0]:>10.2f} "
+                  f"{b['bca_ci95'][1]:>10.2f} {nlo} {nhi}")
+
     # ---- Save JSON ----
     output_data = {
         'timestamp': datetime.now(timezone.utc).isoformat(),
@@ -1657,6 +1724,7 @@ def main():
         'alpha_sweep': alpha_rows,
         'label_noise': label_rows,
         'budget_pacing': pacing_aggregate,
+        'bootstrap_cis': bootstrap_cis,
         'last_seed_metrics': last_metrics,
         'sample_contexts': [c.to_dict() for c in sample_contexts],
     }
