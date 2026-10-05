@@ -28,11 +28,11 @@ The emergence of agentic AI in marketing (70 papers, +1.8× growth in our corpus
 ## 3. Introduction
 
 ### 3.1 The Agentic Revolution in Marketing
-The marketing corpus shows **70 agentic papers** (70 in 2025-2026), **burst growth of 1.8×** — the highest momentum trend. Yet **zero papers** connect agentic capabilities with **marketing situational awareness** (115 contextual papers, 6 situational papers, 0 combined with agentic).
+The marketing corpus shows **70 agentic papers** (all from 2025-2026; 58 in 2026 alone), **burst growth of 1.8×** — the highest momentum trend. Yet **zero papers** connect agentic capabilities with **marketing situational awareness** (115 contextual papers, 6 situational papers, 0 combined with agentic).
 
 **Research Gap:** Agents can plan and execute, but cannot **understand marketing context**.
 
-### 3.2 The Haaglund Prior Art Problem
+### 3.2 The Häglund Prior Art Problem
 Emil Häglund's 2025 thesis (*"Contextual intelligence: leveraging AI for targeted marketing"*, Umeå University, Dept. of Computing Science) stakes the phrase in **CS/NLP**. His work provides **technical foundations** (opinion-unit extraction, aspect-based sentiment, media-context effects) but **does not define a marketing construct**.
 
 **Positioning:** While Häglund (2025) operationalizes contextual understanding in **text**, our work operationalizes **situational awareness** in **marketing agents**.
