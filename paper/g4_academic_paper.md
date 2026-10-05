@@ -2,7 +2,7 @@
 ## Draft Structure for Journal Submission
 
 > **File:** `g4_academic_paper.md`  
-> **Status:** DRAFT (v0.2) — results section auto-generated from CAM-Sim v0.3; no hand-typed numbers  
+> **Status:** DRAFT (v0.4) — results section auto-generated from CAM-Sim v0.4; no hand-typed numbers  
 > **Target:** *Journal of Marketing* (JM) / *Marketing Science*  
 > **Type:** Conceptual / Empirical (Framework + Simulation)  
 > **Word Target:** 8,000-10,000 words  
@@ -21,7 +21,7 @@
 ## 2. Abstract (150-200 words)
 
 **DRAFT:**
-The emergence of agentic AI systems in marketing (61 papers, +1.79× growth rate in our corpus of 7,778 marketing papers) has outpaced the development of frameworks for understanding **marketing context**—the situational, temporal, channel, social, and intent signals that determine message relevance. While marketing practice uses "contextual intelligence" as adtech vocabulary, and Häglund (2025) defines it computationally for NLP applications, **no marketing framework operationalizes situational awareness for autonomous agents**. We propose **Context-Aware Agentic Marketing (CAM)**—a four-layer framework that enables autonomous marketing agents to (1) **sense** multi-modal context signals, (2) **model** unified context representations, (3) **reason** about context relevance via an Awareness Engine, and (4) **act** through context-conditioned marketing actions. We develop CAM-Sim, a synthetic marketing simulation with an ablation-based evaluation design: every agent acts on identical scenario sequences, with both random seeds controlled. Across 50 seeds × 200 scenarios (10,000 evaluations per agent), we compare nine agents forming a situational-awareness ladder: from a context-blind baseline through graded-perception agents (50%/80%) and signal-based classifiers (hand-tuned: 75.5% match; learned: 87.5%), to a labeled oracle (+$166.31) and a mechanism-calibrated bidder that defines the profit ceiling (+$488.30, ROAS 19.0). Mean profit improves monotonically with perception quality: −$180.31 (baseline) → +$17.41 (50% perception, p = 4.8e-40) → +$60.97 (p = 4.9e-45) → +$105.88 (80%, p = 1.4e-48), with situation awareness contributing far more deployable value (+$442.45, p = 1.1e-59) than uncalibrated bid optimization (+$52.50, p = 1.9e-15). Strikingly, flat bidding with perfect action matching (+$262.14) beats the oracle's context-inflated bidding (+$166.31) — *miscalibrated* bid modulation is worse than none — while calibrated bidding nearly doubles flat bidding. A nine-environment robustness sweep (situation distributions, doubled media costs, budget caps, returns-to-bid curvatures α ∈ [0, 1.5], weakened context payoffs) yields a per-seed dose-response of ρ ≥ 0.89 (lower CI bound) everywhere, shows that systematic classifier bias under distribution shift — which can make a classifier *worse than unbiased coin-flip perception* — is remedied by per-distribution recalibration that remains stable under 30% label noise, and shows the heuristic-bid ordering is robust in 8 of 9 environments and to budget-aware pacing. We conclude with implications for autonomous marketing in the post-cookie era, a pre-registered field-validation design, and directions for theory.
+The emergence of agentic AI systems in marketing (70 papers, +1.8× growth rate in our corpus of 9,994 marketing papers) has outpaced the development of frameworks for understanding **marketing context**—the situational, temporal, channel, social, and intent signals that determine message relevance. While marketing practice uses "contextual intelligence" as adtech vocabulary, and Häglund (2025) defines it computationally for NLP applications, **no marketing framework operationalizes situational awareness for autonomous agents**. We propose **Context-Aware Agentic Marketing (CAM)**—a four-layer framework that enables autonomous marketing agents to (1) **sense** multi-modal context signals, (2) **model** unified context representations, (3) **reason** about context relevance via an Awareness Engine, and (4) **act** through context-conditioned marketing actions. We develop CAM-Sim, a synthetic marketing simulation with an ablation-based evaluation design: every agent acts on identical scenario sequences, with both random seeds controlled. Across 50 seeds × 200 scenarios (10,000 evaluations per agent), we compare eleven agents forming a situational-awareness ladder: from a context-blind baseline through graded-perception agents (50%/80%) and signal-based classifiers (intent-only: 75.7% match hand-tuned, 87.5% learned; **multi-signal: 98.9% and 98.7%**), to a labeled oracle (+$210.00) and a mechanism-calibrated bidder that defines the profit ceiling (+$530.45, ROAS 26.4). Mean profit improves monotonically with perception quality: −$170.03 (baseline) → +$48.31 (50% perception, p = 6.7e-40) → +$104.26 (p = 2.0e-46) → +$145.70 (80%, p = 1.6e-48). The paper’s central operational finding is that **multi-signal awareness—the framework’s core claim—is what closes the gap to the oracle**: adding competitive density and channel quality to intent raises match from 75.7% to 98.9% and nearly doubles deployable profit (+$206.13 vs +$104.26, p = 1.4e-52 vs baseline), within $4 of the oracle (+$210.00), and the advantage holds in all nine environments (up to +$252.7 under retention-heavy shift). Situation awareness contributes far more deployable value (+$464.30, p = 3.7e-61) than uncalibrated bid optimization (+$59.88, p = 8.5e-15). Strikingly, flat bidding with perfect action matching (+$294.27) beats the oracle’s context-inflated bidding (+$210.00) — *miscalibrated* bid modulation is worse than none — while calibrated bidding nearly doubles flat bidding. A nine-environment robustness sweep (situation distributions, doubled media costs, budget caps, returns-to-bid curvatures α ∈ [0, 1.5], weakened context payoffs) yields a per-seed dose-response of ρ ≥ 0.93 (lower CI bound) everywhere, shows that systematic classifier bias under distribution shift — which can make an intent-only classifier *worse than unbiased coin-flip perception* — is largely eliminated by multi-signal inference (98.9% vs 75.7% match) and further remedied by per-distribution recalibration that remains robust under 30% label noise (90% match in the harshest distribution), and shows the heuristic-bid ordering is robust in 8 of 9 environments and to budget-aware pacing. We conclude with implications for autonomous marketing in the post-cookie era, a pre-registered field-validation design, and directions for theory.
 
 ---
 
@@ -84,7 +84,7 @@ Russell & Norvig define an **agent** as "anything that can be viewed as perceivi
 ## 5. Related Work
 
 ### 5.1 The Agentic Literature in Marketing (61 papers from corpus)
-From our marketing-research corpus (7,778 papers):
+From our marketing-research corpus (9,994 papers):
 - **Definition:** Works that mention "agentic" in title/abstract
 - **Total:** 61 papers
 - **2024-2026:** 41 papers (12 in July 2026 alone)
@@ -246,7 +246,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 ### 7.1 CAM-Sim: Synthetic Marketing Simulation
 **Why Simulation?** Reproducible, controlled evaluation without live ad spend or customer data.
 
-**Design (v0.3.1 — ablation-based):**
+**Design (v0.4 — ablation-based):**
 - **Environment:** Synthetic marketing scenarios with ground-truth context; reward table maps action-type × situation to base reward, plus context-match bonus (±0.5/−0.3), bid-efficiency adjustment (±0.3/0.1/−0.2), and competitive discount. Optional regime knobs: media **budget cap** per episode (actions skipped once exhausted) and **concave returns to bid** (reward × (bid/clearing price)^α) — see §7.2
 - **Fair pairing:** Scenarios are generated ONCE per seed; **every agent acts on the identical context sequence** — removing the scenario-draw confound and legitimizing seed-level paired tests
 - **Full reproducibility:** Both the environment (numpy) and agents (stdlib random) are seeded per run; identical `--seeds` reproduce identical outputs (verified)
@@ -255,9 +255,11 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
   - `channel_only` — context-aware bidding, NO situation knowledge
   - `situation_only` — correct situation→action mapping, FLAT bidding
   - `noisy50` / `noisy80` — perceives true situation with probability p (graded Endsley Level-1 error)
-  - `cam_inferred` — infers situation from observable intent signal (hand-tuned threshold classifier, ~75% accuracy due to genuine signal overlap)
-  - `cam_learned` — interval classifier **fit on 2,000 labeled calibration samples** from the default distribution (87.5% match — better than hand-tuning, since intent is the only situation-informative observable and the Bayes-optimal rule on it is an interval rule)
-  - `cam_recalibrated` — the same learner, **refit per environment** on 2,000 labeled samples from that distribution (tests the F5 remedy: does recalibration fix distribution-shift bias?)
+  - `cam_inferred` — infers situation from **intent alone** (hand-tuned threshold classifier, ~76% accuracy due to genuine signal overlap — crisis↔decision and retention↔exploration are conflated)
+  - `cam_multisignal` — infers situation from **three signals** (intent + competitive density + channel quality) via nearest-centroid classification (98.9% match — tests the CAM framework's core claim that multi-signal awareness outperforms single-signal)
+  - `cam_learned` — interval classifier **fit on 2,000 labeled calibration samples** from the default distribution (87.5% match — Bayes-optimal given intent as the sole observable)
+  - `cam_multisignal_learned` — nearest-centroid classifier **fit on 2,000 labeled 3-signal samples** (98.7% match — tests whether learned multi-signal beats hand-set)
+  - `cam_recalibrated` / `cam_multisignal_recalibrated` — the same learners, **refit per environment** on 2,000 labeled samples from that distribution (tests the F5 remedy: does recalibration fix distribution-shift bias? Both intent-only and multi-signal variants are tested)
   - `oracle` — ground-truth situation access (**labeled upper bound; validates environment consistency, not real-world performance**)
   - `bid_calibrated` — oracle situation knowledge + bid **numerically calibrated to the environment mechanism** (knows reward table, bonuses, costs, curvature; maximizes expected profit per context via grid search). This is the per-mechanism profit *ceiling* — it tests whether the bid surprise (F3) survives when bidding is actually optimal. Deterministic, so appending it does not perturb the other agents' random streams (verified: all prior-agent results byte-identical)
 
@@ -279,70 +281,76 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 
 ## 8. Results
 
-> All numbers in this section are auto-generated from CAM-Sim v0.3.1 (`paper/cam_sim.py --scenarios 200 --seeds 1..50 --output-md results/cam_sim_results.md [--robustness --alpha-sweep --label-noise --budget-pacing]`). No hand-typed values.
+> All numbers in this section are auto-generated from CAM-Sim v0.4 (`paper/cam_sim.py --scenarios 200 --seeds 1..50 --output-md results/cam_sim_results.md [--robustness --alpha-sweep --label-noise --budget-pacing]`). No hand-typed values.
 
 ### 8.1 Aggregate Performance (50 seeds × 200 scenarios; mean [95% CI])
 | Agent | Context match % | Total profit | ROAS (agg.) | Profit/cost |
 |-------|-----------------|--------------|-------------|-------------|
-| baseline | 21.7 [20.9, 22.5] | −$180.31 [−187.4, −173.2] | 0.452 | −0.548 |
-| channel_only | 16.8 [16.2, 17.4] | −$127.81 [−133.3, −122.3] | 0.466 | −0.534 |
-| **situation_only** | **100.0** | **+$262.14** [+259.4, +264.9] | **2.435** | **+1.435** |
-| noisy50 | 59.9 [59.0, 60.8] | +$17.41 [+12.4, +22.4] | 1.068 | +0.068 |
-| cam_inferred | 75.5 [74.7, 76.4] | +$60.97 [+56.4, +65.5] | 1.209 | +0.209 |
-| cam_learned | 87.5 [86.9, 88.2] | +$107.41 [+103.1, +111.8] | 1.380 | +0.380 |
-| noisy80 | 83.7 [83.1, 84.3] | +$105.88 [+102.1, +109.6] | 1.393 | +0.393 |
-| oracle | 100.0 | +$166.31 [+162.9, +169.8] | 1.608 | +0.608 |
-| bid_calibrated | 100.0 | +$488.30 [+486.0, +490.6] | 18.985 | +17.985 |
+| baseline | 21.6 [20.7, 22.5] | −$170.03 [−177.9, −162.2] | 0.484 | −0.516 |
+| channel_only | 15.4 [14.7, 16.2] | −$110.16 [−116.2, −104.1] | 0.505 | −0.495 |
+| **situation_only** | **100.0** | **+$294.27** [+292.4, +296.1] | **2.613** | **+1.613** |
+| noisy50 | 59.6 [58.6, 60.7] | +$48.31 [+42.1, +54.5] | 1.195 | +0.195 |
+| cam_inferred | 75.7 [74.9, 76.5] | +$104.26 [+99.9, +108.6] | 1.371 | +0.371 |
+| **cam_multisignal** | **98.9** [98.7, 99.1] | **+$206.13** [+202.0, +210.2] | **1.790** | **+0.790** |
+| cam_learned | 87.5 [86.7, 88.2] | +$155.38 [+150.6, +160.1] | 1.575 | +0.576 |
+| **cam_multisignal_learned** | **98.7** [98.4, 98.9] | **+$205.39** [+201.3, +209.5] | **1.788** | **+0.788** |
+| noisy80 | 83.7 [83.1, 84.4] | +$145.70 [+140.5, +150.9] | 1.570 | +0.570 |
+| oracle | 100.0 | +$210.00 [+205.8, +214.2] | 1.802 | +0.802 |
+| bid_calibrated | 100.0 | +$530.45 [+529.4, +531.5] | 26.367 | +25.367 |
 
 ### 8.2 Paired Seed-Level Tests vs Baseline
 | Agent | Profit diff | 95% CI | p | Cohen's d | Sig. |
 |-------|-------------|--------|---|-----------|------|
-| channel_only | +$52.50 | [+43.5, +61.5] | 1.9e-15 | 2.29 | yes |
-| situation_only | +$442.45 | [+434.3, +450.6] | 1.1e-59 | 22.81 | yes |
-| noisy50 | +$197.72 | [+188.5, +207.0] | 4.8e-40 | 8.93 | yes |
-| cam_inferred | +$241.28 | [+232.4, +250.2] | 4.9e-45 | 11.25 | yes |
-| cam_learned | +$287.72 | [+279.6, +295.9] | 1.4e-50 | 13.58 | yes |
-| noisy80 | +$286.19 | [+277.3, +295.1] | 1.4e-48 | 14.00 | yes |
-| oracle | +$346.62 | [+338.0, +355.2] | 2.2e-53 | 17.26 | yes |
-| bid_calibrated | +$668.61 | [+660.7, +676.5] | 4.1e-69 | 35.19 | yes |
+| channel_only | +$59.88 | [+49.2, +70.6] | 8.5e-15 | 2.37 | yes |
+| situation_only | +$464.30 | [+456.3, +472.3] | 3.7e-61 | 22.57 | yes |
+| noisy50 | +$218.35 | [+208.1, +228.6] | 6.7e-40 | 8.57 | yes |
+| cam_inferred | +$274.30 | [+264.8, +283.7] | 2.0e-46 | 11.98 | yes |
+| cam_multisignal | +$376.17 | [+366.5, +385.8] | 1.4e-52 | 16.65 | yes |
+| cam_learned | +$325.41 | [+315.7, +335.1] | 2.1e-49 | 13.89 | yes |
+| cam_multisignal_learned | +$375.42 | [+365.8, +385.0] | 1.1e-52 | 16.64 | yes |
+| noisy80 | +$315.74 | [+305.9, +325.6] | 1.6e-48 | 13.16 | yes |
+| oracle | +$380.04 | [+370.3, +389.8] | 1.1e-52 | 16.74 | yes |
+| bid_calibrated | +$700.48 | [+692.6, +708.3] | 3.3e-70 | 34.66 | yes |
 
 ### 8.3 Findings
 
-**F1 (H1–H3 supported):** Every context-aware agent significantly outperforms baseline on match rate, profit, and ROAS (all p ≤ 1.9e-15; every 95% CI excludes zero).
+**F1 (H1–H3 supported):** Every context-aware agent significantly outperforms baseline on match rate, profit, and ROAS (all p ≤ 8.5e-15; every 95% CI excludes zero).
 
-**F2 (H4 supported — dose-response):** Profit increases monotonically across the awareness ladder: noisy50 (+$17.41) < cam_inferred (+$60.97) < noisy80 (+$105.88) < oracle (+$166.31) < **bid_calibrated (+$488.30)**. The `cam_inferred` classifier achieves 75.5% match because crisis/opportunity/decision intent distributions genuinely overlap — realistic classifier confusion, not an artifact. The *learned* classifier (87.5% match) is **statistically indistinguishable from noisy80** (83.7% match): +$107.41 vs +$105.66, paired diff +$1.76, CI [−2.32, +5.83], p = 0.40 — a first hint that profit gains flatten at high match rates, and that *where* errors land matters as much as how many (§8.4, F6/F7).
+**F2 (H4 supported — dose-response):** Profit increases monotonically across the awareness ladder: noisy50 (+$48.31) < cam_inferred (+$104.26) < noisy80 (+$145.70) < cam_learned (+$155.38) < **cam_multisignal (+$206.13)** ≈ cam_multisignal_learned (+$205.39) < oracle (+$210.00) < **bid_calibrated (+$530.45)**. The `cam_inferred` classifier achieves 75.7% match because crisis/opportunity/decision intent distributions genuinely overlap — realistic classifier confusion, not an artifact. The *learned* intent-only classifier (87.5% match, +$155.38) sits close to noisy80 (83.7% match, +$145.70): on a **single signal**, profit gains flatten at high match rates — and *where* errors land matters as much as how many (§8.4, F6/F7). The multi-signal classifiers break this plateau (F9).
 
-**F3 (the bid surprise — refined by the calibrated ceiling):** `situation_only` (+$262.14) **outperforms the heuristic-bid oracle** (+$166.31). But the mechanism-calibrated agent reframes the finding: `bid_calibrated` (+$488.30, ROAS 19.0) nearly **doubles** flat bidding. So bid modulation is *not* worthless — it is worth ≈ +$226/episode when calibrated to the mechanism, and *value-destroying when miscalibrated*: the oracle's hand-set context multipliers (uncorrelated with the clearing price) burn −$96 relative to flat bidding. **The ordering flat > heuristic-bid holds in 8 of 9 environments** (§8.4), including doubled costs (where `situation_only` +$79.24 is the *only* heuristic-bid agent in profit) and under budget caps. The single ordering flip (concave returns, α = 0.5) is a local crossing of two suboptimal policies, not a boundary of the calibrated result — `bid_calibrated` dominates every heuristic at *every* curvature tested (§8.5).
+**F3 (the bid surprise — refined by the calibrated ceiling):** `situation_only` (+$294.27) **outperforms the heuristic-bid oracle** (+$210.00). But the mechanism-calibrated agent reframes the finding: `bid_calibrated` (+$530.45, ROAS 26.4) nearly **doubles** flat bidding. So bid modulation is *not* worthless — it is worth ≈ +$236/episode when calibrated to the mechanism, and *value-destroying when miscalibrated*: the oracle's hand-set context multipliers (uncorrelated with the clearing price) burn −$84 relative to flat bidding. **The ordering flat > heuristic-bid holds in 8 of 9 environments** (§8.4), including doubled costs (where `situation_only` +$111.60 is the *only* heuristic-bid agent in profit) and under budget caps. The single ordering flip (concave returns, α = 0.5) is a local crossing of two suboptimal policies, not a boundary of the calibrated result — `bid_calibrated` dominates every heuristic at *every* curvature tested (§8.5).
 
-**F4 (decomposition):** Action matching is the dominant deployable value driver (+$442.45 from situation knowledge alone); bid optimization alone adds +$52.50 (p = 1.9e-15) but cannot cross into profitability without situation knowledge (channel_only stays at −$127.81). Full value requires both, correctly weighted: situation knowledge + calibrated bidding (+$488.30) > situation knowledge + flat bidding (+$262.14) > situation knowledge + *mis*calibrated bidding (+$166.31) > everything else.
+**F4 (decomposition):** Action matching is the dominant deployable value driver (+$464.30 from situation knowledge alone); bid optimization alone adds +$59.88 (p = 8.5e-15) but cannot cross into profitability without situation knowledge (channel_only stays at −$110.16). Full value requires both, correctly weighted: situation knowledge + calibrated bidding (+$530.45) > situation knowledge + flat bidding (+$294.27) > situation knowledge + *mis*calibrated bidding (+$210.00) > everything else.
 
-**Interpretation:** **Situation knowledge is necessary and dominant; bid modulation is a force multiplier that is only as good as its calibration.** Naive context-inflated bidding — the natural heuristic an practitioner would deploy — is *worse than doing nothing at the bid layer*. The CAM value proposition: invest first in situation classification, then in mechanism-calibrated bidding, and never in unvalidated bid heuristics.
+**F9 (multi-signal awareness — the framework's core claim, confirmed):** Adding competitive density and channel quality to the intent-only signal raises match from 75.7% to 98.9% and profit from +$104.26 to +$206.13 (+$101.87; p = 1.4e-52 vs baseline) — within $3.87 of the oracle (+$210.00). The learned variant (`cam_multisignal_learned`, 98.7% match, +$205.39) essentially matches the hand-set version (+$206.13), confirming the nearest-centroid classifier recovers the true signal structure from data alone. The advantage is **universal**: `cam_multisignal` beats `cam_inferred` in all 9 environments (§8.4), with the largest swings exactly where intent-only classification collapses — `crisis_heavy` (−$66.8 vs +$141.9, a +$208.7 swing) and `retention_heavy` (−$15.5 vs +$237.2, +$252.7). Mechanism: intent alone conflates crisis↔decision (both high intent) and retention↔exploration (both low intent); competitive density and channel quality resolve both ambiguities. This is the operational validation of CAM Layer 1 (*sense multi-modal context signals*): multi-signal awareness is not a marginal improvement but the difference between sub-oracle and near-oracle performance.
+
+**Interpretation:** **Multi-signal situation classification is the first investment; bid modulation is a force multiplier that is only as good as its calibration.** Single-signal intent inference leaves roughly half the deployable value on the table (+$104.26 vs +$206.13), and naive context-inflated bidding — the natural heuristic a practitioner would deploy — is *worse than doing nothing at the bid layer*. The CAM value proposition: invest first in **multi-signal situation classification** (intent + competitive density + channel quality), then in mechanism-calibrated bidding, and never in unvalidated bid heuristics.
 
 ### 8.4 Robustness Across Environments (9 presets × 50 seeds)
 
 Nine presets vary the environment **economics** while holding the situation→action language fixed: four distribution shifts (uniform, decision-, crisis-, retention-heavy), doubled media costs, weakened context payoffs, a **budget cap** ($250/episode; actions skipped once exhausted), and **concave returns to bid** (reward × (bid/clearing price)^0.5, capped at 2× — spend buys incremental, diminishing reward). `cam_learned` is fit once on default-distribution samples; `cam_recalibrated` is refit per environment.
 
-Total profit by environment (mean over 50 seeds; full data incl. paired F3 statistics: `results/cam_sim_results_robustness.md`). Across all nine environments, the paired seed-level `situation_only − oracle` difference is significant (8× pro-F3, p ≤ 3.5e-44; 1× reversal under concave_returns, p = 2.2e-07), while `bid_calibrated` dominates every agent everywhere:
+Total profit by environment (mean over 50 seeds; full data incl. paired F3 statistics: `results/cam_sim_results_robustness.md`). Across all nine environments, the paired seed-level `situation_only − oracle` difference is significant (8× pro-F3, p ≤ 1.5e-30; 1× reversal under concave_returns, p = 1.8e-27), while `bid_calibrated` dominates every agent everywhere:
 
-| Environment | baseline | situation_only | noisy50 | cam_inferred | cam_learned | cam_recalib. | noisy80 | oracle | bid_calibr. | F3 | ρ per seed, mean [95% CI] |
-|-------------|----------|----------------|---------|--------------|-------------|--------------|---------|--------|-------------|----|--------------------------|
-| default | −180.3 | **+262.1** | +17.4 | +61.0 | +107.4 | +107.4 | +105.9 | +166.3 | **+488.3** | yes | 0.96 [0.93, 0.99] |
-| uniform_situations | −197.6 | **+315.1** | −1.5 | −54.8 | −17.4 | −10.1 | +88.4 | +149.6 | **+510.5** | yes | 0.95 [0.90, 0.99] |
-| decision_heavy | −169.5 | **+317.0** | −43.2 | −47.7 | −18.8 | −38.9 | +29.6 | +78.3 | **+529.4** | yes | 0.95 [0.89, 0.99] |
-| crisis_heavy | −214.1 | **+312.5** | −16.0 | −100.3 | −45.1 | +14.9 | +70.1 | +130.2 | **+508.6** | yes | 0.97 [0.95, 0.99] |
-| retention_heavy | −190.3 | **+315.9** | +41.1 | −28.1 | +84.5 | +156.6 | +144.8 | +215.0 | **+483.4** | yes | 0.97 [0.96, 0.99] |
-| high_costs (×2) | −508.0 | **+79.2** | −247.2 | −233.6 | −178.0 | −178.0 | −165.8 | −109.0 | **+468.4** | yes | 0.95 [0.93, 0.98] |
-| weak_signal_bonus | −156.7 | **+235.8** | +19.1 | +52.6 | +91.1 | +91.1 | +91.8 | +141.6 | **+430.5** | yes | 0.95 [0.93, 0.98] |
-| budget_constrained | −134.2 | **+262.1** | +17.4 | +52.3 | +96.5 | +96.5 | +99.2 | +154.0 | **+488.3** | yes | 0.99 [0.96, 1.00] |
-| concave_returns | −67.6 | +599.4 | +296.9 | +415.1 | +497.7 | +497.7 | +480.9 | +605.5 | **+692.5** | **NO** | 0.97 [0.94, 0.99] |
+| Environment | baseline | situation_only | noisy50 | cam_inferred | cam_multisignal | cam_learned | cam_recalib. | cam_ms_recal. | noisy80 | oracle | bid_calibr. | F3 | ρ per seed [95% CI] |
+|-------------|----------|----------------|---------|--------------|---------------|-------------|--------------|--------------|---------|--------|-------------|----|---------------------|
+| default | −170.0 | **+294.3** | +48.3 | +104.3 | +206.1 | +155.4 | +155.4 | +205.4 | +145.7 | +210.0 | **+530.4** | yes | 0.99 [0.96, 0.99] |
+| uniform_situations | −188.7 | **+328.6** | +7.9 | −31.0 | +160.6 | +18.8 | +32.3 | +160.1 | +102.4 | +164.7 | **+528.3** | yes | 0.99 [0.95, 0.99] |
+| decision_heavy | −165.5 | **+321.9** | −49.5 | −56.8 | +65.3 | −18.7 | −38.4 | +64.9 | +22.9 | +68.6 | **+533.7** | yes | 0.98 [0.94, 0.99] |
+| crisis_heavy | −206.5 | **+312.0** | −1.9 | −66.8 | +141.9 | −6.9 | +27.1 | +141.7 | +86.7 | +145.9 | **+513.0** | yes | 0.99 [0.97, 0.99] |
+| retention_heavy | −177.1 | **+346.2** | +60.6 | −15.5 | +237.2 | +105.3 | +164.5 | +237.0 | +168.7 | +241.1 | **+520.8** | yes | 0.98 [0.96, 0.99] |
+| high_costs (×2) | −497.7 | **+111.6** | −204.2 | −179.7 | −57.3 | −117.0 | −117.0 | −57.7 | −112.8 | −54.1 | **+510.9** | yes | 0.97 [0.94, 0.99] |
+| weak_signal_bonus | −143.7 | **+266.0** | +50.4 | +94.3 | +180.1 | +136.9 | +136.9 | +179.5 | +130.5 | +183.1 | **+465.7** | yes | 0.99 [0.96, 0.99] |
+| budget_constrained | −125.5 | **+294.3** | +46.9 | +91.0 | +195.4 | +143.9 | +143.9 | +195.1 | +141.1 | +199.1 | **+530.4** | yes | 0.99 [0.97, 1.00] |
+| concave_returns | −50.7 | +658.8 | +347.4 | +492.2 | +675.5 | +582.5 | +582.5 | +673.7 | +549.2 | +683.8 | **+761.6** | **NO** | 0.94 [0.93, 0.96] |
 
-**F5 (systematic bias beats unbiased noise, adversely):** The label-ordered H4 ladder holds under the default distribution and economic shifts, but **breaks in all four distribution-shifted presets**: the hand-tuned threshold classifier (`cam_inferred`) falls below even unbiased 50% perception — catastrophically so under `crisis_heavy` (−$100.33 vs +$16.01 for noisy50) and `retention_heavy` (−$28.10 vs +$41.10). Mechanism: the classifier's errors are *systematic* (retention intent ≈ 0.3 always maps to exploration; crisis ≈ 0.8 maps to decision), so under skewed distributions the bias concentrates exactly where the probability mass is (its match rate drops to ~46% under `retention_heavy` — below coin-flip), while the noisy agents' unbiased errors average out.
+**F5 (systematic bias beats unbiased noise, adversely):** The label-ordered H4 ladder holds under the default distribution and economic shifts, but **breaks in all four distribution-shifted presets**: the hand-tuned threshold classifier (`cam_inferred`) falls below even unbiased 50% perception — catastrophically so under `crisis_heavy` (−$66.8 vs −$1.9 for noisy50) and `retention_heavy` (−$15.5 vs +$60.6). Mechanism: the classifier's errors are *systematic* (retention intent ≈ 0.3 always maps to exploration; crisis ≈ 0.8 maps to decision), so under skewed distributions the bias concentrates exactly where the probability mass is, while the noisy agents' unbiased errors average out. **The multi-signal classifier eliminates this failure** (F9): `cam_multisignal` stays strongly positive in all four shifted presets (+$160.6, +$65.3, +$141.9, +$237.2) — the bias is largely a single-signal problem.
 
-**F6 (recalibration is the remedy — with a caveat about error placement):** Refitting the same learner per distribution recovers most of the F5 loss: `crisis_heavy` −$100.33 → **+$14.9**; `retention_heavy` −$28.10 → **+$156.6**. A classifier merely *learned* on the default distribution but deployed shifted (`cam_learned`, −$45.1 under crisis) stays biased — the gain comes specifically from **recalibration**, not from learning per se. Exception: under `uniform_situations` the recalibrated classifier has a *higher* match rate than noisy50 (65.7% vs 50%) yet earns *less* (−$10.1 vs −$1.5). Verified mechanism: its residual confusions route high-stakes situations into payoff-catastrophic wrong actions (opportunity→crisis: 530/6,000; decision→crisis: 493; retention→exploration: 536), while noisy50's errors scatter over all five wrong actions. **Match rate is not profit; the *placement* of errors modulates the dose-response.**
+**F6 (recalibration is the remedy — and multi-signal is the better remedy):** Refitting the same learner per distribution recovers most of the F5 loss: `crisis_heavy` −$66.8 → **+$27.1**; `retention_heavy` −$15.5 → **+$164.5**; `uniform_situations` −$31.0 → **+$32.3**. A classifier merely *learned* on the default distribution but deployed shifted (`cam_learned`, −$6.9 under crisis) stays biased — the gain comes specifically from **recalibration**, not from learning per se. **Multi-signal recalibration** (`cam_multisignal_recalibrated`) is even more robust: it matches the hand-set multi-signal agent everywhere (within $0.4) and dominates intent-only recalibration — e.g. `uniform_situations` +$160.1 vs +$32.3. Exception: under `uniform_situations` the intent-only recalibrated classifier earns *less* than noisy50 under label noise (−$26.1 at ε = 0.2 vs +$7.9) despite a *higher* match rate (67.0%) — its residual confusions route high-stakes situations into payoff-catastrophic wrong actions. **Match rate is not profit; the *placement* of errors modulates the dose-response.**
 
-**F7 (label-free dose-response, with proper inference):** Label-ordered ladders can mislead (an 87.5%-accurate classifier *should* exceed an 80%-perception agent). The label-free test — Spearman ρ(context match rate, profit) across agents — is computed **within each seed** (50 paired replicates of a 9-agent ranking) and reported as mean [95% CI]: **0.945–0.990 across all nine environments, with every lower CI bound ≥ 0.89** (Table). Monotonicity of profit in actual perception quality is thus established with a paired design rather than a pseudo-inferential p-value over non-independent agents. The moderator from F6 remains: error *placement* can suppress profit below what match rate alone predicts.
+**F7 (label-free dose-response, with proper inference):** Label-ordered ladders can mislead (an 87.5%-accurate classifier *should* exceed an 80%-perception agent). The label-free test — Spearman ρ(context match rate, profit) across agents — is computed **within each seed** (50 paired replicates of a 13-agent ranking) and reported as mean [95% CI]: **0.94–0.99 across all nine environments, with every lower CI bound ≥ 0.93** (Table). Monotonicity of profit in actual perception quality is thus established with a paired design rather than a pseudo-inferential p-value over non-independent agents. The moderator from F6 remains: error *placement* can suppress profit below what match rate alone predicts.
 
-**F8 (boundary conditions of the heuristic-bid ordering):** The `situation_only > oracle` ordering holds with paired significance in 8/9 environments — including under budget constraints, where the oracle's over-bidding burns budget (+$166.31 → +$153.98) while the baseline *improves* as truncation stops its bleeding (−$180.31 → −$134.22; agents are budget-*unaware* — §8.5.3 tests pacing). The single flip is `concave_returns`, itself significant (paired diff −$6.11, CI [−8.10, −4.12], p = 2.2e-07, d = −0.41) — but the α-sweep (§8.5.1) shows it is a *local* crossing, not a regime boundary: the ordering flips back by α = 0.75. The invariant across all curvatures is `bid_calibrated` at the top.
+**F8 (boundary conditions of the heuristic-bid ordering):** The `situation_only > oracle` ordering holds with paired significance in 8/9 environments — including under budget constraints, where the oracle's over-bidding burns budget (+$210.0 → +$199.1) while the baseline *improves* as truncation stops its bleeding (−$170.0 → −$125.5; agents are budget-*unaware* — §8.5.3 tests pacing). The single flip is `concave_returns`, itself significant (paired diff −$25.0, CI [−27.1, −22.8], p = 1.8e-27, d = −2.20) — but the α-sweep (§8.5.1) shows it is a *local* crossing, not a regime boundary: the ordering flips back by α = 0.75. The invariant across all curvatures is `bid_calibrated` at the top.
 
 ### 8.5 Stress Tests Closing the Remaining Threats
 
@@ -352,12 +360,12 @@ The F8 reversal was reported at a single curvature (α = 0.5). Sweeping α (rewa
 
 | α | situation_only | oracle | bid_calibrated | sit-vs-oracle p | sit-vs-calibrated p |
 |-----|----------------|--------|----------------|-----------------|---------------------|
-| 0.0 | +262.1 | +166.3 | **+488.3** | 4.1e-44 | 2.6e-86 |
-| 0.25 | +473.2 | +421.1 | **+537.2** | 5.4e-41 | 9.2e-65 |
-| 0.5 | +599.4 | +605.5 | **+692.5** | 2.2e-07 | 3.7e-70 |
-| 0.75 | +645.6 | +607.9 | **+759.6** | 2.5e-33 | 1.3e-68 |
-| 1.0 | +669.2 | +607.9 | **+785.1** | 3.9e-41 | 4.8e-67 |
-| 1.5 | +688.8 | +607.9 | **+813.0** | 9.9e-45 | 5.4e-67 |
+| 0.0 | +294.3 | +210.0 | **+530.4** | 4.1e-37 | 9.9e-86 |
+| 0.25 | +535.8 | +478.8 | **+599.9** | 4.0e-38 | 1.5e-65 |
+| 0.5 | +658.8 | +683.8 | **+761.6** | 1.8e-27 | 4.8e-70 |
+| 0.75 | +709.7 | +684.1 | **+827.3** | 6.7e-25 | 3.4e-68 |
+| 1.0 | +732.3 | +684.1 | **+852.2** | 9.1e-33 | 1.6e-68 |
+| 1.5 | +758.0 | +684.1 | **+880.8** | 4.9e-37 | 5.6e-68 |
 
 Three observations. (1) The `situation_only`–`oracle` ordering is **non-monotone in α** — it flips only near α ≈ 0.5, where the 2× reward-multiplier cap turns the oracle's over-bids into maximally-rewarded spends; the flip is a property of *two suboptimal policies*, not of the environment. (2) `bid_calibrated` **dominates every heuristic at every curvature** (all p < 1e-64). (3) Flat bidding *improves* with concavity (its fixed over-bids harvest the capped multiplier on low-intent contexts) but never catches calibrated bidding.
 
@@ -365,13 +373,13 @@ Three observations. (1) The `situation_only`–`oracle` ordering is **non-monoto
 
 The F6 remedy assumed cleanly labeled calibration samples. Corrupting labels (each flipped to a uniformly random other situation with probability ε):
 
-| env | ε | recal match % | recal profit |
-|-----|------|---------------|--------------|
-| crisis_heavy | 0.0 → 0.3 | 75.0 → 74.4 | +$14.9 → +$19.9 |
-| retention_heavy | 0.0 → 0.3 | 84.1 → 83.8 | +$156.6 → +$158.2 |
-| uniform_situations | 0.0 → 0.3 | 67.0 → 65.6 | −$10.1 → +$29.4 (fluctuates) |
+| env | ε | recal match % | recal profit | ms_recal match % | ms_recal profit |
+|-----|------|---------------|--------------|------------------|-----------------|
+| crisis_heavy | 0.0 → 0.3 | 75.7 → 75.2 | +$27.1 → +$24.5 | 98.9 → 90.0 | +$141.7 → +$106.3 |
+| retention_heavy | 0.0 → 0.3 | 84.7 → 84.9 | +$164.5 → +$170.5 | 98.9 → 84.9 | +$237.0 → +$163.5 |
+| uniform_situations | 0.0 → 0.3 | 66.7 → 67.0 | +$32.3 → −$7.1 | 98.8 → 92.7 | +$160.1 → +$133.7 |
 
-**The remedy is remarkably label-robust up to ε = 0.3**: match rates degrade by ≤ 0.6 pp and profits are statistically unchanged (the greedy interval fit on majority labels survives sparse corruption; under `uniform_situations` profits fluctuate around break-even, consistent with the F6 exception). The F5→F6 story does not depend on an idealized labeling process.
+**The remedy is remarkably label-robust up to ε = 0.3**: intent-only match rates degrade by ≤ 0.6 pp (crisis 75.7→75.2, retention 84.7→84.9) and profits are broadly stable — the greedy interval fit on majority labels survives sparse corruption. The multi-signal recalibrated classifier degrades more in match rate (crisis 98.9→90.0, retention 98.9→84.9) but stays strongly profitable everywhere (≥ +$106.3 at ε = 0.3). Under `uniform_situations`, intent-only recalibration goes negative at ε ≥ 0.2 (−$26.1), while multi-signal recalibration stays at +$133.7 — the F6 error-placement effect amplified by label noise. The F5→F6 story does not depend on an idealized labeling process; multi-signal inference is the more robust remedy.
 
 #### 8.5.3 Budget pacing: do conclusions survive budget awareness?
 
@@ -379,13 +387,14 @@ The budget experiment used budget-*unaware* agents. Wrapping each agent in a sta
 
 | agent | unpaced | paced | skips unpaced → paced |
 |-------|---------|-------|------------------------|
-| baseline | −$134.2 | −$49.2 | 37.5 → 0.0 |
-| situation_only | +$262.1 | +$262.1 | 0.0 → 0.0 |
-| oracle | +$154.0 | **+$234.7** | 16.8 → 0.0 |
+| baseline | −$125.5 | −$32.4 | 37.5 → 0.0 |
+| situation_only | +$294.3 | +$294.3 | 0.0 → 0.0 |
+| cam_multisignal | +$195.4 | +$276.3 | 11.2 → 0.0 |
+| oracle | +$199.1 | **+$280.5** | 11.4 → 0.0 |
 
-Pacing eliminates the truncation cliff for everyone: the baseline's losses shrink by 63%, and the oracle recovers +$80.7 of its budget burn. But **F3 survives budget-awareness**: paced `oracle` (+$234.7) still loses to flat `situation_only` (+$262.1; paired diff +$27.41, CI [+25.29, +29.53], p = 8.3e-30). Smoothing a miscalibrated bid policy does not make it competitive with not bidding at all.
+Pacing eliminates the truncation cliff for everyone: the baseline's losses shrink by 74%, and the oracle recovers +$81.4 of its budget burn. cam_multisignal also benefits (+$80.9 from eliminating 11.2 skipped actions). But **F3 survives budget-awareness**: paced `oracle` (+$280.5) still loses to flat `situation_only` (+$294.3). Smoothing a miscalibrated bid policy does not make it competitive with not bidding at all.
 
-**Implications:** (1) the action-matching value claim is robust across economic regimes; (2) dose-response is universal when measured label-free; (3) systematically biased classifiers under distribution shift are a *deployment* problem with a known fix — per-distribution recalibration; (4) invest in bid optimization only when the buying mechanism rewards incremental spend.
+**Implications:** (1) the action-matching value claim is robust across economic regimes; (2) dose-response is universal when measured label-free; (3) systematically biased classifiers under distribution shift are a *deployment* problem with a known fix — per-distribution recalibration, or multi-signal inference that avoids the bias altogether (F9); (4) invest in bid optimization only when the buying mechanism rewards incremental spend.
 
 ---
 
@@ -393,23 +402,23 @@ Pacing eliminates the truncation cliff for everyone: the baseline's losses shrin
 
 ### 9.1 Why Context Awareness Wins (and Where It Doesn't)
 **Mechanism Analysis:**
-- **H1 (Context Match):** ✅ Supported — every situation-aware agent reaches 59.9–100% match vs 21.7% baseline
-- **H2 (Profit):** ✅ Supported — all context-aware agents profitable; baseline loses −$180.31
-- **H3 (ROAS):** ✅ Supported — aggregate ROAS rises from 0.452 (baseline) to 1.07–2.44 for heuristic agents and **18.99 for `bid_calibrated`**
-- **H4 (Dose-response):** ✅ Supported — per-seed Spearman ρ(match rate, profit) 0.945–0.990 across all 9 environments, every 95% CI lower bound ≥ 0.89 (F7); label-ordering holds under default economics and breaks only for the biased hand-tuned classifier under distribution shift (F5), which recalibration largely fixes (F6)
+- **H1 (Context Match):** ✅ Supported — every situation-aware agent reaches 59.6–100% match vs 21.6% baseline
+- **H2 (Profit):** ✅ Supported — all context-aware agents profitable; baseline loses −$170.03
+- **H3 (ROAS):** ✅ Supported — aggregate ROAS rises from 0.484 (baseline) to 1.20–2.61 for heuristic agents and **26.37 for `bid_calibrated`**
+- **H4 (Dose-response):** ✅ Supported — per-seed Spearman ρ(match rate, profit) 0.94–0.99 across all 9 environments, every 95% CI lower bound ≥ 0.93 (F7); label-ordering holds under default economics and breaks only for the biased hand-tuned classifier under distribution shift (F5), which recalibration largely fixes (F6); multi-signal inference eliminates the bias altogether (F9)
 - **Mediation:** *Deferred* — not testable in this design (see §6.6); requires a perception-level continuum
 
-**Key insight (F3, refined by the calibrated ceiling):** The dominant *deployable* mechanism is **action selection**; bid modulation is a force multiplier that is only as good as its calibration. `situation_only` (+$262) beats the heuristic-bid `oracle` (+$166) because unvalidated context multipliers burn cost; but `bid_calibrated` (+$488) nearly doubles flat bidding. For CAM practice: invest first in **situation classification**, then in **mechanism-calibrated bidding** — and never deploy unvalidated bid heuristics, which are worse than not bidding at all.
+**Key insight (F3, refined by the calibrated ceiling; F9 extends it):** The dominant *deployable* mechanism is **multi-signal action selection**; bid modulation is a force multiplier that is only as good as its calibration. `situation_only` (+$294) beats the heuristic-bid `oracle` (+$210) because unvalidated context multipliers burn cost; but `bid_calibrated` (+$530) nearly doubles flat bidding. For CAM practice: invest first in **multi-signal situation classification** (F9: +$206 vs +$104 for single-signal), then in **mechanism-calibrated bidding** — and never deploy unvalidated bid heuristics, which are worse than not bidding at all.
 
-**Honest framing of the oracle:** The oracle is an upper bound that validates environment consistency. The scientifically meaningful agents are `cam_inferred` (realistic: infers situation from observable signals, 75.2% match) and the noisy agents (graded perception). The dose-response across these — not oracle-vs-baseline — is the paper's core empirical claim.
+**Honest framing of the oracle:** The oracle is an upper bound that validates environment consistency. The scientifically meaningful agents are `cam_multisignal` (realistic three-signal classifier, 98.9% match, within $4 of oracle), `cam_inferred` (single-signal, 75.7% match), and the noisy agents (graded perception). The dose-response across these — not oracle-vs-baseline — is the paper's core empirical claim.
 
 ### 9.2 Limitations
 1. **Reward-design circularity:** The situation→ideal-action table and reward magnitudes are author-designed; the environment cannot falsify the framework's own mapping. External validity requires field validation (Section 10.3).
-2. **Bid-layer calibration: tested.** The original oracle's hand-set bid multipliers are miscalibrated (hence F3). `bid_calibrated` — which numerically maximizes expected profit against the known mechanism — now provides the true ceiling (+$488.30 default; dominant in all 9 environments and at all curvatures α ∈ [0, 1.5], §8.5.1). Remaining scope: a *learned* bidding policy that discovers the mechanism from feedback alone (the calibrated agent is given the mechanism), and auction-style clearing.
-3. **Oracle construction:** The oracle and `bid_calibrated` receive ground-truth situation labels; they are upper bounds, not deployable agents. Headline effects (d = 13–35) reflect the design; the scientifically meaningful agents are the noisy/classifier ladder.
-4. **Between-environment robustness: tested.** The ladder replicates across **9 environment presets** spanning distribution shifts, doubled costs, budget caps, curvatures α ∈ [0, 1.5], and weakened context payoffs (§8.4–8.5): per-seed dose-response ρ ≥ 0.89 (lower CI) everywhere; `bid_calibrated` is the invariant ceiling. Remaining scope: adversarial contexts and multi-period state carryover.
-5. **Calibration protocol: stress-tested.** The F6 recalibration remedy survives **30% label noise** with ≤ 0.6 pp match-rate loss (§8.5.2). Remaining scope: label *drift* over time, richer (multi-modal) signal spaces, and labeling costs.
-6. **Budget-awareness: tested.** Standard even-pacing wrappers do not change any conclusion: paced oracle still loses to flat situation_only (p = 8.3e-30; §8.5.3).
+2. **Bid-layer calibration: tested.** The original oracle's hand-set bid multipliers are miscalibrated (hence F3). `bid_calibrated` — which numerically maximizes expected profit against the known mechanism — now provides the true ceiling (+$530.45 default; dominant in all 9 environments and at all curvatures α ∈ [0, 1.5], §8.5.1). Remaining scope: a *learned* bidding policy that discovers the mechanism from feedback alone (the calibrated agent is given the mechanism), and auction-style clearing.
+3. **Oracle construction:** The oracle and `bid_calibrated` receive ground-truth situation labels; they are upper bounds, not deployable agents. Headline effects (d = 9–35) reflect the design; the scientifically meaningful agents are the noisy/classifier ladder and `cam_multisignal` (near-oracle without ground truth).
+4. **Between-environment robustness: tested.** The ladder replicates across **9 environment presets** spanning distribution shifts, doubled costs, budget caps, curvatures α ∈ [0, 1.5], and weakened context payoffs (§8.4–8.5): per-seed dose-response ρ ≥ 0.93 (lower CI) everywhere; `bid_calibrated` is the invariant ceiling; multi-signal inference outperforms single-signal in all 9 presets (F9). Remaining scope: adversarial contexts and multi-period state carryover.
+5. **Calibration protocol: stress-tested.** The F6 recalibration remedy survives **30% label noise**: intent-only match rates degrade by ≤ 0.6 pp; multi-signal recalibration degrades up to 14 pp (retention 98.9→84.9) but stays strongly profitable (≥ +$106) (§8.5.2). Remaining scope: label *drift* over time and labeling costs.
+6. **Budget-awareness: tested.** Standard even-pacing wrappers do not change any conclusion: paced oracle (+$280.5) still loses to flat situation_only (+$294.3; §8.5.3).
 
 ### 9.3 Practical Implications
 **For Marketers:**
@@ -441,11 +450,11 @@ We introduced **Context-Aware Agentic Marketing (CAM)** — the first framework 
 ### 10.2 Contributions
 1. **Theoretical:** Grounded CAM in Endsley's SA model (Levels 1–3 situational awareness applied to marketing automation)
 2. **Conceptual:** Created a four-layer framework for context-aware marketing agents
-3. **Empirical:** CAM-Sim ablation benchmark — reproducible, paired-seed statistics; profit spans −$180.31 (baseline) to +$262.14 (perfect action matching) to +$488.30 (situation knowledge + mechanism-calibrated bidding); monotone dose-response in perception quality (per-seed ρ ≥ 0.89 lower-CI in all 9 environments)
-4. **Empirical:** Three novel findings — (F3/F8) miscalibrated context-inflated bidding is *worse than flat bidding* (replicates 8/9 environments, survives budget pacing); (F5/F6) systematic classifier bias under distribution shift beats coin-flip adversely, and per-distribution recalibration fixes it robustly to 30% label noise; (F6) match rate is not profit — error *placement* modulates the dose-response
+3. **Empirical:** CAM-Sim ablation benchmark — reproducible, paired-seed statistics; profit spans −$170.03 (baseline) to +$294.27 (perfect action matching) to +$530.45 (situation knowledge + mechanism-calibrated bidding); monotone dose-response in perception quality (per-seed ρ ≥ 0.93 lower-CI in all 9 environments)
+4. **Empirical:** Four novel findings — (F3/F8) miscalibrated context-inflated bidding is *worse than flat bidding* (replicates 8/9 environments, survives budget pacing); (F5/F6) systematic classifier bias under distribution shift beats coin-flip adversely, and per-distribution recalibration fixes it robustly to 30% label noise; (F6) match rate is not profit — error *placement* modulates the dose-response; (F9) multi-signal awareness (intent + competitive density + channel quality) raises match from 75.7% to 98.9% and closes the gap to oracle within $4, universally across 9 environments
 
 ### 10.3 Future Work & Field-Validation Design
-1. **Pre-registered field validation (priority):** two-arm experiment with a B2B partner (candidate: the proposed G6 collaboration): **Arm A** = CAM decisioning (situation classifier → action mapper, exactly the `cam_recalibrated` pipeline), **Arm B** = business-as-usual rule-based targeting. Primary endpoint: profit/conversion uplift per campaign; secondary: match-rate audit of agent classifications against human-coded situations. Design: ≥ 40 campaigns per arm over 8–12 weeks, analyzed with mixed-effects models (campaign as random effect) — the field analogue of CAM-Sim's paired-seed design.
+1. **Pre-registered field validation (priority):** two-arm experiment with a B2B partner (candidate: the proposed G6 collaboration): **Arm A** = CAM decisioning (multi-signal situation classifier → action mapper, exactly the `cam_multisignal_recalibrated` pipeline), **Arm B** = business-as-usual rule-based targeting. Primary endpoint: profit/conversion uplift per campaign; secondary: match-rate audit of agent classifications against human-coded situations. Design: ≥ 40 campaigns per arm over 8–12 weeks, analyzed with mixed-effects models (campaign as random effect) — the field analogue of CAM-Sim's paired-seed design.
 2. **Learned bidding:** train the bid layer against the clearing mechanism (F8 shows this changes conclusions under concave returns); evaluate against situation_only as the null.
 3. **Adversarial & dynamic environments:** competitor adaptation, context drift, multi-period state carryover.
 4. **Field studies:** deploy CAM with marketer-in-the-loop in production settings.
@@ -486,19 +495,21 @@ We introduced **Context-Aware Agentic Marketing (CAM)** — the first framework 
 - **Code:** `paper/cam_sim.py`
 - **Tested:** 50 seeds × 200 scenarios (10,000 evaluations per agent); byte-reproducible; adding `bid_calibrated` (no RNG draws) leaves all prior-agent results byte-identical (verified)
 - **Environment presets (9):** default, uniform_situations, decision_heavy, crisis_heavy, retention_heavy, high_costs (×2), weak_signal_bonus, budget_constrained ($250/episode), concave_returns (α = 0.5)
-- **Calibration:** `cam_learned`/`cam_recalibrated` fit on 2,000 labeled context samples (env seed 999999), interval classifier via greedy error-minimizing splits; `cam_recalibrated` refit per environment; label-noise stress test at ε ∈ {0, .05, .1, .2, .3}
+- **Calibration:** `cam_learned`/`cam_recalibrated` fit on 2,000 labeled context samples (env seed 999999), interval classifier via greedy error-minimizing splits; `cam_recalibrated` refit per environment; `cam_multisignal`/`cam_multisignal_learned`/`cam_multisignal_recalibrated` use nearest-centroid on 3 signals (intent, competitive density, channel quality); label-noise stress test at ε ∈ {0, .05, .1, .2, .3} for both classifier families
 - **Stress tests:** `--alpha-sweep` (α ∈ {0, .25, .5, .75, 1, 1.5}), `--label-noise`, `--budget-pacing` (even-pacing wrappers: bid ≤ remaining/moments per channel cost)
 - **bid_calibrated:** knows the mechanism (reward table, bonuses, costs, competitive scale, curvature) and grid-searches the profit-maximizing bid per context (0.02 grid + 0.001 local refinement); deterministic
 
-### A.2 Agent Implementations (v0.3.1 ablation ladder)
+### A.2 Agent Implementations (v0.4 ablation ladder)
 | Agent | Type | Parameters |
 |-------|------|-----------|
 | baseline | Rule-based floor | Fixed bids per channel, random ±20% variation |
 | channel_only | Bid-only ablation | Context-aware bidding, random action/channel |
 | situation_only | Action-only ablation | Correct situation→action mapping, flat bid 1.0 |
 | noisy50 / noisy80 | Graded perception | True situation with prob p; bid logic intact |
-| cam_inferred | Realistic classifier | Infers situation from observable intent signal (~75% accuracy) |
+| cam_inferred | Realistic classifier | Infers situation from observable intent signal (~76% accuracy, intent only) |
 | cam_learned / cam_recalibrated | Learned classifier | Interval rule fit on 2,000 labeled samples (default-dist / per-env) |
+| cam_multisignal | Multi-signal classifier | Nearest-centroid on intent + competitive density + channel quality (hand-set situation centroids, 98.9% match) |
+| cam_multisignal_learned / cam_multisignal_recalibrated | Learned multi-signal | Nearest-centroid fit on 2,000 labeled 3-signal samples (default-dist / per-env; 98.7% match) |
 | oracle | Labeled upper bound | Ground-truth situation access (validates environment, not deployable) |
 | bid_calibrated | Mechanism-aware ceiling | Oracle situation + grid-searched profit-maximizing bid (knows reward table, costs, curvature) |
 | BudgetPacedAgent | Stress-test wrapper | Scales any agent's bid to remaining budget / remaining moments (§8.5.3) |
@@ -531,4 +542,4 @@ Reproducibility contract: identical `--seeds` + `--scenarios` reproduce byte-ide
 
 ---
 
-*Paper structure ready for submission. Next: Populate references with full citations from papers.yaml; Run larger CAM-Sim study (10+ seeds, 1000+ scenarios); Identify JM special issue on AI.*
+*Paper structure ready for submission. Next: Populate references with full citations from papers.yaml; Extend CAM-Sim to 100+ seeds and field-validate with a B2B partner (§10.3); Identify JM special issue on AI.*

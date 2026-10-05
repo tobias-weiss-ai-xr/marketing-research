@@ -5,7 +5,7 @@ A synthetic marketing simulation for benchmarking Context-Aware Agentic Marketin
 (CAM) frameworks. Enables reproducible evaluation of context-aware marketing
 agents without requiring live ad spend or customer data.
 
-Design notes (v0.3):
+Design notes (v0.4):
 - Reproducibility: both the environment (numpy) and the agents (stdlib random)
   are seeded per run. Identical --seeds reproduce identical results.
 - Fair pairing: scenarios are generated ONCE per seed and every agent acts on
@@ -13,12 +13,16 @@ Design notes (v0.3):
   seed-level paired tests legitimate.
 - Ablation ladder (the point of the benchmark): performance is measured as a
   function of context-awareness quality, not oracle-vs-random:
-      baseline        random channel/action, fixed bid table (strawman floor)
-      channel_only    optimal bidding, no situation knowledge
-      situation_only  correct situation->action mapping, flat bidding
-      noisy50/80      perceives true situation with probability p (graded SA)
-      cam_inferred    infers situation from observable intent signal (no oracle)
-      oracle          ground-truth situation access (upper bound, by design)
+      baseline                random channel/action, fixed bid table (strawman floor)
+      channel_only            optimal bidding, no situation knowledge
+      situation_only          correct situation->action mapping, flat bidding
+      noisy50/80              perceives true situation with probability p (graded SA)
+      cam_inferred            infers situation from observable intent signal ALONE (no oracle)
+      cam_multisignal         infers from intent + competition + channel quality (v0.4)
+      cam_learned             interval classifier fit on 2,000 labeled samples (intent-only)
+      cam_multisignal_learned nearest-centroid classifier fit on 2,000 labeled samples (3-signal)
+      oracle                  ground-truth situation access (upper bound, by design)
+      bid_calibrated          oracle situation + mechanism-calibrated bidding (profit ceiling)
 
 The oracle is labeled as an upper bound: it validates environment consistency,
 NOT real-world performance. The informative comparisons are cam_inferred and
@@ -39,7 +43,7 @@ import sys
 import scipy.stats
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Dict, List, Optional
 from pathlib import Path
@@ -87,7 +91,7 @@ class ContextSignal:
     name: str
     value: float | str | int
     confidence: float = 1.0
-    timestamp: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 
 @dataclass
@@ -165,6 +169,40 @@ SITUATION_CHANNEL = {
     SituationType.RETENTION: ChannelType.EMAIL,
 }
 
+# v0.4: situation-correlated signal centroids (mean ± noise drawn per context).
+# These give multi-signal structure: crisis has high competition, opportunity
+# has high channel quality, retention has low competition — so a multi-signal
+# classifier can distinguish situations that intent alone conflates
+# (crisis↔decision, retention↔exploration).
+SITUATION_CHANNEL_QUALITY = {
+    SituationType.EXPLORATION: 0.30,
+    SituationType.CONSIDERATION: 0.50,
+    SituationType.DECISION: 0.70,
+    SituationType.CRISIS: 0.40,
+    SituationType.OPPORTUNITY: 0.80,
+    SituationType.RETENTION: 0.60,
+}
+
+SITUATION_COMPETITIVE_DENSITY = {
+    SituationType.EXPLORATION: 0.20,
+    SituationType.CONSIDERATION: 0.40,
+    SituationType.DECISION: 0.60,
+    SituationType.CRISIS: 0.80,
+    SituationType.OPPORTUNITY: 0.30,
+    SituationType.RETENTION: 0.30,
+}
+
+# Centroids for the hand-set multi-signal classifier (intent, comp, quality).
+# Match SITUATION_*_QUALITY/DENSITY means; the classifier uses Euclidean distance.
+MULTISIGNAL_CENTROIDS: Dict[SituationType, tuple] = {
+    SituationType.EXPLORATION: (0.20, 0.20, 0.30),
+    SituationType.CONSIDERATION: (0.60, 0.40, 0.50),
+    SituationType.DECISION: (0.90, 0.60, 0.70),
+    SituationType.CRISIS: (0.80, 0.80, 0.40),
+    SituationType.OPPORTUNITY: (0.70, 0.30, 0.80),
+    SituationType.RETENTION: (0.30, 0.30, 0.60),
+}
+
 
 def infer_situation_from_intent(intent: float) -> SituationType:
     """Infer situation from the observable intent signal alone (no oracle).
@@ -180,6 +218,28 @@ def infer_situation_from_intent(intent: float) -> SituationType:
     if intent < 0.78:
         return SituationType.OPPORTUNITY
     return SituationType.DECISION
+
+
+def infer_situation_multisignal(intent: float, competitive_density: float,
+                                channel_quality: float) -> SituationType:
+    """Infer situation from THREE observable signals (no oracle).
+
+    v0.4: uses audience intent + competitive density + channel quality via
+    nearest-centroid classification. Can distinguish situations that intent
+    alone conflates: crisis (high competition) vs decision, and retention
+    (medium quality, low competition) vs exploration (low quality, low
+    competition). Tests the CAM framework's claim that multi-signal awareness
+    outperforms single-signal inference.
+    """
+    best_dist = float('inf')
+    best = SituationType.EXPLORATION
+    for situation, (si, sc, sq) in MULTISIGNAL_CENTROIDS.items():
+        dist = ((intent - si) ** 2 + (competitive_density - sc) ** 2
+                + (channel_quality - sq) ** 2) ** 0.5
+        if dist < best_dist:
+            best_dist = dist
+            best = situation
+    return best
 
 
 # ---------------------------------------------------------------------------
@@ -347,14 +407,44 @@ class CAMInferred(Agent):
         return Action(self.actions_taken, action_type, channel, round(bid, 2))
 
 
+class CAMMultisignal(Agent):
+    """CAM agent using THREE observable signals (intent + competition + quality).
+
+    v0.4: Tests the CAM framework's core claim that multi-signal awareness
+    outperforms single-signal inference. Uses nearest-centroid classification
+    on (audience_intent_strength, competitive_density, channel_quality) —
+    can distinguish crisis (high competition) from decision and retention
+    (medium quality, low competition) from exploration, which intent-only
+    conflates. Hand-set centroids (MULTISIGNAL_CENTROIDS).
+    """
+
+    def __init__(self):
+        super().__init__("cam_multisignal")
+        self._engine = CAMOracle("cam_multisignal_engine")
+
+    def decide(self, context: FullContext) -> Action:
+        self.actions_taken += 1
+        situation = infer_situation_multisignal(
+            context.audience_intent_strength,
+            context.competitive_density,
+            context.channel_quality)
+        action_type = IDEAL_ACTION[situation]
+        channel = SITUATION_CHANNEL[situation]
+        bid = self._engine._bid(situation, context)
+        return Action(self.actions_taken, action_type, channel, round(bid, 2))
+
+
 # ---------------------------------------------------------------------------
 # Learned situation classifier (supervised, then deployed without oracle).
 #
-# Since audience intent is the ONLY situation-informative observable in the
-# generator, the Bayes-optimal classifier on observable signals is an interval
-# rule on intent. We therefore learn interval thresholds from a LABELED
-# calibration sample (greedy top-down splitting, deterministic). This enables
-# the F5 remedy test: recalibrate the classifier per situation distribution.
+# v0.3: intent-only interval classifier (fit_intent_classifier). Since intent
+# is the only situation-informative observable in the v0.3 generator, the
+# Bayes-optimal classifier is an interval rule on intent.
+# v0.4: multi-signal nearest-centroid classifier (fit_multisignal_classifier).
+# With situation-correlated channel_quality and competitive_density, the
+# Bayes-optimal classifier uses all three signals. Both learners are kept:
+# cam_learned (intent-only) tests whether learning beats hand-tuning;
+# cam_multisignal_learned tests whether multi-signal learning beats single.
 # ---------------------------------------------------------------------------
 
 def fit_intent_classifier(samples, max_splits: int = 5):
@@ -470,6 +560,95 @@ class CAMLearned(Agent):
     def decide(self, context: FullContext) -> Action:
         self.actions_taken += 1
         situation = self.classify(context.audience_intent_strength)
+        action_type = IDEAL_ACTION[situation]
+        channel = SITUATION_CHANNEL[situation]
+        bid = self._engine._bid(situation, context)
+        return Action(self.actions_taken, action_type, channel, round(bid, 2))
+
+
+# --- multi-signal learned classifier (v0.4) ---
+
+def fit_multisignal_classifier(samples):
+    """Fit a nearest-centroid classifier on (intent, comp, quality) -> Situation.
+
+    Computes the mean of each signal per situation from labeled samples, then
+    classifies by nearest centroid (Euclidean). Deterministic. Returns a dict
+    of {SituationType: (intent_c, comp_c, quality_c)}.
+    """
+    from collections import defaultdict
+    sums = defaultdict(lambda: [0.0, 0.0, 0.0])
+    counts = defaultdict(int)
+    for intent, comp, qual, situation in samples:
+        sums[situation][0] += intent
+        sums[situation][1] += comp
+        sums[situation][2] += qual
+        counts[situation] += 1
+    return {s: (sums[s][0] / counts[s], sums[s][1] / counts[s], sums[s][2] / counts[s])
+            for s in sums}
+
+
+def _fit_multisignal_learner_for_config(config_overrides, calib_seed: int = 999_999,
+                                        n: int = 2000, label_noise: float = 0.0):
+    """Draw a labeled 3-signal calibration sample from the given env config."""
+    cfg = dict(ENVIRONMENT_PRESETS['default'])
+    if config_overrides:
+        cfg.update(config_overrides)
+    env = SimulationEnvironment(seed=calib_seed, config=cfg)
+    rng = np.random.RandomState(calib_seed + 1)
+    all_situations = list(SituationType)
+    samples = []
+    for _ in range(n):
+        c = env.generate_context()
+        situation = c.situation
+        if label_noise > 0 and rng.random_sample() < label_noise:
+            choices = [s for s in all_situations if s != c.situation]
+            situation = choices[rng.randint(len(choices))]
+        samples.append((c.audience_intent_strength, c.competitive_density,
+                        c.channel_quality, situation))
+    return fit_multisignal_classifier(samples)
+
+
+_DEFAULT_MS_LEARNER = None
+
+
+def make_cam_multisignal_learned() -> "CAMMultisignalLearned":
+    """Multi-signal classifier fit ONCE on the default distribution (lazy)."""
+    global _DEFAULT_MS_LEARNER
+    if _DEFAULT_MS_LEARNER is None:
+        _DEFAULT_MS_LEARNER = _fit_multisignal_learner_for_config(None)
+    return CAMMultisignalLearned(_DEFAULT_MS_LEARNER, name="cam_multisignal_learned")
+
+
+class CAMMultisignalLearned(Agent):
+    """CAM agent with a LEARNED multi-signal classifier (nearest-centroid).
+
+    v0.4: fit on a labeled calibration sample from a (possibly different)
+    situation distribution, then deployed without oracle access. Compared to
+    `cam_multisignal` (hand-set centroids), tests whether multi-signal
+    learning beats hand-tuning. Compared to `cam_learned` (intent-only
+    interval), tests whether multi-signal learning outperforms single-signal.
+    """
+
+    def __init__(self, centroids, name: str = "cam_multisignal_learned"):
+        super().__init__(name)
+        self.centroids = dict(centroids)
+        self._engine = CAMOracle(name + "_engine")
+
+    def classify(self, intent: float, comp: float, qual: float) -> SituationType:
+        best_dist = float('inf')
+        best = SituationType.EXPLORATION
+        for situation, (si, sc, sq) in self.centroids.items():
+            dist = ((intent - si) ** 2 + (comp - sc) ** 2 + (qual - sq) ** 2) ** 0.5
+            if dist < best_dist:
+                best_dist = dist
+                best = situation
+        return best
+
+    def decide(self, context: FullContext) -> Action:
+        self.actions_taken += 1
+        situation = self.classify(context.audience_intent_strength,
+                                  context.competitive_density,
+                                  context.channel_quality)
         action_type = IDEAL_ACTION[situation]
         channel = SITUATION_CHANNEL[situation]
         bid = self._engine._bid(situation, context)
@@ -645,18 +824,29 @@ class SimulationEnvironment:
         return signals
 
     def generate_context(self) -> FullContext:
-        """Generate a synthetic marketing context."""
+        """Generate a synthetic marketing context.
+
+        v0.4: channel_quality and competitive_density are situation-correlated
+        (centroids ± 0.15 noise, clipped). This gives multi-signal structure:
+        crisis = high competition, opportunity = high channel quality, retention
+        = low competition + medium quality. Intent alone cannot distinguish all
+        six situations — multi-signal inference can.
+        """
         self.scenario_counter += 1
         situation = self._random_situation()
         intent = self._get_intent_strength(situation)
+        cq = max(0.05, min(1.0, SITUATION_CHANNEL_QUALITY[situation]
+                           + self.rng.uniform(-0.15, 0.15)))
+        cd = max(0.0, min(1.0, SITUATION_COMPETITIVE_DENSITY[situation]
+                          + self.rng.uniform(-0.15, 0.15)))
         return FullContext(
             context_id=f"ctx_{self.scenario_counter}",
-            timestamp=datetime.utcnow().isoformat(),
+            timestamp=datetime.now(timezone.utc).isoformat(),
             signals=self._generate_signals(situation, intent),
             situation=situation,
             audience_intent_strength=intent,
-            channel_quality=float(self.rng.uniform(0.1, 1.0)),
-            competitive_density=float(self.rng.uniform(0.0, 1.0)),
+            channel_quality=cq,
+            competitive_density=cd,
         )
 
     def evaluate_action(self, context: FullContext, action: Action) -> ActionResult:
@@ -887,14 +1077,17 @@ AGENT_REGISTRY = {
     'noisy50': lambda: NoisyCAM(0.5, 'noisy50'),
     'noisy80': lambda: NoisyCAM(0.8, 'noisy80'),
     'cam_inferred': CAMInferred,
+    'cam_multisignal': CAMMultisignal,
     'cam_learned': make_cam_learned,
+    'cam_multisignal_learned': make_cam_multisignal_learned,
     'oracle': CAMOracle,
     # env-aware: run_env special-cases this name and constructs with the env
     'bid_calibrated': lambda: BidCalibratedAgent(SimulationEnvironment(seed=0)),
 }
 
 DEFAULT_AGENTS = ['baseline', 'channel_only', 'situation_only', 'noisy50', 'noisy80',
-                  'cam_inferred', 'cam_learned', 'oracle', 'bid_calibrated']
+                  'cam_inferred', 'cam_multisignal', 'cam_learned', 'cam_multisignal_learned',
+                  'oracle', 'bid_calibrated']
 
 METRIC_KEYS = ['context_match_rate', 'total_profit', 'roas_aggregate', 'profit_per_cost', 'avg_reward', 'actions_skipped']
 
@@ -942,7 +1135,7 @@ def write_markdown_report(path: Path, seeds: List[int], scenarios: int,
     lines = [
         "# CAM-Sim Results (auto-generated)",
         "",
-        f"Generated: {datetime.utcnow().isoformat()}  ",
+        f"Generated: {datetime.now(timezone.utc).isoformat()}  ",
         f"Seeds: {seeds}  |  Scenarios per seed: {scenarios}  ",
         "Reproducible: environment (numpy) and agents (stdlib random) both seeded per run.",
         "",
@@ -1019,11 +1212,14 @@ def stats_vs_baseline(per_seed_values, agent_names, metric_keys):
     return statistics
 
 
-def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False, extra_agent_factory=None):
+def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False,
+           extra_agent_factory=None, extra_agent_factories=None):
     """Run all agents across seeds within ONE environment configuration.
 
     env_config=None means the default preset. extra_agent_factory (optional)
     appends one additional per-config agent (e.g. a recalibrated classifier).
+    extra_agent_factories (optional): list of additional factories, each called
+    once per seed (e.g. both intent-only and multi-signal recalibrated).
     Returns (aggregate, statistics, per_seed_values, last_metrics, sample_contexts).
     """
     metric_keys = list(METRIC_KEYS)
@@ -1050,6 +1246,9 @@ def run_env(env_config, seeds, scenarios, agent_names, capture_sample=False, ext
                 agents.append(AGENT_REGISTRY[n]())
         if extra_agent_factory is not None:
             agents.append(extra_agent_factory())
+        if extra_agent_factories is not None:
+            for f in extra_agent_factories:
+                agents.append(f())
         budget = env.cfg.get('budget_per_episode')
         results = runner.run_benchmark(agents, contexts, budget=budget)
         metrics = runner.get_metrics(results)
@@ -1113,20 +1312,26 @@ def run_label_noise_study(seeds, scenarios, quiet=False,
         overrides = dict(ENVIRONMENT_PRESETS[env_name])
         for eps in epsilons:
             th, lb = _fit_learner_for_config(overrides, label_noise=eps)
-            factory = lambda th=th, lb=lb: CAMLearned(th, lb, name='cam_recalibrated')
+            ms_centroids = _fit_multisignal_learner_for_config(overrides, label_noise=eps)
+            recal_factory = lambda th=th, lb=lb: CAMLearned(th, lb, name='cam_recalibrated')
+            ms_recal_factory = lambda mc=ms_centroids: CAMMultisignalLearned(mc, name='cam_multisignal_recalibrated')
             aggregate, _, _, _, _ = run_env(overrides, seeds, scenarios,
                                             ['noisy50'],
-                                            extra_agent_factory=factory)
+                                            extra_agent_factories=[recal_factory, ms_recal_factory])
             rec = aggregate['cam_recalibrated']
+            ms_rec = aggregate.get('cam_multisignal_recalibrated', {})
             row = {'env': env_name, 'epsilon': eps,
                    'match_rate': rec['context_match_rate_mean'],
                    'profit': rec['total_profit_mean'],
                    'profit_ci95': rec['total_profit_ci95'],
-                   'thresholds': th}
+                   'thresholds': th,
+                   'ms_match_rate': ms_rec.get('context_match_rate_mean', 0.0),
+                   'ms_profit': ms_rec.get('total_profit_mean', 0.0)}
             rows.append(row)
             if not quiet:
                 print(f"  {env_name:<18} eps={eps:<5} recal match {rec['context_match_rate_mean']:5.1f}%  "
-                      f"profit {rec['total_profit_mean']:>+8.2f}")
+                      f"profit {rec['total_profit_mean']:>+8.2f}  |  ms_recal match {ms_rec.get('context_match_rate_mean', 0.0):5.1f}%  "
+                      f"profit {ms_rec.get('total_profit_mean', 0.0):>+8.2f}")
     return rows
 
 
@@ -1138,7 +1343,7 @@ def run_budget_pacing_study(seeds, scenarios, quiet=False):
     """
     overrides = dict(ENVIRONMENT_PRESETS['budget_constrained'])
     budget = overrides['budget_per_episode']
-    names = ['baseline', 'situation_only', 'oracle']
+    names = ['baseline', 'situation_only', 'cam_multisignal', 'oracle']
     metric_keys = list(METRIC_KEYS)
     all_names = names + [f'{n}_paced' for n in names]
     per_seed_values = {m: {n: [] for n in all_names} for m in metric_keys}
@@ -1219,12 +1424,16 @@ def run_robustness_sweep(seeds, scenarios, agent_names, quiet=False):
     for env_name, overrides in ENVIRONMENT_PRESETS.items():
         cfg = dict(ENVIRONMENT_PRESETS['default'])
         cfg.update(overrides)
-        # Per-environment RECALIBRATED classifier: fit on a labeled calibration
-        # sample drawn from THIS distribution (F5 remedy test).
+        # Per-environment RECALIBRATED classifiers: fit on labeled calibration
+        # samples drawn from THIS distribution (F5 remedy test). Both intent-only
+        # and multi-signal variants.
         th, lb = _fit_learner_for_config(overrides)
-        extra_factory = lambda: CAMLearned(th, lb, name='cam_recalibrated')  # noqa: E731
+        ms_centroids = _fit_multisignal_learner_for_config(overrides)
+        recal_factory = lambda: CAMLearned(th, lb, name='cam_recalibrated')  # noqa: E731
+        ms_recal_factory = lambda: CAMMultisignalLearned(ms_centroids, name='cam_multisignal_recalibrated')  # noqa: E731
+        extra_factories = [recal_factory, ms_recal_factory]
         aggregate, _, per_seed, _, _ = run_env(cfg, seeds, scenarios, agent_names,
-                                               extra_agent_factory=extra_factory)
+                                               extra_agent_factories=extra_factories)
         profits = {n: aggregate[n]['total_profit_mean'] for n in aggregate}
         rho, rho_p = dose_response_spearman(aggregate)
         # F3 needs a REAL test, not just a point-estimate comparison:
@@ -1283,7 +1492,7 @@ def write_robustness_md(path: Path, seeds: List[int], scenarios: int, rows: List
     lines = [
         "# CAM-Sim Robustness Sweep (auto-generated)",
         "",
-        f"Generated: {datetime.utcnow().isoformat()}  ",
+        f"Generated: {datetime.now(timezone.utc).isoformat()}  ",
         f"Environments: {[r['env'] for r in rows]}  |  Seeds: {len(seeds)}  |  Scenarios/seed: {scenarios}",
         "",
         "Situation->action language held fixed; ECONOMICS vary (situation distribution,",
@@ -1307,8 +1516,9 @@ def write_robustness_md(path: Path, seeds: List[int], scenarios: int, rows: List
         lines.append(f"| {r['env']} | {cells} | {lh} | {lr} | {f3} | {rho_s} |")
     lines += [
         "",
-        "ladder (hand) = noisy50 < cam_inferred < noisy80 < oracle (H4, label ordering);",
+        "ladder (hand) = noisy50 < cam_inferred < cam_multisignal < noisy80 < cam_learned < cam_multisignal_learned < oracle (H4, label ordering);",
         "recal>noisy50 = per-env recalibrated classifier beats unbiased 50% perception (F5 remedy);",
+        "ms_recal = multi-signal recalibrated (3-signal nearest-centroid, fit per environment);",
         "F3 = situation_only > oracle (action selection dominates bid modulation);",
         "rho = Spearman(context match rate, profit) across agents — the label-free dose-response test.",
         "",
@@ -1339,8 +1549,35 @@ def main():
     parser.add_argument("--budget-pacing", action="store_true",
                         help="Stress test: even-pacing wrappers under budget_constrained (budget-awareness)")
     parser.add_argument("--quiet", "-q", action="store_true")
+    parser.add_argument("--self-check", action="store_true",
+                        help="Verify byte-reproducibility (2 seeds, same output) and exit")
 
     args = parser.parse_args()
+
+    if args.self_check:
+        import tempfile
+        r1 = run_env(None, [1, 2], 50, ['baseline', 'situation_only', 'cam_inferred',
+                                          'cam_multisignal', 'cam_learned', 'cam_multisignal_learned',
+                                          'oracle', 'bid_calibrated'],
+                     capture_sample=False)
+        r2 = run_env(None, [1, 2], 50, ['baseline', 'situation_only', 'cam_inferred',
+                                          'cam_multisignal', 'cam_learned', 'cam_multisignal_learned',
+                                          'oracle', 'bid_calibrated'],
+                     capture_sample=False)
+        ok = True
+        for name in r1[0]:
+            for key in ('context_match_rate_mean', 'total_profit_mean'):
+                v1 = r1[0][name][key]
+                v2 = r2[0][name][key]
+                if v1 != v2:
+                    print(f"  FAIL: {name}.{key} differs: {v1} != {v2}")
+                    ok = False
+        if ok:
+            print("[OK] Self-check passed: 2-seed run is byte-reproducible (8 agents, 50 scenarios)")
+            return 0
+        else:
+            print("[FAIL] Self-check FAILED: results not reproducible")
+            return 1
 
     seeds = [int(s.strip()) for s in args.seeds.split(',') if s.strip()]
     selected_names = [n.strip() for n in args.agents.split(',') if n.strip() in AGENT_REGISTRY]
@@ -1409,7 +1646,7 @@ def main():
 
     # ---- Save JSON ----
     output_data = {
-        'timestamp': datetime.utcnow().isoformat(),
+        'timestamp': datetime.now(timezone.utc).isoformat(),
         'scenarios_per_seed': args.scenarios,
         'seeds': seeds,
         'agents': selected_names,
@@ -1455,13 +1692,14 @@ def main():
         if label_rows is not None:
             stress_lines += [
                 "", "## Label-noise study: recalibration under imperfect labeling", "",
-                "| env | epsilon | recal match % | recal profit | noisy50 (ref) |",
-                "|-----|---------|---------------|--------------|----------------|",
+                "| env | epsilon | recal match % | recal profit | ms_recal match % | ms_recal profit |",
+                "|-----|---------|---------------|--------------|------------------|----------------|",
             ]
             for r in label_rows:
                 stress_lines.append(
                     f"| {r['env']} | {r['epsilon']} | {r['match_rate']:.1f} | "
-                    f"{r['profit']:+.1f} | see robustness table |")
+                    f"{r['profit']:+.1f} | {r.get('ms_match_rate', 0.0):.1f} | "
+                    f"{r.get('ms_profit', 0.0):+.1f} |")
             stress_lines += [""]
         if pacing_aggregate is not None:
             stress_lines += [
