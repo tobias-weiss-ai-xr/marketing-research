@@ -11,3 +11,4 @@ verify-sources-report.json
 results/
 .af-state/
 af-campaigns/research-sophistication/run.log
+af-campaigns/research-sophistication/run-code.log

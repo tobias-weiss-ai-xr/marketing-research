@@ -1,0 +1,25 @@
+{
+  "_meta": { "project": "research-sophistication-code" },
+  "tasks": [
+    {
+      "id": "bootstrap-ci",
+      "title": "Add --bootstrap flag to paper/cam_sim.py: N bootstrap resamples of the per-seed profit data reporting BCa confidence intervals for every agent mean profit alongside existing normal-approx CIs. Gate: --self-check must still pass byte-identically. Do NOT modify the paper.",
+      "deps": [],
+      "scope": ["paper/cam_sim.py"],
+      "accept": "python paper/cam_sim.py --self-check 2>&1 | grep -q OK && python paper/cam_sim.py --help 2>&1 | grep -q bootstrap && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Add a --bootstrap flag to paper/cam_sim.py. Do NOT modify paper/g4_academic_paper.md. Requirements: (1) Add --bootstrap (int, default 0 = off; N>0 = number of resamples, e.g. 1000) to argparse. (2) When N>0, after the normal run, resample the per-seed profit data with replacement N times (50 seeds total; resample 50 with replacement), recompute each agent mean profit per resample, and report BCa confidence intervals. (3) BCa implementation: compute the bias-correction factor from the proportion of bootstrap means below the observed mean. For acceleration, use the jackknife estimate (leave-one-out influence) or set to 0 and document this simplification in a comment. (4) Output: print a stdout table (agent | mean | BCa low | BCa high | normal low | normal high) and add a bootstrap_cis dict to the JSON output if --output is set. (5) Verify: python paper/cam_sim.py --self-check still passes byte-identically (the bootstrap only activates when the flag is set). (6) Also verify: python paper/cam_sim.py --bootstrap 200 --seeds 1,2,3 --scenarios 20 --quiet runs and prints the table. Read paper/cam_sim.py carefully — the per-seed data lives in run_env results structure. Use only numpy/scipy (already imported).",
+      "manual": false,
+      "priority": 1
+    },
+    {
+      "id": "convergence-diag",
+      "title": "Add --convergence flag to paper/cam_sim.py: run simulation at 10/20/30/40/50 seeds and report whether key metrics (cam_multisignal profit, Spearman rho, baseline profit) have stabilized. Gate: --self-check must still pass. Do NOT modify the paper.",
+      "deps": ["bootstrap-ci"],
+      "scope": ["paper/cam_sim.py"],
+      "accept": "python paper/cam_sim.py --self-check 2>&1 | grep -q OK && python paper/cam_sim.py --help 2>&1 | grep -q convergence && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Add a --convergence flag to paper/cam_sim.py. Do NOT modify paper/g4_academic_paper.md. This builds on the --bootstrap flag that must already exist in the code. Requirements: (1) Add --convergence (store_true flag) to argparse. (2) When set, run the simulation at seed counts [10, 20, 30, 40, 50] (using seeds 1..N for each run, --scenarios 200 default). For each seed count, compute: cam_multisignal mean profit, Spearman rho between context match rate and profit across agents, and baseline mean profit. (3) A metric is STABLE when the mean over the last 10 seeds differs from the overall mean by less than 5%. Report: seeds N | cam_multisignal profit | rho | baseline profit | stable (YES/NO per metric). (4) Print a stdout table and add a convergence dict to the JSON output if --output is set. (5) Verify: python paper/cam_sim.py --self-check still passes byte-identically. (6) Also verify: python paper/cam_sim.py --convergence --seeds 1,2,3,4,5 --scenarios 20 runs and prints the table. Read paper/cam_sim.py carefully. Use scipy.stats.spearmanr for rho.",
+      "manual": false,
+      "priority": 2
+    }
+  ]
+}
