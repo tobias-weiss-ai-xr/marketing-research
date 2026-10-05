@@ -6,7 +6,7 @@
 > **Target:** *Journal of Marketing* (JM) / *Marketing Science*  
 > **Type:** Conceptual / Empirical (Framework + Simulation)  
 > **Word Target:** 8,000-10,000 words  
-> **Key Contribution:** First framework connecting **agentic AI** (61 papers, +1.79× publications) with **marketing situational awareness** (0 papers) + ablation-based dose-response evidence  
+> **Key Contribution:** First framework connecting **agentic AI** (70 papers, +1.8× publications) with **marketing situational awareness** (0 papers) + ablation-based dose-response evidence  
 
 ---
 
@@ -21,14 +21,14 @@
 ## 2. Abstract (150-200 words)
 
 **DRAFT:**
-The emergence of agentic AI systems in marketing (70 papers, +1.8× growth rate in our corpus of 9,994 marketing papers) has outpaced the development of frameworks for understanding **marketing context**—the situational, temporal, channel, social, and intent signals that determine message relevance. While marketing practice uses "contextual intelligence" as adtech vocabulary, and Häglund (2025) defines it computationally for NLP applications, **no marketing framework operationalizes situational awareness for autonomous agents**. We propose **Context-Aware Agentic Marketing (CAM)**—a four-layer framework that enables autonomous marketing agents to (1) **sense** multi-modal context signals, (2) **model** unified context representations, (3) **reason** about context relevance via an Awareness Engine, and (4) **act** through context-conditioned marketing actions. We develop CAM-Sim, a synthetic marketing simulation with an ablation-based evaluation design: every agent acts on identical scenario sequences, with both random seeds controlled. Across 50 seeds × 200 scenarios (10,000 evaluations per agent), we compare eleven agents forming a situational-awareness ladder: from a context-blind baseline through graded-perception agents (50%/80%) and signal-based classifiers (intent-only: 75.7% match hand-tuned, 87.5% learned; **multi-signal: 98.9% and 98.7%**), to a labeled oracle (+$210.00) and a mechanism-calibrated bidder that defines the profit ceiling (+$530.45, ROAS 26.4). Mean profit improves monotonically with perception quality: −$170.03 (baseline) → +$48.31 (50% perception, p = 6.7e-40) → +$104.26 (p = 2.0e-46) → +$145.70 (80%, p = 1.6e-48). The paper’s central operational finding is that **multi-signal awareness—the framework’s core claim—is what closes the gap to the oracle**: adding competitive density and channel quality to intent raises match from 75.7% to 98.9% and nearly doubles deployable profit (+$206.13 vs +$104.26, p = 1.4e-52 vs baseline), within $4 of the oracle (+$210.00), and the advantage holds in all nine environments (up to +$252.7 under retention-heavy shift). Situation awareness contributes far more deployable value (+$464.30, p = 3.7e-61) than uncalibrated bid optimization (+$59.88, p = 8.5e-15). Strikingly, flat bidding with perfect action matching (+$294.27) beats the oracle’s context-inflated bidding (+$210.00) — *miscalibrated* bid modulation is worse than none — while calibrated bidding nearly doubles flat bidding. A nine-environment robustness sweep (situation distributions, doubled media costs, budget caps, returns-to-bid curvatures α ∈ [0, 1.5], weakened context payoffs) yields a per-seed dose-response of ρ ≥ 0.93 (lower CI bound) everywhere, shows that systematic classifier bias under distribution shift — which can make an intent-only classifier *worse than unbiased coin-flip perception* — is largely eliminated by multi-signal inference (98.9% vs 75.7% match) and further remedied by per-distribution recalibration that remains robust under 30% label noise (90% match in the harshest distribution), and shows the heuristic-bid ordering is robust in 8 of 9 environments and to budget-aware pacing. We conclude with implications for autonomous marketing in the post-cookie era, a pre-registered field-validation design, and directions for theory.
+The emergence of agentic AI systems in marketing (70 papers, +1.8× growth rate in our corpus of 9,994 marketing papers) has outpaced the development of frameworks for understanding **marketing context**—the situational, temporal, channel, social, and intent signals that determine message relevance. While marketing practice uses "contextual intelligence" as adtech vocabulary, and Häglund (2025) defines it computationally for NLP applications, **no marketing framework operationalizes situational awareness for autonomous agents**. We propose **Context-Aware Agentic Marketing (CAM)**—a four-layer framework that enables autonomous marketing agents to (1) **sense** multi-modal context signals, (2) **model** unified context representations, (3) **reason** about context relevance via an Awareness Engine, and (4) **act** through context-conditioned marketing actions. We develop CAM-Sim, a synthetic marketing simulation with an ablation-based evaluation design: every agent acts on identical scenario sequences, with both random seeds controlled. Across 50 seeds × 200 scenarios (10,000 evaluations per agent), we compare eleven agents forming a situational-awareness ladder: from a context-blind baseline through graded-perception agents (50%/80%) and signal-based classifiers (intent-only: 75.7% match hand-tuned, 87.5% learned; **multi-signal: 98.9% and 98.7%**), to a labeled oracle (+$210.00) and a mechanism-calibrated bidder that defines the profit ceiling (+$530.45, ROAS 26.4). Mean profit improves monotonically with perception quality: −$170.03 (baseline) → +$48.31 (50% perception, p = 6.7e-40) → +$104.26 (p = 2.0e-46) → +$145.70 (80%, p = 1.6e-48). The paper’s central operational finding is that **multi-signal awareness—the framework’s core claim—is what closes the gap to the oracle**: adding competitive density and channel quality to intent raises match from 75.7% to 98.9% and nearly doubles deployable profit (+$206.13 vs +$104.26, p = 5.4e-46 vs cam_inferred; p = 1.4e-52 vs baseline), within $4 of the oracle (+$210.00), and the advantage holds in all nine environments (up to +$252.7 under retention-heavy shift). Situation awareness contributes far more deployable value (+$464.30, p = 3.7e-61) than uncalibrated bid optimization (+$59.88, p = 8.5e-15). Strikingly, flat bidding with perfect action matching (+$294.27) beats the oracle’s context-inflated bidding (+$210.00) — *miscalibrated* bid modulation is worse than none — while calibrated bidding nearly doubles flat bidding. A nine-environment robustness sweep (situation distributions, doubled media costs, budget caps, returns-to-bid curvatures α ∈ [0, 1.5], weakened context payoffs) yields a per-seed dose-response of ρ ≥ 0.93 (lower CI bound) everywhere, shows that systematic classifier bias under distribution shift — which can make an intent-only classifier *worse than unbiased coin-flip perception* — is largely eliminated by multi-signal inference (98.9% vs 75.7% match) and further remedied by per-distribution recalibration that remains robust under 30% label noise (90% match in the harshest distribution), and shows the heuristic-bid ordering is robust in 8 of 9 environments and to budget-aware pacing. We conclude with implications for autonomous marketing in the post-cookie era, a pre-registered field-validation design, and directions for theory.
 
 ---
 
 ## 3. Introduction
 
 ### 3.1 The Agentic Revolution in Marketing
-The marketing corpus shows **61 agentic papers** (41 in 2024-2026), **burst growth of 1.79×** — the highest momentum trend. Yet **zero papers** connect agentic capabilities with **marketing situational awareness** (44 contextual papers, 4 situational papers, 0 combined with agentic).
+The marketing corpus shows **70 agentic papers** (70 in 2025-2026), **burst growth of 1.8×** — the highest momentum trend. Yet **zero papers** connect agentic capabilities with **marketing situational awareness** (115 contextual papers, 6 situational papers, 0 combined with agentic).
 
 **Research Gap:** Agents can plan and execute, but cannot **understand marketing context**.
 
@@ -83,40 +83,41 @@ Russell & Norvig define an **agent** as "anything that can be viewed as perceivi
 
 ## 5. Related Work
 
-### 5.1 The Agentic Literature in Marketing (61 papers from corpus)
+### 5.1 The Agentic Literature in Marketing (70 papers from corpus)
 From our marketing-research corpus (9,994 papers):
 - **Definition:** Works that mention "agentic" in title/abstract
-- **Total:** 61 papers
-- **2024-2026:** 41 papers (12 in July 2026 alone)
-- **Burst Factor:** 1.79× (highest in corpus)
+- **Total:** 70 papers
+- **2025-2026:** 70 papers (58 in 2026 alone)
+- **Burst Factor:** 1.8× (highest in corpus)
 - **Categories:**
-  - AI-Marketing: 28 papers
-  - Digital-Marketing: 15 papers
-  - Analytics: 8 papers
-  - Framework: 5 papers
-  - Others: 5 papers
+  - AI-Marketing: 35 papers
+  - Digital-Marketing: 16 papers
+  - Consumer-Behavior: 8 papers
+  - Survey: 4 papers
+  - B2B: 2 papers
+  - Others: 5 papers (Analytics, Brand, Privacy-Data, CX-Retail, Social-Media)
 
 **Common Themes:**
 - Agent-based simulation
 - World models for marketing
 - Autonomous decision systems
 
-**Gap:** No connection to **marketing context** or **situational awareness**. Zero papers combine agentic + contextual.
+**Gap:** No paper systematically bridges agentic capabilities with contextual intelligence (1 superficial co-mention; §5.3). Zero papers combine agentic with situational awareness.
 
-*[Category breakdown above (28/15/8/5/5) asserted from exploratory analysis — re-verify against papers.yaml before submission.]*
-
-### 5.2 The Contextual Literature in Marketing (44 papers from corpus)
-- **Total:** 44 papers mentioning "contextual"
-- **2024-2026:** 32 papers
+### 5.2 The Contextual Literature in Marketing (115 papers from corpus)
+- **Total:** 115 papers mentioning "contextual"
+- **2024-2026:** 112 papers
 - **Categories:**
-  - AI-Marketing: 22 papers
-  - Digital-Marketing: 8 papers
-  - Analytics: 5 papers
-  - Privacy/Data: 3 papers
-  - B2B: 2 papers
+  - AI-Marketing: 46 papers
+  - Survey: 40 papers
+  - Consumer-Behavior: 6 papers
+  - Privacy-Data: 6 papers
+  - Social-Media: 6 papers
+  - Digital-Marketing: 5 papers
+  - Others: 6 papers (CX-Retail, Content-Marketing, B2B)
 
 **Common Themes:**
-- Contextual advertising
+- Contextual advertising (Kotler & Armstrong, 2021)
 - Context-aware recommendations
 - Contextual targeting in privacy-preserving ways
 
@@ -124,9 +125,8 @@ From our marketing-research corpus (9,994 papers):
 
 ### 5.3 The Zero-Intersection Problem
 **Critical Finding:**
-- Only **2 papers** in the entire corpus mention both "agentic" and "contextual"
-- Paper #5269: "From Personalisation to Agentic Campaigns: Modern Marketing Techniques Using Artificial Intelligence in the Indian Context" (2026-07) — **superficial mention**
-- Paper #7535: "I hope we don't do to trust what advertising has done to love" (2026-04) — **superficial mention**
+- Only **1 paper** in the entire corpus mentions both "agentic" and "contextual"
+- Paper: "Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation" (2026-08, AI-Marketing) — **superficial mention**
 - **No paper** systematically bridges the two concepts
 
 ### 5.4 HAAGLUND (2025) — NLP Cs/N
@@ -257,7 +257,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
   - `noisy50` / `noisy80` — perceives true situation with probability p (graded Endsley Level-1 error)
   - `cam_inferred` — infers situation from **intent alone** (hand-tuned threshold classifier, ~76% accuracy due to genuine signal overlap — crisis↔decision and retention↔exploration are conflated)
   - `cam_multisignal` — infers situation from **three signals** (intent + competitive density + channel quality) via nearest-centroid classification (98.9% match — tests the CAM framework's core claim that multi-signal awareness outperforms single-signal)
-  - `cam_learned` — interval classifier **fit on 2,000 labeled calibration samples** from the default distribution (87.5% match — Bayes-optimal given intent as the sole observable)
+  - `cam_learned` — interval classifier **fit on 2,000 labeled calibration samples** from the default distribution (87.5% match — the single-signal ceiling: intent alone cannot resolve crisis↔decision and retention↔exploration confusions)
   - `cam_multisignal_learned` — nearest-centroid classifier **fit on 2,000 labeled 3-signal samples** (98.7% match — tests whether learned multi-signal beats hand-set)
   - `cam_recalibrated` / `cam_multisignal_recalibrated` — the same learners, **refit per environment** on 2,000 labeled samples from that distribution (tests the F5 remedy: does recalibration fix distribution-shift bias? Both intent-only and multi-signal variants are tested)
   - `oracle` — ground-truth situation access (**labeled upper bound; validates environment consistency, not real-world performance**)
@@ -272,7 +272,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 
 ### 7.3 Statistical Methods
 - **Paired t-test** (scipy.stats.ttest_rel) across seeds for each agent-vs-baseline metric comparison
-- **Cohen's d** for effect size
+- **Cohen's d** (between-group pooled, d_pooled) for effect size; paired within-subject d_z = |t|/√n is 1.4–1.5× smaller (e.g., cam_multisignal: d_pooled = 16.65, d_z = 10.78)
 - **95% CIs** from seed-level standard error
 - **α = 0.05**; p-values reported in scientific notation
 - ROAS computed at **aggregate level** (total value / total spend), not as a mean of per-action ratios (which is unstable under near-zero-cost actions)
@@ -312,9 +312,11 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 | oracle | +$380.04 | [+370.3, +389.8] | 1.1e-52 | 16.74 | yes |
 | bid_calibrated | +$700.48 | [+692.6, +708.3] | 3.3e-70 | 34.66 | yes |
 
+*Note: Cohen's d is between-group pooled (d_pooled). Paired within-subject d_z values are 1.4–1.5× smaller. Direct cam_multisignal − cam_inferred contrast: +$101.87, 95% CI [$98.3, $105.5], p = 5.4e-46, d_z = 7.88.*
+
 ### 8.3 Findings
 
-**F1 (H1–H3 supported):** Every context-aware agent significantly outperforms baseline on match rate, profit, and ROAS (all p ≤ 8.5e-15; every 95% CI excludes zero).
+**F1 (H1–H3 supported):** Every situation-aware agent significantly outperforms baseline on match rate, profit, and ROAS (all p ≤ 8.5e-15; every 95% CI excludes zero). Channel-only bidding outperforms on profit and ROAS but not on match rate (15.4% vs 21.6%), as it uses channel context without situation classification.
 
 **F2 (H4 supported — dose-response):** Profit increases monotonically across the awareness ladder: noisy50 (+$48.31) < cam_inferred (+$104.26) < noisy80 (+$145.70) < cam_learned (+$155.38) < **cam_multisignal (+$206.13)** ≈ cam_multisignal_learned (+$205.39) < oracle (+$210.00) < **bid_calibrated (+$530.45)**. The `cam_inferred` classifier achieves 75.7% match because crisis/opportunity/decision intent distributions genuinely overlap — realistic classifier confusion, not an artifact. The *learned* intent-only classifier (87.5% match, +$155.38) sits close to noisy80 (83.7% match, +$145.70): on a **single signal**, profit gains flatten at high match rates — and *where* errors land matters as much as how many (§8.4, F6/F7). The multi-signal classifiers break this plateau (F9).
 
@@ -322,7 +324,7 @@ C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
 
 **F4 (decomposition):** Action matching is the dominant deployable value driver (+$464.30 from situation knowledge alone); bid optimization alone adds +$59.88 (p = 8.5e-15) but cannot cross into profitability without situation knowledge (channel_only stays at −$110.16). Full value requires both, correctly weighted: situation knowledge + calibrated bidding (+$530.45) > situation knowledge + flat bidding (+$294.27) > situation knowledge + *mis*calibrated bidding (+$210.00) > everything else.
 
-**F9 (multi-signal awareness — the framework's core claim, confirmed):** Adding competitive density and channel quality to the intent-only signal raises match from 75.7% to 98.9% and profit from +$104.26 to +$206.13 (+$101.87; p = 1.4e-52 vs baseline) — within $3.87 of the oracle (+$210.00). The learned variant (`cam_multisignal_learned`, 98.7% match, +$205.39) essentially matches the hand-set version (+$206.13), confirming the nearest-centroid classifier recovers the true signal structure from data alone. The advantage is **universal**: `cam_multisignal` beats `cam_inferred` in all 9 environments (§8.4), with the largest swings exactly where intent-only classification collapses — `crisis_heavy` (−$66.8 vs +$141.9, a +$208.7 swing) and `retention_heavy` (−$15.5 vs +$237.2, +$252.7). Mechanism: intent alone conflates crisis↔decision (both high intent) and retention↔exploration (both low intent); competitive density and channel quality resolve both ambiguities. This is the operational validation of CAM Layer 1 (*sense multi-modal context signals*): multi-signal awareness is not a marginal improvement but the difference between sub-oracle and near-oracle performance.
+**F9 (multi-signal awareness — the framework's core claim, confirmed):** Adding competitive density and channel quality to the intent-only signal raises match from 75.7% to 98.9% and profit from +$104.26 to +$206.13 (+$101.87; p = 5.4e-46 vs cam_inferred, d_z = 7.88; p = 1.4e-52 vs baseline) — within $3.87 of the oracle (+$210.00). The learned variant (`cam_multisignal_learned`, 98.7% match, +$205.39) essentially matches the hand-set version (+$206.13), confirming the nearest-centroid classifier recovers the true signal structure from data alone. The advantage is **universal**: `cam_multisignal` beats `cam_inferred` in all 9 environments (§8.4), with the largest swings exactly where intent-only classification collapses — `crisis_heavy` (−$66.8 vs +$141.9, a +$208.7 swing) and `retention_heavy` (−$15.5 vs +$237.2, +$252.7). Mechanism: intent alone conflates crisis↔decision (both high intent) and retention↔exploration (both low intent); competitive density and channel quality resolve both ambiguities. This is the operational validation of CAM Layer 1 (*sense multi-modal context signals*): multi-signal awareness is not a marginal improvement but the difference between sub-oracle and near-oracle performance.
 
 **Interpretation:** **Multi-signal situation classification is the first investment; bid modulation is a force multiplier that is only as good as its calibration.** Single-signal intent inference leaves roughly half the deployable value on the table (+$104.26 vs +$206.13), and naive context-inflated bidding — the natural heuristic a practitioner would deploy — is *worse than doing nothing at the bid layer*. The CAM value proposition: invest first in **multi-signal situation classification** (intent + competitive density + channel quality), then in mechanism-calibrated bidding, and never in unvalidated bid heuristics.
 
@@ -346,7 +348,7 @@ Total profit by environment (mean over 50 seeds; full data incl. paired F3 stati
 
 **F5 (systematic bias beats unbiased noise, adversely):** The label-ordered H4 ladder holds under the default distribution and economic shifts, but **breaks in all four distribution-shifted presets**: the hand-tuned threshold classifier (`cam_inferred`) falls below even unbiased 50% perception — catastrophically so under `crisis_heavy` (−$66.8 vs −$1.9 for noisy50) and `retention_heavy` (−$15.5 vs +$60.6). Mechanism: the classifier's errors are *systematic* (retention intent ≈ 0.3 always maps to exploration; crisis ≈ 0.8 maps to decision), so under skewed distributions the bias concentrates exactly where the probability mass is, while the noisy agents' unbiased errors average out. **The multi-signal classifier eliminates this failure** (F9): `cam_multisignal` stays strongly positive in all four shifted presets (+$160.6, +$65.3, +$141.9, +$237.2) — the bias is largely a single-signal problem.
 
-**F6 (recalibration is the remedy — and multi-signal is the better remedy):** Refitting the same learner per distribution recovers most of the F5 loss: `crisis_heavy` −$66.8 → **+$27.1**; `retention_heavy` −$15.5 → **+$164.5**; `uniform_situations` −$31.0 → **+$32.3**. A classifier merely *learned* on the default distribution but deployed shifted (`cam_learned`, −$6.9 under crisis) stays biased — the gain comes specifically from **recalibration**, not from learning per se. **Multi-signal recalibration** (`cam_multisignal_recalibrated`) is even more robust: it matches the hand-set multi-signal agent everywhere (within $0.4) and dominates intent-only recalibration — e.g. `uniform_situations` +$160.1 vs +$32.3. Exception: under `uniform_situations` the intent-only recalibrated classifier earns *less* than noisy50 under label noise (−$26.1 at ε = 0.2 vs +$7.9) despite a *higher* match rate (67.0%) — its residual confusions route high-stakes situations into payoff-catastrophic wrong actions. **Match rate is not profit; the *placement* of errors modulates the dose-response.**
+**F6 (recalibration is the remedy — and multi-signal is the better remedy):** Refitting the same learner per distribution recovers most of the F5 loss: `crisis_heavy` −$66.8 → **+$27.1**; `retention_heavy` −$15.5 → **+$164.5**; `uniform_situations` −$31.0 → **+$32.3**. A classifier merely *learned* on the default distribution but deployed shifted (`cam_learned`, −$6.9 under crisis) stays biased — the gain comes specifically from **recalibration**, not from learning per se. **Multi-signal recalibration** (`cam_multisignal_recalibrated`) is even more robust: it tracks the hand-set multi-signal agent closely (within $1.79, max under `concave_returns`) and dominates intent-only recalibration — e.g. `uniform_situations` +$160.1 vs +$32.3. Exception: under `uniform_situations` the intent-only recalibrated classifier earns *less* than noisy50 under label noise (−$26.1 at ε = 0.2 vs +$7.9) despite a *higher* match rate (67.0%) — its residual confusions route high-stakes situations into payoff-catastrophic wrong actions. **Match rate is not profit; the *placement* of errors modulates the dose-response.**
 
 **F7 (label-free dose-response, with proper inference):** Label-ordered ladders can mislead (an 87.5%-accurate classifier *should* exceed an 80%-perception agent). The label-free test — Spearman ρ(context match rate, profit) across agents — is computed **within each seed** (50 paired replicates of a 13-agent ranking) and reported as mean [95% CI]: **0.94–0.99 across all nine environments, with every lower CI bound ≥ 0.93** (Table). Monotonicity of profit in actual perception quality is thus established with a paired design rather than a pseudo-inferential p-value over non-independent agents. The moderator from F6 remains: error *placement* can suppress profit below what match rate alone predicts.
 
@@ -403,7 +405,7 @@ Pacing eliminates the truncation cliff for everyone: the baseline's losses shrin
 ### 9.1 Why Context Awareness Wins (and Where It Doesn't)
 **Mechanism Analysis:**
 - **H1 (Context Match):** ✅ Supported — every situation-aware agent reaches 59.6–100% match vs 21.6% baseline
-- **H2 (Profit):** ✅ Supported — all context-aware agents profitable; baseline loses −$170.03
+- **H2 (Profit):** ✅ Supported — all context-aware agents generate higher profit than the baseline (channel-only bidding improves to −$110.16 from −$170.03 but remains unprofitable; all situation-aware agents are profitable)
 - **H3 (ROAS):** ✅ Supported — aggregate ROAS rises from 0.484 (baseline) to 1.20–2.61 for heuristic agents and **26.37 for `bid_calibrated`**
 - **H4 (Dose-response):** ✅ Supported — per-seed Spearman ρ(match rate, profit) 0.94–0.99 across all 9 environments, every 95% CI lower bound ≥ 0.93 (F7); label-ordering holds under default economics and breaks only for the biased hand-tuned classifier under distribution shift (F5), which recalibration largely fixes (F6); multi-signal inference eliminates the bias altogether (F9)
 - **Mediation:** *Deferred* — not testable in this design (see §6.6); requires a perception-level continuum
@@ -415,7 +417,7 @@ Pacing eliminates the truncation cliff for everyone: the baseline's losses shrin
 ### 9.2 Limitations
 1. **Reward-design circularity:** The situation→ideal-action table and reward magnitudes are author-designed; the environment cannot falsify the framework's own mapping. External validity requires field validation (Section 10.3).
 2. **Bid-layer calibration: tested.** The original oracle's hand-set bid multipliers are miscalibrated (hence F3). `bid_calibrated` — which numerically maximizes expected profit against the known mechanism — now provides the true ceiling (+$530.45 default; dominant in all 9 environments and at all curvatures α ∈ [0, 1.5], §8.5.1). Remaining scope: a *learned* bidding policy that discovers the mechanism from feedback alone (the calibrated agent is given the mechanism), and auction-style clearing.
-3. **Oracle construction:** The oracle and `bid_calibrated` receive ground-truth situation labels; they are upper bounds, not deployable agents. Headline effects (d = 9–35) reflect the design; the scientifically meaningful agents are the noisy/classifier ladder and `cam_multisignal` (near-oracle without ground truth).
+3. **Oracle construction:** The oracle and `bid_calibrated` receive ground-truth situation labels; they are upper bounds, not deployable agents. Headline effects (d_pooled = 9–35) reflect the design; the scientifically meaningful agents are the noisy/classifier ladder and `cam_multisignal` (near-oracle without ground truth).
 4. **Between-environment robustness: tested.** The ladder replicates across **9 environment presets** spanning distribution shifts, doubled costs, budget caps, curvatures α ∈ [0, 1.5], and weakened context payoffs (§8.4–8.5): per-seed dose-response ρ ≥ 0.93 (lower CI) everywhere; `bid_calibrated` is the invariant ceiling; multi-signal inference outperforms single-signal in all 9 presets (F9). Remaining scope: adversarial contexts and multi-period state carryover.
 5. **Calibration protocol: stress-tested.** The F6 recalibration remedy survives **30% label noise**: intent-only match rates degrade by ≤ 0.6 pp; multi-signal recalibration degrades up to 14 pp (retention 98.9→84.9) but stays strongly profitable (≥ +$106) (§8.5.2). Remaining scope: label *drift* over time and labeling costs.
 6. **Budget-awareness: tested.** Standard even-pacing wrappers do not change any conclusion: paced oracle (+$280.5) still loses to flat situation_only (+$294.3; §8.5.3).
@@ -475,15 +477,16 @@ We introduced **Context-Aware Agentic Marketing (CAM)** — the first framework 
 ### Marketing Foundations
 - Kotler, P., & Armstrong, G. (2021). *Principles of Marketing* (18th ed.). Pearson.  
 - Peppers, D., & Rogers, M. (1993). *The One to One Future: Building Relationships One Customer at a Time*. Currency.
+- Godin, S. (1999). *Permission Marketing: Turning Strangers into Friends and Friends into Customers*. Simon & Schuster.
 
-### stads
-- Häglund, E. (2025). *Contextual intelligence: leveraging AI for targeted marketing* [PhD Thesis]. Umeå University, Department of Computing Science. URN: urn:nbn:se:umu:diva-238303.
+### NLP / Contextual Intelligence
+- Häglund, E. (2025). *Contextual intelligence: leveraging AI for targeted marketing* [PhD Thesis]. Umeå University, Department of Computing Science. URN: urn:nbn:se:umu:diva-1955463.
+- Böhm, M., et al. (2020). Value-opportunity recognition in B2B marketing. *Journal of Personal Selling & Sales Management*, 40(3), 211–232.
 
 ### Marketing AI Corpus Papers
-- All 61 agentic papers from the marketing-research corpus (papers.yaml)
-- All 44 contextual papers from the marketing-research corpus (papers.yaml)
-- Paper #5269: "From Personalisation to Agentic Campaigns: Modern Marketing Techniques Using Artificial Intelligence in the Indian Context" (2026-07)
-- Paper #7535: "I hope we don't do to trust what advertising has done to love" (2026-04)
+- All 70 agentic papers from the marketing-research corpus (papers.yaml)
+- All 115 contextual papers from the marketing-research corpus (papers.yaml)
+- Paper: "Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation" (2026-08)
 
 ---
 
