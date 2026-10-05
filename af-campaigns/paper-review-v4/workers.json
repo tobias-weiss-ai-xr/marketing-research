@@ -1,0 +1,29 @@
+{
+  "_meta": { "project": "paper-review-v4" },
+  "defaults": {
+    "accept_timeout_s": 600,
+    "max_attempts": 2,
+    "retry_delay_s": 30,
+    "agent_timeout_s": 3600
+  },
+  "workers": [
+    {
+      "name": "opencode-go",
+      "provider": "opencode-go",
+      "model": "deepseek-v4-flash",
+      "api_base": "",
+      "api_key_env": "",
+      "enabled": true,
+      "cli": "pi"
+    },
+    {
+      "name": "zai",
+      "provider": "zai",
+      "model": "glm-5.2",
+      "api_base": "",
+      "api_key_env": "",
+      "enabled": true,
+      "cli": "pi"
+    }
+  ]
+}

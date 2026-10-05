@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "project": "paper-review-v4"
+  },
+  "tasks": [
+    {
+      "id": "journal-editor-v3",
+      "title": "Final desk-review of paper v0.7 as a JM/Marketing Science editor. Write reviews/journal-editor-v3.md. Do NOT modify the paper.",
+      "deps": [],
+      "scope": [
+        "reviews/journal-editor-v3.md"
+      ],
+      "accept": "test -f reviews/journal-editor-v3.md && wc -w reviews/journal-editor-v3.md | awk '$1 >= 400' && grep -q VERDICT reviews/journal-editor-v3.md && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Final desk-review of paper/g4_academic_paper.md (v0.7) as a senior editor at JM or Marketing Science. Write ONLY reviews/journal-editor-v3.md. Read the paper in full. Third round. v0.7 fixed a critical statistical attribution error (learned-vs-learned +$50.01 now correctly reports p = 8.5e-32, d_z = 3.96), fixed the hand-set/learned conflation (98.7% not 98.9%), deleted the privacy-safe claim, corrected NCC Bayes-optimality language, reframed rho as environment-consistency check, demoted B=200 bootstrap from confirmatory to diagnostic, acknowledged convergence is non-monotone, and added limitations #23 (crisis 2x budget backwards) and #24 (sensing layer decoy signal). Assess: (1) Are the statistical issues fully resolved? (2) Is the intellectual honesty now exemplary or excessive? (3) Do the structural issues remain (no field data, scope fit, theory transplant)? (4) What is your final recommendation for the broader publication strategy? Sections: Summary, Round-2-Concerns-Addressed, Statistical-Integrity, Structural-Issues-Status, Venue-Recommendation, VERDICT.",
+      "manual": false,
+      "priority": 1
+    },
+    {
+      "id": "adversarial-reviewer-v3",
+      "title": "Final adversarial review of paper v0.7. Write reviews/adversarial-reviewer-v3.md. Do NOT modify the paper.",
+      "deps": [],
+      "scope": [
+        "reviews/adversarial-reviewer-v3.md"
+      ],
+      "accept": "test -f reviews/adversarial-reviewer-v3.md && wc -w reviews/adversarial-reviewer-v3.md | awk '$1 >= 400' && grep -q VERDICT reviews/adversarial-reviewer-v3.md && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Final adversarial review of paper/g4_academic_paper.md (v0.7). Write ONLY reviews/adversarial-reviewer-v3.md. Read the paper in full. Third round. v0.7 addressed your round-2 attacks: New-Attack 1 (p/d_z attribution error fixed), New-Attack 2 (contributions no longer sell retracted numbers), New-Attack 3 (tested labels more carefully bounded), New-Attack 5 (sensing decoy is now limitation #24), New-Attack 6 (F9 universality labeled on the handicapped comparator). Assess: (1) Are your round-2 attacks resolved? (2) Is the circularity issue adequately disclosed or still fatal? (3) What NEW attacks remain? (4) Is there a version that would survive your review? (5) What experiments are the minimum to change your verdict? Sections: Summary, Round-2-Attacks-Resolved, New-Attacks, Minimum-Viable-Experiments, VERDICT.",
+      "manual": false,
+      "priority": 2
+    },
+    {
+      "id": "domain-expert-v3",
+      "title": "Final B2B adtech practitioner review of paper v0.7. Write reviews/domain-expert-v3.md. Do NOT modify the paper.",
+      "deps": [],
+      "scope": [
+        "reviews/domain-expert-v3.md"
+      ],
+      "accept": "test -f reviews/domain-expert-v3.md && wc -w reviews/domain-expert-v3.md | awk '$1 >= 400' && grep -q VERDICT reviews/domain-expert-v3.md && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Final B2B adtech practitioner review of paper/g4_academic_paper.md (v0.7). Write ONLY reviews/domain-expert-v3.md. Read the paper in full. Third round. v0.7 addressed your round-2 concerns: privacy-safe claim deleted, crisis 2x budget backwards acknowledged (limitation #23 + future work #17), sensing layer decoy acknowledged (limitation #24 + future work #18), F9 universality now labeled on the handicapped comparator, and the transferable findings preserved with honest caveats. Assess: (1) Are your round-2 practitioner concerns addressed? (2) Is the transferable core now clearly identified? (3) What practitioner issues remain? (4) Is the field-validation design (section 10.3 item 1) now credible? (5) Would you sign off on running the proposed trial? Sections: Summary, Round-2-Concerns-Addressed, What-Still-Transfers, Practitioner-Verdict, Trial-Feasibility, VERDICT.",
+      "manual": false,
+      "priority": 3
+    },
+    {
+      "id": "ml-methodology-v3",
+      "title": "Final ML methodology review of paper v0.7. Write reviews/ml-methodology-v3.md. Do NOT modify the paper.",
+      "deps": [],
+      "scope": [
+        "reviews/ml-methodology-v3.md"
+      ],
+      "accept": "test -f reviews/ml-methodology-v3.md && wc -w reviews/ml-methodology-v3.md | awk '$1 >= 400' && grep -q VERDICT reviews/ml-methodology-v3.md && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Final ML reproducibility review of paper/g4_academic_paper.md (v0.7). Write ONLY reviews/ml-methodology-v3.md. Read the paper in full. Third round. v0.7 addressed round-2 Issues A-H: Issue A (p/d_z attribution error fixed \u2014 learned-vs-learned now correctly reports p = 8.5e-32, d_z = 3.96; the p = 2.5e-04, d_z = 0.56 pair now correctly appears only in 9.2.1 for the +$0.75 equivalence contrast); Issue B (98.9% became 98.7% and +$206 became +$205); Issue C (NCC now Bayes-optimal only in isotropic/equal-prior special case); Issue D (rho reframed as environment-consistency check); Issue F (convergence described as non-monotone); Issue H (B=200 bootstrap demoted from confirmatory to diagnostic). Issue E (per-class recall) and Issue G (multiplicity family) were not directly addressed. Verify the fixes. Assess: (1) Are Issues A-D, F, and H now resolved? (2) Do Issues E and G remain? (3) Is the paper now statistically honest throughout? (4) Would you accept this at a methods workshop? Sections: Summary, Issues-A-H-Status, Remaining-Concerns, Statistical-Integrity-Verdict, VERDICT.",
+      "manual": false,
+      "priority": 4
+    }
+  ]
+}
