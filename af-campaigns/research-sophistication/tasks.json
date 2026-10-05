@@ -1,0 +1,55 @@
+{
+  "_meta": { "project": "research-sophistication" },
+  "tasks": [
+    {
+      "id": "stats-audit",
+      "title": "Audit all statistics in paper/g4_academic_paper.md for internal consistency, statistical validity, and methodology-code match. Write reviews/stats-audit.md. Do NOT modify the paper.",
+      "deps": [],
+      "scope": ["reviews/stats-audit.md"],
+      "accept": "test -f reviews/stats-audit.md && wc -w reviews/stats-audit.md | awk '$1 >= 300' && grep -q 'VERDICT' reviews/stats-audit.md && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Audit the statistical claims in paper/g4_academic_paper.md. Write ONLY reviews/stats-audit.md — never modify the paper or code. Steps: (1) Read paper/g4_academic_paper.md in full. (2) Run: python paper/cam_sim.py --self-check — verify it prints [OK]. (3) Run: python paper/cam_sim.py --seeds 1,2,3 --scenarios 20 --quiet to verify the code executes. (4) Internal consistency: do abstract numbers match section 8.1 tables? Do section 8.3 findings match section 8.4? Do sections 9-10 claims match section 8? Check: baseline -170.03, cam_multisignal +206.13 at 98.9% match, oracle +210.00, bid_calibrated +530.45 ROAS 26.4. (5) Statistical validity: are CIs mean +/- 1.96*SE? Are p-values plausible for the effect sizes and d-values? Are Cohen's d values consistent with the profit differences and CI widths? (6) Methodology-code match: does section 7.1 agent ladder and Appendix A match the actual agents in paper/cam_sim.py (CAMMultisignal, CAMMultisignalLearned, BidCalibratedAgent, BudgetPacedAgent)? Write reviews/stats-audit.md with sections: Summary, Internal Consistency, Statistical Validity, Methodology-Code Match, Findings (numbered), VERDICT (PASS/CONCERNS/FAIL with 1-sentence justification).",
+      "manual": false,
+      "priority": 1
+    },
+    {
+      "id": "threats-validity",
+      "title": "Write a structured threats-to-validity review of paper/g4_academic_paper.md using the Cook and Campbell framework. Write reviews/threats-to-validity.md. Do NOT modify the paper.",
+      "deps": [],
+      "scope": ["reviews/threats-to-validity.md"],
+      "accept": "test -f reviews/threats-to-validity.md && wc -w reviews/threats-to-validity.md | awk '$1 >= 300' && grep -qi 'internal validity' reviews/threats-to-validity.md && grep -qi 'external validity' reviews/threats-to-validity.md && grep -qi 'construct validity' reviews/threats-to-validity.md && grep -qi 'statistical conclusion validity' reviews/threats-to-validity.md && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Write a structured threats-to-validity review of paper/g4_academic_paper.md using the Cook and Campbell framework. Write ONLY reviews/threats-to-validity.md — never modify the paper or code. Steps: (1) Read paper/g4_academic_paper.md in full. (2) Read paper/cam_sim.py to understand the simulation design (situation-action reward table, synthetic environment, agent implementations). (3) Analyze four threat categories: Internal Validity (are causal claims warranted? paired-seed design adequate? confounds? selection bias?); External Validity (generalization to real campaigns? ecological validity of the synthetic environment? situation-action mapping realism?); Construct Validity (do operationalizations capture the theoretical constructs? is match rate a valid proxy? is profit the right outcome?); Statistical Conclusion Validity (are tests appropriate? sample sizes adequate? multiple comparisons? effect-size interpretation?). (4) For each threat: is it addressed in the paper (check section 9.2 Limitations)? How well? What would strengthen it? (5) Write reviews/threats-to-validity.md with sections: Summary, Internal Validity, External Validity, Construct Validity, Statistical Conclusion Validity, Priority Recommendations (top 5 things a JM/Marketing Science reviewer would flag).",
+      "manual": false,
+      "priority": 2
+    },
+    {
+      "id": "citation-audit",
+      "title": "Cross-reference every citation in paper/g4_academic_paper.md against papers.yaml (169K-line corpus). Flag fabricated or unverifiable citations. Write reviews/citation-audit.md. Do NOT modify the paper.",
+      "deps": [],
+      "scope": ["reviews/citation-audit.md"],
+      "accept": "test -f reviews/citation-audit.md && wc -w reviews/citation-audit.md | awk '$1 >= 200' && grep -qi 'Haglund' reviews/citation-audit.md && grep -qi 'Endsley' reviews/citation-audit.md && grep -q 'VERDICT' reviews/citation-audit.md && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Cross-reference every citation in paper/g4_academic_paper.md against papers.yaml. Write ONLY reviews/citation-audit.md — never modify the paper or code. CRITICAL CONTEXT: v0.1 of a related paper contained 4 FABRICATED Haas citations that were purged. Your job is to verify NO fabricated citations remain. Steps: (1) Read paper/g4_academic_paper.md and list every citation (author, year, title, venue). (2) Key citations to verify: Haglund (2025) Contextual Intelligence PhD thesis Umea University, Endsley (1988) Proceedings of the Human Factors Society, Endsley (1995) Human Factors 37(1), Kotler and Armstrong (2021) Principles of Marketing 18th ed, Peppers and Rogers (1993) The One to One Future, Russell and Norvig (2020) AI Modern Approach 4th ed, Bohm et al. (2020) value co-creation JPSSM. (3) For each: search papers.yaml for the title or author to confirm existence. Textbook citations (Kotler, Russell) will NOT be in papers.yaml — mark as CORPUS-EXTERNAL. (4) Check the References section lists all in-text citations. (5) Write reviews/citation-audit.md with sections: Summary, Verified in Corpus, Corpus-External (textbooks/standards), Unverified/Suspicious, Missing from References, VERDICT (PASS if no unverified citations, CONCERNS otherwise).",
+      "manual": false,
+      "priority": 3
+    },
+    {
+      "id": "bootstrap-ci",
+      "title": "Add --bootstrap flag to paper/cam_sim.py: N bootstrap resamples of the per-seed profit data reporting BCa confidence intervals for every agent mean profit alongside existing normal-approx CIs. Gate: --self-check must still pass byte-identically. Do NOT modify the paper.",
+      "deps": [],
+      "scope": ["paper/cam_sim.py"],
+      "accept": "PYTHONIOENCODING=utf-8 python paper/cam_sim.py --self-check 2>&1 | grep -q 'OK' && PYTHONIOENCODING=utf-8 python paper/cam_sim.py --help 2>&1 | grep -q -- '--bootstrap' && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Add a --bootstrap flag to paper/cam_sim.py. Do NOT modify paper/g4_academic_paper.md. Requirements: (1) Add --bootstrap (int, default 0 = off; N>0 = number of resamples, e.g. 1000) to argparse. (2) When N>0, after the normal run, resample the per-seed profit data with replacement N times (50 seeds total; resample 50 with replacement), recompute each agent mean profit per resample, and report BCa confidence intervals. (3) BCa implementation: compute the bias-correction factor from the proportion of bootstrap means below the observed mean. For acceleration, use the jackknife estimate (leave-one-out influence) or set to 0 and document this simplification in a comment. (4) Output: print a stdout table (agent | mean | BCa low | BCa high | normal low | normal high) and add a bootstrap_cis dict to the JSON output if --output is set. (5) Verify: python paper/cam_sim.py --self-check still passes byte-identically (the bootstrap only activates when the flag is set). (6) Also verify: python paper/cam_sim.py --bootstrap 200 --seeds 1,2,3 --scenarios 20 --quiet runs and prints the table. Read paper/cam_sim.py carefully — the per-seed data lives in run_env results structure. Use only numpy/scipy (already imported).",
+      "manual": false,
+      "priority": 4
+    },
+    {
+      "id": "convergence-diag",
+      "title": "Add --convergence flag to paper/cam_sim.py: run simulation at 10/20/30/40/50 seeds and report whether key metrics (cam_multisignal profit, Spearman rho, baseline profit) have stabilized. Gate: --self-check must still pass. Do NOT modify the paper.",
+      "deps": ["bootstrap-ci"],
+      "scope": ["paper/cam_sim.py"],
+      "accept": "PYTHONIOENCODING=utf-8 python paper/cam_sim.py --self-check 2>&1 | grep -q 'OK' && PYTHONIOENCODING=utf-8 python paper/cam_sim.py --help 2>&1 | grep -q -- '--convergence' && git diff --quiet paper/g4_academic_paper.md",
+      "acceptance_prose": "Add a --convergence flag to paper/cam_sim.py. Do NOT modify paper/g4_academic_paper.md. This builds on the --bootstrap flag that must already exist in the code. Requirements: (1) Add --convergence (store_true flag) to argparse. (2) When set, run the simulation at seed counts [10, 20, 30, 40, 50] (using seeds 1..N for each run, --scenarios 200 default). For each seed count, compute: cam_multisignal mean profit, Spearman rho between context match rate and profit across agents, and baseline mean profit. (3) A metric is STABLE when the mean over the last 10 seeds differs from the overall mean by less than 5%. Report: seeds N | cam_multisignal profit | rho | baseline profit | stable (YES/NO per metric). (4) Print a stdout table and add a convergence dict to the JSON output if --output is set. (5) Verify: python paper/cam_sim.py --self-check still passes byte-identically. (6) Also verify: python paper/cam_sim.py --convergence --seeds 1,2,3,4,5 --scenarios 20 runs and prints the table. Read paper/cam_sim.py carefully. Use scipy.stats.spearmanr for rho.",
+      "manual": false,
+      "priority": 5
+    }
+  ]
+}
