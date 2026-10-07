@@ -270057,3 +270057,94 @@ papers:
   - Nam Tien Duong
   abstract: ''
   venue: Information Technology and Management
+- title: 'The Brand War: A Gamified AI-Feedback System for Time-Limited EFL Writing'
+  date: 2026-07
+  url: https://arxiv.org/abs/2608.28604
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Jing-Yuan Huang
+  - Vivien Lin
+  - Yujong Park
+  - Yi Miao
+  - Yun-Hua Hsiao
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Writing is cognitively demanding and anxiety-provoking for English as
+    a Foreign Language (EFL) learners, especially under time pressure. This paper
+    presents The Brand War, a web-based gamified writing application combining competitive
+    game mechanics with iterative GPT-4.1-powered formative feedback for undergraduate
+    EFL learners completing a timed narrative writing task. Students role-play as
+    marketing interns competing for a job offer, using review passes to receive AI
+    feedback, attack opponents, or shield their own passes while drafting a 500-word
+    brand story. We conducted an exploratory single-session classroom study with 29
+    university EFL students in Taiwan to examine engagement patterns, whether iterative
+    AI feedback improved writing performance across revisions, and how AI and human
+    scores related to overall outcomes. Students wrote within 60 minutes, using up
+    to five AI feedback passes before a final human-graded submission. Most (65.5%)
+    used the AI feedback system, and within-student AI scores improved modestly across
+    revisions (M = +3.7, SD = 7.4), with larger gains among students completing more
+    cycles and significantly higher final- versus first-review scores among multi-cycle
+    completers (p = .032). AI-assessed and human final scores showed strong convergent
+    validity (r = 0.722, p &lt; .001), and AI-feedback users scored descriptively,
+    though not significantly, higher than non-users. Students maintained a high mean
+    focus ratio (82.4%), and competitive mechanics were used sparingly, suggesting
+    most prioritized writing over social interference even when available. Findings
+    suggest embedding iterative AI scoring within a competitive game context is feasible
+    and may scaffold writing improvement, with implications for EFL writing pedagogy
+    and AI-mediated gamified learning design.
+- title: Can LLMs Hire Fairly? Racial Bias in Resume Screening
+  date: 2026-06
+  url: https://arxiv.org/abs/2606.28978
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Zhenyu Gao
+  - Wenxi Jiang
+  - Yutong Yan
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: We audit fourteen mainstream large language models (LLMs) for hiring discrimination
+    using the paired-resume methodology of Kline, Rose, and Walters (2022). The sole
+    2023-vintage model reproduces the pro-White callback gap documented in field experiments
+    on labor market discrimination ($+2.12$ pp, significant at the 1\% level). Every
+    model released in 2024 or after shows either a null gap or a significant pro-Black
+    reversal (up to $-3.01$ pp). The same pattern holds on the gender axis. Based
+    on 24,024 paired postings per model across 14 models, our results document a reversal
+    in the direction of algorithmic hiring bias across model generations.
+- title: The Economics of AI Supply Chain Regulation
+  date: 2026-03
+  url: https://arxiv.org/abs/2603.12630
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Sihan Qian
+  - Amit Mehra
+  - Dengpan Liu
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: The rise of foundation models has driven the emergence of AI supply chains,
+    where upstream foundation model providers offer fine-tuning and inference services
+    to downstream firms developing domain-specific applications. Downstream firms
+    pay providers to use their computing infrastructure to fine-tune models with proprietary
+    data, creating a co-creation dynamic that enhances model quality. Amid concerns
+    that foundation model providers and downstream firms may capture excessive consumer
+    surplus, along with increasing regulatory measures, this study employs a game-theoretic
+    model involving a provider and two competing downstream firms to analyze how policy
+    interventions affect consumer surplus in the AI supply chain. Our analysis shows
+    that policies promoting price competition in downstream markets (i.e., pro-price-competitive
+    policies) boost consumer surplus only when compute or data preprocessing costs
+    are high, while compute subsidies are effective only when these costs are low,
+    suggesting these policies complement each other. In contrast, policies promoting
+    quality competition in downstream markets (i.e., pro-quality-competitive policies)
+    always improve consumer surplus. We also find that under pro-price-competitive
+    policies or compute subsidies, both the provider and downstream firms can achieve
+    higher profits along with greater consumer surplus, creating a win-win-win outcome.
+    However, pro-quality-competitive policies increase the provider's profits while
+    reducing those of downstream firms. Finally, as compute costs decline, pro-price-competitive
+    policies may lose their effectiveness, whereas compute subsidies may shift from
+    ineffective to effective. These findings offer insights for policymakers seeking
+    to foster AI supply chains that are economically efficient and socially beneficial.

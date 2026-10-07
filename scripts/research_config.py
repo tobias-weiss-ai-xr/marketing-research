@@ -134,6 +134,10 @@ def get_subcategory_keywords(cfg):
     else:
         items = []
     for item in items:
+        if not isinstance(item, dict):
+            # Malformed entry (e.g. plain string or dict-shaped yaml); the
+            # validator reports it, here we skip it instead of crashing.
+            continue
         sid = item.get("id", "")
         kws = item.get("keywords", [])
         if not isinstance(kws, list):
@@ -216,7 +220,10 @@ def validate_config(cfg, path=None):
 
     # Validate subcategory_keywords reference real subcategories
     for item in cfg.get("subcategory_keywords", []) or []:
-        sid = item.get("id", "") if isinstance(item, dict) else ""
+        if not isinstance(item, dict):
+            errors.append(f"subcategory_keywords entries must be mappings with 'id' + 'keywords', got {type(item).__name__}")
+            continue
+        sid = item.get("id", "")
         if sid and subs and sid not in {s.get("id") for s in subs}:
             errors.append(f"subcategory_keywords id '{sid}' does not match any subcategory")
 

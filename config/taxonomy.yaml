@@ -57,53 +57,18 @@ taxonomy:
 # Keyword rules for automatic subcategory classification (fetch scripts).
 # Fallback: if a query entry carries `subcategory_hint`, that hint wins.
 subcategory_keywords:
-  empirical:
-    - "experiment"
-    - "field study"
-    - "empirical"
-    - "evidence"
-    - "survey data"
-    - "randomized"
-    - "panel data"
-    - "large-scale"
-    - "natural experiment"
-    - "quasi-experimental"
-  framework:
-    - "framework"
-    - "conceptual model"
-    - "taxonomy"
-    - "typology"
-    - "architecture"
-    - "design principles"
-  review:
-    - "review"
-    - "meta-analysis"
-    - "systematic"
-    - "bibliometric"
-    - "state of the art"
-    - "research agenda"
-    - "literature"
-  case-study:
-    - "case study"
-    - "case analysis"
-    - "practical implications"
-    - "lessons learned"
-    - "insights from"
-    - "industry"
-  theory:
-    - "theory"
-    - "theoretical"
-    - "mechanism"
-    - "construct"
-    - "conceptualization"
-  measurement:
-    - "measurement"
-    - "metric"
-    - "attribution"
-    - "analytics"
-    - "instrument"
-    - "methodology"
-    - "modeling"
+  - id: empirical
+    keywords: ["experiment", "field study", "empirical", "evidence", "survey data", "randomized", "panel data", "large-scale", "natural experiment", "quasi-experimental"]
+  - id: framework
+    keywords: ["framework", "conceptual model", "taxonomy", "typology", "architecture", "design principles"]
+  - id: review
+    keywords: ["review", "meta-analysis", "systematic", "bibliometric", "state of the art", "research agenda", "literature"]
+  - id: case-study
+    keywords: ["case study", "case analysis", "practical implications", "lessons learned", "insights from", "industry"]
+  - id: theory
+    keywords: ["theory", "theoretical", "mechanism", "construct", "conceptualization"]
+  - id: measurement
+    keywords: ["measurement", "metric", "attribution", "analytics", "instrument", "methodology", "modeling"]
 
 # ── Discovery: arXiv queries (fetch_new_papers.py) ───────────────────────────
 # Each entry is an arXiv API query string (cat: + abs:/ti: operators).
