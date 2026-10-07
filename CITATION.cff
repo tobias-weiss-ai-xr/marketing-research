@@ -6,7 +6,7 @@ authors:
   - given-names: "Tobias"
     family-names: "Weiss"
 repository-code: "https://github.com/tobias-weiss-ai-xr/marketing-research"
-version: "1.2.0"
+version: "1.3.0"
 date-released: "2026-01-15"
 keywords:
   - marketing
@@ -21,4 +21,4 @@ preferred-citation:
     - given-names: "Tobias"
       family-names: "Weiss"
   year: 2026
-  notes: "Manuscript in preparation. Benchmark code and all results are reproducible from cam_sim.py and cam_sim_ablations.py."
+  notes: "Manuscript in preparation. Benchmark code and all results are reproducible from cam_sim.py, cam_sim_ablations.py, and cam_sim_extensions.py."
