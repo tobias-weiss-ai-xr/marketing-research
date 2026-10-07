@@ -176,23 +176,23 @@
   {
    "id": "digital-marketing",
    "name": "Digital & Performance Marketing",
-   "count": 1389,
+   "count": 1392,
    "trajectory": {
     "2023": 40,
     "2024": 273,
     "2025": 222,
-    "2026": 854
+    "2026": 857
    },
    "momentum": {
     "id": "digital-marketing",
     "name": "Digital Marketing",
-    "total": 1389,
-    "recent": 898,
+    "total": 1392,
+    "recent": 901,
     "prior": 255,
-    "growth_pct": 252.2,
+    "growth_pct": 253.3,
     "recent_share": 0.647,
-    "papers_per_month": 74.8,
-    "score": 316.9
+    "papers_per_month": 75.1,
+    "score": 318.0
    }
   },
   {
@@ -277,7 +277,7 @@
   {
    "id": "empirical",
    "name": "Empirical Studies",
-   "count": 4808
+   "count": 4811
   },
   {
    "id": "framework",
@@ -30659,6 +30659,11 @@
   [
    "2026-03",
    "digital-marketing",
+   "empirical"
+  ],
+  [
+   "2026-03",
+   "digital-marketing",
    "measurement"
   ],
   [
@@ -38129,6 +38134,11 @@
   [
    "2026-06",
    "digital-marketing",
+   "empirical"
+  ],
+  [
+   "2026-06",
+   "digital-marketing",
    "framework"
   ],
   [
@@ -44335,6 +44345,11 @@
    "2026-07",
    "digital-marketing",
    "case-study"
+  ],
+  [
+   "2026-07",
+   "digital-marketing",
+   "empirical"
   ],
   [
    "2026-07",
@@ -65856,7 +65871,7 @@
    "recent": 2143,
    "total": 2533,
    "burst_score": 1.33,
-   "recent_share": 0.2579
+   "recent_share": 0.2578
   },
   {
    "keyword": "autonomous",
@@ -65867,17 +65882,17 @@
   },
   {
    "keyword": "model",
-   "recent": 2328,
-   "total": 2968,
+   "recent": 2330,
+   "total": 2970,
    "burst_score": 1.24,
-   "recent_share": 0.2802
+   "recent_share": 0.2803
   },
   {
    "keyword": "method",
-   "recent": 1717,
-   "total": 2181,
+   "recent": 1718,
+   "total": 2182,
    "burst_score": 1.24,
-   "recent_share": 0.2066
+   "recent_share": 0.2067
   },
   {
    "keyword": "scalable",
@@ -65888,24 +65903,24 @@
   },
   {
    "keyword": "system",
-   "recent": 2156,
-   "total": 2786,
+   "recent": 2157,
+   "total": 2787,
    "burst_score": 1.22,
    "recent_share": 0.2595
   },
   {
    "keyword": "analysis",
-   "recent": 2166,
-   "total": 2887,
+   "recent": 2167,
+   "total": 2888,
    "burst_score": 1.18,
    "recent_share": 0.2607
   },
   {
    "keyword": "human",
-   "recent": 707,
-   "total": 950,
+   "recent": 708,
+   "total": 951,
    "burst_score": 1.17,
-   "recent_share": 0.0851
+   "recent_share": 0.0852
   },
   {
    "keyword": "dataset",
@@ -65916,8 +65931,8 @@
   },
   {
    "keyword": "review",
-   "recent": 1836,
-   "total": 2531,
+   "recent": 1837,
+   "total": 2532,
    "burst_score": 1.14,
    "recent_share": 0.221
   },
@@ -65926,7 +65941,7 @@
    "recent": 987,
    "total": 1413,
    "burst_score": 1.1,
-   "recent_share": 0.1188
+   "recent_share": 0.1187
   },
   {
    "keyword": "novel",
