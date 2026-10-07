@@ -8,7 +8,6 @@
 - **GitHub**: https://github.com/tobias-weiss-ai-xr/marketing-research
 - **License**: https://github.com/tobias-weiss-ai-xr/marketing-research/blob/main/LICENSE
 - **CI**: https://github.com/tobias-weiss-ai-xr/marketing-research/actions/workflows/validate.yml
-- **Business Dev**: https://github.com/tobias-weiss-ai-xr/business-development-research
 - **AI Literacy**: https://github.com/tobias-weiss-ai-xr/ai-literacy-research
 
 
