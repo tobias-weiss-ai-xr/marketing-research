@@ -1,17 +1,24 @@
 cff-version: 1.2.0
-message: "If you use this research corpus skeleton, please cite it as follows."
-title: "Research Corpus Skeleton — Data-Driven Agentic Literature Review"
-abstract: "Skeleton repository for a data-driven, auto-validated, agentic literature review corpus. Papers in papers.yaml, everything else generated."
+message: "If you use CAM-Sim in your research, please cite this work."
+title: "CAM-Sim: A Reproducible Benchmark for Situational-Awareness Ablations in Marketing Agents"
+type: software
 authors:
-  - family-names: "Weiß"
-    given-names: "Tobias"
-    orcid: ""
-date-released: "2026-08-06"
-license: MIT
+  - given-names: "Tobias"
+    family-names: "Weiss"
+repository-code: "https://github.com/tobias-weiss-ai-xr/marketing-research"
+version: "1.2.0"
+date-released: "2026-01-15"
 keywords:
-  - literature-review
-  - research-corpus
-  - agentic-ai
-  - papers
-  - open-science
-repository-code: "https://github.com/<YOUR_ORG>/skeleton-research"
+  - marketing
+  - situational-awareness
+  - ablation-study
+  - benchmark
+  - multi-signal-classification
+preferred-citation:
+  type: article
+  title: "CAM-Sim: A Reproducible Benchmark for Situational-Awareness Ablations in Marketing Agents"
+  authors:
+    - given-names: "Tobias"
+      family-names: "Weiss"
+  year: 2026
+  notes: "Manuscript in preparation. Benchmark code and all results are reproducible from cam_sim.py and cam_sim_ablations.py."
