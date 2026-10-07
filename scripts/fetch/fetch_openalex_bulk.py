@@ -446,8 +446,12 @@ def append_papers(yaml_path, new_papers):
     on large corpora.
     """
     if yaml_path.exists():
-        with open(yaml_path, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f) or {}
+        try:
+            with open(yaml_path, "r", encoding="utf-8") as f:
+                data = yaml.safe_load(f) or {}
+        except Exception as e:
+            print(f"  WARNING: Could not read existing {yaml_path}: {e}", flush=True)
+            data = {}
     else:
         data = {}
     papers = data.get("papers", [])
