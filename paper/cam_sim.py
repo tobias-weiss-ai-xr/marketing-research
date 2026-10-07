@@ -263,6 +263,8 @@ ENVIRONMENT_PRESETS: Dict[str, dict] = {
         'competitive_scale': 0.5, # competitive discount factor
         'budget_per_episode': None,  # runner-level: media budget cap per episode
         'bid_return_alpha': None,    # env-level: concave returns to bid exponent
+        'channel_mismatch_penalty': 0.0,  # 0 = channel-independent reward (§8.7 arbitrage)
+        'sensing_fidelity': False,        # False = decoy quality_score; True = real channel_quality
     },
     'uniform_situations': {
         'situation_weights': [1 / 6] * 6,
@@ -289,6 +291,9 @@ ENVIRONMENT_PRESETS: Dict[str, dict] = {
     },
     'concave_returns': {
         'bid_return_alpha': 0.5,  # concave returns to bid: reward *= (bid/optimal)^0.5
+    },
+    'channel_dependent': {
+        'channel_mismatch_penalty': 0.5,  # wrong channel reduces reward by 50%
     },
 }
 
@@ -812,11 +817,18 @@ class SimulationEnvironment:
         }
         return max(0.0, min(1.0, strengths[situation] + self.rng.uniform(-0.1, 0.1)))
 
-    def _generate_signals(self, situation: SituationType, intent: float) -> List[ContextSignal]:
+    def _generate_signals(self, situation: SituationType, intent: float,
+                          cq: float = None, cd: float = None) -> List[ContextSignal]:
         signals = []
         if situation in (SituationType.DECISION, SituationType.CRISIS):
             signals.append(ContextSignal("audience", "intent_strength", round(intent, 3), 0.9))
-        signals.append(ContextSignal("channel", "quality_score", round(self.rng.uniform(0.5, 1.0), 2), 0.8))
+        decoy_quality = self.rng.uniform(0.5, 1.0)  # always consume RNG (reproducibility)
+        if self.cfg.get('sensing_fidelity', False) and cq is not None:
+            signals.append(ContextSignal("channel", "quality_score", round(cq, 2), 0.8))
+            if cd is not None:
+                signals.append(ContextSignal("situational", "competitive_density", round(cd, 2), 0.8))
+        else:
+            signals.append(ContextSignal("channel", "quality_score", round(decoy_quality, 2), 0.8))
         signals.append(ContextSignal("temporal", "time_of_day",
                                      self.rng.choice(["morning", "afternoon", "evening", "night"]), 1.0))
         signals.append(ContextSignal("situational", "device_type",
@@ -842,7 +854,7 @@ class SimulationEnvironment:
         return FullContext(
             context_id=f"ctx_{self.scenario_counter}",
             timestamp=datetime.now(timezone.utc).isoformat(),
-            signals=self._generate_signals(situation, intent),
+            signals=self._generate_signals(situation, intent, cq, cd),
             situation=situation,
             audience_intent_strength=intent,
             channel_quality=cq,
@@ -876,6 +888,11 @@ class SimulationEnvironment:
         if alpha and optimal_bid > 0:
             ret_mult = max(0.0, min(2.0, (action.bid / optimal_bid) ** alpha))
             total_reward *= ret_mult
+
+        # Channel-dependent reward: penalize wrong-channel assignments (§8.7 arbitrage fix)
+        channel_mismatch_penalty = cfg.get('channel_mismatch_penalty', 0.0)
+        if channel_mismatch_penalty > 0 and action.channel != SITUATION_CHANNEL[context.situation]:
+            total_reward *= (1.0 - channel_mismatch_penalty)
 
         cost = self.action_costs[action.channel] * action.bid
         long_term_value = total_reward * 0.2 * context.audience_intent_strength
