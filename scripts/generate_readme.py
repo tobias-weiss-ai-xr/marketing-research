@@ -111,7 +111,28 @@ def generate_readme(papers, readme_path, cfg, check_mode=False):
     before = readme_text[:start_idx]
     after = readme_text[end_idx:]
 
-    generated_list = render_paper_list(papers, cfg)
+    # Full list lives in PAPERS.md (README would be >2 MB otherwise);
+    # README keeps only a pointer.
+    papers_md_path = readme_path.parent / "PAPERS.md"
+    papers_md_path.write_text(
+        "# 📚 Paper list\n\n"
+        f"{len(papers)} papers · generated from `papers.yaml` — do not edit by hand.\n\n"
+        + render_paper_list(papers, cfg)[len("## 📚 Paper list\n") :]
+        + "\n",
+        encoding="utf-8",
+    )
+    print(f"Generated {papers_md_path}")
+
+    n = len(papers)
+    generated_list = (
+        f"## 📚 Paper list\n\n"
+        f"All **{n} papers** (grouped by category, subcategory and year) live in "
+        f"**[PAPERS.md](PAPERS.md)** — kept out of this README to keep it readable.\n\n"
+        "Browsable alternatives:\n\n"
+        "- [PAPERS.md](PAPERS.md) — full list, same grouping as before\n"
+        "- [docs/index.html](docs/index.html) — interactive paper browser\n"
+        "- [docs/papers.json](docs/papers.json) — machine-readable\n\n"
+    )
     new_readme = before + generated_list + "\n" + after
 
     if check_mode:

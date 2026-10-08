@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="330" viewBox="0 0 980 360" font-family="Segoe UI,system-ui,sans-serif">
+  <defs>
+    <marker id="lg-ar" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#888"/></marker>
+  </defs>
+
+  <!-- title row -->
+  <text x="490" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#c8c8c8" letter-spacing="2">LEAD-GENERATION LOOP</text>
+  <text x="490" y="58" text-anchor="middle" font-size="14" fill="#9a9a9a">agent executes steps 2–5 · the human owns steps 1 and 6</text>
+
+  <!-- six boxes in a row -->
+  <g font-size="17" font-weight="700">
+    <!-- 1 DEFINE (human) -->
+    <rect x="20" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#3b6fc4" stroke-width="2"/>
+    <circle cx="55" cy="148" r="13" fill="#3b6fc4"/><text x="55" y="153" text-anchor="middle" font-size="14" fill="#fff">1</text>
+    <text x="90" y="154" fill="#fff" font-size="19">DEFINE</text>
+    <text x="90" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">ICP + criteria</text>
+    <text x="90" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">(human)</text>
+
+    <!-- 2 SOURCE -->
+    <rect x="176" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#555"/>
+    <circle cx="211" cy="148" r="13" fill="#555"/><text x="211" y="153" text-anchor="middle" font-size="14" fill="#fff">2</text>
+    <text x="246" y="154" fill="#fff" font-size="19">SOURCE</text>
+    <text x="246" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">browser + search</text>
+    <text x="246" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">prospects · events · funding</text>
+
+    <!-- 3 QUALIFY -->
+    <rect x="332" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#555"/>
+    <circle cx="367" cy="148" r="13" fill="#555"/><text x="367" y="153" text-anchor="middle" font-size="14" fill="#fff">3</text>
+    <text x="402" y="154" fill="#fff" font-size="19">QUALIFY</text>
+    <text x="402" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">score vs criteria</text>
+    <text x="402" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">fit signals, evidence</text>
+
+    <!-- 4 RECORD -->
+    <rect x="488" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#555"/>
+    <circle cx="523" cy="148" r="13" fill="#555"/><text x="523" y="153" text-anchor="middle" font-size="14" fill="#fff">4</text>
+    <text x="558" y="154" fill="#fff" font-size="19">RECORD</text>
+    <text x="558" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">claims + URLs</text>
+    <text x="558" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">saved as data</text>
+
+    <!-- 5 VERIFY -->
+    <rect x="644" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#555"/>
+    <circle cx="679" cy="148" r="13" fill="#555"/><text x="679" y="153" text-anchor="middle" font-size="14" fill="#fff">5</text>
+    <text x="714" y="154" fill="#fff" font-size="19">VERIFY</text>
+    <text x="714" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">citations resolve</text>
+    <text x="714" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">no invented facts</text>
+
+    <!-- 6 OUTPUT (human) -->
+    <rect x="800" y="120" width="160" height="118" rx="10" fill="#1f1f1f" stroke="#6fbf73" stroke-width="2"/>
+    <circle cx="835" cy="148" r="13" fill="#6fbf73"/><text x="835" y="153" text-anchor="middle" font-size="14" fill="#fff">6</text>
+    <text x="870" y="154" fill="#fff" font-size="19">OUTPUT</text>
+    <text x="880" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">ranked shortlist</text>
+    <text x="880" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">(human)</text>
+  </g>
+
+  <!-- arrows between boxes -->
+  <line x1="162" y1="179" x2="172" y2="179" stroke="#888" stroke-width="2" marker-end="url(#lg-ar)"/>
+  <line x1="318" y1="179" x2="328" y2="179" stroke="#888" stroke-width="2" marker-end="url(#lg-ar)"/>
+  <line x1="474" y1="179" x2="484" y2="179" stroke="#888" stroke-width="2" marker-end="url(#lg-ar)"/>
+  <line x1="630" y1="179" x2="640" y2="179" stroke="#888" stroke-width="2" marker-end="url(#lg-ar)"/>
+  <line x1="786" y1="179" x2="796" y2="179" stroke="#888" stroke-width="2" marker-end="url(#lg-ar)"/>
+
+  <!-- feedback loop -->
+  <path d="M 880 238 L 880 300 L 90 300 L 90 242" fill="none" stroke="#d29a3a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#lg-ar)"/>
+  <text x="485" y="320" text-anchor="middle" font-size="14" fill="#d29a3a">learned data feeds the next DEFINE — the loop tightens</text>
+</svg>

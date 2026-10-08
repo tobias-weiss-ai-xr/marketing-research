@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 960 320" font-family="Segoe UI,system-ui,sans-serif">
+  <defs>
+    <marker id="mhl-ar" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#888"/></marker>
+  </defs>
+
+  <!-- column 1: Model -->
+  <rect x="10" y="40" width="280" height="240" rx="12" fill="#1f1f1f" stroke="#333"/>
+  <text x="150" y="72" text-anchor="middle" font-size="21" font-weight="700" fill="#3b6fc4">Model</text>
+  <text x="150" y="96" text-anchor="middle" font-size="15" fill="#9a9a9a">the reasoning engine</text>
+  <circle cx="150" cy="160" r="42" fill="#2a2a2a" stroke="#555" stroke-width="2"/>
+  <path d="M138 148 C 150 130 170 130 182 148" fill="none" stroke="#e8e8e8" stroke-width="3"/>
+  <path d="M140 178 C 150 162 172 162 182 180" fill="none" stroke="#e8e8e8" stroke-width="2" opacity="0.45"/>
+  <text x="150" y="228" text-anchor="middle" font-size="16" fill="#e8e8e8">the brain</text>
+  <text x="150" y="252" text-anchor="middle" font-size="14" fill="#9a9a9a">thinks, reasons, decides</text>
+
+  <!-- arrow 1 -->
+  <line x1="294" y1="160" x2="332" y2="160" stroke="#888" stroke-width="2" marker-end="url(#mhl-ar)"/>
+
+  <!-- column 2: Harness -->
+  <rect x="340" y="40" width="280" height="240" rx="12" fill="#1f1f1f" stroke="#333"/>
+  <text x="480" y="72" text-anchor="middle" font-size="21" font-weight="700" fill="#3b6fc4">Harness</text>
+  <text x="480" y="96" text-anchor="middle" font-size="15" fill="#9a9a9a">tools + rules + memory</text>
+  <rect x="385" y="118" width="190" height="52" rx="8" fill="#2a2a2a" stroke="#555" stroke-width="2"/>
+  <text x="480" y="143" text-anchor="middle" font-size="18" fill="#e8e8e8">files · git · browser</text>
+  <text x="480" y="163" text-anchor="middle" font-size="14" fill="#9a9a9a">(pi, OpenCode, MCP tools)</text>
+  <rect x="385" y="196" width="190" height="52" rx="8" fill="#2a2a2a" stroke="#555" stroke-width="2"/>
+  <text x="480" y="221" text-anchor="middle" font-size="18" fill="#e8e8e8">contract · memory</text>
+  <text x="480" y="241" text-anchor="middle" font-size="14" fill="#9a9a9a">(rules, notes, history)</text>
+
+  <!-- arrow 2 -->
+  <line x1="624" y1="160" x2="662" y2="160" stroke="#888" stroke-width="2" marker-end="url(#mhl-ar)"/>
+
+  <!-- column 3: Loop -->
+  <rect x="670" y="40" width="280" height="240" rx="12" fill="#1f1f1f" stroke="#333"/>
+  <text x="810" y="72" text-anchor="middle" font-size="21" font-weight="700" fill="#3b6fc4">Loop</text>
+  <text x="810" y="96" text-anchor="middle" font-size="15" fill="#9a9a9a">the work day</text>
+
+  <rect x="700" y="116" width="95" height="46" rx="8" fill="#2a2a2a" stroke="#d29a3a"/><text x="747" y="145" text-anchor="middle" font-size="16" fill="#e8e8e8">Plan</text>
+  <rect x="812" y="116" width="95" height="46" rx="8" fill="#2a2a2a" stroke="#d29a3a"/><text x="859" y="145" text-anchor="middle" font-size="16" fill="#e8e8e8">Act</text>
+  <rect x="700" y="196" width="95" height="46" rx="8" fill="#2a2a2a" stroke="#d29a3a"/><text x="747" y="225" text-anchor="middle" font-size="15" fill="#e8e8e8">Check</text>
+  <rect x="812" y="196" width="95" height="46" rx="8" fill="#2a2a2a" stroke="#d29a3a"/><text x="859" y="225" text-anchor="middle" font-size="15" fill="#e8e8e8">Correct</text>
+
+  <line x1="797" y1="139" x2="808" y2="139" stroke="#888" stroke-width="2" marker-end="url(#mhl-ar)"/>
+  <line x1="859" y1="164" x2="859" y2="192" stroke="#888" stroke-width="2" marker-end="url(#mhl-ar)"/>
+  <line x1="797" y1="219" x2="806" y2="219" stroke="#888" stroke-width="2" marker-end="url(#mhl-ar)"/>
+  <path d="M 700 219 L 690 219 L 690 139 L 696 139" fill="none" stroke="#888" stroke-width="2" marker-end="url(#mhl-ar)"/>
+  <text x="810" y="272" text-anchor="middle" font-size="14" fill="#9a9a9a">repeat until verified</text>
+</svg>
