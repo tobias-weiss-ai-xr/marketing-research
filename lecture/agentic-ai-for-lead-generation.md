@@ -2,37 +2,50 @@
 marp: true
 theme: default
 paginate: true
+header: '![h:56](img/jlu-logo.png)'
 footer: 'Marketing Chair · Agentic AI for Lead Generation · 45 min'
 style: |
+  /* JLU Gießen look: white background, JLU blue #165A97 */
+  :root { --jlu-blue: #165A97; --jlu-light: #e8eff6; --jlu-green: #E5F0CF; --ink: #212529; --muted: #6c757d; }
   section {
-    background-color: #1a1a1a;
-    color: #e8e8e8;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    padding-bottom: 64px;
+    background-color: #ffffff;
+    color: var(--ink);
+    font-family: Verdana, 'Segoe UI', Helvetica, Arial, sans-serif;
+    padding: 96px 64px 72px;
+    border-top: 10px solid var(--jlu-blue);
   }
+  section header { position: absolute; top: 18px; left: 64px; right: auto; }
+  section header img { display: block; }
+  section footer { color: var(--muted); font-size: 15px; left: 64px; right: 120px; }
+  section::after { color: var(--jlu-blue); font-weight: 700; font-size: 18px; right: 64px; }
   section.smaller table { font-size: 18px; }
   section.smaller table th, section.smaller table td { padding: 4px 8px; }
-  h1, h2, h3 { color: #ffffff; font-weight: 700; }
+  h1, h2, h3 { color: var(--jlu-blue); font-weight: 700; }
+  h2 { border-bottom: 3px solid var(--jlu-green); padding-bottom: 6px; }
+  strong { color: var(--jlu-blue); }
   table { margin: 0 auto; font-size: 20px; border-collapse: collapse; }
   table th, table td {
-    background-color: #2a2a2a; padding: 5px 10px;
-    border: 1px solid #555; color: #e8e8e8;
+    background-color: #ffffff; padding: 5px 10px;
+    border: 1px solid #dee2e6; color: var(--ink);
   }
-  table thead th {
-    background-color: #383838; color: #ffffff; border-bottom: 2px solid #666;
-  }
-  table tbody tr:nth-child(even) td { background-color: #252525; }
+  table thead th { background-color: var(--jlu-blue); color: #ffffff; border: 1px solid var(--jlu-blue); }
+  table tbody tr:nth-child(even) td { background-color: #f4f7fa; }
   pre {
-    background: #111; border: 1px solid #444; border-radius: 6px;
-    color: #d8d8d8; font-size: 18px; padding: 12px;
+    background: #f8f9fa; border: 1px solid #dee2e6; border-left: 4px solid var(--jlu-blue);
+    border-radius: 4px; color: var(--ink); font-size: 18px; padding: 12px;
   }
+  code { background: #f1f3f5; color: var(--ink); }
   blockquote {
-    border-left: 4px solid #3b6fc4; color: #c8d8f0;
-    font-style: italic; font-size: 22px;
+    background: var(--jlu-light); border-left: 5px solid var(--jlu-blue); color: var(--ink);
+    font-style: normal; font-size: 22px; margin: 16px 0; padding: 6px 18px;
   }
-  a { color: #7fb3ff; }
+  a { color: var(--jlu-blue); }
   ul { font-size: 24px; }
   li { margin: 6px 0; }
+  li::marker { color: var(--jlu-blue); }
+  section.lead { justify-content: center; border-top-width: 10px; }
+  section.lead h1 { font-size: 54px; }
+  section.lead h2 { border-bottom: none; color: var(--ink); font-weight: 400; }
 ---
 
 <!-- _class: lead -->

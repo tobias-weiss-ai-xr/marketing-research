@@ -4,56 +4,56 @@
       <polygon points="0 0, 8 3, 0 6" fill="#8a8a8a"/>
     </marker>
     <marker id="cp-ar-fail" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#ff8a8a"/>
+      <polygon points="0 0, 8 3, 0 6" fill="#c62d3f"/>
     </marker>
   </defs>
 
-  <rect width="560" height="470" fill="#1a1a1a" rx="8"/>
+  <rect width="560" height="470" fill="#ffffff" rx="8"/>
 
   <!-- arrows first, so boxes paint over the line ends -->
-  <line x1="132" y1="112" x2="132" y2="144" stroke="#8a8a8a" stroke-width="1.6" marker-end="url(#cp-ar)"/>
-  <line x1="132" y1="216" x2="132" y2="248" stroke="#8a8a8a" stroke-width="1.6" marker-end="url(#cp-ar)"/>
-  <line x1="132" y1="320" x2="132" y2="358" stroke="#8a8a8a" stroke-width="1.6" stroke-dasharray="4 6" stroke-opacity="0.55"/>
+  <line x1="132" y1="112" x2="132" y2="144" stroke="#6c757d" stroke-width="1.6" marker-end="url(#cp-ar)"/>
+  <line x1="132" y1="216" x2="132" y2="248" stroke="#6c757d" stroke-width="1.6" marker-end="url(#cp-ar)"/>
+  <line x1="132" y1="320" x2="132" y2="358" stroke="#6c757d" stroke-width="1.6" stroke-dasharray="4 6" stroke-opacity="0.55"/>
 
-  <line x1="392" y1="112" x2="392" y2="144" stroke="#8a8a8a" stroke-width="1.6" marker-end="url(#cp-ar)"/>
-  <line x1="392" y1="216" x2="392" y2="248" stroke="#8a8a8a" stroke-width="1.6" marker-end="url(#cp-ar)"/>
-  <line x1="392" y1="320" x2="392" y2="360" stroke="#8a8a8a" stroke-width="1.6" marker-end="url(#cp-ar)"/>
+  <line x1="392" y1="112" x2="392" y2="144" stroke="#6c757d" stroke-width="1.6" marker-end="url(#cp-ar)"/>
+  <line x1="392" y1="216" x2="392" y2="248" stroke="#6c757d" stroke-width="1.6" marker-end="url(#cp-ar)"/>
+  <line x1="392" y1="320" x2="392" y2="360" stroke="#6c757d" stroke-width="1.6" marker-end="url(#cp-ar)"/>
   <path d="M 484 288 L 508 288 Q 516 288 516 280 L 516 192 Q 516 184 508 184 L 484 184"
-        fill="none" stroke="#ff8a8a" stroke-width="1.6" marker-end="url(#cp-ar-fail)"/>
+        fill="none" stroke="#c62d3f" stroke-width="1.6" marker-end="url(#cp-ar-fail)"/>
 
   <text x="404" y="346" fill="#7ee2a8" font-size="16">pass → done</text>
-  <rect x="470" y="212" width="80" height="44" fill="#1a1a1a"/>
-  <text x="510" y="230" fill="#ff8a8a" font-size="16" text-anchor="middle">fail</text>
-  <text x="510" y="250" fill="#ff8a8a" font-size="16" text-anchor="middle">→ back</text>
+  <rect x="470" y="212" width="80" height="44" fill="#ffffff"/>
+  <text x="510" y="230" fill="#c62d3f" font-size="16" text-anchor="middle">fail</text>
+  <text x="510" y="250" fill="#c62d3f" font-size="16" text-anchor="middle">→ back</text>
 
-  <text x="132" y="34" fill="#c8c8c8" font-size="15" letter-spacing="1.5" text-anchor="middle">ASK</text>
-  <text x="392" y="34" fill="#c8c8c8" font-size="15" letter-spacing="1.5" text-anchor="middle">CONTRACT</text>
+  <text x="132" y="34" fill="#495057" font-size="15" letter-spacing="1.5" text-anchor="middle">ASK</text>
+  <text x="392" y="34" fill="#495057" font-size="15" letter-spacing="1.5" text-anchor="middle">CONTRACT</text>
 
   <!-- asking lane -->
-  <rect x="36" y="48" width="192" height="64" rx="6" fill="#2a2a2a" stroke="#8a8a8a"/>
-  <text x="132" y="90" fill="#ffffff" font-size="25" font-weight="600" text-anchor="middle">Prompt</text>
+  <rect x="36" y="48" width="192" height="64" rx="6" fill="#e8eff6" stroke="#6c757d"/>
+  <text x="132" y="90" fill="#212529" font-size="25" font-weight="600" text-anchor="middle">Prompt</text>
 
-  <rect x="36" y="152" width="192" height="64" rx="6" fill="#2a2a2a" stroke="#8a8a8a"/>
-  <text x="132" y="193" fill="#ffffff" font-size="25" font-weight="600" text-anchor="middle">Answer</text>
+  <rect x="36" y="152" width="192" height="64" rx="6" fill="#e8eff6" stroke="#6c757d"/>
+  <text x="132" y="193" fill="#212529" font-size="25" font-weight="600" text-anchor="middle">Answer</text>
 
-  <rect x="36" y="256" width="192" height="64" rx="6" fill="#2a2a2a" stroke="#8a8a8a"/>
-  <text x="132" y="286" fill="#ffffff" font-size="25" font-weight="600" text-anchor="middle">You judge</text>
-  <text x="132" y="309" fill="#9a9a9a" font-size="17" text-anchor="middle">by impression</text>
+  <rect x="36" y="256" width="192" height="64" rx="6" fill="#e8eff6" stroke="#6c757d"/>
+  <text x="132" y="286" fill="#212529" font-size="25" font-weight="600" text-anchor="middle">You judge</text>
+  <text x="132" y="309" fill="#6c757d" font-size="17" text-anchor="middle">by impression</text>
 
-  <text x="132" y="384" fill="#9a9a9a" font-size="16" text-anchor="middle">nothing to re-run</text>
-  <text x="132" y="406" fill="#9a9a9a" font-size="16" text-anchor="middle">nothing checked</text>
+  <text x="132" y="384" fill="#6c757d" font-size="16" text-anchor="middle">nothing to re-run</text>
+  <text x="132" y="406" fill="#6c757d" font-size="16" text-anchor="middle">nothing checked</text>
 
   <!-- contracting lane -->
-  <rect x="296" y="48" width="192" height="64" rx="6" fill="#2a2a2a" stroke="#3b6fc4" stroke-width="2"/>
-  <text x="392" y="90" fill="#ffffff" font-size="25" font-weight="600" text-anchor="middle">Rules</text>
+  <rect x="296" y="48" width="192" height="64" rx="6" fill="#e8eff6" stroke="#165A97" stroke-width="2"/>
+  <text x="392" y="90" fill="#212529" font-size="25" font-weight="600" text-anchor="middle">Rules</text>
 
-  <rect x="296" y="152" width="192" height="64" rx="6" fill="#2a2a2a" stroke="#3b6fc4" stroke-width="2"/>
-  <text x="392" y="193" fill="#ffffff" font-size="25" font-weight="600" text-anchor="middle">Agent works</text>
+  <rect x="296" y="152" width="192" height="64" rx="6" fill="#e8eff6" stroke="#165A97" stroke-width="2"/>
+  <text x="392" y="193" fill="#212529" font-size="25" font-weight="600" text-anchor="middle">Agent works</text>
 
-  <rect x="296" y="256" width="192" height="64" rx="6" fill="#2a2a2a" stroke="#3b6fc4" stroke-width="2"/>
-  <text x="392" y="286" fill="#ffffff" font-size="25" font-weight="600" text-anchor="middle">Verification</text>
-  <text x="392" y="309" fill="#9a9a9a" font-size="17" text-anchor="middle">acceptance criteria</text>
+  <rect x="296" y="256" width="192" height="64" rx="6" fill="#e8eff6" stroke="#165A97" stroke-width="2"/>
+  <text x="392" y="286" fill="#212529" font-size="25" font-weight="600" text-anchor="middle">Verification</text>
+  <text x="392" y="309" fill="#6c757d" font-size="17" text-anchor="middle">acceptance criteria</text>
 
-  <text x="392" y="384" fill="#9a9a9a" font-size="16" text-anchor="middle">re-runnable, auditable</text>
-  <text x="392" y="406" fill="#3b6fc4" font-size="16" font-weight="600" text-anchor="middle">deliverable, not draft</text>
+  <text x="392" y="384" fill="#6c757d" font-size="16" text-anchor="middle">re-runnable, auditable</text>
+  <text x="392" y="406" fill="#165A97" font-size="16" font-weight="600" text-anchor="middle">deliverable, not draft</text>
 </svg>

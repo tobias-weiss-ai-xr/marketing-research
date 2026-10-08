@@ -10,11 +10,11 @@ seminar**.
 
 | File | What |
 |---|---|
-| [`agentic-ai-for-lead-generation.md`](agentic-ai-for-lead-generation.md) | Deck source (Marp, 19 slides, speaker notes with timing) |
+| [`agentic-ai-for-lead-generation.md`](agentic-ai-for-lead-generation.md) | Deck source (Marp, 19 slides, JLU design: white background, JLU blue, speaker notes with timing) |
 | [`agentic-ai-for-lead-generation.html`](agentic-ai-for-lead-generation.html) | Rendered deck (open in browser) |
 | [`agentic-ai-for-lead-generation.pdf`](agentic-ai-for-lead-generation.pdf) | PDF for sharing / printing |
 | [`agentic-ai-for-lead-generation.pptx`](agentic-ai-for-lead-generation.pptx) | PowerPoint export |
-| [`img/`](img/) | Custom SVG diagrams used by the slides |
+| [`img/`](img/) | Custom SVG diagrams (light, JLU colours) + JLU logo used by the slides |
 | [`demo/`](demo/) | Demo kit for the live walkthrough: `AGENTS.md` contract, kickoff prompt + narration (`demo-script.md`), `shortlist-template.md` target format |
 
 ## Structure (35 min + 10 min Q&A)
