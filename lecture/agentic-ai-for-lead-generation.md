@@ -52,7 +52,7 @@ style: |
 
 # Agentic AI for Lead Generation
 
-## Partnership Companies for the Marketing Chair
+## Partner companies for the Marketing Chair
 
 Tobias Weiß · Guest Lecture · Marketing Chair
 
@@ -122,6 +122,8 @@ models the method; trying it yourself is the exercise afterwards.
 (15 s) Show the arc; the walkthrough (block 3) is where the method
 becomes visible. Q&A is a fixed 10-minute block at the end — bank
 questions during the talk ("hold that for Q&A") to protect the timing.
+The per-slide notes sum to ~32 min; the remaining ~3 min are buffer
+for transitions and demo hiccups.
 -->
 
 ---
@@ -168,16 +170,17 @@ The loop is what makes it "agentic": it iterates, checks, corrects.
 |---|---|
 | Papers mentioning **agentic AI** | 91 |
 | Papers on **lead generation** | 27 |
-| **Both** (agentic × lead-gen) | 5 |
+| **Both** (agentic × lead-gen) | 0 |
 
-> The field is exploding — and the marketing**chair** can be at the front.
+> The field is exploding — and nobody connects the two yet. This chair can be first.
 
 <!-- notes:
 (2 min) Ground the hype in data from the chair's own open research
 corpus (marketing-research, public on GitHub). Agentic papers exist,
-lead-gen papers exist, but nearly nobody connects both yet. This is
-a research gap AND a practical opportunity. Number on screen: 2026
-alone produced 7,771 of the 13,096 papers.
+lead-gen papers exist, but the intersection is literally ZERO. Say
+that number out loud — it lands harder than "nearly nobody": a
+research gap AND a practical opportunity. 2026 alone produced 7,771
+of the 13,096 papers.
 -->
 
 ---
@@ -343,7 +346,7 @@ students may embed it in internships and theses.
 | Provider / offer | What you get | Where |
 |---|---|---|
 | **JLU HRZ API-Service** ⭐ | LLMs for all JLU members: free local Qwen models (256K–1M ctx) + commercial, works with OpenCode / Claude Code | [uni-giessen.de HRZ API-Service](https://www.uni-giessen.de/de/fbz/svc/hrz/svc/services/ki/api-service) · access via **ki@uni-giessen.de** |
-| **Google AI student plan** | 1 year Google AI **Plus** free · Gemini, higher limits, 400 GB | [one.google.com/ai-student](https://one.google.com/ai-student?g1_landing_page=75) — verify with university email |
+| **Google AI student plan** | 1 year Google AI **Plus** free · Gemini, higher limits, 400 GB | [one.google.com/ai-student](https://one.google.com/ai-student?g1_landing_page=75) — verify via SheerID (student status) |
 | **OpenRouter** | one API key → many models (OpenAI, Anthropic, Google, open) · free models + pay-as-you-go | [openrouter.ai](https://openrouter.ai) |
 | **Harnesses** | the tools from today's demo — **OpenCode**, pi (work with any key above) | [opencode.ai](https://opencode.ai) · [pi.dev](https://pi.dev) |
 | **Local models (Ollama)** | free, run on your own laptop, no account, private | [ollama.com](https://ollama.com) |
