@@ -59,7 +59,7 @@ The output of this session is the input for the Bachelor seminar.
 - The chair partners with companies: funding, data, cases
 - Finding + qualifying partners is manual, slow, unscalable
 - Agentic AI can research, score and rank prospects
-- **Your output = input for the Bachelor seminar**
+- **Demo output = input for your Bachelor seminar**
 
 > Nobody wins from another lecture about chatbots.
 
@@ -79,7 +79,7 @@ becomes the working dataset the Bachelor students build on.
 | **Understand** | Explain what "agentic" means, and why it is not a chatbot |
 | **Operate** | Read how a harness (pi) gives an AI tools, rules and a task |
 | **Assess** | Judge an agentic output: checked? citable? repeatable? |
-| **Apply** | Use the demoed loop (contract → run → verify) for partner sourcing |
+| **Apply** | Reuse the loop from the demo (contract → run → verify) for partner sourcing |
 
 > Model = brain. Harness = hands. Workflow = muscles.
 
@@ -199,16 +199,6 @@ criteria. This exact pipeline is what the walkthrough demonstrates
 live in the next block.
 -->
 
-<!-- fallback: keep the step text for PDF/print contexts if the SVG
-is unavailable.
-1  DEFINE   → ICP for the chair's partner programme
-2  SOURCE   → browser + search: prospects, events, funding
-3  QUALIFY  → score company vs ICP (fit signals, evidence)
-4  RECORD   → every claim with a URL, save as data
-5  VERIFY   → citations resolve, no invented facts
-6  OUTPUT   → ranked shortlist → Bachelor seminar input
--->
-
 ---
 
 ## Now: a live walkthrough
@@ -219,7 +209,7 @@ Task: build the **partner-candidate shortlist** (top 10 B2B companies) with:
 - Named source URL per claim (citable, verifiable)
 - Ranked output — your input for the Bachelor seminar
 
-I run this live in a harness — what you see is what the agents do.
+I run this live in a harness — what you see is what the agent does.
 
 <!-- notes:
 (30 s) Frame the demo: no hands-on today, a walkthrough instead. The
@@ -264,7 +254,7 @@ Watch the six-step loop run live:
 - scores against **the contract** → markdown table with **URLs**
 - **iterates**: pause, correct, re-check — that is the loop
 
-> The plan lives on screen. Done means: verified, cited, repeatable.
+> Nothing happens off-screen — the loop is fully visible.
 
 <!-- notes:
 (8 min) THE core demo. Run the analysis loop live in pi. Narrate:
@@ -342,7 +332,7 @@ students may embed it in internships and theses.
 | **JLU HRZ API-Service** ⭐ | LLMs for all JLU members: free local Qwen models (256K–1M ctx) + commercial, works with OpenCode / Claude Code | [uni-giessen.de HRZ API-Service](https://www.uni-giessen.de/de/fbz/svc/hrz/svc/services/ki/api-service) · access via **ki@uni-giessen.de** |
 | **Google AI student plan** | 1 year Google AI **Plus** free · Gemini, higher limits, 400 GB | [one.google.com/ai-student](https://one.google.com/ai-student?g1_landing_page=75) — verify with university email |
 | **OpenRouter** | one API key → many models (OpenAI, Anthropic, Google, open) · free models + pay-as-you-go | [openrouter.ai](https://openrouter.ai) |
-| **Harnesses** | the tools from today's demo — **OpenCode**, pi (any API key above, incl. HRZ) | [opencode.ai](https://opencode.ai) · [pi.dev](https://pi.dev) |
+| **Harnesses** | the tools from today's demo — **OpenCode**, pi (work with any key above) | [opencode.ai](https://opencode.ai) · [pi.dev](https://pi.dev) |
 | **Local models (Ollama)** | free, run on your own laptop, no account, private | [ollama.com](https://ollama.com) |
 
 > Start with **HRZ API**: free for JLU members · Google deal expires **Dec 31, 2026**.
@@ -371,7 +361,7 @@ what the walkthrough just used.
 3. Contract first: define "done" before you start
 4. Verify, cite, repeat — the three questions
 
-> Next week: your shortlist becomes the Bachelor seminar's input.
+> Next week: this shortlist becomes the Bachelor seminar's input.
 
 <!-- notes:
 (1 min) Recap the four take-aways. Close the loop: the artefact —

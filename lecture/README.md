@@ -17,14 +17,15 @@ seminar**.
 | [`img/`](img/) | Custom SVG diagrams used by the slides |
 | [`demo/`](demo/) | Demo kit for the live walkthrough: `AGENTS.md` contract, kickoff prompt + narration (`demo-script.md`), `shortlist-template.md` target format |
 
-## Structure (45 min)
+## Structure (35 min + 10 min Q&A)
 
 | Block | Content | Time |
 |---|---|---|
-| 1 · Foundations | agentic ≠ chat · model · harness · loop | ~12 min |
-| 2 · Method | contracts · the lead-gen loop · corpus evidence | ~8 min |
-| 3 · Walkthrough | live demo: contract → agent at work → the three questions | ~15 min |
-| 4 · Reflection | AI providers for students · take-aways · resources · Q&A | ~10 min |
+| 1 · Foundations | agentic ≠ chat · model · harness · loop | ~10 min |
+| 2 · Method | contracts · the lead-gen loop · corpus evidence | ~7 min |
+| 3 · Walkthrough | live demo: contract → agent at work → the three questions | ~13 min |
+| 4 · Reflection | AI providers for students · take-aways · resources | ~5 min |
+| 5 · Q&A | your questions · discussion | 10 min |
 
 ## Rebuild
 

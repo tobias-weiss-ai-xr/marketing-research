@@ -9,7 +9,7 @@ folder; the target result looks like [`shortlist-template.md`](shortlist-templat
 - [ ] `pi` starts, model selected (fast model is fine — speed beats depth)
 - [ ] Browser tool (BrowserMCP/MCP) connects — open one company page once
 - [ ] This folder open in the editor: `lecture/demo/`
-- [ ] **Fallback:** `fallback-session.md` below — in case the hall has no net
+- [ ] **Fallback:** run the demo at home beforehand and save the pi transcript to `fallback-session.md` next to this file (offline backup)
 
 ## Kickoff prompt (paste after showing AGENTS.md)
 
@@ -41,6 +41,6 @@ Small scope on purpose: 2 companies, one industry — the demo must finish.
 ## Fallback (no network in the hall)
 
 1. Show `AGENTS.md` and walk through what *would* happen (slide 11–12).
-2. Show a saved session log: run the demo at home, save the pi transcript to
-   `lecture/demo/fallback-session.md`, walk the audience through it.
+2. Open the saved `fallback-session.md` transcript and walk the audience
+   through it.
 3. Still apply the three questions to the saved result — the method lands either way.

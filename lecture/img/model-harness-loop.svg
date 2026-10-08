@@ -8,8 +8,10 @@
   <text x="150" y="72" text-anchor="middle" font-size="21" font-weight="700" fill="#3b6fc4">Model</text>
   <text x="150" y="96" text-anchor="middle" font-size="15" fill="#9a9a9a">the reasoning engine</text>
   <circle cx="150" cy="160" r="42" fill="#2a2a2a" stroke="#555" stroke-width="2"/>
-  <path d="M138 148 C 150 130 170 130 182 148" fill="none" stroke="#e8e8e8" stroke-width="3"/>
-  <path d="M140 178 C 150 162 172 162 182 180" fill="none" stroke="#e8e8e8" stroke-width="2" opacity="0.45"/>
+  <path d="M 126 162 C 120 152 124 140 136 138 C 140 128 156 126 162 132 C 174 128 184 138 182 148 C 190 156 186 168 176 172 C 174 180 162 182 156 178 C 146 184 132 180 130 172 C 124 170 124 166 126 162 Z"
+        fill="none" stroke="#e8e8e8" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 142 150 C 148 144 156 146 158 152" fill="none" stroke="#e8e8e8" stroke-width="1.8" opacity="0.7"/>
+  <path d="M 146 164 C 154 158 162 162 164 168" fill="none" stroke="#e8e8e8" stroke-width="1.8" opacity="0.7"/>
   <text x="150" y="228" text-anchor="middle" font-size="16" fill="#e8e8e8">the brain</text>
   <text x="150" y="252" text-anchor="middle" font-size="14" fill="#9a9a9a">thinks, reasons, decides</text>
 

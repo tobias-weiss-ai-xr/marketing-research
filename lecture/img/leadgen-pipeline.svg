@@ -12,42 +12,42 @@
     <!-- 1 DEFINE (human) -->
     <rect x="20" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#3b6fc4" stroke-width="2"/>
     <circle cx="55" cy="148" r="13" fill="#3b6fc4"/><text x="55" y="153" text-anchor="middle" font-size="14" fill="#fff">1</text>
-    <text x="90" y="154" fill="#fff" font-size="19">DEFINE</text>
+    <text x="90" y="154" fill="#fff" font-size="17">DEFINE</text>
     <text x="90" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">ICP + criteria</text>
     <text x="90" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">(human)</text>
 
     <!-- 2 SOURCE -->
     <rect x="176" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#555"/>
     <circle cx="211" cy="148" r="13" fill="#555"/><text x="211" y="153" text-anchor="middle" font-size="14" fill="#fff">2</text>
-    <text x="246" y="154" fill="#fff" font-size="19">SOURCE</text>
+    <text x="246" y="154" fill="#fff" font-size="17">SOURCE</text>
     <text x="246" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">browser + search</text>
-    <text x="246" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">prospects · events · funding</text>
+    <text x="246" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">pages, events, news</text>
 
     <!-- 3 QUALIFY -->
     <rect x="332" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#555"/>
     <circle cx="367" cy="148" r="13" fill="#555"/><text x="367" y="153" text-anchor="middle" font-size="14" fill="#fff">3</text>
-    <text x="402" y="154" fill="#fff" font-size="19">QUALIFY</text>
+    <text x="402" y="154" fill="#fff" font-size="17">QUALIFY</text>
     <text x="402" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">score vs criteria</text>
     <text x="402" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">fit signals, evidence</text>
 
     <!-- 4 RECORD -->
     <rect x="488" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#555"/>
     <circle cx="523" cy="148" r="13" fill="#555"/><text x="523" y="153" text-anchor="middle" font-size="14" fill="#fff">4</text>
-    <text x="558" y="154" fill="#fff" font-size="19">RECORD</text>
+    <text x="558" y="154" fill="#fff" font-size="17">RECORD</text>
     <text x="558" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">claims + URLs</text>
     <text x="558" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">saved as data</text>
 
     <!-- 5 VERIFY -->
     <rect x="644" y="120" width="140" height="118" rx="10" fill="#1f1f1f" stroke="#555"/>
     <circle cx="679" cy="148" r="13" fill="#555"/><text x="679" y="153" text-anchor="middle" font-size="14" fill="#fff">5</text>
-    <text x="714" y="154" fill="#fff" font-size="19">VERIFY</text>
+    <text x="714" y="154" fill="#fff" font-size="17">VERIFY</text>
     <text x="714" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">citations resolve</text>
     <text x="714" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">no invented facts</text>
 
     <!-- 6 OUTPUT (human) -->
     <rect x="800" y="120" width="160" height="118" rx="10" fill="#1f1f1f" stroke="#6fbf73" stroke-width="2"/>
     <circle cx="835" cy="148" r="13" fill="#6fbf73"/><text x="835" y="153" text-anchor="middle" font-size="14" fill="#fff">6</text>
-    <text x="870" y="154" fill="#fff" font-size="19">OUTPUT</text>
+    <text x="870" y="154" fill="#fff" font-size="17">OUTPUT</text>
     <text x="880" y="186" text-anchor="middle" font-size="13" font-weight="400" fill="#c8c8c8">ranked shortlist</text>
     <text x="880" y="206" text-anchor="middle" font-size="13" font-weight="400" fill="#9a9a9a">(human)</text>
   </g>

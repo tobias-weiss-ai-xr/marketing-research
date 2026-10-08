@@ -21,7 +21,7 @@
   <path d="M 484 288 L 508 288 Q 516 288 516 280 L 516 192 Q 516 184 508 184 L 484 184"
         fill="none" stroke="#ff8a8a" stroke-width="1.6" marker-end="url(#cp-ar-fail)"/>
 
-  <text x="392" y="346" fill="#7ee2a8" font-size="16" text-anchor="middle">pass → done</text>
+  <text x="404" y="346" fill="#7ee2a8" font-size="16">pass → done</text>
   <rect x="470" y="212" width="80" height="44" fill="#1a1a1a"/>
   <text x="510" y="230" fill="#ff8a8a" font-size="16" text-anchor="middle">fail</text>
   <text x="510" y="250" fill="#ff8a8a" font-size="16" text-anchor="middle">→ back</text>

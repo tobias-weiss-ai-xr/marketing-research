@@ -16,6 +16,8 @@
 > analytics, privacy-first data, CX & retail, B2B/ABM — analyzed with the same
 > pipeline as the other `*-research` corpus repos.
 
+> 🎓 **Teaching:** Guest lecture *Agentic AI for Lead Generation* (45 min, EN, marketing chair) — see [`lecture/`](lecture/README.md).
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/tobias-weiss-ai-xr/marketing-research/main/assets/visualizations/category_distribution.png" alt="Teaser" width="600" />
 </p>
