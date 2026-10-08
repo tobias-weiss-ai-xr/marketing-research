@@ -110,9 +110,9 @@ models the method; trying it yourself is the exercise afterwards.
 
 | Block | Content | Time |
 |---|---|---|
-| 1 · Foundations | agentic ≠ chat · model · harness · loop | ~10 min |
-| 2 · Method | contracts · the lead-gen loop · evidence | ~7 min |
-| 3 · Walkthrough | live demo: contract → agent → verify | ~13 min |
+| 1 · Foundations | agentic ≠ chat · model · harness · loop | ~8 min |
+| 2 · Method | contracts · the lead-gen loop · evidence | ~6 min |
+| 3 · Walkthrough | live demo: contract → agent → verify | ~14 min |
 | 4 · Reflection | providers · take-aways · resources | ~5 min |
 | 5 · Q&A | your questions · discussion | 10 min |
 
@@ -122,8 +122,8 @@ models the method; trying it yourself is the exercise afterwards.
 (15 s) Show the arc; the walkthrough (block 3) is where the method
 becomes visible. Q&A is a fixed 10-minute block at the end — bank
 questions during the talk ("hold that for Q&A") to protect the timing.
-The per-slide notes sum to ~32 min; the remaining ~3 min are buffer
-for transitions and demo hiccups.
+The per-slide notes sum to ~32 min; the gap to 35 is deliberate
+buffer for transitions and demo hiccups.
 -->
 
 ---
@@ -149,7 +149,7 @@ touch the world (browser, files, APIs) and check its own work.
 
 ![h:300](img/model-harness-loop.svg)
 
-**Harnesses (2026):** pi, OpenCode, open-source ecosystems — same models, different results, depending on the harness.
+**Harnesses (2026):** pi, OpenCode, Claude Code — same model, different results. The harness decides.
 
 <!-- notes:
 (2.5 min) Keep it simple. The model is the part students already know.
@@ -219,7 +219,7 @@ live in the next block.
 
 ## Now: a live walkthrough
 
-Task: build the **partner-candidate shortlist** (top 10 B2B companies) with:
+Task: build the **partner-candidate shortlist** — top 10 B2B companies (live today: 2 of them) with:
 
 - Fit signal per company vs. the chair's partnership goals
 - Named source URL per claim (citable, verifiable)

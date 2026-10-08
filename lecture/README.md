@@ -21,9 +21,9 @@ seminar**.
 
 | Block | Content | Time |
 |---|---|---|
-| 1 · Foundations | agentic ≠ chat · model · harness · loop | ~10 min |
-| 2 · Method | contracts · the lead-gen loop · corpus evidence | ~7 min |
-| 3 · Walkthrough | live demo: contract → agent at work → the three questions | ~13 min |
+| 1 · Foundations | agentic ≠ chat · model · harness · loop | ~8 min |
+| 2 · Method | contracts · the lead-gen loop · corpus evidence | ~6 min |
+| 3 · Walkthrough | live demo: contract → agent at work → the three questions | ~14 min |
 | 4 · Reflection | AI providers for students · take-aways · resources | ~5 min |
 | 5 · Q&A | your questions · discussion | 10 min |
 
