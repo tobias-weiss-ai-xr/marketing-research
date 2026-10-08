@@ -15,6 +15,7 @@ seminar**.
 | [`agentic-ai-for-lead-generation.pdf`](agentic-ai-for-lead-generation.pdf) | PDF for sharing / printing |
 | [`agentic-ai-for-lead-generation.pptx`](agentic-ai-for-lead-generation.pptx) | PowerPoint export |
 | [`img/`](img/) | Custom SVG diagrams used by the slides |
+| [`demo/`](demo/) | Demo kit for the live walkthrough: `AGENTS.md` contract, kickoff prompt + narration (`demo-script.md`), `shortlist-template.md` target format |
 
 ## Structure (45 min)
 

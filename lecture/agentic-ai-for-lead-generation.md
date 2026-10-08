@@ -46,7 +46,7 @@ Tobias Weiß · Guest Lecture · Marketing Chair
 45 minutes · BWL Master students
 
 <!-- notes:
-(1 min) Welcome. What this lecture is: what agentic AI is, and how
+(45 s) Welcome. What this lecture is: what agentic AI is, and how
 to operate it through a harness. Everything we do maps to one real
 task: helping the chair find and qualify B2B partner companies.
 The output of this session is the input for the Bachelor seminar.
@@ -64,7 +64,7 @@ The output of this session is the input for the Bachelor seminar.
 > Nobody wins from another lecture about chatbots.
 
 <!-- notes:
-(1 min) Concrete goal for the students: by the end you can RECOGNISE
+(45 s) Concrete goal for the students: by the end you can RECOGNISE
 and judge an agentic workflow — and read the contract that drives it.
 The artefact shown in the walkthrough (a ranked lead list with sources)
 becomes the working dataset the Bachelor students build on.
@@ -93,20 +93,22 @@ models the method; trying it yourself is the exercise afterwards.
 
 <!-- _class: smaller -->
 
-## Roadmap — 45 minutes
+## Roadmap — 35 min + 10 min Q&A
 
 | Block | Content | Time |
 |---|---|---|
-| 1 · Foundations | agentic ≠ chat · model · harness · loop | ~12 min |
-| 2 · Method | contracts · the lead-gen loop · evidence | ~8 min |
-| 3 · Walkthrough | live demo: contract → agent → verify | ~15 min |
-| 4 · Reflection | providers · take-aways · resources · Q&A | ~10 min |
+| 1 · Foundations | agentic ≠ chat · model · harness · loop | ~10 min |
+| 2 · Method | contracts · the lead-gen loop · evidence | ~7 min |
+| 3 · Walkthrough | live demo: contract → agent → verify | ~13 min |
+| 4 · Reflection | providers · take-aways · resources | ~5 min |
+| 5 · Q&A | your questions · discussion | 10 min |
 
-> The walkthrough is the heart — theory is fuel for it.
+> The walkthrough is the heart — theory is fuel for it. **10 minutes are reserved for your questions.**
 
 <!-- notes:
 (15 s) Show the arc; the walkthrough (block 3) is where the method
-becomes visible. Q&A stays flexible at the end.
+becomes visible. Q&A is a fixed 10-minute block at the end — bank
+questions during the talk ("hold that for Q&A") to protect the timing.
 -->
 
 ---
@@ -118,7 +120,7 @@ becomes visible. Q&A stays flexible at the end.
 > "Agentic" is a working environment — not a better chat.
 
 <!-- notes:
-(3 min) Left: chat — question in, answer out, no tools, no files.
+(2.5 min) Left: chat — question in, answer out, no tools, no files.
 Right: agent — a goal, a plan, tools, verification, inside a harness
 that grants access. The amber loop is where the work happens.
 The students' common misconception: "agentic = a smarter ChatGPT".
@@ -135,7 +137,7 @@ touch the world (browser, files, APIs) and check its own work.
 **Harnesses (2026):** pi, OpenCode, open-source ecosystems — same models, different results, depending on the harness.
 
 <!-- notes:
-(3 min) Keep it simple. The model is the part students already know.
+(2.5 min) Keep it simple. The model is the part students already know.
 The harness is the missing piece this lecture adds: an executable
 environment (terminal, browser, files) + permissions + memory.
 The loop is what makes it "agentic": it iterates, checks, corrects.
@@ -243,9 +245,10 @@ Rules:     no invented facts; if unsure, mark as unverified
 > Done means: verified, cited, repeatable.
 
 <!-- notes:
-(2 min) Show the contract as the first artifact. The students see that
-"prompting" an agent starts with writing rules, not typing a question.
-This slide is the live file on screen.
+(2 min) Show the contract as the first artifact — the live file is
+lecture/demo/AGENTS.md in this repo. The students see that "prompting"
+an agent starts with writing rules, not typing a question. Full demo
+narration + kickoff prompt: lecture/demo/demo-script.md.
 -->
 
 ---
@@ -264,7 +267,7 @@ Watch the six-step loop run live:
 > The plan lives on screen. Done means: verified, cited, repeatable.
 
 <!-- notes:
-(6-8 min) THE core demo. Run the analysis loop live in pi. Narrate:
+(8 min) THE core demo. Run the analysis loop live in pi. Narrate:
 (1) it opens the browser via MCP/BrowserMCP, searches for prospect
 companies; (2) it reads real pages and extracts fit signals; (3) it
 scores against the contract; (4) it writes a markdown table with URLs;
@@ -323,7 +326,7 @@ Point to resources slide for how to start.
 > The lecture is not the output. The shortlist is.
 
 <!-- notes:
-(2 min) Make the value exchange explicit — why the chair invested in
+(1.5 min) Make the value exchange explicit — why the chair invested in
 this guest lecture. Also honest note: the method is open and reusable;
 students may embed it in internships and theses.
 -->
@@ -345,7 +348,7 @@ students may embed it in internships and theses.
 > Start with **HRZ API**: free for JLU members · Google deal expires **Dec 31, 2026**.
 
 <!-- notes:
-(2 min) Practical slide — what students can use NOW. Lead with the
+(1.5 min) Practical slide — what students can use NOW. Lead with the
 JLU HRZ API-Service: LLM endpoints for all JLU members, open-source
 (qwen3-coder-next 256K, qwen3.8-27b 1M) and commercial models; access
 by emailing ki@uni-giessen.de; configured in OpenCode via LiteLLM
@@ -385,7 +388,7 @@ seminar. That is the "output as input" promise from the title slide.
 - **Google AI student plan** — [one.google.com/ai-student](https://one.google.com/ai-student?g1_landing_page=75) (1 year free for students)
 - **marketing-research** (chair corpus, public) — [github.com/tobias-weiss-ai-xr/marketing-research](https://github.com/tobias-weiss-ai-xr/marketing-research)
 - **skeleton-research** (forkable corpus skeleton) — [github.com/tobias-weiss-ai-xr/skeleton-research](https://github.com/tobias-weiss-ai-xr/skeleton-research)
-- **This deck** — in this workshop repo (English, 45 min)
+- **This deck** — [`lecture/`](.) in this corpus repo (English, 45 min)
 
 <!-- notes:
 (30 s) Do not read aloud; everything here is public and re-usable.
@@ -412,7 +415,7 @@ Tobias Weiß · guest lecture · Marketing Chair
 Agentic AI for Lead Generation · 45 min
 
 <!-- notes:
-(5-10 min) Q&A + apply the three questions to the walkthrough result.
+(10 min) Q&A + apply the three questions to the walkthrough result.
 Likely questions: model choice (harness is model-agnostic; pi switches
 model with Ctrl+L), costs (cheap models + tight contracts), data
 privacy (local models), what "qualified" means (the contract), and how
