@@ -9,6 +9,7 @@ statistics.json
 docs/topics/
 verify-sources-report.json
 results/
+*.eml
 .af-state/
 af-campaigns/research-sophistication/run.log
 af-campaigns/research-sophistication/run-code.log
