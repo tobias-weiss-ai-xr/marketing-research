@@ -84,8 +84,8 @@
 </header>
 
 <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('papers')">📄 Papers</button>
-    <button class="tab-btn" onclick="showTab('stats')">📊 Statistics</button>
+    <button class="tab-btn active" id="tabPapers" onclick="showTab('papers')">📄 Papers</button>
+    <button class="tab-btn" id="tabStats" onclick="showTab('stats')">📊 Statistics</button>
 </div>
 
 <div id="papersView">
@@ -186,25 +186,77 @@ function render() {
         (filtered.length > 200 ? `<div class="empty">Showing 200 of ${filtered.length.toLocaleString()} matches. Refine your search.</div>` : '');
 }
 
-function loadStats() {
-    try {
-        stats = (typeof STATS_DATA !== 'undefined') ? STATS_DATA : null;
-        if (!stats) throw new Error('no data');
-        renderStats();
-    } catch (e) {
-        document.getElementById('statsContent').innerHTML =
-            '<div class="empty">Could not load statistics.</div>';
-    }
+function showTab(name, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    (btn || document.getElementById(name === 'papers' ? 'tabPapers' : 'tabStats')).classList.add('active');
+    document.getElementById('papersView').classList.toggle('hidden', name !== 'papers');
+    document.getElementById('statsView').classList.toggle('hidden', name !== 'stats');
+    if (name === 'stats' && !stats) loadStats();
 }
 
-function bar(label, value, max, suffix) {
-    const pct = max ? (value / max * 100) : 0;
-    return `<div class="bar-row">
+// Interactive: jump from a stats element into the pre-filtered Papers view.
+function jumpToCategory(cat) {
+    document.getElementById('catFilter').value = cat;
+    document.getElementById('subFilter').value = '';
+    document.getElementById('search').value = '';
+    showTab('papers');
+    render();
+}
+function jumpToCell(cell) {
+    const parts = (cell || '').split('/');
+    document.getElementById('catFilter').value = parts[0] || '';
+    document.getElementById('subFilter').value = parts[1] || '';
+    document.getElementById('search').value = '';
+    showTab('papers');
+    render();
+}
+
+function loadStats() {
+    const fail = () => { document.getElementById('statsContent').innerHTML =
+        '<div class="empty">Could not load statistics.</div>'; };
+    if (typeof STATS_DATA !== 'undefined' && STATS_DATA) {
+        stats = STATS_DATA;
+        try { renderStats(); return; } catch (e) { console.error('renderStats failed:', e); fail(); return; }
+    }
+    // Fallback: fetch (only if the precompiled payload is missing)
+    fetch('statistics.json').then(r => r.json()).then(s => { stats = s; renderStats(); }).catch(fail);
+}
+
+const fmt = (n) => Number(n || 0).toLocaleString();
+
+function card(title, fn) {
+    try { return `<div class="card"><h2>${title}</h2>${fn()}</div>`; }
+    catch (e) { console.error('stats card failed:', title, e); return ''; }
+}
+
+function bar(label, value, max, opts) {
+    const o = opts || {};
+    const v = Number(value || 0);
+    const mx = Number(max || v) || 1;
+    const pct = Math.min(100, v / mx * 100);
+    const click = o.onclick ? ` onclick="${o.onclick}" style="cursor:pointer"` : '';
+    return `<div class="bar-row"${click}>
         <div class="bar-label" title="${esc(label)}">${esc(label)}</div>
         <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
-        <div class="bar-val">${value.toLocaleString()}${suffix || ''}</div>
+        <div class="bar-val">${fmt(v)}${o.suffix || ''}</div>
     </div>`;
 }
+
+function tblTable(headers, rows) {
+    return `<table class="stats-tbl"><thead><tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>` +
+        rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('') +
+        `</tbody></table>`;
+}
+
+const CAT_DISPLAY = {
+    'ai-marketing':'AI & Marketing','digital-marketing':'Digital & Performance Marketing',
+    'social-media':'Social Media & Creator Marketing','content-marketing':'Content & Storytelling',
+    'consumer-behavior':'Consumer Behavior & Psychology','brand':'Brand Strategy & Management',
+    'analytics':'Analytics, Attribution & Measurement','privacy-data':'Data, Privacy & Cookieless Advertising',
+    'cx-retail':'Customer Experience, Omnichannel & Retail','b2b':'B2B & Account-Based Marketing',
+    'survey':'Surveys, Trends & Meta-Studies'
+};
+const catName = (id) => CAT_DISPLAY[id] || id;
 
 function renderStats() {
     const m = stats.metadata || {};
@@ -213,74 +265,58 @@ function renderStats() {
     const subs = Object.entries(stats.by_subcategory || {}).sort((a,b) => b[1]-a[1]);
     const maxSub = subs.length ? subs[0][1] : 1;
     const bursts = (stats.keyword_bursts || []).slice(0, 12);
-    const maxBurst = bursts.length ? Math.max(...bursts.map(b => b.total)) : 1;
-    const gaps = (stats.gaps && stats.gaps.thinnest_cells) ? stats.gaps.thinnest_cells.slice(0, 10) : [];
+    const gaps = ((stats.gaps || {}).thinnest_cells || []).slice(0, 10);
+    // venue + author entries are objects {name, papers} — NOT tuples
     const venues = (stats.venues || []).slice(0, 10);
-    const maxVenue = venues.length ? venues[0][1] : 1;
-
-    const catDisplay = {
-        'ai-marketing':'AI & Marketing','digital-marketing':'Digital & Performance Marketing',
-        'social-media':'Social Media & Creator Marketing','content-marketing':'Content & Storytelling',
-        'consumer-behavior':'Consumer Behavior & Psychology','brand':'Brand Strategy & Management',
-        'analytics':'Analytics, Attribution & Measurement','privacy-data':'Data, Privacy & Cookieless Advertising',
-        'cx-retail':'Customer Experience, Omnichannel & Retail','b2b':'B2B & Account-Based Marketing',
-        'survey':'Surveys, Trends & Meta-Studies'
-    };
+    const maxVenue = venues.length ? Number(venues[0].papers || 0) : 1;
+    const authors = (stats.top_authors || []).slice(0, 10);
+    const maxAuthor = authors.length ? Number(authors[0].papers || 0) : 1;
+    const mom = (stats.momentum || []).slice(0, 8);
+    const y0 = (m.first_paper_date || '').slice(0, 4);
+    const y1 = (m.last_paper_date || '').slice(0, 4);
 
     let html = '';
-    // KPIs
-    html += `<div class="card"><h2>Corpus overview</h2>
+
+    html += card('Corpus overview', () => `
         <div class="kpi">
-            <div><div class="k">${(m.total_papers||0).toLocaleString()}</div><div class="lbl">Papers</div></div>
-            <div><div class="k">${Object.keys(stats.by_category||{}).length}</div><div class="lbl">Categories</div></div>
-            <div><div class="k">${m.year_span || '—'}</div><div class="lbl">Year span</div></div>
-            <div><div class="k">${(m.recent_12m||0).toLocaleString()}</div><div class="lbl">Last 12 months</div></div>
-            <div><div class="k">${((stats.source_breakdown||{}).arxiv||0).toLocaleString()}</div><div class="lbl">arXiv</div></div>
-        </div></div>`;
+            <div><div class="k">${fmt(m.total_papers)}</div><div class="lbl">Papers</div></div>
+            <div><div class="k">${cats.length}</div><div class="lbl">Categories</div></div>
+            <div><div class="k">${y0 && y1 ? y0 + '–' + y1 : '—'}</div><div class="lbl">Year span</div></div>
+            <div><div class="k">${fmt(m.recent_12m)}</div><div class="lbl">Last 12 months</div></div>
+            <div><div class="k">${fmt((stats.source_breakdown || {}).arxiv)}</div><div class="lbl">arXiv</div></div>
+        </div>`);
 
-    // Categories
-    html += `<div class="card"><h2>Categories</h2>`;
-    cats.forEach(([k,v]) => { html += bar(catDisplay[k]||k, v, maxCat); });
-    html += `</div>`;
+    html += card('Categories — click to browse', () =>
+        cats.map(([k, v]) =>
+            bar(catName(k), v, maxCat, { onclick: `jumpToCategory('${k}')` })).join(''));
 
-    // Subcategories
-    html += `<div class="card"><h2>Research lens (subcategory)</h2>`;
-    subs.forEach(([k,v]) => { html += bar(k.charAt(0).toUpperCase()+k.slice(1).replace('-',' '), v, maxSub); });
-    html += `</div>`;
+    html += card('Research lens', () =>
+        subs.map(([k, v]) =>
+            bar(k.charAt(0).toUpperCase() + k.slice(1).replace('-', ' '), v, maxSub)).join(''));
 
-    // Bursts
-    html += `<div class="card"><h2>Keyword bursts (12-month)</h2>
-        <table class="stats-tbl"><thead><tr><th>Keyword</th><th>Recent</th><th>Total</th><th>Burst</th></tr></thead><tbody>`;
-    bursts.forEach(b => {
-        html += `<tr><td>${esc(b.keyword)}</td><td>${b.recent}</td><td>${b.total}</td><td>${b.burst}×</td></tr>`;
-    });
-    html += `</tbody></table></div>`;
+    html += card('Keyword bursts (12-month)', () =>
+        tblTable(['Keyword', 'Recent', 'Total', 'Burst'],
+            bursts.map(b => [esc(b.keyword), fmt(b.recent), fmt(b.total),
+                             (b.burst_score || b.burst || 1) + '×'])));
 
-    // Gaps
-    html += `<div class="card"><h2>Thinnest cells (research gaps)</h2>
-        <table class="stats-tbl"><thead><tr><th>Cell</th><th>Papers</th></tr></thead><tbody>`;
-    gaps.forEach(g => { html += `<tr><td>${esc(g.cell)}</td><td>${g.papers}</td></tr>`; });
-    html += `</tbody></table></div>`;
+    html += card('Thinnest cells (research gaps) — click to browse', () =>
+        tblTable(['Cell', 'Papers'],
+            gaps.map(g => [`<a href="#" onclick="jumpToCell('${esc(g.cell)}');return false;">${esc(g.cell)}</a>`, fmt(g.papers)])));
 
-    // Venues
-    html += `<div class="card"><h2>Top venues</h2>`;
-    venues.forEach(([v,n]) => { html += bar(v, n, maxVenue); });
-    html += `</div>`;
+    html += card('Top venues', () =>
+        venues.map(v => bar(v.name, v.papers, maxVenue)).join(''));
 
-    // Momentum
-    const mom = (stats.momentum || []).slice(0, 8);
+    html += card('Top authors', () =>
+        authors.map(a => bar(a.name, a.papers, maxAuthor)).join(''));
+
     if (mom.length) {
-        html += `<div class="card"><h2>Research momentum (last 12 months)</h2>
-            <table class="stats-tbl"><thead><tr><th>Category</th><th>Total</th><th>Last 12m</th><th>Growth</th></tr></thead><tbody>`;
-        mom.forEach(r => {
-            html += `<tr><td>${esc(catDisplay[r.id]||r.id)}</td><td>${r.total}</td><td>${r.recent}</td><td>+${r.growth_pct}%</td></tr>`;
-        });
-        html += `</tbody></table></div>`;
+        html += card('Research momentum (last 12 months)', () =>
+            tblTable(['Category', 'Total', 'Last 12m', 'Growth'],
+                mom.map(r => [esc(catName(r.id)), fmt(r.total), fmt(r.recent), '+' + (r.growth_pct || 0) + '%'])));
     }
 
-    document.getElementById('statsContent').innerHTML = html;
+    document.getElementById('statsContent').innerHTML = html || '<div class="empty">No statistics available.</div>';
 }
-
 load();
 </script>
 </body>
