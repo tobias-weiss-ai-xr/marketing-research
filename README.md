@@ -1,7 +1,11 @@
 <h1 align="center">
   <strong>Marketing Research Corpus</strong>
 </h1>
-<h3 align="center">~14,000 papers · AI & generative marketing, digital & performance, social & creator, privacy-first data, analytics/MMM, B2B/ABM — browsable, reported, and tooled for teaching</h3>
+<h3 align="center">15,000+ papers · AI & generative marketing, digital & performance, social & creator, privacy-first data, analytics/MMM, B2B/ABM — browsable, reported, and tooled for teaching</h3>
+
+<p align="center">
+  <a href="https://tobias-weiss-ai-xr.github.io/marketing-research/"><strong>🔎 Browse the full corpus online — searchable papers + live statistics (GitHub Pages)</strong></a>
+</p>
 
 > 🎓 **Are you a marketing student?** Start with **[FOR_STUDENTS.md](FOR_STUDENTS.md)** — a short, non-technical onboarding path to browsing papers, reading the reports, and using the tools for coursework.
 
@@ -22,7 +26,7 @@
 | 🧭 **Per-topic briefs** | [docs/students/topic_briefs.md](docs/students/topic_briefs.md) — one-page framing + thesis gaps per category |
 | 📝 **Guided assignments** | [docs/students/assignments.md](docs/students/assignments.md) — 5 coursework tasks with rubrics |
 | 📖 **Lit-review workflow** | [docs/students/how_to_lit_review.md](docs/students/how_to_lit_review.md) — step-by-step literature review guide |
-| 🔎 **Search & filter papers** | [docs/index.html](docs/index.html) — interactive browser |
+| 🔎 **Search & filter papers** | **[GitHub Pages site](https://tobias-weiss-ai-xr.github.io/marketing-research/)** — interactive browser + statistics tab |
 | 📚 **Read the full paper list** | [PAPERS.md](PAPERS.md) — every entry grouped by category & year |
 | 📊 **Read the corpus synthesis** | [docs/research/literature_review.md](docs/research/literature_review.md) · [trends.md](docs/research/trends.md) · [concept_map.md](docs/research/concept_map.md) |
 | 🧭 **Generate topics/trends/briefs** | `tools/topic_planner.py` · `trend_scanner.py` · `landscape_analyzer.py` · `brief_generator.py` |
