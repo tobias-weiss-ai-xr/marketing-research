@@ -30,7 +30,7 @@
 | 📚 **Read the full paper list** | [PAPERS.md](PAPERS.md) — every entry grouped by category & year |
 | 📊 **Read the corpus synthesis** | [docs/research/literature_review.md](docs/research/literature_review.md) · [trends.md](docs/research/trends.md) · [concept_map.md](docs/research/concept_map.md) |
 | 🧭 **Generate topics/trends/briefs** | `tools/topic_planner.py` · `trend_scanner.py` · `landscape_analyzer.py` · `brief_generator.py` |
-| 📄 **Deep-dive research papers** | `paper/` — gap analysis, AI-marketing & B2B frameworks, CAM simulation |
+| 📄 **Deep-dive research papers** | `paper/` — literature review (WIP), gap analysis, AI-marketing & B2B frameworks, CAM simulation |
 | 🎤 **Guest-lecture materials** | [lecture/](lecture/README.md) |
 
 ## 🚀 Quick Start (developers / the curious)
