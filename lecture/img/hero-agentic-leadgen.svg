@@ -3,48 +3,66 @@
     <marker id="hero-ar" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
       <path d="M0,0 L7,3 L0,6 Z" fill="#6c757d"/>
     </marker>
+    <marker id="hero-ar-orange" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#c47f0e"/>
+    </marker>
   </defs>
+
+  <!-- Shared internal layout (all boxes):
+       title baseline y=70 · subtitle y=92 · ICON ZONE y=100..138 (center 119) · caption baseline y=157 -->
 
   <!-- Model -->
   <rect x="30" y="35" width="250" height="130" rx="12" fill="#f4f7fa" stroke="#165A97" stroke-width="2"/>
-  <text x="155" y="68" text-anchor="middle" font-size="22" font-weight="700" fill="#165A97">Model</text>
-  <text x="155" y="90" text-anchor="middle" font-size="14" fill="#6c757d">the reasoning engine</text>
-  <path d="M 131 102 C 125 94 129 84 139 82 C 141 74 153 72 159 76 C 169 74 177 82 175 90 C 181 96 179 106 171 108 C 169 114 159 116 153 112 C 145 116 135 114 133 108 C 129 106 129 102 131 102 Z" fill="none" stroke="#212529" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M 147 98 C 153 92 161 94 163 100" fill="none" stroke="#212529" stroke-width="1.5" opacity="0.6"/>
-  <text x="155" y="148" text-anchor="middle" font-size="13" fill="#6c757d">thinks · reasons · decides</text>
+  <text x="155" y="70" text-anchor="middle" font-size="22" font-weight="700" fill="#165A97">Model</text>
+  <text x="155" y="92" text-anchor="middle" font-size="14" fill="#6c757d">the reasoning engine</text>
+  <!-- neural-network icon, centered (155,119) -->
+  <g stroke="#adb5bd" stroke-width="1.5">
+    <line x1="138" y1="107" x2="150" y2="112"/><line x1="138" y1="119" x2="150" y2="112"/>
+    <line x1="138" y1="119" x2="150" y2="126"/><line x1="138" y1="131" x2="150" y2="126"/>
+    <line x1="150" y1="112" x2="172" y2="119"/><line x1="150" y1="126" x2="172" y2="119"/>
+  </g>
+  <g fill="#165A97">
+    <circle cx="138" cy="107" r="4.5"/><circle cx="138" cy="119" r="4.5"/><circle cx="138" cy="131" r="4.5"/>
+    <circle cx="155" cy="112" r="4.5" fill="#c47f0e"/><circle cx="155" cy="126" r="4.5" fill="#c47f0e"/>
+    <circle cx="172" cy="119" r="5"/>
+  </g>
+  <text x="155" y="157" text-anchor="middle" font-size="13" fill="#6c757d">thinks · reasons · decides</text>
 
   <!-- arrow 1 -->
   <line x1="284" y1="100" x2="316" y2="100" stroke="#6c757d" stroke-width="2" marker-end="url(#hero-ar)"/>
 
   <!-- Harness -->
   <rect x="320" y="35" width="250" height="130" rx="12" fill="#f4f7fa" stroke="#165A97" stroke-width="2"/>
-  <text x="445" y="68" text-anchor="middle" font-size="22" font-weight="700" fill="#165A97">Harness</text>
-  <text x="445" y="90" text-anchor="middle" font-size="14" fill="#6c757d">tools + rules + memory</text>
-  <rect x="415" y="100" width="60" height="12" rx="3" fill="#e8eff6" stroke="#adb5bd" stroke-width="1.5"/>
-  <rect x="415" y="116" width="60" height="12" rx="3" fill="#e8eff6" stroke="#adb5bd" stroke-width="1.5"/>
-  <rect x="415" y="132" width="60" height="12" rx="3" fill="#e8eff6" stroke="#adb5bd" stroke-width="1.5"/>
-  <text x="445" y="158" text-anchor="middle" font-size="13" fill="#6c757d">files · git · browser</text>
+  <text x="445" y="70" text-anchor="middle" font-size="22" font-weight="700" fill="#165A97">Harness</text>
+  <text x="445" y="92" text-anchor="middle" font-size="14" fill="#6c757d">tools + rules + memory</text>
+  <!-- tool stack icon, centered (445,119) -->
+  <rect x="410" y="100" width="70" height="10" rx="3" fill="#e8eff6" stroke="#adb5bd" stroke-width="1.5"/>
+  <rect x="410" y="114" width="70" height="10" rx="3" fill="#e8eff6" stroke="#adb5bd" stroke-width="1.5"/>
+  <rect x="410" y="128" width="70" height="10" rx="3" fill="#e8eff6" stroke="#adb5bd" stroke-width="1.5"/>
+  <text x="445" y="157" text-anchor="middle" font-size="13" fill="#6c757d">files · git · browser</text>
 
   <!-- arrow 2 -->
   <line x1="574" y1="100" x2="606" y2="100" stroke="#6c757d" stroke-width="2" marker-end="url(#hero-ar)"/>
 
   <!-- Loop -->
   <rect x="610" y="35" width="250" height="130" rx="12" fill="#f4f7fa" stroke="#165A97" stroke-width="2"/>
-  <text x="735" y="68" text-anchor="middle" font-size="22" font-weight="700" fill="#165A97">Loop</text>
-  <text x="735" y="90" text-anchor="middle" font-size="14" fill="#6c757d">the work cycle</text>
-  <path d="M 715 108 A 22 14 0 1 1 755 108" fill="none" stroke="#c47f0e" stroke-width="2.5" marker-end="url(#hero-ar)"/>
-  <path d="M 755 120 A 22 14 0 1 0 715 120" fill="none" stroke="#c47f0e" stroke-width="2.5" marker-end="url(#hero-ar)"/>
-  <text x="735" y="148" text-anchor="middle" font-size="13" fill="#6c757d">plan · act · check · correct</text>
+  <text x="735" y="70" text-anchor="middle" font-size="22" font-weight="700" fill="#165A97">Loop</text>
+  <text x="735" y="92" text-anchor="middle" font-size="14" fill="#6c757d">the work cycle</text>
+  <!-- cycle icon: two arcs forming a circle, centered (735,119) -->
+  <path d="M 716 122 A 19 19 0 1 1 735 138" fill="none" stroke="#c47f0e" stroke-width="2.5" marker-end="url(#hero-ar-orange)"/>
+  <path d="M 754 116 A 19 19 0 1 1 735 100" fill="none" stroke="#c47f0e" stroke-width="2.5" marker-end="url(#hero-ar-orange)"/>
+  <text x="735" y="157" text-anchor="middle" font-size="13" fill="#6c757d">plan · act · check · correct</text>
 
   <!-- arrow 3 -->
   <line x1="864" y1="100" x2="896" y2="100" stroke="#6c757d" stroke-width="2" marker-end="url(#hero-ar)"/>
 
   <!-- Leads -->
   <rect x="900" y="35" width="270" height="130" rx="12" fill="#E5F0CF" stroke="#165A97" stroke-width="2"/>
-  <text x="1035" y="68" text-anchor="middle" font-size="22" font-weight="700" fill="#165A97">Leads</text>
-  <text x="1035" y="90" text-anchor="middle" font-size="14" fill="#6c757d">ranked B2B partners</text>
-  <circle cx="1035" cy="115" r="18" fill="none" stroke="#165A97" stroke-width="2"/>
-  <circle cx="1035" cy="115" r="10" fill="none" stroke="#165A97" stroke-width="2"/>
-  <circle cx="1035" cy="115" r="3" fill="#165A97"/>
-  <text x="1035" y="148" text-anchor="middle" font-size="13" fill="#6c757d">scored · sourced · verified</text>
+  <text x="1035" y="70" text-anchor="middle" font-size="22" font-weight="700" fill="#165A97">Leads</text>
+  <text x="1035" y="92" text-anchor="middle" font-size="14" fill="#6c757d">ranked B2B partners</text>
+  <!-- target icon, centered (1035,119) -->
+  <circle cx="1035" cy="119" r="19" fill="none" stroke="#165A97" stroke-width="2"/>
+  <circle cx="1035" cy="119" r="11" fill="none" stroke="#165A97" stroke-width="2"/>
+  <circle cx="1035" cy="119" r="3.5" fill="#165A97"/>
+  <text x="1035" y="157" text-anchor="middle" font-size="13" fill="#6c757d">scored · sourced · verified</text>
 </svg>
