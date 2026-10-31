@@ -4,7 +4,7 @@
 > **File:** `lit_review_agentic_contextual.md`
 > **Status:** DRAFT v0.1 — literature review work-in-progress (combines the planned "systematic review of agentic AI in marketing" and "review of contextual intelligence in marketing/B2B")
 > **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the 2027 Working Paper
-> **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-29 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
+> **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-31 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
 > **Lead Author:** Tobias Weiss (proposed) + [TBD co-authors]
 > **Target Venues:** *Journal of Business Research*, *Industrial Marketing Management*, *International Journal of Research in Marketing* (review track), or as the related-work backbone of the 2027 Working Paper
 > **Last Updated:** 2026-10-29
@@ -32,19 +32,19 @@ This review tests that claim and synthesizes both streams.
 
 ## 2. Method (PRISMA-lite)
 
-**Corpus.** The repo's curated corpus: 15,000+ papers (15,756 at snapshot 2026-10-29), auto-discovered via taxonomy-aware arXiv/OpenAlex/Crossref/dblp queries, each entry carrying one category (11 marketing domains) and one lens (empirical / framework / review / case-study / theory / measurement). Full list in `PAPERS.md`; machine-readable in `docs/papers.json`.
+**Corpus.** The repo's curated corpus: 15,000+ papers (15,773 at snapshot 2026-10-31), auto-discovered via taxonomy-aware arXiv/OpenAlex/Crossref/dblp queries, each entry carrying one category (11 marketing domains) and one lens (empirical / framework / review / case-study / theory / measurement). Full list in `PAPERS.md`; machine-readable in `docs/papers.json`.
 
 **Search & screening.** Title/abstract keyword searches over the corpus:
-- `agentic` → ≥100 papers (all 2025–2026); of these, ≥60 also mention sales/lead/B2B/CRM/selling/buyer
-- `contextual intelligence` OR `context-aware`/`context aware` → ≥25 papers
-- intersection of both → ≤11 papers (screened individually, §5)
+- `agentic` → ≥100 papers (167 at snapshot; all 2025–2026); of these, ≥60 (64) also mention sales/lead/B2B/CRM/selling/buyer
+- `contextual intelligence` OR `context-aware`/`context aware` → ≥25 papers (27)
+- intersection of both → ≤18 papers, using broadened agent vocabulary (`agentic` OR `multi-agent` OR `autonomous agent` OR `ai agent` OR `llm agent`; agent-broad pool 384, context pool 380), screened individually (§5)
 - `value opportunity` → 0 papers
 
 **Inclusion.** Papers whose *substance* (not just vocabulary) addresses (a) agents acting in marketing/sales roles, (b) context as a targeting/decision input in marketing, or (c) both. Preprints (arXiv, SSRN, Research Square, Zenodo) are included but flagged as non-peer-reviewed.
 
 **Exclusion.** Papers mentioning both terms only lexically (e.g., an unrelated "agent" such as chemical agents, or "context" in a passage) without substantive engagement.
 
-**Honest caveats.** (1) This is a *corpus-bounded* review: it covers what this curated corpus contains, not the full literature — useful for construct-gap claims within the corpus's coverage, not as proof of global absence. (2) Counts are lower bounds tied to a snapshot; the corpus grows weekly. (3) The agentic stream is less than two years old; much of it sits in preprints and low-tier venues — quality varies widely.
+**Honest caveats.** (1) This is a *corpus-bounded* review: it covers what this curated corpus contains, not the full literature — useful for construct-gap claims within the corpus's coverage, not as proof of global absence. (2) Counts are lower bounds tied to a snapshot (2026-10-31); the corpus grows weekly. (3) The agentic stream is less than two years old; much of it sits in preprints and low-tier venues — quality varies widely.
 
 ---
 
@@ -53,15 +53,15 @@ This review tests that claim and synthesizes both streams.
 Three sub-streams, all emerging 2025–2026:
 
 ### 3.1 The consumer side: agentic shopping and machine customers
-- *Shopping by algorithm: How agentic AI deploys human heuristics as a surrogate consumer* (arXiv, 2026-09) — agents as consumer surrogates.
+- *Shopping by algorithm: How agentic AI deploys human heuristics as a surrogate consumer* (Wadi & Ma, arXiv, 2026-09) — agents as consumer surrogates.
 - *When AI Shops for Us: A Systematic Literature Review on Agentic AI and the Algorithmic Consumer* (OPUS BW, 2026-09, preprint) — first corpus SLR on the agentic-consumer phenomenon.
-- *When the customer is a machine: a systematic literature review and integrative framework* (Research Square, 2026-10, preprint) — machine customers as a new research object; the most explicit signal that the *counterparty* of marketing is becoming an agent.
+- *When the customer is a machine: a systematic literature review and integrative framework* (Moghaddam, Alipour & Grunert, Research Square, 2026-10, preprint) — machine customers as a new research object; the most explicit signal that the *counterparty* of marketing is becoming an agent.
 - *Marketing to Machines: Strategic Frameworks for Engagement with Autonomous Agentic AI* (book chapter, 2026-10) — strategy frameworks aimed at machine audiences.
 
 **Reading:** a coherent, fast-forming conversation — marketing's target shifts from humans to agents, with implications for segmentation, persuasion, and measurement.
 
 ### 3.2 The firm side: agents in sales, CRM, and marketing operations
-- *AI agents, agentic AI, and the future of sales* — *Journal of Business Research* (2026-01). The strongest peer-reviewed anchor in the corpus: positions agents across the sales function.
+- *AI agents, agentic AI, and the future of sales* (Gonzalez, Habel & Hunter) — *Journal of Business Research* (2026-01). The strongest peer-reviewed anchor in the corpus: positions agents across the sales function.
 - *The Augmented Rep: Agentic AI Across the Enterprise Sales Cycle* (IRJAEM, 2026-06, preprint) — stage-by-stage agent augmentation of the sales cycle.
 - *Agentic Agent, Better Agent: Evidence from Agentic AI in Telemarketing* (SSRN working paper, 2026-04) — rare *empirical* evidence on agentic (vs. generative) AI effects.
 - *The Dual-Journey Model of Marketing in the Agentic Era* (SSRN, 2026-01) — conceptualizes parallel human/agent journeys.
@@ -106,10 +106,12 @@ The ≥25 context-aware/contextual-intelligence papers split into:
 
 ## 5. Theme C — The Intersection (RQ3)
 
-Screening the ≤11 papers containing both "agentic" and "contextual"/"context-aware" vocabulary:
+Screening the ≤18 papers containing both agent vocabulary (`agentic`/`multi-agent`/`autonomous agent`/`ai agent`/`llm agent`) and context vocabulary (`contextual`/`context-aware`) — the broadened screen that captures context-aware agent papers regardless of whether they use the word "agentic":
 
-- **Genuine intersection (1):** *Lines and Ladders: A Context-Aware Multi-Agent Framework for Large-Scale Retail Pricing* (arXiv, 2026-08) — context-aware *agents* acting in a marketing setting (retail pricing). This is the corpus's one substantive agent+context paper — and it is algorithmic (pricing policy), not a marketing *construct*.
-- **Lexical co-mentions (≤10):** e.g., *Can AI Agents Simulate A/B Test Outcomes?* (validation methodology), *Calibrating Professional Discretion in AI-Supported B2B Selling* (context mentioned, not constructed), plus CS-domain agent papers (pathology, chemistry, trading) where "context" is incidental.
+- **Genuine intersection (2):**
+  - *Lines and Ladders: A Context-Aware Multi-Agent Framework for Large-Scale Retail Pricing* (Chunduri et al., arXiv, 2026-08) — context-aware *agents* acting in a marketing setting (retail pricing). Algorithmic (pricing policy), not a marketing *construct*.
+  - *Personalized to Persuade: The Effects of Contextualization and Warmth on Trust and Relevance* (arXiv, 2026-05) — contextualization as a persuasion input (title-level screen; full-text confirmation pending — Appendix A).
+- **Lexical co-mentions (≤16):** e.g., *Can AI Agents Simulate A/B Test Outcomes?* (validation methodology), *Calibrating Professional Discretion in AI-Supported B2B Selling* (context mentioned, not constructed), *LLMs Are Not Good Strategists, Yet Memory-Enhanced Agency Boosts Reasoning* (reasoning, not marketing context), plus CS-domain agent papers (pathology, chemistry, trading, web dev) where "context" is incidental.
 
 **Refined claim (supersedes the earlier "zero intersection" framing):** the gap is **not** that no paper combines agents and context — *Lines and Ladders* does, and contextual bandits do so industry-wide. The gap is that **no paper defines what situational or contextual intelligence *means* for a marketing agent** — no situation taxonomy, no construct, no measurement, no theory of which context dimensions matter for which marketing actions. The intersection is empty at the *construct* level, not the lexical level. This is exactly the distinction the CAM-Sim paper's §5.3 caveat anticipated; this review substantiates it.
 
@@ -173,51 +175,92 @@ B2B sales research has already built — for *humans* — the construct this pro
 - Terho, H., Haas, A., Eggert, A., & Ulaga, W. (2012). "It's almost like taking the sales out of selling" — Towards a conceptualization of value-based selling in business markets. *Industrial Marketing Management*, 41(1), 174–185.
 - Grewal, D., Satornino, C. B., & Davenport, T. H. (2024). How generative AI is shaping the future of marketing. *Journal of the Academy of Marketing Science*. https://doi.org/10.1007/s11747-024-01064-3
 
-### Corpus papers (all verified in `papers.yaml`, snapshot 2026-10-29; ⚑ = preprint, not peer-reviewed)
+### Corpus papers (all verified in `papers.yaml`, snapshot 2026-10-31; ⚑ = preprint, not peer-reviewed)
 **Agentic — consumer side**
-- ⚑ *When the customer is a machine: a systematic literature review and integrative framework* (2026). Research Square. https://doi.org/10.21203/rs.3.rs-11222729/v1
-- ⚑ *When AI Shops for Us: A systematic literature review on agentic AI and the algorithmic consumer* (2026). OPUS Baden-Württemberg. https://doi.org/10.26205/opus-4058
-- ⚑ *Shopping by algorithm: How agentic AI deploys human heuristics as a surrogate consumer* (2026). arXiv. https://arxiv.org/abs/2609.28372
-- *Marketing to Machines: Strategic frameworks for engagement with autonomous agentic AI* (2026). Book chapter. https://doi.org/10.68337/978-81-181312-6-7.ch01
+- Moghaddam, M. T., Alipour, M., & Grunert, K. G. (2026). When the customer is a machine: a systematic literature review and integrative framework. Research Square (⚑ preprint). https://doi.org/10.21203/rs.3.rs-11222729/v1
+- Tzvetkov, M. (2026). When AI shops for us: A systematic literature review on agentic AI and the algorithmic consumer. OPUS Baden-Württemberg (⚑ preprint). https://doi.org/10.26205/opus-4058
+- Wadi, D., & Ma, Y. (2026). Shopping by algorithm: How agentic AI deploys human heuristics as a surrogate consumer. arXiv (⚑ preprint). https://arxiv.org/abs/2609.28372
+- Radwan, R., Alsolaim, M. A., & Abo Ellil, R. M. A. (2026). Marketing to machines: Strategic frameworks for engagement with autonomous agentic AI. Book chapter. https://doi.org/10.68337/978-81-181312-6-7.ch01
 
 **Agentic — firm side**
-- *AI agents, agentic AI, and the future of sales* (2026). *Journal of Business Research*. https://doi.org/10.1016/j.jbusres.2025.115799
-- ⚑ *The Augmented Rep: Agentic AI across the enterprise sales cycle* (2026). IRJAEM. https://doi.org/10.47392/eclearnix.2026.b058
-- ⚑ *Agentic Agent, Better Agent: Evidence from agentic AI in telemarketing* (2026). SSRN working paper. https://doi.org/10.2139/ssrn.6502379
-- ⚑ *The Dual-Journey Model of Marketing in the Agentic Era* (2026). SSRN. https://doi.org/10.2139/ssrn.6436240
-- ⚑ *GENIE CRM: An agentic AI-powered customer relationship management system* (2026). ISJEM. https://doi.org/10.55041/isjem06720
-- *Calibrating professional discretion in artificial intelligence-supported business-to-business selling* (2026). *RaFT*. https://doi.org/10.2478/raft-2026-0025
-- *From data quality to quality of agentic data use: A conceptual framework* (2026). *Applied Sciences*. https://doi.org/10.3390/app16178887
+- Gonzalez, G. R., Habel, J., & Hunter, G. K. (2026). AI agents, agentic AI, and the future of sales. *Journal of Business Research*. https://doi.org/10.1016/j.jbusres.2025.115799
+- Gudla, A. (2026). The augmented rep: Agentic AI across the enterprise sales cycle. IRJAEM (⚑ preprint). https://doi.org/10.47392/eclearnix.2026.b058
+- Zhang, M., Kan, Y., Qiu, W., & Chen, F. (2026). Agentic agent, better agent: Evidence from agentic AI in telemarketing. SSRN working paper (⚑ preprint). https://doi.org/10.2139/ssrn.6502379
+- Kannan, A. R. (2026). The dual-journey model of marketing in the agentic era. SSRN (⚑ preprint). https://doi.org/10.2139/ssrn.6436240
+- Dudharejiya, H. B., & Shah, D. T. (2026). GENIE CRM: An agentic AI-powered customer relationship management system. ISJEM (⚑ preprint). https://doi.org/10.55041/isjem06720
+- Hart, G., Burrell, D. N., & Valle, F. (2026). Calibrating professional discretion in artificial intelligence-supported business-to-business selling. *RaFT*. https://doi.org/10.2478/raft-2026-0025
+- Cravero, A., Díaz-Villegas, J., & Xiao, Z. (2026). From data quality to quality of agentic data use: A conceptual framework. *Applied Sciences*. https://doi.org/10.3390/app16178887
 
 **Agentic — infrastructure**
-- ⚑ *GTM-Bench: Evaluating agentic AI systems for buyer/seller coherence in go-to-market workflows* (2026). Technical report. https://gtm-bench.ai/assets/gtm-bench-paper.pdf
-- ⚑ *Can AI agents simulate A/B test outcomes? A validation framework for agentic experimentation* (2026). arXiv. https://arxiv.org/abs/2608.02345
-- ⚑ *AI Win-Rate: A board metric for AI-mediated buying (Methodology v1.0)* (2026). Zenodo. https://doi.org/10.5281/zenodo.22280230
-- *AI, agents, and the marketing operating system* (2026). Routledge. https://doi.org/10.4324/9781003567028-10
-- ⚑ *Privacy preference controls for agentic systems* (2026). arXiv. https://arxiv.org/abs/2610.29929
+- Polaczuk, M., Baron, J., Horne, R., & Cavill, T. (2026). GTM-Bench: Evaluating agentic AI systems for buyer/seller coherence in go-to-market workflows. Technical report (⚑ preprint). https://gtm-bench.ai/assets/gtm-bench-paper.pdf
+- Hut, S., & Masoero, L. (2026). Can AI agents simulate A/B test outcomes? A validation framework for agentic experimentation. arXiv (⚑ preprint). https://arxiv.org/abs/2608.02345
+- Sheals, P., & de Rosen, T. (2026). AI win-rate: A board metric for AI-mediated buying (Methodology v1.0). Zenodo (⚑ preprint). https://doi.org/10.5281/zenodo.22280230
+- McMahon, T. P. (2026). AI, agents, and the marketing operating system. Routledge. https://doi.org/10.4324/9781003567028-10
+- Kochar, S., Sugsavanvit, P., Gupta, V., & Calandrino, J. A. (2026). Privacy preference controls for agentic systems. arXiv (⚑ preprint). https://arxiv.org/abs/2610.29929
 
 **Contextual / context-aware in marketing**
-- ⚑ *Adaptive attention-based marketing: A review of emotion- and context-aware advertising* (2026). Cureus JBE. https://doi.org/10.7759/s44404-026-00184-z
-- *Context on display: Digital signage attributes, contextual advertising, and consumer responses* (2026). *Businesses*. https://doi.org/10.3390/businesses6030049
-- ⚑ *Lines and ladders: A context-aware multi-agent framework for large-scale retail pricing* (2026). arXiv. https://arxiv.org/abs/2608.12674
-- *Context-aware marketing attribution based on survival analysis* (2025). LNIS. https://doi.org/10.1007/978-3-031-80122-8_22
-- ⚑ *Context-aware advertisement modeling and applications in rapid transit systems* (2024). arXiv. https://arxiv.org/abs/2409.09956
-- ⚑ *Entire chain uplift modeling with context-enhanced learning for intelligent marketing* (2024). arXiv. https://arxiv.org/abs/2402.03379
-- *CatBoost-based context-aware purchase-decision prediction on tabular customer-journey data* (2026). IJAIN. https://ijain.org/index.php/IJAIN/article/view/2412
-- *The four Cs of B2B targeting: Using company, customer, channel and contextual data to shrink the audience bullseye* (2024). *Applied Marketing Analytics*. https://doi.org/10.69554/zubn7528
+- Ghanvat, S., Joshi, S., & Jamdagni, R. (2026). Adaptive attention-based marketing: A review of emotion- and context-aware advertising. Cureus JBE (⚑ preprint). https://doi.org/10.7759/s44404-026-00184-z
+- Roux, T. (2026). Context on display: Digital signage attributes, contextual advertising, and consumer responses. *Businesses*. https://doi.org/10.3390/businesses6030049
+- Chunduri, R. T., Boya, S. R., Mishra, D. N., & Kumar, A. B. (2026). Lines and ladders: A context-aware multi-agent framework for large-scale retail pricing. arXiv (⚑ preprint). https://arxiv.org/abs/2608.12674
+- Züllig, K., Napirata, S., & Zimmermann, S. (2025). Context-aware marketing attribution based on survival analysis. LNIS. https://doi.org/10.1007/978-3-031-80122-8_22
+- Ahmed, A., & Raees, M. (2024). Context-aware advertisement modeling and applications in rapid transit systems. arXiv (⚑ preprint). https://arxiv.org/abs/2409.09956
+- Huang, Y., Wang, S., Gao, M., & Wei, X. (2024). Entire chain uplift modeling with context-enhanced learning for intelligent marketing. arXiv (⚑ preprint). https://arxiv.org/abs/2402.03379
+- Thai, P. K., Lam, N. T. B., & Le, T. M. (2026). CatBoost-based context-aware purchase-decision prediction on tabular customer-journey data. IJAIN. https://ijain.org/index.php/IJAIN/article/view/2412
+- Diorio, S. G., & Howarth, R. (2024). The four Cs of B2B targeting: Using company, customer, channel and contextual data to shrink the audience bullseye. *Applied Marketing Analytics*. https://doi.org/10.69554/zubn7528
+
+**Intersection candidates (title-verified; full-text screen pending — Appendix A)**
+- *Personalized to persuade: The effects of contextualization and warmth on trust and relevance* (2026). arXiv (⚑ preprint). https://arxiv.org/abs/2605.31275
+- *LLMs are not good strategists, yet memory-enhanced agency boosts reasoning* (2026). arXiv (⚑ preprint). https://arxiv.org/abs/2608.12626
 
 **CS-side adjacent**
-- ⚑ *ProMemAgent: Long-horizon proactive assistance with context-aware prospective memory* (2026). arXiv. https://arxiv.org/abs/2610.27400
+- Xu, L., He, L., Hou, K., & Fan, Y. (2026). ProMemAgent: Long-horizon proactive assistance with context-aware prospective memory. arXiv (⚑ preprint). https://arxiv.org/abs/2610.27400
+
+---
+
+## Appendix A — Second-Coder Screening Kit (lexical → substantive screen, κ)
+
+**Task.** Two coders independently code the ≤18 intersection papers as `SUBSTANTIVE` or `LEXICAL`:
+- **SUBSTANTIVE** — the paper's substance addresses (a) agents acting in a marketing/sales/pricing role AND (b) context as a decision or modeling input (not merely mentioned).
+- **LEXICAL** — both vocabularies present, no substantive engagement (unrelated domain; "context" incidental; agent vocabulary in a reference list only).
+
+**Procedure.** Coders work blind to each other; compute Cohen's κ on the binary judgment; resolve disagreements by discussion and record both pre- and post-consensus labels. Reliability threshold: κ ≥ 0.6 (mirrors RQ H1 in the 2027 program design). Ties to RQ H7/H8 (gap-rate tracking and claim-verification rate).
+
+**Judgment sheet** (fill one row per paper; papers verified in `papers.yaml`, snapshot 2026-10-31; ⚑ = preprint):
+
+| # | Paper | Year | Venue | Coder A | Coder B | Agreed? | Consensus |
+|---|-------|------|-------|---------|---------|---------|-----------|
+| 1 | The AI Evaluation Ecosystem | 2026-10 | arXiv ⚑ | | | | |
+| 2 | SOTA: Stock options trading agents guided by option-implied return distributions | 2026-10 | arXiv ⚑ | | | | |
+| 3 | OptScientist: Automated discovery of optimization laws | 2026-10 | arXiv ⚑ | | | | |
+| 4 | ReTRACE: Feedback-guided LLM agent in a chemistry harness | 2026-10 | arXiv ⚑ | | | | |
+| 5 | TRAP: Tool-result replay attack for probing misbinding in LLM agents | 2026-10 | arXiv ⚑ | | | | |
+| 6 | From preference to reciprocity: Decentralized matching with LLM agents | 2026-09 | arXiv ⚑ | | | | |
+| 7 | Generative AI, autonomous agents, and conversational marketing for governance trust | 2026-09 | IGI book ⚑ | | | | |
+| 8 | Calibrating professional discretion in AI-supported B2B selling | 2026-09 | RaFT | | | | |
+| 9 | Multi-RAG enterprise | 2026-09 | IJERST ⚑ | | | | |
+| 10 | 402Pilot: An x402 decision layer for autonomous agent micropayments | 2026-08 | arXiv ⚑ | | | | |
+| 11 | Can AI agents simulate A/B test outcomes? | 2026-08 | arXiv ⚑ | | | | |
+| 12 | The future of web application development: 2026 and beyond | 2026-08 | Zenodo ⚑ | | | | |
+| 13 | Lines and ladders: A context-aware multi-agent framework for retail pricing | 2026-08 | arXiv ⚑ | | | | |
+| 14 | LUCAID: Agentic multimodal AI for lung cancer precision pathology | 2026-08 | arXiv ⚑ | | | | |
+| 15 | LLMs are not good strategists, yet memory-enhanced agency boosts reasoning | 2026-08 | arXiv ⚑ | | | | |
+| 16 | Dynamic dialogue for organizational knowledge acquisition | 2026-08 | ECKM | | | | |
+| 17 | Substitution-vs-synthesis as an architectural primitive | 2026-08 | Zenodo ⚑ | | | | |
+| 18 | Personalized to persuade: Contextualization, warmth, trust, relevance | 2026-05 | arXiv ⚑ | | | | |
+
+**Reference expectation from the v0.1 screen:** #13 substantive; #18 likely substantive (title-level); the remainder lexical. The κ run replaces this single-coder expectation.
 
 ---
 
 ## TODO (next iterations)
 
-- [ ] Re-run screens at submission; refresh lower-bound counts.
-- [ ] Second coder on the lexical→substantive screen (κ; ties to RQ H7/H8).
-- [ ] Add author names for corpus papers cited by title (fetch_metadata pass).
+- [x] Re-run screens; refresh lower-bound counts (done 2026-10-31: corpus 15,773; agentic 167; broadened intersection 18).
+- [x] Add author names for corpus papers (done — reference list now author-attributed).
+- [x] PRISMA flow diagram (done — `paper/prisma_flow.svg`).
+- [x] Second-coder screening kit (done — Appendix A; the κ run itself is a Bachelor/Master task).
+- [ ] Run the second-coder κ screen (Appendix A; ties to RQ H7/H8).
+- [ ] Full-text-confirm the two genuine intersection candidates (#13, #18 in Appendix A).
 - [ ] Forward-snowball from the JBR 2026-01 anchor (cited-by) for peer-reviewed agentic-marketing papers outside the corpus.
-- [ ] PRISMA flow diagram (corpus → screens → included).
 - [ ] Decide: standalone review paper vs. related-work section of the 2027 Working Paper (§8 item 1 feeds both).
 
 ---
