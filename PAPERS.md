@@ -1,6 +1,6 @@
 # 📚 Paper list
 
-15756 papers · generated from `papers.yaml` — do not edit by hand.
+15773 papers · generated from `papers.yaml` — do not edit by hand.
 
 
 - [📚 AI & Marketing](#ai-&-marketing)
@@ -301,6 +301,12 @@
 - [2026] **Babysitting AI Agents: A User-Centered Taxonomy and Study of Agentic Delegation Failures** [[paper](https://arxiv.org/abs/2610.34748v1)]
 - [2026] **AutoVend: Benchmarking LLM Agents on Long-Horizon Autonomous Vending Operations** [[paper](https://arxiv.org/abs/2610.36980v1)]
 - [2026] **Lifelong Context Adaptation through Bidirectional Memory-Skill Learning** [[paper](https://arxiv.org/abs/2610.32295v1)] [[code](https://github.com/tianyi0216/Memcryst.git)]
+- [2026] **Detecting Covert Collusion between AI Agents through Partner-Outsider Positive Listening** [[paper](https://arxiv.org/abs/2610.37849v1)]
+- [2026] **What Can Firms Do in the Face of Model Distillation?** [[paper](https://arxiv.org/abs/2610.38088v1)]
+- [2026] **Vendster: An Evaluation Arena to Investigate How Forecasting Tool Quality Affects LLM Agent Behaviors in Buyer-Vendor Negotiation** [[paper](https://arxiv.org/abs/2610.38292v1)] [[code](https://github.com/amazon-science/Vendster)]
+- [2026] **FACTS-MAS: A Multi-Agent Architecture for Adaptive Forecasting from Heterogeneous Evidence** [[paper](https://arxiv.org/abs/2610.38225v1)] [[code](https://github.com/Madumita24/FACTS-MAS)]
+- [2026] **The Athlete as a Scientist of One: Agentic Bayesian Experimental Design for Individualized Physiology from Consumer Wearables** [[paper](https://arxiv.org/abs/2610.40370v1)]
+- [2026] **Locating and Closing Information Gaps in Multi-Agent Systems** [[paper](https://arxiv.org/abs/2610.40186v1)]
 - [2026] **Competitive Market Behavior of LLMs** [[paper](https://arxiv.org/abs/2609.02580)]
 - [2026] **Generative Marketing Mix Modeling: A Causal Inference Framework Linking GEO and GEM to Business Impact** [[paper](https://arxiv.org/abs/2609.11915)]
 - [2026] **Shopping by algorithm: How agentic AI deploys human heuristics as a surrogate consumer** [[paper](https://arxiv.org/abs/2609.28372)]
@@ -3238,6 +3244,11 @@
 - [2026] **WAYS TO ENHANCE THE TOURISM ATTRACTIVENESS OF UZBEKISTAN THROUGH DIGITAL MARKETING TOOLS** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.23394948)]
 - [2026] **The proton structure one mode at a time: a Neural Tangent Kernel analysis of a DIS fit** [[paper](https://arxiv.org/abs/2610.36034v1)]
 - [2026] **Accelerating SO(2)-Equivariant Materials Models through Low-Precision Emulation** [[paper](https://arxiv.org/abs/2610.35164v1)]
+- [2026] **Skillful and realistic precipitation forecasting with reinforced diffusion** [[paper](https://arxiv.org/abs/2610.38775v1)]
+- [2026] **ACAM-J-MARS: Multi-Atlas Riemannian Spectral Representations for Decoding Advanced Meditation States from fMRI** [[paper](https://arxiv.org/abs/2610.39171v1)]
+- [2026] **Towards Myocardial Infarction Diagnosis: An Investigation into Machine Learning and Deep Learning Algorithms using ECG Data** [[paper](https://arxiv.org/abs/2610.37709v1)]
+- [2026] **Formalizing the Intrinsic Dimension of Objective Landscapes by a Generalized Notion of Co-dimension** [[paper](https://arxiv.org/abs/2610.39674v1)]
+- [2026] **RainCheck: Harnessing Historical Weather Data with Machine Learning for Rainfall Forecasting in Bangladesh** [[paper](https://arxiv.org/abs/2610.38211v1)]
 - [2026] **Distribution and Marketing** *Routledge eBooks* [[paper](https://doi.org/10.4324/9781003607922-11)]
 - [2026] **An AI-Powered Advertising Assistant for Meta Platforms Using Large Language and Generative Models** *RESEARCH JOURNAL OF PURE SCIENCE AND TECHNOLOGY* [[paper](https://doi.org/10.56201/rjpst.vol.9.no1.2026.pg80.86)]
 - [2026] **Examining the scientific developments in artificial intelligence and branding: a scientometric analysis** *Human-Intelligent Systems Integration* [[paper](https://doi.org/10.1007/s42454-026-00114-1)]
@@ -3726,6 +3737,12 @@
 - [2026] **Whether Is Not When: Separating Occurrence from Timing in Polymarket Prices** [[paper](https://arxiv.org/abs/2610.36639v1)]
 - [2026] **Penny for Your Prompts: A Measurement Study of Contextual Leakage in AI Chat Platforms** [[paper](https://arxiv.org/abs/2610.37467v1)]
 - [2026] **Game theory of academic effort and hiring in the age of AI** [[paper](https://arxiv.org/abs/2610.35802v1)]
+- [2026] **From Needs Assessment to Legal-Digital Empowerment: A Community-Based Framework for Indigenous Enterprises in Higher Education Extension Programs** [[paper](https://arxiv.org/abs/2610.38030v1)]
+- [2026] **Crowds Believe in You: Online Prediction Markets Overestimate How Often People Achieve Their Own Goals** [[paper](https://arxiv.org/abs/2610.40324v1)]
+- [2026] **Who Owns Digital News, and Who Gets Cited: Measuring Media Concentration Across 77 Countries and Seven AI Systems** [[paper](https://arxiv.org/abs/2610.40164v1)]
+- [2026] **Data Provenance and Ethics in the Curricula of U.S. Health AI Education Programs** [[paper](https://arxiv.org/abs/2610.39606v1)]
+- [2026] **Reconstructing Missing Mandi Prices in North-East India with Regional Factors** [[paper](https://arxiv.org/abs/2610.39949v1)]
+- [2026] **Device-Induced Mobility Heterogeneity and Its Impact on Federated Next-Location Prediction** [[paper](https://arxiv.org/abs/2610.39791v1)]
 - [2026] **Seeing Is Not Perceiving: When Synthetic Consumers Can and Cannot Pretest Visual Marketing** [[paper](https://arxiv.org/abs/2609.25677)]
 - [2026] **Price Dislocations, News Citations, and Epistemic Leverage on Polymarket** [[paper](https://arxiv.org/abs/2609.06005)]
 - [2026] **Differentiable Electricity-Market Clearing for Gradient-Based Planning** [[paper](https://arxiv.org/abs/2609.02646)]

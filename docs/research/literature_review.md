@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-10-29  
-**Corpus:** 15,756 papers across 11 categories
+**Generated:** 2026-10-31  
+**Corpus:** 15,773 papers across 11 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,17 +11,17 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | AI & Marketing | 3446 |
+| 1 | AI & Marketing | 3457 |
 | 2 | Surveys, Trends & Meta-Studies | 2242 |
 | 3 | Social Media & Creator Marketing | 1778 |
 | 4 | Consumer Behavior & Psychology | 1731 |
-| 5 | Brand Strategy & Management | 1671 |
-| 6 | Digital & Performance Marketing | 1668 |
+| 5 | Digital & Performance Marketing | 1674 |
+| 6 | Brand Strategy & Management | 1671 |
 | 7 | Customer Experience, Omnichannel & Retail | 1241 |
 | 8 | Analytics, Attribution & Measurement | 614 |
 
 **Time span:** 1987–2026 (median year 2016)
-**Dominant aspects:** Empirical Studies (6083), Frameworks & Models (2897), Reviews & Surveys (2404)
+**Dominant aspects:** Empirical Studies (6095), Frameworks & Models (2897), Reviews & Surveys (2404)
 
 ---
 
@@ -32,10 +32,10 @@
 | Survey | 2242 | 1819 | 229 | +694% | 81% | 151.6 |
 | Brand | 1671 | 1240 | 242 | +412% | 74% | 103.3 |
 | Social Media | 1778 | 1267 | 261 | +385% | 71% | 105.6 |
-| Digital Marketing | 1668 | 1177 | 255 | +362% | 71% | 98.1 |
+| Digital Marketing | 1674 | 1183 | 255 | +364% | 71% | 98.6 |
 | Consumer Behavior | 1731 | 1229 | 275 | +347% | 71% | 102.4 |
 | Cx Retail | 1241 | 856 | 252 | +240% | 69% | 71.3 |
-| Ai Marketing | 3446 | 2236 | 724 | +209% | 65% | 186.3 |
+| Ai Marketing | 3457 | 2247 | 724 | +210% | 65% | 187.2 |
 | Analytics | 614 | 387 | 160 | +142% | 63% | 32.2 |
 | B2B | 361 | 192 | 98 | +96% | 53% | 16.0 |
 | Content Marketing | 529 | 304 | 165 | +84% | 57% | 25.3 |
@@ -84,7 +84,7 @@
 
 ### AI & Marketing (`ai-marketing`)
 
-**Corpus size:** 3446 papers
+**Corpus size:** 3457 papers
 
 **Recent papers:**
 
@@ -130,6 +130,18 @@
 
 ---
 
+### Digital & Performance Marketing (`digital-marketing`)
+
+**Corpus size:** 1674 papers
+
+**Recent papers:**
+
+- [2026-10] Architecture Without an Architect? Global Governance of Artificial Intelligence in a Divided Wo — https://arxiv.org/abs/2610.01716
+- [2026-10] Digital Marketing Strategy Canvas — https://doi.org/10.5281/zenodo.23107262
+- [2026-10] Strategies for digital marketing in the luxury fashion apparel sector — https://doi.org/10.22271/allresearch.2026.v12.i10a.14180
+
+---
+
 ### Brand Strategy & Management (`brand`)
 
 **Corpus size:** 1671 papers
@@ -139,18 +151,6 @@
 - [2026-10] Building or Breaking Brand Equity — https://doi.org/10.4018/979-8-2600-4594-7.ch004
 - [2026-10] How Social Media Marketing Amplifies Brand Equity: Evidence from Nike Footwear Consumers — https://e-journal.citakonsultindo.or.id/index.php/IJEBIR/article/view/5886
 - [2026-10] Influence of Brand Equity, Awareness, Loyalty, and Trust on Customer Loyalty at PT Gesit Digita — https://doi.org/10.56943/joe.v5i4.1052
-
----
-
-### Digital & Performance Marketing (`digital-marketing`)
-
-**Corpus size:** 1668 papers
-
-**Recent papers:**
-
-- [2026-10] Architecture Without an Architect? Global Governance of Artificial Intelligence in a Divided Wo — https://arxiv.org/abs/2610.01716
-- [2026-10] Digital Marketing Strategy Canvas — https://doi.org/10.5281/zenodo.23107262
-- [2026-10] Strategies for digital marketing in the luxury fashion apparel sector — https://doi.org/10.22271/allresearch.2026.v12.i10a.14180
 
 ---
 

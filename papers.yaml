@@ -356813,3 +356813,561 @@ papers:
     leads seven reported comparisons. On ALFWorld, joint serving achieves 63.17% success,
     compared with 59.83% for memory-only and 50.50% for skill-only serving. Code is
     available at https://github.com/tianyi0216/Memcryst.git
+- title: 'From Needs Assessment to Legal-Digital Empowerment: A Community-Based Framework
+    for Indigenous Enterprises in Higher Education Extension Programs'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.38030v1
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Marilou O. Espina
+  - Sales G. Aribe
+  - Mark Ian M. Mukara
+  - Joseph L. Abella
+  - Nurwahyu Alamsyah
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: IPOs contribute significantly to local economies, cultural preservation,
+    and sustainable livelihoods within their ancestral communities. However, many
+    IPOs remain marginalized in digital economies due to limited digital competencies,
+    inadequate access to technology, and insufficient legal awareness related to online
+    enterprise participation. This study examined the marketing practices, digital
+    competencies, and legal-literacy needs of IPOs in the Philippines and developed
+    a legal-digital empowerment framework for higher education extension and community
+    engagement initiatives. Using a sequential mixed-methods design, data were collected
+    through surveys and focus group discussions involving IPO members engaged in community-based
+    enterprises. The study assessed existing marketing practices, identified competency
+    and legal-awareness gaps, and determined capacity-building needs related to digital
+    enterprise participation. Findings revealed that IPOs continue to rely heavily
+    on traditional marketing channels, with limited use of digital platforms, inconsistent
+    branding practices, and minimal engagement in strategic digital marketing activities.
+    Participants also expressed concerns regarding intellectual property protection,
+    online participation, and limited understanding of legal mechanisms related to
+    digital enterprise engagement. Despite these limitations, IPO members showed strong
+    willingness to participate in training and mentorship initiatives. The study proposes
+    the Legal-Digital Empowerment Framework for Indigenous Community Enterprises,
+    which integrates digital competencies, legal literacy, institutional support systems,
+    and rights-based market participation into a structured and context-responsive
+    model for higher education extension programs.
+- title: 'Crowds Believe in You: Online Prediction Markets Overestimate How Often
+    People Achieve Their Own Goals'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.40324v1
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Zihan Chen
+  - Lei Nico Zheng
+  - Di Zhu
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: People increasingly share personal goals online and invite others to forecast
+    them. Research on the planning fallacy finds that observers predict a person's
+    behavior less optimistically than the person does, and prediction markets aggregate
+    such judgments, harnessing the wisdom of crowds. We study 6,150 prediction markets
+    on Manifold in which 1,660 users asked about their own futures ("Will I ...?"),
+    reconstruct every order and execution, and compare these self-markets with markets
+    about external events. Self-markets resolved YES 4.4 percentage points less often
+    than their final prices implied, whereas external markets were nearly calibrated
+    (0.9 points); the difference was 2.2 points at the same price level and 1.9 points
+    within creators who made both kinds of market. Absent when markets opened, the
+    overstatement emerged within a day of trading, even where the person never traded,
+    and peaked in the week before close. In a market's first day, observers moved
+    external-market prices down toward the base rate, but moved self-market prices
+    3.6 points further toward YES, except in markets naming an outcome the person
+    would not want, which were not overpriced. The correction came late and largely
+    from the person, whose orders supplied 38% of the eventual movement toward the
+    outcome in self-markets, against 9% in external markets. Because self-market prices
+    mainly failed to separate successes from failures, a recalibration learned from
+    earlier markets improved later forecasts by only 1.5%. Crowds believe in the futures
+    people pose for themselves, and the information that would correct them lies with
+    the person.
+- title: 'Who Owns Digital News, and Who Gets Cited: Measuring Media Concentration
+    Across 77 Countries and Seven AI Systems'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.40164v1
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Peter Carragher
+  - Kathleen M. Carley
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Digital news outlets compete for audience attention. Search engines equipped
+    with generative AI systems such as Google's AI overviews increasingly decide where
+    that attention goes, as well as the revenue it represents. Yet, the lack of a
+    consistent data collection infrastructure between national-level regulatory bodies
+    has hindered between-country comparative analysis of media concentration, and
+    with it any assessment of how these intermediaries reshape digital news markets.
+    To address this issue, we compile an ownership dataset for 9,761 digital news
+    outlets drawn from Wikipedia and Wikidata, achieving high agreement with independently
+    compiled US and UK news directories. Using this dataset, we derive traffic-weighted
+    concentration indices for 77 countries. We find that journalists report more owner
+    pressure in countries with higher concentration, and that outlet-level measures
+    understate concentration, with owner-level indices a median 1.30x higher. Applying
+    concentration measures to AI-mediated news discovery, we find that citation distributions
+    from major AI systems are up to 2.08x more concentrated than traffic, and that
+    if Google AI Overviews mediated all organic search, the resulting rise in US concentration
+    would be several times that associated with highly regulated media mergers and
+    acquisitions. Finally, our analyses indicate that AI systems preferentially cite
+    state-controlled media outlets when prompted in that country's native language.
+    Together, these findings raise concerns about the effect AI systems may have on
+    digital media. We release the dataset to enable the monitoring of digital news
+    globally, so that the impact of disruptive technologies on digital media markets
+    can be tracked as they emerge.
+- title: Data Provenance and Ethics in the Curricula of U.S. Health AI Education Programs
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.39606v1
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Raffaele Giancotti
+  - Francesca Santucci
+  - Amama Anjum
+  - Monique de Villa
+  - Rupsa Mitra
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Failures of deployed clinical artificial intelligence (AI) systems have
+    often originated in how their training data were generated. Whether the programs
+    that train the health AI workforce teach practitioners to examine data provenance
+    is unknown. We conducted a cross-sectional analysis of the publicly advertised
+    curricula of health AI education programs at U.S. universities, identified through
+    a structured multisource web search between April and July 2026. Two investigators
+    coded coverage of data provenance (structural, dataset limitations, or data management
+    only), ethics, and sustainability; collaborative structure; technical prerequisites;
+    and the disciplinary background and gender of named instructors. The primary outcome
+    was provenance coverage at the structural or dataset-limitations level. Of 43
+    candidate entries, 36 programs at 25 institutional units in 21 universities were
+    included. Ethics was covered by 29 programs (80.6%; 95% confidence interval [CI],
+    65.0 to 90.2), data provenance by 8 (22.2%; 95% CI, 11.7 to 38.1), and structural
+    provenance by 6 (16.7%; 95% CI, 7.9 to 31.9). None of the seven master's degree
+    programs met the primary outcome, and no program addressed sustainability. Eighteen
+    programs included team-based work, but only 5 assembled teams across clinical
+    and technical backgrounds. Of 92 named instructors, 76.1% came from computational
+    disciplines and 3.3% from the social sciences or humanities; among the 51 whose
+    gender could be determined, 66.7% were men. U.S. health AI education programs
+    widely taught ethics but rarely taught how clinical data are produced. None addressed
+    the environmental cost of computation, and most instructors came from computational
+    disciplines.
+- title: Reconstructing Missing Mandi Prices in North-East India with Regional Factors
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.39949v1
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Pritam Deka
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'Agricultural price panels contain prolonged and clustered reporting gaps,
+    yet their reconstruction is often evaluated by deleting isolated observations.
+    We investigate a regional-factor approach to weekly mandi-price reconstruction
+    in five North-East Indian states, with Bihar and Goa as additional comparison
+    states. The model combines a common price path with persistent market-specific
+    deviations; an adaptive ensemble weights alternative borrowing structures using
+    internally masked reports. On a matched retrospective benchmark against ten baselines,
+    pooled North-East mean absolute percentage error is 19.3%, compared with 26.5%
+    for SAITS. The corresponding calendar-aligned panel/time-block bootstrap interval
+    for the error difference is 2.8-12.7 percentage points. Removing the target state''s
+    monthly aggregate leaves pooled error at 19.4%, but eliminates the apparent advantage
+    in Goa. An origin-restricted pipeline combining week-close input processing with
+    revised ensemble validation yields 19.7% error, compared with 30.8% for carry-forward;
+    this contrast does not isolate individual pipeline changes. Gains vary across
+    states, and uncertainty intervals remain too narrow in several small panels. These
+    findings support further study of structured retrospective reconstruction, not
+    deployment claims: model development used earlier results, publication dates for
+    monthly inputs are assumed, and confirmatory evaluation on untouched data remains
+    outstanding.'
+- title: Device-Induced Mobility Heterogeneity and Its Impact on Federated Next-Location
+    Prediction
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.39791v1
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - André Felipe Zanella
+  - Paula Delgado de Santos
+  - José Suárez-Varela
+  - David Solans Noguero
+  - Andra Lutu
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Predicting human mobility is central to network management, urban planning,
+    and location-based services, yet privacy concerns are increasingly pushing such
+    tasks toward federated learning. A key challenge in this setting is the strong
+    heterogeneity of mobility data across users, which leads to non-IID data distributions
+    and can significantly impact model performance and fairness. In this paper, we
+    present a large-scale measurement study of device-level mobility heterogeneity
+    using data from a major MNO in a dense European capital. Our dataset comprises
+    mobility traces derived from network events, covering over 50,000 UEs across 178
+    smartphone models. We group devices into tiers based on their market segment and
+    show that mobility characteristics, such as spatial range and regularity, vary
+    systematically across these tiers, revealing a previously underexplored source
+    of bias in mobility data. We investigate the implications of this heterogeneity
+    on the use case of federated next-location prediction. In particular, we find
+    that balancing device tiers across silos through tier-aware client selection yields
+    the best results, improving fairness by up to 34.49% without degrading accuracy.
+    In contrast, a FedProx-only approach achieves a 21.46% fairness improvement, offering
+    a reasonable alternative when device information is unavailable, though with lower
+    overall gains.
+- title: Detecting Covert Collusion between AI Agents through Partner-Outsider Positive
+    Listening
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.37849v1
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Kevin Yandoka Denamganaï
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'AI agents that share a secret convention can coordinate through messages
+    that look innocent, so a monitor that reads only the messages can miss them. We
+    propose a behavioural test: a partner that uses a code reacts to the exact wording
+    of a message, whereas an uninvolved agent placed in its seat does not. Partner--Outsider
+    Positive Listening (PoPLi) is the difference between the two agents in how much
+    their action changes when the message is reworded with its meaning kept, and it
+    is computed after the fact by replaying logged prompts. In a simulated market
+    with five conditions (no collusion, a joint reward with neutral messages, the
+    same with an openly stated intention, a covert first-letter code, and the code
+    with a stated intention), PoPLi is between 0.48 and 0.59 whenever the code is
+    present (95% intervals all above 0.29) and between -0.10 and -0.01 without it.
+    Message-only monitors did not separate the conditions: one reading the speaker''s
+    messages answered "no" in all 50 markets, and one reading every seller''s messages
+    flagged 9 of 10 markets with no collusion. PoPLi detects the use of a private
+    channel, not collusion as such, and it cannot detect collusion through incentives
+    alone or codes carried by meaning.'
+- title: What Can Firms Do in the Face of Model Distillation?
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.38088v1
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Diptangshu Sen
+  - Jibang Wu
+  - Juba Ziani
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'Model distillation has become a major concern in the rapidly growing
+    generative AI discourse. In its simplest form, distillation is the phenomenon
+    where smaller firms can use data distilled from transcripts of conversations with
+    powerful proprietary closed-weight models to train their own models, thus achieving
+    reasonably high model quality but at much lower costs. Besides the legitimate
+    safety and security concerns associated with distillation, another major issue
+    is how it can also distort marketplace outcomes. This motivates us to initiate
+    an exploration of the problem from an economic theory lens. We consider a setting
+    with two players: an incumbent and a distilling competitor and characterize how
+    the incumbent''s model characteristics drive the incentives around how much the
+    competitor should distill. We also consider the impact of distillation on key
+    market outcomes like user-side surplus and the incumbent''s utility. Our key contribution,
+    however, is to study interventions for preventing or limiting distillation attacks.
+    In this context, we study two settings: i) when it is possible, with a certain
+    probability (which grows in the extent of distillation conducted), to detect an
+    attack on the incumbent''s model; and ii) when a distillation attack cannot be
+    reliably detected. In the first setting, we show that penalty-based regulations
+    can be very effective in completely deterring distillation, although it can have
+    potentially adverse effects on market competition and user surplus. In the latter
+    setting, we show that the incumbent can use self-distillation as a mitigation
+    strategy. Importantly, the effectiveness of self-distillation depends on how cost-efficiently
+    the incumbent can deploy a new self-distilled model on the market. On the positive
+    side, self-distillation can preserve market competition thus protecting user surplus
+    to some extent.'
+- title: Skillful and realistic precipitation forecasting with reinforced diffusion
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.38775v1
+  category: ai-marketing
+  subcategory: measurement
+  authors:
+  - Ozan Sener
+  - Anand Avati
+  - David Hafner
+  - Jierui Lin
+  - Laura Manduchi
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Accurate precipitation forecasting remains elusive as physics-based models
+    struggle to resolve mesoscale convection and machine learning often yields physically
+    inconsistent, blurred results that consistently underestimate extreme events.
+    We present FitzRoy, the first system that simultaneously achieves state-of-the-art
+    predictive skill and physical realism over the continental United States. Through
+    a reinforced diffusion framework, where a conditional discrete diffusion model
+    is refined via reinforcement learning, FitzRoy effectively resolves the long-standing
+    trade-off between pointwise accuracy and structural fidelity. Across lead times
+    up to 24 hours, FitzRoy consistently matches or exceeds state-of-the-art models
+    while preserving structural realism and capturing extreme events. Its low-latency
+    inference further enables deployment in real-time operational settings. In case
+    studies such as the 2025 Texas Hill Country floods and the 2026 Missouri floods,
+    FitzRoy signals record-breaking accumulations that existing models largely missed.
+    By bridging the gap between realism and skill, FitzRoy establishes a new frontier
+    for high-fidelity precipitation forecasting.
+- title: 'ACAM-J-MARS: Multi-Atlas Riemannian Spectral Representations for Decoding
+    Advanced Meditation States from fMRI'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.39171v1
+  category: ai-marketing
+  subcategory: measurement
+  authors:
+  - Jian Wang
+  - Winson F. Z. Yang
+  - Wugeng Zheng
+  - Matthew D. Sacchet
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Inferring jhana-type advanced concentration absorption meditation (ACAM-J)
+    states from fMRI data is challenging due to the spatially distributed nature of
+    meditation-related effects, substantial inter-individual variability that can
+    exceed within-subject state differences, and limited sample sizes. Conventional
+    machine-learning approaches often formulate this problem as unimodal, Euclidean,
+    atlas-based classification, thereby neglecting the non-Euclidean geometry of functional
+    connectivity matrices and underrepresenting temporal information in functional
+    magnetic resonance imaging (fMRI); these limitations can lead to suboptimal classification
+    performance. We propose ACAM-J-MARS (\textbf{M}ulti-\textbf{A}tlas \textbf{R}iemannian
+    \textbf{S}pectral representation), which computes functional connectivity using
+    multiple atlases, represents symmetric positive definite (SPD) connectivity matrices
+    on a Riemannian manifold, projects them into a log-Euclidean tangent space, and
+    augments connectivity-derived features with low-frequency BOLD spectral energy
+    to better resolve subtle state differences under heterogeneous variability. Evaluated
+    on 204 segments from 22 practitioners, ACAM-J-MARS improves performance across
+    multiple backbone models, achieving a balanced accuracy of 0.757 for early versus
+    late ACAM-J classification and 0.545 for three-class classification, corresponding
+    to a 10.8-point absolute improvement over the strongest baseline. These findings
+    suggest that the proposed representation improves the decoding of advanced meditative
+    brain states and may enable downstream applications such as closed-loop neurofeedback
+    and real-time psychophysiological brain-computer interfaces.
+- title: 'Towards Myocardial Infarction Diagnosis: An Investigation into Machine Learning
+    and Deep Learning Algorithms using ECG Data'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.37709v1
+  category: ai-marketing
+  subcategory: measurement
+  authors:
+  - Rafid Ahnaf
+  - Husne Mubarak
+  - Fahim Ahsan
+  - G. M. Refatul Islam
+  - Rafeed Rahman
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Myocardial Infarction (MI) is a severe and potentially fatal cardiac condition
+    caused by myocardial injury due to ischemia, and timely detection can substantially
+    reduce its mortality. Electrocardiography (ECG) is the primary diagnostic modality
+    for MI, but manual interpretation is susceptible to human error. In this work,
+    we propose Visionary V2, a multi-step, adaptive filtration method for ECG signal
+    normalization, and use it to study machine learning (ML) and deep learning (DL)
+    approaches to MI detection on the PTB Diagnostic ECG Database using all 15 available
+    leads. On statistical features extracted from the filtered signals, such as the
+    R-R interval, a Bagging ensemble of decision trees reaches 96.6% accuracy, compared
+    with 87.7% when the signals are processed with BioSPPy. We further generate an
+    image dataset from the filtered signals, on which a custom ResNet-50 misclassifies
+    only 1 of 7,000 validation images and a custom CNN reaches an F1 score of about
+    98.7%. Finally, we apply LIME, Grad-CAM and Integrated Gradients to verify that
+    the image models attend to the ECG waveform rather than the background. These
+    results indicate that careful signal normalization combined with ML and DL models
+    can support fast and accurate automated MI screening.
+- title: Formalizing the Intrinsic Dimension of Objective Landscapes by a Generalized
+    Notion of Co-dimension
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.39674v1
+  category: ai-marketing
+  subcategory: measurement
+  authors:
+  - Ernesto Araya
+  - Gitta Kutyniok
+  - Weilin Li
+  - Johannes Maly
+  - Manjot Singh
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: In this work, we formalize the concept of intrinsic dimension of objective
+    landscapes introduced in Li et al. (2018), which measures the structural complexity
+    of learning problems by training along randomly generated subspaces. We define
+    the intrinsic dimension of a set $Θ\subset\mathbb{R}^p$ as the minimal dimension
+    $d_{\mathrm{int}}(Θ)$ such that a random plane of dimension $d_{\mathrm{int}}(Θ)$
+    in $\mathbb{R}^p$ intersects $Θ$ with probability one. We show that it is a generalized
+    notion of co-dimension that depends on the global geometry of $Θ$. We study mathematical
+    properties of the intrinsic dimension and develop techniques to estimate the intrinsic
+    dimension of sets $Θ$ that arise in learning problems. More specifically, we derive
+    upper and/or lower bounds where $Θ$ is the set of optimal parameters in student-teacher
+    settings with shallow and deep ReLU networks, including finite and infinite sample
+    cases, and with and without regularization. We discuss how our theory leads to
+    novel types of generalization bounds, thereby showing that the intrinsic dimension
+    is a measure of learning complexity. Our results connect techniques from seemingly
+    different areas of machine learning research such as classification of symmetries
+    of ReLU networks and stochastic geometry.
+- title: 'RainCheck: Harnessing Historical Weather Data with Machine Learning for
+    Rainfall Forecasting in Bangladesh'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.38211v1
+  category: ai-marketing
+  subcategory: measurement
+  authors:
+  - Shahran Rahman Alve
+  - Muhammad Zawad Mahmud
+  - Samiha Islam
+  - Al Jubayer Pial
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'Machine-learning rainfall forecasts are often evaluated by shuffling
+    station records into random training and test sets. For rainfall, this lets a
+    model see what happened at neighbouring stations on the very day it is asked to
+    forecast, and it hides the fact that a seasonal lookup table already explains
+    most of the variance. We quantify both effects on 618,650 station-days from 35
+    Bangladesh Meteorological Department stations (1948-2014). We compare random,
+    temporal (train &lt;=1999, test 2005-2014) and spatio-temporal (unseen stations
+    and unseen years) evaluation, calendar-only versus antecedent-rainfall features,
+    and six learners against climatology, persistence and SARIMA. Three findings stand
+    out. First, a station-month climatology alone classifies high-rainfall months
+    with 88.4% accuracy (AUC 0.950), and no learner improved on it by more than 0.8
+    points under temporal evaluation. Second, a calendar-only random forest reached
+    a next-day wet-day AUC of 0.889 under a random split, higher than any model with
+    real predictors under temporal evaluation, yet fell to 0.835, below climatology
+    (0.859), on future years. Third, models with lagged rainfall add genuine but modest
+    skill for next-day forecasts: a Brier skill score of 0.074 (95% CI 0.064-0.088)
+    over climatology, rising to 0.091 when station and year inputs are removed and
+    to 0.131 when other stations'' same-day observations are added. A GRU sequence
+    model matches but does not exceed gradient boosting, and skill disappears beyond
+    a two-day lead. For monthly totals, no learner beat climatology significantly.
+    We release a leakage-aware protocol and code so that future station-based studies
+    report skill against climatology on held-out years.'
+- title: 'Vendster: An Evaluation Arena to Investigate How Forecasting Tool Quality
+    Affects LLM Agent Behaviors in Buyer-Vendor Negotiation'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.38292v1
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Charin Polpanumas
+  venue: ''
+  code_url: https://github.com/amazon-science/Vendster
+  project_url: ''
+  abstract: Time-series forecasters are ranked almost entirely by accuracy metrics,
+    but a forecast's decision value, its effect on the downstream decision, need not
+    track accuracy and is rarely measured. This problem compounds as large language
+    model (LLM) agents increasingly consume forecasters as tools, mediating them through
+    stochastic, opaque policies. We present Vendster, an evaluation arena measuring
+    how a forecaster's bias and prediction-interval width change the outcome of a
+    buyer--vendor discount negotiation between two LLM agents. In the reference instance
+    Vendster-M5, sampling base demand patterns from the M5 dataset, we evaluate two
+    frontier-closed LLM families (Claude Opus 4.6 and GPT-5.6 Sol) and two open ones
+    (DeepSeek-V3.2 and Qwen3-235B-A22B). Model-generated forecasts raise sales target
+    attainment by up to +17 percentage points (p&lt;0.001), yet standard forecast
+    evaluation metrics such as relWQL and MASE do not predict negotiation outcomes
+    at a statistically significant level. To isolate the causal structure, we substitute
+    in synthetic forecasts with controlled bias and interval width. Under-prediction
+    bias significantly improves outcomes for agents that react more to the forecasts---dose-response
+    slopes -0.387 and -0.416 (p&lt;0.001). Interval width has no statistically significant
+    effect at zero bias. These findings indicate that the direction of forecast bias
+    and agent forecast-reactivity are more strongly associated with downstream outcomes
+    than forecast accuracy. Vendster is fully customizable and released under CC BY-NC
+    4.0 at https://github.com/amazon-science/Vendster.
+- title: 'FACTS-MAS: A Multi-Agent Architecture for Adaptive Forecasting from Heterogeneous
+    Evidence'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.38225v1
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Madumita Karthikeyan
+  - Umang Rajnikant Bid
+  - Rong Pan
+  venue: ''
+  code_url: https://github.com/Madumita24/FACTS-MAS
+  project_url: ''
+  abstract: Real-world forecasting often requires integrating heterogeneous evidence
+    whose predictive value varies across horizons, operating regimes, and domains.
+    We introduce FACTS-MAS, a domain-agnostic multi-agent forecasting framework that
+    decomposes evidence into specialized channels for temporal dynamics, exogenous
+    context, seasonality, structural information, and discrete events. Each agent
+    generates an independently testable forecast through a common interface, while
+    leakage-safe historical validation measures its predictive skill relative to a
+    naive reference. These skill estimates are used to weight and combine agent forecasts,
+    so that uninformative evidence is either removed or downweighted rather than forced
+    to participate. A calibration procedure selects domain-specific constant means
+    based on historical validation folds. We evaluate FACTS-MAS on weekly for-sale
+    housing inventory from Zillow and weekly unemployment insurance claims from FRED,
+    for 15 U.S. metropolitan areas at 4-, 8-, and 13-week forecasting horizons. Our
+    method outperforms both a naive last-value forecast method and the TimesFM foundation
+    model. However, a factor-adjusted exponential smoothing model performs as well
+    as the fused forecast. The evidence therefore supports FACTS-MAS as a systematic
+    protocol for testing, calibrating, and recomposing evidence channels before assembling
+    them into the strongest single model for a specific application domain. Code,
+    data, and results are available at https://github.com/Madumita24/FACTS-MAS.
+- title: 'The Athlete as a Scientist of One: Agentic Bayesian Experimental Design
+    for Individualized Physiology from Consumer Wearables'
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.40370v1
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Behnam Moradi
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'Large language model (LLM) agents for personal health read wearable data
+    and recommend, but do not learn about the individual in a way that can be audited
+    or falsified. We present EpiCoach, an agentic system that treats one athlete,
+    a cross-country mountain biker, as the subject of accountable N-of-1 science.
+    Claims about the athlete live in an evidence-gated hypothesis registry: each must
+    issue a probabilistic prediction about a future session before it occurs, and
+    its belief moves only through computed evidence from a logged statistical fit.
+    Predictions come from a mechanistic digital twin inferred from heart rate, GPS
+    and barometric altitude: a lagged heart-rate response model, a fitness-fatigue
+    model with learned time constants, and a latent technical-descending skill state,
+    measured on discovered trail segments. The agent prescribes the next training
+    week as a constrained experiment maximizing information gain subject to load and
+    safety constraints, around two instrument rides. We evaluate the system two ways
+    over eighteen months of data. A rolling-origin replay benchmark shows the twin
+    beats standard forecasters on heart rate but not segment time, and the agentic
+    loop matches a static model. A live prospective phase runs the weekly cycle: in
+    its first three weeks the ledger sealed 20 predictions, scored 14, the descent
+    forecast calibrated after one correction, the climb forecast pessimistic as the
+    athlete improved, and the safety officer vetoed the agent twice. Every correction
+    is preserved in the registry, a template for auditable, falsifiable personalization
+    in digital health. We release the registry, benchmark and protocol.'
+- title: Locating and Closing Information Gaps in Multi-Agent Systems
+  date: 2026-10
+  url: https://arxiv.org/abs/2610.40186v1
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Yaxin Gong
+  - Chongming Gao
+  - Gangyi Zhang
+  - Chenxiao Fan
+  - Leyang Shen
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'Multi-step Web tasks often require several LLM agents to gather and combine
+    evidence. The communication graph of a fixed workflow restricts which agents can
+    read each other''s outputs: evidence retrieved by one agent may never reach the
+    agent that needs it, leaving an information gap and an incomplete or incorrect
+    answer. Adding a connection can deliver the missing evidence, but can also lead
+    the receiver to adopt an incorrect upstream conclusion that displaces a correct
+    answer; the final output alone does not separate the two. We propose Selective
+    Probing and Link Insertion for Closing information gaps in multi-agent Execution
+    (SPLICE), which locates information gaps per query and decides what to adopt after
+    adding an edge. After the original workflow runs, SPLICE uses the query and node
+    outputs to locate a possible gap, adds one directed edge from a source to a receiver
+    to deliver the relevant evidence, and re-executes the receiver and affected downstream
+    nodes, producing a candidate answer. The adoption decision reads both the final
+    answers of the two runs and the process changes the edit caused inside the workflow:
+    how far the receiver moved, where its new content came from, and whether the change
+    reached the final answer. A selector trained on these process features chooses
+    between adopting the candidate answer and retaining the original. On five benchmarks,
+    SPLICE raises the task score on Web tool use by 8.0% and the mean score on four
+    reasoning and planning benchmarks by 5.7% relative to the static skeleton, at
+    1.25 to 1.44$\times$ the skeleton''s cost, and transfers zero-shot to four unseen
+    backbones.'
