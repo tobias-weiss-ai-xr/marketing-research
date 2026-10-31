@@ -1,8 +1,8 @@
 # Agentic AI and Contextual Intelligence in Marketing
-## A Combined Literature Review (WIP)
+## A Systematic Review of the Construct Gap (WIP)
 
 > **File:** `lit_review_agentic_contextual.md`
-> **Status:** DRAFT v0.2 — peer-critiqued; sections renumbered, theoretical anchoring added, TL;DR refined
+> **Status:** DRAFT v0.3 — multi-perspective critical review (marketing, CS/AI, methodology, editorial, practitioner, bibliometrics); contribution statement, So-what paragraphs, and bibliometric caveats added
 > **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the 2027 Working Paper
 > **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-31 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
 > **Lead Author:** Tobias Weiss (proposed) + [TBD co-authors]
@@ -17,11 +17,15 @@ Agentic AI is entering marketing research fast (≥100 corpus papers, all 2025�
 
 ---
 
+**Contribution.** This review makes three contributions: (1) it provides the first corpus-bounded systematic screen of the agentic × contextual intersection in marketing (≤18 papers, 2 substantive); (2) it refines the "zero intersection" claim to a precise construct-level gap (no paper defines what a marketing agent should know about its context, or how that knowledge should be structured); (3) it identifies the theoretical anchors (Endsley, Böhm et al.) that the CAM/G4 program synthesizes into a marketing construct — converting a rhetorical gap into a researchable, well-grounded agenda. The review is designed to serve as the related-work backbone for both the CAM-Sim benchmark paper and the 2027 Working Paper.
+
 ## 1. Motivation & Research Questions
 
 The corpus trend data shows two curves rising simultaneously: **agentic** (the corpus's highest-momentum trend, ≥100 papers, all from 2025–2026) and **contextual** (≥250 papers mentioning "contextual", strongly concentrated in 2024–2026). The paper program (CAM/G4, B2B-CI/G6, the 2027 Working Paper) rests on the claim that these two streams have **not yet been joined by a marketing construct**.
 
 This review tests that claim and synthesizes both streams.
+
+**Positioning vs. existing marketing context research.** Marketing already "handles context" in several mature streams — market orientation (Jaworski & Kohli, 1993), market sensing (Day, 1994), customer-journey mapping (Lemon & Verhoef, 2016), and customer-data platforms. The claim here is not that marketing ignores context; it is that none of these streams defines what a *marketing agent* should know about its situation — they are human-organizational or channel-level constructs, not agent-level situational-awareness models. The review therefore distinguishes "context as organizational capability" (well-studied) from "context as agent capability" (absent).
 
 **RQ1:** How is agentic AI entering marketing research — as what phenomena, in which roles?
 **RQ2:** How is contextual intelligence / context-awareness treated in marketing research — as what construct, at what level?
@@ -44,7 +48,9 @@ This review tests that claim and synthesizes both streams.
 
 **Exclusion.** Papers mentioning both terms only lexically (e.g., an unrelated "agent" such as chemical agents, or "context" in a passage) without substantive engagement.
 
-**Honest caveats.** (1) This is a *corpus-bounded* review: it covers what this curated corpus contains, not the full literature — useful for construct-gap claims within the corpus's coverage, not as proof of global absence. (2) Counts are lower bounds tied to a snapshot (2026-10-31); the corpus grows weekly. (3) The agentic stream is less than two years old; much of it sits in preprints and low-tier venues — quality varies widely.
+**Method justification (why "PRISMA-lite").** The corpus is auto-ingested and corpus-bounded; a full PRISMA flow (database-independent search across WoS/Scopus) is not feasible within the corpus's design. The review therefore follows PRISMA *screening* discipline (explicit eligibility, documented counts, PRISMA flow diagram in `paper/prisma_flow.svg`) but not PRISMA *search* (no database-independent search). This is a deliberate scope choice: the review's construct-gap claim is framed as "no construct in a 15,000+ paper marketing corpus" (§12 #1), not as global absence. **Screen limitation:** "value opportunity" → 0 is a single-keyword screen; the construct might appear as "value recognition", "opportunity sensing", or "value opportunity identification". The 0-count is a lower bound on the construct's *visibility*, not proof of its absence.
+
+**Honest caveats.** (1) This is a *corpus-bounded* review: it covers what this curated corpus contains, not the full literature — useful for construct-gap claims within the corpus's coverage, not as proof of global absence. (2) Counts are lower bounds tied to a snapshot (2026-10-31); the corpus grows weekly. (3) The agentic stream is less than two years old; much of it sits in preprints and low-tier venues — quality varies widely. (4) **Vocabulary noise.** "Agentic" is used loosely in the corpus: the 167-title/abstract matches include false positives (chemical agents, stock-trading agents, gaming agents) alongside genuine marketing/sales agents. The sub-stream analysis (§3.1–3.3) was hand-screened for substance, but the headline count (≥100) is a lexical upper bound, not a precise population count. (6) **Venue-quality distribution.** The corpus's top venues by count are Zenodo (1,152), SSRN (149), and book series -- the agentic stream inherits this distribution (most matches are preprints or low-tier venues). The review weights the peer-reviewed anchors (*JBR* 2026-01, *RaFT* 2026-09, *Applied Sciences* 2026-09) more heavily than preprints, but the overall quality of the agentic literature is lower than the corpus average. (7) **Bibliometric depth.** This review uses keyword screening only; co-citation analysis, bibliographic coupling, or topic modeling could strengthen (or challenge) the gap claim. These are deferred to the 2027 Working Paper (RQ H7). (6) **Venue-quality distribution.** The corpus's top venues by count are Zenodo (1,152), SSRN (149), and book series — the agentic stream inherits this distribution (most matches are preprints or low-tier venues). The review weights the peer-reviewed anchors (*JBR* 2026-01, *RaFT* 2026-09, *Applied Sciences* 2026-09) more heavily than preprints, but the overall quality of the agentic literature is lower than the corpus average. (7) **Bibliometric depth.** This review uses keyword screening only; co-citation analysis, bibliographic coupling, or topic modeling could strengthen (or challenge) the gap claim. These are deferred to the 2027 Working Paper (RQ H7). (5) **Vocabulary inconsistency.** The base rate uses "agentic" only; the intersection screen uses five agent terms (agentic/multi-agent/autonomous/ai agent/llm agent). This broadening captures context-aware agent papers that avoid the word "agentic", but it also widens the denominator — the "18 lexical co-mentions" is an upper bound on the intersection, and the true substantive count (2) is the conservative figure.
 
 ---
 
@@ -82,6 +88,10 @@ Three sub-streams, all emerging 2025–2026:
 
 **Synthesis (RQ1):** The agentic stream is a capability-first literature. It demonstrates what agents *can do* (shop, sell, price, govern) but assumes the informational substrate they need to act appropriately. This confirms the gap is not merely a lack of papers, but a lack of conceptualization of agent-level contextual intelligence.
 
+**So what for practice.** Practitioners deploying agentic AI today (sales agents, shopping agents, pricing agents) are operating without a theory of what their agent needs to *know* about the marketing situation. The result: agents that act confidently on incomplete context -- the capability trap where better execution amplifies the cost of wrong situational judgment. Before investing in more agentic capability, invest in multi-signal context sensing (intent + competitive density + channel quality -- the CAM-Sim finding).
+
+**So what for practice.** Practitioners deploying agentic AI today (sales agents, shopping agents, pricing agents) are operating without a theory of what their agent needs to *know* about the marketing situation. The result: agents that act confidently on incomplete context — the "capability trap" where better execution amplifies the cost of wrong situational judgment. Before investing in more agentic capability, invest in multi-signal context sensing (intent + competitive density + channel quality — the CAM-Sim finding).
+
 ---
 
 ## 4. Theme B — Contextual Intelligence & Context-Awareness in Marketing (RQ2)
@@ -103,10 +113,14 @@ The ≥25 context-aware/contextual-intelligence papers split into:
 
 **Synthesis (RQ2):** Marketing's treatment of context is channel-bound and operational. It lacks the theoretical depth of Endsley's situational awareness or Böhm et al.'s value opportunity recognition. The construct is absent.
 
+**So what for practice.** Marketing teams already collect context signals (intent data, competitive intelligence, channel state) but treat them as *inputs to targeting*, not as a *situational state* that should drive the entire action set. The practical implication: build a unified context model (audience + channel + temporal + situational + social + market) before optimizing individual channels -- otherwise you optimize locally and miss the situation.
+
+**So what for practice.** Marketing teams already collect context signals (intent data, competitive intelligence, channel state) but treat them as *inputs to targeting*, not as a *situational state* that should drive the entire action set. The practical implication: build a unified context model (audience + channel + temporal + situational + social + market) before optimizing individual channels — otherwise you optimize locally and miss the situation.
+
 **Prior art outside marketing (verified):**
 - *Häglund (2025), "Contextual intelligence: leveraging AI for targeted marketing"* (PhD thesis, Umeå University, Dept. of Computing Science; DiVA diva2:1955463) — stakes the phrase in **CS/NLP** (opinion-unit extraction, aspect-based sentiment, media-context effects). Technical foundations, but no marketing construct.
 - Management-literature uses of "contextual intelligence" (leadership tradition; scanned in `gaps_deep_dive.md`) — decision-making in context, but organizational/human-level, not marketing-agent-level.
-- CS infrastructure: context-aware recommender systems (Adomavicius & Tuzhilin, 2011), context (Dey, 2001), contextual bandits (Li et al., 2010; Agrawal & Goyal, 2013) — context-aware *action selection*, deployed at scale in ad platforms, but a scalar-reward policy view with no marketing situation taxonomy and no situational-awareness semantics.
+- CS infrastructure: context-aware recommender systems (Adomavicius & Tuzhilin, 2011), context (Dey, 2001), contextual bandits (Li et al., 2010; Agrawal & Goyal, 2013) — context-aware *action selection* deployed at scale in ad platforms. Contextual bandits are a sophisticated, well-understood framework (context vectors → arm selection, online learning from observed rewards); the gap is not algorithmic sophistication but the *marketing* layer — no marketing situation taxonomy, no construct of what a marketing agent should know, no Endsley-style awareness semantics. CAM's situation taxonomy (6 archetypes) is the proposed bridge.
 
 ---
 
@@ -116,12 +130,16 @@ Screening the ≤18 papers containing both agent vocabulary (`agentic`/`multi-ag
 
 - **Genuine intersection (2)** — both full-text-confirmed substantive (arXiv abstracts, 2026-10-31):
   - *Lines and Ladders: A Context-Aware Multi-Agent Framework for Large-Scale Retail Pricing* (Chunduri et al., arXiv, 2026-08) — context-aware LLM agents constructing pricing taxonomies; evaluated on real-world enterprise data, deployed in production (F1 0.83 for Lines, 3-agent system beats single-agent baselines). Algorithmic infrastructure (catalog governance), not a marketing *construct*.
-  - *Personalized to Persuade: The Effects of Contextualization and Warmth on Trust and Relevance* (arXiv, 2026-05) — a 2×2 between-subjects experiment (N = 380) on AI assistants that personalize responses via *contextualization*: contextualization alone **reduces** persuasive power; combined with conversational warmth it restores persuasiveness via a crossover interaction; reliance on AI persists across conditions. The corpus's closest treatment of *agent-level context effects on consumer persuasion* — empirical, but framed as communication/persuasion, not as a marketing situational-awareness construct.
+  - *Personalized to Persuade: The Effects of Contextualization and Warmth on Trust and Relevance* (arXiv, 2026-05) — a 2×2 between-subjects experiment (N = 380) on AI assistants that personalize responses via *contextualization*: contextualization alone **reduces** persuasive power; combined with conversational warmth it restores persuasiveness via a crossover interaction; reliance on AI persists across conditions. **Caveat:** single study, specific design (arguing against expert recommendations), communication-framing. The corpus's closest treatment of *agent-level context effects on consumer persuasion* — empirical, but framed as communication/persuasion, not as a marketing situational-awareness construct. Replication needed before treating as a robust effect.
 - **Lexical co-mentions (≤16):** e.g., *Can AI Agents Simulate A/B Test Outcomes?* (validation methodology), *Calibrating Professional Discretion in AI-Supported B2B Selling* (context mentioned, not constructed), *LLMs Are Not Good Strategists, Yet Memory-Enhanced Agency Boosts Reasoning* (reasoning, not marketing context), plus CS-domain agent papers (pathology, chemistry, trading, web dev) where "context" is incidental.
 
 **Refined claim (supersedes the earlier "zero intersection" framing):** the gap is **not** that no paper combines agents and context — *Lines and Ladders* does, and contextual bandits do so industry-wide. The gap is that **no paper defines what situational or contextual intelligence *means* for a marketing agent** — no situation taxonomy, no construct, no measurement, no theory of which context dimensions matter for which marketing actions. The two substantive papers bracket the gap from both sides: one builds *infrastructure* on context-aware agents (pricing), the other measures *persuasion effects* of agent contextualization (N = 380) — neither asks what a marketing agent should know about its context, or how that knowledge should be structured.
 
 **Synthesis (RQ3):** The 18-paper intersection screen reveals that while agents and context do co-occur in two substantive papers, neither bridges the gap: one builds pricing infrastructure (Lines and Ladders), the other measures persuasion effects (Personalized to Persuade). The construct-level gap remains wide open. The intersection is empty at the *construct* level, not the lexical level. This is exactly the distinction the CAM-Sim paper's §5.3 caveat anticipated; this review substantiates it.
+
+**So what for practice.** The two substantive intersection papers bracket the practical space: one shows agents *can* use context for pricing (but doesn't theorize why), the other shows agent *contextualization* affects persuasion (but it can backfire without warmth). Practitioners should treat agent contextualization as a design variable to be tested, not a default -- and should expect that "more context" alone does not guarantee better outcomes.
+
+**So what for practice.** The two substantive intersection papers bracket the practical space: one shows agents *can* use context for pricing (but doesn't theorize why), the other shows agent *contextualization* affects persuasion (but it can backfire without warmth). Practitioners should treat agent contextualization as a design variable to be tested, not a default — and should expect that "more context" alone does not guarantee better outcomes.
 
 ---
 
