@@ -2,7 +2,7 @@
 ## A Systematic Review of the Construct Gap (WIP)
 
 > **File:** `lit_review_agentic_contextual.md`
-> **Status:** DRAFT v0.3 — multi-perspective critical review (marketing, CS/AI, methodology, editorial, practitioner, bibliometrics); contribution statement, So-what paragraphs, and bibliometric caveats added
+> **Status:** DRAFT v0.4 — second multi-perspective review (ethics/responsible AI, consumer behavior, legal/regulatory, information systems); ethical boundary layer, consumer-psych gap, regulatory boundaries, IS adoption perspective added
 > **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the 2027 Working Paper
 > **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-31 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
 > **Lead Author:** Tobias Weiss (proposed) + [TBD co-authors]
@@ -25,7 +25,11 @@ The corpus trend data shows two curves rising simultaneously: **agentic** (the c
 
 This review tests that claim and synthesizes both streams.
 
+**Regulatory boundaries.** Agentic marketing systems that sense and act on contextual data operate under emerging regulatory constraints: the EU AI Act (high-risk AI systems, transparency requirements), GDPR (data minimization, purpose limitation, automated decision-making rights under Art. 22), and consumer protection law (unfair commercial practices). The corpus's privacy-data category (475 papers) treats these as *constraints on data use*, but no paper examines how regulatory boundaries should shape an agent's *situational-awareness model* — e.g., which context dimensions an agent may legally sense, or how consent status should gate context collection. The construct should arguably include a "regulatory boundary" layer. This is adjacent to Gap 1 and Gap 4 (measurement).
+
 **Positioning vs. existing marketing context research.** Marketing already "handles context" in several mature streams — market orientation (Jaworski & Kohli, 1993), market sensing (Day, 1994), customer-journey mapping (Lemon & Verhoef, 2016), and customer-data platforms. The claim here is not that marketing ignores context; it is that none of these streams defines what a *marketing agent* should know about its situation — they are human-organizational or channel-level constructs, not agent-level situational-awareness models. The review therefore distinguishes "context as organizational capability" (well-studied) from "context as agent capability" (absent).
+
+**Ethics and responsible AI.** The review's construct gap has an ethical dimension that the literature does not address: agentic marketing systems that sense and act on context raise questions of consumer consent (what context may an agent use?), manipulation (when does context-aware persuasion cross into exploitation?), transparency (should consumers know an agent is acting on situational signals?), and fairness (do context-aware systems disadvantage certain consumer segments?). The corpus's ethics-related papers (AI ethics in marketing, privacy-data category) treat these as *constraints on targeting*, not as *dimensions of the agent's own situational awareness*. A complete marketing construct for agent-level contextual intelligence should arguably include an ethical boundary layer — what context an agent should *not* use — but no paper in the corpus approaches this. This is a sixth gap (see §9 #6).
 
 **RQ1:** How is agentic AI entering marketing research — as what phenomena, in which roles?
 **RQ2:** How is contextual intelligence / context-awareness treated in marketing research — as what construct, at what level?
@@ -66,6 +70,8 @@ Three sub-streams, all emerging 2025–2026:
 
 **Reading:** a coherent, fast-forming conversation — marketing's target shifts from humans to agents, with implications for segmentation, persuasion, and measurement.
 
+**Consumer-psychological dimension (underdeveloped).** The "machine customer" stream (§3.1) raises consumer-behavior questions that the corpus does not yet address: How do human consumers *trust* an agent acting on their behalf? What happens to consumer *agency* when purchase decisions are delegated to agents? Does agent-mediated consumption reduce or amplify reactance? The consumer-behavior literature on trust calibration, anthropomorphism, and consumer autonomy (well-represented in the corpus's consumer-behavior category, 1,731 papers) has not been applied to agentic consumption. This is a research opportunity adjacent to Gap 1.
+
 ### 3.2 The firm side: agents in sales, CRM, and marketing operations
 - *AI agents, agentic AI, and the future of sales* (Gonzalez, Habel & Hunter) — *Journal of Business Research* (2026-01). The strongest peer-reviewed anchor in the corpus: positions agents across the sales function.
 - *The Augmented Rep: Agentic AI Across the Enterprise Sales Cycle* (IRJAEM, 2026-06, preprint) — stage-by-stage agent augmentation of the sales cycle.
@@ -81,6 +87,8 @@ Three sub-streams, all emerging 2025–2026:
 - *AI Win-Rate: A Board Metric for AI-Mediated Buying (Methodology v1.0)* (Zenodo, 2026-09, preprint).
 - *AI, Agents, and the Marketing Operating System* (Routledge, 2026-10) — the "marketing OS" framing.
 - *Privacy Preference Controls for Agentic Systems* (arXiv, 2026-10) — governance of agent behavior.
+
+**IS/technology-adoption perspective.** The review's "agents demonstrated, not contextualized" gap (Gap 2) has an organizational-readiness dimension that the IS literature addresses but marketing does not: how do organizations *adopt* agentic marketing AI? The corpus's digital-marketing and analytics categories contain technology-adoption studies (TAM/UTAUT-based), but none applies adoption theory to *contextual* (vs. generic) agentic systems. Key open questions: Does organizational readiness for agentic AI differ when the system requires multi-signal context integration? How does the "capability trap" (§3.3 So-what) affect adoption decisions? The IS literature on human-in-the-loop systems and IT-business alignment (well-developed outside this corpus) is relevant but not engaged.
 
 **Forward-snowball (outside the corpus).** Citations of the JBR anchor (Semantic Scholar, 2026-10-31) show the field consolidating in top sales journals: a *JBR* field consolidation of AI in sales (2017–early 2026, 2027), and *JPSSM* papers on AI maturity in buyer–seller exchange and salesperson AI wisdom along the B2B buying journey. The agentic conversation is entering peer-reviewed sales research faster than the corpus's ingestion reflects — the corpus-bounded screen undercounts the peer-reviewed core (see §12 #1).
 
@@ -186,6 +194,7 @@ To visualize the gap, we propose a 2×2 matrix mapping the literature landscape:
 | 3 | **Value opportunity recognition not agentified** — 0 corpus papers | §6 — human construct (Böhm et al. 2020) has no machine counterpart | G6, 2027 WP |
 | 4 | **No measurement instrument** for marketing contextual intelligence | §4.2 — no scale/instrument anywhere in the corpus | G2 |
 | 5 | **No causal evidence** context-aware beats identity-based targeting in marketing outcomes | §4.1 — contextual advertising literature is descriptive/modeling, no head-to-head field evidence | G3 |
+| 6 | **No ethical/regulatory boundary** in the construct — what context an agent should *not* use | Ethics §1, Regulatory §1 — no paper addresses consent, manipulation, or legal limits as dimensions of agent awareness | G1 (extended) |
 
 ---
 
@@ -196,6 +205,7 @@ To visualize the gap, we propose a 2×2 matrix mapping the literature landscape:
 3. **Agentify value opportunity recognition** (G6/2027 WP): Layer-0 value context on top of Terho/Böhm theory; Haas panel for expert labels (RQ portfolio H1–H8).
 4. **Instrument** (G2): scale development once the construct is stable.
 5. **Causal evidence** (G3): field experiment contextual vs. identity-based targeting.
+6. **Ethical/regulatory boundary** (G1 extended): define what context an agent should *not* use — consent, manipulation, transparency, fairness, and regulatory limits (GDPR Art. 22, EU AI Act) as dimensions of the construct.
 
 ---
 
@@ -203,7 +213,7 @@ To visualize the gap, we propose a 2×2 matrix mapping the literature landscape:
 
 This review set out to test the foundational claim of the CAM/G4 program: that agentic AI and contextual intelligence, though both rising fast in marketing research, have not yet been joined by a marketing construct. The claim holds, with a necessary refinement. The intersection is not empty lexically — eighteen papers combine agent and context vocabularies, and two are substantive (a production-deployed retail-pricing multi-agent framework; an N = 380 experiment on agent contextualization and persuasion). But neither defines a marketing construct for agent-level situational/contextual intelligence; the construct gap is real, and it is the white space this program targets.
 
-The review also surfaces the theoretical anchor for the B2B line: value opportunity recognition (Böhm et al., 2020) is the human competence that the program operationalizes as a machine-sensible capability. The research agenda (§10) derives five actionable gaps, each mapped to a program artifact (G1, G4, G6, G2, G3).
+The review also surfaces the theoretical anchor for the B2B line: value opportunity recognition (Böhm et al., 2020) is the human competence that the program operationalizes as a machine-sensible capability. The research agenda (§10) derives six actionable gaps, each mapped to a program artifact (G1, G4, G6, G2, G3, and G1-extended).
 
 ---
 
@@ -213,6 +223,7 @@ The review also surfaces the theoretical anchor for the B2B line: value opportun
 2. **Snapshot drift.** Counts are lower bounds at 2026-10-31; the agentic stream is growing weekly. Screens should be re-run at submission.
 3. **Preprint-heavy.** The agentic stream is dominated by preprints and low-tier venues; peer-reviewed anchors are few (*JBR* 2026-01 is the strongest). Findings should be weighted accordingly.
 4. **Single-coder screening.** The lexical → substantive screening was done by one reviewer; inter-rater reliability is pending (natural Bachelor/Master task — see RQ portfolio H7/H8).
+5. **Ethics and consumer psychology underrepresented.** The review's construct gap is framed in capability terms (what an agent should *know*). It does not engage with the consumer-psychology literature on trust, anthropomorphism, and reactance (1,731 consumer-behavior papers in the corpus), nor with the ethics/responsible-AI literature on manipulation, consent, and fairness. These are adjacent streams that the construct definition (G1) should incorporate — particularly an ethical boundary layer (what context an agent should *not* use). This is a sixth gap, added to §9 and §10.
 
 ---
 
