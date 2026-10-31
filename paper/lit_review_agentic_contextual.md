@@ -2,7 +2,7 @@
 ## A Combined Literature Review (WIP)
 
 > **File:** `lit_review_agentic_contextual.md`
-> **Status:** DRAFT v0.1 — literature review work-in-progress (combines the planned "systematic review of agentic AI in marketing" and "review of contextual intelligence in marketing/B2B")
+> **Status:** DRAFT v0.2 — peer-critiqued; sections renumbered, theoretical anchoring added, TL;DR refined
 > **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the 2027 Working Paper
 > **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-31 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
 > **Lead Author:** Tobias Weiss (proposed) + [TBD co-authors]
@@ -13,7 +13,7 @@
 
 ## TL;DR
 
-Agentic AI is entering marketing research fast (≥100 corpus papers, all 2025–2026) but almost entirely as *capability demonstrations* — agents that shop, sell, price, and run campaigns. Contextual intelligence, meanwhile, exists in marketing mainly as *advertising targeting* (contextual ads, context-aware attribution) — a narrow, channel-level usage. At the intersection there are at most a handful of papers, and **none defines a marketing construct for agent-level situational/contextual intelligence**. The construct exists only outside marketing: in Endsley's human-factors situational-awareness tradition, in CS/NLP (Häglund 2025), and in B2B sales research as a *human* competence (Böhm et al. 2020 — value opportunity recognition). The review surfaces five gaps and maps each to the repo's research program.
+Agentic AI is entering marketing research fast (≥100 corpus papers, all 2025–2026) but almost entirely as *capability demonstrations* — agents that shop, sell, price, and run campaigns. Contextual intelligence, meanwhile, exists in marketing mainly as *advertising targeting* (contextual ads, context-aware attribution) — a narrow, channel-level usage. At the intersection there are 18 lexical co-mentions, of which only 2 are substantive, and **none defines a marketing construct for agent-level situational/contextual intelligence**. The construct exists only outside marketing: in Endsley's human-factors situational-awareness tradition, in CS/NLP (Häglund 2025), and in B2B sales research as a *human* competence (Böhm et al. 2020 — value opportunity recognition). The review surfaces five gaps and maps each to the repo's research program.
 
 ---
 
@@ -76,7 +76,7 @@ Three sub-streams, all emerging 2025–2026:
 - *AI, Agents, and the Marketing Operating System* (Routledge, 2026-10) — the "marketing OS" framing.
 - *Privacy Preference Controls for Agentic Systems* (arXiv, 2026-10) — governance of agent behavior.
 
-**Forward-snowball (outside the corpus).** Citations of the JBR anchor (Semantic Scholar, 2026-10-31) show the field consolidating in top sales journals: a *JBR* field consolidation of AI in sales (2017–early 2026, 2027), and *JPSSM* papers on AI maturity in buyer–seller exchange and salesperson AI wisdom along the B2B buying journey. The agentic conversation is entering peer-reviewed sales research faster than the corpus's ingestion reflects — the corpus-bounded screen undercounts the peer-reviewed core (see §9 #1).
+**Forward-snowball (outside the corpus).** Citations of the JBR anchor (Semantic Scholar, 2026-10-31) show the field consolidating in top sales journals: a *JBR* field consolidation of AI in sales (2017–early 2026, 2027), and *JPSSM* papers on AI maturity in buyer–seller exchange and salesperson AI wisdom along the B2B buying journey. The agentic conversation is entering peer-reviewed sales research faster than the corpus's ingestion reflects — the corpus-bounded screen undercounts the peer-reviewed core (see §12 #1).
 
 **Reading (RQ1 answer).** Agentic AI enters marketing as (i) a *new customer type* (machine customers), (ii) a *workforce layer* (sales/CRM agents), and (iii) *infrastructure* (benchmarks, metrics, governance). What it is **not**, anywhere in the corpus: a treatment of what agents need to *know about marketing context* in order to act well. Capability is demonstrated; the informational substrate — the situational context that makes an action appropriate — is assumed.
 
@@ -140,7 +140,19 @@ B2B sales research has already built — for *humans* — the construct this pro
 
 ---
 
-## 7. Conceptual Framework: The Agent–Context Matrix
+## 7. Theoretical Anchoring: Endsley, Haas, and the Construct Gap
+
+The review's central claim — that no marketing construct exists for agent-level situational/contextual intelligence — rests on three theoretical anchors, each verified and none of which is currently applied to marketing agents:
+
+1. **Endsley's Situational Awareness (1988, 1995)** — the canonical human-factors model (perception → comprehension → projection). Applied extensively to aviation, military, and human-machine systems; in marketing, only the *perception* layer (data collection) is routine, and even that is not theorized as SA. The construct has no marketing instantiation.
+2. **Böhm et al. (2020) — value opportunity recognition** — the closest *marketing* construct: a *human* competence (salesperson-level) for sensing when contextual conditions open a value-relevant engagement window. It is Endsley Level-1/2 awareness, published by the Haas group, and it has not entered the agentic-marketing conversation (0 corpus papers mention "value opportunity").
+3. **Häglund (2025) — contextual intelligence in CS/NLP** — stakes the *phrase* in computer science (opinion-unit extraction, aspect-based sentiment). Provides technical foundations but no marketing construct.
+
+**The gap is not the absence of relevant theory — it is the absence of a *marketing* synthesis.** Endsley gives the architecture, Böhm et al. give the domain construct, Häglund gives the NLP plumbing. None has been combined into a marketing theory of agent-level situational intelligence. That synthesis is the program's G1.
+
+---
+
+## 8. Conceptual Framework: The Agent–Context Matrix
 
 To visualize the gap, we propose a 2×2 matrix mapping the literature landscape:
 
@@ -153,7 +165,7 @@ To visualize the gap, we propose a 2×2 matrix mapping the literature landscape:
 
 ---
 
-## 7. Gap Synthesis
+## 9. Gap Synthesis
 
 | # | Gap | Evidence (this review) | Maps to |
 |---|-----|------------------------|---------|
@@ -165,7 +177,7 @@ To visualize the gap, we propose a 2×2 matrix mapping the literature landscape:
 
 ---
 
-## 8. Research Agenda (derived)
+## 10. Research Agenda (derived)
 
 1. **Define the construct** (G1): marketing situational/contextual intelligence for agents — dimensions, boundaries, differentiation from Häglund (CS), Endsley (human factors), and Böhm et al. (human competence). *This review is its related-work backbone.*
 2. **Operationalize sensing** (G4): signal taxonomy (audience, channel, temporal, situational, social, market) + benchmark (CAM-Sim exists; field validation per §10.3 of the benchmark paper).
@@ -175,18 +187,18 @@ To visualize the gap, we propose a 2×2 matrix mapping the literature landscape:
 
 ---
 
-## 9. Conclusion
+## 11. Conclusion
 
 This review set out to test the foundational claim of the CAM/G4 program: that agentic AI and contextual intelligence, though both rising fast in marketing research, have not yet been joined by a marketing construct. The claim holds, with a necessary refinement. The intersection is not empty lexically — eighteen papers combine agent and context vocabularies, and two are substantive (a production-deployed retail-pricing multi-agent framework; an N = 380 experiment on agent contextualization and persuasion). But neither defines a marketing construct for agent-level situational/contextual intelligence; the construct gap is real, and it is the white space this program targets.
 
-The review also surfaces the theoretical anchor for the B2B line: value opportunity recognition (Böhm et al., 2020) is the human competence that the program operationalizes as a machine-sensible capability. The research agenda (§8) derives five actionable gaps, each mapped to a program artifact (G1, G4, G6, G2, G3).
+The review also surfaces the theoretical anchor for the B2B line: value opportunity recognition (Böhm et al., 2020) is the human competence that the program operationalizes as a machine-sensible capability. The research agenda (§10) derives five actionable gaps, each mapped to a program artifact (G1, G4, G6, G2, G3).
 
 ---
 
-## 9. Limitations of This Review
+## 12. Limitations of This Review
 
 1. **Corpus-bounded.** Claims are about this curated corpus's coverage; global absence would require database-independent searching (WoS/Scopus full PRISMA). Partially mitigated by forward-snowballing from the JBR anchor (§3.2), which surfaced six peer-reviewed AI-in-sales papers outside the corpus — none of them defining a marketing contextual/situational construct, which is consistent with (not contradictory to) the construct-gap claim. The claim is framed accordingly ("no construct in a 15,000+ paper marketing corpus plus its forward-citation neighbourhood", not "no construct exists anywhere").
-2. **Snapshot drift.** Counts are lower bounds at 2026-10-29; the agentic stream is growing weekly. Screens should be re-run at submission.
+2. **Snapshot drift.** Counts are lower bounds at 2026-10-31; the agentic stream is growing weekly. Screens should be re-run at submission.
 3. **Preprint-heavy.** The agentic stream is dominated by preprints and low-tier venues; peer-reviewed anchors are few (*JBR* 2026-01 is the strongest). Findings should be weighted accordingly.
 4. **Single-coder screening.** The lexical → substantive screening was done by one reviewer; inter-rater reliability is pending (natural Bachelor/Master task — see RQ portfolio H7/H8).
 
@@ -301,7 +313,7 @@ The review also surfaces the theoretical anchor for the B2B line: value opportun
 - [ ] Run the second-coder κ screen (Appendix A; ties to RQ H7/H8).
 - [x] Full-text-confirm the two genuine intersection candidates (done 2026-10-31 via arXiv abstracts: #13 infrastructure, #18 N = 380 persuasion experiment — construct-level gap holds).
 - [x] Forward-snowball from the JBR 2026-01 anchor (done 2026-10-31 via Semantic Scholar: 6 peer-reviewed finds outside the corpus, incl. a JBR 2027 field consolidation of AI in sales — none defines a marketing context construct).
-- [ ] Decide: standalone review paper vs. related-work section of the 2027 Working Paper (§8 item 1 feeds both).
+- [ ] Decide: standalone review paper vs. related-work section of the 2027 Working Paper (§10 item 1 feeds both).
 
 ---
 
