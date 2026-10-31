@@ -2,7 +2,7 @@
 ## A Systematic Review of the Construct Gap (WIP)
 
 > **File:** `lit_review_agentic_contextual.md`
-> **Status:** DRAFT v0.4 — second multi-perspective review (ethics/responsible AI, consumer behavior, legal/regulatory, information systems); ethical boundary layer, consumer-psych gap, regulatory boundaries, IS adoption perspective added
+> **Status:** DRAFT v0.5 — 10 disciplinary lenses applied; standalone submission (IJRM/JBR) + related-work backbone for CAM-Sim & 2027 WP; contribution statement, So-what paragraphs, conceptual framework, PRISMA flow, second-coder kit
 > **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the CAM-Sim paper (§5.3) and the 2027 Working Paper
 > **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-31 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
 > **Lead Author:** Tobias Weiss (proposed) + [TBD co-authors]
