@@ -3,7 +3,7 @@
 
 > **File:** `lit_review_agentic_contextual.md`
 > **Status:** DRAFT v0.4 — second multi-perspective review (ethics/responsible AI, consumer behavior, legal/regulatory, information systems); ethical boundary layer, consumer-psych gap, regulatory boundaries, IS adoption perspective added
-> **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the 2027 Working Paper
+> **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the CAM-Sim paper (§5.3) and the 2027 Working Paper
 > **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-31 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
 > **Lead Author:** Tobias Weiss (proposed) + [TBD co-authors]
 > **Target Venues:** *Journal of Business Research*, *Industrial Marketing Management*, *International Journal of Research in Marketing* (review track), or as the related-work backbone of the 2027 Working Paper
@@ -336,7 +336,7 @@ The review also surfaces the theoretical anchor for the B2B line: value opportun
 - [ ] Run the second-coder κ screen (Appendix A; ties to RQ H7/H8).
 - [x] Full-text-confirm the two genuine intersection candidates (done 2026-10-31 via arXiv abstracts: #13 infrastructure, #18 N = 380 persuasion experiment — construct-level gap holds).
 - [x] Forward-snowball from the JBR 2026-01 anchor (done 2026-10-31 via Semantic Scholar: 6 peer-reviewed finds outside the corpus, incl. a JBR 2027 field consolidation of AI in sales — none defines a marketing context construct).
-- [ ] Decide: standalone review paper vs. related-work section of the 2027 Working Paper (§10 item 1 feeds both).
+- [x] Decide: standalone review paper vs. related-work section of the 2027 Working Paper — resolution: BOTH. Submit as standalone review paper (target: IJRM review track / JBR) to claim the construct gap independently; reuse verbatim as the related-work backbone for CAM-Sim (§5.3) and the 2027 Working Paper. The review is the gap-establishing artifact; the empirical papers cite it. Highest ROI: one submission, two uses.
 
 ---
 
