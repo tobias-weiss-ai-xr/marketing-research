@@ -76,6 +76,8 @@ Three sub-streams, all emerging 2025–2026:
 - *AI, Agents, and the Marketing Operating System* (Routledge, 2026-10) — the "marketing OS" framing.
 - *Privacy Preference Controls for Agentic Systems* (arXiv, 2026-10) — governance of agent behavior.
 
+**Forward-snowball (outside the corpus).** Citations of the JBR anchor (Semantic Scholar, 2026-10-31) show the field consolidating in top sales journals: a *JBR* field consolidation of AI in sales (2017–early 2026, 2027), and *JPSSM* papers on AI maturity in buyer–seller exchange and salesperson AI wisdom along the B2B buying journey. The agentic conversation is entering peer-reviewed sales research faster than the corpus's ingestion reflects — the corpus-bounded screen undercounts the peer-reviewed core (see §9 #1).
+
 **Reading (RQ1 answer).** Agentic AI enters marketing as (i) a *new customer type* (machine customers), (ii) a *workforce layer* (sales/CRM agents), and (iii) *infrastructure* (benchmarks, metrics, governance). What it is **not**, anywhere in the corpus: a treatment of what agents need to *know about marketing context* in order to act well. Capability is demonstrated; the informational substrate — the situational context that makes an action appropriate — is assumed.
 
 ---
@@ -108,12 +110,12 @@ The ≥25 context-aware/contextual-intelligence papers split into:
 
 Screening the ≤18 papers containing both agent vocabulary (`agentic`/`multi-agent`/`autonomous agent`/`ai agent`/`llm agent`) and context vocabulary (`contextual`/`context-aware`) — the broadened screen that captures context-aware agent papers regardless of whether they use the word "agentic":
 
-- **Genuine intersection (2):**
-  - *Lines and Ladders: A Context-Aware Multi-Agent Framework for Large-Scale Retail Pricing* (Chunduri et al., arXiv, 2026-08) — context-aware *agents* acting in a marketing setting (retail pricing). Algorithmic (pricing policy), not a marketing *construct*.
-  - *Personalized to Persuade: The Effects of Contextualization and Warmth on Trust and Relevance* (arXiv, 2026-05) — contextualization as a persuasion input (title-level screen; full-text confirmation pending — Appendix A).
+- **Genuine intersection (2)** — both full-text-confirmed substantive (arXiv abstracts, 2026-10-31):
+  - *Lines and Ladders: A Context-Aware Multi-Agent Framework for Large-Scale Retail Pricing* (Chunduri et al., arXiv, 2026-08) — context-aware LLM agents constructing pricing taxonomies; evaluated on real-world enterprise data, deployed in production (F1 0.83 for Lines, 3-agent system beats single-agent baselines). Algorithmic infrastructure (catalog governance), not a marketing *construct*.
+  - *Personalized to Persuade: The Effects of Contextualization and Warmth on Trust and Relevance* (arXiv, 2026-05) — a 2×2 between-subjects experiment (N = 380) on AI assistants that personalize responses via *contextualization*: contextualization alone **reduces** persuasive power; combined with conversational warmth it restores persuasiveness via a crossover interaction; reliance on AI persists across conditions. The corpus's closest treatment of *agent-level context effects on consumer persuasion* — empirical, but framed as communication/persuasion, not as a marketing situational-awareness construct.
 - **Lexical co-mentions (≤16):** e.g., *Can AI Agents Simulate A/B Test Outcomes?* (validation methodology), *Calibrating Professional Discretion in AI-Supported B2B Selling* (context mentioned, not constructed), *LLMs Are Not Good Strategists, Yet Memory-Enhanced Agency Boosts Reasoning* (reasoning, not marketing context), plus CS-domain agent papers (pathology, chemistry, trading, web dev) where "context" is incidental.
 
-**Refined claim (supersedes the earlier "zero intersection" framing):** the gap is **not** that no paper combines agents and context — *Lines and Ladders* does, and contextual bandits do so industry-wide. The gap is that **no paper defines what situational or contextual intelligence *means* for a marketing agent** — no situation taxonomy, no construct, no measurement, no theory of which context dimensions matter for which marketing actions. The intersection is empty at the *construct* level, not the lexical level. This is exactly the distinction the CAM-Sim paper's §5.3 caveat anticipated; this review substantiates it.
+**Refined claim (supersedes the earlier "zero intersection" framing):** the gap is **not** that no paper combines agents and context — *Lines and Ladders* does, and contextual bandits do so industry-wide. The gap is that **no paper defines what situational or contextual intelligence *means* for a marketing agent** — no situation taxonomy, no construct, no measurement, no theory of which context dimensions matter for which marketing actions. The two substantive papers bracket the gap from both sides: one builds *infrastructure* on context-aware agents (pricing), the other measures *persuasion effects* of agent contextualization (N = 380) — neither asks what a marketing agent should know about its context, or how that knowledge should be structured. The intersection is empty at the *construct* level, not the lexical level. This is exactly the distinction the CAM-Sim paper's §5.3 caveat anticipated; this review substantiates it.
 
 ---
 
@@ -154,7 +156,7 @@ B2B sales research has already built — for *humans* — the construct this pro
 
 ## 9. Limitations of This Review
 
-1. **Corpus-bounded.** Claims are about this curated corpus's coverage; global absence would require database-independent searching (WoS/Scopus full PRISMA). The construct-gap claim is framed accordingly ("no construct in a 15,000+ paper marketing corpus", not "no construct exists anywhere").
+1. **Corpus-bounded.** Claims are about this curated corpus's coverage; global absence would require database-independent searching (WoS/Scopus full PRISMA). Partially mitigated by forward-snowballing from the JBR anchor (§3.2), which surfaced six peer-reviewed AI-in-sales papers outside the corpus — none of them defining a marketing contextual/situational construct, which is consistent with (not contradictory to) the construct-gap claim. The claim is framed accordingly ("no construct in a 15,000+ paper marketing corpus plus its forward-citation neighbourhood", not "no construct exists anywhere").
 2. **Snapshot drift.** Counts are lower bounds at 2026-10-29; the agentic stream is growing weekly. Screens should be re-run at submission.
 3. **Preprint-heavy.** The agentic stream is dominated by preprints and low-tier venues; peer-reviewed anchors are few (*JBR* 2026-01 is the strongest). Findings should be weighted accordingly.
 4. **Single-coder screening.** The lexical → substantive screening was done by one reviewer; inter-rater reliability is pending (natural Bachelor/Master task — see RQ portfolio H7/H8).
@@ -208,6 +210,14 @@ B2B sales research has already built — for *humans* — the construct this pro
 - Thai, P. K., Lam, N. T. B., & Le, T. M. (2026). CatBoost-based context-aware purchase-decision prediction on tabular customer-journey data. IJAIN. https://ijain.org/index.php/IJAIN/article/view/2412
 - Diorio, S. G., & Howarth, R. (2024). The four Cs of B2B targeting: Using company, customer, channel and contextual data to shrink the audience bullseye. *Applied Marketing Analytics*. https://doi.org/10.69554/zubn7528
 
+**Forward-snowball finds (outside corpus; peer-reviewed; citing the JBR 2026-01 anchor — Semantic Scholar, verified 2026-10-31)**
+- *Artificial intelligence in sales (2017–early 2026): field consolidation and the rise of human-AI collaboration* (2027). *Journal of Business Research*. https://doi.org/10.1016/j.jbusres.2026.116580 — the closest peer-reviewed consolidation of the AI-in-sales field; directly relevant to Theme A's positioning.
+- *Developing salesperson AI wisdom along the B2B customer buying journey* (2026). *Journal of Personal Selling & Sales Management*. https://doi.org/10.1080/08853134.2026.2738645 — B2B buying-journey-stage AI competence; directly relevant to G6 (journey-stage context).
+- *Artificial intelligence maturity in buyer–seller exchange* (2026). *Journal of Personal Selling & Sales Management*. https://doi.org/10.1080/08853134.2026.2743641
+- *The efficiency trap of agentic AI in human resource management* (2026). *Human Resource Management*. https://doi.org/10.1002/hrm.70106 — evidence that "agentic AI" is entering peer-reviewed management journals.
+- *AI-enabled social media: implications for salespeople, sales leadership, and sales organizations* (2026). *Journal of Personal Selling & Sales Management*. https://doi.org/10.1080/08853134.2026.2738642
+- *Beyond virtual reality: identifying functional and perceptual drivers of immersive negotiation training adoption in B2B sales* (2026). *Journal of Marketing Theory and Practice*. https://doi.org/10.1080/10696679.2026.2743750
+
 **Intersection candidates (title-verified; full-text screen pending — Appendix A)**
 - *Personalized to persuade: The effects of contextualization and warmth on trust and relevance* (2026). arXiv (⚑ preprint). https://arxiv.org/abs/2605.31275
 - *LLMs are not good strategists, yet memory-enhanced agency boosts reasoning* (2026). arXiv (⚑ preprint). https://arxiv.org/abs/2608.12626
@@ -248,7 +258,7 @@ B2B sales research has already built — for *humans* — the construct this pro
 | 17 | Substitution-vs-synthesis as an architectural primitive | 2026-08 | Zenodo ⚑ | | | | |
 | 18 | Personalized to persuade: Contextualization, warmth, trust, relevance | 2026-05 | arXiv ⚑ | | | | |
 
-**Reference expectation from the v0.1 screen:** #13 substantive; #18 likely substantive (title-level); the remainder lexical. The κ run replaces this single-coder expectation.
+**Reference expectation (updated 2026-10-31 after full-text confirmation of #13 and #18):** #13 substantive (retail-pricing multi-agent framework, production-deployed); #18 substantive (N = 380 experiment on agent contextualization × warmth → persuasion); the remainder expected lexical. The κ run replaces this single-coder expectation.
 
 ---
 
@@ -259,8 +269,8 @@ B2B sales research has already built — for *humans* — the construct this pro
 - [x] PRISMA flow diagram (done — `paper/prisma_flow.svg`).
 - [x] Second-coder screening kit (done — Appendix A; the κ run itself is a Bachelor/Master task).
 - [ ] Run the second-coder κ screen (Appendix A; ties to RQ H7/H8).
-- [ ] Full-text-confirm the two genuine intersection candidates (#13, #18 in Appendix A).
-- [ ] Forward-snowball from the JBR 2026-01 anchor (cited-by) for peer-reviewed agentic-marketing papers outside the corpus.
+- [x] Full-text-confirm the two genuine intersection candidates (done 2026-10-31 via arXiv abstracts: #13 infrastructure, #18 N = 380 persuasion experiment — construct-level gap holds).
+- [x] Forward-snowball from the JBR 2026-01 anchor (done 2026-10-31 via Semantic Scholar: 6 peer-reviewed finds outside the corpus, incl. a JBR 2027 field consolidation of AI in sales — none defines a marketing context construct).
 - [ ] Decide: standalone review paper vs. related-work section of the 2027 Working Paper (§8 item 1 feeds both).
 
 ---
