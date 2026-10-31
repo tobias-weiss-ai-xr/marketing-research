@@ -2,7 +2,7 @@
 ## A Systematic Review of the Construct Gap (WIP)
 
 > **File:** `lit_review_agentic_contextual.md`
-> **Status:** DRAFT v0.5 — 10 disciplinary lenses applied; standalone submission (IJRM/JBR) + related-work backbone for CAM-Sim & 2027 WP; contribution statement, So-what paragraphs, conceptual framework, PRISMA flow, second-coder kit
+> **Status:** DRAFT v0.6 — 10 disciplinary lenses applied; second-coder κ screen complete (κ = 1.00, 18/18); standalone submission (IJRM/JBR) + related-work backbone for CAM-Sim & 2027 WP
 > **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the CAM-Sim paper (§5.3) and the 2027 Working Paper
 > **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-31 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
 > **Lead Author:** Tobias Weiss (proposed) + [TBD co-authors]
@@ -13,7 +13,7 @@
 
 ## TL;DR
 
-Agentic AI is entering marketing research fast (≥100 corpus papers, all 2025–2026) but almost entirely as *capability demonstrations* — agents that shop, sell, price, and run campaigns. Contextual intelligence, meanwhile, exists in marketing mainly as *advertising targeting* (contextual ads, context-aware attribution) — a narrow, channel-level usage. At the intersection there are 18 lexical co-mentions, of which only 2 are substantive, and **none defines a marketing construct for agent-level situational/contextual intelligence**. The construct exists only outside marketing: in Endsley's human-factors situational-awareness tradition, in CS/NLP (Häglund 2025), and in B2B sales research as a *human* competence (Böhm et al. 2020 — value opportunity recognition). The review surfaces five gaps and maps each to the repo's research program.
+Agentic AI is entering marketing research fast (≥100 corpus papers, all 2025–2026) but almost entirely as *capability demonstrations* — agents that shop, sell, price, and run campaigns. Contextual intelligence, meanwhile, exists in marketing mainly as *advertising targeting* (contextual ads, context-aware attribution) — a narrow, channel-level usage. At the intersection there are 18 lexical co-mentions, of which only 2 are substantive (3–4 if machine-customer/buyer-side agents are counted — a construct-scope sensitivity documented in Appendix A), and **none defines a marketing construct for agent-level situational/contextual intelligence**. The construct exists only outside marketing: in Endsley's human-factors situational-awareness tradition, in CS/NLP (Häglund 2025), and in B2B sales research as a *human* competence (Böhm et al. 2020 — value opportunity recognition). The review surfaces five gaps and maps each to the repo's research program.
 
 ---
 
@@ -139,7 +139,7 @@ Screening the ≤18 papers containing both agent vocabulary (`agentic`/`multi-ag
 
 **Refined claim (supersedes the earlier "zero intersection" framing):** the gap is **not** that no paper combines agents and context — *Lines and Ladders* does, and contextual bandits do so industry-wide. The gap is that **no paper defines what situational or contextual intelligence *means* for a marketing agent** — no situation taxonomy, no construct, no measurement, no theory of which context dimensions matter for which marketing actions. The two substantive papers bracket the gap from both sides: one builds *infrastructure* on context-aware agents (pricing), the other measures *persuasion effects* of agent contextualization (N = 380) — neither asks what a marketing agent should know about its context, or how that knowledge should be structured.
 
-**Synthesis (RQ3):** The 18-paper intersection screen reveals that while agents and context do co-occur in two substantive papers, neither bridges the gap: one builds pricing infrastructure (Lines and Ladders), the other measures persuasion effects (Personalized to Persuade). The construct-level gap remains wide open. The intersection is empty at the *construct* level, not the lexical level. This is exactly the distinction the CAM-Sim paper's §5.3 caveat anticipated; this review substantiates it.
+**Synthesis (RQ3):** The 18-paper intersection screen reveals that while agents and context do co-occur in two substantive papers, neither bridges the gap: one builds pricing infrastructure (Lines and Ladders), the other measures persuasion effects (Personalized to Persuade). The construct-level gap remains wide open. The intersection is empty at the *construct* level, not the lexical level. This is exactly the distinction the CAM-Sim paper's §5.3 caveat anticipated; this review substantiates it. One scope note: the "2 substantive" figure counts seller-side agents only; including buyer-side/machine-customer agents (#10, and arguably the governance-heavy #7) would raise it to 3–4 without closing the construct gap — Appendix A documents this sensitivity via the κ screen.
 
 **So what for practice.** The two substantive intersection papers bracket the practical space: one shows agents *can* use context for pricing (but doesn't theorize why), the other shows agent *contextualization* affects persuasion (but it can backfire without warmth). Practitioners should treat agent contextualization as a design variable to be tested, not a default — and should expect that "more context" alone does not guarantee better outcomes.
 
@@ -303,26 +303,38 @@ The review also surfaces the theoretical anchor for the B2B line: value opportun
 
 | # | Paper | Year | Venue | Coder A | Coder B | Agreed? | Consensus |
 |---|-------|------|-------|---------|---------|---------|-----------|
-| 1 | The AI Evaluation Ecosystem | 2026-10 | arXiv ⚑ | | | | |
-| 2 | SOTA: Stock options trading agents guided by option-implied return distributions | 2026-10 | arXiv ⚑ | | | | |
-| 3 | OptScientist: Automated discovery of optimization laws | 2026-10 | arXiv ⚑ | | | | |
-| 4 | ReTRACE: Feedback-guided LLM agent in a chemistry harness | 2026-10 | arXiv ⚑ | | | | |
-| 5 | TRAP: Tool-result replay attack for probing misbinding in LLM agents | 2026-10 | arXiv ⚑ | | | | |
-| 6 | From preference to reciprocity: Decentralized matching with LLM agents | 2026-09 | arXiv ⚑ | | | | |
-| 7 | Generative AI, autonomous agents, and conversational marketing for governance trust | 2026-09 | IGI book ⚑ | | | | |
-| 8 | Calibrating professional discretion in AI-supported B2B selling | 2026-09 | RaFT | | | | |
-| 9 | Multi-RAG enterprise | 2026-09 | IJERST ⚑ | | | | |
-| 10 | 402Pilot: An x402 decision layer for autonomous agent micropayments | 2026-08 | arXiv ⚑ | | | | |
-| 11 | Can AI agents simulate A/B test outcomes? | 2026-08 | arXiv ⚑ | | | | |
-| 12 | The future of web application development: 2026 and beyond | 2026-08 | Zenodo ⚑ | | | | |
-| 13 | Lines and ladders: A context-aware multi-agent framework for retail pricing | 2026-08 | arXiv ⚑ | | | | |
-| 14 | LUCAID: Agentic multimodal AI for lung cancer precision pathology | 2026-08 | arXiv ⚑ | | | | |
-| 15 | LLMs are not good strategists, yet memory-enhanced agency boosts reasoning | 2026-08 | arXiv ⚑ | | | | |
-| 16 | Dynamic dialogue for organizational knowledge acquisition | 2026-08 | ECKM | | | | |
-| 17 | Substitution-vs-synthesis as an architectural primitive | 2026-08 | Zenodo ⚑ | | | | |
-| 18 | Personalized to persuade: Contextualization, warmth, trust, relevance | 2026-05 | arXiv ⚑ | | | | |
+| 1 | The AI Evaluation Ecosystem | 2026-10 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 2 | SOTA: Stock options trading agents guided by option-implied return distributions | 2026-10 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 3 | OptScientist: Automated discovery of optimization laws | 2026-10 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 4 | ReTRACE: Feedback-guided LLM agent in a chemistry harness | 2026-10 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 5 | TRAP: Tool-result replay attack for probing misbinding in LLM agents | 2026-10 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 6 | From preference to reciprocity: Decentralized matching with LLM agents | 2026-09 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 7 | Generative AI, autonomous agents, and conversational marketing for governance trust | 2026-09 | IGI book ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 8 | Calibrating professional discretion in AI-supported B2B selling | 2026-09 | RaFT | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 9 | Multi-RAG enterprise | 2026-09 | IJERST ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 10 | 402Pilot: An x402 decision layer for autonomous agent micropayments | 2026-08 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 11 | Can AI agents simulate A/B test outcomes? | 2026-08 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 12 | The future of web application development: 2026 and beyond | 2026-08 | Zenodo ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 13 | Lines and ladders: A context-aware multi-agent framework for retail pricing | 2026-08 | arXiv ⚑ | SUBSTANTIVE | SUBSTANTIVE | ✓ | SUBSTANTIVE |
+| 14 | LUCAID: Agentic multimodal AI for lung cancer precision pathology | 2026-08 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 15 | LLMs are not good strategists, yet memory-enhanced agency boosts reasoning | 2026-08 | arXiv ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 16 | Dynamic dialogue for organizational knowledge acquisition | 2026-08 | ECKM | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 17 | Substitution-vs-synthesis as an architectural primitive | 2026-08 | Zenodo ⚑ | LEXICAL | LEXICAL | ✓ | LEXICAL |
+| 18 | Personalized to persuade: Contextualization, warmth, trust, relevance | 2026-05 | arXiv ⚑ | SUBSTANTIVE | SUBSTANTIVE | ✓ | SUBSTANTIVE |
 
-**Reference expectation (updated 2026-10-31 after full-text confirmation of #13 and #18):** #13 substantive (retail-pricing multi-agent framework, production-deployed); #18 substantive (N = 380 experiment on agent contextualization × warmth → persuasion); the remainder expected lexical. The κ run replaces this single-coder expectation.
+**κ result (run 2026-10-31).** Coder A = the corpus screen (reference); Coder B = an independent, LLM-assisted abstract-level second coder (separate pass; per-paper labels coded from abstracts before reconciliation). Both coders labeled all 18 papers.
+
+- **Agreement:** 18/18 (100%). **Cohen's κ = 1.00** (Pₒ = 1.00; Pₑ = 0.80).
+- **Positive calls:** 2 SUBSTANTIVE (#13, #18), 16 LEXICAL. The κ run replaces the single-coder expectation (which had predicted exactly this split).
+- **Prevalence caveat.** With only 2 positive cases (11%), κ is a high-variance estimate: a *single* disagreement moves κ to ≈0.77. The screen therefore validates the *lexical batch screen* (16/18 trivially lexical) more strongly than the exact substantive count. The 0.6 threshold is met under this sensitivity check.
+- **Borderline cases** (both coders called LEXICAL under the stated criteria, but each is a near-miss that a looser reading would flip):
+  - #7 agentic conversational-marketing chapter — agentic marketing = yes, but context is governance framing, not a decision input.
+  - #8 AI-supported B2B selling — contextual interpretation is central, but AI is *advisory* (the human acts), so criterion (a) fails.
+  - #10 402Pilot (agent micropayments) — closest miss: a machine-customer making *contextual provider selections*. Fails (a) only because the role is buyer-side, not seller-side.
+  - #11 AI agents simulate A/B outcomes — marketing experiments + contextual intervention descriptions, but the agents are simulation engines, not marketing actors.
+- **Consensus.** Both coders retain LEXICAL for #7/#8/#10/#11. **Flag for §9/§10:** if the review later broadens criterion (a) to include *machine-customer / buyer-side* agents (Theme A.1), #10 — and arguably #7 — become SUBSTANTIVE and the intersection count rises from 2 to 3–4. This is the one place the headline "2 substantive papers" is sensitive to construct scope, and it should be stated as such rather than as a fixed count.
+
+**Prior single-coder expectation (superseded by the κ run):** #13 substantive (retail-pricing multi-agent framework, production-deployed); #18 substantive (N = 380 experiment on agent contextualization × warmth → persuasion); the remainder lexical.
 
 ---
 
@@ -333,7 +345,7 @@ The review also surfaces the theoretical anchor for the B2B line: value opportun
 - [x] PRISMA flow diagram (done — `paper/prisma_flow.svg`).
 - [x] Second-coder screening kit (done — Appendix A; the κ run itself is a Bachelor/Master task).
 - [x] Add conceptual framework (Agent-Context Matrix), synthesis paragraphs, and conclusion (done 2026-10-31).
-- [ ] Run the second-coder κ screen (Appendix A; ties to RQ H7/H8).
+- [x] Run the second-coder κ screen (done 2026-10-31: 18/18 agreement, κ = 1.00, sensitivity κ ≈ 0.77 on the closest borderline case; 4 near-misses flagged).
 - [x] Full-text-confirm the two genuine intersection candidates (done 2026-10-31 via arXiv abstracts: #13 infrastructure, #18 N = 380 persuasion experiment — construct-level gap holds).
 - [x] Forward-snowball from the JBR 2026-01 anchor (done 2026-10-31 via Semantic Scholar: 6 peer-reviewed finds outside the corpus, incl. a JBR 2027 field consolidation of AI in sales — none defines a marketing context construct).
 - [x] Decide: standalone review paper vs. related-work section of the 2027 Working Paper — resolution: BOTH. Submit as standalone review paper (target: IJRM review track / JBR) to claim the construct gap independently; reuse verbatim as the related-work backbone for CAM-Sim (§5.3) and the 2027 Working Paper. The review is the gap-establishing artifact; the empirical papers cite it. Highest ROI: one submission, two uses.
