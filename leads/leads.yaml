@@ -42,4 +42,55 @@ template:
     date: "2026-10-22"
     status: unverified          # verified | unverified | rejected
 
-leads: []        # <- your leads go here (copy the template block)
+
+leads:
+  - company: "SMA Solar Technology AG"
+    sector: "solar energy technology"
+    b2b: true
+    region_reachable: true
+    hq: "Niestetal, Hessen"
+    employees: 3500
+    scores:
+      fit: 4
+      region: 5
+      size: 5
+      evidence: 2
+      timing: 3
+    fit_signal: "SMA supplies solar and energy technology to business customers, offering potential teaching cases on B2B sales strategy and execution."
+    sources:
+      - claim: "SMA's company website describes its business and headquarters in Niestetal, Hessen."
+        url: "https://www.sma.de/en/company/about-sma"
+        verified: true
+      - claim: "SMA publishes corporate financial results and business updates that can be used to investigate recent commercial activity."
+        url: "https://www.sma.de/en/investor-relations/corporate-news"
+        verified: false
+    score: 4.00
+    scored_by: "Reagan Ngayo"
+    date: "2026-10-29"
+    status: unverified
+
+  - company: "Heraeus Holding GmbH"
+    sector: "industrial technology and advanced materials"
+    b2b: true
+    region_reachable: true
+    hq: "Hanau, Hessen"
+    employees: 15115
+    scores:
+      fit: 4
+      region: 5
+      size: 5
+      evidence: 2
+      timing: 2
+    fit_signal: "Heraeus serves industrial and technology markets, making its complex business-to-business sales activities potentially relevant to sales management teaching cases."
+    sources:
+      - claim: "Heraeus describes its business areas and company facts on its official website."
+        url: "https://www.heraeus.com/en/about-heraeus/facts-and-figures/"
+        verified: true
+      - claim: "Heraeus publishes corporate news and stories about its business activities."
+        url: "https://www.heraeus.com/en/news-and-stories/"
+        verified: false
+    score: 3.90
+    scored_by: "Reagan Ngayo"
+    date: "2026-10-29"
+    status: unverified
+    
