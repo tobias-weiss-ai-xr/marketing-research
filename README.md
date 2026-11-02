@@ -108,29 +108,29 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 
 ## 📊 Corpus Statistics
 
-**15,773 papers** across **11 categories**.
-Sources: **arXiv** 1242 (8%) · **DOI** 13103 (83%) · **Other** 1428 (9%).
+**15,769 papers** across **11 categories**.
+Sources: **arXiv** 1265 (8%) · **DOI** 13079 (83%) · **Other** 1425 (9%).
 Full paper list: [GitHub Pages site](https://tobias-weiss-ai-xr.github.io/marketing-research).
 
 ### Top categories
 
 | Category | Papers | Recent | |
 |----------|--------|--------|-
-| AI & Marketing | **3457** | 2247 | ████████████ |
-| Surveys, Trends & Meta-Studies | **2242** | 1819 | ████████░░░░ |
-| Social Media & Creator Marketing | **1778** | 1267 | ██████░░░░░░ |
-| Consumer Behavior & Psychology | **1731** | 1229 | ██████░░░░░░ |
-| Digital & Performance Marketing | **1674** | 1183 | ██████░░░░░░ |
-| Brand Strategy & Management | **1671** | 1240 | ██████░░░░░░ |
-| Customer Experience, Omnichannel & Retail | **1241** | 856 | ████░░░░░░░░ |
-| Analytics, Attribution & Measurement | **614** | 387 | ██░░░░░░░░░░ |
-| Content & Storytelling | **529** | 304 | ██░░░░░░░░░░ |
-| Data, Privacy & Cookieless Advertising | **475** | 241 | ██░░░░░░░░░░ |
-| B2B & Account-Based Marketing | **361** | 192 | █░░░░░░░░░░░ |
+| AI & Marketing | **3482** | 2232 | ████████████ |
+| Surveys, Trends & Meta-Studies | **2239** | 1800 | ████████░░░░ |
+| Social Media & Creator Marketing | **1776** | 1249 | ██████░░░░░░ |
+| Consumer Behavior & Psychology | **1726** | 1209 | ██████░░░░░░ |
+| Digital & Performance Marketing | **1668** | 1159 | ██████░░░░░░ |
+| Brand Strategy & Management | **1662** | 1219 | ██████░░░░░░ |
+| Customer Experience, Omnichannel & Retail | **1237** | 841 | ████░░░░░░░░ |
+| Analytics, Attribution & Measurement | **614** | 372 | ██░░░░░░░░░░ |
+| Content & Storytelling | **529** | 285 | ██░░░░░░░░░░ |
+| Data, Privacy & Cookieless Advertising | **475** | 232 | ██░░░░░░░░░░ |
+| B2B & Account-Based Marketing | **361** | 186 | █░░░░░░░░░░░ |
 
 ## 📚 Paper list
 
-All **15773 papers** (grouped by category, subcategory and year) live in **[PAPERS.md](PAPERS.md)** — kept out of this README to keep it readable.
+All **15769 papers** (grouped by category, subcategory and year) live in **[PAPERS.md](PAPERS.md)** — kept out of this README to keep it readable.
 
 Browsable alternatives:
 

@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-10-31  
-**Corpus:** 15,773 papers across 11 categories
+**Generated:** 2026-11-02  
+**Corpus:** 15,769 papers across 11 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,17 +11,17 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | AI & Marketing | 3457 |
-| 2 | Surveys, Trends & Meta-Studies | 2242 |
-| 3 | Social Media & Creator Marketing | 1778 |
-| 4 | Consumer Behavior & Psychology | 1731 |
-| 5 | Digital & Performance Marketing | 1674 |
-| 6 | Brand Strategy & Management | 1671 |
-| 7 | Customer Experience, Omnichannel & Retail | 1241 |
+| 1 | AI & Marketing | 3482 |
+| 2 | Surveys, Trends & Meta-Studies | 2239 |
+| 3 | Social Media & Creator Marketing | 1776 |
+| 4 | Consumer Behavior & Psychology | 1726 |
+| 5 | Digital & Performance Marketing | 1668 |
+| 6 | Brand Strategy & Management | 1662 |
+| 7 | Customer Experience, Omnichannel & Retail | 1237 |
 | 8 | Analytics, Attribution & Measurement | 614 |
 
 **Time span:** 1987–2026 (median year 2016)
-**Dominant aspects:** Empirical Studies (6095), Frameworks & Models (2897), Reviews & Surveys (2404)
+**Dominant aspects:** Empirical Studies (6113), Frameworks & Models (2890), Reviews & Surveys (2397)
 
 ---
 
@@ -29,17 +29,17 @@
 
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
-| Survey | 2242 | 1819 | 229 | +694% | 81% | 151.6 |
-| Brand | 1671 | 1240 | 242 | +412% | 74% | 103.3 |
-| Social Media | 1778 | 1267 | 261 | +385% | 71% | 105.6 |
-| Digital Marketing | 1674 | 1183 | 255 | +364% | 71% | 98.6 |
-| Consumer Behavior | 1731 | 1229 | 275 | +347% | 71% | 102.4 |
-| Cx Retail | 1241 | 856 | 252 | +240% | 69% | 71.3 |
-| Ai Marketing | 3457 | 2247 | 724 | +210% | 65% | 187.2 |
-| Analytics | 614 | 387 | 160 | +142% | 63% | 32.2 |
-| B2B | 361 | 192 | 98 | +96% | 53% | 16.0 |
-| Content Marketing | 529 | 304 | 165 | +84% | 57% | 25.3 |
-| Privacy Data | 475 | 241 | 160 | +51% | 51% | 20.1 |
+| Survey | 2239 | 1800 | 217 | +730% | 80% | 150.0 |
+| Brand | 1662 | 1219 | 231 | +428% | 73% | 101.6 |
+| Social Media | 1776 | 1249 | 249 | +402% | 70% | 104.1 |
+| Digital Marketing | 1668 | 1159 | 244 | +375% | 70% | 96.6 |
+| Consumer Behavior | 1726 | 1209 | 263 | +360% | 70% | 100.8 |
+| Cx Retail | 1237 | 841 | 241 | +249% | 68% | 70.1 |
+| Ai Marketing | 3482 | 2232 | 713 | +213% | 64% | 186.0 |
+| Analytics | 614 | 372 | 170 | +119% | 61% | 31.0 |
+| B2B | 361 | 186 | 101 | +84% | 52% | 15.5 |
+| Content Marketing | 529 | 285 | 170 | +68% | 54% | 23.8 |
+| Privacy Data | 475 | 232 | 160 | +45% | 49% | 19.3 |
 
 ---
 
@@ -70,7 +70,7 @@
 
 | Author | Papers (recent) |
 |--------|-----------------|
-| Loso Judijanto | 17 |
+| Loso Judijanto | 16 |
 | Tony Wijaya | 15 |
 | Worldly Knowledge Publishing Centre | 14 |
 | Alberto Regis | 12 |
@@ -84,7 +84,7 @@
 
 ### AI & Marketing (`ai-marketing`)
 
-**Corpus size:** 3457 papers
+**Corpus size:** 3482 papers
 
 **Recent papers:**
 
@@ -96,7 +96,7 @@
 
 ### Surveys, Trends & Meta-Studies (`survey`)
 
-**Corpus size:** 2242 papers
+**Corpus size:** 2239 papers
 
 **Recent papers:**
 
@@ -108,7 +108,7 @@
 
 ### Social Media & Creator Marketing (`social-media`)
 
-**Corpus size:** 1778 papers
+**Corpus size:** 1776 papers
 
 **Recent papers:**
 
@@ -120,7 +120,7 @@
 
 ### Consumer Behavior & Psychology (`consumer-behavior`)
 
-**Corpus size:** 1731 papers
+**Corpus size:** 1726 papers
 
 **Recent papers:**
 
@@ -132,7 +132,7 @@
 
 ### Digital & Performance Marketing (`digital-marketing`)
 
-**Corpus size:** 1674 papers
+**Corpus size:** 1668 papers
 
 **Recent papers:**
 
@@ -144,7 +144,7 @@
 
 ### Brand Strategy & Management (`brand`)
 
-**Corpus size:** 1671 papers
+**Corpus size:** 1662 papers
 
 **Recent papers:**
 
@@ -156,7 +156,7 @@
 
 ### Customer Experience, Omnichannel & Retail (`cx-retail`)
 
-**Corpus size:** 1241 papers
+**Corpus size:** 1237 papers
 
 **Recent papers:**
 
