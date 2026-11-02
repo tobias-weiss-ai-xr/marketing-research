@@ -698,7 +698,7 @@ Concentrated in **AI-marketing** and **Survey**, with the remainder across Digit
 **None are in agentic categories.**
 
 ### Zero-Intersection Confirmation
-As of 2026-10-25, exactly 10 papers mention both "agentic" and "contextual" — all superficial lexical co-mentions; **no academic paper builds the bridge** (agentic ∩ "situational" = 1, a lexical co-mention about agent self-evolution; agentic ∩ "situational awareness" = 0). See `paper/g4_academic_paper.md` §5.3.
+As of 2026-11-02, exactly 11 papers mention both "agentic" and "contextual" — all superficial lexical co-mentions; **no academic paper builds the bridge** (agentic ∩ "situational" = 1, a lexical co-mention about agent self-evolution; agentic ∩ "situational awareness" = 0). See `paper/g4_academic_paper.md` §5.3.
 
 ---
 
