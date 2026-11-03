@@ -191,11 +191,12 @@ You will receive one observation with numeric scales (0 to 1). Respond with exac
             variants.append((min(1.0,intent+delta),comp,qual)); variants.append((intent,min(1.0,comp+delta),qual)); variants.append((intent,comp,min(1.0,qual+delta)))
         for i,(i_,c_,q_) in enumerate(variants[:7]): probes.append((arch,i_,c_,q_))
     results = {"arm":"C","name":"counterfactual-archetypes","models":{},"crisis_or_retention":False}
+    cache = load_cache()
     for mk in models:
         model_res = {"archetypes":{}}
         for arch, intent, comp, qual in probes:
             user = f"Observation:\n- audience_intent_strength: {intent:.3f}\n- competitive_density: {comp:.3f}\n- channel_quality: {qual:.3f}\n- signals: intent_strength={intent}; quality_score=0.72; time_of_day=morning; device_type=mobile"
-            label,_,_,_ = classify_variant(sp, user, mk, f"arm_c_{arch}_{intent}_{comp}_{qual}", {})
+            label,_,_,_ = classify_variant(sp, user, mk, f"arm_c_{arch}_{intent}_{comp}_{qual}", cache)
             if label in ("crisis","retention"): results["crisis_or_retention"] = True
             if arch not in model_res["archetypes"]: model_res["archetypes"][arch] = Counter()
             model_res["archetypes"][arch][label] += 1
