@@ -1,6 +1,6 @@
 # Literature Review
 
-**Generated:** 2026-11-02  
+**Generated:** 2026-11-03  
 **Corpus:** 15,769 papers across 11 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
