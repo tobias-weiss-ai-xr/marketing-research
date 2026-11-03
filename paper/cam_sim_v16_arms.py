@@ -2,6 +2,7 @@
 """CAM-Sim v1.6 — Prompt-variant experiment harness (P1 diagnostics, P2 remediation arms, P3 bootstrap)."""
 import argparse, hashlib, itertools, json, os, random, re, sys, time, urllib.error, urllib.request
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 import numpy as np
@@ -86,10 +87,14 @@ def classify_batch_variant(system_prompt, contexts, model_key, arm_name, max_pas
     for passage in range(max_passes):
         missing = [(c, textualize(c)) for c in contexts if cache_key(variant_tag(system_prompt,arm_name),model_key,textualize(c)) not in cache]
         if not missing: break
-        for ctx, user in missing:
-            label, pt, ct, _ = classify_variant(system_prompt, user, model_key, arm_name, cache)
-            if label: ptoks += pt; ctoks += ct
-            else: n_failed += 1
+        def _work(item):
+            ctx, user = item
+            time.sleep(1.0)  # gentle pacing under provider TPM buckets
+            return classify_variant(system_prompt, user, model_key, arm_name, cache)
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            for label, pt, ct, _lat in pool.map(_work, missing):
+                if label: ptoks += pt; ctoks += ct
+                else: n_failed += 1
         cache = load_cache()
     labels, invalid = {}, 0
     for c in contexts:
@@ -188,7 +193,7 @@ You will receive one observation with numeric scales (0 to 1). Respond with exac
         model_res = {"archetypes":{}}
         for arch, intent, comp, qual in probes:
             user = f"Observation:\n- audience_intent_strength: {intent:.3f}\n- competitive_density: {comp:.3f}\n- channel_quality: {qual:.3f}\n- signals: intent_strength={intent}; quality_score=0.72; time_of_day=morning; device_type=mobile"
-            label,_,_,_ = classify_variant(sp, user, mk, f"arm_c_{arch}_{intent}_{comp}_{qual}", {}, max_passes=1)
+            label,_,_,_ = classify_variant(sp, user, mk, f"arm_c_{arch}_{intent}_{comp}_{qual}", {})
             if label in ("crisis","retention"): results["crisis_or_retention"] = True
             if arch not in model_res["archetypes"]: model_res["archetypes"][arch] = Counter()
             model_res["archetypes"][arch][label] += 1
@@ -262,12 +267,12 @@ You will receive one observation with numeric scales (0 to 1). Respond with exac
             for c in contexts:
                 key = cache_key(variant_tag(sp,f"arm_{arm_letter.lower()}_{seed}"), mk, textualize(c))
                 lab = res["labels"].get(key); all_preds.append(lab if lab else "consideration"); all_truths.append(c.situation.value)
-            eval_env = SimulationEnvironment(seed=seed, config=None); oracle = CAMOracle("oracle_ref"); totals = []
+            oracle = CAMOracle("oracle_ref"); totals = []
             for c in contexts:
                 key = cache_key(variant_tag(sp,f"arm_{arm_letter.lower()}_{seed}"), mk, textualize(c))
                 lab = res["labels"].get(key); sit = SituationType(lab if lab else "consideration")
                 action = Action(0, IDEAL_ACTION[sit], SITUATION_CHANNEL[sit], round(oracle._bid(sit,c), 2))
-                r = eval_env.evaluate_action(c, action); totals.append(r.reward + r.long_term_value - r.cost)
+                r = env.evaluate_action(c, action); totals.append(r.reward + r.long_term_value - r.cost)
             per_seed_profit.append(sum(totals))
         acc = 100.0*sum(1 for p,t in zip(all_preds,all_truths) if p==t)/len(all_truths)
         recalls, macro_recall = _per_class_recalls(all_preds, all_truths)
@@ -356,17 +361,24 @@ Respond with exactly one line: situation; action; channel; bid"""
         for seed in seeds:
             random.seed(seed); env = SimulationEnvironment(seed=seed, config=None)
             contexts = [env.generate_context() for _ in range(N_SCEN)]
-            seed_invalid, seed_profit = 0, 0.0; eval_env = SimulationEnvironment(seed=seed, config=None)
+            seed_invalid, seed_profit = 0, 0.0
+            cache = load_cache()
             for c in contexts:
                 user = textualize(c); vt = variant_tag(sp, f"arm_h_{seed}"); key = cache_key(vt, mk, user)
-                cache = load_cache(); content = cache.get(key,{}).get("content") if key in cache else None
+                rec = cache.get(key)
+                content = rec.get("content") if rec else None
                 if content is None and mk in PROVIDERS:
                     prov = PROVIDERS[mk]
                     try:
                         out = _call_api(prov, sp, user, temperature=0)
                         content = out.get("choices",[{}])[0].get("message",{}).get("content","")
-                        save_cache_entry({"key":key,"content":content,"label":None})
-                    except: content = None
+                        lab = None
+                        try: lab = SituationType(content.split(";")[0].strip().lower()).value
+                        except (ValueError, KeyError): pass
+                        rec = {"key":key,"content":content,"label":lab}
+                        save_cache_entry(rec); cache[key] = rec
+                    except Exception:
+                        content = None; rec = None
                 action = None
                 if content:
                     parts = [p.strip() for p in (content or "").split(";")]
@@ -380,7 +392,7 @@ Respond with exactly one line: situation; action; channel; bid"""
                 else:
                     action_dist[action.action_type.value] += 1; channel_dist[action.channel.value] += 1; bid_dist[action.bid] += 1
                     if action.action_type == IDEAL_ACTION[c.situation]: match_ideal += 1
-                r = eval_env.evaluate_action(c, action); seed_profit += r.reward + r.long_term_value - r.cost
+                r = env.evaluate_action(c, action); seed_profit += r.reward + r.long_term_value - r.cost
                 total_scenarios += 1
             per_seed_profit.append(seed_profit); invalid_counts.append(seed_invalid)
         profit_mean, profit_std = float(np.mean(per_seed_profit)), float(np.std(per_seed_profit, ddof=1))
