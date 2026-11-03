@@ -226,13 +226,13 @@ You will receive one observation with numeric scales (0 to 1). Respond with exac
         user = textualize_no_decoy(c); key = cache_key(variant_tag(sp,"arm_d"), model_key, user)
         preds.append(cache.get(key,{}).get("label"))
     acc = 100.0*sum(1 for p,c in zip(preds,contexts) if p==c.situation.value)/N_SCEN
-    v15_cache_path = CACHE_DIR / "tud__mistral-medium-3-5-128b.jsonl"; v15_acc = None
+    v15_cache_path = CACHE_DIR / (model_key.replace("/", "__") + ".jsonl"); v15_acc = None
     if v15_cache_path.exists():
         v15_cache = {}
         with open(v15_cache_path, encoding="utf-8") as f:
             for line in f: rec = json.loads(line); v15_cache[rec["key"]] = rec.get("label")
-        from cam_sim_v15_llm import context_key as v15_context_key
-        v15_preds = [v15_cache.get(v15_context_key(model_key,c)) for c in contexts]
+        from cam_sim_v15_llm import context_key as v15_context_key, _legacy_context_key as v15_legacy_context_key
+        v15_preds = [v15_cache.get(v15_context_key(model_key,c)) or v15_cache.get(v15_legacy_context_key(model_key,c)) for c in contexts]
         v15_acc = 100.0*sum(1 for p,c in zip(v15_preds,contexts) if p==c.situation.value)/N_SCEN
     return {"arm":"D","name":"decoy-removal","accuracy":round(acc,1),"v15_accuracy":round(v15_acc,1) if v15_acc else None,
             "delta":round(acc-v15_acc,1) if v15_acc else None,"invalid":sum(1 for p in preds if p is None)}
@@ -324,13 +324,13 @@ You will receive one observation with numeric scales (0 to 1). Respond with exac
             v15_cache = {}
             with open(v15_path, encoding="utf-8") as f:
                 for line in f: rec = json.loads(line); v15_cache[rec["key"]] = rec.get("label")
-            from cam_sim_v15_llm import context_key as v15_context_key
+            from cam_sim_v15_llm import context_key as v15_context_key, _legacy_context_key as v15_legacy_context_key
             for seed in seeds:
                 random.seed(seed); env = SimulationEnvironment(seed=seed, config=None)
                 contexts = [env.generate_context() for _ in range(N_SCEN)]
                 for c in contexts:
                     if c.situation.value not in ("crisis","retention"): continue
-                    key = v15_context_key(mk, c); lab = v15_cache.get(key)
+                    key = v15_context_key(mk, c); lab = v15_cache.get(key) or v15_cache.get(v15_legacy_context_key(mk, c))
                     if lab is None: continue
                     if c.situation.value == "crisis": v15_crisis_total += 1; v15_crisis_correct += (1 if lab == "crisis" else 0)
                     elif c.situation.value == "retention": v15_retention_total += 1; v15_retention_correct += (1 if lab == "retention" else 0)
