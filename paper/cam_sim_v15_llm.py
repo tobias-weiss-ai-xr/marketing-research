@@ -93,6 +93,10 @@ SYSTEM_PROMPT = """You classify a digital-marketing moment into exactly one of s
 
 You will receive one observation with numeric scales (0 to 1). Respond with exactly one word — the situation label — and nothing else."""
 
+# Short hash of the system prompt, bound into every cache key so that cached
+# responses never silently go stale after a prompt edit (see context_key).
+PROMPT_SHA16 = hashlib.sha256(SYSTEM_PROMPT.encode()).hexdigest()[:16]
+
 USER_TEMPLATE = """Observation:
 - audience_intent_strength: {intent:.3f} (0 = none, 1 = maximum purchase intent)
 - competitive_density: {comp:.3f} (0 = empty field, 1 = saturated with competitor activity)
@@ -215,7 +219,16 @@ def classify_with_retry(prov, system, user):
 
 def context_key(model_key, context):
     """Value-based key: FullContext.context_id (ctx_N) repeats across seeds,
-    so labels must be keyed by the textualized observation hash instead."""
+    so labels must be keyed by the textualized observation hash instead. The
+    key is bound to the system prompt (PROMPT_SHA16) so cached labels can
+    never silently go stale after a prompt edit."""
+    return hashlib.sha256((PROMPT_SHA16 + "||" + model_key + "||"
+                           + textualize(context)).encode()).hexdigest()
+
+
+def _legacy_context_key(model_key, context):
+    """Legacy cache key (pre-prompt-hash); kept only as a read fallback so
+    existing caches remain valid and are never silently re-run."""
     return hashlib.sha256((model_key + "||" + textualize(context)).encode()).hexdigest()
 
 
@@ -239,7 +252,10 @@ def classify_batch(model_key, contexts, progress_every=500):
     for c in contexts:
         user = textualize(c)
         key = context_key(model_key, c)
-        if key not in cache:
+        # Legacy fallback: if the prompt-bound primary key is absent, accept
+        # the pre-prompt-hash legacy key so existing caches stay valid.
+        legacy = _legacy_context_key(model_key, c)
+        if key not in cache and legacy not in cache:
             tasks.append((c.context_id, key, user))
     print(f"[{model_key}] {len(contexts)} contexts, {len(tasks)} API calls "
           f"({len(cache)} cached)", flush=True)
@@ -288,12 +304,15 @@ def classify_batch(model_key, contexts, progress_every=500):
     labels, invalid = {}, 0
     for c in contexts:
         key = context_key(model_key, c)
-        lab = cache[key]["label"]
+        lab = (cache.get(key) or cache.get(_legacy_context_key(model_key, c)))["label"]
         labels[key] = lab
         if lab is None:
             invalid += 1
-    lat_c = [cache[context_key(model_key, c)]["latency"] for c in contexts
-             if cache[context_key(model_key, c)]["latency"]]
+    lat_c = [((cache.get(context_key(model_key, c))
+               or cache.get(_legacy_context_key(model_key, c)))["latency"])
+             for c in contexts
+             if (cache.get(context_key(model_key, c))
+                 or cache.get(_legacy_context_key(model_key, c)))["latency"]]
     return {"labels": labels, "invalid": invalid, "failed_calls": n_failed,
             "n": len(contexts), "wall_s": round(time.time() - t0, 1),
             "prompt_tokens": ptoks, "completion_tokens": ctoks,
