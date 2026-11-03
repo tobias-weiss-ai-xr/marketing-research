@@ -149,7 +149,9 @@ def run_arm_a(max_passes):
     random.seed(seed); env = SimulationEnvironment(seed=seed, config=None)
     contexts = [env.generate_context() for _ in range(N_SCEN)]
     results = {"arm":"A","name":"order-permutation","permutations":[]}
-    for perm in itertools.permutations(range(6)):
+    # 6 fixed permutations (identity + 5 non-trivial), NOT the full 720-permutation sweep
+    perms = [(0,1,2,3,4,5), (1,2,3,4,5,0), (5,4,3,2,1,0), (1,0,3,2,5,4), (2,0,3,5,1,4), (0,2,1,4,3,5)]
+    for perm in perms:
         blk = [blocks[i] for i in perm]
         sp = "You classify a digital-marketing moment into exactly one of six marketing situations:\n\n"+"\n".join(blk)+\
              "\n\nYou will receive one observation with numeric scales (0 to 1). Respond with exactly one word — the situation label — and nothing else."
