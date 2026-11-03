@@ -12,6 +12,8 @@ cam_inferred.
 Models (2026-11-02 snapshot; scale adapted to measured provider quotas):
   - zai/glm-4.7              (Z.ai coding endpoint, thinking model)      — 10 seeds (2,000 calls)
   - groq/qwen3.8-27b         (Groq, 27B dense)                           — 3 seeds (600 calls; see note)
+  - tud/mistral-medium-3.5   (TU Darmstadt llm-service, 128B dense)      — 10 seeds (2,000 calls)
+  - local/deepseek-v4-flash  (LAN-local via LiteLLM, reasoning)          — 5 seeds (1,000 calls)
     [originally openai/gpt-oss-120b: its daily request quota (≈500 calls)
     exhausted mid-run on 2026-11-02; swapped to a fresh-quota model]
   - saia/qwen3.6-35b-a3b     (AcademicCloud SAIA, 35B MoE / 3B active)   — 2 seeds (400 calls, sequential; ~3 RPM quota)
@@ -125,6 +127,16 @@ PROVIDERS = {
         # 3 of 5 planned seeds: Groq daily token quota exhausted mid-run on
         # 2026-11-02; seeds 4-5 (192+16 of 200 classified) excluded so the
         # reported profit uses only complete sequences.
+    "tud/mistral-medium-3.5-128b": dict(
+        base="https://llm-service.ai.tu-darmstadt.de/v1", key_env="TUD_API_KEY",
+        model="Mistral-Medium-3.5-128B", workers=4, max_tokens=16,
+        extra_params={}, seeds=SEEDS[:10], transport="curl", timeout=60),
+    "local/deepseek-v4-flash": dict(
+        # Local DeepSeek V4 Flash served on the LAN (legion) via LiteLLM proxy;
+        # reasoning model (~25 s/call) — the only provider without daily quota.
+        base="http://192.168.42.20:4000/v1", key_env="LITELLM_API_KEY",
+        model="local/deepseek-v4-flash/local", workers=4, max_tokens=768,
+        extra_params={}, seeds=SEEDS[:5], transport="curl", timeout=150),
     "saia/qwen3.6-35b-a3b": dict(
         base="https://chat-ai.academiccloud.de/v1", key_env="SAIA_API_KEY",
         model="qwen3.6-35b-a3b", workers=1, max_tokens=16, extra_params={
