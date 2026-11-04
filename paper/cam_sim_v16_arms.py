@@ -449,6 +449,14 @@ def main():
     args = parser.parse_args()
     if args.selftest: return run_selftest()
     arms = [a.strip().upper() for a in args.arms.split(",")]
+    # Fail fast on anything that is not a single-letter arm: a bare word
+    # (e.g. --arms counterfactual) would otherwise silently dispatch nothing
+    # and write a meta-only JSON with a zero-exit "success".
+    VALID = set("ABCDEFGH")
+    unknown = [a for a in arms if a not in VALID or len(a) != 1]
+    if unknown:
+        raise SystemExit(f"Unknown / non-single-letter arm(s): {unknown}. "
+                         f"Expected one or more of {sorted(VALID)} (e.g. --arms C,E,F,H).")  # self-documenting safety guard
     models = args.models if args.models else list(PROVIDERS.keys())
     seeds = [int(s.strip()) for s in args.seeds.split(",")]
     results = {"meta":{"date":time.strftime("%Y-%m-%d"),"arms":arms,"models":models,"seeds":seeds,"max_passes":args.max_passes}}
