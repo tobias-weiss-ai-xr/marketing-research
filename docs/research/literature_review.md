@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-11-03  
-**Corpus:** 15,769 papers across 11 categories
+**Generated:** 2026-11-07  
+**Corpus:** 15,779 papers across 11 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,17 +11,17 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | AI & Marketing | 3482 |
+| 1 | AI & Marketing | 3484 |
 | 2 | Surveys, Trends & Meta-Studies | 2239 |
 | 3 | Social Media & Creator Marketing | 1776 |
-| 4 | Consumer Behavior & Psychology | 1726 |
-| 5 | Digital & Performance Marketing | 1668 |
-| 6 | Brand Strategy & Management | 1662 |
-| 7 | Customer Experience, Omnichannel & Retail | 1237 |
-| 8 | Analytics, Attribution & Measurement | 614 |
+| 4 | Consumer Behavior & Psychology | 1728 |
+| 5 | Digital & Performance Marketing | 1670 |
+| 6 | Brand Strategy & Management | 1663 |
+| 7 | Customer Experience, Omnichannel & Retail | 1238 |
+| 8 | Analytics, Attribution & Measurement | 615 |
 
 **Time span:** 1987–2026 (median year 2016)
-**Dominant aspects:** Empirical Studies (6113), Frameworks & Models (2890), Reviews & Surveys (2397)
+**Dominant aspects:** Empirical Studies (6120), Frameworks & Models (2892), Reviews & Surveys (2397)
 
 ---
 
@@ -30,14 +30,14 @@
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
 | Survey | 2239 | 1800 | 217 | +730% | 80% | 150.0 |
-| Brand | 1662 | 1219 | 231 | +428% | 73% | 101.6 |
+| Brand | 1663 | 1220 | 231 | +428% | 73% | 101.7 |
 | Social Media | 1776 | 1249 | 249 | +402% | 70% | 104.1 |
-| Digital Marketing | 1668 | 1159 | 244 | +375% | 70% | 96.6 |
-| Consumer Behavior | 1726 | 1209 | 263 | +360% | 70% | 100.8 |
-| Cx Retail | 1237 | 841 | 241 | +249% | 68% | 70.1 |
-| Ai Marketing | 3482 | 2232 | 713 | +213% | 64% | 186.0 |
-| Analytics | 614 | 372 | 170 | +119% | 61% | 31.0 |
-| B2B | 361 | 186 | 101 | +84% | 52% | 15.5 |
+| Digital Marketing | 1670 | 1161 | 244 | +376% | 70% | 96.8 |
+| Consumer Behavior | 1728 | 1211 | 263 | +360% | 70% | 100.9 |
+| Cx Retail | 1238 | 842 | 241 | +249% | 68% | 70.2 |
+| Ai Marketing | 3484 | 2233 | 713 | +213% | 64% | 186.1 |
+| Analytics | 615 | 373 | 170 | +119% | 61% | 31.1 |
+| B2B | 362 | 187 | 101 | +85% | 52% | 15.6 |
 | Content Marketing | 529 | 285 | 170 | +68% | 54% | 23.8 |
 | Privacy Data | 475 | 232 | 160 | +45% | 49% | 19.3 |
 
@@ -84,13 +84,13 @@
 
 ### AI & Marketing (`ai-marketing`)
 
-**Corpus size:** 3482 papers
+**Corpus size:** 3484 papers
 
 **Recent papers:**
 
+- [2026-11] Toward User-Centered Agentic Recommendation: When Does Platform Competition Benefit Users? — https://arxiv.org/abs/2611.04203
+- [2026-11] AI-DRIVEN MARKETING: GENERATIVE AI IN BRANDING AND MARKETING THEREOF — https://doi.org/10.33774/coe-2026-433tc
 - [2026-10] Digitalization of marketing and logistics processes in the e-commerce system — https://doi.org/10.36887/2524-0455-2026-4-44
-- [2026-10] Artificial Intelligence-enabled value creation and competitive advantage in marketing: A dynami — https://doi.org/10.51594/ijmer.v8i10.2366
-- [2026-10] After Integration: A Framework for Designed AI Withdrawal in Higher Education — https://doi.org/10.1007/s10755-026-09963-9
 
 ---
 
@@ -120,19 +120,19 @@
 
 ### Consumer Behavior & Psychology (`consumer-behavior`)
 
-**Corpus size:** 1726 papers
+**Corpus size:** 1728 papers
 
 **Recent papers:**
 
+- [2026-11] Left-Digit Bias: Theory and Empirical Evidence from a Tax Salience Experiment — https://arxiv.org/abs/2611.05342
 - [2026-10] Pengaruh Konten dan Review di Tiktok terhadap Minat Beli Konsumen pada Kuliner Mie Gacoan di Ko — https://doi.org/10.37481/sjr.v9i4.1624
 - [2026-10] Consumer Social Responsibility and Sustainability-Related Social Media Influence in Generation  — https://doi.org/10.3389/frsus.2026.1973593
-- [2026-10] Consumer Preference Information Sharing of Online Platforms with Competing Suppliers and Custom — https://doi.org/10.1287/msom.2025.0168
 
 ---
 
 ### Digital & Performance Marketing (`digital-marketing`)
 
-**Corpus size:** 1668 papers
+**Corpus size:** 1670 papers
 
 **Recent papers:**
 
@@ -144,19 +144,19 @@
 
 ### Brand Strategy & Management (`brand`)
 
-**Corpus size:** 1662 papers
+**Corpus size:** 1663 papers
 
 **Recent papers:**
 
+- [2026-11] The Popular Get More Popular: Auditing Brand Bias in Generative Search — https://arxiv.org/abs/2611.07614
 - [2026-10] Building or Breaking Brand Equity — https://doi.org/10.4018/979-8-2600-4594-7.ch004
 - [2026-10] How Social Media Marketing Amplifies Brand Equity: Evidence from Nike Footwear Consumers — https://e-journal.citakonsultindo.or.id/index.php/IJEBIR/article/view/5886
-- [2026-10] Influence of Brand Equity, Awareness, Loyalty, and Trust on Customer Loyalty at PT Gesit Digita — https://doi.org/10.56943/joe.v5i4.1052
 
 ---
 
 ### Customer Experience, Omnichannel & Retail (`cx-retail`)
 
-**Corpus size:** 1237 papers
+**Corpus size:** 1238 papers
 
 **Recent papers:**
 
@@ -168,13 +168,13 @@
 
 ### Analytics, Attribution & Measurement (`analytics`)
 
-**Corpus size:** 614 papers
+**Corpus size:** 615 papers
 
 **Recent papers:**
 
+- [2026-11] Fairness-Aware Design for Contextual Experiments: Guaranteeing Reliability and Equity in Hetero — https://arxiv.org/abs/2611.01867
 - [2026-10] AI-enabled marketing analytics for SMEs: multimethod evidence on application potential and adop — https://doi.org/10.1057/s41270-026-00539-2
 - [2026-10] SegmentIQ AI - Predictive Customer Lifetime Value & Prescriptive Marketing Intelligence Engine — https://doi.org/10.5281/zenodo.23107237
-- [2026-10] Causal-driven attribution (CDA): estimating channel influence without user-level data — https://arxiv.org/abs/2512.21211
 
 ---
 
@@ -204,13 +204,13 @@
 
 ### B2B & Account-Based Marketing (`b2b`)
 
-**Corpus size:** 361 papers
+**Corpus size:** 362 papers
 
 **Recent papers:**
 
+- [2026-11] SPAR: Experience-Driven Strategy Evolution in Multi-Session B2B Sales — https://arxiv.org/abs/2611.01695
 - [2026-10] The yin–yang of coopetition: reframing paradox in business-to-business marketing — https://doi.org/10.1108/jbim-08-2025-0818
 - [2026-10] Dejavniki in posledice uporabe pogovornih robotov s strani poslovnih kupcev — https://repozitorij.uni-lj.si/IzpisGradiva.php?id=189255
-- [2026-10] AI SDR vs Human SDR: Computing Your Break-Even Cost per Qualified Opportunity — https://doi.org/10.5281/zenodo.23352979
 
 ---
 

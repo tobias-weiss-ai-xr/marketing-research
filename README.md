@@ -108,29 +108,29 @@ This repo is designed to be driven by coding agents (OpenCode, Claude Code, …)
 
 ## 📊 Corpus Statistics
 
-**15,769 papers** across **11 categories**.
-Sources: **arXiv** 1265 (8%) · **DOI** 13079 (83%) · **Other** 1425 (9%).
+**15,779 papers** across **11 categories**.
+Sources: **arXiv** 1272 (8%) · **DOI** 13083 (83%) · **Other** 1424 (9%).
 Full paper list: [GitHub Pages site](https://tobias-weiss-ai-xr.github.io/marketing-research).
 
 ### Top categories
 
 | Category | Papers | Recent | |
 |----------|--------|--------|-
-| AI & Marketing | **3482** | 2232 | ████████████ |
+| AI & Marketing | **3484** | 2233 | ████████████ |
 | Surveys, Trends & Meta-Studies | **2239** | 1800 | ████████░░░░ |
 | Social Media & Creator Marketing | **1776** | 1249 | ██████░░░░░░ |
-| Consumer Behavior & Psychology | **1726** | 1209 | ██████░░░░░░ |
-| Digital & Performance Marketing | **1668** | 1159 | ██████░░░░░░ |
-| Brand Strategy & Management | **1662** | 1219 | ██████░░░░░░ |
-| Customer Experience, Omnichannel & Retail | **1237** | 841 | ████░░░░░░░░ |
-| Analytics, Attribution & Measurement | **614** | 372 | ██░░░░░░░░░░ |
+| Consumer Behavior & Psychology | **1728** | 1211 | ██████░░░░░░ |
+| Digital & Performance Marketing | **1670** | 1161 | ██████░░░░░░ |
+| Brand Strategy & Management | **1663** | 1220 | ██████░░░░░░ |
+| Customer Experience, Omnichannel & Retail | **1238** | 842 | ████░░░░░░░░ |
+| Analytics, Attribution & Measurement | **615** | 373 | ██░░░░░░░░░░ |
 | Content & Storytelling | **529** | 285 | ██░░░░░░░░░░ |
 | Data, Privacy & Cookieless Advertising | **475** | 232 | ██░░░░░░░░░░ |
-| B2B & Account-Based Marketing | **361** | 186 | █░░░░░░░░░░░ |
+| B2B & Account-Based Marketing | **362** | 187 | █░░░░░░░░░░░ |
 
 ## 📚 Paper list
 
-All **15769 papers** (grouped by category, subcategory and year) live in **[PAPERS.md](PAPERS.md)** — kept out of this README to keep it readable.
+All **15779 papers** (grouped by category, subcategory and year) live in **[PAPERS.md](PAPERS.md)** — kept out of this README to keep it readable.
 
 Browsable alternatives:
 

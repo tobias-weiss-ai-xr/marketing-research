@@ -1,6 +1,6 @@
 # 📚 Paper list
 
-15769 papers · generated from `papers.yaml` — do not edit by hand.
+15779 papers · generated from `papers.yaml` — do not edit by hand.
 
 
 - [📚 AI & Marketing](#ai-&-marketing)
@@ -87,6 +87,7 @@
 
 ##### 2026
 
+- [2026] **AI-DRIVEN MARKETING: GENERATIVE AI IN BRANDING AND MARKETING THEREOF** [[paper](https://doi.org/10.33774/coe-2026-433tc)]
 - [2026] **Digitalization of marketing and logistics processes in the e-commerce system** *Actual problems of innovative economy and law* [[paper](https://doi.org/10.36887/2524-0455-2026-4-44)]
 - [2026] **Artificial Intelligence-enabled value creation and competitive advantage in marketing: A dynamic capabilities perspective** *International Journal of Management & Entrepreneurship Research* [[paper](https://doi.org/10.51594/ijmer.v8i10.2366)]
 - [2026] **The Impact of AI-Generated Chatbots (ChatGPT) on Customer Purchasing Intent** *Studies in systems, decision and control* [[paper](https://doi.org/10.1007/978-3-032-27683-4_10)]
@@ -161,7 +162,6 @@
 - [2026] **Lineage-Aware Search Control for LLM-Based Evolutionary Factor Mining** [[paper](https://arxiv.org/abs/2610.29663)]
 - [2026] **Generative Artificial Intelligence in Marketing: Consumer Responses, Authenticity, and Governance Challenges** *Pazarlamada Güncel Konular* [[paper](https://doi.org/10.58830/ozgur.pub1533.c6201)]
 - [2026] **ROLE OF GENERATIVE ARTIFICIAL INTELLIGENCE IN CONTENT MARKETING: IMPACT ON CONSUMER PERCEPTION AND BRAND INTERACTION** *International Journal of Drug Delivery Technology* [[paper](https://doi.org/10.25258/ijddt.16.74s.12)]
-- [2026] **Optimizing for happiness in EU technology policy to repay public subsidies for AI** *PMC* [[paper](https://europepmc.org/article/pmc/PMC13682884)]
 - [2026] **Prospective Hindsight: Self-Calibrating Reinforcement Learning via Prediction-Reality Gaps** [[paper](https://arxiv.org/abs/2610.02740)]
 - [2026] **RewardWeaver: Long-Horizon Interactive Learning for Language Agents via Self-Evolving Reward Adaptation** [[paper](https://arxiv.org/abs/2610.10120)]
 - [2026] **ProMemAgent: Long-Horizon Proactive Assistance with Context-Aware Prospective Memory from Sensory Perceptions** [[paper](https://arxiv.org/abs/2610.27400)]
@@ -1758,6 +1758,7 @@
 - [2024] **Whether AI-based Chatbots Influence Destination Visit Intentions?** *Advances in economics, business and management research/Advances in Economics, Business and Management Research* [[paper](https://doi.org/10.2991/978-94-6463-443-3_92)]
 - [2024] **Online Marketing: Emerging Trends and Issues** *Pakistan Journal of Life and Social Sciences (PJLSS)* [[paper](https://doi.org/10.57239/pjlss-2024-22.2.0080)]
 - [2024] **Al: A Boon to Social Media Marketing** *SSRN Electronic Journal* [[paper](https://doi.org/10.2139/ssrn.4849819)]
+- [2024] **Unlocking Innovation - Generative AI in Digital Marketing and E-commerce** *Unlocking Innovation - Generative AI in Digital Marketing and E-commerce* [[paper](https://doi.org/10.5040/9781350865693)]
 
 ##### 2023
 
@@ -1817,6 +1818,7 @@
 
 ##### 2026
 
+- [2026] **Toward User-Centered Agentic Recommendation: When Does Platform Competition Benefit Users?** [[paper](https://arxiv.org/abs/2611.04203)]
 - [2026] **After Integration: A Framework for Designed AI Withdrawal in Higher Education** *Innovative Higher Education* [[paper](https://doi.org/10.1007/s10755-026-09963-9)]
 - [2026] **The Consciousness Exemption Problem** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.23076849)]
 - [2026] **Understanding Consumer Behavior Through AI-Driven Predictive Analytics** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.23118570)]
@@ -3763,6 +3765,8 @@
 - [2026] **Game theory of academic effort and hiring in the age of AI** [[paper](https://arxiv.org/abs/2610.35802)]
 - [2026] **Crowds Believe in You: Online Prediction Markets Overestimate How Often People Achieve Their Own Goals** [[paper](https://arxiv.org/abs/2610.40324)]
 - [2026] **Who Owns Digital News, and Who Gets Cited: Measuring Media Concentration Across 77 Countries and Seven AI Systems** [[paper](https://arxiv.org/abs/2610.40164)]
+- [2026] **AdKnob: Ad Intensity Control and Labeling for LLM-Native Advertising** [[paper](https://arxiv.org/abs/2611.00822)]
+- [2026] **Learning to bid and bundle: a posterior-sampling agent for online retail** [[paper](https://arxiv.org/abs/2611.00165)]
 - [2026] **Seeing Is Not Perceiving: When Synthetic Consumers Can and Cannot Pretest Visual Marketing** [[paper](https://arxiv.org/abs/2609.25677)]
 - [2026] **Price Dislocations, News Citations, and Epistemic Leverage on Polymarket** [[paper](https://arxiv.org/abs/2609.06005)]
 - [2026] **Differentiable Electricity-Market Clearing for Gradient-Based Planning** [[paper](https://arxiv.org/abs/2609.02646)]
@@ -7928,6 +7932,7 @@
 
 ##### 2026
 
+- [2026] **Left-Digit Bias: Theory and Empirical Evidence from a Tax Salience Experiment** [[paper](https://arxiv.org/abs/2611.05342)]
 - [2026] **Consumer Social Responsibility and Sustainability-Related Social Media Influence in Generation Z's sustainable purchase intention: the mediating roles of Green Trust and Green Perceived Value** *Frontiers in Sustainability* [[paper](https://doi.org/10.3389/frsus.2026.1973593)]
 - [2026] **Action-On-Item Preference Flow: A Shared Event Schema for Predictive and Generative Personalization** *arXiv (Cornell University)* [[paper](https://arxiv.org/abs/2610.01375)]
 - [2026] **Understanding young consumers’ purchase intention for autonomous vehicles: Evidence from China** *Transport Policy* [[paper](https://doi.org/10.1016/j.tranpol.2026.104462)]
@@ -8414,6 +8419,7 @@
 - [2026] **Neuromarketing and the gaming consumer: a systematic review of attention, emotion, and memory in player engagement and retention.** *MED* [[paper](https://doi.org/10.3389/fnrgo.2026.1918889)]
 - [2026] **Perceived micro-learning based consumer education and sustainable purchase behavior: The mediating role of perceived consumer effectiveness and the moderating role of environmental concern.** *MED* [[paper](https://doi.org/10.1016/j.actpsy.2026.107943)]
 - [2026] **Digital Archiving of Direct-to-Consumer Marketing Claims Made by Businesses Selling Unproven Stem Cell Interventions. ** *MED* [[paper](https://doi.org/10.2196/95156)]
+- [2026] **The complementary-competitive interplay of consumer information search and experience sharing: Implications for targeted advertising and firm performance.** *MED* [[paper](https://doi.org/10.1371/journal.pone.0340849)]
 
 ##### 2025
 
@@ -9767,6 +9773,7 @@
 
 ##### 2026
 
+- [2026] **The Popular Get More Popular: Auditing Brand Bias in Generative Search** [[paper](https://arxiv.org/abs/2611.07614)]
 - [2026] **How Social Media Marketing Amplifies Brand Equity: Evidence from Nike Footwear Consumers** *International Journal of Economics Business and Innovation Research* [[paper](https://e-journal.citakonsultindo.or.id/index.php/IJEBIR/article/view/5886)]
 - [2026] **AI Customer Service, Perceived Diagnosticity, and Brand Loyalty in Cosmetics Live-Streaming Commerce** *Journal of Logistics Informatics and Service Science* [[paper](https://doi.org/10.33168/jliss.2026.1009)]
 - [2026] **Pengaruh Digital Experience terhadap Brand Loyalty melalui Brand Trust pada Pengguna Shopee di Surabaya** *Journal of Management and Creative Business* [[paper](https://doi.org/10.30640/jmcbus.v4i4.8052)]
@@ -11908,6 +11915,7 @@
 
 ##### 2026
 
+- [2026] **Fairness-Aware Design for Contextual Experiments: Guaranteeing Reliability and Equity in Heterogeneous Subgroups** [[paper](https://arxiv.org/abs/2611.01867)]
 - [2026] **SegmentIQ AI - Predictive Customer Lifetime Value & Prescriptive Marketing Intelligence Engine** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.23107237)]
 - [2026] **Causal-driven attribution (CDA): estimating channel influence without user-level data** *Journal of Marketing Analytics* [[paper](https://arxiv.org/abs/2512.21211)]
 - [2026] **Data-Driven Marketing Analytics** *Routledge eBooks* [[paper](https://doi.org/10.4324/9781003798002)]
@@ -13106,6 +13114,7 @@
 - [2026] **L'impact de la digitalisation sur la transformation de secteur bancaire : enjeux, opportunités et perspectives** *African Scientific Journal* [[paper](https://africanscientificjournal.com/index.php/AfricanScientificJournal/article/view/2302)]
 - [2026] **Driving the Future Economy Through Integrated Business and IT Innovations** *Poornaprajna International Journal of Emerging Technologies (PIJET)* [[paper](https://doi.org/10.64818/pijet.3107.8486.0029)]
 - [2026] **CX for Cities: A Foundation for Good Services** *Digital Access to Scholarship at Harvard (DASH) (Harvard University)* [[paper](https://dash.harvard.edu/handle/1/42760963)]
+- [2026] **Maintaining customer flow across digital and physical channels: The role of hybrid-experience fluency in omnichannel retail** *Innovative Marketing* [[paper](https://doi.org/10.21511/im.22(4).2026.06)]
 - [2026] **STOCKOUTS AS SYSTEMIC INDICATORS: OMNICHANNEL CONSISTENCY AND INVENTORY MANAGEMENT IN PARAGUAYAN RETAIL** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.23061940)]
 - [2026] **THE IMPACT OF CHANNEL INTERGRATION ON VIETNAMESE CONSUMER’S OMNICHANNEL BEHAVIORAL INTENTION: THE MEDIATING ROLE OF EMOTIONS** *Journal of Science and Technology - IUH* [[paper](https://doi.org/10.46242/jstiuh.v82i4.6142)]
 - [2026] **Navigating the New Retail Landscape: How Omnichannel Integration and Deal Proneness Influence Fashion Showrooming in Indonesia** *International Review of Management and Marketing* [[paper](https://doi.org/10.32479/irmm.24247)]
@@ -14118,6 +14127,7 @@
 
 ##### 2026
 
+- [2026] **SPAR: Experience-Driven Strategy Evolution in Multi-Session B2B Sales** [[paper](https://arxiv.org/abs/2611.01695)]
 - [2026] **The yin–yang of coopetition: reframing paradox in business-to-business marketing** *Journal of Business and Industrial Marketing* [[paper](https://doi.org/10.1108/jbim-08-2025-0818)]
 - [2026] **AI SDR vs Human SDR: Computing Your Break-Even Cost per Qualified Opportunity** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.23352979)]
 - [2026] **Maskking Flavor X Wholesale - B2B Sourcing & Distribution Terms** *Zenodo (CERN European Organization for Nuclear Research)* [[paper](https://doi.org/10.5281/zenodo.23560335)]

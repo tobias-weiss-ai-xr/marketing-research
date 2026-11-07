@@ -362,8 +362,8 @@ repo, it didn't happen. If it is, you can check it.
 [Not read:] BWL students may never have used git — the lab-notebook
 framing is the point; hands-on comes in the leads exercise
 (fork, commit, pull request). Numbers are thresholds, not snapshots:
-on 2 Nov 2026 the true counts were 211 commits / 1,512 in the last
-month / 15,769 papers / 356,729 lines. ">X" stays true as counts
+on 7 Nov 2026 the true counts were 249 commits / 126 in the last
+month / 15,779 papers / 356,964 lines. ">X" stays true as counts
 grow; only the rolling "last month" figure can decay. If probed,
 re-read exact counts from `git rev-list` and `wc -l papers.yaml`.
 -->
@@ -401,10 +401,10 @@ then a second. Count the agent-aware field more broadly and it is
 at least five. The field just opened, and the first position in it
 is still free.
 [Not read — honesty note if probed:] Slide shows lower bounds so
-they stay true as the corpus grows. Exact snapshot 2 Nov 2026,
+they stay true as the corpus grows. Exact snapshot 7 Nov 2026,
 keyword search over title/abstract of our own corpus
-(docs/papers.json, 15,769 papers, regenerated today): agentic 180
-(168 in 2026), lead-gen 46, strict intersection 2, broader 6,
+(docs/papers.json, 15,779 papers, regenerated today): agentic 181
+(169 in 2026), lead-gen 46, strict intersection 2, broader 6,
 context-aware 26. Definitions: strict = substring 'agentic' AND
 'lead generation'; broader = (agentic | ai agents | ai agent |
 multi-agent | autonomous agents) AND (lead generation | lead
@@ -414,10 +414,10 @@ paper 'AI agents, agentic AI, and the future of sales' (2026) and
 Governing Machines (SSRN), The Transformative Role of AI Agents in
 Marketing (TechRxiv), Calibrating Professional Discretion in
 AI-Supported B2B Selling (RaFT, 2026-09). Context-aware = 'context-aware' or
-'contextual intelligence'. Corpus grew 15,495 → 15,769 this round
-(+274 net: arXiv/DOI batch junk-screened, 52 off-topic entries removed —
-hard sciences, medicine, SEO spam, hardware, datasets — 77 arXiv URLs
-normalized). All URLs resolve; all DOIs verified;
+'contextual intelligence'. Corpus grew 15,769 → 15,779 this round (7 Nov 2026:+12 new kept from
+arXiv/Crossref/EuropePMC discovery, junk-screened — 39+1 off-topic removed;
+7 arXiv URLs normalized; prior round 15,495 → 15,769 had +274 net with 52
+off-topic entries removed and 77 arXiv URLs normalized). All URLs resolve; all DOIs verified;
 lower-evidence candidates excluded rather than inflating the count;
 validation passes.
 -->

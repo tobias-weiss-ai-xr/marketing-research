@@ -1,7 +1,7 @@
 # Trends (12-Month View)
 
-**Generated:** 2026-11-03  
-**Window:** since 2025-11 — 10784 of 15769 papers
+**Generated:** 2026-11-07  
+**Window:** since 2025-11 — 10793 of 15779 papers
 
 ## 🔥 Keyword Bursts
 
@@ -12,16 +12,16 @@
 | deep rl | 1 | 1 | 1.5× |
 | benchmark | 301 | 322 | 1.4× |
 | uncertainty | 237 | 252 | 1.4× |
+| agentic | 175 | 181 | 1.4× |
 | transfer | 175 | 189 | 1.4× |
-| agentic | 174 | 180 | 1.4× |
 | embodied | 16 | 17 | 1.4× |
 | survey | 1426 | 1548 | 1.3× |
 | policy | 825 | 907 | 1.3× |
-| agent | 743 | 821 | 1.3× |
+| agent | 746 | 824 | 1.3× |
 | graph | 694 | 804 | 1.3× |
 | imitation | 445 | 495 | 1.3× |
 | planning | 349 | 391 | 1.3× |
-| causal | 346 | 382 | 1.3× |
+| causal | 347 | 383 | 1.3× |
 
 ## 📈 Fastest-Growing Cells
 
@@ -37,7 +37,7 @@
 | `consumer-behavior/review` | 189 | 235 | 80% |
 | `social-media/case-study` | 93 | 117 | 79% |
 | `brand/framework` | 298 | 380 | 78% |
-| `digital-marketing/empirical` | 482 | 629 | 77% |
+| `digital-marketing/empirical` | 484 | 631 | 77% |
 | `digital-marketing/review` | 162 | 210 | 77% |
 | `social-media/framework` | 204 | 265 | 77% |
 | `consumer-behavior/framework` | 237 | 313 | 76% |

@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "total_papers": 15769,
-    "generated_date": "2026-11-03",
-    "last_paper_date": "2026-10",
+    "total_papers": 15779,
+    "generated_date": "2026-11-07",
+    "last_paper_date": "2026-11",
     "first_paper_date": "1987-01",
     "taxonomy": {
       "categories": 11,
@@ -15,27 +15,27 @@
     "analysis_window": {
       "last_12m_start": "2025-11"
     },
-    "recent_12m": 10784,
+    "recent_12m": 10793,
     "prior_12m": 2759
   },
   "by_category": {
-    "ai-marketing": 3482,
-    "analytics": 614,
-    "b2b": 361,
-    "brand": 1662,
-    "consumer-behavior": 1726,
+    "ai-marketing": 3484,
+    "analytics": 615,
+    "b2b": 362,
+    "brand": 1663,
+    "consumer-behavior": 1728,
     "content-marketing": 529,
-    "cx-retail": 1237,
-    "digital-marketing": 1668,
+    "cx-retail": 1238,
+    "digital-marketing": 1670,
     "privacy-data": 475,
     "social-media": 1776,
     "survey": 2239
   },
   "by_subcategory": {
     "case-study": 1618,
-    "empirical": 6113,
-    "framework": 2890,
-    "measurement": 1526,
+    "empirical": 6120,
+    "framework": 2892,
+    "measurement": 1527,
     "review": 2397,
     "theory": 1225
   },
@@ -59,27 +59,27 @@
     "2021": 6,
     "2022": 2,
     "2023": 169,
-    "2024": 2479,
+    "2024": 2480,
     "2025": 2662,
-    "2026": 10418
+    "2026": 10427
   },
   "by_cell": {
-    "ai-marketing/empirical": 1708,
+    "ai-marketing/empirical": 1709,
     "social-media/empirical": 856,
     "survey/empirical": 853,
-    "consumer-behavior/empirical": 749,
-    "digital-marketing/empirical": 629,
-    "brand/empirical": 610,
+    "consumer-behavior/empirical": 751,
+    "digital-marketing/empirical": 631,
+    "brand/empirical": 611,
     "survey/review": 557,
-    "ai-marketing/framework": 534,
+    "ai-marketing/framework": 535,
     "survey/framework": 445,
     "ai-marketing/measurement": 419,
     "brand/framework": 380,
     "ai-marketing/review": 361,
-    "cx-retail/framework": 355,
+    "cx-retail/framework": 356,
     "consumer-behavior/framework": 313,
     "digital-marketing/framework": 281,
-    "analytics/measurement": 280,
+    "analytics/measurement": 281,
     "ai-marketing/case-study": 274,
     "cx-retail/empirical": 274,
     "social-media/framework": 265,
@@ -99,8 +99,8 @@
     "social-media/theory": 150,
     "digital-marketing/measurement": 144,
     "content-marketing/review": 131,
+    "b2b/empirical": 129,
     "privacy-data/empirical": 128,
-    "b2b/empirical": 128,
     "consumer-behavior/theory": 127,
     "content-marketing/theory": 124,
     "analytics/empirical": 118,
@@ -142,11 +142,11 @@
     },
     {
       "keyword": "evaluation",
-      "papers": 808
+      "papers": 810
     },
     {
       "keyword": "framework",
-      "papers": 2996
+      "papers": 2998
     },
     {
       "keyword": "autonomous",
@@ -154,15 +154,15 @@
     },
     {
       "keyword": "model",
-      "papers": 3595
+      "papers": 3598
     },
     {
       "keyword": "method",
-      "papers": 2597
+      "papers": 2599
     },
     {
       "keyword": "dataset",
-      "papers": 395
+      "papers": 396
     },
     {
       "keyword": "scalable",
@@ -170,7 +170,7 @@
     },
     {
       "keyword": "system",
-      "papers": 3004
+      "papers": 3006
     }
   ],
   "momentum": [
@@ -188,13 +188,13 @@
     {
       "id": "brand",
       "name": "Brand",
-      "total": 1662,
-      "recent": 1219,
+      "total": 1663,
+      "recent": 1220,
       "prior": 231,
-      "growth_pct": 427.7,
-      "recent_share": 0.733,
-      "papers_per_month": 101.6,
-      "score": 501.0
+      "growth_pct": 428.1,
+      "recent_share": 0.734,
+      "papers_per_month": 101.7,
+      "score": 501.5
     },
     {
       "id": "social-media",
@@ -210,68 +210,68 @@
     {
       "id": "digital-marketing",
       "name": "Digital Marketing",
-      "total": 1668,
-      "recent": 1159,
+      "total": 1670,
+      "recent": 1161,
       "prior": 244,
-      "growth_pct": 375.0,
+      "growth_pct": 375.8,
       "recent_share": 0.695,
-      "papers_per_month": 96.6,
-      "score": 444.5
+      "papers_per_month": 96.8,
+      "score": 445.3
     },
     {
       "id": "consumer-behavior",
       "name": "Consumer Behavior",
-      "total": 1726,
-      "recent": 1209,
+      "total": 1728,
+      "recent": 1211,
       "prior": 263,
-      "growth_pct": 359.7,
-      "recent_share": 0.7,
-      "papers_per_month": 100.8,
-      "score": 429.7
+      "growth_pct": 360.5,
+      "recent_share": 0.701,
+      "papers_per_month": 100.9,
+      "score": 430.6
     },
     {
       "id": "cx-retail",
       "name": "Cx Retail",
-      "total": 1237,
-      "recent": 841,
+      "total": 1238,
+      "recent": 842,
       "prior": 241,
-      "growth_pct": 249.0,
+      "growth_pct": 249.4,
       "recent_share": 0.68,
-      "papers_per_month": 70.1,
-      "score": 317.0
+      "papers_per_month": 70.2,
+      "score": 317.4
     },
     {
       "id": "ai-marketing",
       "name": "Ai Marketing",
-      "total": 3482,
-      "recent": 2232,
+      "total": 3484,
+      "recent": 2233,
       "prior": 713,
-      "growth_pct": 213.0,
+      "growth_pct": 213.2,
       "recent_share": 0.641,
-      "papers_per_month": 186.0,
-      "score": 277.1
+      "papers_per_month": 186.1,
+      "score": 277.3
     },
     {
       "id": "analytics",
       "name": "Analytics",
-      "total": 614,
-      "recent": 372,
+      "total": 615,
+      "recent": 373,
       "prior": 170,
-      "growth_pct": 118.8,
-      "recent_share": 0.606,
-      "papers_per_month": 31.0,
-      "score": 179.4
+      "growth_pct": 119.4,
+      "recent_share": 0.607,
+      "papers_per_month": 31.1,
+      "score": 180.1
     },
     {
       "id": "b2b",
       "name": "B2B",
-      "total": 361,
-      "recent": 186,
+      "total": 362,
+      "recent": 187,
       "prior": 101,
-      "growth_pct": 84.2,
-      "recent_share": 0.515,
-      "papers_per_month": 15.5,
-      "score": 135.7
+      "growth_pct": 85.1,
+      "recent_share": 0.517,
+      "papers_per_month": 15.6,
+      "score": 136.8
     },
     {
       "id": "content-marketing",
@@ -302,9 +302,9 @@
       "2020": 1,
       "2021": 1,
       "2023": 76,
-      "2024": 572,
+      "2024": 573,
       "2025": 727,
-      "2026": 2104
+      "2026": 2105
     },
     "analytics": {
       "1987": 1,
@@ -319,18 +319,18 @@
       "2021": 1,
       "2024": 81,
       "2025": 177,
-      "2026": 346
+      "2026": 347
     },
     "b2b": {
       "2023": 20,
       "2024": 70,
       "2025": 104,
-      "2026": 167
+      "2026": 168
     },
     "brand": {
       "2024": 249,
       "2025": 218,
-      "2026": 1195
+      "2026": 1196
     },
     "consumer-behavior": {
       "2011": 1,
@@ -346,7 +346,7 @@
       "2023": 6,
       "2024": 273,
       "2025": 251,
-      "2026": 1180
+      "2026": 1182
     },
     "content-marketing": {
       "2024": 94,
@@ -358,13 +358,13 @@
       "2021": 1,
       "2024": 199,
       "2025": 226,
-      "2026": 809
+      "2026": 810
     },
     "digital-marketing": {
       "2023": 40,
       "2024": 273,
       "2025": 222,
-      "2026": 1133
+      "2026": 1135
     },
     "privacy-data": {
       "2016": 1,
@@ -404,19 +404,19 @@
       "recent": 1426,
       "total": 1548,
       "burst_score": 1.35,
-      "recent_share": 0.1322
+      "recent_share": 0.1321
     },
     {
       "keyword": "evaluation",
-      "recent": 808,
-      "total": 889,
+      "recent": 810,
+      "total": 891,
       "burst_score": 1.33,
-      "recent_share": 0.0749
+      "recent_share": 0.075
     },
     {
       "keyword": "framework",
-      "recent": 2996,
-      "total": 3410,
+      "recent": 2998,
+      "total": 3412,
       "burst_score": 1.28,
       "recent_share": 0.2778
     },
@@ -429,24 +429,24 @@
     },
     {
       "keyword": "model",
-      "recent": 3595,
-      "total": 4264,
+      "recent": 3598,
+      "total": 4267,
       "burst_score": 1.23,
       "recent_share": 0.3334
     },
     {
       "keyword": "method",
-      "recent": 2597,
-      "total": 3084,
+      "recent": 2599,
+      "total": 3086,
       "burst_score": 1.23,
       "recent_share": 0.2408
     },
     {
       "keyword": "dataset",
-      "recent": 395,
-      "total": 483,
+      "recent": 396,
+      "total": 484,
       "burst_score": 1.2,
-      "recent_share": 0.0366
+      "recent_share": 0.0367
     },
     {
       "keyword": "scalable",
@@ -457,51 +457,51 @@
     },
     {
       "keyword": "system",
-      "recent": 3004,
-      "total": 3678,
+      "recent": 3006,
+      "total": 3680,
       "burst_score": 1.19,
-      "recent_share": 0.2786
+      "recent_share": 0.2785
     },
     {
       "keyword": "analysis",
-      "recent": 3106,
-      "total": 3863,
+      "recent": 3108,
+      "total": 3865,
       "burst_score": 1.18,
       "recent_share": 0.288
     },
     {
       "keyword": "human",
-      "recent": 1024,
-      "total": 1281,
+      "recent": 1026,
+      "total": 1283,
       "burst_score": 1.17,
-      "recent_share": 0.095
+      "recent_share": 0.0951
     },
     {
       "keyword": "review",
       "recent": 2515,
       "total": 3237,
       "burst_score": 1.14,
-      "recent_share": 0.2332
+      "recent_share": 0.233
     },
     {
       "keyword": "tool",
       "recent": 1374,
       "total": 1816,
       "burst_score": 1.11,
-      "recent_share": 0.1274
+      "recent_share": 0.1273
     },
     {
       "keyword": "real-world",
       "recent": 213,
       "total": 283,
       "burst_score": 1.1,
-      "recent_share": 0.0198
+      "recent_share": 0.0197
     }
   ],
   "source_breakdown": {
-    "arxiv": 1265,
-    "doi": 13079,
-    "other": 1425
+    "arxiv": 1272,
+    "doi": 13083,
+    "other": 1424
   },
   "venues": [
     {

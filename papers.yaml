@@ -302429,17 +302429,6 @@ papers:
     in developing pharmaceutical products from the laboratory to the patien
   doi: 10.3389/fonc.2026.1907591
   venue: MED
-- title: Optimizing for happiness in EU technology policy to repay public subsidies
-    for AI
-  date: 2026-10
-  url: https://europepmc.org/article/pmc/PMC13682884
-  category: ai-marketing
-  subcategory: empirical
-  authors:
-  - Wachter S
-  - Mittelstadt B
-  - Onitiu D
-  venue: PMC
 - title: 'SETU: An Agentic Ecosystem for Multilingual, Persona-Aware Communication
     Coaching'
   date: 2026-08
@@ -356727,3 +356716,249 @@ papers:
     flagged 9 of 10 markets with no collusion. PoPLi detects the use of a private
     channel, not collusion as such, and it cannot detect collusion through incentives
     alone or codes carried by meaning.'
+- title: 'AdKnob: Ad Intensity Control and Labeling for LLM-Native Advertising'
+  date: 2026-10
+  url: https://arxiv.org/abs/2611.00822
+  category: digital-marketing
+  subcategory: empirical
+  authors:
+  - Woo Jae Kim
+  - Seongho Keum
+  - Joonsung Jeon
+  - Suhyeon Ha
+  - Sooel Son
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'Large language model (LLM)-native advertising has emerged as a viable
+    monetization channel as LLM service providers seek sustainable revenue streams.
+    However, integrating native ads into LLM responses introduces two largely understudied
+    challenges: (1) controlling ad intensity -- how prominently advertising content
+    appears -- and (2) ad labeling -- identifying which segments of the generated
+    text constitute advertising. We propose AdKnob, a framework jointly addressing
+    both challenges. For ad intensity control, we introduce new ad control tokens
+    without pretrained semantic associations and align the model via direct preference
+    optimization to generate ads at each desired level. For ad labeling, we propose
+    an attention rollout-based attribution mechanism that identifies ad segments by
+    tracing their attribution to input ad-related tokens, requiring no additional
+    inference cost. We further construct MI-KnobSet, the first multi-level ad intensity
+    preference dataset for LLM-native ads. Experiments across six LLMs and human evaluations
+    show that AdKnob achieves uniformly spaced ad intensities where baselines collapse
+    to a narrow range, achieves the highest ad labeling accuracy while being over
+    500x faster than the strongest baseline, and is preferred over baselines by human
+    evaluators up to 89.6% of the time.'
+- title: 'The Popular Get More Popular: Auditing Brand Bias in Generative Search'
+  date: 2026-11
+  url: https://arxiv.org/abs/2611.07614
+  category: brand
+  subcategory: empirical
+  authors:
+  - Giorgio Monaco
+  - Jacopo Lenti
+  - Francesco Pierri
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'The shift from traditional to generative search has fundamentally transformed
+    online product discovery. Because conversational recommendations synthesize choices
+    into a few direct answers, subtle systemic preferences toward specific providers
+    can exert profound commercial impacts. In this work, we audit this phenomenon
+    through two distinct dimensions: (i) brand popularity bias, the systematic preference
+    for market-dominant entities over long-tail alternatives, and (ii) brand familiarity
+    bias, the ranking advantage an entity encoded in an LLM''s parametric memory holds
+    over an unfamiliar competitor. First, evaluating commercial queries across major
+    engines, we observe persistent brand popularity bias: dominant brands in the top
+    quintile are cited 1.4x to 2.8x more frequently than the average brand within
+    a sample of 1,176 top market players, already present in parametric memory that
+    external web retrieval fails to mitigate. Second, through controlled in-context
+    experiments holding product attributes constant, we find that substituting authentic
+    brand signatures with unfamiliar ones significantly degrades recommendation rank.
+    Conversely, fact-preserving content rewrites yield negligible ranking gains. Taken
+    together, our findings demonstrate that generative search engines reinforce a
+    ``rich-get-richer'''' dynamic by favoring established market leaders and imposing
+    a parametric barrier to entry that standard content optimization cannot overcome.'
+- title: 'Learning to bid and bundle: a posterior-sampling agent for online retail'
+  date: 2026-10
+  url: https://arxiv.org/abs/2611.00165
+  category: digital-marketing
+  subcategory: empirical
+  authors: []
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'An online retailer launching a perishable product bids for sponsored-search
+    clicks, discounts a bundle with an always-stocked staple and displays its remaining
+    stock, which raises willingness to pay. It knows neither how clicks respond to
+    its bid nor how strong and dispersed its market is, and learns both over repeated
+    seasons from data its own decisions censor: a zero bid reveals nothing about paid
+    clicks, and choices follow only clicks. We design a posterior-sampling agent for
+    it. Each period it draws a market from an exact posterior and posts the bid and
+    discount of that market''s exactly solved season plan, so every action is one
+    a fully informed seller could take. In a simulated online florist it has the lowest
+    regret averaged over markets. In weak markets it gives up 12% to 23% of one season''s
+    revenue over 500 seasons, four to seven times less than drawing once per season.
+    A planner acting on point estimates can stop bidding and never learn that bidding
+    pays. The agent escapes after about three seasons on average, against fifty with
+    one draw per season. Where displayed scarcity keeps willingness to pay above the
+    posted price, the discount needs no learning. Customers waiting for the discount
+    to return to its recent level look like lost sales, so frequent waiting makes
+    the agent underrate its market. One discount per season removes waiting at a cost
+    of 5.9% of clairvoyant revenue in a weak market and none in a strong one.'
+- title: 'Fairness-Aware Design for Contextual Experiments: Guaranteeing Reliability
+    and Equity in Heterogeneous Subgroups'
+  date: 2026-11
+  url: https://arxiv.org/abs/2611.01867
+  category: analytics
+  subcategory: measurement
+  authors:
+  - Guangyan Gan
+  - Ling Zhang
+  - Yanhua Cheng
+  - Yongxiang Tang
+  - Kaiyuan Li
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Experimental design is critical for evidence-based decision-making in
+    healthcare, marketing, and public policy. However, designing efficient experiments
+    across heterogeneous subgroups presents significant challenges. Existing methods
+    often optimize for statistical power or overall sample efficiency, overlooking
+    crucial fairness considerations across these different subgroups. To address this
+    gap, we introduce a Fairness-Aware Contextual Track-and-Stop Design (F-CTSD) algorithm.
+    The proposed F-CTSD algorithm provides statistical guarantees on subgroup fairness
+    while minimizing required sample sizes. We quantify the fairness-efficiency trade-off
+    and derive the exact sample complexity for the proposed F-CTSD algorithm under
+    its fairness constraints. We further theoretically prove that the proposed F-CTSD
+    algorithm consistently produces accurate treatment effect estimates even under
+    fairness requirements, enhancing statistical reliability. Numerical experiments
+    show that the proposed F-CTSD algorithm outperforms existing methods, achieving
+    higher sample efficiency while reducing subgroup fairness violations by 4.95%.
+- title: 'Toward User-Centered Agentic Recommendation: When Does Platform Competition
+    Benefit Users?'
+  date: 2026-11
+  url: https://arxiv.org/abs/2611.04203
+  category: ai-marketing
+  subcategory: framework
+  authors:
+  - Kehan Zheng
+  - Deyao Hong
+  - Qian Li
+  - Jun Zhang
+  - Jie Jiang
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'Conventional recommender systems operate within platform-specific catalogs,
+    limiting access to potentially valuable resources across platforms. We propose
+    user-centered agentic recommendation, a paradigm in which user agents compare
+    recommendations from competing platform agents, and formalize their interaction
+    as a repeated game. Platforms strategically modify descriptions without changing
+    intrinsic item value, while each user agent assesses platform credibility using
+    feedback from consumed items only. Our analysis shows that expanded resource access
+    need not improve user welfare: strategic misrepresentation and limited verification
+    can offset the benefits of platform competition. We quantify when platform credibility
+    assessment allows users to benefit from broader access despite strategic exaggeration.
+    Our analysis identifies resource and reporting conditions that guarantee higher
+    average welfare than the original platform with an interaction budget linear in
+    platform count. Experiments on synthetic and Amazon-grounded markets show that
+    credibility assessment can improve finite-horizon utility, while its benefits
+    depend on market size and mechanism parameters.'
+- title: 'Left-Digit Bias: Theory and Empirical Evidence from a Tax Salience Experiment'
+  date: 2026-11
+  url: https://arxiv.org/abs/2611.05342
+  category: consumer-behavior
+  subcategory: empirical
+  authors:
+  - Kaushil Patel
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Demand often drops sharply at whole-dollar prices. To explain this phenomenon,
+    known as left-digit bias, we develop a random utility model in which consumers
+    consider a good only if its price is below a heterogeneous attention threshold.
+    Masses of consumers with integer attention thresholds generate demand discontinuities.
+    When a tax is introduced, the model predicts a weaker demand response compared
+    to rational choice for left-digit biased consumers. Using data from a tax experiment,
+    we find that the model matches behavioral moments and partially identify the distribution
+    of willingness to pay relative to thresholds. A weak demand response need not
+    imply a low excess burden of taxation and understanding the specific mechanism
+    is important for welfare analysis.
+- title: 'SPAR: Experience-Driven Strategy Evolution in Multi-Session B2B Sales'
+  date: 2026-11
+  url: https://arxiv.org/abs/2611.01695
+  category: b2b
+  subcategory: empirical
+  authors:
+  - Hangming Zhang
+  - Yao Zhao
+  - Haotian Kuang
+  - C. L. Philip Chen
+  - Tong Zhang
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: B2B outbound sales involves high transaction values and relationship-based
+    trust, so closing a deal typically requires multiple rounds of outreach building
+    on prior context. Existing LLM-based sales agents operate within single sessions
+    and cannot carry forward context or refine strategies from experience. Methods
+    that do learn from experience store lessons as unstructured text and treat all
+    outcomes as equally informative, with no mechanism to distinguish a flawed strategy
+    from an external factor. We propose SPAR, a self-evolving framework that models
+    selling strategies as testable hypotheses and refines them without parameter updates.
+    A double-loop architecture lets an inner loop adapt to individual merchants through
+    episodic memory while an outer loop evolves a shared strategy playbook through
+    causal attribution and hypothesis-driven evolution. In a live A/B test on the
+    1688 platform with over 200,000 merchants, SPAR achieves +15.8% conversion lift
+    and +35.8% high-intent merchant growth. Human evaluation by domain experts rates
+    SPAR at 4.62 out of 5 on overall sales quality, the highest among all methods.
+- title: 'Maintaining customer flow across digital and physical channels: The role
+    of hybrid-experience fluency in omnichannel retail'
+  date: 2026-10
+  url: https://doi.org/10.21511/im.22(4).2026.06
+  category: cx-retail
+  subcategory: framework
+  authors:
+  - Juniarty
+  - Evo Sampetua Hariandja
+  - Yokie Radnan Kristiyono
+  abstract: 'Type of the article: Research ArticleAbstractOmnichannel research emphasizes
+    channel integration but gives limited attention to how customers maintain experiential
+    continuity across digital and physical touchpoints. This study examines hybrid-experience
+    fluency as a customer-side mechanism linking o'
+  doi: 10.21511/im.22(4).2026.06
+  venue: Innovative Marketing
+- title: 'The complementary-competitive interplay of consumer information search and
+    experience sharing: Implications for targeted advertising and firm performance.'
+  date: 2026-01
+  url: https://doi.org/10.1371/journal.pone.0340849
+  category: consumer-behavior
+  subcategory: empirical
+  authors:
+  - Dan W
+  - Jiang Z
+  abstract: The proliferation of targeted media platforms enables firms to deliver
+    tailored advertising to specific consumer segments, yet the heterogeneous influences
+    of pre-purchase information search and post-purchase sharing on targeted advertising
+    performance remain underexplored in extant research. This p
+  doi: 10.1371/journal.pone.0340849
+  venue: MED
+- title: Unlocking Innovation - Generative AI in Digital Marketing and E-commerce
+  date: 2024-01
+  url: https://doi.org/10.5040/9781350865693
+  category: ai-marketing
+  subcategory: empirical
+  authors: []
+  doi: 10.5040/9781350865693
+  venue: Unlocking Innovation - Generative AI in Digital Marketing and E-commerce
+- title: 'AI-DRIVEN MARKETING: GENERATIVE AI IN BRANDING AND MARKETING THEREOF'
+  date: 2026-11
+  url: https://doi.org/10.33774/coe-2026-433tc
+  category: ai-marketing
+  subcategory: empirical
+  authors:
+  - Aaryan Gupta
+  abstract: 'Generative AI (GenAI) has moved from a novelty demo to a working part
+    of marketing teams it now drafts ad copy, designs images, writes product descriptions,
+    and holds one-to-one conversations with customers. This report studies how GenAI
+    is changing branding and marketing: what makes it different fr'
+  doi: 10.33774/coe-2026-433tc
