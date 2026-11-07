@@ -171,7 +171,7 @@ SA (Endsley L1--3) & No & No & --- & No & No & Yes \\
 \end{tabular}
 \end{table*}
 
-\textbf{Positioning vs contextual bandits:} Contextual bandits select actions from context signals, deployed at scale in ad platforms. CAM differs: (1) bandits optimize scalar reward from fixed arms; CAM introduces a \textit{situation taxonomy} (6 archetypes) that mediates context-to-action mapping; (2) bandits learn online from observed rewards; CAM-Sim evaluates \textit{offline classification quality against ground-truth labels}; (3) bandits are context-aware but not situation-aware (no Endsley Level 2).
+\textbf{Positioning vs contextual bandits:} Contextual bandits select actions from context signals, deployed at scale in ad platforms. CAM differs: (1) bandits optimize scalar reward from fixed arms; CAM introduces a \textit{situation taxonomy} (6 archetypes) that mediates context-to-action mapping; (2) bandits learn online from observed rewards; CAM-Sim evaluates \textit{offline classification quality against ground-truth labels}; (3) bandits are context-aware but not situation-aware (no Endsley Level 2). \textbf{Positioning vs marketing automation systems:} Commercial marketing automation (RFM segmentation, journey orchestration, customer data platforms, programmatic RTB) operates at the campaign/segment level, not the per-scenario situation level. CAM-Sim's contribution is not a replacement for these systems but a theoretical layer beneath them: the situation taxonomy and action-situation mapping could inform journey-orchestration rule design (which action for which stage/condition) and provide a falsifiable benchmark for context-aware decisioning that CDPs and RTB platforms currently lack.
 
 % ==============================================================================
 \section{CAM Framework}
@@ -242,7 +242,7 @@ Action Mapper & Map situation -> optimal action set & Rule-based + learned mappi
 \end{tablenotes}
 \end{table*}
 
-\textbf{Situational Archetypes (6):} Exploration (early research, low intent, high curiosity), Consideration (active evaluation, medium intent), Decision (ready to purchase, high intent), Crisis (negative sentiment, competitive threat), Opportunity (surge demand, trending alignment), Retention (post-purchase, loyalty).
+\textbf{Situational Archetypes (6):} Exploration (early research, low intent, high curiosity), Consideration (active evaluation, medium intent), Decision (ready to purchase, high intent), Crisis (negative sentiment, competitive threat), Opportunity (surge demand, trending alignment), Retention (post-purchase, loyalty). These archetypes align with customer journey stages (awareness $\rightarrow$ consideration $\rightarrow$ purchase $\rightarrow$ retention; Lemon \& Verhoef, 2016) but extend them with two non-stage conditions (Crisis, Opportunity) that capture situational departures from the funnel. The taxonomy is a contribution of this work, not established theory; \S\ref{sec:flattax} quantifies its cross-axis confusions.
 
 \subsection{Layer 4: Action Layer (Actuators)}
 \textbf{Purpose:} Execute context-conditioned marketing actions.
@@ -738,7 +738,7 @@ Few-shot teaches off-funnel signatures (Mistral crisis 0$\rightarrow$69\%; glm r
 \item glm: +\$250.28 \ci{240.90,259.57}, match 74.7\%, invalid 13/1000; vs cam\_inferred +\$135.18, vs cam\_multisignal +\$29.99 \ci{19.31,40.94}, vs oracle +\$25.79 \ci{14.65,37.38}.
 \end{itemize}
 
-\textbf{Headline:} end-to-end semantic agency beats the entire fixed-mapper stack in both families, including \Ag{cam_multisignal} (supervised on 2,000 labels) and the situation-only oracle row (fixed bids) --- with no fitted component. The LLM natively chooses pause/loyalty/urgent actions for off-funnel situations, reproducing the crisis-policy insight (\S\ref{sec:ablations}: pause beats counter) from normative text alone. The proper wall-clock ceiling remains \Ag{bid_calibrated} (+\$530.45). This is the first agent class to exceed the fixed-mapper ceiling in either family without any fitted component.
+\textbf{Headline:} end-to-end semantic agency beats the entire fixed-mapper stack in both families, including \Ag{cam_multisignal} (supervised on 2,000 labels) and the situation-only oracle row (fixed bids) --- with no task-specific fitted component (the LLM carries pre-training biases from its original training corpus; ``no fitted component'' means no CAM-Sim-specific fine-tuning, not ``no training whatsoever''). The LLM natively chooses pause/loyalty/urgent actions for off-funnel situations, reproducing the crisis-policy insight (\S\ref{sec:ablations}: pause beats counter) from normative text alone. The proper wall-clock ceiling remains \Ag{bid_calibrated} (+\$530.45). This is the first agent class to exceed the fixed-mapper ceiling in either family without any fitted component.
 
 \subsubsection*{(D) Synthesis}
 The \S\ref{sec:llm} blindness is prior-driven and structural (invariant to order/definitions/decoy/sampling, universally non-elicitable at any centroid) but prompt-addressable at a cost (E/F trade balanced recall against profit), while end-to-end agency (H) escapes above the fixed-mapper ceiling with no fitted component.
@@ -800,7 +800,7 @@ The \S\ref{sec:llm} blindness is prior-driven and structural (invariant to order
 \label{sec:bootstrap}
 \textbf{Bootstrap BCa CIs (200 resamples):} check normal-approx CIs within \$1.4 for all 11 agents (max noisy80 \$1.31); $|z_0| \le 0.16$, $|acceleration| \le 0.014$. Caveat: B = 200 has Monte-Carlo endpoint noise of $\approx$\$2--3.5; paired-difference bootstrap (B = 2000, Table~\ref{ab:bootstrap}) confirms within \$0.30.
 
-\textbf{Seed-count convergence:} \Ag{cam_multisignal} stays within 5\% of the 50-seed value from 20 seeds onward (+\$208.52 at 20 $\rightarrow$ +\$206.13 at 50, 1.2\% drift); per-seed $\rho$ stable at 0.981. Baseline shows largest drift (4.2\%). Conclusion: default 50-seed design adequate; 20 seeds suffice; convergence not formally established.
+\textbf{Seed-count convergence:} \Ag{cam_multisignal} stays within 5\% of the 50-seed value from 20 seeds onward (+\$208.52 at 20 $\rightarrow$ +\$206.13 at 50, 1.2\% drift); per-seed $\rho$ stable at 0.981. Baseline shows largest drift (4.2\%). Conclusion: default 50-seed design adequate; 20 seeds suffice; convergence not formally established. Power note: 50 paired seeds provides $\ge$80\% power for large effects (d $>$ 0.4) but may be underpowered for small effects or rare-situation subgroup analyses (e.g., crisis at $\sim$5\% prevalence).
 
 \subsection{Practical Implications}
 \textbf{For marketers:}
@@ -893,6 +893,7 @@ We presented CAM-Sim, a reproducible paired-seed benchmark for situational-aware
 \item Kotler, P., \& Armstrong, G. (2021). \emph{Principles of Marketing} (18th ed.). Pearson. \label{Kotler2021principles}
 \item Peppers, D., \& Rogers, M. (1993). \emph{The One to One Future: Building Relationships One Customer at a Time}. Currency. \label{Peppers1993one}
 \item Godin, S. (1999). \emph{Permission Marketing: Turning Strangers into Friends and Friends into Customers}. Simon \& Schuster. \label{Godin1999permission}
+\item Lemon, K.~N., \& Verhoef, P.~C. (2016). Understanding customer experience throughout the customer journey. \emph{Journal of Marketing}, 80(3), 69--96.
 \end{itemize}
 
 \textbf{NLP / Contextual Intelligence}
