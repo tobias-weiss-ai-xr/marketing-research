@@ -148,7 +148,7 @@ $\ge$250 papers mention ``contextual'' in the corpus, concentrated in 2024--2026
 \textbf{Scope caveat:} Keyword co-occurrence (title/abstract) within 15,700-paper live corpus --- not a systematic review. Adjacent literatures (contextual bandits, context-aware recommenders) address context-aware action selection but use different terminology. Near-zero intersection is a \textit{terminological} gap, not evidence of conceptual novelty.
 
 \subsection{Häglund (2025) --- CS/NLP}
-Häglund (2025) provides technical foundations (opinion-unit extraction, aspect-based sentiment, media-context effects) but does not define a marketing construct.
+Häglund (2025) provides technical foundations for contextual marketing --- opinion-unit extraction via BERT-based aspect-sentiment classifiers, media-context effect estimation, and context-aware content recommendation --- but does not define a marketing construct (e.g., situation awareness, action-situation mapping, or bid calibration). His thesis operates at the NLP/CS level (text understanding, sentiment scoring) and does not address the agentic decision layer (perception $\rightarrow$ comprehension $\rightarrow$ action selection). CAM-Sim extends this line by defining a marketing-construct framework (CIM) with an explicit situation taxonomy and action mapping, situating it within Endsley's SA theory.
 
 \renewcommand{\arraystretch}{1.0}
 \begin{table*}[t]
@@ -569,7 +569,7 @@ cam\_multisignal\_learned & 3 & 98.7\% & +\$205.39 & 0.919 \\
 rf\_multisignal & 3 & 100.0\% & +\$209.79 & 1.000 \\ \bottomrule
 \end{tabular}
 \begin{tablenotes}
-\item Multi-signal advantage holds across families: LR-3 vs LR-1 +\$65.48 (\pv{2.2e-40}, d$_z$=6.03); RF-3 vs RF-1 +\$75.98 (\pv{3.2e-37}, d$_z$=5.17). NCC beats LR on same signals (+\$206.13 vs +\$184.44) because LR underfits cluster structure. RF slightly beats NCC (+\$209.79, 100\% match): the 3-signal structure is fully learnable; the 98.9\% NCC ceiling is a classifier-family limitation, not a signal limitation.
+\item Multi-signal advantage holds across families: LR-3 vs LR-1 +\$65.48 (\pv{2.2e-40}, d$_z$=6.03); RF-3 vs RF-1 +\$75.98 (\pv{3.2e-37}, d$_z$=5.17). d$_z$ values are reproducibility indices (t/$\sqrt{50}$ from deterministic paired comparisons), not generalizable effect sizes. NCC beats LR on same signals (+\$206.13 vs +\$184.44) because LR underfits cluster structure. RF slightly beats NCC (+\$209.79, 100\% match): the 3-signal structure is fully learnable; the 98.9\% NCC ceiling is a classifier-family limitation, not a signal limitation.
 \end{tablenotes}
 \end{table}
 
@@ -680,14 +680,14 @@ Pre-registered protocol of \S\ref{sec:futurework} \#24, executed 2026-11-02 (\Ag
 \label{ab:llm}
 \renewcommand{\arraystretch}{0.95}
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}L{2.0cm}lllll@{}}
+\begin{tabular}{@{}L{3.2cm}lllll@{}}
 \toprule
 Model & Match & Macro-R & Big-3 & Profit & Latency \\ \midrule
-glm-4.7 (thinking) & 79.9\% & 61.3\% & 94\% & +\$122.16 & 5.2s \\
-qwen3.6-35b & 83.0\% & 50.0\% & 100\% & +\$134.61 & 0.12s \\
-qwen3.8-27b & 75.7\% & 59.3\% & 87\% & +\$111.91 & 0.10s \\
-mistral-128B & 80.3\% & 50.0\% & 100\% & +\$125.23 & 0.49s \\
-deepseek-v4-flash & 74.1\% & 56.5\% & 87\% & +\$93.75 & 9.0s \\
+zai/glm-4.7 (thinking) & 79.9\% & 61.3\% & 94\% & +\$122.16 & 5.2s \\
+saia/qwen3.6-35b & 83.0\% & 50.0\% & 100\% & +\$134.61 & 0.12s \\
+groq/qwen3.8-27b & 75.7\% & 59.3\% & 87\% & +\$111.91 & 0.10s \\
+tud/mistral-medium-3.5-128b & 80.3\% & 50.0\% & 100\% & +\$125.23 & 0.49s \\
+local/deepseek-v4-flash & 74.1\% & 56.5\% & 87\% & +\$93.75 & 9.0s \\
 (no-skill prior) & 80.3\% & --- & --- & --- & --- \\ \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -752,6 +752,8 @@ The \S\ref{sec:llm} blindness is prior-driven and structural (invariant to order
 \textbf{H2 (Profit):} Supported --- all context-aware agents beat baseline (channel-only improves to -\$110.16 but stays unprofitable).\\
 \textbf{H3 (ROAS):} Supported --- aggregate ROAS rises from 0.484 (baseline) to 1.20--2.61 for heuristic agents and 26.37 for \Ag{bid_calibrated}.\\
 \textbf{H4 (Environment-consistency):} Supported --- per-seed $\rho$ 0.94--0.99, every lower CI bound $\ge$0.93. Caveat: $\rho$ is partly mechanical (match bonus is a linear component of profit).
+
+\textbf{Answers to the research questions:} \textbf{RQ1:} CAM-Sim discriminates 11 agents across 9 environments (\S\ref{sec:env}); per-seed $\rho \ge 0.93$ confirms replication. \textbf{RQ2:} The multi-signal gain is signal-driven, not classifier-capacity-driven --- matched-family ablation (\S\ref{sec:ablations}) and standard classifiers (\S\ref{sec:baselines}) confirm across NCC, LR, and RF families. \textbf{RQ3:} Yes --- context-aware agents outperform the context-blind baseline (+\$155 to +\$206 vs -\$170); the channel-cost arbitrage (\S\ref{sec:policys}) shows the advantage is within the context-aware ladder, not over all context-free policies. \textbf{RQ4:} The mechanism is multi-signal situation classification (F9: +\$50 learned-vs-learned); bid calibration is a force multiplier (+\$236 for \Ag{bid_calibrated}); end-to-end LLM agency exceeds the fixed-mapper ceiling without fitted components (\S\ref{sec:v16}).
 
 \textbf{Key insight (F3, refined; F9 extends):} The dominant context-aware mechanism is \textbf{multi-signal action selection}; bid modulation is a force multiplier only as good as its calibration. For CAM practice: invest first in multi-signal situation classification (+\$206 vs +\$104 single-signal), then in mechanism-calibrated bidding. Caveat (\S\ref{sec:policys}): a context-blind EMAIL policy (+\$252) beats every deployable context-aware agent via channel-cost arbitrage; the multi-signal gain is measured within the context-aware ladder.
 
@@ -838,32 +840,38 @@ We presented CAM-Sim, a reproducible paired-seed benchmark for situational-aware
 
 \subsection{Future Work \& Field-Validation Design}
 \label{sec:futurework}
+\textbf{Planned work:}
 \begin{enumerate}
 \item \textbf{Pre-specified field validation (priority):} two-arm B2B experiment (CAM decisioning vs business-as-usual); primary endpoint profit/conversion uplift; $\ge$40 campaigns/arm over 8--12 weeks, mixed-effects analysis.
 \item \textbf{Learned bidding} against the clearing mechanism.
-\item \textbf{Adversarial-mapping condition} -- done (\S\ref{sec:advmap}).
-\item \textbf{De-confound perception from bidding} -- done (\S\ref{sec:ablations}).
-\item \textbf{CRN} -- done (\S\ref{sec:macrocrn}).
-\item \textbf{Macro-F1 and per-class recall} -- done (\S\ref{sec:macrocrn}).
 \item \textbf{Adversarial \& dynamic environments.}
 \item \textbf{Field studies} with marketer-in-the-loop.
 \item \textbf{B2B extension:} value-context Layer 0 (G6).
 \item \textbf{Theory:} formal treatment of marketing situational awareness.
-\item \textbf{Matched-family ablation \& standard classifiers} -- done (\S\ref{sec:ablations}, \S\ref{sec:baselines}).
-\item \textbf{Contextual-bandit baseline} -- done (\S\ref{sec:bandits}); online adaptation partially (\S\ref{sec:online}).
-\item \textbf{Class-conditional label noise} -- done (\S\ref{sec:ablations}).
-\item \textbf{Paired-difference bootstrap B $\ge$ 2000} -- done (\S\ref{sec:ablations}).
 \item \textbf{Account-level aggregation for B2B.}
 \item \textbf{First-price auction mechanism.}
-\item \textbf{Crisis action mapping} -- done (\S\ref{sec:ablations}).
-\item \textbf{Sensing-layer fidelity} -- done (\S\ref{sec:ablations}).
-\item \textbf{Majority-action baseline} -- done (\S\ref{sec:ablations}).
-\item \textbf{Channel-dependent reward} -- done (\S\ref{sec:cdreward}).
-\item \textbf{Online reward-feedback learning} -- done (\S\ref{sec:online}).
-\item \textbf{Dynamic environments} -- partial (\S\ref{sec:drift}).
-\item \textbf{Flat-taxonomy confusion quantification} -- done (\S\ref{sec:flattax}).
-\item \textbf{LLM zero-shot classifier baseline} -- done (\S\ref{sec:llm}, v1.5 + \S\ref{sec:v16} v1.6): five models, 74--83\% accuracy, 4-of-6 blind spots; blindness prior-driven; end-to-end exceeds cam\_multisignal. Remaining: fine-tuned LLM classifiers, full-50-seed replication as quotas allow.
+\item \textbf{Fine-tuned LLM classifiers} and full-50-seed LLM replication as provider quotas allow.
 \end{enumerate}
+
+\textbf{Completed extensions (referenced in Results):}
+\begin{itemize}
+\item Adversarial-mapping condition (\S\ref{sec:advmap})
+\item De-confound perception from bidding (\S\ref{sec:ablations})
+\item Common random numbers (\S\ref{sec:macrocrn})
+\item Macro-F1 and per-class recall (\S\ref{sec:macrocrn})
+\item Matched-family ablation \& standard classifiers (\S\ref{sec:ablations}, \S\ref{sec:baselines})
+\item Contextual-bandit baseline (\S\ref{sec:bandits}); online adaptation (\S\ref{sec:online})
+\item Class-conditional label noise (\S\ref{sec:ablations})
+\item Paired-difference bootstrap B $\ge$ 2000 (\S\ref{sec:ablations})
+\item Crisis action mapping (\S\ref{sec:ablations})
+\item Sensing-layer fidelity (\S\ref{sec:ablations})
+\item Majority-action baseline (\S\ref{sec:ablations})
+\item Channel-dependent reward (\S\ref{sec:cdreward})
+\item Online reward-feedback learning (\S\ref{sec:online})
+\item Dynamic environments --- partial (\S\ref{sec:drift})
+\item Flat-taxonomy confusion quantification (\S\ref{sec:flattax})
+\item LLM zero-shot classifier baseline (\S\ref{sec:llm}, v1.5 + \S\ref{sec:v16} v1.6): five models, 74--83\% accuracy, 4-of-6 blind spots; blindness prior-driven; end-to-end exceeds cam\_multisignal.
+\end{itemize}
 
 % ==============================================================================
 \section*{References}
@@ -980,6 +988,6 @@ python3 paper/cam\_sim\_v16\_arms.py       # v1.6 prompt-variant arms
 
 \medskip
 
-\noindent\textbf{Acknowledgment.} All profits are scaled-reward proxies; results are simulation-based and must not be read as field-deployment evidence. Peer-reviewed over 5 rounds (stats-audit, citation-audit, threats-to-validity, journal-editor, adversarial-reviewer, domain-expert, ml-methodology).
+\noindent\textbf{Acknowledgment.} All profits are scaled-reward proxies; results are simulation-based and must not be read as field-deployment evidence.
 
 \end{document}
