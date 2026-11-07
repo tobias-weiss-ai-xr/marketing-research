@@ -44,14 +44,14 @@ The paper compiles cleanly: **17 pages, 0 errors, 0 undefined references**, PDF 
 | 2 | d_z "simulation reproducibility" caveat not consistently applied | MAJOR | ✅ RESOLVED — caveat now at §7.3 ("d_z is a reproducibility index"), §8.1 table note (1.4–1.5× smaller), §8.5/§8.6 ("d_z = t/√50 ... measures simulation reproducibility"), §8.8 LR/RF ("reproducibility indices ... not generalizable") (`141f712` + `06fba26`) |
 | 3 | Bootstrap BCa CI labeling (B=200 diagnostic vs B=2000 confirmatory) | MAJOR | ✅ ADDRESSED — text at §9.2.2 and §8.6 explicitly distinguishes; B=2000 paired-diff confirmed within $0.30 |
 | 4 | p-value format inconsistency (MD vs TEX) | MINOR | ⏸ .md-only style; TEX uses `\pv{}`/`\pvl{}` consistently |
-| 5 | z=1.96 vs t(49)=2.01 CIs | MINOR | ⏸ Acknowledged in text ("2.5% wider"); acceptable |
-| 6 | Spearman ρ CI method unspecified | MINOR | ⏸ Deferred |
-| 7 | Macro-recall definition not in methods | MINOR | ⏸ Deferred — defined implicitly in §8.21 context |
-| 8 | Seed-1 sensitivity only for LLM results | MINOR | ⏸ Warranted: LLM has smaller seed counts (2–10) |
-| 9 | Paired-design power discussion in limitations, not methods | MINOR | ⏸ Deferred |
-| 10 | "tie" informal language | MINOR | ⏸ .md-only; p-value reported precisely |
+| 5 | z=1.96 vs t(49)=2.01 CIs | MINOR | ✅ ADDRESSED — §7.3 now justifies z=1.96 (consistency with BCa; t(49)=2.01 gives 2.5% wider intervals, no conclusion change) |
+| 6 | Spearman ρ CI method unspecified | MINOR | ✅ ADDRESSED — §7.3 now specifies CI = 2.5–97.5 percentile of per-seed ρ distribution (matches code: `np.percentile(seed_rhos, [2.5,97.5])`) |
+| 7 | Macro-recall definition not in methods | MINOR | ✅ ADDRESSED — §7.3 now defines macro-recall explicitly |
+| 8 | Seed-1 sensitivity only for LLM results | MINOR | ✅ ADDRESSED — §8.21 justifies scope (LLM arms have 2–10 seeds; main ladder at 50 is insensitive) |
+| 9 | Paired-design power discussion in limitations, not methods | MINOR | ✅ ADDRESSED — §7.3 now includes pairing rationale (fairness) + power note |
+| 10 | "tie" informal language | MINOR | ✅ ADDRESSED — §8.21 to "statistically indistinguishable from cam_inferred (p = 0.70)"; qwen3.8 non-survival now explicit in .tex |
 
-**R2 verdict:** Accept with minor revisions. Core methodology sound; all multiplicity, bootstrap, and d_z issues resolved.
+**R2 verdict:** Accept with minor revisions. Core methodology sound; Bonferroni, d_z, bootstrap CI labeling, and all 5 minor presentational items (z-vs-t, Spearman CI method, macro-recall, seed-1 scope, pairing power, "tie" language) now resolved in §7.3/§8.21.
 
 ---
 
@@ -156,12 +156,9 @@ The paper compiles cleanly: **17 pages, 0 errors, 0 undefined references**, PDF 
 
 ## Remaining Open Items (all minor / deferred)
 
-1. **R1-7/8 (overfull 174 / underfull 293 hboxes)** — cosmetic; consider `\resizebox`/`\small` for widest tables (robustness 12-col, Häglund 7-col, appendix agent table, verbatim block) in camera-ready pass.
-2. **R2-6 (Spearman CI method)** — add one sentence in §7.3/§8.4 (Fisher z-transformation on per-seed ρ).
-3. **R2-7 (macro-recall definition)** — one sentence in §7.4 metrics.
-4. **R2-9 (paired-design power in methods)** — relocate/deduplicate the "pairing buys no power" note into §7.3.
-5. **R5-8/9/10 (expansion of related work, theory synthesis, external-validity roadmap)** — nice-to-have for a longer-format venue.
-6. **.md sync drift** — the .md still contains §8.3 standalone Findings (mirrors .tex F1–F9 which live inline) and the richer ~550-word abstract; both are intentional .md conveniences, not publication artifacts.
+1. **R1-7/8 (overfull underfull hboxes)** — overfull reduced from 174 → 73 with worst from 203pt → 54pt by converting worst tables to `table*`/`\resizebox`; remaining warnings are all inside resized tables (absorbed in output). Underfull boxes remain (cosmetic).
+2. **R5-8/9/10 (expansion of related work, theory synthesis, external-validity roadmap)** — nice-to-have for a longer-format venue.
+3. **.md sync drift** — the .md still contains §8.3 standalone Findings (mirrors .tex F1–F9 which live inline) and the richer ~550-word abstract; both are intentional .md conveniences, not publication artifacts.
 
 ---
 

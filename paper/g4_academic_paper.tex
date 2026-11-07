@@ -26,6 +26,7 @@
 \captionsetup{font=small,labelfont=bf}
 \usepackage{enumitem}
 \setlist{nosep,leftmargin=2em,topsep=0ex,itemsep=0.25ex,partopsep=0ex,parsep=0ex}
+\emergencystretch=3em
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{xurl}
 \usepackage[breaklinks,pdfusetitle]{hyperref}
@@ -157,6 +158,7 @@ Häglund (2025) provides technical foundations for contextual marketing --- opin
 \centering\small
 \caption{Positioning CAM vs. prior work.}
 \label{ab:positioning}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}p{2.3cm}cccccc@{}}
 \toprule
  & \multicolumn{2}{c}{\textbf{Häglund}} & \multicolumn{2}{c}{\textbf{Contextual}} & \multicolumn{2}{c}{\textbf{CAM (this work)}} \\
@@ -170,7 +172,8 @@ Agentic & No & Partially & No & No & Partially & Yes \\
 Marketing Construct & No & Partially & --- & No & Partially & Yes \\
 SA (Endsley L1--3) & No & No & --- & No & No & Yes \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table*}
 
 \textbf{Positioning vs contextual bandits:} Contextual bandits select actions from context signals, deployed at scale in ad platforms. CAM differs: (1) bandits optimize scalar reward from fixed arms; CAM introduces a \textit{situation taxonomy} (6 archetypes) that mediates context-to-action mapping; (2) bandits learn online from observed rewards; CAM-Sim evaluates \textit{offline classification quality against ground-truth labels}; (3) bandits are context-aware but not situation-aware (no Endsley Level 2). \textbf{Positioning vs marketing automation systems:} Commercial marketing automation (RFM segmentation, journey orchestration, customer data platforms, programmatic RTB) operates at the campaign/segment level, not the per-scenario situation level. CAM-Sim's contribution is not a replacement for these systems but a theoretical layer beneath them: the situation taxonomy and action-situation mapping could inform journey-orchestration rule design (which action for which stage/condition) and provide a falsifiable benchmark for context-aware decisioning that CDPs and RTB platforms currently lack.
@@ -183,6 +186,7 @@ SA (Endsley L1--3) & No & No & --- & No & No & Yes \\
 \textbf{Context-Aware Agentic Marketing (CAM)} = Situational Awareness for Marketing Agents. Four layers built on Endsley's SA model:
 
 \begin{center}\small
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{4.5cm}L{5.8cm}@{}}
 \toprule
  & CAM Layer \\ \midrule
@@ -190,7 +194,8 @@ SA (Endsley L1--3) & No & No & --- & No & No & Yes \\
  SA Level 2 --- Comprehension & \textbf{Context Model} (unified representation) \\
  SA Level 1 --- Perception & \textbf{Sensing Layer} (signal ingestion) \\ \midrule
  & \textbf{Action Layer} (context-conditioned actuators) \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{center}
 
 \subsection{Layer 1: Sensing Layer (SA Level 1: Perception)}
@@ -231,6 +236,7 @@ where A$=$Audience, Ch$=$Channel, T$=$Temporal, S$=$Situational, So$=$Social, M$
 \centering\small
 \caption{Components of the Awareness Engine.}
 \label{ab:aware-engine}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{3.2cm}L{4.0cm}L{4.5cm}L{4.5cm}@{}}
 \toprule
 Component & Purpose & Method & Theoretical Grounding \\ \midrule
@@ -238,7 +244,8 @@ Context Scorer & Calculate overall context relevance for a given action & Weight
 Situation Classifier & Map context to situational archetypes & Nearest-Centroid classifier (6 classes) & Pattern recognition \\
 Context Predictor & Predict next context state & LSTM-based sequence model & Temporal prediction \\
 Action Mapper & Map situation -> optimal action set & Rule-based + learned mapping & Decision theory \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}\footnotesize
 \item[]{Implementation: CAM-Sim (Section~\ref{sec:design}) implements simplified surrogates (nearest-centroid classification on 3 signals; threshold/interval rules) to isolate the value of signal structure without conflating it with classifier capacity. Standard baselines (LR, RF) are benchmarked in Section~\ref{sec:baselines}. The Context Predictor (Level-3 projection) is specified but not benchmarked.}
 \end{tablenotes}
@@ -322,11 +329,13 @@ Retention & Loyalty rewards, upsells & 1.0$\times$ & Medium & SEARCH \\ \bottomr
 \subsection{Statistical Methods}
 \label{sec:stats}
 \begin{itemize}\itemsep=0.5ex
-\item \textbf{Paired t-test} (scipy.stats.ttest\_rel) across seeds for each agent-vs-baseline metric comparison
+\item \textbf{Paired t-test} (scipy.stats.ttest\_rel) across seeds for each agent-vs-baseline metric comparison. Pairing is retained for fairness (both arms see identical scenarios under common random numbers); seed-level correlation between baseline and agents is near zero ($-$0.23 to +0.08), so pairing buys little power --- the design is powered by large per-seed effect sizes, not within-pair correlation.
 \item \textbf{Cohen's d} (between-group pooled, d$_{pooled}$) for effect size; paired within-subject d$_z$ = $\vert t\vert / \sqrt{n}$ is 1.41--1.5x smaller
-\item \textbf{95\% CIs} from seed-level standard error (mean +/- 1.96 $\times$ SE)
+\item \textbf{95\% CIs} from seed-level standard error (mean +/- 1.96 $\times$ SE); z = 1.96 chosen for consistency with bootstrap BCa intervals (a t(49) critical value of 2.01 gives intervals 2.5\% wider, changing no conclusion)
 \item \textbf{Bootstrap BCa CIs} (B = 200 resamples; Section~\ref{sec:bootstrap}) as non-parametric check on normal approximation (diagnostic, not confirmatory)
-\item \textbf{$\alpha = 0.05$}; p-values reported in scientific notation
+\item \textbf{Macro-recall} = mean of per-class recalls (unweighted over the 6 situation classes), reported alongside raw accuracy because accuracy is inflated by class imbalance (the funnel trio spans $\approx$80\% of contexts)
+\item \textbf{Spearman $\rho$} (per-seed); CI = 2.5--97.5 percentile of the per-seed $\rho$ distribution across the 50 seeds
+\item $\alpha = 0.05$; p-values reported in scientific notation
 \item \textbf{Multiplicity:} 540 confirmatory tests (10 agents $\times$ 6 metrics $\times$ 9 env) + 3 ablations + 5 context-blind policies + 5 standard-baseline contrasts + 12 v1.3 + 5 v1.4 + 40 v1.5 LLM + 20 v1.6 = 630 total. All confirmatory p-values remain far below Bonferroni correction. ROAS computed at aggregate level (total value / total spend), not as mean of per-action ratios.
 \end{itemize}
 
@@ -348,6 +357,7 @@ All numbers in this section are auto-generated from CAM-Sim v0.4 and extension s
 \label{ab:agg}
 \renewcommand{\arraystretch}{0.95}
 \setlength{\tabcolsep}{5pt}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{2.3cm}R{1.1cm}L{1.0cm}R{1.5cm}R{1.1cm}R{1.1cm}@{}}
 \toprule
 Agent & Match \% & 95\% CI & Profit & ROAS &Profit/cost\\ \midrule
@@ -362,7 +372,8 @@ cam\_learned & 87.5 & \ci{86.7,88.2} & +\$155.38 & 1.575 & +0.576 \\
 noisy80 & 83.7 & \ci{83.1,84.4} & +\$145.70 & 1.570 & +0.570 \\
 oracle & 100.0 & & +\$210.00 & 1.802 & +0.802 \\
 bid\_calibrated & 100.0 & & +\$530.45 & 26.367 & +25.367 \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}\footnotesize
 \item \tnote{95\% CIs use z = 1.96; t(49) = 2.01 gives marginally wider intervals.}
 \end{tablenotes}
@@ -410,12 +421,13 @@ bid\_calibrated   & +\$700.48 & \ci{+692.6,+708.3} & \pv{3.3\!\times\!10^{-70}} 
 
 Nine presets vary the environment economics while holding the situation-to-action language fixed: distribution shifts (uniform, decision-, crisis-, retention-heavy), doubled costs, weakened context payoffs, budget cap (\$250/episode), and concave returns (reward x (bid/clearing price)$^{0.5}$, capped at 2x). \Ag{cam_learned} is fit once on default samples; \Ag{cam_recalibrated} is refit per environment.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering\small
 \caption{Total profit by environment (mean over 50 seeds).}
 \label{ab:robust}
 \renewcommand{\arraystretch}{0.9}
 \setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}L{1.6cm}rrrrrrrrrrrL{0.9cm}@{}}
 \toprule
 Env & base & sit.only & noisy50 & camsig & cam\_inf & cam\_lrn & recal & msrec & n80 & oracle & bid.cal & $\rho$ \\ \midrule
@@ -428,12 +440,13 @@ h.costs & -498 & +112 & -204 & -57 & -180 & -117 & -117 & -58 & -113 & -54 & +51
 weak.sig & -144 & +266 & +50 & +180 & +94 & +137 & +137 & +180 & +131 & +183 & +466 & .99 \\
 budget & -126 & +294 & +47 & +195 & +91 & +144 & +144 & +195 & +141 & +199 & +530 & .99 \\
 concave & -51 & +659 & +347 & +676 & +492 & +583 & +583 & +674 & +549 & +684 & +762 & .94 \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}
 \item Abbreviations: base$=$baseline, sit.only$=$situation\_only, camsig$=$cam\_multisignal, cam\_inf$=$cam\_inferred, cam\_lrn$=$cam\_learned, recal$=$cam\_recalibrated, msrec$=$cam\_multisignal\_recalibrated, n80$=$noisy80, bid.cal$=$bid\_calibrated.
 \item $\rho$ = per-seed Spearman, all CIs lower bound $\ge 0.93$. F3 column (situation\_only $>$ oracle) holds in 8/9 (fails only under concave returns).
 \end{tablenotes}
-\end{table}
+\end{table*}
 
 \finding{Systematic bias beats unbiased noise, adversely (F5): The label-ordered H4 ladder holds under default and economic shifts, but breaks in all four distribution-shifted presets. \Ag{cam_inferred} falls below even unbiased 50\% perception under crisis\_heavy (-\$66.8 vs noisy50 -\$1.9) and retention\_heavy (-\$15.5 vs +\$60.6). Mechanism: the classifier's errors are systematic, so bias concentrates where probability mass is, while noisy agents' unbiased errors average out. The multi-signal classifier eliminates this failure (F9): \Ag{cam_multisignal} stays strongly positive in all four shifted presets (+\$160.6, +\$65.3, +\$141.9, +\$237.2).}
 
@@ -448,6 +461,7 @@ concave & -51 & +659 & +347 & +676 & +492 & +583 & +583 & +674 & +549 & +684 & +
 \caption{Curvature sweep: where does the heuristic ordering flip?}
 \label{ab:alpha}
 \renewcommand{\arraystretch}{0.9}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{1cm}rrrll@{}}
 \toprule
 $\alpha$ & situation\_only & oracle & bid\_cal & sit-v-or $p$ & sit-v-cal $p$ \\ \midrule
@@ -457,7 +471,8 @@ $\alpha$ & situation\_only & oracle & bid\_cal & sit-v-or $p$ & sit-v-cal $p$ \\
 0.75 & +710 & +684 & +827 & 6.7e-25 & 3.4e-68 \\
 1.0 & +732 & +684 & +852 & 9.1e-33 & 1.6e-68 \\
 1.5 & +758 & +684 & +881 & 4.9e-37 & 5.6e-68 \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}
 \item Three observations: (1) the flip is non-monotone in $\alpha$, located near the 2x cap turning over-bids into maximally-rewarded spend; (2) bid\_calibrated dominates every heuristic at every curvature (all p < 1e-64); (3) flat bidding improves with concavity but never catches calibrated bidding.
 \end{tablenotes}
@@ -468,13 +483,15 @@ $\alpha$ & situation\_only & oracle & bid\_cal & sit-v-or $p$ & sit-v-cal $p$ \\
 \caption{Label noise: robustness of the recalibration remedy.}
 \label{ab:labelnoise}
 \renewcommand{\arraystretch}{0.95}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{1.6cm}L{0.9cm}llll@{}}
 \toprule
 env & $\varepsilon$ & recal match & recal profit & msrec match & msrec profit \\ \midrule
 crisis & 0$\rightarrow$0.3 & 75.7$\rightarrow$75.2 & +27$\rightarrow$+25 & 98.9$\rightarrow$90.0 & +142$\rightarrow$+106 \\
 retent & 0$\rightarrow$0.3 & 84.7$\rightarrow$84.9 & +165$\rightarrow$+171 & 98.9$\rightarrow$84.9 & +237$\rightarrow$+164 \\
 uniform & 0$\rightarrow$0.3 & 66.7$\rightarrow$67.0 & +32$\rightarrow$-7 & 98.8$\rightarrow$92.7 & +160$\rightarrow$+134 \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}
 \item The remedy is remarkably label-robust up to $\varepsilon=0.3$: intent-only match degrades $\le$0.6pp; multi-signal recalibrated degrades more in match but stays strongly profitable everywhere ($\ge$+\$106). Under uniform, intent-only recal goes negative at $\varepsilon\ge0.2$ (-\$26.1) while multi-signal stays +\$133.7.
 \end{tablenotes}
@@ -485,6 +502,7 @@ uniform & 0$\rightarrow$0.3 & 66.7$\rightarrow$67.0 & +32$\rightarrow$-7 & 98.8$
 \caption{Budget pacing: do conclusions survive budget awareness?}
 \label{ab:pacing}
 \renewcommand{\arraystretch}{0.95}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{2.4cm}lll@{}}
 \toprule
 agent & unpaced & paced & skips (unpaced$\rightarrow$paced) \\ \midrule
@@ -492,7 +510,8 @@ baseline & -\$125.5 & -\$32.4 & 37.5$\rightarrow$0.0 \\
 situation\_only & +\$294.3 & +\$294.3 & 0.0$\rightarrow$0.0 \\
 cam\_multisignal & +\$195.4 & +\$276.3 & 11.2$\rightarrow$0.0 \\
 oracle & +\$199.1 & +\$280.5 & 11.4$\rightarrow$0.0 \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}
 \item Pacing eliminates the truncation cliff (baseline losses shrink 74\%; oracle recovers +\$81.4). But F3 survives: paced oracle (+\$280.5) still loses to flat situation\_only (+\$294.3). Smoothing a miscalibrated bid policy does not make it competitive with not bidding at all.
 \end{tablenotes}
@@ -512,13 +531,15 @@ oracle & +\$199.1 & +\$280.5 & 11.4$\rightarrow$0.0 \\ \bottomrule
 \caption{Paired-difference bootstrap (B = 2000) vs normal approximation.}
 \label{ab:bootstrap}
 \renewcommand{\arraystretch}{0.95}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{3.6cm}L{1.2cm}L{2.4cm}L{2.4cm}@{}}
 \toprule
 Contrast & Mean diff & Bootstrap 95\% CI & Normal CI \\ \midrule
 cam\_multisignal$-$cam\_inferred & +\$101.87 & +\$98.41..+\$105.49 & +\$98.30..+\$105.44 \\
 cm\_learned$-$cam\_learned & +\$50.01 & +\$46.62..+\$53.69 & +\$46.42..+\$53.60 \\
 cam\_multisignal$-$ncc\_intent & +\$103.85 & +\$100.13..+\$107.55 & +\$100.20..+\$107.50 \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}
 \item Paired-difference bootstrap CIs are within \$0.30 of normal approximation; d$_z$ = t/$\sqrt{50}$ from a deterministic paired comparison measures simulation reproducibility, not generalization.
 \end{tablenotes}
@@ -533,6 +554,7 @@ The majority-action floor is one cell of the context-free policy space. A search
 \caption{Context-blind policy search: channel-cost arbitrage.}
 \label{ab:cbp}
 \renewcommand{\arraystretch}{0.95}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{2.7cm}L{1.7cm}L{1.2cm}L{0.8cm}lr@{}}
 \toprule
 Policy & Action & Channel & Bid & Match & Profit \\ \midrule
@@ -542,7 +564,8 @@ Context-blind & EDUCATIONAL & EMAIL & 1.0 & 35.1\% & +\$214.62 \\
 Context-blind & LOYALTY & EMAIL & 0.3 & 10.2\% & +\$50.36 \\
 Majority floor & EDUCATIONAL & SEARCH & 1.0 & 35.1\% & -\$15.38 \\
 \Ag{cam_multisignal} (ref.) & --- & --- & --- & 98.9\% & +\$206.13 \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}
 \item The best context-blind policy (+\$252.41) beats every deployable context-aware agent in 7 of 9 environments. This is a benchmark-construction limitation (\S\ref{sec:limitations} \#25). The multi-signal gain is measured within the context-aware ladder; a context-blind policy on a cheap channel can beat a context-aware policy on an expensive channel.
 \end{tablenotes}
@@ -682,6 +705,7 @@ Pre-registered protocol of \S\ref{sec:futurework} \#24, executed 2026-11-02 (\Ag
 \label{ab:llm}
 \renewcommand{\arraystretch}{0.95}
 \setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{3.2cm}lllll@{}}
 \toprule
 Model & Match & Macro-R & Big-3 & Profit & Latency \\ \midrule
@@ -691,7 +715,8 @@ groq/qwen3.8-27b & 75.7\% & 59.3\% & 87\% & +\$111.91 & 0.10s \\
 tud/mistral-medium-3.5-128b & 80.3\% & 50.0\% & 100\% & +\$125.23 & 0.49s \\
 local/deepseek-v4-flash & 74.1\% & 56.5\% & 87\% & +\$93.75 & 9.0s \\
 (no-skill prior) & 80.3\% & --- & --- & --- & --- \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \begin{tablenotes}
 \item All five models fall significantly below the 2,000-label supervised classifiers at scenario level. Seed-level glm (n=10): vs cam\_inferred +\$14.55 (\pv{6.8e-05}), vs cam\_learned -\$36.13 (\pv{2.0e-06}), vs cam\_multisignal -\$91.60. Blind spots are emergent and identical across families: no model ever predicts crisis (glm 0/94, mistral 0/94, deepseek 0/36) or retention (glm 0/195, mistral 0/195, deepseek 0/105); all emit at most 4 of 6 classes. No-skill funnel-trio prior sampling scores 80.3\%, showing raw accuracy is prior-inflated.
 \end{tablenotes}
@@ -699,10 +724,10 @@ local/deepseek-v4-flash & 74.1\% & 56.5\% & 87\% & +\$93.75 & 9.0s \\
 
 \textbf{Findings.}
 \begin{enumerate}
-\item \textbf{LLM zero-shot classifiers are profit-competitive but balanced-inferior.} Raw accuracy (74--83\%) is inflated by class imbalance (a no-skill funnel-trio sampler scores 80.3\%); all five macro-recalls (50.0--61.3\%) sit below the hand-tuned classifier's 65.9\%. The only profit contrasts surviving the v1.5-family Bonferroni (610-way, threshold $p < 8.2\times10^{-5}$; the full 630-way family includes v1.6 arms, threshold $p < 7.9\times10^{-5}$): glm-4.7 +\$0.07/scenario (\pv{8.9e-06}) and Mistral +\$0.09 (\pv{1.2e-08}); DeepSeek is significantly negative (-\$0.10, \pv{4.9e-06}); qwen3.6's +\$0.10 (p = 8.1e-03) does not survive. \textbf{Prompting is not a substitute for labels in this environment.}
+\item \textbf{LLM zero-shot classifiers are profit-competitive but balanced-inferior.} Raw accuracy (74--83\%) is inflated by class imbalance (a no-skill funnel-trio sampler scores 80.3\%); all five macro-recalls (50.0--61.3\%) sit below the hand-tuned classifier's 65.9\%. The only profit contrasts surviving the v1.5-family Bonferroni (610-way, threshold $p < 8.2\times10^{-5}$; the full 630-way family includes v1.6 arms, threshold $p < 7.9\times10^{-5}$): glm-4.7 +\$0.07/scenario (\pv{8.9e-06}) and Mistral +\$0.09 (\pv{1.2e-08}); DeepSeek is significantly negative (-\$0.10, \pv{4.9e-06}); qwen3.6's +\$0.10 (p = 8.1e-03) and qwen3.8's -\$0.01 (p = 0.70, statistically indistinguishable from \Ag{cam_inferred}) do not survive. \textbf{Prompting is not a substitute for labels in this environment.}
 \item \textbf{Blind spots are emergent, structural, identical across families.} Never crisis/retention; Mistral-128B is the sharpest collapse (100\% correct on the funnel trio, never leaves it; opportunity misread as consideration 88\%). Blind spots sit exactly on classes whose scalar signatures overlap (crisis intent 0.8 vs decision 0.9; retention 0.3 vs exploration 0.2) and on the costliest confusion (crisis$\rightarrow$decision, -\$2.79); the discriminative rescue sits in centroid values of the 2nd/3rd signal that the multi-signal classifier exploits. Zero-shot semantic competence cannot replace centroid calibration.
 \item \textbf{Cost/practicality.} qwen3.6 at 0.12 s/call, Mistral 0.49 s, glm 5.2 s (thinking); all at \$0 API cost. LAN-local DeepSeek (9.0 s/call) needs no provider --- a deployable on-premise agent reaches 74.1\% on commodity hardware. The decoy quality\_score was included verbatim; no model's errors concentrated on it.
-\item \textbf{seed-1 sensitivity (dev-on-test).} Dropping seed 1: glm 79.9$\rightarrow$79.6, Mistral 80.3$\rightarrow$79.7, qwen3.6 83.0$\rightarrow$79.5, qwen3.8 75.7$\rightarrow$75.0, DeepSeek 74.1$\rightarrow$73.2 --- no pilot overfitting (largest delta belongs to the 2-seed model).
+\item \textbf{seed-1 sensitivity (dev-on-test).} Dropping seed 1: glm 79.9$\rightarrow$79.6, Mistral 80.3$\rightarrow$79.7, qwen3.6 83.0$\rightarrow$79.5, qwen3.8 75.7$\rightarrow$75.0, DeepSeek 74.1$\rightarrow$73.2 --- no pilot overfitting (largest delta belongs to the 2-seed model). This check is reported for LLM results because those arms carry the smallest seed counts (2--10 seeds); the main agent ladder (50 seeds) is insensitive to any single seed (§9.2.2 seed-count convergence).
 \end{enumerate}
 
 \finding{LLM zero-shot ceiling (F11):} LLM classifiers at temperature 0 --- from LAN-local to 128B dense --- score 74--83\% raw accuracy, but that accuracy is prior-inflated: macro-recall only 50--61\% (below hand-tuned 65.9\%) with zero recall on crisis/retention; skill concentrates in the funnel trio. Zero-shot LLM classification is at best a label-free starting point; supervised multi-signal classifiers remain the efficient path to full value.
@@ -944,6 +969,7 @@ We presented CAM-Sim, a reproducible paired-seed benchmark for situational-aware
 \caption{Agent implementations.}
 \label{ab:agents}
 \renewcommand{\arraystretch}{0.95}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}L{3.4cm}L{3.2cm}L{4.5cm}@{}}
 \toprule
 Agent & Type & Parameters \\ \midrule
@@ -960,7 +986,8 @@ bid\_calibrated & Mechanism-aware & Oracle situation + grid-searched bid \\
 BudgetPacedAgent & Stress-test wrapper & Scales bid to remaining budget \\
 llm\_end\_to\_end & LLM semantic agent & v1.6 arm H (menus + normative text) \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \subsection{Statistical Functions}
@@ -972,18 +999,20 @@ llm\_end\_to\_end & LLM semantic agent & v1.6 arm H (menus + normative text) \\
 \section{Raw Data \& Reproducibility}
 Raw per-seed data is never hand-maintained. Regenerate with:
 
+{\footnotesize
 \begin{verbatim}
-# Core benchmark (Sections 8.1-8.3, 8.5-8.9)
+# Core benchmark (x8.1-8.3, 8.5-8.9)
 python3 paper/cam\_sim.py --scenarios 200 --seeds 1..50 \
-    --robustness --alpha-sweep --label-noise --budget-pacing \
-    --output-md results/cam\_sim\_results.md
+  --robustness --alpha-sweep --label-noise --budget-pacing \
+  --output-md results/cam\_sim\_results.md
 
-python3 paper/cam\_sim\_ablations.py      # ablation ladder
-python3 paper/cam\_sim\_extensions.py     # v1.3 suite
-python3 paper/cam\_sim\_v14.py            # v1.4 suite
-python3 paper/cam\_sim\_v15\_llm.py        # v1.5 LLM baseline (API keys needed)
-python3 paper/cam\_sim\_v16\_arms.py       # v1.6 prompt-variant arms
+python3 paper/cam\_sim\_ablations.py  # ablation ladder
+python3 paper/cam\_sim\_extensions.py # v1.3 suite
+python3 paper/cam\_sim\_v14.py        # v1.4 suite
+python3 paper/cam\_sim\_v15\_llm.py    # v1.5 LLM (API keys)
+python3 paper/cam\_sim\_v16\_arms.py   # v1.6 prompt arms
 \end{verbatim}
+}
 
 \textbf{Outputs:} JSON reports per extension; \Ag{results/cam_sim_v15.json} + \Ag{results/llm_cache/*.jsonl} (LI response cache --- audit trail); \Ag{results/cam_sim_v16.md/json} (v1.6 arms). \Ag{results/} is gitignored --- outputs are reproducible from seed alone.
 
