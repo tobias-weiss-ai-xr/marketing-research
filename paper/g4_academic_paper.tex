@@ -121,6 +121,8 @@ Russell \& Norvig define an \textit{agent} as ``anything that can be viewed as p
 \item \textbf{Environment:} Marketing ecosystem (competitive, consumer, platform)
 \end{itemize}
 
+In Russell \& Norvig's formalism, an agent is specified by an \textit{agent function} $f: P^{*} \rightarrow A$ mapping percept histories to actions (implemented by an \textit{agent program}); their taxonomy classes agents by how much of the environment's state they represent and how they select actions. CAM-Sim's agent ladder (\S\ref{sec:design}) instantiates this taxonomy concretely: the \emph{action-chaining} heuristic agents are \textbf{simple-reflex} agents (pure state-free mapping); \Ag{cam\_inferred} and \Ag{cam\_learned} are \textbf{model-based agents} (infer the situation from an internal context model); \Ag{cam\_multisignal} adds a deliberate \textbf{goal-based/utility-based} component (action selection weighs match-and-reward via the situation$\rightarrow$ideal-action mapping); and the v1.4/v1.6 learners (\S\ref{sec:online}, \S\ref{sec:v16}) are \textbf{learning agents} (reward-feedback updates an internal value/action model). Locating the ladder within R\&N's taxonomy is not decoration: it makes explicit that the benchmark varies the \emph{agent function} (percept-to-action program) while holding the environment fixed --- the core of a controlled ablation design.
+
 \subsection{Marketing Automation Context}
 Foundational work --- Peppers \& Rogers (1993) \textit{The One to One Future}; Godin (1999) \textit{Permission Marketing}; Kotler \& Armstrong (2021) \textit{Principles of Marketing}. \textbf{Gap:} None address situational awareness in autonomous agents.
 

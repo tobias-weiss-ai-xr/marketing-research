@@ -92,7 +92,7 @@ The paper compiles cleanly: **17 pages, 0 errors, 0 undefined references**, PDF 
 | 1 | Situation types mismatch (LOYALTY/ONBOARDING vs CONSIDERATION/OPPORTUNITY) | CRITICAL | ✅ FALSE ALARM — paper/code both define EXPLORATION, CONSIDERATION, DECISION, CRISIS, OPPORTUNITY, RETENTION; LOYALTY is an ActionType, not a SituationType |
 | 2 | "Zero papers" overstates evidence | CRITICAL | ✅ RESOLVED (`618d3e5`) — "no papers in our corpus" + terminological-gap caveat |
 | 3 | Endsley Level 3 (projection) mapped but not benchmarked | MAJOR | ✅ ADDRESSED — already stated in 4 places (lines 107, 241, 279, 820); abstract makes no L3 claims |
-| 4 | R&N agent function / agent-type taxonomy not addressed | MAJOR | ⏸ NOT ADDRESSED — candidate for v1.7; see open items |
+| 4 | R&N agent function / agent-type taxonomy not addressed | MAJOR | ✅ RESOLVED (`3f2242e`+) — added §4.2 paragraph mapping CAM ladder to R&N agent types (simple-reflex, model-based, goal/utility-based, learning agents); explicit agent-function f: P* → A framing |
 | 5 | Häglund positioning insufficient technical detail | MAJOR | ✅ RESOLVED (`141f712`) — expanded §3.4 with BERT-based aspect-sentiment classifiers, media-context effect estimation, context-aware content recommendation; explicit contrast with CAM's agentic decision layer |
 | 6 | Situation types lack marketing-literature grounding | MAJOR | ✅ RESOLVED (`06fba26`) — added Lemon & Verhoef (2016) customer journey citation; framed taxonomy as contribution, not established theory; cross-ref to §8.20 confusion quantification |
 | 7 | Differentiation from marketing automation systems (segmentation, journey orchestration, CDPs, RTB) | MAJOR | ✅ RESOLVED (`06fba26`) — added §5.3 paragraph positioning CAM as theoretical layer beneath commercial automation |
@@ -156,16 +156,15 @@ The paper compiles cleanly: **17 pages, 0 errors, 0 undefined references**, PDF 
 
 ## Remaining Open Items (all minor / deferred)
 
-1. **R5-4 (R&N agent function / agent-type taxonomy)** — the only unaddressed Major. Candidate for v1.7: add mapping of CAM agent ladder to Russell & Norvig's agent types (simple reflex → model-based → goal-based → utility → learning).
-2. **R1-7/8 (overfull 174 / underfull 293 hboxes)** — cosmetic; consider `\resizebox`/`\small` for widest tables (robustness 12-col, Häglund 7-col, appendix agent table, verbatim block) in camera-ready pass.
-3. **R2-6 (Spearman CI method)** — add one sentence in §7.3/§8.4 (Fisher z-transformation on per-seed ρ).
-4. **R2-7 (macro-recall definition)** — one sentence in §7.4 metrics.
-5. **R2-9 (paired-design power in methods)** — relocate/deduplicate the "pairing buys no power" note into §7.3.
-6. **R5-8/9/10 (expansion of related work, theory synthesis, external-validity roadmap)** — nice-to-have for a longer-format venue.
-7. **.md sync drift** — the .md still contains §8.3 standalone Findings (mirrors .tex F1–F9 which live inline) and the richer ~550-word abstract; both are intentional .md conveniences, not publication artifacts.
+1. **R1-7/8 (overfull 174 / underfull 293 hboxes)** — cosmetic; consider `\resizebox`/`\small` for widest tables (robustness 12-col, Häglund 7-col, appendix agent table, verbatim block) in camera-ready pass.
+2. **R2-6 (Spearman CI method)** — add one sentence in §7.3/§8.4 (Fisher z-transformation on per-seed ρ).
+3. **R2-7 (macro-recall definition)** — one sentence in §7.4 metrics.
+4. **R2-9 (paired-design power in methods)** — relocate/deduplicate the "pairing buys no power" note into §7.3.
+5. **R5-8/9/10 (expansion of related work, theory synthesis, external-validity roadmap)** — nice-to-have for a longer-format venue.
+6. **.md sync drift** — the .md still contains §8.3 standalone Findings (mirrors .tex F1–F9 which live inline) and the richer ~550-word abstract; both are intentional .md conveniences, not publication artifacts.
 
 ---
 
 ## Final Assessment
 
-The paper is **ready for submission** (17 pages, 0 errors, 0 undefined references). All 6 reviews' critical findings and 11 of 12 major findings are resolved. The remaining open items are presentational or candidate-v1.7 enhancements. The review cycle caught and fixed a systematic `\Ag{}` corruption (reproducibility-critical), 32 wrong cross-references, 2 factual abstract errors, review-process artifacts, overclaiming language, and 3 missing threats to validity.
+The paper is **ready for submission** (17 pages, 0 errors, 0 undefined references). **All 6 reviews' critical and major findings are resolved.** The remaining open items are presentational or candidate-v1.7 enhancements. The review cycle caught and fixed a systematic `\Ag{}` corruption (reproducibility-critical), 32 wrong cross-references, 2 factual abstract errors, review-process artifacts, overclaiming language, and 3 missing threats to validity.

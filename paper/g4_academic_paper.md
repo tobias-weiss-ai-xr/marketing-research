@@ -91,6 +91,8 @@ Russell & Norvig define an **agent** as "anything that can be viewed as perceivi
 - **Performance Measure:** ROAS, Context Match Rate, Profit
 - **Environment:** Marketing ecosystem (competitive, consumer, platform)
 
+In Russell & Norvig's formalism, an agent is specified by an **agent function** f: P* → A mapping percept histories to actions (implemented by an **agent program**); their taxonomy classes agents by how much of the environment's state they represent and how they select actions. CAM-Sim's agent ladder (§7) instantiates this taxonomy concretely: the action-chaining heuristic agents are **simple-reflex** agents (pure state-free mapping); `cam_inferred` and `cam_learned` are **model-based agents** (infer the situation from an internal context model); `cam_multisignal` adds a deliberate **goal-based/utility-based** component (action selection weighs match-and-reward via the situation→ideal-action mapping); and the v1.4/v1.6 learners (§8.18, §8.22) are **learning agents** (reward-feedback updates an internal value/action model). Locating the ladder within R&N's taxonomy is not decoration: it makes explicit that the benchmark varies the *agent function* (percept-to-action program) while holding the environment fixed — the core of a controlled ablation design.
+
 **Citation:** Russell, S. J., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach (4th ed.).
 
 ### 4.3 Marketing Automation Context
