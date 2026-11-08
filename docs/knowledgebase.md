@@ -28,10 +28,13 @@ Corpus snapshot 2026-11-08: 15,779 papers → 1,272 arXiv (free full text) +
 ```bash
 python3.12 scripts/build_knowledgebase.py --scope arxiv            # tier 1 (~20 min, 6 workers)
 python3.12 scripts/build_knowledgebase.py --scope oa --limit 300   # bounded best-effort tier 2
+python3.12 scripts/build_knowledgebase.py --scope oa               # ALL remaining DOI papers (~90 min)
 python3.12 scripts/build_knowledgebase.py --scope all              # everything (slow)
 python3.12 scripts/build_knowledgebase.py --category ai-marketing  # one category only
 python3.12 scripts/build_knowledgebase.py --dry-run                # plan only
 python3.12 scripts/build_knowledgebase.py --stats                  # manifest summary
+python3.12 scripts/build_knowledgebase.py --scan-existing          # absorb pre-existing manual full texts
+python3.12 scripts/build_knowledgebase.py --write-index            # regenerate knowledgebase/INDEX.md
 ```
 
 - **Resume-safe**: papers already recorded `ok` in the manifest are skipped;
@@ -47,6 +50,7 @@ python3.12 scripts/build_knowledgebase.py --stats                  # manifest su
 ```
 knowledgebase/
 ├── index.json                     # manifest: per-paper status, path, pages, chars
+├── INDEX.md                       # auto-generated browsable listing (grouped by category)
 └── full_texts/
     ├── ai-marketing/<slug>.md     # one file per paper
     ├── b2b/<slug>.md
@@ -87,3 +91,7 @@ less knowledgebase/full_texts/analytics/improving-the-capabilities-of-*.md
 - `no_text` papers are image-only scans; OCR is out of scope.
 - Copyright: files stay local (gitignored); the pipeline only fetches
   openly accessible copies.
+- Pre-existing manually-collected files in `full_texts/` are absorbed into
+  the manifest by `--scan-existing` (linked to papers.yaml metadata by
+  title match when possible, `source: manual` otherwise). Unindexed PDFs
+  in manual folders are not searchable.

@@ -119,3 +119,58 @@ def test_snippet_finds_body_not_front_matter():
     sn = ks.snippet(doc, ["churn"])
     assert "title:" not in sn
     assert "discusses churn" in sn
+
+
+# ---------------- scan-existing + browse index ----------------
+
+def test_normalize_title():
+    assert bk.normalize_title("The  Power of Gen-AI! (2026)") == "thepowerofgenai2026"
+    assert bk.normalize_title(None) == ""
+
+
+def test_title_from_file(tmp_path):
+    fm = tmp_path / "a.md"
+    fm.write_text("---\ntitle: 'Real Title'\n---\n\n# Heading\nbody")
+    assert bk.title_from_file(fm, fm.read_text()) == "Real Title"
+    hd = tmp_path / "b.md"
+    hd.write_text("intro\n\n# First Heading\nmore")
+    assert bk.title_from_file(hd, hd.read_text()) == "First Heading"
+    pl = tmp_path / "Some_File_Name.md"
+    pl.write_text("plain scraped text")
+    assert bk.title_from_file(pl, pl.read_text()) == "Some File Name"
+
+
+def test_scan_existing(tmp_path, monkeypatch):
+    monkeypatch.setattr(bk, "KB_DIR", tmp_path)
+    monkeypatch.setattr(bk, "TEXTS_DIR", tmp_path / "full_texts")
+    papers = [{"title": "Known Marketing Paper", "url": "https://doi.org/10.1/x",
+               "category": "b2b", "subcategory": "empirical", "date": "2025-01",
+               "venue": "J"}]
+    folder = tmp_path / "full_texts" / "ai-lead-marketing"
+    folder.mkdir(parents=True)
+    (folder / "Known_Marketing_Paper.md").write_text("full text here")
+    (folder / "Unknown_Local_Doc.md").write_text("scraped stuff")
+    index = {"https://arxiv.org/abs/1": {"status": "ok", "path": "full_texts/x/a.md"}}
+    unlinked, linked, skipped = bk.scan_existing(index, papers)
+    # neither scanned file matches the tracked arxiv path or a fetched paper
+    assert (unlinked, linked, skipped) == (1, 1, 0)
+    rec = index["file:full_texts/ai-lead-marketing/Known_Marketing_Paper.md"]
+    assert rec["category"] == "b2b" and rec["source"] == "manual-linked"
+    assert index["file:full_texts/ai-lead-marketing/Unknown_Local_Doc.md"]["url"] == ""
+    # file whose paper was already fetched by pipeline -> skipped
+    index2 = {"https://doi.org/10.1/x": {"status": "ok", "path": "full_texts/b2b/fetched.md"}}
+    _, _, sk = bk.scan_existing(index2, papers)
+    assert sk == 1
+
+
+def test_write_browse_index(tmp_path, monkeypatch):
+    monkeypatch.setattr(bk, "KB_DIR", tmp_path)
+    index = {
+        "a": {"status": "ok", "path": "full_texts/b2b/a.md", "category": "b2b",
+              "title": "Alpha", "date": "2026-01", "pages": 10, "source": "arxiv"},
+        "b": {"status": "no_oa", "path": None, "category": "b2b", "title": "Skip me"},
+    }
+    n = bk.write_browse_index(index)
+    assert n == 1
+    text = (tmp_path / "INDEX.md").read_text()
+    assert "## b2b (1)" in text and "Alpha" in text and "Skip me" not in text
