@@ -66,6 +66,7 @@ paper/cam_sim.py              ← CAM-Sim benchmark (run: python3 paper/cam_sim.
 - **"What are the research gaps?"** → `python3 tools/landscape_analyzer.py`
 - **"Suggest article topics"** → `python3 tools/topic_planner.py --top 10`
 - **"Find new papers"** → `python3 scripts/fetch/fetch_new_papers.py --local` (needs network)
+- **"Build/extend the full-text knowledgebase"** → `python3.12 scripts/build_knowledgebase.py --scope arxiv` (needs network + pypdf; resume-safe; see `docs/knowledgebase.md`). Search it: `python3.12 tools/kb_search.py "query"`
 - **"Find GitHub repos"** → add ``github_queries`` to ``config/taxonomy.yaml``, then `python3 scripts/fetch/fetch_github_repos.py --dry-run`
 - **"Find GitLab projects"** → add ``gitlab_queries`` to ``config/taxonomy.yaml``, then `python3 scripts/fetch/fetch_gitlab_repos.py --dry-run`
 - **"Find Codeberg repos"** → add ``codeberg_queries`` to ``config/taxonomy.yaml``, then `python3 scripts/fetch/fetch_codeberg_repos.py --dry-run`
