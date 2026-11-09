@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-11-07  
-**Corpus:** 15,779 papers across 11 categories
+**Generated:** 2026-11-09  
+**Corpus:** 17,130 papers across 11 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,17 +11,17 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | AI & Marketing | 3484 |
-| 2 | Surveys, Trends & Meta-Studies | 2239 |
-| 3 | Social Media & Creator Marketing | 1776 |
-| 4 | Consumer Behavior & Psychology | 1728 |
-| 5 | Digital & Performance Marketing | 1670 |
-| 6 | Brand Strategy & Management | 1663 |
-| 7 | Customer Experience, Omnichannel & Retail | 1238 |
-| 8 | Analytics, Attribution & Measurement | 615 |
+| 1 | AI & Marketing | 3714 |
+| 2 | Surveys, Trends & Meta-Studies | 2362 |
+| 3 | Social Media & Creator Marketing | 2008 |
+| 4 | Consumer Behavior & Psychology | 1909 |
+| 5 | Digital & Performance Marketing | 1853 |
+| 6 | Brand Strategy & Management | 1831 |
+| 7 | Customer Experience, Omnichannel & Retail | 1360 |
+| 8 | Analytics, Attribution & Measurement | 642 |
 
 **Time span:** 1987–2026 (median year 2016)
-**Dominant aspects:** Empirical Studies (6120), Frameworks & Models (2892), Reviews & Surveys (2397)
+**Dominant aspects:** Empirical Studies (6749), Frameworks & Models (3153), Reviews & Surveys (2616)
 
 ---
 
@@ -29,17 +29,17 @@
 
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
-| Survey | 2239 | 1800 | 217 | +730% | 80% | 150.0 |
-| Brand | 1663 | 1220 | 231 | +428% | 73% | 101.7 |
-| Social Media | 1776 | 1249 | 249 | +402% | 70% | 104.1 |
-| Digital Marketing | 1670 | 1161 | 244 | +376% | 70% | 96.8 |
-| Consumer Behavior | 1728 | 1211 | 263 | +360% | 70% | 100.9 |
-| Cx Retail | 1238 | 842 | 241 | +249% | 68% | 70.2 |
-| Ai Marketing | 3484 | 2233 | 713 | +213% | 64% | 186.1 |
-| Analytics | 615 | 373 | 170 | +119% | 61% | 31.1 |
-| B2B | 362 | 187 | 101 | +85% | 52% | 15.6 |
-| Content Marketing | 529 | 285 | 170 | +68% | 54% | 23.8 |
-| Privacy Data | 475 | 232 | 160 | +45% | 49% | 19.3 |
+| Survey | 2362 | 1923 | 217 | +786% | 81% | 160.2 |
+| Brand | 1831 | 1388 | 231 | +501% | 76% | 115.7 |
+| Social Media | 2008 | 1482 | 249 | +495% | 74% | 123.5 |
+| Digital Marketing | 1853 | 1344 | 244 | +451% | 72% | 112.0 |
+| Consumer Behavior | 1909 | 1392 | 263 | +429% | 73% | 116.0 |
+| Cx Retail | 1360 | 964 | 241 | +300% | 71% | 80.3 |
+| Ai Marketing | 3714 | 2463 | 713 | +245% | 66% | 205.2 |
+| Analytics | 642 | 400 | 170 | +135% | 62% | 33.3 |
+| Content Marketing | 591 | 347 | 170 | +104% | 59% | 28.9 |
+| B2B | 369 | 194 | 101 | +92% | 53% | 16.2 |
+| Privacy Data | 491 | 248 | 160 | +55% | 50% | 20.7 |
 
 ---
 
@@ -48,13 +48,13 @@
 | Cell | Papers |
 |------|--------:|
 | `b2b/measurement` | 8 |
-| `analytics/theory` | 39 |
-| `b2b/review` | 41 |
+| `analytics/theory` | 41 |
+| `b2b/review` | 43 |
 | `b2b/theory` | 43 |
-| `content-marketing/measurement` | 44 |
 | `b2b/case-study` | 53 |
-| `analytics/case-study` | 54 |
-| `privacy-data/case-study` | 55 |
+| `content-marketing/measurement` | 53 |
+| `analytics/case-study` | 55 |
+| `privacy-data/measurement` | 56 |
 
 ---
 
@@ -70,12 +70,12 @@
 
 | Author | Papers (recent) |
 |--------|-----------------|
-| Loso Judijanto | 16 |
+| Loso Judijanto | 17 |
 | Tony Wijaya | 15 |
-| Worldly Knowledge Publishing Centre | 14 |
+| Worldly Knowledge Publishing Centre | 15 |
 | Alberto Regis | 12 |
-| Rhian Indradewa | 10 |
 | Hassan Ali Al-Ababneh | 10 |
+| Rhian Indradewa | 10 |
 
 ---
 
@@ -84,133 +84,133 @@
 
 ### AI & Marketing (`ai-marketing`)
 
-**Corpus size:** 3484 papers
+**Corpus size:** 3714 papers
 
 **Recent papers:**
 
-- [2026-11] Toward User-Centered Agentic Recommendation: When Does Platform Competition Benefit Users? — https://arxiv.org/abs/2611.04203
-- [2026-11] AI-DRIVEN MARKETING: GENERATIVE AI IN BRANDING AND MARKETING THEREOF — https://doi.org/10.33774/coe-2026-433tc
-- [2026-10] Digitalization of marketing and logistics processes in the e-commerce system — https://doi.org/10.36887/2524-0455-2026-4-44
+- [2026-11] A Study on the Research Description Development at Grand View Research — https://doi.org/10.55041/ijcope.v2i11.032
+- [2026-11] Adoption and Effectiveness of AI-Personalized Email Marketing: A Cross-Industry Study of Indian — https://doi.org/10.31237/osf.io/q8xc7_v1
+- [2026-11] AI and Technology in Marketing — https://doi.org/10.1093/9780197859063.003.0072
 
 ---
 
 ### Surveys, Trends & Meta-Studies (`survey`)
 
-**Corpus size:** 2239 papers
+**Corpus size:** 2362 papers
 
 **Recent papers:**
 
-- [2026-10] Digital Skincare Marketing, Self-Experimentation, and Treatment Adherence in Acne Vulgaris: A P — https://doi.org/10.7759/cureus.117365
-- [2026-10] Trust as rhythm: A temporal framework for sustainable stakeholder trust in nonprofit digital ma — https://doi.org/10.14254/jems.2026.11-2.4
-- [2026-10] Artificial intelligence and open innovation: toward a marketing-oriented framework for collabor — https://hdl.handle.net/11580/127443
+- [2026-11] 25. EFFECTIVENESS OF STRATEGIES BASED ON DISTRIBUTIVE, PROCEDURAL, AND INTERACTIONAL JUSTICE IN — https://doi.org/10.48376/imist.prsm/remarem-v18i1.72252
+- [2026-11] A Contextual Approach to Success Factors in New Technology-Based Firms — https://doi.org/10.14488/enegep2026_tn_wpg_441_2186_53583
+- [2026-11] A Critical Analysis of the Marketing Mix (4Ps) and Its Role in Market Development: A Case Study — https://doi.org/10.55041/ijcope.v2i11.012
 
 ---
 
 ### Social Media & Creator Marketing (`social-media`)
 
-**Corpus size:** 1776 papers
+**Corpus size:** 2008 papers
 
 **Recent papers:**
 
-- [2026-10] THE RISING TREND IN SOCIAL MEDIA: “INFLUENCER MARKETING” AN ANALYSIS WITH INSTAGRAM'S INFLUENCE — https://doi.org/10.19145/e-gifder.1861153
-- [2026-10] Influence of Social Media Marketing on Generation Z Purchasing Behavior: The Mediating Role of  — https://doi.org/10.3126/nprcjmr.v3i9.100424
-- [2026-10] The Influence of Social Media Marketing on Instagram and Brand Image on the Purchase Decision o — https://doi.org/10.18502/kss.v11i8.21709
+- [2026-11] A quantitative study of social media marketing practices and perceived small business growth in — https://doi.org/10.1080/26437015.2026.2753692
+- [2026-11] Abuse of Data-Driven Market Power and Monopsony of Personal Data by Social Commerce Platforms f — https://doi.org/10.62504/jsi1614
+- [2026-11] ANALYSIS OF SOCIAL MEDIA MARKETING, CUSTOMER REVIEWS AND CONTENT ATTRACTIVENESS ON PURCHASE DEC — https://radjapublika.com/index.php/IJEBAS/article/view/6658
 
 ---
 
 ### Consumer Behavior & Psychology (`consumer-behavior`)
 
-**Corpus size:** 1728 papers
+**Corpus size:** 1909 papers
 
 **Recent papers:**
 
-- [2026-11] Left-Digit Bias: Theory and Empirical Evidence from a Tax Salience Experiment — https://arxiv.org/abs/2611.05342
-- [2026-10] Pengaruh Konten dan Review di Tiktok terhadap Minat Beli Konsumen pada Kuliner Mie Gacoan di Ko — https://doi.org/10.37481/sjr.v9i4.1624
-- [2026-10] Consumer Social Responsibility and Sustainability-Related Social Media Influence in Generation  — https://doi.org/10.3389/frsus.2026.1973593
+- [2026-11] AI Delegation and Consumer Meaning — https://doi.org/10.5281/zenodo.24015530
+- [2026-11] An Analysis of the Factors Influencing Consumer Behavior in the Purchase of Food Products — https://doi.org/10.65310/hk304n58
+- [2026-11] Analisis kegagalan strategi positioning pepsi blue dalam membangun persepsi konsumen: Perspekti — https://urj.uin-malang.ac.id/index.php/mij/article/view/33288
 
 ---
 
 ### Digital & Performance Marketing (`digital-marketing`)
 
-**Corpus size:** 1670 papers
+**Corpus size:** 1853 papers
 
 **Recent papers:**
 
-- [2026-10] Architecture Without an Architect? Global Governance of Artificial Intelligence in a Divided Wo — https://arxiv.org/abs/2610.01716
-- [2026-10] Digital Marketing Strategy Canvas — https://doi.org/10.5281/zenodo.23107262
-- [2026-10] Strategies for digital marketing in the luxury fashion apparel sector — https://doi.org/10.22271/allresearch.2026.v12.i10a.14180
+- [2026-11] A Study on Brand Equity Dilution and Digital Marketing Adjustment Caused by Excessive Collabora — https://doi.org/10.54097/5xyq8m67
+- [2026-11] A Study on Digital Marketing Strategies for Lead Generation and Customer Acquisition in Profess — https://doi.org/10.55041/ijcope.v2i11.009
+- [2026-11] A Study on the Impact of Social Media and Digital Marketing on Consumer Buying Behaviour — https://doi.org/10.48175/ijarsct-40578
 
 ---
 
 ### Brand Strategy & Management (`brand`)
 
-**Corpus size:** 1663 papers
+**Corpus size:** 1831 papers
 
 **Recent papers:**
 
-- [2026-11] The Popular Get More Popular: Auditing Brand Bias in Generative Search — https://arxiv.org/abs/2611.07614
-- [2026-10] Building or Breaking Brand Equity — https://doi.org/10.4018/979-8-2600-4594-7.ch004
-- [2026-10] How Social Media Marketing Amplifies Brand Equity: Evidence from Nike Footwear Consumers — https://e-journal.citakonsultindo.or.id/index.php/IJEBIR/article/view/5886
+- [2026-11] A new century of enlightenment: Happiness management and social marketing A journey towards nno — https://hdl.handle.net/10498/40604
+- [2026-11] Adaptation and Branding in Wellness Tourism: A Systematic Literature Review and Conceptual Fram — https://doi.org/10.3390/soc16110390
+- [2026-11] AI-Driven Personalised Marketing in E-Commerce: Strategies, Applications, Benefits, Challenges  — https://doi.org/10.33774/coe-2026-1k908
 
 ---
 
 ### Customer Experience, Omnichannel & Retail (`cx-retail`)
 
-**Corpus size:** 1238 papers
+**Corpus size:** 1360 papers
 
 **Recent papers:**
 
-- [2026-10] MANAGING OMNICHANNEL CUSTOMER EXPERIENCE IN APPAREL RETAIL THROUGH CUSTOMER JOURNEY MAPPING — https://doi.org/10.46299/j.isjmef.20260505.05
-- [2026-10] AI-Enabled Omnichannel Marketing: Creating Seamless Customer Experiences Across Digital and Phy — https://doi.org/10.5281/zenodo.23124583
-- [2026-10] From Strategy to Execution: Seller Insights on Omnichannel Marketing in Malaysia — https://doi.org/10.26180/34052529
+- [2026-11] Adaptive omnichannel brand management architecture for light industry enterprises: from brand i — https://cyberleninka.ru/article/n/adaptive-omnichannel-brand-management-architecture-for-light-industry-enterprises-from-brand-identity-to-performance-control
+- [2026-11] AI-Driven Hyper-Personalization for E-Commerce: Technologies, Value, and Ethical Challenges — https://doi.org/10.33774/coe-2026-frlp6
+- [2026-11] AI-Native Radio Access Networks in the UK: From Static Radio Resource Management to Predictive  — https://doi.org/10.5281/zenodo.23867033
 
 ---
 
 ### Analytics, Attribution & Measurement (`analytics`)
 
-**Corpus size:** 615 papers
+**Corpus size:** 642 papers
 
 **Recent papers:**
 
-- [2026-11] Fairness-Aware Design for Contextual Experiments: Guaranteeing Reliability and Equity in Hetero — https://arxiv.org/abs/2611.01867
-- [2026-10] AI-enabled marketing analytics for SMEs: multimethod evidence on application potential and adop — https://doi.org/10.1057/s41270-026-00539-2
-- [2026-10] SegmentIQ AI - Predictive Customer Lifetime Value & Prescriptive Marketing Intelligence Engine — https://doi.org/10.5281/zenodo.23107237
+- [2026-11] A machine learning framework for customer value identification based on transaction behaviour — https://doi.org/10.21203/rs.3.rs-11300280/v1
+- [2026-11] AI-Powered Marketing Analytics Tools — https://doi.org/10.59646/861
+- [2026-11] Alignment of Workforce Competencies of Marketing Management Graduates in the Philippines: Evide — https://doi.org/10.32479/irmm.24611
 
 ---
 
 ### Content & Storytelling (`content-marketing`)
 
-**Corpus size:** 529 papers
+**Corpus size:** 591 papers
 
 **Recent papers:**
 
-- [2026-10] A Semiotic Analysis of Abbas Kiarostami’s International Film Posters in the 1990s with an Empha — https://doi.org/10.22070/negareh.2025.19968.3481
-- [2026-10] Systematic Literature Review Strategi Komunikasi Pemasaran dalam Membangun Brand Image Pergurua — https://doi.org/10.59841/saber.v4i4.4295
-- [2026-10] Digital Destination Branding in Tourism: Intellectual Structure and Emerging Research Trends — https://doi.org/10.20961/jkb.v31i1.121377
+- [2026-11] Analisis Komparatif Strategi Content Marketing Instagram Pada Sedya Kopi dengan Estrologi — https://doi.org/10.47233/jkomdis.v6i3.5371
+- [2026-11] Content Marketing Through Living Expression · Luminous Morphic Marketing, Chapter Five — https://doi.org/10.5281/zenodo.23988104
+- [2026-11] DETERMINAN KEPUTUSAN PEMBELIAN PRODUK OMG PADA GENERASI Z — https://online-journal.unja.ac.id/index/article/view/59312
 
 ---
 
 ### Data, Privacy & Cookieless Advertising (`privacy-data`)
 
-**Corpus size:** 475 papers
+**Corpus size:** 491 papers
 
 **Recent papers:**
 
-- [2026-10] Beyond the Black Box: Algorithmic Accountability and the Legal Regulation of Predictive Analyti — https://doi.org/10.63108/ijlmh.12913
-- [2026-10] Impact of SMA on Consumer Attitudes, Engagement, and Purchase Intentions: A Systematic Theory-O — https://doi.org/10.11114/smc.v14i4.8868
-- [2026-10] Platform Uncertainty and Strategic Decision-Making in Digital Advertising: An Empirical Investi — https://kommerstad.org/journal/article/view/1036
+- [2026-11] Automated Frameworks to Evaluate Web Security and Privacy — https://doi.org/10.25417/uic.34925598
+- [2026-11] How Data and AI Capability Get Laundered From One Purpose to Another, and How to Stop It at the — https://doi.org/10.5281/zenodo.23998327
+- [2026-11] PRISM: Refracting Digital Influence into Ethical, Adaptive Advertising A Privacy-preserving, Re — https://doi.org/10.21203/rs.3.rs-11367043/v1
 
 ---
 
 ### B2B & Account-Based Marketing (`b2b`)
 
-**Corpus size:** 362 papers
+**Corpus size:** 369 papers
 
 **Recent papers:**
 
+- [2026-11] From Content Calendar to Cold Call: A Participant-Observation Case Study of Integrated Digital  — https://doi.org/10.55041/ijcope.v2i11.019
+- [2026-11] From Telangana to Berlin: A Case Study of Cross-Border B2B Market Entry, Prospect Development a — https://doi.org/10.55041/ijcope.v2i11.017
 - [2026-11] SPAR: Experience-Driven Strategy Evolution in Multi-Session B2B Sales — https://arxiv.org/abs/2611.01695
-- [2026-10] The yin–yang of coopetition: reframing paradox in business-to-business marketing — https://doi.org/10.1108/jbim-08-2025-0818
-- [2026-10] Dejavniki in posledice uporabe pogovornih robotov s strani poslovnih kupcev — https://repozitorij.uni-lj.si/IzpisGradiva.php?id=189255
 
 ---
 

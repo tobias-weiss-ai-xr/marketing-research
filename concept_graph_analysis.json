@@ -1,0 +1,536 @@
+{
+  "stats": {
+    "nodes": 31,
+    "edges": 275,
+    "components": 1,
+    "communities": 1,
+    "modularity": -3178.3632
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "term": "framework",
+      "kind": "curated",
+      "df": 3458,
+      "degree": 29,
+      "weighted_degree": 5826,
+      "degree_centrality": 0.9667,
+      "pagerank": 0.152316,
+      "betweenness": 19.4833,
+      "clustering": 0.6059
+    },
+    {
+      "id": 7,
+      "term": "quantitative",
+      "kind": "curated",
+      "df": 1809,
+      "degree": 28,
+      "weighted_degree": 3455,
+      "degree_centrality": 0.9333,
+      "pagerank": 0.087147,
+      "betweenness": 13.6666,
+      "clustering": 0.6402
+    },
+    {
+      "id": 10,
+      "term": "qualitative",
+      "kind": "curated",
+      "df": 1326,
+      "degree": 29,
+      "weighted_degree": 2916,
+      "degree_centrality": 0.9667,
+      "pagerank": 0.077666,
+      "betweenness": 19.4833,
+      "clustering": 0.6059
+    },
+    {
+      "id": 8,
+      "term": "survey",
+      "kind": "curated",
+      "df": 1507,
+      "degree": 27,
+      "weighted_degree": 3032,
+      "degree_centrality": 0.9,
+      "pagerank": 0.076977,
+      "betweenness": 12.313,
+      "clustering": 0.6496
+    },
+    {
+      "id": 2,
+      "term": "Surveys, Trends & Meta-Studies",
+      "kind": "taxonomy",
+      "df": 2362,
+      "degree": 18,
+      "weighted_degree": 2598,
+      "degree_centrality": 0.6,
+      "pagerank": 0.066435,
+      "betweenness": 3.3065,
+      "clustering": 0.7124
+    },
+    {
+      "id": 11,
+      "term": "case study",
+      "kind": "curated",
+      "df": 1246,
+      "degree": 27,
+      "weighted_degree": 2316,
+      "degree_centrality": 0.9,
+      "pagerank": 0.061352,
+      "betweenness": 12.066,
+      "clustering": 0.6524
+    },
+    {
+      "id": 0,
+      "term": "AI & Marketing",
+      "kind": "taxonomy",
+      "df": 3714,
+      "degree": 19,
+      "weighted_degree": 2180,
+      "degree_centrality": 0.6333,
+      "pagerank": 0.06123,
+      "betweenness": 6.4565,
+      "clustering": 0.6608
+    },
+    {
+      "id": 12,
+      "term": "literature review",
+      "kind": "curated",
+      "df": 1117,
+      "degree": 29,
+      "weighted_degree": 1980,
+      "degree_centrality": 0.9667,
+      "pagerank": 0.055183,
+      "betweenness": 19.4833,
+      "clustering": 0.6059
+    },
+    {
+      "id": 5,
+      "term": "Digital & Performance Marketing",
+      "kind": "taxonomy",
+      "df": 1853,
+      "degree": 18,
+      "weighted_degree": 1528,
+      "degree_centrality": 0.6,
+      "pagerank": 0.041594,
+      "betweenness": 3.3065,
+      "clustering": 0.7124
+    },
+    {
+      "id": 6,
+      "term": "Brand Strategy & Management",
+      "kind": "taxonomy",
+      "df": 1831,
+      "degree": 18,
+      "weighted_degree": 1536,
+      "degree_centrality": 0.6,
+      "pagerank": 0.04122,
+      "betweenness": 3.3065,
+      "clustering": 0.7124
+    },
+    {
+      "id": 4,
+      "term": "Consumer Behavior & Psychology",
+      "kind": "taxonomy",
+      "df": 1909,
+      "degree": 17,
+      "weighted_degree": 1329,
+      "degree_centrality": 0.5667,
+      "pagerank": 0.036761,
+      "betweenness": 2.7942,
+      "clustering": 0.7206
+    },
+    {
+      "id": 3,
+      "term": "Social Media & Creator Marketing",
+      "kind": "taxonomy",
+      "df": 2008,
+      "degree": 18,
+      "weighted_degree": 1361,
+      "degree_centrality": 0.6,
+      "pagerank": 0.036749,
+      "betweenness": 3.3065,
+      "clustering": 0.7124
+    },
+    {
+      "id": 9,
+      "term": "Customer Experience, Omnichannel & Retail",
+      "kind": "taxonomy",
+      "df": 1360,
+      "degree": 16,
+      "weighted_degree": 752,
+      "degree_centrality": 0.5333,
+      "pagerank": 0.023262,
+      "betweenness": 2.165,
+      "clustering": 0.75
+    },
+    {
+      "id": 17,
+      "term": "dataset",
+      "kind": "curated",
+      "df": 371,
+      "degree": 23,
+      "weighted_degree": 683,
+      "degree_centrality": 0.7667,
+      "pagerank": 0.022324,
+      "betweenness": 6.3093,
+      "clustering": 0.7194
+    },
+    {
+      "id": 16,
+      "term": "systematic review",
+      "kind": "curated",
+      "df": 382,
+      "degree": 22,
+      "weighted_degree": 676,
+      "degree_centrality": 0.7333,
+      "pagerank": 0.021882,
+      "betweenness": 8.341,
+      "clustering": 0.6364
+    },
+    {
+      "id": 19,
+      "term": "benchmark",
+      "kind": "curated",
+      "df": 219,
+      "degree": 20,
+      "weighted_degree": 358,
+      "degree_centrality": 0.6667,
+      "pagerank": 0.014628,
+      "betweenness": 6.4918,
+      "clustering": 0.7053
+    },
+    {
+      "id": 21,
+      "term": "triangulation",
+      "kind": "curated",
+      "df": 111,
+      "degree": 17,
+      "weighted_degree": 340,
+      "degree_centrality": 0.5667,
+      "pagerank": 0.012996,
+      "betweenness": 2.7199,
+      "clustering": 0.75
+    },
+    {
+      "id": 22,
+      "term": "interview",
+      "kind": "curated",
+      "df": 99,
+      "degree": 19,
+      "weighted_degree": 294,
+      "degree_centrality": 0.6333,
+      "pagerank": 0.012183,
+      "betweenness": 2.2422,
+      "clustering": 0.8012
+    },
+    {
+      "id": 14,
+      "term": "Content & Storytelling",
+      "kind": "taxonomy",
+      "df": 591,
+      "degree": 8,
+      "weighted_degree": 268,
+      "degree_centrality": 0.2667,
+      "pagerank": 0.011043,
+      "betweenness": 0.0625,
+      "clustering": 0.9643
+    },
+    {
+      "id": 20,
+      "term": "experiment",
+      "kind": "curated",
+      "df": 135,
+      "degree": 20,
+      "weighted_degree": 234,
+      "degree_centrality": 0.6667,
+      "pagerank": 0.010858,
+      "betweenness": 3.4619,
+      "clustering": 0.7632
+    },
+    {
+      "id": 13,
+      "term": "Analytics, Attribution & Measurement",
+      "kind": "taxonomy",
+      "df": 642,
+      "degree": 12,
+      "weighted_degree": 224,
+      "degree_centrality": 0.4,
+      "pagerank": 0.010353,
+      "betweenness": 0.4611,
+      "clustering": 0.8939
+    },
+    {
+      "id": 15,
+      "term": "Data, Privacy & Cookieless Advertising",
+      "kind": "taxonomy",
+      "df": 491,
+      "degree": 10,
+      "weighted_degree": 139,
+      "degree_centrality": 0.3333,
+      "pagerank": 0.008276,
+      "betweenness": 0.1176,
+      "clustering": 0.9556
+    },
+    {
+      "id": 23,
+      "term": "research gap",
+      "kind": "curated",
+      "df": 48,
+      "degree": 15,
+      "weighted_degree": 120,
+      "degree_centrality": 0.5,
+      "pagerank": 0.007761,
+      "betweenness": 1.808,
+      "clustering": 0.7333
+    },
+    {
+      "id": 24,
+      "term": "taxonomy",
+      "kind": "curated",
+      "df": 48,
+      "degree": 16,
+      "weighted_degree": 108,
+      "degree_centrality": 0.5333,
+      "pagerank": 0.007663,
+      "betweenness": 0.7357,
+      "clustering": 0.8917
+    },
+    {
+      "id": 25,
+      "term": "reproducibility",
+      "kind": "curated",
+      "df": 42,
+      "degree": 19,
+      "weighted_degree": 101,
+      "degree_centrality": 0.6333,
+      "pagerank": 0.007598,
+      "betweenness": 2.3258,
+      "clustering": 0.8012
+    },
+    {
+      "id": 27,
+      "term": "mixed methods",
+      "kind": "curated",
+      "df": 39,
+      "degree": 14,
+      "weighted_degree": 113,
+      "degree_centrality": 0.4667,
+      "pagerank": 0.007583,
+      "betweenness": 0.9163,
+      "clustering": 0.8242
+    },
+    {
+      "id": 18,
+      "term": "B2B & Account-Based Marketing",
+      "kind": "taxonomy",
+      "df": 369,
+      "degree": 8,
+      "weighted_degree": 106,
+      "degree_centrality": 0.2667,
+      "pagerank": 0.00742,
+      "betweenness": 0.0,
+      "clustering": 1.0
+    },
+    {
+      "id": 26,
+      "term": "peer review",
+      "kind": "curated",
+      "df": 41,
+      "degree": 15,
+      "weighted_degree": 89,
+      "degree_centrality": 0.5,
+      "pagerank": 0.007198,
+      "betweenness": 1.507,
+      "clustering": 0.7619
+    },
+    {
+      "id": 28,
+      "term": "grounded theory",
+      "kind": "curated",
+      "df": 34,
+      "degree": 14,
+      "weighted_degree": 84,
+      "degree_centrality": 0.4667,
+      "pagerank": 0.00704,
+      "betweenness": 1.3628,
+      "clustering": 0.7473
+    },
+    {
+      "id": 29,
+      "term": "open access",
+      "kind": "curated",
+      "df": 7,
+      "degree": 5,
+      "weighted_degree": 12,
+      "degree_centrality": 0.1667,
+      "pagerank": 0.005302,
+      "betweenness": 0.0,
+      "clustering": 1.0
+    },
+    {
+      "id": 30,
+      "term": "meta analysis",
+      "kind": "curated",
+      "df": 0,
+      "degree": 0,
+      "weighted_degree": 0,
+      "degree_centrality": 0.0,
+      "pagerank": 0.0,
+      "betweenness": 0.0,
+      "clustering": 0.0
+    }
+  ],
+  "communities": [
+    {
+      "size": 30,
+      "members": [
+        "AI & Marketing",
+        "Analytics, Attribution & Measurement",
+        "B2B & Account-Based Marketing",
+        "Brand Strategy & Management",
+        "Consumer Behavior & Psychology",
+        "Content & Storytelling",
+        "Customer Experience, Omnichannel & Retail",
+        "Data, Privacy & Cookieless Advertising",
+        "Digital & Performance Marketing",
+        "Social Media & Creator Marketing",
+        "Surveys, Trends & Meta-Studies",
+        "benchmark",
+        "case study",
+        "dataset",
+        "experiment",
+        "framework",
+        "grounded theory",
+        "interview",
+        "literature review",
+        "mixed methods",
+        "open access",
+        "peer review",
+        "qualitative",
+        "quantitative",
+        "reproducibility",
+        "research gap",
+        "survey",
+        "systematic review",
+        "taxonomy",
+        "triangulation"
+      ]
+    }
+  ],
+  "top_hubs": [
+    "framework",
+    "quantitative",
+    "qualitative",
+    "survey",
+    "Surveys, Trends & Meta-Studies",
+    "case study",
+    "AI & Marketing",
+    "literature review",
+    "Digital & Performance Marketing",
+    "Brand Strategy & Management"
+  ],
+  "bridge_nodes": [
+    "framework",
+    "qualitative",
+    "literature review",
+    "quantitative",
+    "survey",
+    "case study",
+    "systematic review",
+    "benchmark",
+    "AI & Marketing",
+    "dataset"
+  ],
+  "bridge_edges": [
+    {
+      "source": "framework",
+      "target": "open access",
+      "weight": 2,
+      "edge_betweenness": 6.8167
+    },
+    {
+      "source": "literature review",
+      "target": "open access",
+      "weight": 4,
+      "edge_betweenness": 6.8167
+    },
+    {
+      "source": "qualitative",
+      "target": "open access",
+      "weight": 2,
+      "edge_betweenness": 6.8167
+    },
+    {
+      "source": "benchmark",
+      "target": "open access",
+      "weight": 2,
+      "edge_betweenness": 4.4
+    },
+    {
+      "source": "literature review",
+      "target": "Content & Storytelling",
+      "weight": 26,
+      "edge_betweenness": 4.1762
+    },
+    {
+      "source": "framework",
+      "target": "Content & Storytelling",
+      "weight": 45,
+      "edge_betweenness": 4.1762
+    },
+    {
+      "source": "qualitative",
+      "target": "Content & Storytelling",
+      "weight": 42,
+      "edge_betweenness": 4.1762
+    },
+    {
+      "source": "AI & Marketing",
+      "target": "open access",
+      "weight": 2,
+      "edge_betweenness": 4.15
+    },
+    {
+      "source": "literature review",
+      "target": "B2B & Account-Based Marketing",
+      "weight": 11,
+      "edge_betweenness": 4.0929
+    },
+    {
+      "source": "framework",
+      "target": "B2B & Account-Based Marketing",
+      "weight": 40,
+      "edge_betweenness": 4.0929
+    },
+    {
+      "source": "qualitative",
+      "target": "B2B & Account-Based Marketing",
+      "weight": 12,
+      "edge_betweenness": 4.0929
+    },
+    {
+      "source": "quantitative",
+      "target": "Content & Storytelling",
+      "weight": 60,
+      "edge_betweenness": 3.8429
+    },
+    {
+      "source": "quantitative",
+      "target": "B2B & Account-Based Marketing",
+      "weight": 8,
+      "edge_betweenness": 3.7595
+    },
+    {
+      "source": "survey",
+      "target": "Content & Storytelling",
+      "weight": 15,
+      "edge_betweenness": 3.7
+    },
+    {
+      "source": "case study",
+      "target": "Content & Storytelling",
+      "weight": 70,
+      "edge_betweenness": 3.6429
+    }
+  ]
+}

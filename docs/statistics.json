@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "total_papers": 15779,
-    "generated_date": "2026-11-07",
+    "total_papers": 17130,
+    "generated_date": "2026-11-09",
     "last_paper_date": "2026-11",
     "first_paper_date": "1987-01",
     "taxonomy": {
@@ -15,29 +15,29 @@
     "analysis_window": {
       "last_12m_start": "2025-11"
     },
-    "recent_12m": 10793,
+    "recent_12m": 12145,
     "prior_12m": 2759
   },
   "by_category": {
-    "ai-marketing": 3484,
-    "analytics": 615,
-    "b2b": 362,
-    "brand": 1663,
-    "consumer-behavior": 1728,
-    "content-marketing": 529,
-    "cx-retail": 1238,
-    "digital-marketing": 1670,
-    "privacy-data": 475,
-    "social-media": 1776,
-    "survey": 2239
+    "ai-marketing": 3714,
+    "analytics": 642,
+    "b2b": 369,
+    "brand": 1831,
+    "consumer-behavior": 1909,
+    "content-marketing": 591,
+    "cx-retail": 1360,
+    "digital-marketing": 1853,
+    "privacy-data": 491,
+    "social-media": 2008,
+    "survey": 2362
   },
   "by_subcategory": {
-    "case-study": 1618,
-    "empirical": 6120,
-    "framework": 2892,
-    "measurement": 1527,
-    "review": 2397,
-    "theory": 1225
+    "case-study": 1722,
+    "empirical": 6749,
+    "framework": 3153,
+    "measurement": 1595,
+    "review": 2616,
+    "theory": 1295
   },
   "by_year": {
     "1987": 1,
@@ -59,241 +59,241 @@
     "2021": 6,
     "2022": 2,
     "2023": 169,
-    "2024": 2480,
-    "2025": 2662,
-    "2026": 10427
+    "2024": 2479,
+    "2025": 2661,
+    "2026": 11780
   },
   "by_cell": {
-    "ai-marketing/empirical": 1709,
-    "social-media/empirical": 856,
-    "survey/empirical": 853,
-    "consumer-behavior/empirical": 751,
-    "digital-marketing/empirical": 631,
-    "brand/empirical": 611,
-    "survey/review": 557,
-    "ai-marketing/framework": 535,
-    "survey/framework": 445,
-    "ai-marketing/measurement": 419,
-    "brand/framework": 380,
-    "ai-marketing/review": 361,
-    "cx-retail/framework": 356,
-    "consumer-behavior/framework": 313,
-    "digital-marketing/framework": 281,
-    "analytics/measurement": 281,
-    "ai-marketing/case-study": 274,
-    "cx-retail/empirical": 274,
-    "social-media/framework": 265,
-    "brand/case-study": 254,
-    "brand/review": 252,
-    "digital-marketing/case-study": 250,
-    "cx-retail/review": 236,
-    "consumer-behavior/review": 235,
-    "social-media/review": 233,
-    "digital-marketing/review": 210,
-    "consumer-behavior/case-study": 189,
-    "ai-marketing/theory": 186,
-    "survey/case-study": 168,
-    "social-media/measurement": 155,
-    "digital-marketing/theory": 154,
-    "cx-retail/theory": 151,
-    "social-media/theory": 150,
-    "digital-marketing/measurement": 144,
-    "content-marketing/review": 131,
-    "b2b/empirical": 129,
-    "privacy-data/empirical": 128,
-    "consumer-behavior/theory": 127,
-    "content-marketing/theory": 124,
-    "analytics/empirical": 118,
-    "social-media/case-study": 117,
-    "cx-retail/case-study": 113,
-    "consumer-behavior/measurement": 113,
-    "survey/theory": 111,
-    "cx-retail/measurement": 108,
-    "survey/measurement": 105,
-    "brand/measurement": 94,
-    "content-marketing/case-study": 91,
-    "b2b/framework": 88,
-    "privacy-data/framework": 86,
-    "privacy-data/review": 82,
-    "content-marketing/framework": 79,
-    "brand/theory": 72,
+    "ai-marketing/empirical": 1846,
+    "social-media/empirical": 951,
+    "survey/empirical": 924,
+    "consumer-behavior/empirical": 830,
+    "digital-marketing/empirical": 705,
+    "brand/empirical": 680,
+    "ai-marketing/framework": 577,
+    "survey/review": 575,
+    "survey/framework": 469,
+    "ai-marketing/measurement": 434,
+    "brand/framework": 426,
+    "ai-marketing/review": 385,
+    "cx-retail/framework": 381,
+    "consumer-behavior/framework": 348,
+    "cx-retail/empirical": 328,
+    "digital-marketing/framework": 309,
+    "social-media/framework": 309,
+    "analytics/measurement": 288,
+    "digital-marketing/case-study": 287,
+    "social-media/review": 286,
+    "ai-marketing/case-study": 281,
+    "brand/review": 279,
+    "brand/case-study": 274,
+    "consumer-behavior/review": 269,
+    "cx-retail/review": 258,
+    "digital-marketing/review": 239,
+    "consumer-behavior/case-study": 201,
+    "ai-marketing/theory": 191,
+    "social-media/measurement": 174,
+    "survey/case-study": 173,
+    "digital-marketing/theory": 165,
+    "cx-retail/theory": 162,
+    "social-media/theory": 162,
+    "digital-marketing/measurement": 148,
+    "consumer-behavior/theory": 142,
+    "content-marketing/review": 137,
+    "privacy-data/empirical": 134,
+    "b2b/empirical": 132,
+    "content-marketing/theory": 130,
+    "analytics/empirical": 130,
+    "social-media/case-study": 126,
+    "consumer-behavior/measurement": 119,
+    "cx-retail/case-study": 118,
+    "survey/theory": 115,
+    "cx-retail/measurement": 113,
+    "survey/measurement": 106,
+    "content-marketing/case-study": 98,
+    "brand/measurement": 96,
+    "privacy-data/framework": 92,
+    "b2b/framework": 90,
+    "content-marketing/empirical": 89,
+    "privacy-data/review": 85,
+    "content-marketing/framework": 84,
+    "brand/theory": 76,
+    "analytics/framework": 68,
     "privacy-data/theory": 68,
-    "analytics/framework": 64,
-    "content-marketing/empirical": 60,
-    "analytics/review": 59,
+    "analytics/review": 60,
     "privacy-data/measurement": 56,
-    "privacy-data/case-study": 55,
-    "analytics/case-study": 54,
+    "privacy-data/case-study": 56,
+    "analytics/case-study": 55,
     "b2b/case-study": 53,
-    "content-marketing/measurement": 44,
+    "content-marketing/measurement": 53,
+    "b2b/review": 43,
     "b2b/theory": 43,
-    "b2b/review": 41,
-    "analytics/theory": 39,
+    "analytics/theory": 41,
     "b2b/measurement": 8
   },
   "emerging_themes_12m": [
     {
       "keyword": "benchmark",
-      "papers": 301
+      "papers": 340
     },
     {
       "keyword": "survey",
-      "papers": 1426
+      "papers": 1687
     },
     {
       "keyword": "evaluation",
-      "papers": 810
+      "papers": 972
     },
     {
       "keyword": "framework",
-      "papers": 2998
+      "papers": 3468
     },
     {
       "keyword": "autonomous",
-      "papers": 170
+      "papers": 192
     },
     {
       "keyword": "model",
-      "papers": 3598
+      "papers": 4176
     },
     {
       "keyword": "method",
-      "papers": 2599
+      "papers": 3045
     },
     {
       "keyword": "dataset",
-      "papers": 396
-    },
-    {
-      "keyword": "scalable",
-      "papers": 124
+      "papers": 463
     },
     {
       "keyword": "system",
-      "papers": 3006
+      "papers": 3445
+    },
+    {
+      "keyword": "scalable",
+      "papers": 140
     }
   ],
   "momentum": [
     {
       "id": "survey",
       "name": "Survey",
-      "total": 2239,
-      "recent": 1800,
+      "total": 2362,
+      "recent": 1923,
       "prior": 217,
-      "growth_pct": 729.5,
-      "recent_share": 0.804,
-      "papers_per_month": 150.0,
-      "score": 809.9
+      "growth_pct": 786.2,
+      "recent_share": 0.814,
+      "papers_per_month": 160.2,
+      "score": 867.6
     },
     {
       "id": "brand",
       "name": "Brand",
-      "total": 1663,
-      "recent": 1220,
+      "total": 1831,
+      "recent": 1388,
       "prior": 231,
-      "growth_pct": 428.1,
-      "recent_share": 0.734,
-      "papers_per_month": 101.7,
-      "score": 501.5
+      "growth_pct": 500.9,
+      "recent_share": 0.758,
+      "papers_per_month": 115.7,
+      "score": 576.7
     },
     {
       "id": "social-media",
       "name": "Social Media",
-      "total": 1776,
-      "recent": 1249,
+      "total": 2008,
+      "recent": 1482,
       "prior": 249,
-      "growth_pct": 401.6,
-      "recent_share": 0.703,
-      "papers_per_month": 104.1,
-      "score": 471.9
+      "growth_pct": 495.2,
+      "recent_share": 0.738,
+      "papers_per_month": 123.5,
+      "score": 569.0
     },
     {
       "id": "digital-marketing",
       "name": "Digital Marketing",
-      "total": 1670,
-      "recent": 1161,
+      "total": 1853,
+      "recent": 1344,
       "prior": 244,
-      "growth_pct": 375.8,
-      "recent_share": 0.695,
-      "papers_per_month": 96.8,
-      "score": 445.3
+      "growth_pct": 450.8,
+      "recent_share": 0.725,
+      "papers_per_month": 112.0,
+      "score": 523.3
     },
     {
       "id": "consumer-behavior",
       "name": "Consumer Behavior",
-      "total": 1728,
-      "recent": 1211,
+      "total": 1909,
+      "recent": 1392,
       "prior": 263,
-      "growth_pct": 360.5,
-      "recent_share": 0.701,
-      "papers_per_month": 100.9,
-      "score": 430.6
+      "growth_pct": 429.3,
+      "recent_share": 0.729,
+      "papers_per_month": 116.0,
+      "score": 502.2
     },
     {
       "id": "cx-retail",
       "name": "Cx Retail",
-      "total": 1238,
-      "recent": 842,
+      "total": 1360,
+      "recent": 964,
       "prior": 241,
-      "growth_pct": 249.4,
-      "recent_share": 0.68,
-      "papers_per_month": 70.2,
-      "score": 317.4
+      "growth_pct": 300.0,
+      "recent_share": 0.709,
+      "papers_per_month": 80.3,
+      "score": 370.9
     },
     {
       "id": "ai-marketing",
       "name": "Ai Marketing",
-      "total": 3484,
-      "recent": 2233,
+      "total": 3714,
+      "recent": 2463,
       "prior": 713,
-      "growth_pct": 213.2,
-      "recent_share": 0.641,
-      "papers_per_month": 186.1,
-      "score": 277.3
+      "growth_pct": 245.4,
+      "recent_share": 0.663,
+      "papers_per_month": 205.2,
+      "score": 311.7
     },
     {
       "id": "analytics",
       "name": "Analytics",
-      "total": 615,
-      "recent": 373,
+      "total": 642,
+      "recent": 400,
       "prior": 170,
-      "growth_pct": 119.4,
-      "recent_share": 0.607,
-      "papers_per_month": 31.1,
-      "score": 180.1
-    },
-    {
-      "id": "b2b",
-      "name": "B2B",
-      "total": 362,
-      "recent": 187,
-      "prior": 101,
-      "growth_pct": 85.1,
-      "recent_share": 0.517,
-      "papers_per_month": 15.6,
-      "score": 136.8
+      "growth_pct": 135.3,
+      "recent_share": 0.623,
+      "papers_per_month": 33.3,
+      "score": 197.6
     },
     {
       "id": "content-marketing",
       "name": "Content Marketing",
-      "total": 529,
-      "recent": 285,
+      "total": 591,
+      "recent": 347,
       "prior": 170,
-      "growth_pct": 67.6,
-      "recent_share": 0.539,
-      "papers_per_month": 23.8,
-      "score": 121.5
+      "growth_pct": 104.1,
+      "recent_share": 0.587,
+      "papers_per_month": 28.9,
+      "score": 162.8
+    },
+    {
+      "id": "b2b",
+      "name": "B2B",
+      "total": 369,
+      "recent": 194,
+      "prior": 101,
+      "growth_pct": 92.1,
+      "recent_share": 0.526,
+      "papers_per_month": 16.2,
+      "score": 144.7
     },
     {
       "id": "privacy-data",
       "name": "Privacy Data",
-      "total": 475,
-      "recent": 232,
+      "total": 491,
+      "recent": 248,
       "prior": 160,
-      "growth_pct": 45.0,
-      "recent_share": 0.488,
-      "papers_per_month": 19.3,
-      "score": 93.8
+      "growth_pct": 55.0,
+      "recent_share": 0.505,
+      "papers_per_month": 20.7,
+      "score": 105.5
     }
   ],
   "category_trajectory": {
@@ -304,7 +304,7 @@
       "2023": 76,
       "2024": 573,
       "2025": 727,
-      "2026": 2105
+      "2026": 2335
     },
     "analytics": {
       "1987": 1,
@@ -319,18 +319,18 @@
       "2021": 1,
       "2024": 81,
       "2025": 177,
-      "2026": 347
+      "2026": 374
     },
     "b2b": {
       "2023": 20,
       "2024": 70,
       "2025": 104,
-      "2026": 168
+      "2026": 175
     },
     "brand": {
       "2024": 249,
       "2025": 218,
-      "2026": 1196
+      "2026": 1364
     },
     "consumer-behavior": {
       "2011": 1,
@@ -346,32 +346,32 @@
       "2023": 6,
       "2024": 273,
       "2025": 251,
-      "2026": 1182
+      "2026": 1363
     },
     "content-marketing": {
       "2024": 94,
       "2025": 175,
-      "2026": 260
+      "2026": 322
     },
     "cx-retail": {
       "2020": 2,
       "2021": 1,
       "2024": 199,
       "2025": 226,
-      "2026": 810
+      "2026": 932
     },
     "digital-marketing": {
       "2023": 40,
       "2024": 273,
       "2025": 222,
-      "2026": 1135
+      "2026": 1318
     },
     "privacy-data": {
       "2016": 1,
       "2019": 1,
       "2024": 109,
       "2025": 153,
-      "2026": 211
+      "2026": 227
     },
     "social-media": {
       "2012": 1,
@@ -381,171 +381,175 @@
       "2021": 2,
       "2022": 1,
       "2023": 27,
-      "2024": 296,
+      "2024": 295,
       "2025": 219,
-      "2026": 1227
+      "2026": 1460
     },
     "survey": {
       "2024": 263,
-      "2025": 190,
-      "2026": 1786
+      "2025": 189,
+      "2026": 1910
     }
   },
   "keyword_bursts": [
     {
       "keyword": "benchmark",
-      "recent": 301,
-      "total": 322,
-      "burst_score": 1.37,
-      "recent_share": 0.0279
+      "recent": 340,
+      "total": 361,
+      "burst_score": 1.33,
+      "recent_share": 0.028
     },
     {
       "keyword": "survey",
-      "recent": 1426,
-      "total": 1548,
-      "burst_score": 1.35,
-      "recent_share": 0.1321
+      "recent": 1687,
+      "total": 1809,
+      "burst_score": 1.32,
+      "recent_share": 0.1389
     },
     {
       "keyword": "evaluation",
-      "recent": 810,
-      "total": 891,
-      "burst_score": 1.33,
-      "recent_share": 0.075
+      "recent": 972,
+      "total": 1053,
+      "burst_score": 1.3,
+      "recent_share": 0.08
     },
     {
       "keyword": "framework",
-      "recent": 2998,
-      "total": 3412,
-      "burst_score": 1.28,
-      "recent_share": 0.2778
+      "recent": 3468,
+      "total": 3882,
+      "burst_score": 1.26,
+      "recent_share": 0.2855
     },
     {
       "keyword": "autonomous",
-      "recent": 170,
-      "total": 195,
-      "burst_score": 1.27,
+      "recent": 192,
+      "total": 217,
+      "burst_score": 1.25,
       "recent_share": 0.0158
     },
     {
       "keyword": "model",
-      "recent": 3598,
-      "total": 4267,
-      "burst_score": 1.23,
-      "recent_share": 0.3334
+      "recent": 4176,
+      "total": 4845,
+      "burst_score": 1.22,
+      "recent_share": 0.3438
     },
     {
       "keyword": "method",
-      "recent": 2599,
-      "total": 3086,
-      "burst_score": 1.23,
-      "recent_share": 0.2408
+      "recent": 3045,
+      "total": 3532,
+      "burst_score": 1.22,
+      "recent_share": 0.2507
     },
     {
       "keyword": "dataset",
-      "recent": 396,
-      "total": 484,
-      "burst_score": 1.2,
-      "recent_share": 0.0367
-    },
-    {
-      "keyword": "scalable",
-      "recent": 124,
-      "total": 151,
-      "burst_score": 1.2,
-      "recent_share": 0.0115
+      "recent": 463,
+      "total": 551,
+      "burst_score": 1.19,
+      "recent_share": 0.0381
     },
     {
       "keyword": "system",
-      "recent": 3006,
-      "total": 3680,
-      "burst_score": 1.19,
-      "recent_share": 0.2785
+      "recent": 3445,
+      "total": 4119,
+      "burst_score": 1.18,
+      "recent_share": 0.2837
+    },
+    {
+      "keyword": "scalable",
+      "recent": 140,
+      "total": 167,
+      "burst_score": 1.18,
+      "recent_share": 0.0115
     },
     {
       "keyword": "analysis",
-      "recent": 3108,
-      "total": 3865,
-      "burst_score": 1.18,
-      "recent_share": 0.288
+      "recent": 3677,
+      "total": 4434,
+      "burst_score": 1.17,
+      "recent_share": 0.3028
     },
     {
       "keyword": "human",
-      "recent": 1026,
-      "total": 1283,
-      "burst_score": 1.17,
-      "recent_share": 0.0951
+      "recent": 1197,
+      "total": 1454,
+      "burst_score": 1.16,
+      "recent_share": 0.0986
     },
     {
       "keyword": "review",
-      "recent": 2515,
-      "total": 3237,
-      "burst_score": 1.14,
-      "recent_share": 0.233
+      "recent": 2925,
+      "total": 3647,
+      "burst_score": 1.13,
+      "recent_share": 0.2408
     },
     {
       "keyword": "tool",
-      "recent": 1374,
-      "total": 1816,
-      "burst_score": 1.11,
-      "recent_share": 0.1273
+      "recent": 1592,
+      "total": 2034,
+      "burst_score": 1.1,
+      "recent_share": 0.1311
     },
     {
-      "keyword": "real-world",
-      "recent": 213,
-      "total": 283,
-      "burst_score": 1.1,
-      "recent_share": 0.0197
+      "keyword": "novel",
+      "recent": 404,
+      "total": 524,
+      "burst_score": 1.09,
+      "recent_share": 0.0333
     }
   ],
   "source_breakdown": {
-    "arxiv": 1272,
-    "doi": 13083,
-    "other": 1424
+    "arxiv": 1322,
+    "doi": 14161,
+    "other": 1647
   },
   "venues": [
     {
       "name": "Zenodo (CERN European Organization for Nuclear Research)",
-      "papers": 1142
+      "papers": 1337
+    },
+    {
+      "name": "Advances in computational intelligence and robotics book series",
+      "papers": 152
     },
     {
       "name": "SSRN Electronic Journal",
       "papers": 149
     },
     {
-      "name": "Advances in computational intelligence and robotics book series",
-      "papers": 141
+      "name": "Advances in Economics Management and Political Sciences",
+      "papers": 115
     },
     {
       "name": "Sustainability",
-      "papers": 104
-    },
-    {
-      "name": "Advances in Economics Management and Political Sciences",
-      "papers": 96
-    },
-    {
-      "name": "Int. Journal For Multidisciplinary Research",
-      "papers": 92
+      "papers": 109
     },
     {
       "name": "Routledge eBooks",
-      "papers": 81
+      "papers": 106
     },
     {
-      "name": "Journal of theoretical and applied electronic commerce research",
-      "papers": 76
+      "name": "Int. Journal For Multidisciplinary Research",
+      "papers": 97
     },
     {
       "name": "Figshare",
-      "papers": 74
+      "papers": 84
     },
     {
       "name": "INTERANTIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT",
-      "papers": 72
+      "papers": 76
     },
     {
       "name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+      "papers": 75
+    },
+    {
+      "name": "Journal of theoretical and applied electronic commerce research",
+      "papers": 75
+    },
+    {
+      "name": "Journal of Marketing Analytics",
       "papers": 67
     },
     {
@@ -553,36 +557,32 @@
       "papers": 64
     },
     {
-      "name": "Journal of Marketing Analytics",
-      "papers": 62
+      "name": "Research Square",
+      "papers": 63
     },
     {
       "name": "Journal of Retailing and Consumer Services",
-      "papers": 59
-    },
-    {
-      "name": "Research Square",
-      "papers": 56
+      "papers": 60
     },
     {
       "name": "Asia Pacific Journal of Marketing and Logistics",
-      "papers": 55
-    },
-    {
-      "name": "Lecture notes in networks and systems",
-      "papers": 55
+      "papers": 58
     },
     {
       "name": "Preprints.org",
+      "papers": 57
+    },
+    {
+      "name": "Lecture notes in networks and systems",
+      "papers": 56
+    },
+    {
+      "name": "arXiv (Cornell University)",
       "papers": 54
     },
     {
       "name": "Journal of Business Research",
       "papers": 53
-    },
-    {
-      "name": "arXiv (Cornell University)",
-      "papers": 51
     }
   ],
   "gaps": {
@@ -593,30 +593,26 @@
       },
       {
         "cell": "analytics/theory",
-        "papers": 39
+        "papers": 41
       },
       {
         "cell": "b2b/review",
-        "papers": 41
+        "papers": 43
       },
       {
         "cell": "b2b/theory",
         "papers": 43
       },
       {
-        "cell": "content-marketing/measurement",
-        "papers": 44
-      },
-      {
         "cell": "b2b/case-study",
         "papers": 53
       },
       {
-        "cell": "analytics/case-study",
-        "papers": 54
+        "cell": "content-marketing/measurement",
+        "papers": 53
       },
       {
-        "cell": "privacy-data/case-study",
+        "cell": "analytics/case-study",
         "papers": 55
       },
       {
@@ -624,8 +620,12 @@
         "papers": 56
       },
       {
+        "cell": "privacy-data/case-study",
+        "papers": 56
+      },
+      {
         "cell": "analytics/review",
-        "papers": 59
+        "papers": 60
       }
     ],
     "white_space": [
@@ -641,10 +641,14 @@
   "top_authors": [
     {
       "name": "Loso Judijanto",
-      "papers": 21
+      "papers": 22
     },
     {
       "name": "Tony Wijaya",
+      "papers": 15
+    },
+    {
+      "name": "Worldly Knowledge Publishing Centre",
       "papers": 15
     },
     {
@@ -652,15 +656,11 @@
       "papers": 15
     },
     {
-      "name": "Worldly Knowledge Publishing Centre",
-      "papers": 14
-    },
-    {
       "name": "Alb\u00e9rico Travassos Ros\u00e1rio",
       "papers": 13
     },
     {
-      "name": "Weng Marc Lim",
+      "name": "Alberto Regis",
       "papers": 12
     },
     {
@@ -668,8 +668,20 @@
       "papers": 12
     },
     {
-      "name": "Alberto Regis",
+      "name": "Weng Marc Lim",
       "papers": 12
+    },
+    {
+      "name": "Usep Suhud",
+      "papers": 11
+    },
+    {
+      "name": "Geetha Manoharan",
+      "papers": 11
+    },
+    {
+      "name": "Abdelrehim Awad",
+      "papers": 11
     },
     {
       "name": "Philip Kotler",
@@ -680,19 +692,7 @@
       "papers": 11
     },
     {
-      "name": "Abdelrehim Awad",
-      "papers": 11
-    },
-    {
-      "name": "Geetha Manoharan",
-      "papers": 11
-    },
-    {
       "name": "Rhian Indradewa",
-      "papers": 10
-    },
-    {
-      "name": "Usep Suhud",
       "papers": 10
     },
     {
@@ -703,10 +703,14 @@
   "prolific_authors": [
     {
       "name": "Loso Judijanto",
-      "papers": 21
+      "papers": 22
     },
     {
       "name": "Tony Wijaya",
+      "papers": 15
+    },
+    {
+      "name": "Worldly Knowledge Publishing Centre",
       "papers": 15
     },
     {
@@ -714,15 +718,11 @@
       "papers": 15
     },
     {
-      "name": "Worldly Knowledge Publishing Centre",
-      "papers": 14
-    },
-    {
       "name": "Alb\u00e9rico Travassos Ros\u00e1rio",
       "papers": 13
     },
     {
-      "name": "Weng Marc Lim",
+      "name": "Alberto Regis",
       "papers": 12
     },
     {
@@ -730,8 +730,20 @@
       "papers": 12
     },
     {
-      "name": "Alberto Regis",
+      "name": "Weng Marc Lim",
       "papers": 12
+    },
+    {
+      "name": "Usep Suhud",
+      "papers": 11
+    },
+    {
+      "name": "Geetha Manoharan",
+      "papers": 11
+    },
+    {
+      "name": "Abdelrehim Awad",
+      "papers": 11
     },
     {
       "name": "Philip Kotler",
@@ -742,24 +754,16 @@
       "papers": 11
     },
     {
-      "name": "Abdelrehim Awad",
-      "papers": 11
-    },
-    {
-      "name": "Geetha Manoharan",
-      "papers": 11
-    },
-    {
       "name": "Rhian Indradewa",
-      "papers": 10
-    },
-    {
-      "name": "Usep Suhud",
       "papers": 10
     },
     {
       "name": "Kazi Abdul Mannan",
       "papers": 10
+    },
+    {
+      "name": "Setyo Ferry Wibowo",
+      "papers": 9
     },
     {
       "name": "Dmitry Zharnikov",
@@ -778,23 +782,23 @@
       "papers": 9
     },
     {
+      "name": "Agus Rahayu",
+      "papers": 8
+    },
+    {
+      "name": "Bora G\u00fcnd\u00fczyeli",
+      "papers": 8
+    },
+    {
       "name": "V. Kumar",
       "papers": 8
     },
     {
-      "name": "Mustafa Ayobami Raji",
+      "name": "Dhanraj Kalgi",
       "papers": 8
     },
     {
-      "name": "Hameedat Bukola Olodo",
-      "papers": 8
-    },
-    {
-      "name": "Heny Hendrayati",
-      "papers": 8
-    },
-    {
-      "name": "Abu Bashar",
+      "name": "Ratih Amelia",
       "papers": 8
     },
     {
@@ -802,30 +806,26 @@
       "papers": 8
     },
     {
-      "name": "Agus Rahayu",
+      "name": "Abu Bashar",
       "papers": 8
     },
     {
-      "name": "Gatot Wijayanto",
+      "name": "Spyros Langkos",
       "papers": 8
     },
     {
-      "name": "Sel\u00e7uk Burak Ha\u015f\u0131lo\u011flu",
+      "name": "Heny Hendrayati",
       "papers": 8
     },
     {
-      "name": "Setyo Ferry Wibowo",
-      "papers": 8
-    },
-    {
-      "name": "Dash Satyabrata",
+      "name": "Pavani Mudem",
       "papers": 8
     }
   ],
   "top_authors_recent": [
     {
       "name": "Loso Judijanto",
-      "papers": 16
+      "papers": 17
     },
     {
       "name": "Tony Wijaya",
@@ -833,18 +833,18 @@
     },
     {
       "name": "Worldly Knowledge Publishing Centre",
-      "papers": 14
+      "papers": 15
     },
     {
       "name": "Alberto Regis",
       "papers": 12
     },
     {
-      "name": "Rhian Indradewa",
+      "name": "Hassan Ali Al-Ababneh",
       "papers": 10
     },
     {
-      "name": "Hassan Ali Al-Ababneh",
+      "name": "Rhian Indradewa",
       "papers": 10
     },
     {
@@ -852,23 +852,27 @@
       "papers": 10
     },
     {
+      "name": "Usep Suhud",
+      "papers": 9
+    },
+    {
       "name": "Dmitry Zharnikov",
       "papers": 9
     },
     {
-      "name": "Sel\u00e7uk Burak Ha\u015f\u0131lo\u011flu",
+      "name": "Setyo Ferry Wibowo",
       "papers": 8
     },
     {
-      "name": "Dash Satyabrata",
+      "name": "Dhanraj Kalgi",
       "papers": 8
     },
     {
-      "name": "Usep Suhud",
+      "name": "Ratih Amelia",
       "papers": 8
     },
     {
-      "name": "Vanessa Gaffar",
+      "name": "Spyros Langkos",
       "papers": 8
     },
     {
@@ -876,12 +880,8 @@
       "papers": 8
     },
     {
-      "name": "Erwin Suryanegara",
-      "papers": 7
-    },
-    {
-      "name": "Rina Anindita",
-      "papers": 7
+      "name": "Nyoman Dwika Ayu Amrita",
+      "papers": 8
     }
   ]
 }
