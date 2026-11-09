@@ -1,0 +1,288 @@
+---
+title: Influence of Social Media Marketing on Consumer Buying Behaviour in India
+url: https://doi.org/10.5281/zenodo.20051571
+category: survey
+subcategory: empirical
+date: 2026-05
+venue: International Journal of Research Publication and Reviews
+authors:
+- Aryan Agrawal
+- Sonali Malewar
+source: openalex-oa
+pdf_url: https://doi.org/10.55248/gengpi.07.0526.c1157
+pages: 6
+chars: 25338
+fetched_at: '2026-11-08T19:32:55+00:00'
+kb_version: 1
+---
+
+# Influence of Social Media Marketing on Consumer Buying Behaviour in India
+
+InternationalJournalofResearchPublicationandReviews,Vol(7),Issue(5),May(2026),Page–1136-1141
+International Journal of Research Publication and Reviews
+Journalhomepage:www.ijrpr.comISSN2582-7421
+Influence of Social Media Marketing on Consumer Buying Behaviour in
+India
+Aryan Agrawal1, Dr. Sonali Malewar2
+BBAStudent1,AssociateProfessor2
+AmityBusinessSchool1,2
+AmityUniversity,Raipur,Chhattisgarh1,2
+DOI:https://doi.org/10.5281/zenodo.20051571
+ABSTRACT -
+InIndia,socialmedia hasemergedasakeymarketingmedium,changing howconsumerslook forinformation,weightheiroptions,anddecide whattobuy. With
+morethan600millionactiveusersandarapidlyincreasingsmartphonepenetrationrate,socialmediaplatformslikeFacebook,Instagram,YouTube,andWhatsApp
+have created interactive spaces where user-generated reviews, influencercontent, targeted ads, and peer recommendations have a significant impact on consumer
+purchasing behavior. Using a synthesis of recent empirical and conceptual studies published between 2018 and 2025, this paper investigates the impact of social
+media marketing on consumer purchasing behavior in India. It creates a conceptual framework based on consumer behavior and communication theories that
+connectspsychologicalmediators(brandawareness,attitude,trust,perceivedvalue)andbehavioraloutcomes(purchaseintentionandactualbuyingbehavior)with
+important social media marketing components (content quality, engagement, influencers, electronic word-of-mouth, andsocial commerce features). According to
+thereport,socialmediamarketinggreatlyinfluencesthepurchasingdecisionsofIndiancustomers,especiallythoseintheyouthandurbangroups.However,italso
+creates issues like information overload, impulsive purchases, and privacy concerns. The limitations of current research, management implications for creating
+successfulsocialmediastrategiesintheIndiancontext,andrecommendationsforfurtherempiricalworkarediscussedinthepaper'sconclusion.
+Keywords: Social media marketing, consumer buying behaviour, India, influencer marketing, purchase intention, user-generated content, social
+commerce.
+Introduction
+India's internet availability, smartphone ownership, and social media usage have all increased dramatically over the past ten years, radically changing
+howconsumersandbrandsengage.Socialnetworkingsites,whichstartedoffasplacesforpeopletointeractwitheachother,havedevelopedintoeffective
+marketingchannelswherecustomerscanfindproducts,compareoptions,readreviews,andinstantlyexchangeexperiences.
+Accordingtoanumberofstudies,socialmedianowsignificantlyinfluencesIndianconsumers'decisionstobuygoodsinavarietyofcategories,including
+clothing, electronics, cosmetics, and lifestyle items. Research indicates that among Indian customers, particularly millennials and Gen Z, influencer
+endorsements,user-generatedreviews,andtargetedadshaveasubstantialimpactonbrandawareness,attitudedevelopment,trust,andpurchaseintention.
+Researchisstilldeveloping,though,anditisnecessarytocombinedisparatefindingsintoacohesiveframeworkthatisspecifictotheIndianmarket.By
+combiningrecentresearchandcreatinganintegrativeconceptualmodel,thispaperseekstoanalyzehowsocialmediamarketingaffectsIndianconsumers'
+purchasing decisions. It focuses on the mechanisms through which different social media marketing tools affect each stage of the consumer decision-
+makingprocess,fromneedrecognitionandinformationsearchtopost-purchaseevaluation.
+Research Objectives and Questions
+Thefollowinggoalsarepursuedinthisworkbasedonthegapsfoundinearlierresearch:
+•ToassesshowsocialmediaisbeingusedandmarketedinIndia.
+•ToexaminehowimportantcomponentsofsocialmediamarketingaffectIndianconsumers'purchasingdecisions.
+•Todeterminethepsychologicalelementsthatmediatetheconnectionbetweensocialmediamarketingandpurchasingdecisions,suchastrust,attitude,
+andperceivedvalue.
+•ToputoutaconceptualframeworkthatexplainshowsocialmediamarketingaffectsIndianconsumers'purchasingdecisions.
+•Todrawattentiontotheconsequences,difficulties,andfutureresearchdirectionsformanagement.
+Inlightofthesegoals,thefollowingresearchquestions(RQs)areaddressedinthepaper:
+ RQ1:HowprevalentandsignificantissocialmediamarketingininfluencingconsumerbuyingbehaviourinIndia?
+ RQ2:Whichsocialmediamarketingelements(e.g.influencers,contentquality,ads,reviews)moststronglyaffectIndianconsumers’purchase
+decisions?
+
+1137InternationalJournalofResearchPublicationandReviews,Vol(7),Issue(5),May(2026),Page–1136-1141
+ RQ3:Throughwhatpsychologicalmechanismsdoessocialmediamarketinginfluenceconsumerbuyingbehaviour?
+ RQ4:Whatchallengesandrisksaccompanythegrowingrelianceonsocialmediainconsumerdecision-making,andhowcanmarketersrespond?
+Literature Review
+Social media landscape in India
+Withestimatesindicatingaround600millionactiveusersacrossplatformslikeWhatsApp,Instagram,Facebook,YouTube,andTwitter,Indiaisoneof
+the world's biggest social media markets (X). Even in semi-urban and rural areas, the spread of inexpensive smartphones, low-cost data plans, and
+vernacularcontenthasledtodeeppenetration,especiallyamongyoungpeople.Duetothehighlevelofsocialmediainvolvement,brandshavepreviously
+unheard-ofchancestoconnectandcommunicatewithcustomersinrealtime.
+AsignificantpercentageofIndiancustomersusesocialmediabeforemakingpurchases,accordingtostudiesbasedonsecondarydata,andvisualchannels
+likeYouTubeandInstagramareespeciallyimportantforproductevaluationanddiscovery.IndianGenZandmillennialsutilizesocialmediaonaregular
+basis,whichmakesiteasyforsocialmediamarketingcampaignstoinfluenceconsumerpreferencesandpurchasingpatterns.
+Consumer buying behaviour in digital environments
+Theprocessescustomersgothroughwhenchoosing,acquiring,utilizing,anddiscardinggoodsandservices,aswellastheunderlyingmotives,attitudes,
+andperceptions,arereferredtoasconsumerbuyingbehavior.Inthedigitalage,consumerscontinuouslyassessoptionsusingdatafrommanyonlineand
+offlinesources,replacingtheconventionallineardecision-makingparadigmwithamoredynamicanditerativeapproach.
+According to research, social networks which are frequently more reliable than traditional advertising or company-controlled communication have
+emergedasthemainsourceofproductinformation,peerreviews,andrecommendationsinIndia.Particularlywhen buyingexperientialitemslikefashion,
+cosmetics,orgadgets,theavailabilityofratings,comments,anduser-generatedimagesandvideoshelpsbuyerslowerperceivedrisk.
+Social media marketing tools and tactics
+Socialmediamarketing(SMM)istheuseofsocialnetworkingsitestopromotecompanies,products,andservices,engagewith consumers,andestablish
+long-lastingrelationships. Important SMMstrategies in theIndian context include brandpages, sponsored posts, display ads,influencer collaborations,
+livestreaming,socialmediacontests,andsocialcommercecomponentslike"shopnow"buttonsandin-appstores.
+Several studies highlight the importance of high-quality content, interactivity, and entertainment value in promoting consumer engagement on social
+media.High-quality, visually appealing, andinstructivecontentenhances brandawareness andattentionsinceusers aremore inclined tolike, comment
+on, share, and click on it. Additionally, interactive features like exams, surveys, and live sessions increase user engagement by fostering a sense of
+communityandco-creation.
+Influencer marketing and user-generated content
+Influencer marketing is now one of the most successful social media tactics in India. Research from a variety of fields indicates that customer trust,
+attitude, and purchase intention are significantly impacted by influencer endorsements. Younger audiences who follow content creators on YouTube,
+Instagram,and Snapchat are particularly affected by this. Influencer endorsements were the most important social media marketing factor influencing
+purchasedecisions(35%),closelyfollowedbycontentquality(30%),accordingtoaquantitativestudydoneinJodhpur.
+In India, influencermarketing hasbecomeoneofthemost effectivesocialmediastrategies. Influencer endorsementshavea majorimpacton customer
+trust,attitude,andbuyintention,accordingtoresearchfromvariousareas.Thisisespeciallytrueforyoungeraudienceswhofollowcontentcreatorson
+YouTube,Instagram,andSnapchat.AccordingtoaquantitativestudyconductedinJodhpur,themostsignificantsocialmediamarketingfactorimpacting
+purchasedecisionswasinfluencerendorsements(35%),closelyfollowedbycontentquality(30%).
+Social media advertising and engagement
+Increased purchase intention and conversion are strongly correlated with exposure to and active engagement (viewing, liking, commenting, sharing,
+clicking)withadsonsocialmediaplatformslikeFacebookandInstagram,accordingtoresearchonsocialmediaadvertising.Forexample,astudycarried
+outinKerala discoveredalarge andstatisticallysignificantpositivecorrelation(r=0.90)betweenFacebookandInstagramadinteractionandpurchase
+decisions.SimilarstudiesonGenZcustomersinIndiashowthatvisuallyappealing,emotionallycharged,andinteractiveadvertisementsincreasebrand
+awarenessandboostsales.
+However,the samestudydraws attentiontocertainnegative aspects,particularlyfor youngerconsumers whoarecontinuously exposed topromotional
+materials, such as impulsive purchasing, excessive spending, and exposure to exaggerated or deceptive claims. This highlights the significance of
+responsibleadvertisingandconsumereducation.
+Empirical evidence from Indian sectors
+According to sector-specific research, social media marketing has a noticeable impact on a number of Indian sectors. Social media marketing greatly
+influences consumer purchasing behavior by raising brand recognition, offering comprehensive product information, facilitating comparison, and
+
+1138InternationalJournalofResearchPublicationandReviews,Vol(7),Issue(5),May(2026),Page–1136-1141
+encouraginginvolvement,accordingtoresearchontheelectronicsindustry.Researchonretailandlifestyleproductsreveals thatsuggestionsfrompeers
+andinfluencersfrequentlyresultinactualpurchases,andsocialmediaisasignificantavenueforproductdiscovery.
+According to other research on young people, the vast majority of Indian teenagers and young adults use social media on a regular basis, and online
+reviews,specialdeals,andinfluencerrecommendationshaveasignificantimpactontheirpurchasingdecisions.Allthingsconsidered,thedataindicates
+thatsocialmediamarketingplaysasignificantandexpandingroleininfluencingcustomerpurchasingdecisionsinavariety ofIndianmarkets.
+Theoretical foundations
+Theimpactofsocialmediamarketingoncustomerpurchasingbehaviorcanbeexplainedbyanumberoftheoreticalstances.AccordingtotheStimulus-
+Organism-Response (S-O-R) paradigm, marketing stimuli (such as social media content, advertisements, and influencer messages) influence internal
+stateslikeemotions,attitudes,andsatisfaction,whichinturnshapebehavioralresponseslikeloyaltyandpurchaseintention.
+AccordingtotheTheoryofReasonedAction(TRA)andtheTheoryofPlannedBehavior(TPB),attitudestowardabehaviorandsubjectivenormsimpact
+behavioralintentions,whichinturnforecastactualbehavior.Purchaseintentionsareimpactedbyattitudesandperceivednormsthatareshapedbypeer
+opinions,reviews,andinfluencerendorsementsinsocialmediasituations.
+The Elaboration Likelihood Model (ELM) of persuasion also holds true: consumers may analyze social media communications via a peripheral route
+(relying on cues like attractiveness or competence of influencers) or a core route (carefully evaluating arguments, such as in-depth reviews). The
+assumption that social media marketing affects customer purchasing behavior through cognitive and affective mediators is supported by all of these
+theories.
+Conceptual Framework and Hypotheses
+This research presents a conceptual framework based on the reviewed literature that suggests social media marketing influences Indian consumers'
+purchasingdecisionsthroughanumberofinterrelatedchannels.Thefollowingisasummaryofthemainconceptsandconnections:
+ Social Media Marketing Stimuli:
+o Contentquality(informativeness,entertainment,credibility).
+o Influencermarketing(expertise,attractiveness,authenticity).
+o User-generatedcontent(reviews,ratings,testimonials).
+o Socialmediaadvertising(frequency,relevance,emotionalappeal).
+o Socialcommercefeatures(in-apppurchases,shoppableposts,linkstoe-commerce).
+ Psychological Mediators :
+o Brandawarenessandbrandrecall.
+o Attitudetowardthebrandandtowardonlineshopping.
+o Trustinthebrand,platform,influencersanduserreviews.
+o Perceivedvalue,convenience,andsocialproof.
+ Behavioural Outcomes :
+o Purchaseintentionandwillingnesstotrynewbrands.
+o Actualbuyingbehaviourandrepeatpurchase.
+o Post-purchaseword-of-mouthandadvocacy.
+Fromthisframework,illustrativehypothesesforfutureempiricaltestingcouldinclude:
+ H1:Socialmediacontentqualityhasapositiveandsignificanteffectonconsumers’attitudestowardthebrandandtheirpurchaseintentionin
+India.
+ H2:InfluencermarketingpositivelyinfluencesconsumertrustandpurchaseintentionamongIndianyouth.
+ H3:User-generatedcontent(reviewsandratings)positivelyaffectsperceivedcredibilityandreducesperceivedrisk,therebyincreasingpurchase
+intention.
+ H4:Engagementwith socialmedia advertisements(views,likes,comments,shares,clicks)hasa positive relationship with actual purchase
+behaviour.
+ H5:Theinfluenceofsocialmediamarketingonbuyingbehaviourisstrongerforyounger,urbananddigitallyactiveconsumersthanforolder
+orlessdigitallyengagedsegmentsinIndia.
+Research Methodology
+Adescriptiveandanalyticalresearchdesignbasedonsecondarydataisusedinthiswork.Itmethodicallyexaminesandsynthesizesempiricalfindings
+frompreviousstudiesonsocialmediamarketingandconsumerbehaviorinIndiaratherthanreportingnewprimarysurveyorexperimentalresults.
+Data sources and selection
+Theanalysisdrawson:
+• Conferencepapersandpeer-reviewedjournalpublicationsaboutIndianconsumerbehaviorandsocialmediamarketingfrom2018to2025.
+• Industry-specificresearchlookingathowsocialmediaaffectsconsumerbehaviorinyouth,retail,andelectronicsmarkets.
+• Studiesononlinereviews,influencermarketing,andsocialmediainfluenceinIndiancontexts.
+
+1139InternationalJournalofResearchPublicationandReviews,Vol(7),Issue(5),May(2026),Page–1136-1141
+Using keywords like "social media marketing," "consumer buying behavior," "India," "influencer marketing," and "purchase intention," studies were
+foundthrough scholarly databases and online journals. Empirical studies with well-defined techniques and conclusions pertaining tothe Indian market
+weregivenpriority.
+Data analysis
+Aqualitativecontentanalysisapproachwasusedtoextractandcomparekeyfindingsacrossstudies.Eachselectedpaperwas reviewedtoidentify:
+ thesocialmediaplatformsandmarketingtoolsexamined;
+ theconsumersegmentsandproductcategoriesstudied;
+ themaindeterminantsofconsumerattitudes,intentionsandbehaviour;
+ andanyreportedchallengesornegativeconsequences.
+Inordertodiscoverrecurringpatternsandgaps,theseresultswerethenmappedontotheconceptualframework(stimuli–mediators–responses).While
+recognizingthat causal inferences are limited in the absence of uniform primary data, the technique enables an integrated knowledge of how social
+mediamarketingaffectsconsumerpurchasingbehaviorinIndia.
+Analysis and Discussion
+Strength of social media influence on buying behaviour
+Acrossthereviewedliterature,aconsistentthemeisthatsocialmediaplaysasignificantandgrowingroleinshapingIndianconsumers’buyingdecisions.
+Evidencesuggeststhatalargeproportionofconsumersconsultsocialmediaplatforms particularlyInstagram,YouTubeandFacebook—beforemaking
+purchases,andthattheseplatforms arecentralforproductdiscovery. Foryouthsegments,dailyuseofsocialmediaandhigh engagementwithcontent
+meanthatbrandmessagesandpeeropinionsaredeeplyembeddedineverydaylifeanddecisionmaking.
+Studies from different regions of India, including Rajasthan and Kerala, show that social media marketing elements collectively explain substantial
+variationinconsumerattitudes andpurchaseintentions. Quantitative analyses reveal significant positiverelationships between engagement withsocial
+media advertisements and actual buying behaviour, supporting the idea that interactive and visually appealing content can move consumers from
+awarenesstopurchase.
+Role of influencers and peer recommendations
+Influencermarketing emerges as one of the most influential components ofsocial media marketing inIndia. Empirical work finds thatfollowers often
+perceiveinfluencersasmorerelatableandtrustworthythantraditionalcelebrities,andthatrecommendationsfrommicro-influencerscanstronglyshape
+perceptionsandpurchaseintentions,especiallyinfashion,beauty,electronicsandlifestylecategories.
+At the same time, peer recommendations through user-generated content such as reviews, ratings, comments and unboxing videos serve as important
+formsofsocialproof.ResearchreportsthatamajorityofIndianconsumerstrustonlinereviewsmorethanbrand-controlledadvertising,andthatpositive
+user feedback increases perceived value and reduces perceived risk, thereby encouraging purchases. Negative reviews or allegations of inauthentic
+endorsements,however,canquicklydamagetrustanddeterconsumers.
+Content quality, engagement and emotional appeal
+Thequalityofsocialmediacontentitsrelevance,informativeness,entertainmentvalueandvisualdesignisstronglylinked toconsumerengagementand
+favourableattitudes.Studiesdemonstratethatengagingformatssuchasshortvideos,stories,reelsandlivesessionsareparticularlyeffectiveincapturing
+attentionandencouraginginteractionsonplatformslikeInstagramandYouTube.
+Emotionalappealalsoplays a significantrole: advertisementsandpoststhatevokepositiveemotions,storytelling,humouroraspirationallifestyles are
+morelikely toberemembered andshared,reinforcingbrandassociations.However, overly frequentor intrusiveadsmayleadtoannoyance,adfatigue
+andavoidance,indicatingtheneedforcarefulfrequencyandrelevancemanagement.
+Platform-specific effects and demographics
+Evidencesuggests thatdifferentplatforms havevaryingstrengthsininfluencingconsumerbehaviourinIndia.InstagramandYouTubetendtobemore
+effectiveforvisuallyrich,lifestyle-orientedproductsandforreachingyounger,trend-sensitiveconsumers.Facebookremainsimportantforabroaderage
+rangeandforfacilitatingcommunitygroupsanddiscussions,thoughitsrelativeinfluenceamongyoungerusersisdecliningastheygravitatetowardmore
+visualandshort-formcontentplatforms.
+Demographic factors such as age, income, education and urban–rural residence moderate the impact of social media marketing. Most studies report
+stronger effects amongurban and semi-urbanyouth whoare heavy social media users and more comfortable withonlineshopping, while older or less
+digitallyengagedconsumersmayrelymoreonofflineinformationsourcesandtraditionalmedia.
+
+1140InternationalJournalofResearchPublicationandReviews,Vol(7),Issue(5),May(2026),Page–1136-1141
+Risks, challenges and ethical issues
+Whilesocialmediamarketingoffersmanybenefits,theliteraturealsohighlightsseveralchallengesandrisks.Constantexposuretopromotionalmessages
+can lead to impulse buying, overspending and regret, particularly among young consumers. There are concerns about misinformation, fake reviews,
+undisclosedsponsoredcontentandmanipulativeadvertisingtacticsthatmaymisleadconsumers.
+Privacyanddataprotectionareadditionalissues,astargetedadvertisingreliesonextensivetrackingofuserbehaviourandpreferences,sometimeswithout
+full consumerawareness. Marketers musttherefore balancepersuasive communicationwithtransparency, authenticityandethicalresponsibility, while
+policymakersmayneedtostrengthenregulationsaroundinfluencerdisclosures,dataprivacyandonlineconsumerprotection.
+Managerial Implications
+ThefindingsfromtheliteraturesynthesisgenerateseveralpracticalimplicationsformarketersoperatingintheIndianmarket:
+ Invest in high-quality, engaging content:Brandsshoulddevelopvisuallyrich,informativeandentertainingcontenttailoredtothepreferences
+oftheirtargetsegments,usingformatssuchasshortvideos,reelsandlivestreams.
+ Leverage authentic influencers and micro-influencers:Collaborationswithinfluencerswhosevaluesalignwiththebrandandwhosefollower
+basematches the target audience can meaningfully enhance trust and purchase intention. Transparency in sponsorships is crucial to maintain
+credibility.
+ Encourage and manage user-generated content: Marketers should actively encourage satisfied customers to share reviews, ratings and
+testimonials,whilemonitoringandrespondingconstructivelytonegativefeedback.UGCstrategiescansignificantlystrengthensocialproofand
+brandadvocacy.
+ Optimise social media advertising strategies: Advertisements should be relevant, visually appealing, and appropriately targeted to avoid ad
+fatigue and annoyance. Data-driven optimisation of frequency, timing and creative elements can help move consumers from awareness to
+purchase.
+ Integrate social commerce features:Seamlessintegrationofsocialmediaplatformswithe-commerce(e.g.shoppableposts,in-appcheckout)
+canreducefrictioninthebuyingprocessandconvertinterestintosales,particularlyforimpulseandlow-involvementpurchases.
+ Adopt ethical and transparent practices: Clear labelling of sponsored content, protection of consumer data, and honest communication are
+essentialtosustainlong-termtrustandbrandequityinahighlyconnectedenvironment.
+Limitations of Existing Research
+Despiteitsgrowth,thepresentcorpusofresearchonsocialmediamarketingandconsumerpurchasingbehaviorinIndiahasa numberoflimitationsthat
+needtoberecognized.ThereislittlegeneralizabilityacrosstheheterogeneousIndianpopulationbecausemanyresearchusecross-sectionalsurveydesigns
+withrelativelysmallandregion-specificsamples.
+While rural customers, older age groups,and less tech-savvy sectors receive less attention,youthandurbanconsumers arefrequentlyoverrepresented.
+Potential biases like social desirability and recall inaccuracy are introduced by the strong dependence on self-reported assessments of attitudes and
+purchaseintentionrather thanactualbehavior. Furthermore, results mightquicklybecomeoutofdateduetothe frequentchanges inplatform features,
+algorithms,andcustomerpreferences,whichcallsforongoingresearchupgrades.
+Directions for Future Research
+Futurestudiescanbuildontheidentifiedgapsinseveralways:
+ Broader and more diverse samples:Researchersshouldincluderespondentsfromdifferentregions,agegroups,incomelevelsandcultural
+backgroundstoreflectIndia’sheterogeneity.
+ Longitudinal and experimental designs: Longitudinal studies can track how social media influences buying behaviour over time, while
+experimentscanestablishcausalrelationshipsbetweenspecificmarketingtacticsandconsumerresponses.
+ Platform-specific and sector-specific analyses:Detailedcomparativestudiesofplatforms(e.g.Instagramvs.YouTubevs.emergingplatforms)
+andsectors(e.g.healthcare,financialservices,education)canrevealmorenuancedinsights.
+ Psychological mechanisms and dark side effects:Moreresearchisneededonpsychologicaldriverssuchasfearofmissingout(FOMO),social
+comparison,andcompulsivebuying,aswellasonnegativeoutcomeslikeaddiction,stressandfinancialstrain.
+ Impact of regulation and policy: Future work can examine howregulationson influencerdisclosures,dataprivacyandconsumerprotection
+affecttheeffectivenessandethicsofsocialmediamarketinginIndia.
+Conclusion
+ThesummaryofcurrentresearchmakesitabundantlyevidentthatsocialmediamarketinghasasignificantandmultifacetedimpactonIndianconsumers'
+purchasingdecisions.IndianconsumersnowrelyheavilyonsocialmediasiteslikeFacebook,Instagram,YouTube,andWhatsApptofindthings,weigh
+theiroptions,anddecidewhattobuyinavarietyofcategories.
+Engagingcontent,influencerrecommendations,user-generatedreviews,targetedads,andsocialcommercefeaturesareimportantcomponentsofsocial
+mediamarketingthatinfluenceconsumerattitudes,trust,perceivedvalue,andultimatelybuyintentionandbehavior.Thoughitsinfluenceisprogressively
+
+1141InternationalJournalofResearchPublicationandReviews,Vol(7),Issue(5),May(2026),Page–1136-1141
+spreadingtobroaderdemographicsasinternetpenetrationincreases,itismostnoticeableamongyounger,urban,andtech-savvycustomers.
+However, the increasing use of social media in decision-making raises issues including impulsive purchases, false information, and privacy issues,
+necessitating ethical marketing strategies and more robust consumer protection. While researchers can continue to develop and test the conceptual
+frameworkputforthinthispaper,marketerscancreatemoreethical,successful,andcontext-sensitivestrategiesfortheIndianmarketbycomprehending
+themechanismsthroughwhichsocialmediamarketinginfluencesconsumerpurchasingbehavior.
+REFERENCES -
+1. AdarshJournalArticle.(2025).Socialmediainfluenceonconsumerbuyingdecision. Adarsh Journal of Management Research.
+2. Gupta,S.,&Kumar,P.Impactofsocialmediamarketingonconsumerbuyingbehaviour:EvidencefromurbanIndianconsumers.
+3. IJARSCT.(2024).Influenceofsocialmediamarketingonconsumerbuyingbehavior.
+4. IJIERM.(2025).InfluenceofsocialmediaonconsumerbuyingbehaviourinIndia.
+5. IJRPR.(2025).Impactofsocialmediamarketingonpurchasebehaviourofyoungerconsumers.
+6. IJRPR.(2026).Impactofsocialmediainfluencersonpurchasedecisions.
+7. IJNTI.(2025).TheimpactofsocialmediaonIndianconsumerbuyingbehavior.
+8. IJFMR.(2024).Impactofsocialmediaonpurchasemakingdecisionofconsumers.
+9. IJFMR.(2025).Influenceofsocialmediaadvertisingonconsumerbuyingbehaviour:EvidencefromKerala.
+10. IJNRD.(2025).ImpactofsocialmediamarketinginconsumerbuyingbehaviourintheelectronicsectorinIndia.
+11. IJRSR/OtherIndianJournal.SocialmediamarketingandconsumerengagementinIndia.
+12. ScribdCaseStudy.(2026).Socialmedia’simpactonIndianretailbuyers.

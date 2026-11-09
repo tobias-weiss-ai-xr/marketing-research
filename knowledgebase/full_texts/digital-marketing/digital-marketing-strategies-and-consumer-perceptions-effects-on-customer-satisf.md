@@ -1,0 +1,792 @@
+---
+title: 'Digital Marketing Strategies and Consumer Perceptions: Effects on Customer Satisfaction and Brand
+  Perception'
+url: https://doi.org/10.52589/bjmms-lzkqlioa
+category: digital-marketing
+subcategory: empirical
+date: 2026-09
+venue: British Journal of Management and Marketing Studies
+authors:
+- Winny Oboko
+source: openalex-oa
+pdf_url: https://abjournals.org/bjmms/9/3/digital-marketing-strategies-and-consumer-perceptions-effects-on-customer-satisfaction-and-brand-perception-114.pdf
+pages: 18
+chars: 51402
+fetched_at: '2026-11-08T18:30:53+00:00'
+kb_version: 1
+---
+
+# Digital Marketing Strategies and Consumer Perceptions: Effects on Customer Satisfaction and Brand Perception
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 51
+RESEARCH ARTICLE Received: 12 Aug 2026, Accepted: 25 Aug 2026, Published: 15 Sep 2026
+Digital Marketing Strategies and Consumer Perceptions:
+Effects on Customer Satisfaction and Brand Perception
+Winny Oboko, Ph.D.
+Lecturer in Business Management, Enugu State University, P.M.B. 01660, Agbani, Enugu State, Nigeria.
+Abstract
+The swift emergence of technology has influenced the marketing process and the
+relationshipbetweenconsumersandbrands.Nowadays,companiesusedigitalmarketing
+strategies to reach out to customers, provide personalised content, and improve their
+competitiveadvantage.Thisstudyexaminestheeffectofdigitalmarketingstrategiesonthe
+satisfaction of consumers and perceptions of brands. A survey was carried out among
+consumerswhohaveinteractionswithbrandsinthedigitalenvironmentusingIBMSPSS
+Statisticstoanalysethedataobtained.Itisfoundthatdigitalmarketingstrategieshavea
+statisticallysignificantandpositiveeffectonthesatisfactionofconsumersandperceptions
+of brands. Factors such as personalised communications, promotions, and interactions
+createbetterexperiencesforcustomersandincreasecredibilityandbrandperception.
+Keywords: Digital marketing strategies; Customer satisfaction; Brand perception;
+Consumerbehaviour;Marketinganalytics.
+How to Cite:Oboko, W. (2026). Digital Marketing Strategies and Consumer Perceptions:
+EffectsonCustomerSatisfactionandBrandPerception.BritishJournalofManagementand
+MarketingStudies,9(3),51–68.https://doi.org/10.52589/BJMMS-LZKQLIOA
+© 2026 by the authors. Published by AB Journals. This is an open access article distributed under the terms of
+the Creative Commons Attribution (CC BY 4.0) license.
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 52
+INTRODUCTION
+Therapidexpansionofdigitaltechnologieshassignificantlyreshapedthemarketinglandscape
+andalteredhoworganisationsengagewithconsumers.Thegrowinguseoftheinternet,social
+media platforms, and mobile technologies has encouraged businesses to move beyond
+traditionalmarketingapproachestowardmoreinteractiveanddata-drivenstrategies.
+Inpractice,digitalmarketingnowenablesorganisationstocommunicatewithconsumersin
+real time, tailor promotional messages to specific audiences, and draw on data analytics to
+better understand consumer behaviour. This shift has not only improved the efficiency of
+marketingactivitiesbuthasalsochangedexpectationsaroundhowbrandsinteractwiththeir
+audiences.Consumerattitudesandbehaviouralintentionstowardbrandsareshapedbythese
+digitalinteractions(Ajzen,1991).
+Asaresult,manycompaniesnowrelyondigitalmarketingnotjustforproductpromotion,but
+as a strategic tool for building long-term customer relationships and strengthening brand
+positioninginincreasinglycompetitivemarkets.
+Digitalmarketingencompassesawiderangeofstrategiesthatmakeuseofonlineplatforms
+and digital communication technologies to engage consumers and promote products or
+services.Thesestrategiestypicallyincludesocialmediamarketing,searchenginemarketing,
+contentmarketing,emailcampaigns,andtargetedonlineadvertising.AsnotedbyKotleretal.
+(2017),theintegrationofdigitaltechnologiesintomarketinghasshiftedthefocusfrommass
+communication to more personalised and interactive engagement. By leveraging consumer
+dataandanalytics,organisationsareincreasinglyabletodesigncampaignsthatdeliverrelevant
+contenttospecificaudiencesegments.Atthesametime,marketinganalyticstoolsenablefirms
+to monitor consumer interactions, assess campaign performance, and refine their strategies
+overtime(Chaffey&Ellis-Chadwick,2019;Mikalefetal.,2020).
+Oneofthekeyoutcomesassociatedwiththesestrategiesiscustomersatisfaction.Customer
+satisfaction refers to the extent to which a product or service meets or exceeds consumer
+expectations.Indigitalenvironments,thisisinfluencedbyfactorssuchasthequalityofonline
+interactions,therelevanceofcontent,platformusability,andhowresponsiveorganisationsare
+to customer needs. Research by Kumar and Reinartz (2016) suggests that data-driven
+marketingenhancesafirm’sabilitytoanticipateandrespondtocustomerpreferences.When
+consumers receive timely communication, personalised recommendations, and meaningful
+engagement,theyaremorelikelytoreporthigherlevelsofsatisfactionanddevelopfavourable
+attitudestowardthebrand.
+Closely related to satisfaction is brand perception. Brand perception reflects the beliefs,
+impressions,andattitudesthatconsumersformaboutabrandovertime.Inthedigitalcontext,
+these perceptions are increasingly shaped by online interactions, digital advertising, social
+media engagement, and user-generated content. As highlighted by Keller (2013), consistent
+andpositivebrandinteractionsacrosstouchpointsarecriticalinbuildingstrongbrandequity.
+Consumers often develop relationship-like bonds with brands (Fournier, 1998). Digital
+platformsprovidemultiplepointsofcontactwhereconsumersevaluateabrand’scredibility,
+reliability, and overall image. When managed effectively, these interactions can strengthen
+trustandreinforcepositivebrandassociations.
+Socialmediaplatforms,inparticular,havebecomehighlyinfluentialinthisprocess.Platforms
+such as Instagram, Facebook, TikTok, and X (formerly Twitter) allow organisations to
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 53
+communicate directly with consumers, share content, and respond to feedback in real time.
+Theyalsoenabletherapidspreadofelectronicword-of-mouth,whereusersshareopinionsand
+experienceswithwideaudiences.Socialmediahasbecomeahybridelementofthepromotion
+mix(Mangold&Faulds,2009).AccordingtoKaplanandHaenlein(2010),socialmediahas
+fundamentally changed how information about brands is created and disseminated. Positive
+engagementcanenhancebrandreputationandtrust,whilenegativeinteractionscanquickly
+damage brand perception. This makes it essential for organisations to manage their digital
+presencecarefullyandconsistently.
+Despite the growing importance of digital marketing, understanding how these strategies
+simultaneously influence customer satisfaction and brand perception remains an important
+areaofinquiry.Whilepriorstudieshaveexamineddigitalmarketinginrelationtoconsumer
+engagement, online purchasing behaviour, and firm performance, fewer have explored its
+combinedeffectsonbothsatisfactionandperception.Thisgapissignificant,giventhatboth
+constructsarecloselylinkedtocustomerloyalty,purchaseintentions,andlong-termbusiness
+success.
+Furthermore, advances in marketing analytics continue to expand the possibilities for
+improvingcustomerexperienceandstrengtheningbrandrelationships.organisationscannow
+collectandanalyselargevolumesofdatageneratedthroughdigitalinteractions,allowingfor
+more precise targeting and personalisation. These capabilities enable firms to design more
+relevant campaigns, optimise their marketing efforts, and deliver services that align closely
+with consumer expectations. As a result, digital marketing analytics plays a central role in
+shapinghowconsumersevaluateboththeirexperiencesandtheirperceptionsofabrand.
+Giventheincreasingrelianceondigitalmarketingincontemporarybusinessenvironments,it
+is essential to examine its impact on key consumer outcomes. Understanding how digital
+marketingstrategiesinfluencecustomersatisfactionandbrandperceptioncanprovidevaluable
+insightsforbothresearchersandpractitioners.Fororganisations,suchinsightscaninformthe
+developmentofmoreeffectivemarketingapproachesthatenhanceconsumerexperiencesand
+strengthencompetitivepositioning.
+This study therefore investigates the effects of digital marketing strategies on customer
+satisfaction and brand perception. Specifically, it examines whether the implementation of
+thesestrategiesleadstohigherlevelsofsatisfactionandmorefavourableperceptionsofbrand
+imageandcredibility.UsingaquantitativeresearchdesignandsurveydataanalysedwithIBM
+SPSSStatistics,thestudyaimstoprovideempiricalevidenceontherelationshipsamongthese
+variables.
+The findings are expected to contribute to the broader literature on digital marketing and
+consumerbehaviourbyofferingempiricalinsightsintohowdigitalstrategiesshapeconsumer
+perceptionsinonlineenvironments.Inaddition,thestudyprovidespracticalimplicationsfor
+marketingmanagersbyemphasizingtheimportanceofdata-drivenapproachesinenhancing
+customersatisfactionandstrengtheningbrandperception.Asdigitaltechnologiescontinueto
+evolve,theserelationshipswillremaincriticalfororganisationsseekingtosustaincompetitive
+advantageandbuildlong-termcustomerrelationships.
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 54
+LITERATURE REVIEW
+Digital Marketing Strategies
+Therapidadvancementofdigitaltechnologieshasfundamentallyreshapedmarketingpractices
+andthewaysinwhichconsumersinteractwithbrands.Digitalmarketingstrategiesbroadly
+refertotheuseofinternet-basedplatforms,digitalcommunicationtools,anddataanalyticsto
+promote products, engage consumers, and enhance brand visibility. Unlike traditional
+marketingapproaches,thesestrategiesenableorganisationstointeractwithconsumersinreal
+timeandtailorcontentbasedonindividualpreferencesandbehaviouraldata.Asobservedby
+PhilipKotleretal.(2017),thisshiftreflectsabroadertransitionfrommassmarketingtoward
+morepersonalisedandcustomer-centricapproaches.
+In practice, digital marketing encompasses a range of activities, including social media
+marketing, search engine marketing, email campaigns, content marketing, and mobile
+marketing. These channels provide multiple touchpoints through which organisations can
+engageconsumersandmaintainongoinginteractions.Ratherthanoperatinginisolation,they
+are often integrated to create a more cohesive brand experience. According to Chaffey and
+Ellis-Chadwick(2019),suchintegrationisessentialforimprovingcustomerengagementand
+supportinglong-termretention.Atthesametime,thewidespreaduseofdigitalplatformshas
+madeiteasierforfirmstocollectandanalyselargevolumesofconsumerdata,offeringdeeper
+insightsintopurchasingbehaviourandengagementpatterns.
+A central feature of digital marketing is its emphasis on personalisation. Personalisation
+involvestailoringmarketingmessagesandpromotionalcontenttoindividualconsumersbased
+on their past behaviour, preferences, and demographic characteristics. This approach is
+particularly effective in digital environments, where consumer data can be continuously
+updated and applied in real time. Research by Kumar (2016) suggests that personalised
+marketingnotonlyimprovesengagementbutalsoenhancestheperceivedrelevanceofbrand
+communication.Whenconsumersencountercontentthatalignswiththeirinterests,theyare
+morelikelytointeractwithitanddevelopfavourableattitudestowardthebrand.
+Anotherimportantdimensionofdigitalmarketingstrategiesistheuseofmarketinganalytics.
+Marketing analytics involves the systematic collection and analysis of data to evaluate
+marketingperformanceandinformstrategicdecisions.Throughanalyticstools,organisations
+cantrackkeyindicatorssuchasengagementrates,click-throughrates,conversions,andeven
+consumersentiment.Theseinsightsmakeitpossibletoadjustcampaignsinrealtimeandrefine
+marketingstrategiesasnewdatabecomesavailable(Mikalefetal.,2020).AsnotedbyKevin
+LaneKeller(2013),theabilitytomonitorandrespondtoconsumerbehaviouracrossmultiple
+touchpoints is critical for maintaining brand consistency and effectiveness in digital
+environments.
+Social media marketing has become one of the most visible and influential components of
+digital marketing. These social media platforms provide spaces where organisations can
+communicatedirectlywithconsumers,sharecontent,andrespondtofeedbackalmostinstantly.
+Beyond firm-generated content, these platforms also encourage user participation, allowing
+consumers to share experiences and opinions with wider audiences. Kaplan and Haenlein
+(2010)arguethatthisshifthastransformedconsumersfrompassiverecipientsofinformation
+into active contributors in the marketing process. As a result, user-generated content and
+electronic word-of-mouth now play a significant role in shaping brand perceptions and
+influencingpurchasingdecisions.
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 55
+Despitetheseadvantages,digitalmarketingstrategiesarenotwithoutchallenges.organisations
+must navigate issues such as information overload, increasing concerns about data privacy,
+and the difficulty of maintaining consistent brand messaging across multiple platforms. In
+addition,thespeedatwhichdigitalinteractionsoccurmeansthatnegativefeedbackcanspread
+quicklyifnotproperlymanaged.Forthisreason,effectivedigitalmarketingrequiresnotonly
+theuseofadvancedanalyticstoolsbutalsocontinuousmonitoringofconsumerresponsesand
+careful alignment of marketing activities with consumer expectations. When managed
+strategically,however,digitalmarketingremainsapowerfultoolforenhancingengagement,
+strengtheningrelationships,andsupportingoverallmarketingperformance.
+Customer Satisfaction in Digital Environments
+Customer satisfaction remains a central concept in marketing and consumer behaviour
+research, often used to assess how well a product or service meets or exceeds consumer
+expectations.Highlevelsofsatisfactionareconsistentlylinkedtooutcomessuchascustomer
+loyalty,repeatpurchasing,andpositiveword-of-mouthcommunication.However,indigital
+environments,satisfactionisshapednotonlybythecoreproductorservicebutalsobythe
+qualityofonlineinteractionsthatconsumershavewithorganisations.AsnotedbyZeithamlet
+al.(2018),serviceexperiencesincreasinglyextendbeyondphysicaldeliverytoincludedigital
+touchpoints that influence overall evaluations. From a service perspective, satisfaction is
+shapedbytheentirerelationshipexperience(Grönroos,2007).
+The growing reliance on digital platforms for information search, purchasing, and brand
+engagementhasintroducedadditionalfactorsthataffectcustomersatisfaction(Constantinides,
+2004).Theseincludewebsiteusability,systemreliability,responsespeed,andtherelevance
+ofmarketingcontent.Inmanycases,consumersformimpressionsquicklybasedonhoweasily
+theycannavigateaplatformoraccessinformation.Whendigitalinterfacesareintuitiveand
+responsive, satisfaction tends to improve; when they are slow, cluttered, or difficult to use,
+dissatisfactioncanarisejustasquickly.Thishighlightstheimportanceofuserexperienceas
+akeydeterminantofsatisfactioninonlinecontexts.
+Digitalmarketingstrategiesplayanimportantroleinshapingtheseexperiences.personalised
+campaigns,forinstance,canenhancesatisfactionbydeliveringcontentthatalignsmoreclosely
+with individual preferences. Similarly, interactive communication (responding to customer
+inquiries through social media or live chat) can make consumers feel acknowledged and
+supported. Research by V. Kumar et al. (2016) suggests that such data-driven interactions
+contributetostrongercustomerrelationshipsandimprovedsatisfactionoutcomes.Atthesame
+time,theeffectivenessofthesestrategiesoftendependsonhowconsistentlyandappropriately
+theyareimplemented.
+Perceivedvalueisanotherfactorthatinfluencessatisfactionindigitalenvironments.Itreflects
+theconsumer’soverallassessmentofthebenefitsreceivedrelativetothecostsincurred.Digital
+marketingstrategiesthatprovideusefulinformation,engagingcontent,orinteractivefeatures
+canenhancethisperceivedvalue.Forexample,brandsthatofferdetailedproductdescriptions,
+tutorials, or personalised recommendations may help consumers make more informed
+decisions, thereby increasing satisfaction. In this sense, value is not only derived from the
+productitselfbutalsofromthequalityofthesurroundingdigitalexperience.
+Trustandtransparencyarealsocriticalinshapingcustomersatisfactiononline.Becausedigital
+transactionsofteninvolveuncertainty,consumerstendtorelyheavilyontrustwhenengaging
+with brands. organisations that communicate clearly, provide accurate information, and
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 56
+maintainsecureplatformsaremorelikelytobuildthistrust.AccordingtoBerry(2002),trust
+is a fundamental component of long-term customer relationships and plays a key role in
+shapingsatisfaction.
+Inaddition,theuseofdigitalmarketinganalyticshasmadeiteasierfororganisationstomonitor
+and respond to consumer feedback. By analysing online reviews, social media interactions,
+andengagementmetrics,firmscanidentifypatternsinconsumerbehaviouranddetectareas
+whereimprovementsareneeded.Theseinsightsallowformoreinformeddecision-makingand
+continuousrefinementofmarketingstrategies.AsemphasizedbyChaffey(2019),theability
+totrackandrespondtoreal-timedataisoneofthedefiningadvantagesofdigitalmarketing.
+Overall, customer satisfaction in digital environments is shaped by a combination of
+technological, relational, and experiential factors. The integration of digital marketing
+strategieswithanalyticscapabilitiesprovidesorganisationswithvaluabletoolsforenhancing
+customer experiences. When effectively managed, these strategies can lead to higher
+satisfaction levels and stronger relationships with consumers in increasingly competitive
+digitalmarkets.
+Brand Perception
+Brandperceptionreferstotheoverallimageandsetofassociationsthatconsumersholdabout
+aparticularbrand.Theseperceptionsdevelopovertimethroughdirectexperiences,marketing
+communications, and interactions with other consumers. A favourable brand perception is
+particularlyvaluablebecauseitshapesconsumerattitudes,influencespurchasedecisions,and
+supportslong-termloyalty.AsnotedbyKevinLaneKeller(2013),strongbrandsarebuiltnot
+onlythroughawarenessbutthroughtheconsistencyandstrengthoftheassociationsconsumers
+attachtothem.
+In the digital era, brand perception is increasingly shaped by online interactions and digital
+communicationchannels.Consumersnowencounterbrandsthroughavarietyoftouchpoints,
+including social media advertising, influencer endorsements, online reviews, and brand-
+generatedcontent.Theseinteractionscontributetohowconsumersformandadjusttheirbeliefs
+about a brand. Because digital platforms enable rapid and widespread information sharing,
+bothpositiveandnegativeexperiencescanquicklyinfluencepublicperception.Inthissense,
+brandimageisnolongercontrolledsolelybyorganisationsbutiscontinuouslyco-createdwith
+consumers.
+Digital marketing strategies play an important role in guiding this process by shaping how
+brands present themselves and communicate with their audiences. Well-designed digital
+campaignscanstrengthenbrandawareness,highlightbrandvalues,andreinforceaconsistent
+identity across platforms. For instance, maintaining consistent messaging across different
+channelshelpscreateamorecoherentbrandimage,makingiteasierforconsumerstorecognize
+and trust the brand. At the same time, interactive and engaging content can foster stronger
+emotionalconnections,whichareoftenlinkedtomorepositivebrandperceptions.
+Socialmediaplatformsareparticularlyinfluentialinthisregardbecausetheyprovidespaces
+for direct interaction between brands and consumers. Beyond firm-generated content, user-
+generatedcontentplaysacriticalroleinshapingperception.ResearchbyAndreasKaplanand
+Haenlein (2010) highlights how social media has shifted communication from one-way
+messagingtoparticipatorydialogue.Asaresult,consumersoftenrelyonpeeropinions,which
+are perceived as more credible than traditional advertising. Positive shared experiences can
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 57
+strengthenbrandreputation,whilenegativefeedbackcanquicklyundermineitifnotaddressed
+effectively.
+Thecredibilityandauthenticityofdigitalmarketingmessagesalsoinfluencehowbrandsare
+perceived.Consumersareincreasinglyscepticalofoverlypromotionalorexaggeratedcontent,
+andsuchmessagingcansometimesleadtonegativereactions.Forthisreason,transparency
+and consistency have become essential components of effective digital communication.
+AccordingtoAaker(1996),trustandauthenticityarecentraltobuildingstrongbrandequity.
+Brandsthatcommunicatehonestlyandaligntheirmessagingwithactualconsumerexperiences
+aremorelikelytomaintainapositivereputationovertime.
+In addition, digital marketing analytics provides organisations with tools to monitor and
+managebrandperceptionmoreeffectively.Throughtechniquessuchassentimentanalysisand
+sociallistening,firmscantrackhowconsumersdiscussandevaluatetheirbrandsacrossdigital
+platforms.Theseinsightsmakeitpossibletoidentifyemergingissues,respondtoconcerns,
+andrefinemarketingstrategieswhennecessary.AsemphasizedbyDaveChaffey(2019),the
+abilitytointerpretreal-timedataiscriticalformaintainingbrandrelevanceindynamicdigital
+environments.
+Overall, brand perception in digital contexts is shaped by a combination of organisational
+communication, consumer interactions, and data-driven insights. The integration of digital
+marketingstrategieswithanalyticscapabilitiesenablesorganisationstobetterunderstandand
+influence how their brands are perceived. When managed effectively, these efforts can
+strengthenbrandimage,buildtrust,andsupportlong-termrelationshipswithconsumers.
+Conceptual Framework and Hypothesis Development
+The conceptual framework presented in Figure 1 illustrates the hypothesised relationships
+between the study variables. Digital marketing strategies are positioned as the independent
+variable,influencingtwokeydependentvariables:customersatisfactionandbrandperception.
+Theframeworkproposesthatdigitalmarketingstrategieshaveadirectandpositiveeffecton
+bothoutcomes,asreflectedinHypotheses1(H1)and2(H2).
+Figure 1: Conceptual Framework of the Study
+Source: Developed by the researcher
+Drawingfrompriorstudies,itisarguedthatdigitalmarketingstrategiesthatleverageconsumer
+data,personalisedcommunication,andinteractiveengagementsignificantlyenhanceconsumer
+experiencesandstrengthenbrandrelationships.
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 58
+Digital marketing strategies can positively influence customer satisfaction by providing
+consumers with relevant information, personalised promotions, and responsive
+communication.Whenmarketingmessagesaretailoredtoindividualpreferences,consumers
+aremorelikelytoperceivethebrandasattentiveandcustomer-oriented.Techniquessuchas
+personalisedrecommendations,targetedadvertising,andinteractiveengagementcontributeto
+improving the overall consumer experience and increasing satisfaction with the brand.
+Furthermore, digital marketing analytics enables organisations to continuously monitor
+consumerbehaviourandrefinetheirstrategiestobettermeetconsumerexpectations.
+H1: Digital marketing strategies positively influence customer satisfaction.
+Inadditiontocustomersatisfaction,digitalmarketingstrategiesplayacriticalroleinshaping
+brand perception. Through consistent messaging, engaging content, and transparent
+communication, organisations can build strong brand identities and foster consumer trust.
+Digitalplatformsenablebrandstocommunicatetheirvalues,demonstrateproductquality,and
+respondpromptlytoconsumerfeedback,allofwhichcontributetothedevelopmentofpositive
+brandperceptions.Moreover,socialmediaengagementandelectronicword-of-mouthfurther
+amplify the impact of digital marketing strategies. Positive interactions with digital content
+canstrengthenbrandcredibilityandenhancetheoverallimageofthebrandinthemindsof
+consumers.
+H2: Digital marketing strategies positively influence brand perception.
+METHODOLOGY
+Research Design
+Thisstudyadoptsaquantitativeresearchdesigntoexaminetherelationshipbetweendigital
+marketingstrategies,customersatisfaction,andbrandperception.Quantitativeapproachesare
+commonly used in marketing and consumer behaviour research because they allow for the
+testingoftheoreticalrelationshipsandtheevaluationofhypothesesusingstatisticaltechniques
+(Hairetal.,2019;Malhotraetal.,2020).Inthiscontext,theapproachisparticularlyusefulas
+itenablesthecollectionofstandardiseddatafromarelativelylargenumberofrespondentsand
+supportsobjectiveanalysisofrelationshipsamongkeyconstructs.
+Across-sectionalsurveydesignwasemployed,withdatacollectedfromparticipantsatasingle
+point in time. A structured questionnaire was used to capture respondents’ perceptions of
+digital marketing strategies, their level of satisfaction with brands operating in digital
+environments, and their views on brand image and credibility. The survey method was
+considered appropriate because it allows for the efficient measurement of attitudes,
+perceptions, and behavioural tendencies across a diverse sample. By examining these
+relationships,thestudyseekstotesttheproposedhypothesesandprovideempiricalinsights
+intohowdigitalmarketingactivitiesshapeconsumerperceptionsindigitalcontexts.
+Population and Sampling
+Thetargetpopulationforthisstudycomprisesconsumerswhofrequentlyinteractwithbrands
+through digital platforms, including social media, online shopping websites, and digital
+advertising channels. These individuals are regularly exposed to various forms of digital
+marketing,makingthemsuitableforthestudy.
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 59
+Anon-probabilityconveniencesamplingtechniquewasusedtoselectrespondentswhowere
+readilyaccessibleandwillingtoparticipate.Althoughthisapproachlimitsfullgeneralisation,
+itiswidelyappliedinconsumerbehaviourresearchwhenthefocusisongeneralperceptions
+ratherthanspecificdemographicsegments(Etikanetal.,2016;Malhotraetal.,2020).
+Participants were recruited primarily through online platforms and social media networks,
+wherethequestionnairewasdistributedelectronically.Toensurerelevance,respondentswere
+requiredtohavepriorexperienceinteractingwithbrandsthroughdigitalchannels.
+The study targeted a sample size of 350 respondents. This figure was determined using the
+rule-of-thumbrecommendationformultipleregressionanalysis,whichsuggestsaminimum
+of 15–20 observations per independent variable (Hair et al., 2019). Given that the study
+examinedoneindependentvariablepredictingtwodependentvariables,asampleof350was
+considered adequate to ensure statistical power and reliability of the estimates. This is
+consistentwithrecommendationsforsurvey-basedconsumerresearch(Malhotraetal.,2020).
+Data Collection
+Dataforthisstudywerecollectedusinganonlinesurveyadministeredthroughastructured
+questionnaire. An online survey was chosen because it is cost-effective, allows rapid
+distributiontoageographicallydispersedaudience,andenablesrespondentstocompletethe
+questionnaire at their convenience, which often improves response quality (Malhotra et al.,
+2020;Evans&Mathur,2018).
+The questionnaire was divided into sections to capture respondents’ demographic details as
+wellastheirviewsondigitalmarketingstrategies,customersatisfaction,andbrandperception.
+Beforethemaindatacollection,theresearchinstrumentwasreviewedbytwosenioracademics
+in the Department of Business Management at Enugu State University of Science and
+Technologyforcontentvalidity.Thequestionnairewasthenpre-testedonapilotsampleof30
+consumerswhoregularlyinteractwithbrandsondigitalplatforms.Feedbackfromthepilot
+testwasusedtoimprovetheclarityandwordingofsomeitems.
+EthicalapprovalforthestudywasobtainedfromtheResearchEthicsCommitteeoftheFaculty
+of Management Sciences, Enugu State University of Science and Technology. Participants
+wereinformedaboutthepurposeofthestudyandwereassuredthattheirresponseswouldbe
+treated confidentially and used strictly for academic purposes. Participation was entirely
+voluntary,andrespondentshadtheoptiontodiscontinuethesurveyatanypoint.
+The questionnaire was distributed electronically via WhatsApp groups, Facebook, and
+InstagramusingGoogleForms.
+Measurement of Variables
+The constructs examined in this study were measured using multiple-item scales based on
+previous literature. All measurement items were assessed using a five-point Likert scale,
+rangingfrom1(stronglydisagree)to5(stronglyagree).Likertscalesarecommonlyusedin
+marketing research because they effectively capture respondents’ attitudes and perceptions
+(Malhotraetal.,2020).
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 60
+Digital Marketing Strategies
+Digitalmarketingstrategiesrepresenttheextenttowhichconsumersperceivebrandstoengage
+ineffectivedigitalmarketingactivities.Themeasurementscaleconsistedoffiveitems:
+1. Thebrandprovidespersonalisedadvertisementsthatmatchmyinterests.
+2. Thebrandactivelyengageswithconsumersonsocialmediaplatforms.
+3. Thebrandprovidesrelevantdigitalcontentandpromotions.
+4. Thebrandcommunicateseffectivelythroughdigitalchannels.
+5. Thebrandusesdigitalplatformstoenhancecustomerengagement.
+Customer Satisfaction
+Customer satisfaction refers to the degree to which consumers feel satisfied with their
+interactions and experiences with a brand in digital environments. The measurement scale
+includedfouritems:
+1. Iamsatisfiedwithmyoverallexperiencewiththebrandonline.
+2. Thebrandmeetsmyexpectationswheninteractingthroughdigitalplatforms.
+3. Iampleasedwiththeservicesprovidedbythebrandonline.
+4. Myexperienceswiththebrand’sdigitalplatformsaregenerallypositive.
+Brand Perception
+Brand perception refers to consumers’ overall impressions and beliefs about a brand’s
+credibility,reliability,andimage.Thescaleincludedfouritems:
+1. Ibelievethisbrandhasapositiveimage.
+2. Iconsiderthisbrandtobetrustworthy.
+3. Thisbrandappearsreliableandcredible.
+4. Ihaveafavourableperceptionofthisbrand.
+Data Analysis Techniques
+ThedatacollectedforthisstudywereanalysedusingIBMSPSSStatisticsVersion28.SPSS
+isawidelyadoptedsoftwarepackageforquantitativeresearchinthesocialsciencesandhas
+beenusedinsimilarmarketingstudies(e.g.,Hairetal.,2019;Malhotraetal.,2020).
+Theanalysiswascarriedoutinseveralstages.First,descriptivestatisticswerecomputedto
+summarisethedemographiccharacteristicsoftherespondentsandtoprovideanoverviewof
+the dataset. Measures such as frequencies, means, and standard deviations were used to
+describegeneralpatternsinrespondents’perceptionsofdigitalmarketingstrategies,customer
+satisfaction,andbrandperception.
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 61
+Second, reliability analysis was performed to assess the internal consistency of the
+measurement scales. Cronbach’s alpha coefficients were calculated for each construct to
+determinewhetherthesurveyitemsconsistentlymeasuredtheintendedvariables.Inlinewith
+common research standards, values above 0.70 were considered acceptable, indicating
+satisfactoryreliabilityofthescales.
+Third, correlation analysis was conducted to explore the relationships among the study
+variables. This step provided an initial understanding of the direction and strength of
+associationsbetweendigitalmarketingstrategies,customersatisfaction,andbrandperception
+beforeproceedingtomoreadvancedanalysis.
+Finally,multipleregressionanalysiswasusedtotesttheproposedhypotheses.Thistechnique
+enabledtheexaminationofwhetherdigitalmarketingstrategiessignificantlypredictcustomer
+satisfaction and brand perception, as well as the extent of their influence. Two separate
+regressionmodelswereestimated:thefirstassessedtheeffectofdigitalmarketingstrategies
+oncustomersatisfaction,whilethesecondexaminedtheireffectonbrandperception.
+Statistical significance was evaluated at the 0.05 level. The hypotheses were considered
+supportediftheregressionresultsindicatedpositiveandstatisticallysignificantrelationships
+betweentheindependentanddependentvariables.
+Reliability and Validity
+Thereliabilityandvalidityofthemeasurementinstrumentswerecarefullyconsideredtoensure
+thecredibilityofthestudy’sfindings.Reliabilityrelatestotheconsistencyofthemeasurement
+scale,whereasvalidityconcernswhethertheinstrumentaccuratelycapturestheconstructsitis
+intendedtomeasure.
+Inthisstudy,reliabilitywasevaluatedusingCronbach’salphacoefficientsforeachconstruct.
+Valuesof0.70orhigherwereregardedasacceptableindicatorsofinternalconsistency(Hair
+etal.,2019;Nunnally&Bernstein,1994).
+Tosupportconstructvalidity,themeasurementitemswereadaptedfrompreviouslyvalidated
+instruments used in established marketing and consumer behaviour studies (Malhotra et al.,
+2020).Minoradjustmentsweremadetoensurethattheitemsreflectedthecontextofdigital
+marketingwithoutalteringtheiroriginalmeaning.
+Furthermore,thequestionnairewasreviewedbytwosenioracademicsintheDepartmentof
+Business Management at Enugu State University of Science and Technology before
+distribution.Thisreviewhelpedimprovetheclarity,relevance,andoverallcoherenceofthe
+items.
+RESULTS
+Respondent Demographics
+Thissectionpresentsthedemographiccharacteristicsoftherespondentswhoparticipatedin
+the survey. Understanding demographic characteristics provides insight into the sample
+compositionandhelpscontextualizethefindingsofthestudy.
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 62
+Atotalof350validresponseswerecollectedfortheanalysis.Therespondentsconsistedof
+individualswhoregularlyinteractwithbrandsthroughdigitalplatformssuchassocialmedia,
+e-commerce websites, and online advertising channels. The demographic profile of the
+respondentsispresentedinTable1.
+Table 1: Demographic Profile of Respondents
+Variable Category Frequency Percentage
+Gender Male 186 53.1%
+Female 164 46.9%
+Age 18–25 102 29.1%
+26–35 148 42.3%
+36–45 67 19.1%
+46+ 33 9.5%
+Education Diploma 85 24.3%
+Bachelor’sDegree 178 50.9%
+Master’sDegree 71 20.3%
+Other 16 4.5%
+Source: Field Survey (2025)
+The demographic results indicate that a majority of respondents fall within the 26–35 age
+group,suggestingthatyoungandmiddle-agedadultsformasignificantportionofconsumers
+interacting with brands through digital platforms. Additionally, more than half of the
+respondentspossessabachelor’sdegree,indicatingarelativelyeducatedsample.
+Descriptive Statistics
+Descriptivestatisticswerecalculatedtoexaminethecentraltendenciesandvariabilityofthe
+study variables. The results provide an overview of respondents’ perceptions of digital
+marketingstrategies,customersatisfaction,andbrandperception.Thedescriptivestatisticsare
+presentedinTable2.
+Table 2: Descriptive Statistics
+Variable Mean Standard Deviation
+DigitalMarketingStrategies 3.89 0.71
+CustomerSatisfaction 3.76 0.68
+BrandPerception 3.81 0.73
+Source: Field Survey (2025)
+Theresultsindicatethatrespondentsgenerallyholdpositiveperceptionsofdigitalmarketing
+strategies,customersatisfaction,andbrandperception,asthemeanvaluesforallvariablesare
+abovethemidpointofthescale(3.0).Thissuggeststhatdigitalmarketingeffortsbybrandsare
+generallyviewedfavourablybyconsumers.
+Reliability Analysis
+Reliabilityanalysiswasconductedtoassesstheinternalconsistencyofthemeasurementscales
+usedinthestudy.Cronbach’salphacoefficientswerecalculatedforeachconstruct.Theresults
+arepresentedinTable3.
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 63
+Table 3: Reliability Analysis
+Variable Number of Items Cronbach’s Alpha
+DigitalMarketingStrategies 5 0.88
+CustomerSatisfaction 4 0.86
+BrandPerception 4 0.84
+Source: Field Survey (2025)
+The Cronbach’s alpha values for all constructs exceed the commonly accepted threshold of
+0.70,indicatingsatisfactoryinternalconsistency.Theseresultssuggestthatthemeasurement
+itemsreliablycapturetheconstructsofdigitalmarketingstrategies,customersatisfaction,and
+brandperception.
+Correlation Analysis
+Pearson correlation analysis was conducted to examine the relationships among the study
+variablesbeforeconductingregressionanalysis.TheresultsarepresentedinTable4.
+Table 4: Correlation Matrix
+Variable DM CS BP
+DigitalMarketingStrategies(DM) 1 - -
+CustomerSatisfaction(CS) 0.61** 1 -
+BrandPerception(BP) 0.57** 0.64** 1
+Note: p < 0.01
+The results show that digital marketing strategies are positively and significantly correlated
+with both customer satisfaction and brand perception. This suggests that effective digital
+marketing activities are associated with higher levels of consumer satisfaction and more
+favourablebrandperceptions.
+Regression Analysis
+Regression analysis was conducted to test the study hypotheses and examine the impact of
+digitalmarketingstrategiesoncustomersatisfactionandbrandperception.
+Model 1: Digital Marketing Strategies and Customer Satisfaction
+The first regression model examines whether digital marketing strategies significantly
+influencecustomersatisfaction.TheresultsarepresentedinTable5.
+Table 5: Regression Results for Customer Satisfaction
+Variable Beta t-value Sig
+DigitalMarketingStrategies 0.61 12.43 0.000
+Model Summary
+Model Statistics Value
+R² 0.37
+AdjustedR² 0.36
+F-value 154.42
+Significance 0.000
+Source: Field Survey (2025)
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 64
+The results indicate that digital marketing strategies have asignificant positive effect on
+customer satisfaction(β=0.61,p<0.001).Themodelexplainsapproximately 37% of the
+varianceincustomersatisfaction.
+Therefore, Hypothesis 1 (H1) is supported, indicating that effective digital marketing
+strategiesenhancecustomersatisfaction.
+Model 2: Digital Marketing Strategies and Brand Perception
+Thesecondregressionmodelexaminestheinfluenceofdigitalmarketingstrategiesonbrand
+perception.TheresultsarepresentedinTable6.
+Table 6: Regression Results for Brand Perception
+Variable Beta t-value Sig
+DigitalMarketingStrategies 0.57 11.18 0.000
+Model Summary
+Model Statistics Value
+R² 0.33
+AdjustedR² 0.32
+F-value 125.01
+Significance 0.000
+Source: Field Survey (2025)
+The regression results show that digital marketing strategies significantly and positively
+influencebrandperception(β=0.57,p<0.001).Themodelexplainsapproximately33%of
+thevarianceinbrandperception.
+Thus, Hypothesis 2 (H2) is supported,indicatingthatdigitalmarketingstrategiesimprove
+consumers’perceptionsofbrandcredibility,image,andtrustworthiness.
+Summary of Hypothesis Testing
+Overall,theresultsdemonstratethatdigitalmarketingstrategiessignificantlyinfluenceboth
+customer satisfaction and brand perception. These findings highlight the importance of
+effectivedigitalmarketingactivitiesinshapingconsumerexperiencesandstrengtheningbrand
+relationshipsinonlineenvironments.
+DISCUSSION
+The aim of this study was to examine how digital marketing strategies influence customer
+satisfaction and brand perception in digital environments. As organisations increasingly
+operate within online ecosystems, understanding the impact of digital communication on
+consumeroutcomeshasbecomemoreimportantthanever.Theresultsoftheanalysisindicate
+that digital marketing strategies have a statistically significant and positive effect on both
+customersatisfactionandbrandperception,therebysupportingtheproposedhypotheses.
+Digital Marketing Strategies and Customer Satisfaction
+The findings show that digital marketing strategies are positively associated with customer
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 65
+satisfaction. The regression results suggest that variations in digital marketing efforts help
+explain meaningful differences in how consumers evaluate their overall experiences with a
+brand.Inotherwords,whenconsumersperceivedigitalmarketingactivitiesasrelevantand
+well-executed,theytendtoreporthigherlevelsofsatisfaction.
+One possible explanation for this relationship lies in personalisation. Contemporary digital
+marketing increasingly relies on consumer data to deliver targeted advertisements, tailored
+recommendations, and customised messages. When marketing communication reflects
+individualinterestsandpreferences,itismorelikelytofeelusefulratherthanintrusive.This
+sense of relevance can contribute to more positive consumer experiences and, ultimately,
+greatersatisfaction.
+Engagement is another important factor. Digital platforms such as social media pages,
+websites,andmobileapplicationscreateopportunitiesfortwo-waycommunicationbetween
+organisations and consumers. Through comments, direct messages, and online support
+systems,companiescanrespondquicklytoinquiriesandconcerns.Whenconsumersfeelheard
+andsupported,theiroverallevaluationofthebrandimproves.Thisinteractivedimensionof
+digitalmarketingthereforeplaysameaningfulroleinshapingsatisfaction.
+The findings are consistent with prior research in marketing literature, which highlights the
+importance of responsiveness, personalisation, and interactive communication in enhancing
+onlinecustomerexperiences.Digitaltoolsmakeiteasierfororganisationstomonitorconsumer
+feedback and adjust their strategies accordingly, which further strengthens satisfaction
+outcomes.
+Additionally,well-designeddigitalplatformscontributetosmootheruserexperiences.Clear
+navigation,accurateinformation,andaccessiblecontentreducefrustrationandhelpconsumers
+accomplishtheirgoalsefficiently.Whendigitalinteractionsareseamless,consumersaremore
+likely to associate the brand with convenience and reliability. Taken together, these factors
+suggestthatdigitalmarketingstrategiesextendbeyondpromotionandfunctionasanimportant
+componentofoverallservicequalityinonlineenvironments.
+Digital Marketing Strategies and Brand Perception
+The results also demonstrate a significant positive relationship between digital marketing
+strategiesandbrandperception.Consumerswhoviewabrand’sdigitalpresenceasconsistent,
+engaging,andcredibletendtodevelopmorefavourableimpressionsofthebrandoverall.
+Akeyfactorcontributingtothisoutcomeisconsistencyincommunication.Digitalmarketing
+typicallyinvolvesmultipleplatforms,includingsocialmedia,websites,andemailchannels.
+When organisations maintain a unified message and visual identity across these channels,
+consumersaremorelikelytoformaclearandstableunderstandingofthebrand.Consistency
+reinforcesrecognitionandhelpsstrengthenpositiveassociationsovertime.
+Authenticityandtransparencyalsoplayanimportantrole.Indigitalenvironments,consumers
+areexposedtoextensivepromotionalcontentandoftencomparealternativeseasily.Asaresult,
+brandsthatcommunicatehonestlyandprovidemeaningfulinformationaremorelikelytogain
+trust. When digital marketing messages appear genuine and aligned with actual consumer
+experiences,brandcredibilityisstrengthened.
+Socialmediaengagementfurthercontributestobrandperception.Theseplatformsallowdirect
+interactionbetweenbrandsandconsumers,creatingopportunitiesfordialogueratherthanone-
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 66
+waycommunication.Positiveexchanges,timelyresponses,andconstructiveengagementcan
+enhancepublicimpressionsofthebrand.Inaddition,user-generatedcontentsuchasreviews
+and recommendations can amplify brand messages and influence how other consumers
+perceivetheorganisation.
+The findings align with existing research in brand management, which emphasizes that
+consistentdigitalengagementandmeaningfulinteractioncontributetostrongerbrandidentity
+andreputation.Digitalmarketingstrategiesenableorganisationstocommunicatebrandvalues
+clearly,demonstratereliability,andfosteremotionalconnectionswithconsumers.
+Moreover,theuseofdigitalanalyticsenhancestheabilityoforganisationstomonitorbrand-
+relateddiscussionsinrealtime.Byobservingconsumersentimentandengagementpatterns,
+firmscanrespondpromptlytopotentialissuesandrefinetheircommunicationstrategies.This
+proactive approach supports more effective brand management in dynamic digital
+environments.
+Overall,theresultsindicatethatdigitalmarketingstrategiesarenotmerelypromotionaltools
+butstrategicmechanismsthatshapeconsumersatisfactionandbrandperception.organisations
+thatadoptthoughtful,consistent,anddata-informeddigitalpracticesarebetterpositionedto
+buildtrust,enhancecredibility,andmaintainstrongbrandimagesincompetitivemarkets.
+Theoretical Implications
+The findings of this study make several contributions to the existing literature on digital
+marketing and consumer behaviour. First, the results provide empirical support for the
+relationshipbetweendigitalmarketingstrategiesandkeyconsumeroutcomes.Althoughprior
+researchhasexamineddifferentdimensionsofdigitalmarketing,fewerstudieshaveexamined
+its simultaneous impact on both customer satisfaction and brand perception within a single
+integratedmodel.Byanalysingtheserelationshipstogether,thisstudyoffersamoreholistic
+understandingofhowdigitalmarketingstrategiesshapeconsumerresponses.
+Second,thestudyunderscoresthegrowingrelevanceofmarketinganalyticsincontemporary
+marketingtheory.Theabilitytocollect,interpret,andapplyconsumerdatareflectsabroader
+shift toward evidence-based decision-making in marketing practice. The findings support
+theoreticalperspectivesthatemphasisetheimportanceofdata-drivenstrategiesinenhancing
+personalisation,improvingengagement,andstrengtheningoverallmarketingeffectiveness.
+Finally, the results reinforce the idea that consumer perceptions are increasingly shaped by
+digital interactions. As consumers engage more frequently with brands through online
+platforms,digitalcommunicationbecomesacentralfactorinformingattitudesandevaluations.
+Thissuggeststhattraditionalconsumerbehaviourtheoriesshouldcontinuetoevolvetoreflect
+theinfluenceofinteractivetechnologies,onlineengagement,andreal-timecommunicationin
+shapingmodernconsumerexperiences.
+Managerial Implications
+Theresultsofthisstudyalsocarryimportantpracticalimplicationsformarketingmanagers
+andorganisationsoperatingindigitalenvironments.
+First,organisationsshouldplacegreateremphasisonpersonalisationintheirdigitalmarketing
+efforts. By using consumer data responsibly to tailor messages and recommendations,
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 67
+companiescandelivermorerelevantcontentthatresonateswithindividualpreferences.Such
+relevancecanenhanceengagementandcontributetohigherlevelsofcustomersatisfaction.
+Second,firmsshouldactivelyencouragemeaningfuldigitalinteraction.Engagementthrough
+social media platforms, online communities, and digital customer support channels helps
+strengthen relationships with consumers. Timely responses and open communication can
+improvetrustandpositivelyinfluencebrandperception.
+Third, consistency across digital platforms is essential. Maintaining alignment in visual
+identity,tone,andmessaginghelpsreinforcebrandrecognitionandcredibility.Inconsistencies,
+ontheotherhand,mayweakenconsumerconfidenceorcreateconfusionaboutbrandvalues.
+Finally, organisations should make effective use of marketing analytics tools to monitor
+consumerbehaviourandsentimentinrealtime.Byanalysingengagementdataandfeedback,
+managerscanidentifyareasforimprovement,adjuststrategieswhennecessary,andrespond
+quicklytoemergingconcerns.Thisproactiveapproachcanenhancebothcustomersatisfaction
+andoverallbrandperception.
+SUMMARY OF FINDINGS
+Thefindingsofthisstudyindicatethatdigitalmarketingstrategieshaveasignificantpositive
+influence on both customer satisfaction and brand perception. The results highlight the
+importance of data-driven decision-making, personalised communication, and interactive
+engagementinshapingfavourableconsumerexperiences.
+Asdigitalplatformscontinuetoexpandandevolve,organisationsthatstrategicallyintegrate
+analytics with thoughtful communication practices are more likely to strengthen customer
+relationships and build positive brand images. The study therefore demonstrates that digital
+marketing is not merely a promotional tool, but a strategic approach that contributes to
+improvedconsumeroutcomesincontemporarydigitalenvironments.
+REFERENCES
+Aaker,D.A.(1996).Buildingstrongbrands.FreePress.
+Aaker,D.A.(2009).Managingbrandequity.JournalofBrandManagement,17(3),193–198.
+Ajzen, I. (1991). The theory of planned behavior. Organisational Behavior and Human
+DecisionProcesses,50(2),179–211.https://doi.org/10.1016/0749-5978(91)90020-T
+Berry, L. L. (2002). Relationship marketing of services: Perspectives from 1983 and 2000.
+Journal of Relationship Marketing, 1(1), 59–77.
+https://doi.org/10.1300/J366v01n01_05
+Chaffey,D.,&Ellis-Chadwick,F.(2019).Digitalmarketing(7thed.).Pearson.
+Constantinides,E.(2004).Influencingtheonlineconsumer’sbehavior:TheWebexperience.
+InternetResearch,14(2),111–126.https://doi.org/10.1108/10662240410530835
+Etikan,I.,Musa,S.A.,&Alkassim,R.S.(2016).Comparisonofconveniencesamplingand
+purposivesampling.AmericanJournalofTheoreticalandAppliedStatistics,5(1),1–4.
+https://doi.org/10.11648/j.ajtas.20160501.11
+Evans,J.R.,&Mathur,A.(2018).Thevalueofonlinesurveys:Alookbackandalookahead.
+InternetResearch,28(4),854–887.https://doi.org/10.1108/IntR-03-2018-0089
+
+BritishJournalofManagementandMarketingStudies
+ISSN2689-5072 • Volume9,Issue3,2026 • pp.51–68
+https://doi.org/10.52589/BJMMS-LZKQLIOA 68
+Fournier,S.(1998).Consumersandtheirbrands:Developingrelationshiptheoryinconsumer
+research. Journal of Consumer Research, 24(4), 343–373.
+https://doi.org/10.1086/209515
+Grönroos,C.(2007).Servicemanagementandmarketing:Customermanagementinservice
+competition(3rded.).Wiley.
+Hair,J.F.,Black,W.C.,Babin,B.J.,&Anderson,R.E.(2019).Multivariatedataanalysis
+(8thed.).Cengage.
+Kaplan, A. M., & Haenlein, M. (2010). Users of the world, unite! The challenges and
+opportunities of social media. Business Horizons, 53(1), 59–68.
+https://doi.org/10.1016/j.bushor.2009.09.003
+Keller,K.L.(1993).Conceptualizing,measuring,andmanagingcustomer-basedbrandequity.
+JournalofMarketing,57(1),1–22.https://doi.org/10.1177/002224299305700101
+Keller,K.L.(2013).Strategicbrandmanagement:Building,measuring,andmanagingbrand
+equity(4thed.).Pearson.
+Kotler, P., Kartajaya, H., & Setiawan, I. (2017). Marketing 4.0: Moving from traditional to
+digital.Wiley.
+Kotler,P.,&Keller,K.L.(2016).Marketingmanagement(15thed.).Pearson.
+Kumar,V.,&Reinartz,W.(2016).Creatingenduringcustomervalue.JournalofMarketing,
+80(6),36–68.https://doi.org/10.1509/jm.15.0414
+Kumar, V., Rajan, B., Venkatesan, R., & Lecinski, J. (2021). Understanding the role of
+artificialintelligenceinpersonalisedengagementmarketing.CaliforniaManagement
+Review,63(4),135–155.
+Malhotra,N.K.,Nunan,D.,&Birks,D.F.(2020).Marketingresearch:Appliedinsight(6th
+ed.).Pearson.
+Mangold, W. G., & Faulds, D. J. (2009). Social media: The new hybrid element of the
+promotion mix. Business Horizons, 52(4), 357–365.
+https://doi.org/10.1016/j.bushor.2009.03.002
+Mikalef,P.,Krogstie,J.,Pappas,I.O.,&Pavlou,P.(2020).Exploringtherelationshipbetween
+big data analytics capability and competitive performance: The mediating roles of
+dynamic and operational capabilities. Information & Management, 57(2), 103169.
+https://doi.org/10.1016/j.im.2019.05.004
+Nunnally,J.C.,&Bernstein,I.H.(1994).Psychometrictheory(3rded.).McGraw-Hill.
+Zeithaml,V.A.(1988).Consumerperceptionsofprice,quality,andvalue:Ameans-endmodel
+and synthesis of evidence. Journal of Marketing, 52(3), 2–22.
+https://doi.org/10.1177/002224298805200302
+Zeithaml, V. A., Bitner, M. J., & Gremler, D. D. (2018). Services marketing: Integrating
+customerfocusacrossthefirm(7thed.).McGraw-Hill.

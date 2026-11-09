@@ -1,0 +1,799 @@
+---
+title: Quantifying Data-Driven Campaigning Across Sponsors and Platforms
+url: https://doi.org/10.17645/mac.8577
+category: privacy-data
+subcategory: measurement
+date: 2024-10
+venue: Media and Communication
+authors:
+- Michael M. Franz
+- Meiqing Zhang
+- Travis N. Ridout
+source: openalex-oa
+pdf_url: https://www.cogitatiopress.com/mediaandcommunication/article/download/8577/4022
+pages: 19
+chars: 49743
+fetched_at: '2026-11-08T17:32:30+00:00'
+kb_version: 1
+---
+
+# Quantifying Data-Driven Campaigning Across Sponsors and Platforms
+
+Media and Communication
+2024 • Volume 12 • Article 8577
+https://doi.org/10.17645/mac.8577
+A R T I C L E Open Access Journal
+QuantifyingData‐DrivenCampaigningAcrossSponsors
+andPlatforms
+Michael M. Franz 1
+ , Meiqing Zhang 2
+ , T ravis N. Ridout3
+ , Pavel Oleinikov 2,4
+ ,
+Jielu Y ao5
+ , Furkan Cakmak 6
+ , and Erika Franklin Fowler 7
+1DepartmentofGovernmentandLegalStudies,BowdoinCollege,USA
+2WesleyanMediaProject,WesleyanUniversity,USA
+3SchoolofPolitics,Philosophy,andPublicAffairs,WashingtonStateUniversity,USA
+4QuantitativeAnalysisCenter,WesleyanUniversity,USA
+5EastAsianInstitute,NationalUniversityofSingapore,Singapore
+6WesleyanMediaProject,WesleyanUniversity,USA
+7DepartmentofGovernment,WesleyanUniversity,USA
+Correspondence:TravisN.Ridout(tnridout@wsu.edu)
+Submitted:30April2024 Accepted:3September2024 Published:31October2024
+Issue:Thisarticleispartoftheissue”Data‐DrivenCampaigninginaComparativeContext:Towarda4thEraof
+PoliticalCommunication?”editedbyKatharineDommett(UniversityofSheffield),RachelGibson(Universityof
+Manchester),SanneKruikemeier(WageningenUniversity&Research),SophieLecheler(UniversityofVienna),
+EsmeraldaBon(UniversityofManchester),andStephanieLuke(UniversityofSheffield),fullyopenaccessat
+https://doi.org/10.17645/mac.i457
+Abstract
+Although modern data‐driven campaigning (DDC) is not entirely new, scholars have typically relied on
+reportsandinterviewsofpractitionerstounderstanditsuse.However,theadventofpublicadlibrariesfrom
+MetaandGoogleprovidesanopportunitytomeasurethescopeandvariationinDDCpracticeinadvertising
+across different types of sponsors and within sponsors across platforms. Using textual and audiovisual
+processing,wecreateadatabaseofadsfromthe2022USelections.Thesedataallowustocreateanindex
+thatquantifiestheextentofDDCatthelevelofthesponsorandplatform.Thisindextakesintoaccount
+boththenumberofuniquecreativesplacedandthesimilarityacrossthosecreatives.Inaddition,weexplore
+the impact of sponsor resources, the office being sought, and the competitiveness of the race on the
+measureofDDCsophistication.Ultimately,ourresearchestablishesameasurementstrategyforDDCthat
+can be applied across ad sponsors, campaigns, parties, and even countries. Understanding the extent of
+DDCisvitalforpolicydiscussionssurroundingtheregulationofmicrotargetinganddataprivacy.
+Keywords
+data‐drivencampaigning;digitalcampaigning;electioncampaigns;politicaladvertising
+©2024bytheauthor(s),licensedunderaCreativeCommonsAttribution4.0InternationalLicense(CCBY). 1
+
+1. Introduction
+Fordecades,campaignshaveuseddatatomakedecisionsabouteffectivecampaignpractices,thoughthe
+sophistication in data use has ramped up considerably in recent years. So while data‐driven campaigning
+(DDC)isnotnew,academicstudiesofthephenomenonhavetypicallyreliedonreportsandinterviewswith
+practitionersinordertounderstandhowitispracticed.ExamplesofthisincludeAnstead’s(2017)studyofthe
+2015generalelectioncampaignintheUK,Kreiss’s(2016)workontheuseoftechnologyincampaignsinthe
+US,andKefford’s(2021)bookonsuchpracticesinAustralia.Asaresult,scholarsarestartingtogetapicture
+ofhowDDCispracticed,butthepictureisanincompleteone.MostreportsonDDCpracticescenteron
+themostprominentelectionsineachcountry,ignoringregionalandlocalcampaigns,andmoststudiesfocus
+onasinglecountry(thefive‐countrystudybyDommett,Kefford,andKruschinski[2024]isoneexception).
+Clearly,moreresearchisneededtoconsidervariationinDDCpracticeacrosscountries,parties,candidates,
+andoffices,butgiventhatmostresearchonthepracticeofDDCreliesonin‐depthinterviewsorparticipant
+observation,itmaytakealongtimeforsuchworktoemerge.
+WhatweproposeattemptstorapidlywidenthescopeofcontextsinwhichDDCisstudied,relyingonthe
+MetaandGoogleadlibrariestocreatequantitativemeasuresofDDC.Specifically,wefocusontwomeasures—
+thenumberofuniquecreativesthatwereplacedineachraceandthesimilarityoftheadcontent—tocreate
+anoverallindicatoroftheextenttowhichcampaignsengageinDDC.Wetakeadvantageofsuchdatafrom
+the2022USelectionsgiventheheavyspendingonadvertisingintheUS,thehighprofessionalizationof
+campaignsintheUS(Farrelletal.,2001;Maarek,2011),andthelargenumberofcampaignsoccurringatthe
+sametime.Thatsaid,ourapproachcouldbeusedforanynumberofracesinthelargenumberofcountries
+forwhichMetaandGoogledataareavailable.
+Wefirstestablishwidevariationinoursophisticationmeasureacrosscampaigns,andscoresthatmakesense
+givenwhatweknowaboutthosecampaigns.WealsoshowthattheDDCsophisticationmeasureishigherin
+SenateracesthaninHouseracesandhigherinmorecompetitiveraces.Moreover,DemocraticPartyaffiliation
+predictsgreaterDDCsophisticationforMetaads,andhighercampaignresourcesareassociatedwithgreater
+DDCinGoogledata.
+2. Defining DDC
+DefinitionsofDDCandrelatedconceptsarenotalwaysspelledoutdirectlyinresearchinthearea,butthey
+tendtotaketwoapproaches.ThefirstfocusesonspecificpracticesthatarethoughttobeindicativeofDDC,
+suchastargetingandtesting.Baldwin‐Philippi(2017,p.628)writes:
+Data‐drivencampaigninginvolvestwomainfeatures:targeting,ordecidingwhichmessagesgotowhat
+potentialvotersatwhattimeduringthecampaign,andtesting,orempiricallymeasuringhowwell
+messagesperformagainstoneanotherandusingthatinformationtodrivecontentproductionand
+furthertargeting.
+Dommett,Barclay,andGibson(2024),bycontrast,offeradefinitionthatfocusesonwhether“dataisusedto
+informdecision‐making”regarding“votercommunication,resourcegenerationand/orinternalorganization”
+(p.2).Theymakethereasonableargumentthatfocusingonspecificpracticesdoesnotguaranteethatdata
+Media and Communication•2024•Volume12 •Article8577 2
+
+wereusedincampaigndecision‐making.Onecouldtargetmessages,forinstance,basedon“ruleofthumb”
+orbasedon“whatwe’vealwaysdone”asopposedtoutilizingdatainthedecisionofhowtotarget.
+InspiteofthisdrawbacknotedbyDommett,Barclay,andGibson(2024),wetaketheBaldwin‐Philippi(2017)
+approach,focusingononeparticularinstantiationofDDC:thetailoringofadmessages.Admittedly,whileour
+approachgivesupsomethingintermsofunderstandingexactlyhowthedataareused,ithastheadvantage
+ofallowinganexaminationofDDCinmultiplecampaigncontexts.
+3. Studying DDC
+There are multiple ways to study the practice of DDC, with each having advantages and disadvantages.
+The most common approach is interviews with campaign strategists and practitioners. Kreiss (2016), for
+example, conducted interviews with more than 50 staffers who had worked on digital technology in
+DemocraticandRepublicancampaignsintheUS.Kefford(2021)wasevenmoreambitiousinhisstudyof
+how parties in Australia use campaign technologies, conducting over 150 interviews with both campaign
+managersandvolunteersthatstretchedoverseveralyears.Anstead’s(2017)researchonDDCinthe2015
+generalelectionintheUKinvolved31interviewswithpoliticalpractitioners.Dobberetal.(2017)explored
+“politicalbehavioraltargeting”intheNetherlands,relyingonelevensemi‐structuredinterviewswithDutch
+campaignleadersinvolvedinthe2017nationalelections.AcoupleofstudiesofdatacampaigninginCanada
+also depended on interviews. For example, Montigny et al. (2019) looked at discourse surrounding the
+regulation of data‐driven practices in Quebec using 45 semi‐directed interviews. Munroe and Munroe
+(2018)tookanin‐depthlookathowdataareusedandperceivedinoneconstituencycampaigninBritish
+Columbiathroughadozeneliteinterviewswithcampaignmanagers,staff,andvolunteers.Mostambitiously,
+Dommett, Kefford, and Kruschinski (2024) drew on 329 interviews with campaign and party operatives,
+pollsters,anddatabrokersfortheirfive‐countrystudyofDDC.
+Sometimes,theseinterviewsaresupplementedbyparticipantobservation.Kefford(2021)workedforboth
+LaborandGreencampaignsinAustralia,andMunroeandMunroe(2018)reliedonparticipantobservationin
+additiontotheirinterviews.ObservationalandarchivaldatawerealsoreliedonintheDommett,Kefford,and
+Kruschinski(2024)study,andanotherstudyusedcountryexpertstomakecomparisonsacrosssixcountries
+(Keffordetal.,2023).
+Theadvantageofsuchapproachesistheabilitytogetanin‐depthunderstandingofhowcampaignsusedata
+toinformdecision‐making.Thedrawbackisthatinterviewsandparticipantobservationrequirealotoftime
+toaccomplish,makingitmoredifficulttocompareacrossmultipleraces,parties,typesofoffice,localities,
+orcountries.
+A couple of studies have leveraged more quantitative measures. For instance, Vliegenthart et al. (2024)
+conducted a 25‐country survey of people’s perceptions of DDC, finding that people assign a range of
+acceptability to various practices, but this study does not focus on how DDC is practiced. In addition,
+Beraldoetal.(2021)tracedFacebookpoliticaladtargetingpatternsintheDutch2021generalelectionsby
+enrollingparticipantsinauserauditprogramandcollectingthepoliticalpoststheywereexposedtothrough
+abrowserextension.Thismethodologypromisinglycombineddatafromsurveyedpoliticalattitudesandthe
+sameindividuals’onlinefeeds,buttheuserauditdeploymentiscostlyandtheinsightsthatcouldbedrawn
+arecontingentontheselectedsampleofusers.
+Media and Communication•2024•Volume12 •Article8577 3
+
+PerhapsthebestexampleoftheuseofquantitativemeasurestoexaminethepracticeofDDCisastudyby
+KruschinskiandBene(2022),whichexaminedparties’onlinepracticesinEuropeanUnionelectionsacross
+28countries.TheyusedseveralmeasuresofFacebookactivitybycountry,includingthemeannumberof
+“organic”postsbyparty,themeannumberofuniquesponsoredpostsbyparty,themeannumberofunique
+ads by party, and the number of duplicate versions of ads. They suggested that using many different
+versionsofpaidads“isanindicationfortheuseofmoresophisticateddigitalmarketingstrategies,likeusing
+differenttargetingoptionsonthesamemessageortestingthemessageswithdifferentaudiencesegments”
+(Kruschinski&Bene,p.61).Forinstance,theaveragenumberofcreativesisover6,800inGermanyandover
+1,000intheUKcomparedto19inIrelandandjust15inLatvia.Theinference,then,isthatDDCwasmuch
+moreadvancedinGermanyandtheUKthaninmostotherEuropeancountries.
+OurapproachissimilartothatofKruschinskiandBene(2022)inthatweutilizedataonpoliticaladvertising
+obtainedfromtheMetaandGoogleadlibrariestocreateaquantitativeindicatorofDDC:thetailoringof
+politicalads.Butourresearchdiffersaswell.First,wefocusnotjustonthenumberofadcreativesproduced
+butthesimilarityacrossthosecreativesaswell.Second,ourfocusgoesbeyondthecountrylevelandthe
+partyleveltoconsidertheuseofadtailoringbyspecificcampaigns.
+4. Variations in DDC
+Dommett,Kefford,andKruschinski(2024)proposedaframeworkforstudyingDDCthatrecognizesvariation
+acrossseverallevels,includingthesystemlevel,theregulatorylevel,andthepartylevel.System‐levelfactors
+includetheelectoralsystem,thesystemofgovernment(suchasunitaryvs.federal),thepartysystem(how
+manyparties),andthemediasystem.Regulatory‐levelfactorsincluderegulationsonparties,regulationson
+campaigns,dataandprivacyregulation,andregulationsonmedia.Party‐levelvariablesincludethefinancial
+resourcesoftheparty,theorganizationalstructureoftheparty,theparty’sideology,andeliteandgrass‐roots
+attitudestowardcampaigning.Whatislackinginthismodelisvariationacrosscampaigns,somethingthatis
+particularlypertinenttothestudyofDDCintheUSandothercountriesthathavecandidate‐centered,rather
+thanparty‐centered,campaigns.
+Inthisresearch,weasktwoquestions.First,howcanwequantifythelevelofsophisticationinDDCthrough
+onlineadvertisingdata?Second,whatfactorsexplainvariationinthesophisticationofDDC?
+Tothefirstpoint,weneedtobeclear.OurmeasureofDDCsophisticationisreallyameasureoftheextent
+towhichcampaignstailoradstocatertospecificaudiences,whichwebelieveisanimportantindicatorof
+whetheracampaign isutilizing practicesatthe most sophisticatedend ofDDC, suchas targetingadsat
+specificgroupsofvotersoradtesting.Indeed,tailoringadsbycreatingmanydifferentversionsofamessage
+seemspointlessiftheyarenotbeingtargeted.
+WhilewehopetomakeamethodologicalcontributioninadvancingameasureofDDCsophisticationthat
+caneasilybeappliedacrossmultiplecampaigns,wealsohopetomakeamoresubstantivecontributionby
+explainingvariationacrosscampaignsinthismeasure.Thisinvestigationwillalsohelpestablishthevalidityof
+ourmeasureifthosefactorsthatwetheorizepredictDDCsophistication,infact,dopredictthem.
+Media and Communication•2024•Volume12 •Article8577 4
+
+Thus, in trying to explain variation across campaigns, we consider several factors. The first is the office
+(whether House or Senate). Because Senate constituencies (entire states) are typically larger than House
+districts,theyrequiremoreresourcestoreachouttoalargernumberofvoters.Andtailoringadstospecific
+partsoftheelectoratebecomesmoreefficientwhenlargernumbersofpeoplefitthatdemographic.Assuch,
+wewouldexpecttoseemoretailoringofadsinlargerSenateconstituencies:
+H1:SenateracesshouldexhibithigherDDCsophisticationthanHouseraces.
+Thesecondfactorweconsideristhecandidate’sparty,whetherDemocraticorRepublican.AsKreiss(2016)
+hasdocumented,thepartiesdonotinvestequallyintheuseofdigitaltechnologies.Whilethistechnological
+advantagecanvaryovertime,mostaccountssuggestthatDemocratsaremoreadvancedintheuseofdigital
+campaigntechnologies(Baldwin‐Philippi,2015;Kreiss&Jasinski,2016):
+H2:DemocraticsponsorsshouldexhibithigherDDCsophisticationthanRepublicansponsors.
+Third,weconsiderthecompetitivenessofparticularraces,asmorecompetitiveracesmayraisethestakes
+anddrivecampaignstoengageinmoredata‐intensivepractices:
+H3:MorecompetitiveracesshouldexhibithigherDDCsophistication.
+Finally,weconsidertheresourcesavailabletoacampaign.Greaterfinancialresources,asDommett,Kefford,
+andKruschinski(2024)pointout,canprovideaccesstomoreknowledgeablestaffandcanhelppurchasedata
+andtechnology—bothkeyforeffectiveDDC:
+H4:Morewell‐financedracesshouldexhibithigherDDCsophistication.
+Wealsoconsiderthetypeofsponsor:acandidate,party,orinterestgroup.Wehavenostrongexpectationthat
+sponsorshipwillaffectDDCsophistication,butgiventhatgroupsandpartiesaregenerallyactiveinmultiple
+campaigns—andcandidatesareactiveinasingleone—webelieveitwisetocontrolforsponsorship.Finally,
+wealsocontrolforthead’smodeofcommunication,whetherimage,text,orvideosincethemodalitycan
+affectthenumberoffeaturesthatcouldbetailored.
+5. Data
+Wecollectedpoliticaladvertisingdataintext,image,andvideoformatsfromtheMetaAdlibraryandthe
+GoogleTransparencyReport.OuranalysisfocusesonelectionadsintheUSduringthegeneralelectionphase
+ofthe2022electioncycle,butourapproachtoquantifyingDDCisapplicabletoanycountryforwhichMeta
+andGooglepublishdigitaladvertisingdata.
+The ad libraries of Google and Meta make available the metadata of each ad placed on Google Search,
+GoogleDisplayNetwork,YouTube,Gmail,Facebook,andInstagram.Fortextads,theseincludethespending
+range, dates being run, advertiser or page names, impressions, demographic information of audiences
+reached, title, and text. However, obtaining the content of audiovisual ads required more processing.
+We downloaded political ads in raw images and videos and extracted creative content from the original
+Media and Communication•2024•Volume12 •Article8577 5
+
+media files. Specifically, we obtained transcripts of the audio from video advertising through the Google
+CloudSpeech‐to‐TextAPI( https://cloud.google.com/speech‐to‐text)anddetectedtextinimagesandvideos
+throughtheAmazonRekognitionservice( https://aws.amazon.com/rekognition).
+Coveringthe2022USelection,ourdatasetcaptureselectionadsthatranduringthegeneralelectionperiod.
+WithintheuniverseofpoliticaladsplacedonGoogleandMeta’splatformsduringthisperiod,wefocuson
+federalelectionactivity.Anadisidentifiedasafederalelectionadif(a)itmentionedorfeaturedatleastone
+federalcandidateorsittingsenatoror(b)itwassponsoredbyafederalcandidateornationalparty.
+6. Method
+Weconsidertwoindicatorsofadtailoring,apracticeoftenemployedinDDC.Thefirstisthenumberof
+uniquecreativesproducedbyacampaign,andthesecondisthelevelofcontentsimilarityacrossasponsor’s
+uniquecreatives.
+6.1. Unique Creatives
+A greater number of unique creatives implies that the campaign was more likely to be (a) tailoring
+advertisementstospecificaudiencesforpurposesoftargetingand/or(b)testingvariationsofadstoassess
+theireffectiveness.Thus,weexpectthenumberofuniquecreativestobepositivelyassociatedwithamore
+sophisticateduseofDDC.
+Wedefineauniquecreativeasauniquecombinationoftextualandaudiovisualelements.Auniquecreativeis
+differentfromotheruniquecreativesinatleastoneoftheavailablecreativeelementsweextractedfromads,
+includingcreativebody,title,linkcaption,creativedescription,audiotranscriptionfromvideos,overlaidtext
+toaudiovisualmedia,andothernon‐textualaudiovisualelements/imagery.Allformsoftextualinformation
+wereobtainedfromthepublicadlibrariesorextractedusingaudiovisualrecognitiontools,aswaspreviously
+described.WerepresentedtheuniqueaudiovisualinformationinimageandvideoadsusingtheSHA‐256
+checksumvalueofthemediafiles.Checksumisacryptographichashcodecomputedfromthebytesofafile
+thatservesasthe“fingerprint”ofthefile.Minimalvariationsinmediacontent,betheytextualoraudiovisual,
+wouldgeneratedifferentchecksumvalues.Therefore,iftwocreativessharethesamecreativebody,overlaid
+text,videotranscription,andothertextualelementsbutdifferinchecksumvalues,thatimpliestheyvaryin
+audiovisualelements.
+Wequantifyuniquecreativesbyconcatenatingvariablesrepresentingthetextualandaudiovisualelements
+listedaboveanddroppingtheexactduplicates.Thisresultsin153,952uniquecreativesoutof377,721ads
+onMeta’splatformsand28,683uniquecreativesoutof84,225adsonGoogle’splatforms.Wethencountthe
+numberofuniquecreativesofeachfederalraceandsponsor.
+6.2. T ext Similarity
+The second indicator of DDC that we consider is content similarity across a sponsor’s unique creatives.
+Weexpectthatasophisticateddata‐drivencampaignwouldvaryitsmessagesdependingontheaudience
+andthereforepresentgreatercreativevariations.Tocapturethisvariation,wecomputedpair‐wisesimilarity
+Media and Communication•2024•Volume12 •Article8577 6
+
+scoresbetweenallpairsofuniquecreativesatthesponsorlevelusingastate‐of‐the‐artsemantictextual
+similaritymeasure(Reimers&Gurevych,2019).Weconcatenatedtheidentifyingfields(creativebody,title,
+caption,videotranscription,opticalcharacterrecognitiontext,checksum,etc.)andencodedthemusinga
+pre‐trained sentence transformer model (Reimers & Gurevych, 2019). The pre‐trained model used is
+“all‐MiniLM‐L6‐v2” (https://www.sbert.net/index.html). The resulting corpus embeddings represent the
+creativecontentineachadinthevectorspacesandallowustocomputethetextualsimilarity,represented
+bycosinesimilarityscores,betweenanygivenpairsofcreatives.Uniquecreativesarerepresentedbythe
+embeddings of all the textual fields and checksum values described earlier. Each sponsor should have
+𝑁 choose 2 pairs of unique creatives. The similarity score is the cosine similarity between the vectors
+representingapairofuniquecreativesandhasarangeof[0,1].Ascoreof0indicatestheleastsimilar,and1
+themostsimilar.Apairofexactduplicatesshouldhaveasimilarityscoreof1.
+Becauseadsindifferentmediaformats(text,image,orvideo)canvarysignificantlyinmessagingandvisual
+effects,weaggregateduniquecreativesbybothsponsorandmediatypeandcalculatedaveragepairwise
+textualsimilarityscoresatthesponsorandmedialevel.
+Weexpectthataloweraveragetextualsimilarityscoreforasponsorimplieshighercreativevariationandthus
+moretailoringofmessages.Thatis,thecampaignmaybecreatinganadtoaddresstheconcernsofparentsof
+youngchildren,anotheraddirectedatvoterswhocareabouttheenvironment,andathirdadthatseeksthe
+votesofseniorcitizensonMedicare.Bycontrast,highersimilarityscoressuggestthatacampaign,perhaps
+fromlackingstaffresources,isreusingcontentinmultipleads.Thecaveathere,ofcourse,isthatacampaign
+thatisdoingalotofadtesting—whichonemightassociatewithDDC—mightproducemoreadsthatarehigh
+insimilarity.Ultimately,werelyonsomereal‐worldexamplesofcampaignsknownfortheiruseofDDCto
+validatetheinterpretationofsimilarityscores,whichweshowintheresultssection.
+6.3. Measure of DDC Sophistication
+Takingintoaccounttheinformationgivenbybothuniquecreativesandcontentsimilarity,weformulatean
+indextomeasurethesophisticationofacampaign’stailoringofmessages.Acampaignsponsor’ssophistication
+index 𝑆𝐼isgivenby:
+𝑆𝐼 = 𝑥 ′ × (1 − 𝑦𝑖, 𝑗)
+Here, 𝑥′representsthesponsor’snormalizednumberofuniquecreatives,rescaledtoavaluebetween0and1,
+and 𝑦𝑖, 𝑗 representstheaveragepairwisesimilaritybetweentheseuniquecreatives.Thenumberofunique
+creatives 𝑥arenormalizedusingmin‐maxnormalization,whichcanbeexpressedas:
+𝑥′ = 𝑥 −min(𝑋) max(𝑋) −min(𝑋)
+Here, 𝑥istheoriginalvalueofasponsor’snumberofuniquecreativesandmin (𝑋)andmax (𝑋)representthe
+minimumand maximum ofthe entiresample. Thenormalizedvalueof 𝑥,thatis 𝑥′,has a rangeof[0, 1].
+Sponsorswiththelowestnumberofuniquecreativeshaveavalueof0,andsponsorswiththelargestnumber
+ofuniquecreativeshaveavalueof1.
+Media and Communication•2024•Volume12 •Article8577 7
+
+Similarly, 𝑦𝑖, 𝑗 is the pairwise similarity between a sponsor’s unique creatives𝑖, 𝑗 for all possible pairs of
+uniquecreatives,and 𝑦𝑖, 𝑗 isthemeanof 𝑦𝑖, 𝑗.Becauseweexpectloweraveragesimilaritytoindicatemore
+sophistication,thesecondfactoroftheindexsubtracts 𝑦𝑖, 𝑗from1.( 1 − 𝑦𝑖, 𝑗)alsohasarangeof[0,1].
+Therefore,thesophisticationindex 𝑆𝐼alsohasarangeof[0,1].Thehigherthevalue,themoresophisticated
+thecampaign’stailoringofmessages—again,anindicatorofDDC.Wecalculatedthesophisticationindexfor
+eachrace,sponsor,andmediaformat.
+6.4. Office Being Sought and Race Competitiveness
+Afteridentifyingthecandidatesponsorsfordigitalads,wecreatedindicatorsofwhetherafederalcandidate
+campaignedforaHouseorSenateseatinthe2022generalelectionbasedonFederalElectionCommission
+(FEC)data.
+Furthermore,wemeasuredracecompetitivenessusingdatafromthefinalCookPoliticalReportpredictions
+(Wasserman,2022).Raceswereplacedonafour‐pointscalefromtheleasttothemostcompetitive(1 = safe
+Democratic/Republican, 2= Democratic/Republican favored, 3= lean Democratic/Republican, 4= too close
+to call).
+6.5. Type of Campaign Sponsor
+Ad sponsors included candidates’ campaigns, political parties (e.g., National Republican Congressional
+Committee, Iowa Democratic Party), and other political and business groups (e.g., super political action
+committees [PACs], nonprofit organizations). Using data from OpenSecrets (a non‐profit that tracks
+spendinginAmericanelections)andtheFEC,weattemptedtomatchadvertisingsponsorstoknownfederal
+spenders,creatingindicatorsforwhetherthespenderwasacampaign,party,orgroup.Thelattercategory
+includesgroupsweidentifywiththehelpofOpenSecretsandotherspenderswhoarenotcandidatesand
+notpartiesbutforwhomwehavenofurtherinformation,eitherintheFECdataorfromOpenSecrets.
+6.6. Party Affiliation
+Our indicators of whether an ad sponsor favored a Democratic or Republican candidate were optimized
+using a combination of FEC and OpenSecrets sourced data, manual coding, and sponsor‐level party
+classifiers.Forcandidatesponsors,weobtainedtheirpartyaffiliationfromtheFECdata.Forpartyandgroup
+sponsors, we manually coded their party affiliation based on the ad sponsor names (e.g., New Jersey
+DemocratsforUniversalHealthcare)anddisclaimers,cross‐checkedwithOpenSecretsdata.Weusedthe
+FEC‐providedandmanuallycodedpartyaffiliationforfederalspendersknowntotheFECandOpenSecrets.
+Fordigitaladssponsoredbyorganizationsforwhichwedonothavemanuallycodeddata,whichamountsto
+23% of the entities on Meta and 22% on Google, we relied on inferences from our sponsor‐level party
+classifiers. The classifiers took vectorized textual fields of ads (including sponsor and page names) as
+features and trained with a random forest model. Validated by our manually compiled and coded party
+affiliation,thepartyclassifiersachievedanoverallaccuracyof85.7%forsponsorsintheMetadatasetand
+82.1%forthoseintheGoogledataset.
+Media and Communication•2024•Volume12 •Article8577 8
+
+6.7. Campaign Resources
+We used sponsors’ political ad spending on television, obtained from the Wesleyan Media Project, as a
+measureofcampaignresources.Thenon‐partisanWesleyanMediaProjectprovidesinformationonpolitical
+ad spending in the US based on data from an ad‐tracking firm. Expenditures on traditional media, as
+opposed to digital ad spending, were used to avoid endogeneity since FEC reporting information would
+include resources used on digital advertising, and campaign finance reports are inconsistent in how they
+describeandreportspendingonadvertisingingeneral.Forthisreason,wedrawonmeasuresofspendingon
+televisionasaproxyfortheresourcesatanygivenadvertiser’sdisposalbyutilizingWesleyanMediaProject
+data from Kantar’s Campaign Media Analysis Group. The Campaign Media Analysis Group provides
+estimates at the ad‐level of the cost of each television ad airing based on market, station, daypart, and
+program information. We then merged information on total TV ad spending with our digital data.
+Becausenotallsponsorswhospentondigitalplatformsspentontelevision,welimitedouranalysistothe
+333sponsorsonMetaplatformsand368advertisersonGoogleplatformswhoalsospentonTVadvertising
+inthemodelthatincorporatedthisvariable.
+7. Results
+7.1. Descriptive Results
+Wecalculatedthenumberofuniquecreativesforeachsponsorusingthemethoddescribedintheprevious
+section.Thedistributionofthenumberofuniquecreativespersponsorisright‐skewedduetoalongtailof
+outside group sponsors who placed a very small number of unique creatives (see Figure 1a and 1c).
+Theaveragenumberofcreativespersponsorwas13onMetaand13onGoogle.However,severalsponsors
+hadseveralthousanduniquecreatives.LeadingsponsorsbythenumberofuniquecreativesonMetawere
+superPACsandSenatecandidates.SponsorswiththemostuniquecreativesonMetaincludeAmericansfor
+Prosperity Action (759 creatives), Colorado Senator Michael Bennet (758), the Congressional Leadership
+Fund (455), Georgia Senator Raphael Warnock (446), Ohio Senate candidate Tim Ryan (412), and House
+Majority PAC (388). Google sponsors with the most unique creatives were the Congressional Leadership
+Fund (720), the Democratic Congressional Campaign Committee (205), House Majority PAC (204),
+USHousecandidateMaryPeltola(190),andColoradoSenatorMichaelBennet(168).
+Wecalculatedtheaveragepairwisesimilarityatthesponsor‐medialevel.Theaveragepairwisesimilarityscore
+centersaround0.80forMetaand0.65forGoogle.ScoresforMetaareleft‐skewed,whilescoresforGoogle
+areapproximatelynormallydistributedacrossmuchofthesimilarityscaleexceptforaspiketowardsthemost
+similarend(seeFigure1band1d).Thisbucketmostlyconsistsofsponsorswhoplacedasmallnumberof
+highlysimilaruniquecreatives.
+Weexaminedsomereal‐worldexamplesofcampaignsknownfortheiruseofDDCtoevaluatethemeaningof
+theaveragetextsimilaritymeasure.Forexample,GeorgiaSenatorRaphaelWarnockiswidelyacknowledged
+tohaverunasophisticatedre‐electioncampaigninafocalracein2022,managedbyarisingpoliticalstrategist
+intheDemocraticParty,QuentinFulks.Hiscampaignraisedover$150million(Giorno,2022)andwonatight
+re‐electionrace.TheaveragepairwisesimilarityscoreofuniquecreativesinhisMetacampaignsislower
+(at0.70forvideoads,0.71forimageads)thanthesamplemedian(0.80forvideoads,0.80forimageads).
+Media and Communication•2024•Volume12 •Article8577 9
+
+1000
+800
+600
+Count
+400
+200
+0 20 40
+Number of unique crea/g2462ves
+60 80 100
+0
+500
+400
+300
+Count
+200
+100
+0.2 0.3 0.3 0.5 0.6
+Average pairwise similarity
+0.7 0.8 0.9 1.0
+0
+250
+200
+150
+Count
+100
+50
+0 20 40
+Number of unique crea/g2462ves
+60 80 100
+0
+80
+60
+40
+Count
+20
+0.0 0.2 0.4 0.6
+Average pairwise similarity
+0.8 1.0
+0
+a b
+c d
+Figure 1. Distribution of unique creatives and ad similarity on Meta and Google: The number of unique
+creatives at the sponsor level for Meta (a) and Google (c); and distribution of average pairwise similarity
+attherace–sponsor–medialevelforMeta(b)andGoogle(d).Note:Toillustratethedistributionofunique
+creativesonMeta(a)andGoogle(c),welimitedtherangeofthex‐axisto100duetotheright‐skewnessof
+thedistributions.
+600
+400Count Count
+200
+2000
+0
+1000
+0.0 0.2 0.4
+Pairwise text similarity distribu/g2462on (video): Raphael Warnock
+Pairwise text similarity distribu/g2462on (image): Raphael Warnock
+similarity score
+0.6 0.8 1.0
+0
+a
+60
+40
+Count Count
+20
+150
+0
+50
+100
+0.0 0.2 0.4
+Pairwise text similarity distribu/g2462on (video): Alexandria Ocasio-Cortez
+Pairwise text similarity distribu/g2462on (image): Alexandria Ocasio-Cortez
+similarity score
+0.6 0.8 1.0
+0
+b
+Figure 2. Distributionofpairwisecontentsimilarityoftwofederalcandidates’digitalcampaignsonMeta
+where(a)referstoSenatorRaphaelWarnockand(b)toRepresentativeAlexandriaOcasio‐Cortez.
+Media and Communication•2024•Volume12 •Article8577 10
+
+PairwisesimilarityofWarnockadshasaunimodaldistributionthatspreadswidelyacrossthesimilarityscale,
+indicatingabundantvariationinthosecreatives(Figure2a).
+AnotherpoliticianknownasasophisticateddigitalcampaignerisNewYork’s14thDistrictRepresentative
+AlexandriaOcasio‐Cortez(Freedlander,2021).HercampaignonMetadisplaysamultimodaldistributionof
+pairwisesimilarity(seeFigure2b).Althoughtheaveragesimilarityislowerthanthesamplemedian,thereexist
+clustersofhighlysimilarcreatives(near‐duplicates),representingminorvariationsaroundthesamemessages.
+Therefore,averagetextsimilarityaddsinformationbutisnotasufficientindicatorinitselfoftheuseoftailoring
+ads.Oursophisticationindextakesintoconsiderationboththenumberofuniquecreativesandaveragetext
+similarity,andthetopcampaignsinthisindexalignwithwell‐funded,sophisticated,orcreativecampaigns
+knownintherealworld(seeTables1and2).TheseincludecandidatesrunninginhighlycompetitiveUSSenate
+races,suchasMarkKellyinArizona,TimRyaninOhio,MandelaBarnesinWisconsin,andJohnFetterman
+inPennsylvania.Allofthesecandidateswereabletoraisemultiplemillionsofdollarsaswell.WhileSenate
+candidatesdominatethelists,manyHousecandidatesonthelistareoneswhoranincompetitiveraces,such
+asJeffJacksoninNorthCarolinaandJayChenandMikeGarcia,bothinCalifornia.
+T able 1.DDCsophisticationbycampaignonMeta(topcampaigns).
+Sponsor (race) Sophistication
+index
+Media type Unique
+creatives
+Average text
+similarity
+RaphaelWarnock(Senate–GA) 0.305 Image 273 0.695
+MichaelBennet(Senate–CO) 0.237 Image 239 0.729
+RaphaelWarnock(Senate–GA) 0.226 Video 152 0.591
+JeffJackson(NC–14thDistrict) 0.195 Image 166 0.679
+MarkKelly(Senate–AZ) 0.169 Image 123 0.622
+AdamSchiff(CA–30thDistrict) 0.166 Image 148 0.691
+TimRyan(Senate–OH) 0.165 Video 112 0.592
+JayChen(CA–45thDistrict) 0.143 Image 94 0.580
+MarcoRubio(Senate–FL) 0.135 Image 118 0.686
+MarkKelly(Senate–AZ) 0.133 Video 85 0.567
+JakeLaTurner(KS–2ndDistrict) 0.131 Image 68 0.462
+MichaelBennet(Senate–CO) 0.124 Video 113 0.697
+MandelaBarnes(Senate–WI) 0.123 Image 118 0.713
+EliseStefanik(NY–21stDistrict) 0.120 Image 106 0.687
+MikeGarcia(CA–27thDistrict) 0.115 Image 117 0.729
+JohnFetterman(Senate–PA) 0.112 Video 74 0.579
+KatiePorter(CA–47thDistrict) 0.112 Image 107 0.711
+KimSchrier(WA–8thDistrict) 0.108 Image 156 0.809
+CatherineCortez‐Masto(Senate–NV) 0.106 Image 84 0.650
+ChristianCastelli(NC–6thDistrict) 0.104 Image 84 0.657
+Media and Communication•2024•Volume12 •Article8577 11
+
+T able 2.DDCsophisticationbycampaignonGoogle(topcampaigns).
+Sponsor (race) Sophistication
+index
+Media type Unique
+creatives
+Average text
+similarity
+RaphaelWarnock(Senate–GA) 0.420 Video 98 0.397
+MaryPeltola(AK–1stDistrict) 0.387 Image 140 0.613
+MarkKelly(Senate–AZ) 0.359 Video 94 0.464
+KevinPorter(FL–11thDistrict) 0.294 Video 65 0.362
+MaggieHasan(Senate–NH) 0.209 Video 57 0.481
+MichaelBennet(Senate–CO) 0.208 Video 55 0.463
+CatherineCortezMasto(Senate–NV) 0.201 Video 54 0.472
+MarcoRubio(Senate–FL) 0.170 Text 41 0.409
+MaryPeltola(AK–1stDistrict) 0.158 Video 50 0.550
+MarkKelly(Senate–AZ) 0.155 Text 35 0.364
+CatherineCortezMasto(Senate–NV) 0.153 Text 32 0.315
+EliseStefanik(NY–21stDistrict) 0.146 Image 44 0.528
+MikeGarcia(CA–27thDistrict) 0.142 Text 30 0.318
+HerschelWalker(Senate–GA) 0.138 Text 49 0.594
+MarkRobertson(NV–1stDistrict) 0.135 Image 62 0.693
+JoshHarder(CA–9thDistrict) 0.134 Video 39 0.511
+KatiePorter(CA–47thDistrict) 0.134 Video 36 0.469
+JohnFetterman(Senate–PA) 0.132 Video 39 0.517
+DannyO’Connor(OH–12thDistrict) 0.125 Video 26 0.303
+7.2. Regression Results
+WeestimatedamodelpredictingtheDDCsophisticationindex,whichcombinesboththenumberofunique
+creativesandthesimilarityofcreatives.WefirstreportinFigure3analysesthatexamineonlycandidate
+sponsorsonMetaplatforms.Thefirstmodelconsidersallcandidates,whilethesecondmodel,becauseit
+includesameasureofcampaignresourcesthatisbasedontelevisionadspending,isrestrictedtoonlythose
+candidateswhoairedtelevisionads.
+WefoundfirstthatSenatecandidatesaremoresophisticatedintheiruseofdatacampaigningthanHouse
+candidates,consistentwithH1.ThissupportsourexpectationgiventhatSenatecampaignsaretypicallybetter
+financed,whichgivesthemtheresourcesneededtotailorads,andhavelargerconstituenciesthanHouse
+candidates,whichmeansproducinguniquecreativesforsegmentsoftheelectorateismoreworthwhile.
+ModelestimatesalsoshowthatDemocraticcampaignsengageinmoresophisticateddatacampaigningthan
+Republicancampaigns,a finding thatsupportsH2. Thisis consistentwithKreiss’(2016) observationthat
+Democrats,attimes,haveinvestedmoreindigitaltechnologiesthanhaveRepublicans.Democratsalsotend
+tohavemoresupportfromtechelites(Broockman&Malhotra,2017;Miles,2002),includingtechnology
+supportforpoliticalcampaigning(seeforexampleNix,2024).Third,wefoundthatmorecompetitiveraces
+areassociatedwithgreatertailoring,consistentwithH3.Thismakessensegiventhatthestakesarehigherin
+morecompetitiveraces.InvestmentinDDCpracticesisnotnecessaryifoneissuretowinorsuretolose.
+Media and Communication•2024•Volume12 •Article8577 12
+
+Senate
+Race compe/g2462/g2462veness
+Democra/g2462c
+Predictor Third party
+Image
+–0.02 –0.01 0.00
+Coeﬃcient
+0.01 0.02 0.03
+TV ad spending (logged)
+Model 1
+Model 2
+Figure 3.OLSregressionestimatespredictingcampaignsophisticationonMetaplatforms(federalcandidates).
+Notes:Errorbarsrepresent95%confidenceintervals;model2onlyanalyzedthesubsetofcandidateswho
+investedinTVads;fullregressiontablecanbefoundinTable1oftheSupplementaryFile.
+OursecondmodelinFigure3teststheinfluenceofcampaignresources,findingthatgreaterresources(as
+measuredbyTVadspending)arepositivelyassociatedwiththeuseofadtailoring.Thisfindingisconsistent
+withH4.
+Next,weexpandtheanalysisbeyondcandidatestoconsidergroups,parties,andothersponsorsonMetaas
+well.Theunitofanalysishereisthesponsor–race.Ourfindings,reportedinFigure4,areconsistentwiththe
+analysisthatincludedonlycandidates:Senateracesseehighersophisticationintheuseofcampaigndata
+fortailoring,asdomorecompetitiveraces,andDemocraticsponsorshipalsopredictshighersophistication.
+Greaterresourcesareassociatedwithgreatersophistication( 𝑝 < 0.10),asmodel2reveals.Thisprompts
+thequestionofwhetherMetaprovidesamoreequalizingcampaigningplatformandmoderatestheresource
+imbalancesbetweenwellandpoorly‐fundedcandidates,aspriorresearchhassuggested(Fowleretal.,2021).
+Interestingly,wealsofindthatpartiesandgroupsarelesslikelythancandidatestoengageinsophisticatedad
+tailoring,whichmakessensegiventhatgroupsandpartiesoftenmustpayattentiontomultipleraceswhile
+candidatesarefocusedonasingleone.
+WenextturntotheanalysisoftheGoogledata,startingwithcandidate‐sponsoredads.Models1and2
+estimates(Figure5)showthatSenateracesareassociatedwithgreaterDDCsophisticationthanHouseraces,
+consistentwithH1.ThefirstmodelalsolendssupporttoH2,asDemocraticsponsorsdomoretailoringthan
+Republicansponsors,thoughthisrelationshipisonlystatisticallysignificantatthe0.1levelinmodel2,which
+hasasmallersamplesizeduetotheeliminationofsponsorswhodidnotadvertiseontelevision.Third,wefind
+thatgreatercompetitivenessisassociatedwithgreaterDDCsophistication,consistentwithH3.Moreover,we
+findsupportforH4inmodel2,whichshowsthatgreatercampaignresourcespositivelypredictgreaterad
+tailoringonGoogle’splatforms.
+Media and Communication•2024•Volume12 •Article8577 13
+
+Senate
+Race compe/g2462/g2462veness
+Other sponsor type
+Group
+Party
+Democra/g2462c
+Predictor
+Third party
+Image
+–0.04 –0.03 –0.02 –0.01 0.00
+Coeﬃcient
+0.01 0.02 0.03
+TV ad spending (logged)
+Model 1
+Model 2
+Figure 4. OLSestimatespredictingcampaignsophisticationonMetaplatforms(allHouseandSenaterace
+sponsors).Notes:Errorbarsare95%confidenceintervals;model2onlyanalyzedthesubsetofsponsorswho
+investedinTVads;adsplacedbynon‐candidatesponsorssuchasnationalpartiesandgroupswereincluded
+separatelyforeachracewheretheysponsoredads;“Othersponsortype”includesgovernmentofficesand
+coordinatedeffortsbetweenagroupandcampaignorparty;fullregressiontablecanbefoundinTable2of
+theSupplementaryFile.
+Senate
+Race compe/g2462/g2462veness
+Democra/g2462c
+Predictor
+Third party
+Image
+Video
+–0.06 –0.02 –0.04 0.00
+Coeﬃcient
+0.02 0.04 0.06 0.08
+TV ad spending (logged)
+Model 1
+Model 2
+Figure 5. OLSestimatespredictingcampaignsophisticationonGoogleplatforms(candidates).Notes:Error
+barsrepresent95%confidenceintervals;model2onlyanalyzedthesubsetofcandidateswhoinvestedinTV
+ads;fullregressiontablecanbefoundinTable3oftheSupplementaryFile.
+Media and Communication•2024•Volume12 •Article8577 14
+
+Finally,theestimatesinFigure6comefromamodelthatexaminesallsponsorswhoplacedadsonGoogle
+inUSHouseandSenateraces.Ourstoryremainsfairlyconsistent.Senateracesfeaturemoreadtailoring,
+andgreatercompetitivenessisassociatedwithmoretailoringaswell.Greaterresourcesareassociatedwith
+greatertailoring(model2),andDemocraticsponsorsaremorelikelytotailoradsthanRepublicansponsors.
+Senate
+Race compe/g2462/g2462veness
+Democra/g2462c
+Predictor
+Third party
+Video
+Image
+–0.04 –0.02 0.00
+Coeﬃcient
+0.02 0.04 0.06
+TV ad spending (logged)
+Model 1
+Model 2
+Party
+Group
+Other sponsor type
+Figure 6.OLSregressionestimatespredictingcampaignsophisticationonGoogleplatforms(allsponsorsof
+SenateandHouseraces).Notes:Errorbarsrepresent95%confidenceintervals;model2onlyanalyzedthe
+subsetofcandidateswhoinvestedinTVads;adsplacedbynon‐campaignsponsorssuchasnationalparties
+andgroupswereincludedseparatelyforeachracewheretheysponsoredads;“Othersponsortype”includes
+governmentofficesandcoordinatedeffortsbetweenagroupandcampaignorparty;fullregressiontablecan
+befoundinTable4oftheSupplementaryFile.
+8. Conclusion
+DDCisoftenstudiedqualitatively.Thus,studiesusinginterviewsorparticipantobservationprovideadeep
+understandingofhowcampaignsusedatatomakedecisions,butsuchstudiesalsonecessarilytendtofocus
+onasmallnumberofcases.Ourapproach,whichreliesonpubliclyavailabledatafromplatforms’digitalad
+libraries,offersarelativelysimplewaytostudyvariationinadtailoring,akeypracticeassociatedwithDDC,
+acrossadsponsors,races,parties,andevenacrosscountries.OurmeasureofDDCreliesonthenumberof
+uniqueadcreativesemployedbyeachsponsor,followingtheleadofKruschinskiandBene(2022),inaddition
+tothedegreeofsimilarityacrossthosecreatives.
+Importantly,wefindthattailoringofadsismorelikelyinSenatethanHouseraces,reflecting,webelieve,both
+(a)thegreaterneedtouseamoredata‐drivenapproachinalarger,moreheterogenouselectoraldistrictand
+(b)thegreaterpracticalityofmakingcontentforparticularsegmentsoftheelectoratewhenthosesegments
+arelarger.Wealsofind,inmostcases,greatertailoringamongDemocratsandthosebackingDemocrats,and
+wefindgreatertailoringwhentheraceismorecompetitive.Thissuggeststhatwhenthestakesarehigher—
+evenwhencontrollingforcampaignresources—tailoringofadsismorelikely.Inaddition,wefoundthathaving
+Media and Communication•2024•Volume12 •Article8577 15
+
+greatercampaignresourcespredictsgreatertailoringofads.Thisisconsistentwiththeconclusionsofothers
+whofindanimportantroleforcampaignresourcesinusingDDC(e.g.,Dommett,Kefford,&Kruschinski,2024;
+Ridout,2024).
+Obviously,thesefindingsapplytoasingularcontext—USSenateandHouseraces—butonekeycontribution
+hereisthatourmeasureofadtailoring,whichweuseasanindicatorofDDC,couldeasilybegeneratedusing
+addatafromthedozensofcountriesfoundintheMetaandGoogleadlibraries,facilitatingcross‐campaign,
+cross‐party,andcross‐nationalresearch.Thisworkcanalsocomplementtherichqualitativeapproachthatis
+oftenthefocusofDDCresearch.
+Thedevelopmentofoursophisticationindexisaninitialefforttoquantifydigitaladtailoringacrosslarger
+samples,butitisnotperfect.Itonlytakesintoaccountthedegreeofwithin‐campaignvariationincreative
+content.Itislimitedincharacterizingcampaignsophisticationwithrespecttomessagequality,especially
+evaluatedinrelationtoitstargetaudience.Thecreativecontentweextractedfromimage,video,andtext
+ads serves great potential for developing measures of campaign sophistication in relation to message
+effectiveness.Forexample,onecouldevaluatetheconnectionsbetweenissueframingintheadsandthe
+geographic locations and demographic groups being targeted. Investigation of the strategic use of visual
+communication in audiovisual ads will also enrich the evaluations of campaign sophistication. Social
+mediaplatformsarguablyengageinmorepersonalizedandde‐professionalizedpoliticalcampaigning(Enli,
+2017; Enli & Skogerbø, 2013), and audiovisual media is a productive vessel for personalized messages.
+Ourregressionresultssuggestgreateradtailoringforimageandvideomediacomparedtotextads.This
+motivates future content analysis that looks at the stylistic choices, emotional cues, and patterns of
+candidateandopponentappearancesinimageandvideoadsplacedonsocialmediaplatforms.
+ItisimportanttounderstandhowcommonlycampaignsuseamoresophisticatedvariantofDDCandthe
+contextsinwhichtheydoso.Anunderstandingofthisrealityshouldinformanyproposaltoregulatetheuse
+ofdataincampaigns,suchaslimitsonmicrotargetingandrulesfordataprivacy.Knowingtheprevalenceof
+adtailoringmightcompelregulatorstoconsideradditionalrulesfordigitaladplatforms,suchastransparency
+requirementsonadtargetingorwithin‐addisclaimerrulesforadstargetedtocertainconstituencies.Atthe
+momentintheUS,regulationsondigitaladsareverylimited.Knowingmoreabouthowcampaignsemploy
+DDCfordigitaladplatformsmightfacilitateaconversationamongpolicy‐makersaboutneededrulestogive
+citizensaclearerunderstandingofhowelectionadvertisersarereachingdifferenttypesofvoters.
+Acknowledgments
+WegratefullyacknowledgetheworkofBreezeFloyd,LauraBaum,andnumerousWesleyanMediaProject
+undergraduateresearchassistantsfortheireffortsincodingadvertising.WealsothankSarayShai,Sebastian
+Zimmeck,andManolisKaparakisforalloftheirsupport.WesleyanMediaProjectworkin2022wassupported
+bytheNationalScienceFoundationundergrants2235006,2235007,and2235008.Anyopinions,findings,
+conclusions,orrecommendationsexpressedinthismaterialarethoseoftheauthorsanddonotnecessarily
+reflecttheviewsoftheNationalScienceFoundation.
+Funding
+NationalScienceFoundationgrants2235006,2235007,and2235008.
+Media and Communication•2024•Volume12 •Article8577 16
+
+Conflict of Interests
+Theauthorsdeclarenoconflictofinterest.
+Data Availability
+Datathatsupportthefindingsofthisstudyarestoredonfigshareandpubliclyavailableuponuserregistration
+(https://www.creativewmp.com/data‐access).Codefordataanalysisassociatedwiththecurrentsubmission
+isavailableat https://github.com/Wesleyan‐Media‐Project/quantifying‐ddc‐paper/tree/main
+Supplementary Material
+Supplementarymaterialforthisarticleisavailableonlineintheformatprovidedbytheauthor(unedited).
+References
+Anstead,N.(2017).Data‐drivencampaigninginthe2015UnitedKingdomgeneralelection. The International
+Journal of Press/Politics, 22(3),294–313.
+Baldwin‐Philippi,J.(2015). Using technology, building democracy: Digital campaigning and the construction of
+citizenship.OxfordUniversityPress.
+Baldwin‐Philippi,J.(2017).Themythsofdata‐drivencampaigning. Political Communication, 34(4),627–633.
+Beraldo, D., Milan, S., de Vos, J., Agosti, C., Sotic, B. N., Vliegenthart, R., Kruikemeier, S., Otto, L.,
+Vermeer,S.A.M.,Chu,X.,&Votta,F.(2021).Politicaladvertisingexposed:TrackingFacebookadsinthe
+2021Dutchelections. Internet Policy Review, 11.
+Broockman, D., & Malhotra, N. (2017, September 22). America’s tech entrepreneurs are Democrats not
+libertarians, but they may be changing the Democratic Party.The Washington Post . https://www.
+washingtonpost.com/news/monkey‐cage/wp/2017/09/22/americas‐tech‐entrepreneurs‐are‐
+democrats‐not‐libertarians‐but‐they‐may‐be‐changing‐the‐democratic‐party
+Dobber,T.,Trilling,D.,Helberger,N.,&DeVreese,C.H.(2017).Twocratesofbeerand40pizzas:theadoption
+ofinnovativepoliticalbehaviouraltargetingtechniques. Internet Policy Review, 6(4),1–25.
+Dommett,K.,Barclay,A.,&Gibson,R.(2024).Justwhatisdata‐drivencampaigning?Asystematicreview.
+Information, Communication & Society, 27(1),1–22. https://doi.org/10.1080/1369118X.2023.2166794
+Dommett,K.,Kefford,G.,&Kruschinski,S.(2024). Data‐driven campaigning and political parties: Five advanced
+democracies compared.OxfordUniversityPress.
+Enli,G.(2017).Twitterasarenafortheauthenticoutsider:ExploringthesocialmediacampaignsofTrumpand
+Clintoninthe2016USpresidentialelection. European Journal of Communication, 32(1),50–61.
+Enli,G.S.,&Skogerbø,E.(2013).Personalizedcampaignsinparty‐centredpolitics:TwitterandFacebookas
+arenasforpoliticalcommunication. Information, Communication & Society, 16(5),757–774.
+Farrell, D. M., Kolodny, R., & Medvic, S. (2001). Parties and campaign professionals in a digital age:
+PoliticalconsultantsintheUnitedStatesandtheircounterpartsoverseas. Harvard International Journal
+of Press/Politics, 6(4),11–30.
+Fowler,E.F.,Franz,M.M.,Martin,G.J.,Peskowitz,Z.,&Ridout,T.N.(2021).Politicaladvertisingonlineand
+offline. American Political Science Review, 115(1),130–149.
+Freedlander,D.(2021). The AOC generation: How millennials are seizing power and rewriting the rules of American
+politics.BeaconPress.
+Giorno,T.(2022). Walker‐Warnock U.S. Senate race in Georgia most expensive in 2022 cycle as runoff intensifies.
+OpenSecrets.https://www.opensecrets.org/news/2022/11/walker‐warnock‐u‐s‐senate‐race‐in‐georgia‐
+most‐expensive‐in‐2022‐cycle‐as‐runoff‐intensifies
+Kefford,G.(2021). Political parties and campaigning in Australia.Springer.
+Media and Communication•2024•Volume12 •Article8577 17
+
+Kefford, G., Dommett, K., Baldwin‐Philippi, J., Bannerman, S., Dobber, T., Kruschinski, S., Kruikemeier, S.,
+&Rzepecki,E.(2023).Data‐drivencampaigninganddemocraticdisruption:Evidencefromsixadvanced
+democracies. Party Politics, 29(3),448–462.
+Kreiss, D. (2016).Prototype politics: T echnology‐intensive campaigning and the data of democracy . Oxford
+UniversityPress.
+Kreiss,D.,&Jasinski,C.(2016).Thetechindustrymeetspresidentialpolitics:Explainingthedemocraticparty’s
+technologicaladvantageinelectoralcampaigning,2004–2012. Political Communication, 33(4),544–562.
+Kruschinski,S.,&Bene,M.(2022).Invarietateconcordia?!Politicalparties’digitalpoliticalmarketinginthe
+2019EuropeanParliamentelectioncampaign. European Union Politics, 23(1),43–65.
+Maarek,P.J.(2011). Campaign communication and political marketing.Wiley.
+Miles,S.(2002). How to hack a party line: The Democrats and Silicon Valley.UniversityofCaliforniaPress.
+Montigny, E., Dubois, P. R., & Giasson, T. (2019). On the edge of glory (…or catastrophe): Regulation,
+transparencyandpartydemocracyindata‐drivencampaigninginQuébec.InternetPolicyReview, 8(4),
+1–19.https://doi.org/10.14763/2019.4.1441
+Munroe,K.B.,&Munroe,H.D.(2018).Constituencycampaigningintheageofdata. Canadian Journal of
+Political Science/Revue Canadienne de Science Politique, 51(1),135–154.
+Nix, N. (2024, June 10). Tech workers use corporate advertising tricks to turn out Democratic voters.
+The Washington Post. https://www.washingtonpost.com/technology/2024/06/10/start‐up‐advertising‐
+voters‐democrats‐election‐2024
+Reimers, N., & Gurevych, I. (2019).Sentence‐bert: Sentence embeddings using siamese bert‐networks . arXiv.
+https://doi.org/10.48550/arXiv.1908.10084
+Ridout,T.N.(2024).Politicaladvertisinganddata‐drivencampaigninginAustralia. Media and Communication,
+12,Article8462. https://doi.org/10.17645/mac.8462
+Vliegenthart,R.,Vrielink,J.,Dommett,K.,Gibson,R.,Bon,E.,Chu,X.,deVresse,C.,Lecheler,S.,Matthes,J.,
+Minihold, S., Otto, L., Stubenvoll, M., & Kruikemeier, S. (2024). Citizens’ acceptance of data‐driven
+politicalcampaigning:A25‐countrycross‐nationalvignettestudy. Social Science Computer Review, 42(5),
+1101–1119.https://doi.org/10.1177/08944393241249708
+Wasserman,D.(2022). Final House ratings: A clear GOP edge, and a wide range of possible gains.TheCookPolitical
+Report. https://www.cookpolitical.com/analysis/house/house‐overview/final‐house‐ratings‐clear‐gop‐
+edge‐and‐wide‐range‐possible‐gains
+About the Authors
+Michael M. Franz isprofessorofGovernmentandLegalStudiesatBowdoin.Hestudies
+elections,campaignfinance,andinterestgroups.Heisauthororco‐authoroffivebooks,
+including Political Advertising in the United States(2021,Routledge).Heisalsotheco‐director
+of the Wesleyan Media Project, a collaboration of researchers that tracks spending on
+politicaladvertising.
+Meiqing Zhang isapostdoctoralresearcheratWesleyanMediaProjectandQuantitative
+AnalysisCenter,WesleyanUniversity.Shestudiespoliticalcommunication,politicalculture,
+andcomputationalsocialscience.
+Media and Communication•2024•Volume12 •Article8577 18
+
+T ravis N. RidoutisThomasS.FoleydistinguishedprofessorofGovernmentandPublicPolicy
+in the School of Politics, Philosophy, and Public Affairs at Washington State University.
+He also serves as co‐director of the Wesleyan Media Project. His research focuses on
+politicaladvertising,elections,andcampaigns.
+Pavel OleinikovisanassociateprofessorofthepracticeattheHazelQuantitativeAnalysis
+CenteratWesleyanUniversityinMiddletown,Connecticut,andamemberoftheWesleyan
+MediaProject.Hisareasofworkincludecomputationalsocialscience,dataengineering,and
+remotesensing.
+Jielu Y ao is a research fellow at the East Asian Institute of the National University
+of Singapore and was a postdoctoral researcher at the Wesleyan Media Project. Her
+research interests include political methodology, computational political science, and
+politicalcommunication.
+Furkan Cakmakisanindependentscholar.Previously,hewasapostdoctoralresearcherin
+quantitativeanalysisatWesleyanUniversitywhereheworkedwiththeWesleyanMedia
+Project,whichtrackspoliticaladvertising,andcollaboratedwiththeQuantitativeAnalysis
+Center.
+Erika Franklin FowlerisprofessorofGovernmentatWesleyanUniversityandco‐director
+of the Wesleyan Media Project. She specializes in large‐scale analyses of political and
+health‐relatedcommunication,andherworkonthecontentandeffectofmessaginghas
+beenpublishedinpoliticalscience,communication,law/policy,andmedicaljournals.
+Media and Communication•2024•Volume12 •Article8577 19

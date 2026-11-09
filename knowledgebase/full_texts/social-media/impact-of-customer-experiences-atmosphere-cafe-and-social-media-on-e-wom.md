@@ -1,0 +1,810 @@
+---
+title: Impact of Customer Experiences, Atmosphere Café And Social Media On E-Wom
+url: https://doi.org/10.2991/978-94-6463-758-8_118
+category: social-media
+subcategory: measurement
+date: 2025-01
+venue: Advances in economics, business and management research/Advances in Economics, Business and Management
+  Research
+authors:
+- Khaeril Khaeril
+- Nursyamsi Nursyamsi
+- Nurul Qadriah Hatta
+source: openalex-oa
+pdf_url: https://www.atlantis-press.com/article/126014122.pdf
+pages: 18
+chars: 38100
+fetched_at: '2026-11-08T18:00:06+00:00'
+kb_version: 1
+---
+
+# Impact of Customer Experiences, Atmosphere Café And Social Media On E-Wom
+
+Impact Customer Experiences, Atmosphere Café And
+Social Media On E-Wom
+(Study At The Makassar Coffee Cafe Institute )
+Khaeril Khaeril   Nursyamsi, Nurul Qadriah hatta, Irviani  maretta, Happy nesya
+maharani, Alim Lutfi
+, Nursyamsi
+1  STIEM
+Bongaya
+ _ Makassar , Jalan.Andi Mappaoddang No. 65,makassar- Indonesia 2
+khaeril@stiem-bongaya.ac.id
+Abstract.  Research aims to determine and analyze the influence of customer experiences, café
+atmosphere, social media marketing on consumer e-Wom at the Makassar Café Coffee Institute.
+Research method applied  Was a quantitative research method. The number of respondents
+obtained using a sampling technique using the Lemeslow formula. Data collection was carried
+out by distributing research questionnaires using two methods, namely: Offline (distributed
+directly at the Makassar Café Coffee Institute) and distributing Google Forms to loyal INSKOP
+Café Makassar customers. For the data measurement method for research results, a Likert scale
+was used to measure the perception of café consumers (INSKOP Café). The number of
+respondents who filled out the questionnaire was 125 people. Data were analyzed using SMART
+PLS 3.0. Research results show that: (1) Customer experience has a positive but not significant
+influence on e-WOM at the Institute Café in Makassar City. ; (2) The café atmosphere has a
+positive and significant effect on e-WOM at the Makassar City Café Institute; (3) social media
+marketing has a positive and significant effect on e-WOM at the Makassar City Café Institute.
+Keywords: custumer experience, Atmosphere café, Social media Marketing ,
+INKOP CAFÉ
+ 1. Introd
+uction
+Research on e-Wom has become a matter of concern for academics and service
+marketing practitioners for several reasons, including: (1) e-Wom has an influence
+on purchasing decisions. (2) a company with good e-Wom will get a wider and
+faster scope; (3) E-Wom can increase consumer credibility and trust; (4) e-Wom
+can make business entity expenditures more efficient and effective; (5) e-Wom
+has an impact on the formation of brand image.  Therefore, managing e-Wom well
+is the key  to utilizing its  positive potential and  minimizing  negative impacts.
+Research on E-Wom in relation to Buying intention, Re-Purchase intention has
+attracted  the attention  of academics, including: (Mason, n.d.); (Rasyid,  2023);
+(Puspa, n.d.); (Nuseir, n.d.); (Nuseir & Elrefae, 2022); (Mhlanga & Tichaawa,
+n.d.).
+Research on WOM in literature review searches positions the majority of e-
+wom as independent variables that affect re-puchase intention such as: purchase
+intention such as: (Hendro & Keni, 2020); (Hamdani & Maulani, n.d.); (Chandra
+et al., 2022); (Awaliyah & Wibowo, 2021); and (Al-Haddad et al., 2022), and
+© The Author(s) 2025
+M. Nohong et al. (eds.), Proceedings of the 9th International Conference on Accounting, Management, and
+Economics 2024 (ICAME 2024), Advances in Economics, Business and Management Research 331,
+https://doi.org/10.2991/978-94-6463-758-8_118
+
+          1475Impact of Customer Experiences, Atmosphere Café And Social Media …
+customer satisfacti
+on. There are also several references that place e-Wom as a
+mediating variable as in the study: (John & Tantra, 2023); (Novie, 2023).
+As for this study, the author built a model that placed e-Wom as a Dependent
+variable, with Independent variables including: customer experiences, atmosphere
+café, and Social Media marketing, and we tested this model on the Café business
+entity in Makassar, namely INTITUTE CAFÉ Makassar. To analyze and discuss
+the relationship between variables and the discussion of the results of the research,
+the author uses SOR and TPB Theory.
+The  Café
+ and  resta
+urant  business  is  an  interesting  object  of  study  to  be
+researched because based on the increasingly competitive business environment
+and the service pattern is increasingly diverse and the massive growth in Indonesia
+and  specially at Makassar.
+2. Literatu
+re
+ Review
+2.1 Cust
+ume
+r Experience
+Total
+ Custome
+r Experiences that are applicable: i.e. a completely positive,
+engaging,  long-lasting,  and  socially  satisfying  physical  and  emotional
+customer experience across all major levels of one's consumption chain and
+that are generated by different market offerings that require active interaction
+between consumers and providers. ( Mascarenhas et.al, 2006), this theory
+explains  that  there  are  characteristics  related  to  experience,  including:
+providing a nayata experience for consumers, anticipating and meeting the
+needs and desires of consumers better than their competitors; experience is
+closely related to the specific market being run; experience is also related to
+the field; Experiences are associated with memories created with  certain
+products and services.
+Under
+sta
+nding  the  consumer  experience  is  relevant,  as  it  helps
+managers to understand consumer behavior (Lanier and Hampton, 2009) and
+develop appropriate marketing strategies (Brakus et al., 2009). Consumer
+experience can be defined as a combination of experiences that are obtained,
+felt, and witnessed by consumers in the use of products or services that they
+enjoy that are good, memorable that make the consumer interested in using
+the product for the umpteenth time (Wiyata et, al, 2020) quoted by Sari et.al,
+2023.  In marketing, customer experience is one of the most important things
+because it indicates the success of the services or products provided by the
+company to its customers or consumers (Pranatika & Albari, 2022).
+H1 : Costumer eXperiences Have positive and signficant impact to e-
+WOm
+2
+.2 Atmo
+sphere Café
+The
+atmosphere  inside  the  coffee  shop  includes  the  physical  and
+psychological elements that create the customer experience. According to
+Bitner (1992), the physical atmosphere involves elements such as lighting,
+color, and interior decoration, while the psychological atmosphere includes
+factors such as music, aroma, and atmosphere. Research by Spangenberg et
+
+1476             K. Khaeril et al.
+al. (1996) emphasi
+zes that a pleasant atmosphere can influence consumer
+behavior, increase satisfaction, and motivate purchase decisions.
+Mehrabia
+n a
+nd Russel (1974) in Turley and Milliman (2000) the
+physical environment can give rise to a shopping experience that will further
+affect  consumer  emotions  by  providing  positive  emotions  or  negative
+emotions.
+Sopiah
+and Sa
+ngadji (2016) argue that Café Atmosphere is a design
+and an environmental design through visual communication, lighting, color,
+music, and smell to stimulate perception and emotions from customers and
+ultimately to influence customer spending behavior. Banat and Wandebori
+(2012)  revealed  seven  indicators  of  café  atmosphere,  namely:  (1)
+Cleanliness, (2) Music, (3) Scent (Room Fragrance), (4) Temperature (Room
+Temperature),  (5)  Lightning  (Lighting),  (6)  Color  (Color),  (7)  Display  /
+Layout (Display/Spatial Layout).
+H2 : atmosphere café have positif and significant impact to e-WOM
+2.3 S
+oci
+al media Marketing
+Soc
+ial m
+edia marketing is a business that uses selected social media channels
+to  understand  customers  and  engage  them  in  communication  and
+collaboration in a way that leads to the achievement of key marketing and
+business goals (Roberts and Zahay 2013). According to Gunelius in (Mileva
+& Achmad, 2018) social media marketing is a form of direct or indirect
+marketing that is used to build awareness, recognition, memory, and attitudes
+towards product brands, people, or other entities and is carried out through
+the  media  of  the  social  web  such  as  social  bookmarking,  blogging,
+microblogging, social networking, and content sharing.
+According to Tsitsi (2013), Social Media Marketing is a system that
+allows marketers to utilize the intelligence of the people participating in it to
+engage, interact, and collaborate. As'ad and Alhadid (2014) also said that
+Social Media Marketing is a strategy in the form of an online network that is
+carried out for marketing purposes. (Chary, 2014) in his journal entitled
+Social Media Marketing – The Paradigm Shift in International Marketing
+defines  Social  Media  Marketing  as  leading  to  the  process  of  visiting  a
+website or paying attention through social media platforms. The center of
+this Social Media Marketing activity lies in the effort to make content attract
+attention  and  can  make  readers  encouraged  to  share  with  their  social
+networks.
+Soc
+ial Media Marketing can also be used as a means of utilizing the
+social media area to build a target market. Mileva and Fauzi (2018) argue
+that  building  a  target  market  with  an  attitude  of  mutual  respect  and
+communicating with the target market is something that business people
+must do. The impact resulting from Social Media Marketing also depends on
+how  big  the reach  is.  Based  on some  of  the  opinio
+ns above, it can  be
+synthesized that Social Media Marketing is the use of online networks or in
+
+        1477Impact of Customer Experiences, Atmosphere Café And Social Media …
+other words
+social media as a strategy to engage, interact and collaborate
+with customers who specialize in creating content that attracts the attention
+of  readers  so  that  they  visit  the  website  through  social  media  and  are
+encouraged to share it with their social networks. According to (Kim &Ko,
+2012). The following indicators can be applied to social media marketing,
+namely: Online community, interaction, content sharing, accessibility and
+credibility.; However, in this study, the indicators used, namely according to
+Gunelius (2011) there are four elements that are used as variables for the
+success  of  social  media  marketing,  namely:  first,  Content  Creation.
+Interesting content is the cornerstone of a strategy in conducting social media
+marketing. The content created must be interesting and must represent the
+personality of a business in order to be trusted by target consumers. Content
+Creation  can  be  seen  from  the  creation  of  interesting  content  and  can
+represent the personality of a business so that it can be trusted by target
+consumers.  Content  creation  will  help  consumers  to  form  credibility,
+relationships and loyalty; . ( Second); Content Sharing. Sharing content with
+social communities can help expand a business's network and expand its
+online  audience.  Sharing  content  can  lead  to  indirect  and  direct  sales
+depending on the type of content being shared.  Third; Connecting.  Social
+networks allow one to meet more people who share the same interests. An
+extensive  network  can  build  60  relationships  that  can  generate  more
+business. Honest and careful communication must be considered when doing
+social networking. Fourth; Community Building . The social web is a large
+online community of individuals where there is interaction between people
+living around the world using technology. Building a community on the
+internet  that  has  similar  interests  can  occur  with  social  networking.
+Community Building aims to find target consumers who have an interest in
+the  products  and  services  they  offer  by  interacting  with  each  other  and
+establishing relationships with them.
+H3 : Social Media Marketing have Positive and Significant to e-WOM
+2.4
+E-WO
+M
+E
+lectro
+nic Word of Mouth (e-WOM) is a very important place for consumers
+to give their opinions and is considered more effective than WOM because
+the level of accessibility and reach is wider than WOM which is offline
+media.E-WOM allows consumers to interact with other people, exchange
+product-related  information,  and  make  purchase  decisions  through
+conversations through computers (Tjhin & Aini, 2019). According to Prasad
+et al., (2017), consumer purchasing decisions are influenced by E-WOM
+through trust.
+Ele
+ctronic Word of mouth as a communication medium to share
+information about a product or service that has been used and consumed by
+consumers before, as well as provide a perception of the product online. The
+
+experience
+s
+1478             K. Khaeril et al.
+medium of communication in this case is marektplce. Schiffman & Kanuk,
+(2010) define eWOM communication between consumers that is carried out
+online. The use of the internet today has been very helpful for its users to
+find  and  various  information  that  can  now  be  easily  accessed  by  every
+consumer,  other  consumers  can  inform  their  experience  through  internet
+media  and  influence  other  users  through  eWOM.  eWOM  can  influence
+customers and affect other customers' perception of a product or service
+review recommended by other customers in order to make a purchase (Lu et
+al., 2014).One of the marketing strategies is Word of Mouth (WOM) or
+word-of-mouth promotion. Thurau, et. al. (2004:16) reflects e-WOM through
+8 dimensions, namely: platform assistance, concern for others, expressing
+positive feelings, helping the company, social benefits, economic incentives,
+venting negative feelings, and adviceseeking. In this study, the researcher
+used 6 dimensions that are considered relevant, namely platform assistance,
+concern for others, expressing positive feelings, helping the company, social
+benefits, and advice seeking.
+3. Research Method
+The research method applied in this study is quantitative research, explanatory
+research. The research design was carried out using a sampling technique using
+the Lemeslow formula because the number of samples with the total population is
+unknown. Because the research team could not determine the exact number of
+café customers, in this case the consumers (visitors) of the Makassar Institute café.
+Data collection was carried out by distributing research questionnaires by two
+methods, namely: Offline (distributed directly at the Makassar Coffee Institute)
+and distributing google forms to loyal customers of INSKOP Café Makassar. For
+the data measurement method, the results of the study were using the Likert Scale
+in measuring the perception of café consumers (INSKOP Café).
+The number of respondents that we can get is 125 respondents; The data
+analysis  used  is  Multiple  Linear  Regression  Analysis  (only  analyzing  Direct
+Influence), but to learn more about which indicators can be used as items for
+improvement in the marketing of café services (INSKOP Café Case Study), we
+decided to use a different analysis tool than usual, so we decided to use Smart PLS
+3.0 Software. The indicators used in this research model are as follows:
+Figure 1. Variabel Measurement
+No Variabel Indicators Sources Scale
+1 Custumer
+1.  Perception of the quality
+of interaction Brady & Cronin (2021), Umaamah, S. Likert
+2.  Perception of Physical E. (2018)
+
+Impact of Customer Experiences, Atmosphere Café And Social Media …             1479
+Environment Quality
+3. Perception of the quality
+of the product
+Brady and Cronin (2001)
+2 atmosphere café
+a.  The  exterior  of  the
+restaurant,
+b.  Inside the restaurant,
+c.  Room layout,
+d.  Display.
+Berman in Sopiah &
+Sangadji (2016) ;
+Chandra, M.,
+Sampe, F., &
+Tahendrika, A.
+(2022). ,
+Likert
+3 Social media Marketing
+1.  Content Creation
+2.  Content Sharing
+3.  Connecting,
+4.
+Community Building.
+Gunelius (2011
+);
+Tong, T. K. P. B.
+(2020).
+Likert
+4 e-WOM
+1.  Content
+2.  Consistency of
+recommendations
+3.  Rating
+4.  Quality
+Ismagilova dkk.,
+(2017); Mauludin
+,
+M.
+B. I. (2024).
+Likert
+Authors (2024).
+4. RESEARCH RESULTS AND DISCUSSION
+The data was analyzed using Smart Pls 3.0 software and the following results were
+obtained:
+The characteristics of the respondents of this study are as follows:
+Ba
+sed  on  age  category,  the  number  of  respondents  aged  20-30  years
+amounted to 88 people or 70.4%, the age of 31-40 years amounted to 26 people or
+20.8%, and the age of 41-50 years amounted to 11 people or 8.8%. Looking at this
+data, it is concluded that the majority of respondents based on age, namely 20-30
+years old, are more dominant. The following are descriptive details of respomdem
+by age:
+
+1480             K. Khaeril et al.
+Figure 2. Desrciption About Responden ForAage
+No Age F %
+1 20-30 years 88 70,4%
+2 31-40 years 26 20,8%
+3 41-50 years 11 8,8%
+Amount 125 100%
+Sources : Primer data ( 2024 )
+Based on the distribution of job identity, the distribution of Respondents'
+answers is as follows:
+Based on the job category, the number of student respondents amounted
+to  50  people  or  40%,  civil  servants  amounted  to  19  people  or  15.2%,  self-
+employed amounted to 22 people or 17.6%, employees amounted to 31 people or
+24.8%, and Freelance amounted to 3 people or 2.4%. Looking at this data, it is
+concluded that the majority of respondents based on occupation are students who
+are more dominant. The following is a descriptive breakdown of the repomden by
+occupation:
+Figure 3. Responden Jobs
+No Jobs F %
+1 Collage Student 50 40%
+2 Civil servant 19 15,2%
+3 Entepreneurship 22 17,6%
+4 Labour employee 31 24,8%
+5 Freelance 3 2,4%
+Amount 125 100
+%
+
+  1481Impact of Customer Experiences, Atmosphere Café And Social Media …
+Based on the distribution of the Answers regarding the Reasons for Visiting
+Respondents, the following data were obtained: Based on the reason for visiting,
+the number of respondents who visited to hang out amounted to 56 people or
+44.8%, duty work amounted to 41 people or 32.8%, and friendship amounted to
+28 people or 22.4%. The details of the description of respondents by gender can be
+detailed as follows:
+Figure 4. Respondent Reason to Café
+No Reason to café F %
+1 Hanging out 56 44,8%
+2 Assignment work 41 32,8%
+3 Friendship 28 22,4%
+Amount 125 100 %
+Based on the number of visits, the number of respondents who were for the
+first time amounted to 31 people or 24.8%, every day amounted to 21 people or
+16.8%,  more  than  2  times  amounted  to  42  people  or  33.6%,  1  time  a  week
+amounted to 10 people or 8%, and 3 or more times a week amounted to 21 people
+or 16.8%. The following is a descriptive breakdown of respondents based on
+occupation:
+Figure 5. Decrirption about Frequency to Café
+No Frequency to café F %
+1 Firsts time 31 24,8%
+2 Every day 21 16,8%
+3 More than 2 time 42 33,6%
+4 1 time in a weeks 10   8   %
+5 3 times aor more in a weeks 21 16,8%
+Amoun 125 100 %
+t
+Sources : Authors (2024)
+Ba
+sed on the stages of Smart Pls Analysis, the data is analyzed in several
+stages, paying attention to the outerloading of Indicators to Variables and the
+following results are obtained:
+
+1482             K. Khaeril et al.
+Figure 6. Outer Loading Variebel in Model
+Kode Costumer experiences Atmosphere cafe Social media marketing e- wom Kesimpulan
+X1.1 0.728
+X1.2 0.643 Exclude
+X1.3 0.749
+X1.4 0.680 Exclude
+X1.5 0.796
+X1.6 0.779
+X1.7 0.640 Exclude
+X2.1 0.776
+X2.2 0.566 Exclude
+X2.3 0.739
+X2.4 0.763
+X2.5 0.812
+X2.6 0.787
+X3.1 0.741
+X3.2 0.825
+X3.3 0.867
+X3.4 0.826
+X3.5 0.803
+X3.6 0.828
+X3.7 0.794
+X3.8 0.887
+Y.1 0.726
+Y.2 0.861
+Y.3 0.831
+Y.4 0.869
+Y.5 0.855
+Y.6 0.861
+
+Impact of Customer Experiences, Atmosphere Café And Social Media …             1483
+Y.7 0.855
+After deciding to issue several indicators that do not meet the Hair et.al
+Criteria, the data is analyzed in the second stage and the results of the Smart PLS
+analysis are obtained as follows:
+T
+abel Outer Loading Tahap 2
+Kode
+Costumer
+experiences
+Atmosphere
+cafe
+Social media
+marketing e- wom Kesimpulan
+X1.1 0.765 Valid
+X1.3 0.766 Valid
+X1.5 0.829 Valid
+X1.6 0.788 Valid
+X2.1 0.745 Valid
+X2.3 0.752 Valid
+X2.4 0.820 Valid
+X2.5 0.828 Valid
+X2.6 0.811 Valid
+X3.1 0.741 Valid
+X3.2 0.825 Valid
+X3.3 0.867 Valid
+X3.4 0.826 Valid
+X3.5 0.803 Valid
+X3.6 0.828 Valid
+X3.7 0.794 Valid
+X3.8 0.887 Valid
+Y.1 0.725 Valid
+Y.2 0.861 Valid
+Y.3 0.830 Valid
+Y.4 0
+.870 Valid
+
+so that it ca
+n be said to be Valid.
+≥
+that it can be said to be Valid.
+≥
+0.50) so that it can be said to be Valid.
+≥
+1484             K. Khaeril et al.
+Y.5 0.856 Valid
+Y.6 0.861 Valid
+Y.7 0.855 Valid
+The following analysis of the reliability of the Construct is as follows:
+Cronbach
+Alpha Rho_A Reliabilitas Komposit Rata-rata varians Disetrak (AVE )
+Custumer
+experiences
+0.798 0.813 0.867 0.620
+Atmosphere café 0.851
+0.853 0.894 0.
+627
+Social media
+Marketing
+0.
+931 0.935 0.943 0.976
+e- WOM 0.929 0.930 0.943 0.703
+Based on the data of the table above, it can be concluded as follows: The
+reliability of the construct can be assessed from the Cronbach' Alpha value and the
+Composite Reliability value of each construct. The suggested composite reliability
+and Cronbach's Alpha values are more than 0.7, but in development studies, because
+the loading factor limit used is low (0.5), low composite reliability and Cronbach's
+Alpha values are still acceptable as long as the requirements of convergent validity
+and discriminatory validity have been met. Based on the Validity and Reliability of
+the Construct, it is concluded that all constructs meet the reliability requirements of
+the Construct in this model.
+In the standard set by Hair et.al requires that for Convergent
+Validity to be considered is an AVE value of  0.50 for all Constructs so≥
+that it can be concluded as follows:
+1. For the variable Custumer experiences AVE value ( 0.620  0.50 )≥
+2. For the Atmosphere café variable, the AVE value (0.627  0.50) so
+3. For the Social Media Marketing variable, the AVE value (0.976
+4. For the e-WOM variable, the AVE value (0.703  0.50) so that it
+can be said to be Valid.
+The
+ results of the Fit Model Analysis are as follows:
+
+Impact of Customer Experiences, Atmosphere Café And Social Media …             1485
+Model Saturated Model Estimasi
+SRMR 0,073 0,073
+d_ULS 1,579 1,579
+d_G 0,876 0,876
+Chi-Square 538,137 538,137
+NFI 0,769 0,769
+SRMR is a measure of absolute fit and is defined as the standard difference
+between an observed correlation and a predicted correlation. This is a measure of
+positive bias and that bias is greater for small N and low df studies. After the
+validity and reliability of the construct are satisfied at the outer model testing
+stage, the test continues to the Goodness of fit model test. The fit of the PLS
+model can be seen from the Standardized Root Mean Square Residual (SMRM)
+value  of  the  model.  The  PLS  model  is  declared  to  have  met  the  criteria  of
+Goodness of fit model if the SRMR value is < 0.10 and the model is declared
+perfect fit if the SRMR value < 0.08. Based on the table above, data is obtained
+that the SRMR value in this model is 0.072< 0.08. Because the SRMR value of the
+model is both in the saturated model and the estimated model is below 0.08, the
+model is declared perfect fit and suitable to be used to test the research hypothesis.
+Categorized as a fit model.
+For the results of the analysis of the Path Coefficient of this Research Model,
+the following results were obtained:
+Original
+Sample
+(O)
+Sample
+Average
+(M)
+Standar
+Deviasi
+(STDEV)
+T Statistik
+(O/STDEV
+)
+P-
+Value
+s
+Ket
+Custumer
+Experiences >
+e-WOM
+0,184 0,171 0,097 1,897 0,058 H1 Reject
+Atmosphere
+cafe -> E-
+WOM
+0,347 0,361 0,097 3,598 0,000 H2 Accepted
+Social Media
+Marketing ->
+
+E-WOM
+0,309 0,311 0,081 3,
+808 0,000 H3 Accepted
+
+decided that it is not significant (in the hair et.al criteria)
+on e-WOM at the Coffee Café Institute.
+1486             K. Khaeril et al.
+Based on the table above, it can be concluded that:
+1. The relationship of Consumer Experience Variables ( Custumer experiences )
+on e-Wom has a positive but not significant influence in this model. this is
+characterized by an original value of 0.184, but a p-value > of 0.05 so it is
+2. The  Variable  Relationship  of  Atmosphere  café  to  e-WOM  has  a  positive
+influence with the original sample value of 0.347, with a P Value of 0.000, so
+it can be concluded that: Atmosphere café has a positive and significant effect
+3. The  Relationship  of  Social  Media  Marketing  Variables  on  e-WOM  has  a
+positive influence with an original sample value of 0.309, with a P Value of
+0.000, so it can be concluded that: social media Marketing café has a positive
+and significant effect on e-WOM at the Institute Kopi café.
+5. DISCUSSION OF RESEARCH RESULTS
+5.1 Relationship of Customer Experience to e-WOM
+In this study, the results were obtained that the customer experience has a
+positive but not significant influence on e-wom at the Makassar Coffee Café
+Institute, the results of this study are not in line with the results of research
+conducted by several other researchers who stated that consumer experience of
+various services, products and prices of a café can make consumers have a
+behavioral tendency to promote online (e-WOM), including:  (Hamdani &
+Maulani, n.d.), Paisri et.al (2022), Parolin (2019). Based on the output results
+of  PLS,  especially  in  terms  of  indicators  issued  from  the  Model;  In  the
+Customer experience variable, there are 3 statements issued from the Model at
+the initial stage, namely: (1) Regarding Interaction between consumers that has
+not been maximized by managers and between visitors; (2) cleanliness and
+neatness of the Café, especially regarding problems in the toilet; (3) Regarding
+the price paid compared to the quality of service received, it has not been
+maximized  from  the  perspective  of  visitors.  Based  on  the  amount  of  the
+indicator's contribution to the Variable customer experience, it was found that:
+café employees' attention to consumers has the highest contribution compared
+to  other  indicators;  while  the  indicator  has  the  lowest  contribution  to  the
+variable; Therefore, it is to increase its efforts in order to make the e-WOM
+café in the minds of café customers.
+The S-O-R (Stimulus-Organism-Response) theory is a framework that
+is often used to analyze how various stimuli affect consumer responses through
+their internal processes. In the context of consumer experience in cafes and e-
+WOM (Electronic Word-of-Mouth), this theory can be used to understand how
+
+           1487Impact of Customer Experiences, Atmosphere Café And Social Media …
+the experience in cafes can affect consumer behavior in sharing reviews or
+recommendations online. Stimulus (S): This is the experience that consumers
+experience in a café, such as the quality of food and beverages, the atmosphere
+of the café, the service, and other factors that can affect their satisfaction.; (2)
+Organism (O): This refers to consumers' internal processes, including their
+perceptions, emotions, and evaluations of the experiences they experience. For
+example, if consumers are satisfied with their experience in a café, they will
+probably have a positive perception and pleasant emotions.; .; (3) Response:
+This is an action taken by consumers as a result of their internal processes. In
+this context, the response is e-WOM, where consumers may write a positive
+review, recommend the café to their friends, or share their experience on social
+media.
+5.2 Relationship of Atmosphere Café to e-WOM
+Research shows that a positive atmosphere can increase consumer intention to
+engage in positive e-WOM. Conversely, a less pleasant atmosphere can lead to
+negative  e-WOM.  Therefore,  café  owners  must  pay  attention  to  various
+atmospheric elements to create a pleasant experience for consumers.
+The  results  of  the  research  in  the  analyzed  model  found  that  the
+relationship of café atmosphere to e-Wom in the perception of café consumers
+has a positive and significant influence, the results of this study are in line with
+research conducted by previous researchers such as: Kusumawanto et.al (2021)
+found that: Atmosphere Cafe has a direct positive and significant effect on
+Positive Emotional Response, then Atmosphere Cafe has a direct positive and
+significant  effect  on  E-WOM,  Positive  Emotional  Response  has  a  direct
+positive and significant effect on E-WOM, Atmosphere Cafe has an indirect
+positive  and  significant  effect  on  E-WOM  through  Positive  Emotional
+Response.
+Based on the results of the PLS output, data was obtained that out of six
+statement items, it was found that there was 1 statement item that had to be
+removed  from  the  model  because  the  outer  loding  did  not  meet  the
+requirements set by the hair et.al ( ) standard, namely: regarding the front view
+of the café, which is related to the lack of space in the parking lot and the
+layout  of  the  café  nameplate  which  needs to be  the  attention  of  the  café
+manager. This is very important because based on the consumers who come on
+average, they have two-wheeled vehicles and cars, so it is necessary to think
+about the availability of a more spacious, comfortable and safe parking lot at
+the café. And in terms of indicators, the highest contribution in variables is
+related to the layout of tables and chairs; and the lowest is the Café signboard.
+
+1488             K. Khaeril et al.
+The atmospher
+e of the café plays a crucial role in shaping the consumer
+experience  and,  in  turn,  influencing  e-WOM  (Electronic  Word-of-Mouth).
+Here are some of the ways that the atmosphere of a café can affect e-WOM:
+(1) Interior Design and Decoration: Cafes with attractive interior designs and
+unique decorations tend to create a pleasant visual experience for consumers.
+This often encourages them to take photos and share them on social media,
+which is a form of e-WOM.; (2) Comfort and Cleanliness: A comfortable and
+clean café provides a positive experience that makes consumers feel at home.
+Consumers who feel comfortable tend to give positive reviews and recommend
+the café to others. (3) Music and Atmosphere: The music played in the café
+and the overall atmosphere (e.g., lighting, room temperature) can affect the
+mood of consumers. A pleasant atmosphere can increase consumer satisfaction
+and encourage them to share positive experiences online. (4) Service: Friendly
+and efficient service is also part of the café's atmosphere. Good service can
+increase customer satisfaction and encourage them to leave positive reviews.
+(5) Food and Beverage Quality: Although this is more related to the product
+than the atmosphere, the presentation of food and beverages also contributes to
+the overall atmosphere. An attractive presentation can make consumers more
+likely to share positive photos and reviews. In the theoretical perspective of
+Planned behavior, a positive atmosphere café can increase consumers' positive
+attitude towards sharing experiences, strengthen supportive subjective norms,
+and increase perceived behavior that has an impact on e-WOM intention.
+5.3
+Soc
+ial Media Marketing Relationship to e-WOM
+T
+he res
+ults of the research in the analyzed model found that the relationship of
+Social media Marketing café to e-Wom in the perception of café consumers
+has a positive and significant influence, the results of this study are in line with
+research conducted by previous researchers such as: (Winarno, n.d.), (Lesmana
+& Masnita, n.d.); (Mahyuzar, 2022); (Novie, 2023); (John & Tantra, 2023);
+(Prasetio, 2024); (Bu et al., n.d.). Social media marketing affects E-WOM
+(Electronic Word of Mouth) significantly on various platforms: instragrams,
+Twitter, Tiktok, Youtube.
+Ba
+sed on the results of the PLS Output, data was obtained that from
+the statement items it was found that all of them met the criteria that affected
+and contributed to the formation of Social Media Marketing variables; The
+highest indicator of the contribution is: The eighth indicator (related to café
+encourages customer involvement in various activities on social media; the
+lowest item is item 1 regar
+ding: the content posted by café on social media
+accounts is always interesting and creative in the minds of consumers is still in
+the lowest position.  By understanding the relationship between Social Media
+Marketing and e-WOM, Café stakeholders can design a more effective social
+
+          1489Impact of Customer Experiences, Atmosphere Café And Social Media …
+media marketing
+ strategy to encourage positive e-WOM, which in turn can
+increase brand awareness and consumer loyalty.
+The  S
+-O-R  (Stimulus-O
+rganism-Response)  theory  can  be  used  to
+analyze  how  marketing  through  social  media  affects  e-WOM  (Electronic
+Word-of-Mouth). The following is an explanation based on the S-O-R theory:
+(1) Stimulus (S): In this context, stimulus is a variety of marketing activities
+carried out through social media, such as content posted by brands, interactions
+with consumers, influencer campaigns, and paid  advertising.  (2) Organism
+(O):  This  refers  to  the  internal  process  of  consumers  that  includes  their
+perception, emotions, and evaluation of the marketing content they see on
+social media. For example, engaging and relevant content can promote positive
+perceptions and pleasant emotions.; (3) Response: This response is an action
+taken by consumers as a result of their internal processes. In this context, the
+response  is  e-WOM,  where  consumers  may  share  their  reviews,
+recommendations, or experiences about the brand in the media. In the theory
+of planned behavior, social media marketing can influence e-wom through the
+formation  of  positive  attitudes,  the  strengthening  of  subjective  norms  and
+perceived  control  behaviors  which  make  consumers  moved  to  share  their
+experiences on various social media they use such as Instagrams, Twetter, and
+Facebook.
+6. C
+ONCLUS
+ION
+Based on the Literature Review, Results and Research Discussion, the author can
+conclude as follows: (1) Custumer experience has a positive but not significant
+influence on e-Wom at the Institute café of Makassar City. ; (2) Atmosphere café
+has a positive and significant effect on e-WOM at the Makassar City Institute
+café; (3) Social Media Marketing has a positive and significant effect on e-WOM
+at the Institute café of Makassar City.
+Suggestion
+Ba
+sed on the results and discussion of the research, the author suggests: (1) for
+café managers to pay attention to the variables of consumer experience in the café;
+So that they get a very pleasant service and breed on the aspects of cleanliness,
+comfort and quality of interaction that should ideally be built in the café. (2) for
+future researchers to expand similar research by increasing the number
+of samples
+and cafés, not only in 1 café but with a larger scope, and using other statistical
+tools such as Amos.
+
+1490             K. Khaeril et al.
+References
+Al-Haddad, S., Harb, L., Husni, A., Abdelfattah, M., & Sharabati, A.-A. (2022). E-
+WOM  and  consumers’  purchase  intention:  An  empirical  study  on  Facebook.
+Innovative Marketing, 18(3).
+Awaliyah, F., & Wi
+bowo, T. S. (2021). Pengaruh Store Atmosphere, Lokasi & Word
+Of Mouth Terhadap Keputusan Pembelian Di Café Senewen Surabaya. 2(1).
+Bu, Y., Par ki
+nson, J.,
+ & Thaichon, P. (n.d.). Digital content marketing as a catalyst
+for e-WOM in food tourism.
+Chandra, M., Sampe, F., & Tahendrika, A. (2022). Pengaruh Store Atmosphere Dan
+Word  Of  Mouth  Terhadap  Keputusan  Pembelian  Pada  Labuana  Resto  &  Cafe
+Makassar. 3.
+Hamdani, N. A., & Maul a
+ni, G. A. F. (n.d.). The influence of E-WOM on purchase
+intentions in local culinary business sector. International Journal of Engineering.
+Hendro,  H.,  &  Keni,  K.  (2020).  eWOM  dan  Trust  sebagai  Prediktor  terhadap
+Purchase  Intention:  Brand  Image  sebagai  Variabel  Mediasi.  Jurnal  Komunikasi,
+12(2).
+Lesmana,
+ N.,
+ & Masnita ,
+ Y. (n.d.).  Peran Mediasi Electronic Word of Mouth dan
+Brand Experience pada Pengaruh Social Media Marketing terhadap Brand Equity.
+Mahyuzar
+, H. (2022).  pengaruh
+ e-wom dalam memediasi hubungan antara digital
+marketing activities dan intention to buy di TOKOPEDIA. 01(02).
+Mason, R. B. (n.d.). Word of mouth as a promotional tool for turbulent markets.
+Mhla
+nga,
+ O.,  &  Tichaawa,  T.  M.  (n.d.).  Influence  of  social  media  on  customer
+experiences in restaurants: A South African study. 65(1).
+Novie
+,  M.
+ (2023).  Social
+ Media  Content  And  Re-Purchashing  Behavior:  The
+Mediation Role Of E-Wom. 8.
+Nu
+seir, M
+. T. (n.d.). T
+he impact of electronic word of mouth (e-WOM) on the online
+purchase intention of consumers in the Islamic countries – a case of (UAE). Word of
+Mouth.
+Nuse
+ir, M. T., & Elrefae, G. (2022). The effects of facilitating conditions, customer
+experience and brand loyalty on customer-based brand equity through social media
+marketing.
+
+Impact of Customer Experiences, Atmosphere Café And Social Media …             1491
+Prasetio, E
+. H. (2024). The impact of social media marketing (SMM) on repurchase
+intention  with  e-Wom  and  brand  image  as  mediation  (study  on  consumers  of
+Lemonilo instant noodles in Malang city).
+Puspa, R.
+ D. A. (n.d.). E-W
+ord of Mouth, Perceived Service Quality, dan Repurchase
+Intention Konsumen Mixue: Lifestyle sebagai Pemoderasi. Word of Mouth.
+Rasyid, G. L. F. (2023). The Influence Of Emotional Experience And Place Image On
+Behavioral Intention With Customer Satisfaction As Intervening On Visitors At Hard
+Rock Cafe Bali.
+Winarno, K. O. (n.d.).  Impact Of Social Media Marketing And Electronic Word Of
+Mouth (E-Wom) On Purchase IntentioN. 200.
+Yohanes, S. D. R., & Tantra, T. (2023). Pengaruh Social Media Content Terhadap
+Re-Purchase  Intention  dengan  E-Wom  dan  Interactivity  Sebagai  Variabel
+Intervening. 5(1).
+Open Access
+ This chapter is licensed under the terms of the Creative Commons Attribution-
+NonCommercial 4.0 International License (http://creativecommons.org/licenses/by-nc/4.0/),
+which permits any noncommercial use, sharing, adaptation, distribution and reproduction in any
+medium or format, as long as you give appropriate credit to the original author(s) and the
+source, provide a link to the Creative Commons license and indicate if changes were made.
+        The images or other third party material in this chapter are included in the chapter's
+Creative Commons license, unless indicated otherwise in a credit line to the material. If material
+is not included in the chapter's Creative Commons license and your intended use is not
+permitted by statutory regulation or exceeds the permitted use, you will need to obtain
+permission directly from the copyright holder.

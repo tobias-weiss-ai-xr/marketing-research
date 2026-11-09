@@ -38,7 +38,6 @@ archive/af-campaigns/research-sophistication/run.log
 archive/af-campaigns/research-sophistication/run-code.log
 
 # Local-only research artifacts (kept on disk, not tracked)
-knowledgebase/
 ai-lead-marketing-papers.yaml
 # accidental unexpanded-tilde cache dir written by the fetch tooling
 ~/

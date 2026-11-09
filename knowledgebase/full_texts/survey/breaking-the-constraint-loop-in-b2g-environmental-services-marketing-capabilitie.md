@@ -1,0 +1,1144 @@
+---
+title: 'Breaking the Constraint Loop in B2G Environmental Services: Marketing Capabilities, Digital Conversion,
+  and Cash-Cycle Frictions'
+url: https://doi.org/10.63029/hmysj435
+category: survey
+subcategory: framework
+date: 2026-05
+venue: Management Research Quarterly
+authors:
+- Renhua Lv
+- Kenneth Paul Charman
+- Javier Alfonso Rodríguez Escobar
+source: openalex-oa
+pdf_url: https://mrquarterly.org/index.php/ojs/article/download/55/56
+pages: 11
+chars: 59206
+fetched_at: '2026-11-08T19:20:11+00:00'
+kb_version: 1
+---
+
+# Breaking the Constraint Loop in B2G Environmental Services: Marketing Capabilities, Digital Conversion, and Cash-Cycle Frictions
+
+Received: 15February2026 Revised: 29March2026 Accepted: 13April2026
+DOI:10.63029/hmysj435
+E M P I R I C A L A R T I C L E
+Breaking the Constraint Loop in B2G Environmental Services:
+Marketing Capabilities, Digital Conversion, and Cash‐Cycle
+Conflicts
+Renhua Lv2,3 Kenneth Paul Charman1 Javier Alfonso Rodríguez Escobar4
+1CamEdBusinessSchool,Cambodia
+2PanEuropeanUniversity,CzechRepublic
+3CEIBABusinessSchool,China
+4EuropeanUniversityMigueldeCervantes,
+Spain
+Correspondence
+CorrespondingauthorKennethPaulCharman.
+Email:kcharman@cam‐ed.com
+Abstract
+Environmentalservicesareincreasinglydeliveredthroughsustainability‐criticalB2GandB2Bmar‐
+kets in which suppliers must demonstrate they can deliver credible environmental value in a
+contractualenvironmentcharacterizedbytender‐basedcompetition,highaccountability,andlong
+payment cycles. We still know too little about how procurement rules, legitimacy barriers, and
+cash‐cycleconflictsshapethedevelopmentofmarketingcapabilitiesinsuchsettings.Thisstudyex‐
+amineshowtheseconditionsinfluencethemarketingstrategyofaregionalenvironmentalservice
+providerinChina.Thestudyusesamixed‐methodsingle‐casedesign,combiningsemi‐structuredin‐
+terviews,internalarchivalrecords,astructuredclientsurvey,competitorbenchmarking,andexpert
+validationtoanalyzehowexternalconstraintsaffectcapabilitydevelopmentandmarketoutcomes.
+Thefindingsidentifyaconstrainttransmissionmechanisminwhichprocurementpricepressure
+anddelayedpaymentssuppressfirms’discretionaryinvestment,leadingtoweakeneddigitalcon‐
+versiongovernance,customerrelationshipmanagementdiscipline,andcapabilitiestoarticulate
+solutionsandvalue‐added.Thesecapabilitydeficitsreducedifferentiation,constraintransferof
+legitimacyacrossregions,andreinforcedependenceonfamiliargovernmentchannels.Thisstudy
+contributesaconstraint‐sensitivemarketingcapabilityframeworkforsustainability‐orientedser‐
+vice markets, by showing how institutional access conditions, financial conflicts, and capability
+developmentinteractinpolicy‐shapedenvironmentalservices.Italsooffersactionableimplications
+forlegitimacy‐transferentrystrategies,enterprise‐customerdevelopment,solution‐basedselling,
+andclosed‐loopdigitalconversionsystems.
+K E Y W O R D S
+environmentalservices;sustainability‐orientedmarketing;B2Gprocurement;marketingcapabili‐
+ties;digitalconversion;value‐basedselling;China.
+1 INTRODUCTION
+Environmental services and eco‐industrial solutions are increasingly
+delivered through policy‐shaped, sustainability‐critical B2G and B2B
+ThisisanOpenAccessarticledistributedunderthetermsoftheCreativeCom‐
+monsAttribution‐CCBY–NC–ND4.0( https://creativecommons.org/licenses/by‐
+nc‐nd/4.0/),permittingnon‐commercialuse,distribution,andreproductionwith
+credit;noderivatives.
+marketsinwhichsuppliersmustdemonstrateenvironmentalvalueun‐
+dertender‐basedcompetition,withlongcontractingcycles,andmulti‐
+stakeholderscrutiny( Leonidouetal. 2013,Crittendenetal. 2011).In
+these settings, marketing is not merely promotional activity. It is a
+capabilityconfigurationthatallowsfirmstotranslatetechnicalandenvi‐
+ronmentalperformanceintocrediblevaluepropositions,andtomobilize
+legitimacywithpublicsectorandcorporatebuyers,andsustainrenewal
+inhigh‐accountabilityservicesystems( Day1994,VorhiesandMorgan
+2005,MorganandHunt 1994).
+Recentresearchhasexpandedthesustainabilitydebatebeyondcon‐
+ventionalmarket‐orientationarguments,byemphasizingsuchconcepts
+ManagementResearchQuarterly 2026;03(01):15–25 mrquarterly.org ©2026BIBSBrnoInternationalBusinessSchool 15
+
+16
+asESGgovernance,sustainablesupplychainmanagement,andpractice‐
+basedsustainabilitylearning( Boyer2024,PurvisandFernandez 2024,
+LissillourandSilva 2024,Lissillour2024,VavrinaandDrdla 2024).This
+broaderdialogueisimportantforenvironmentalservicesbecausethe
+value being marketed is inseparable from governance, accountability,
+andoperationalcredibility.Inparallel,studiesofhybridorganizations
+and policy‐market coordination in China show that organizations op‐
+erating under multiple institutional cultures often rely on selective
+coupling, negotiated compliance, and locally embedded coordination
+arrangementsratherthanpuremarketrationality( Wang2024,Weng
+et al.2025). These insights suggest that environmental service firms
+cannot be analyzed as standard service marketers alone; they are si‐
+multaneouslymarketactors,governanceintermediaries,andlegitimacy
+seekers.
+Two gaps motivate this study. Firstly, digital marketing and digital
+transformationresearchprovidesinfluentialframeworksfordesigning
+digital engagement and data‐enabled marketing processes. However,
+much of this work remains under‐specified for sustainability‐critical
+B2G/B2B services where proof requirements are high and procure‐
+ment rules constrain behavior (Kannan and Li2017, Homburg and
+Wielgos2022, Payne and Frow2005, Trainor et al.2014). Evidence
+fromChineseindustrialsettingsfurtherindicatesthatsocialmediaand
+digitalinformationsharingcansupportknowledgecirculationandcus‐
+tomerinterfaceprocesses,butonlywhenembeddedinroutinesand
+practicesthatconvertinformationintorelationalandcommercialout‐
+comes (Guechtouli and Purvis2024, Desmarchelier2024). Secondly,
+relationshipmarketingresearchshowsthatrelationalinvestmentsim‐
+proveexchangeoutcomesundercomplexityandrisk( MorganandHunt
+1994,Palmatieretal. 2006).However,itisnotwellunderstoodhow
+environmentalservicefirmsoperationalizerelationship‐buildingwhen
+informal access must coexist with formal tendering procedures and
+publicaccountabilityrequirements.
+An additional gap concerns constraint interaction. The literature
+hasestablishedthatmarketingcapabilitiesexplainperformancediffer‐
+encesbeyondindustryeffects( Morganetal. 2009,VorhiesandMorgan
+2005). But far less is known about how procurement cost compres‐
+sion, working‐capital lock‐in, and legitimacy barriers jointly suppress
+capabilitydevelopmentinregionalsustainability‐orientedservicefirms.
+Thisissuebecomesespeciallysalientwhenfirmsattemptcross‐regional
+expansion, enterprise customer diversification, and digital marketing
+professionalization under tight cash conditions. A practice‐oriented
+viewofsustainabilityalsoremindsusthatcapabilityformationisem‐
+beddedinroutines,fieldconditions,andpowerasymmetriesratherthan
+simplychosenexante( LissillourandSilva 2024,Lissillour20242025).
+Respondingtothesegaps,thisstudyexamineshowaregionalen‐
+vironmentalserviceprovideradaptsitsmarketingstrategyunderpro‐
+curementconstraints,legitimacybarriers,andcash‐cyclepressure,and
+howitcanreconfigureitscapabilitiestosupportcross‐regionalexpan‐
+sion,customerdiversification,andmoreeffectivedigitalexecution.The
+studyaddressesthreeresearchquestions:(RQ1)Howdosustainability‐
+criticalprocurementandindustryconstraintsshapemarketingstrategy
+choicesinregionalenvironmentalservicefirms?(RQ2)Whichmarket‐
+ing capability gaps, particularly in digital conversion, customer man‐
+agement, and solution/value articulation, are most consequential for
+growthanddifferentiationin this setting?(RQ3)Whichcapability re‐
+configurationscanimprovemarketaccess,customerdiversification,and
+marketingeffectivenessundercash‐cyclepressure?Indoingso,thepa‐
+perdevelopsaconstraint‐sensitivemarketingcapabilityframeworkthat
+explainshowinstitutionalconditionsandfinancialconflictsshapethe
+feasibilityandsequencingofcapabilitydevelopmentinpolicy‐shaped
+environmentalservicemarkets.
+2 LITERATURE BACKGROUND AND
+CONCEPTUAL FRAMING
+2.1 Sustainability‐Oriented Marketing in
+Environmental Service Industries
+Marketing in environmental protection industries differs from clas‐
+sic consumer markets because value is multi‐stakeholder, policy‐
+embedded, and delivered through long‐cycle service systems rather
+thandiscreteproducts( Suchman1995,VargoandLusch 2004).InB2G
+and B2B environmental services such as municipal sanitation, waste
+sorting, and industrial waste‐water solutions, demand is frequently
+shaped by regulation, public procurement rules, and shifting policy
+priorities.Thisheightensexposuretolegitimacyconcernsandtothe
+needtocommunicatenotonlytechnicalperformancebutalsopublic
+value,complianceassurance,andcontinuityofservicedelivery( Such‐
+man1995).Thispaperdoesnottreatsustainability‐orientedmarketing
+aspromotionalgreencommunicationalone.Rather,itviewsitasthe
+organizational capacity to provide evidence for environmental value
+crediblyunderhigh‐accountabilityprocurementconditions.
+Thisviewisconsistentwithrecentsustainabilityresearchstressing
+thatenvironmentalandsocialperformanceclaimsmustbeanchoredin
+governancearrangementsandinter‐organizationalcoordination,rather
+than communicated as generic green promises (Boyer 2024, Purvis
+andFernandez 2024,LissillourandSilva 2024,Lissillour2024,Vavrina
+andDrdla 2024).Forinstance,workonsustainablesupplychainsun‐
+derscores the importance of interdisciplinary framing, practice‐based
+learning, and a critical awareness of power and inequality in sustain‐
+abilityimplementation( Boyer2024,LissillourandSilva 2024,Lissillour
+20242025).Morebroadly,recentresearchondigital‐financialdevelop‐
+mentalsosuggeststhattherelationshipbetweenmodernizationand
+sustainabilityisnotuniformlypositive.Forexample, Bajwaetal. (2025)
+showintheASEANcontextthatdigitalfinancialinclusioncansupport
+economicgrowthwhilealsogeneratingenvironmentalcosts.Thisunder‐
+scorestheneedtoexaminehowdigitallyenabledmarketdevelopment
+translatesintosustainabilityoutcomesunderspecificinstitutionalcon‐
+ditions.Inpolicy‐shapedservicesectors,theseissuestranslatedirectly
+intomarketingbecausedifferentiationdependsonwhetherthefirmcan
+makesustainabilityoutcomesvisible,auditable,andbuyer‐relevant.
+
+BreakingtheConstraintLoopinB2GEnvironmentalServices 17
+2.2 Industry Pain Points as Contextual
+Constraints on Marketing Strategy
+Researchinstrategyandmarketinghaslongrecognizedthatfirmper‐
+formance depends not only on internal resources but also on the
+opportunitystructureandconstraintsoftheenvironment( Day1994,
+Teece2007). In environmental services, several recurring constraints
+areespeciallyconsequentialforregionalfirms:relationship‐dependent
+marketaccess,longpaymentcyclesandworking‐capitalexposure,and
+structurally thin margins that limit discretionary investment in brand
+building,digitalsystems,andsalesenablement.
+Fromaninstitutionalperspective,relationshipdependencecanbe
+interpretedasaninformalmechanismoflegitimacyandriskreduction
+inhigh‐stakesservicecontracting.Buyersrelyontrustproxiessuchas
+track record, embedded ties, and local presence when outcomes are
+uncertainandmonitoringiscostly( MorganandHunt 1994,Suchman
+1995).Recentworkonhybridorganizationsandpolicy‐marketcoordina‐
+tioninChinastrengthensthisargumentbyshowingthatorganizational
+actionoftendependsonselectivecouplingacrosscontradictoryinstitu‐
+tionaldemands,andonnegotiatedalignmentbetweenpolicypriorities
+andmarketincentives( Wang2024,Wengetal. 2025).Thishelpsex‐
+plain why regional firms may struggle with cross‐regional expansion
+evenwhentheirtechnicalsolutionsarecompetitive.Legitimacyislo‐
+callyproducedandnotautomaticallytransferableacrossjurisdictions
+(Suchman1995).
+2.3 A Capabilities‐Based View of Market‐
+ing Strategy under Resource Constraints
+Arobuststreaminmarketingviewscompetitiveadvantageasgrounded
+in capabilities that allow firms to sense markets, build relationships,
+anddeliversuperiorcustomervalue( Day1994).Market‐orientationre‐
+searchlikewisearguesthatsystematicallygeneratingandusingmarket
+intelligenceimprovesperformance,particularlywhencompetitionisin‐
+tenseandcustomerneedsevolve( KohliandJaworski 1990,Narverand
+Slater1990). In project‐based environmental services, these capabili‐
+tiestranslateintoidentifyingtendersandprivate‐sectordemandearly,
+shapingsolutionfitandrisknarratives,mobilizingreferencecasesand
+partners,andmanagingpost‐awarddeliveryandrenewalopportunities.
+Extendingthislogic,marketingcapabilityresearchemphasizesthat
+firms differ in their ability to deploy coherent processes across pric‐
+ing,communication,servicedevelopment,andcustomermanagement,
+and that these differences explain performance beyond industry ef‐
+fects (Morgan et al.2009, Vorhies and Morgan2005). For regional
+environmentalprotectionenterprises,thissuggeststhatindustrypain
+pointsarenotonlybarriers;theyareselectionpressuresthatmakecer‐
+tain capabilities particularly valuable, especially relationship portfolio
+management,value‐basedselling,andcustomerlifecyclemanagement.
+Studiesofindustrialinformationsharingandorganizationallearningun‐
+deremergingtechnologiesfurthersuggestthatdigitalroutinesbecome
+strategicallymeaningfulonlywhentheyareembeddedinorganizational
+learning processes and managerial discipline (Guechtouli and Purvis
+2024,Desmarchelier2024).
+2.4 Value‐Based Selling and Solution Ar‐
+ticulation in B2B Environmental Markets
+Environmentalservicesofteninvolvecomplexbenefitsincludingriskre‐
+duction,compliance,publicvalue,andlifecyclecostsavings.Acentral
+marketingchallengeisthereforetranslatingtechnicalandenvironmen‐
+tal performance into buyer‐relevant value metrics. B2B research on
+value‐based selling shows that firms and sales‐people often struggle
+to operationalize value selling because it requires diagnostic discov‐
+ery,quantificationofcustomer‐specificbenefits,andcross‐functional
+alignmentbehindsolutiondelivery( Terhoetal. 2012).
+Insustainability‐criticalservicecontexts,value‐basedsellingalsoin‐
+teracts with legitimacy. Credible value claims require proof through
+data, monitoring, third‐party validation, and reference projects, and
+they must remain consistent over time (Suchman 1995, Terho et al.
+2012).Thisiswhypractice‐basedsustainabilityresearchisusefulhere.
+Itremindsusthatsustainabilityisenactedthroughrepeatedprocesses
+ofmeasurement,classification,verification,andcoordination( Lissillour
+andSilva2024,Lissillour2025).Aregionalfirmthatcannotcodifythese
+processesintoapersuasivesolutionnarrativeremainstrappedincost‐
+ledbiddingandcannotjustifyinvestmentinsmartsystemsorupgraded
+servicebundles.
+2.5 Digital and CRM Capabilities as Mech‐
+anisms for Breaking the Vicious Cycle
+Digital marketing and Customer Relationship Management (CRM) re‐
+search suggests that performance gains come less from being online
+thanfrombuildingorganizationalcapabilitieswhichintegratecustomer
+data, processes, and engagement channels (Payne and Frow2005,
+Trainor et al.2014). A strategic CRM view emphasizes alignment,
+cross‐functional integration, and process design to manage acquisi‐
+tion,development,andretention( PayneandFrow 2005).SocialCRM
+capability research similarly shows that customer relationship perfor‐
+manceimproveswhentechnologyuseiscoupledwithcustomer‐centric
+managementsystems( Trainoretal. 2014).
+Forregionalenvironmentalprotectionenterprises,digitalandCRM
+capabilityistheoreticallyimportantbecauseitcanreducedependence
+on relationship‐only acquisition by enabling systematic lead genera‐
+tion in enterprise markets, segmentation and targeted content for
+solution categories, codification of references and proof points, and
+lifecyclecommunicationwhichsupportsrenewalandupselling( Payne
+and Frow2005, Trainor et al.2014). Evidence from the Chinese au‐
+tomotiveindustryindicatesthatdigitalinformationsharingplatforms
+canfacilitateknowledgeexchangeandcoordination,butthatmanage‐
+rialvaluedependsonhowthoseplatformsareembeddedinindustrial
+
+18
+processes(GuechtouliandPurvis 2024).Emerging‐technologyresearch
+alsopointstoorganizationallearningasapreconditionforextracting
+strategic benefit from digital tools (Desmarchelier2024). Under con‐
+tractual requirements characterized by long payment cycles and thin
+margins, these mechanisms are especially salient because improved
+retention and conversion efficiency can release resources for further
+capabilityinvestment.
+2.6 Integrated Theoretical Framing: A
+Constraint‐Sensitive Marketing Capability
+Framework
+Thisstudyintegratesthreestreamsofliteraturethatareoftendiscussed
+separately but are tightly connected in sustainability‐critical environ‐
+mentalservicemarkets.Theseincludesustainability‐orientedB2Bmar‐
+keting,legitimacy,andcapabilitydevelopmentunderconstraint.Recent
+B2B sustainability research argues that sustainable marketing should
+notbeunderstoodmerelyasgreencommunication,butastheorganiza‐
+tionalcapacitytogeneratebusinessvaluewhilecontributingtobroader
+social and environmental objectives (Vrontis et al.2025). In parallel,
+climate‐andsustainability‐focusedB2Bresearchhasemphasizedthat
+firmsincreasinglyneedtotranslateenvironmentalandsocialrisksinto
+crediblecustomer‐facingvaluepropositions,stakeholderreassurance,
+and commercially viable service models (Khan et al.2023, Sairanen
+andAarikka‐Stenroos 2024).Thisperspectiveisespeciallyrelevantin
+environmentalservices,wheremarketingclaimsareinseparablefrom
+compliance,continuity,andtheaudibilityofenvironmentalvalue.
+Thesecondrelevantstreamofresearchconcernsdynamicandmar‐
+ketingcapabilities.RecentstudiesshowthatinB2Bcontexts,capabil‐
+itiesrelatedtoadaptation,intelligenceuse,relationshipmanagement,
+andcustomer‐facingdigitalizationarenotperipheral,butcentraltoper‐
+formance and renewal (Bag et al.2023, Dayangan and Aykol2024).
+Morespecifically,researchonAI‐andtechnology‐enabledB2Bcapa‐
+bilities shows that technological readiness, AI‐supported CRM, and
+customer‐facinginformationcapabilitiescanenhancerelationshipper‐
+formanceandsustainability‐relatedoutcomeswhentheyareembedded
+in routines and processes rather than treated as stand‐alone tools
+(Rahmanetal. 2023).Likewise,process‐orientedworkondata‐driven
+marketing capability in B2B firms shows that digital marketing value
+dependsonanestablishedprocessforthegenerationofideas,analy‐
+sis,anddeploymentmechanisms,ratherthanonmeredigitalpresence
+(Ravat et al.2024). These insights are directly relevant to environ‐
+mental service firms whose digital activity often remains superficial
+unlessintegratedwithcustomermanagement,proof‐building,andvalue
+articulation.
+Thethirdstreamofresearchconcernslegitimacy.Inpolicy‐shaped
+andhigh‐accountabilitymarkets,especiallywheregovernmentprocure‐
+mentandpublicscrutinyaresalient.Marketsuccessdependsnotonly
+ontechnicalcompetitivenessbutalsoonwhetherthefirmisseenas
+acredibleandappropriateprovider.Recentworkshowsthatdynamic
+marketingcapabilitiescansupportlegitimacy‐buildingbyimprovinglo‐
+cal sensitivity, relationship management, anticipation of contractual
+opportunities,anddemonstratingexemplarypractice,particularlyinun‐
+familiarorexternallyconstrainedmarkets( Rivero‐Gutiérrezetal. 2024).
+Forregionalenvironmentalservicefirms,thisiscriticalbecauselegit‐
+imacy is often locally embedded and not automatically transferable
+acrossjurisdictions.Asaresult,marketinginsuchsettingsmustbeun‐
+derstoodnotsimplyasdemandgenerationbutasaprocessoflegitimacy
+mobilizationandvaluestabilization.
+Synthesizingthesestreams,wedefineaconstraint‐sensitivemarket‐
+ing capability framework as an analytical lens explaining how institu‐
+tional access conditions, procurement rules, and cash‐cycle conflicts
+shapeboththefeasibilityandsequencingofmarketingcapabilityde‐
+velopmentinsustainability‐criticalservicemarkets.Inthisframework,
+procurementinstitutionsandrelationship‐dependentaccessconditions
+influencemarketparticipation;longreceivablescycles,pre‐fundingre‐
+quirements.andcostcompressionreducediscretionaryinvestmentca‐
+pacity. Reduced discretionary capacity weakens the development of
+capabilitiesthatareparticularlyvaluableinthiscontext,includingdigital
+conversiongovernance,customerrelationshipdiscipline,andsolution/‐
+valuearticulation.Theseweakercapabilitiesthenreducedifferentiation,
+constraincross‐regionallegitimacytransfer,andreinforcedependence
+onfamiliarpublicchannels.
+Thisframingalsoclarifiesthetheoreticalcontributionofthepaper.
+Thestudydoesnotclaimtotestauniversalcausalmodelfromasin‐
+glecase.Rather,itdevelopsaprocessexplanationofhowinstitutional
+conditions,paymentpressures,andmarketingcapabilityformationbe‐
+comemutuallyreinforcinginregionalenvironmentalservicemarkets.In
+thissense,thepapercontributestosustainability‐orientedmarketing
+byshowingthatthecommunicationofenvironmentalvalueiscondi‐
+tionedbyorganizationalprocesses,relationalcredibility,andfinancial
+feasibility,notmerelybystrategicintentorpromotionaleffort.
+3 MATERIALS AND METHODS
+This study adopts a theory‐building single‐case design and pursues
+analyticalratherthanstatisticalgeneralization.Thepurposeisnotto
+estimatepopulation‐leveleffectsacrossallenvironmentalservicefirms,
+buttoexamineatheoreticallyrelevantcaseindepthinordertoelab‐
+orateamechanismthatmaybetransferabletocomparableorganiza‐
+tionsoperatingundersimilarinstitutionalandfinancialconditions.In
+linewithcase‐studylogic,thefocalcasewasselectedbecauseitdis‐
+playsthekeytensionscentraltotheresearchproblem:dependenceon
+policy‐shapedprocurement,cross‐regionalgrowthambitions,resource
+constraints,andtheneedtocommunicatecredibleenvironmentalvalue
+inB2GandB2Bsettings.Thestudythereforeaimstogeneratecontext‐
+boundedyetconceptuallyportableinsightsforregionalenvironmental
+service providers facing similar combinations of legitimacy barriers,
+procurementpressure,andcash‐cycleconflicts.
+
+BreakingtheConstraintLoopinB2GEnvironmentalServices 19
+3.1 Case Selection and Research Context
+Thefocalfirm,HunanMeizhongEnvironmentalEcologyTechnologyCo.,
+Ltd.,wasselectedpurposivelyfortheoreticalratherthanstatisticalrea‐
+sons. Firstly, it represents a regional environmental service provider
+operating in a policy‐intensive B2G/B2B market, which is central to
+the research problem addressed in this paper. Secondly, it displays
+salient strategic tensions relevant to theory development, including
+highdependenceongovernment‐linkedchannels,limitedcross‐regional
+legitimacytransfer,constrainedenterprise‐customerpenetration,and
+weakdigitalmarketingintensityunderlongpaymentcycles.Thirdly,the
+caseofferedunusuallyrichaccesstomultipleformsofevidence,includ‐
+ingmanagerialinterviews,archivaloperationalandfinancialdata,survey
+feedback,competitorinformation,andexpertvalidation.Thecasewas
+thereforesuitableforexamininghowprocurementinstitutions,legiti‐
+macybarriers,andfinancialpressuresjointlyshapethedevelopmentof
+marketingcapabilitiesinsustainability‐criticalservicemarkets.
+3.2 Data Sources and Collection Proce‐
+dures
+Toimproverobustness,thestudydrawsonfourcomplementarysources
+ofevidence:semi‐structuredinterviewsandfieldengagement,astruc‐
+turedclientsurvey,documentaryandarchivalmaterials,andcompetitor
+benchmarkingwithexpertvalidation.
+Firstly,weconductedsemi‐structuredinterviewswith11informants
+betweenJuly2024andMarch2025.Theintervieweesincludedone
+marketingdirector,threeprojectmanagers,fiveclientmanagers,and
+two government representatives involved in procurement or service
+oversight.Interviewstypicallylastedbetween60and120minutesand
+focused on market access, bidding practices, customer development,
+pricinglogic,valuepropositionconstruction,digitalroutines,andper‐
+ceived growth constraints. Site visits to the company headquarters
+andbranchescomplementedtheinterviewsbyenablingobservationof
+coordinationandimplementationpractices.
+Secondly, a structured questionnaire was administered to current
+andpotentialclientsinordertocaptureperceptionsofservicequality,
+brandawareness,satisfaction,andchannelpreferences.Atotalof500
+questionnairesweredistributedand410validresponseswereretained.
+Thevalidsamplecomprised150government‐relatedrespondents,120
+enterprise‐client respondents, and 140 potential‐client respondents,
+withthemajoritylocatedinHunanProvince.Thesurveywasdesigned
+asadiagnosticandtriangulationinstrumentratherthanasabasisfor
+formalcausalmodelling.Itemsweremeasuredprimarilywithfive‐point
+Likert‐typescales,andthequestionnaireachievedsatisfactoryinternal
+consistencyattheoveralllevel.
+Thirdly,wecollecteddocumentaryandarchivalevidence,including
+internaloperationalandfinancialsummaries,biddingrecords,projectac‐
+quisitionlogs,websiteandsocial‐mediamaterials,andpubliclyavailable
+competitorinformation.Thesesourceswereusedtoestablishobjective
+indicatorsofchannelstructure,receivablespressure,digitalconversion,
+customerconcentration,andmarketexpansionperformance.
+Fourthly,the study included competitor benchmarking and expert
+validation.Thebenchmarkingexercisefocusedontwosalientcompeti‐
+torsselectedfortheirrelevancetothefocalfirm’sstrategiccomparison
+environment.Inaddition,atwo‐roundDelphiprocesswasconducted
+withfiveexperts,includingindustryassociationresearchers,marketing
+academics,andanindustrymarketingexecutive,inordertovalidatethe
+diagnosisandtheplausibilityoftherecommendedstrategicresponses.
+3.3 Measures and Operationalization
+Variableswereoperationalizedatthreelevels.Firstly,contextualcon‐
+straintsincludedrelationship‐dependentmarketaccess,payment‐cycle
+exposure, procurement cost compression, and competition intensity.
+Thesewerecapturedthroughsecondaryindustrydataandfirm‐specific
+indicators such as the out‐of‐province bid win‐rate, the accounts re‐
+ceivable period, and the working‐capital gap derived from records
+andtriangulatedwithmanageraccounts.Secondly,marketingstrategy
+and capability indicators captured targeting and segmentation prac‐
+tices,valuepropositionarticulationandpricinglogic,channelmixand
+channelgovernance,promotioncontentconsistencyandproofmecha‐
+nisms.,Customerlifecyclepracticesincludedtiering,renewalprocesses,
+complainthandling,andpost‐projectdevelopment.Thirdly,marketing
+outcomesincludedcross‐regionalmarketpenetration,customerport‐
+folio structure, and proxies for marketing efficiency such as digital
+conversion,retention,andsurvey‐basedsatisfactionandadvocacy.
+3.4 Data Analysis Procedures
+Qualitative and quantitative evidence were analyzed through a con‐
+vergentmixed‐methodlogic.Interviewtranscripts,observationnotes,
+anddocumentarymaterialswerefirstcodeddeductivelybasedonthe
+study’ssensitizingcategories,includingcontextualconstraints,capabil‐
+itygaps,andmarketoutcomes.Asecondcycleofcodingconsolidated
+these patterns into higher‐order themes such as relationship‐based
+marketaccess,payment‐inducedinvestmentsuppression,weakvalue
+articulation,andunder‐integrateddigitalconversiongovernance.These
+higher‐orderthemeswerethenusedtoreconstructwithin‐caseprocess
+narratives.
+Survey responses were analyzed using SPSS 26.0 and were used
+primarilyfordescriptivestatistics,reliabilitychecking,andgroupcom‐
+parisons across respondent categories. The survey was not used to
+test a formal latent‐variable model; rather, it served to corroborate
+or challenge patterns emerging from the qualitative and archival evi‐
+dence.Thebenchmarkingexercisefurtherhelpedsituatethefocalfirm’s
+performancerelativetocomparableactors.
+The study used a convergence logic for inference. Claims were
+treatedasanalyticallystrongerwhentheyweresupportedbyatleast
+two independent sources, such as interviews and archival records,
+
+20
+T A B L E 1 Datasourcesandcollectionprocedures.
+Datasource/procedure Purposeinthestudy Sample/coverage Period Outputsusedinanaly‐
+sis
+Semi‐structuredinterviews
+andfieldengagement
+Reconstructmarketingstrategychoices,
+constraints,andcapabilitygaps;capture
+processmechanisms
+Internalinformants(e.g.,
+marketingdirector,project/client
+managers)andexternal
+stakeholders;sitevisitsand
+observations
+July2024‐March
+2025
+Transcripts and field
+notes coded into
+constraint, capability,
+andoutcomethemes;
+within‐case causal
+narratives
+Clientsurvey Quantifyclientperceptionsandcompare
+patternsacrossclientgroupsrelevantto
+segmentation,channelpreferences,and
+satisfaction
+500distributed;410valid
+responses(82%effective
+responserate);threeclient
+groups
+Fieldedduring
+primarycollection
+window
+Descriptive statistics,
+group comparisons,
+reliability assess‐
+ment (overall alpha =
+0.85), segmentation‐
+relevantindicators
+Documentandarchivaldata Establishobjectivebaselinesofmarketing
+inputs/outcomes;triangulateinterview
+claims;reconstructbidding,customer
+structure,andfinancialconstraints
+Internaloperational/financial
+summaries(2022‐2024);bidding
+records;projectacquisitionlogs;
+marketingmaterialsanddigital
+artifacts
+2022‐2024records
+plus2024‐2025
+artifacts
+Key indicators (e.g.,
+channel mix, bid
+success, receivables
+cycle, pre‐funding
+intensity); corrobora‐
+tion and discrepancy
+checks
+Competitorbenchmarking
+andexpertvalidation
+(Delphi)
+Situatethefocalfirmrelativetopeers;
+validatediagnosisand
+feasibility/transferabilityof
+recommendations
+Twosalientcompetitorsanda
+two‐roundDelphiwithfive
+experts
+Benchmarking:
+2022‐2024;Delphi
+duringprimarystudy
+window
+Comparative profiles;
+validation of problem
+map and action mod‐
+ules; convergence in‐
+dicator(Kendall’sW=
+0.72)
+orsurveypatternsandbenchmarkingevidence.Wherediscrepancies
+appeared, these were retained rather than eliminated and were in‐
+terpreted as possible indicators of implementation gaps, perception
+asymmetries,orbiasinspecificsourcetypes.
+3.5 Rigor, T rustworthiness, and Ethics
+Several measures were used to enhance rigor and trustworthiness.
+Firstly, the study employed data triangulation across interviews, sur‐
+vey evidence, archival records, benchmarking materials, and expert
+validation. Secondly, informant triangulation was used to reduce the
+overrelianceonasingleperspectivebyincludingbothinternalactors
+andexternalstakeholders.Thirdly,processtransparencywassupported
+byadocumentedchainofevidencelinkinginterviewthemes,survey
+patterns,archivalindicators,andinterpretiveconclusions.Fourthly,the
+Delphi process helped assess the plausibility and relevance of the
+diagnosticinterpretationandrecommendedactionmodules.
+Atthesametime,werecognizethatthestudyremainssubjectto
+severallimitationstypicalofcase‐basedresearch.Interviewdatamay
+reflect retrospective opinion to make sense of past actions and self‐
+justification,andthesurveysamplewasregionallyconcentratedandnot
+designedforpopulation‐levelinference.Theseissuesareacknowledged
+explicitlyinthelimitationssection.
+All interviews and survey activities were conducted on a volun‐
+tary basis with informed consent. Participants were informed of the
+academicpurposeofthestudy,theconfidentialtreatmentoftheirre‐
+sponses, and their right to decline participation. The study involved
+adult participants only, did not involve medical or psychological in‐
+tervention, and reporting procedures ensured anonymous responses.
+Supportingdocumentation,includingparticipantinformationandinsti‐
+tutionalexemptionmaterials,waspreparedforthestudy.
+4 RESULTS
+The empirical evidence shows a consistent pattern: the focal firm’s
+marketexpansionandcustomer‐diversificationoutcomesarenotbest
+explainedbyisolatedtacticalweaknesses,butbyareinforcingsetof
+constraints linking procurement conditions, cash‐cycle pressure, and
+unevencapabilitydevelopment.Acrossinterviews,archivalindicators,
+surveypatterns,andbenchmarkingevidence,threerecurringfeatures
+standout.Thesearefirstlytherelationship‐gatedmarketaccessinpub‐
+licprocurement,secondlythesevereworking‐capitalexposurecaused
+bylongreceivablesandpre‐fundingrequirements,andthirdlytheunder‐
+investmentinscalablemarketingcapabilities,especiallydigitalconver‐
+siongovernance,customermanagementprocesses,andsolution/value
+articulation.Thefollowingsectionspresenttheempiricalevidencein
+relationtothesepatternsbeforeturningtotheirtheoreticalinterpre‐
+tation.Table2consolidatesthecoreindicatorsandshowswherethe
+firmunderperformsrelativetomanagement’sstrategicintentofcross‐
+regional growth, stronger enterprise share, and improved marketing
+productivity.
+
+BreakingtheConstraintLoopinB2GEnvironmentalServices 21
+4.1 Process Evidence for the Constraint
+T ransmission Mechanism
+Theevidencesuggestsatemporalsequenceratherthanamerelystatic
+association.Across2022–2024archivalindicatorsand2024–2025in‐
+terview accounts, procurement price pressure and delayed payment
+cyclesappearedfirstasantecedentconditionsshapingmanagerialde‐
+cisions about discretionary spending. Long receivables periods, high
+pre‐fundingrequirements,andthinmarginsreducedavailableliquidity
+and increased the perceived risk of non‐essential investment. Inter‐
+vieweesrepeatedlydescribedhowthisfinancialpressureledmanage‐
+ment to defer or narrow spending on brand building, CRM routines,
+enterprise‐marketdevelopment,anddigitalconversionsystems.
+Theconsequencesofthisinvestmentsuppressionwerethenvisible
+in downstream capability patterns. Digital channels remained weakly
+integrated with offline follow‐up, customer management was insuffi‐
+ciently tiered and process‐driven, and solution articulation remained
+underdeveloped outside familiar local contexts. These capability limi‐
+tations,inturn,coincidedwithlowenterprisepenetration,lowout‐of‐
+provincebidsuccess,andcontinueddependenceongovernment‐linked
+channels.Forthisreason,theevidencesupportsthedirectionofthe
+proposed mechanism as procurement and payment pressure leading
+toinvestmentsuppression,thentocapabilityweakening,andthento
+deeperdependenceandconstrainedgrowth,ratherthanthereverse
+sequence.
+Takentogether,theseindicatorsshowthatthefirm’smarketingout‐
+comesarelessafunctionofisolatedtacticalshortcomingsandmore
+the product of a reinforcing constraint structure. Cross‐regional un‐
+derperformance(25%win‐rate)co‐occurswithachannelarchitecture
+dominatedbygovernmentprojects(58%)andalownon‐government
+share(<15%),whiledigitalchannelscontributeonly9%ofprojectac‐
+quisition and display weak conversion effectiveness (8%). The brand
+indicatorrevealsmeaningfullocalgains,buttheabsenceofcomparable
+out‐of‐provincetractionisconsistentwithalegitimacydeficitinnew
+jurisdictionsratherthanalackofgeneralpromotionalactivity.
+Figure 1 (constraint transmission mechanism) should be read as a
+causal chain with feedback loops rather than a static diagnostic. It
+depictshowprocurementcostcompressionandintensebiddingcom‐
+petition reduce margin and pricing discretion, while long receivables
+andhighpre‐fundingrequirementsincreaseworking‐capitallock‐inand
+liquidity risk. These financial constraints, in turn, restrict investment
+inmarketingcapabilitydevelopment(brandbuildingoutsidethehome
+province,enterprisesolutionselling,CRM,anddigitalconversionsys‐
+tems),whichweakensdifferentiationandraisescustomeracquisition
+costs,therebyincreasingrelianceonrelationship‐basedpublicchannels
+andreinforcingtheinitialconditions.Intheevidenceprovidedbythe
+case,thisloopisobservableintheco‐movementofcash‐cycleindica‐
+tors(182‐dayreceivables;45%pre‐funding;25‐million‐yuancash‐flow
+gap)withcapabilityoutcomes(lowdigitalshareandconversion;limited
+enterprisepenetration)andexpansionoutcomes(lowout‐of‐province
+tendersuccess).
+5 DISCUSSION
+5.1 Theoretical Implications
+Thisstudyshowsthat,inpolicy‐shapedenvironmentalservicemarkets,
+marketingoutcomesarebestunderstoodnotastheresultofisolated
+tactical choices but as the consequence of an interaction between
+institutional access conditions, financial pressures, and capability de‐
+velopment.Thisfindingextendsestablishedcapability‐basedviewsof
+marketingbyshowingthattheissueisnotsimplywhetherfirmspossess
+marketingcapabilities,butwhethertheyareabletoinvestin,sequence,
+andsustainthosecapabilitiesunderprocurementandcash‐cyclecon‐
+straints.RecentresearchhassimilarlyemphasizedthatB2Bmarketing
+capabilitiesareshapedbybroaderinstitutionalandenvironmentalcon‐
+ditionsandshouldbeanalyzedasdynamic,context‐sensitiveprocesses
+ratherthanasstaticbundlesofresources( Bagetal. 2023,Dayangan
+andAykol 2024).
+Thefindingsalsocontributetosustainability‐orientedmarketingre‐
+search.RecentworkinIndustrialMarketingManagementhasargued
+thatsustainableB2Bmarketingremainsunderdevelopedconceptually
+and empirically, despite growing pressure on firms to align commer‐
+cialperformancewithenvironmentalimpactandsocialvaluecreation
+(Vrontisetal. 2025).Ourresultsspeakdirectlytothatgap.Inthefocal
+case, sustainability‐oriented marketing could not be reduced to envi‐
+ronmentalclaimsorgreenbrandlanguage.Instead,itdependedonthe
+firm’sabilitytomakeenvironmentalvaluecredible,documented,buyer‐
+relevant,andoperationallydefensibleintender‐basedandrelationship‐
+mediatedmarkets.Thisinterpretationalignswithrecentworkshowing
+thatclimate‐andsustainability‐focusedB2Bstrategiesgeneratevalue
+onlywhentheyconnectriskmanagement,customerengagement,and
+stakeholdervaluecreationinacoherentway( Khanetal. 2023).
+Acentralcontributionofthepaperistotheorizepaymentfriction
+asamechanismlinkingmarketstructuretomarketingcapabilityweak‐
+ness.Thecasesuggeststhatprocurementpricepressureanddelayed
+paymentsdidnotmerelyreduceshort‐termliquidity;theyconstrained
+thefirm’sabilitytobuildtheveryprocessesneededfordifferentiation,
+enterprise‐customerdiversification,andmoresystematicdigitalconver‐
+sion.Thismechanismisconsistentwithrecentevidenceshowingthat
+latepaymentsunderminetheopportunitiesforSMEstoaccessfinance
+byincreasingcreditrationingandworseningloanconditions,thereby
+weakening firms’ investment capacity (Kaya 2024). It also resonates
+withrecentresearchonprocurementshowingthatSMEparticipation
+inpublicprocurementremainsdeeplyshapedbystructuralbarriers,ad‐
+ministrativeasymmetries,andunevenaccessconditions,ratherthanby
+competitiveefficiencyalone( ?).Inourcase,thosepressurestranslated
+intoaconservativeandreactivemarketingposture,reinforcingdepen‐
+denceonfamiliarpublicchannelsandreducingthescopeforfirmsto
+investinupgradingtheircapabilities.
+Thefindingsfurtherenrichtheliteratureonlegitimacyandmarket
+expansion.Cross‐regionalunderperformanceinthecasecouldnotbe
+explainedbypriceortechnicalqualityalone.Instead,itreflectedthe
+
+22
+T A B L E 2 Keyempiricalindicators(HunanMeizhong).
+Indicator Operationaldefinition Observedvalue Interpretationforthecase
+Cross‐regionalbidsuccess Winrateforout‐of‐provincetenders 25%(8wins/32bids,
+2024)
+Expansionisimpededdespitecompetitivepric‐
+ing and technical claims, consistent with rela‐
+tionshipbarriersinB2Gprocurement.
+Channelmix(projectacquisition) Shareofprojectssourcedbychannel Government58%;
+Enterprise18%;Partners
+15%;Digital9%(2024)
+Thepipelineisstructurallydependentonpublic
+channels;enterpriseanddigitalchannelsremain
+underdevelopedasscalablegrowthengines.
+Clientstructure
+(non‐governmentshare)
+Shareofnon‐governmentclientsinthe
+customerbase/revenuemix
+<15%non‐government
+share(2024)
+Concentration heightens exposure to policy/‐
+paymentvolatilityandlimitsmarginexpansion
+associatedwithenterprisesolutions.
+Digitalconversion Shareofwebsiteinquiriesconvertingto
+signedcontracts
+8%conversion(2024) Digitalpresencefunctionsprimarilyasaninfor‐
+mation brochure; weak CRM and closed‐loop
+conversiongovernanceconstrainROI.
+Brandawareness(home
+province)
+RecognitionrateinHunanProvince 35%(2020)to68%(2024) Awarenessimprovedlocally,buttheevidencein‐
+dicateslimitedspilloverbeyondHunan,aligning
+withweakcross‐regionallegitimacy.
+Accountsreceivablecycle Averagereceivablesperiod(days) 182days(2024) Longpaymentcyclesconstraindiscretionaryin‐
+vestmentsinbrand,digitaltools,andsalesen‐
+ablement.
+Pre‐fundingintensity Proportionofadvancefundstiedupin
+projects
+45%(2024) High working‐capital lock‐in increases financ‐
+ing pressure, and reinforces conservative, bid‐
+centricmarketingbehavior.
+Cash‐cycleexposure Cash‐flowgapattributableto
+working‐capitalconstraints
+25millionyuan(2024) Liquiditystressprovidesaconcretemechanism
+linkingindustryconditionstocapabilityunderin‐
+vestment.
+UPSTREAM
+INDUSTRY
+CONDITIONS
+•Relationship-gated B2G
+procurement
+•Cost compression in
+tenders + intense bidding
+•Long payment cycles +
+high pre-funding
+requirements
+•High capex needs
+(equipment / smart
+systems)
+FINANCIAL &
+OPERATIONAL
+CONSTRAINTS (FIRM
+LEVEL)
+•Liquidity pressure /
+working-capital lock-in
+•Limited discretionary
+budget for marketing &
+capability building
+•Higher perceived risk of
+cross-regional delivery
+CAPABILITY
+BOTTLENECKS
+(MARKETING
+SYSTEM)
+•Weak enterprise-solution
+selling routines (B2B)
+•Underdeveloped CRM
+and customer tiering
+•Low digital maturity
+(content → leads →
+conversion governance)
+•Limited brand legitimacy
+outside home province
+MARKETING
+OUTCOMES
+(OBSERVED
+INDICATORS)
+•Low cross-regional bid
+success
+•Government-heavy
+channel mix
+•Low non-government
+client share
+•Low digital conversion
+•Local awareness gains,
+limited external spillover
+REINFORCING
+FEEDBACK LOOP
+•Reliance on B2G
+relationships increases
+•Price-led competition
+persists
+•Cash-cycle exposure
+remains high
+•Capability investment
+stays constrained
+F I G U R E 1 Constrainttransmissionmechanismlinkingindustryconditionstomarketing414outcomesinregionalenvironmentalservicefirms
+(case:HunanMeizhong).
+difficulty of transferring legitimacy beyond the home region. This is
+consistent with recent research showing that dynamic marketing ca‐
+pabilities support legitimacy in new markets through flexibility, local
+sensitivity, relationship management, anticipation, and exemplariness
+(Rivero‐Gutiérrez et al.2024). Our study extends this argument by
+showingthatlegitimacytransferisnotonlyarelationalandsymbolicis‐
+sue;itisalsoshapedbythefirm’sfinancialabilitytoinvestinportable
+proofsystems,customerdocumentation,localpresence,andconsistent
+valuearticulation.
+Anothertheoreticalimplicationconcernsdigitalmarketing.Thecase
+confirms that weak digital outcomes are not well explained by low
+onlinevisibilityalone.Rather,theyreflectadeeperabsenceofprocess‐
+orienteddatause,coordinatedfollow‐up,andcustomerlifecyclegover‐
+nance.ThisinterpretationissupportedbyrecentB2Bresearchshowing
+thatAI‐enabledCRMcapability,technologyreadiness,anddata‐driven
+marketingprocessesaffectperformanceonlywhentheyareembedded
+inrepeatableprocessesandcross‐functionallearningmechanisms( Rah‐
+manetal. 2023,Ravatetal. 2024).Inotherwords,brochure‐likedigital
+presenceisnotacapability.Capabilitybeginswhendata,processes,and
+organizational learning are linked to conversion, retention, and value
+communication.
+Thestudyalsohasimplicationsforhowsustainabilitytransitionsare
+understoodinB2Benvironmentalservices.Recentworkonlow‐carbon
+businessmodelsemphasizesthatvaluecreationindecarbonizingB2B
+settingsrequiresnewlogicsoforganizing,customerengagement,and
+business‐modelalignmentratherthansimpleextensionsoftraditional
+offerings(SairanenandAarikka‐Stenroos 2024).Ourfindingscomple‐
+mentthisperspectivebysuggestingthatregionalenvironmentalservice
+firmsmayremaintrappedinlow‐differentiation,procurement‐ledcom‐
+petitionunlesstheycantranslateenvironmentalservicecapacityinto
+codifiedsolutionlogic,relationalcredibility,andauditableperformance
+
+BreakingtheConstraintLoopinB2GEnvironmentalServices 23
+proof.Thisisespeciallyimportantinmarketswheresustainabilityispo‐
+liticallyimportantbutcommerciallymediatedthroughtenders,andcon‐
+tractsawardedareassociatedwithpaymentdelays,andadministrative
+riskaversion.
+5.2 Managerial Implications
+Fromamanagerialperspective,thefindingssuggestthatmarketentry
+innewregionsshouldbetreatedasalegitimacy‐transferprocessrather
+thansolelyduetocompetitivepositioning.Localpartners,localoperat‐
+ingstructures,codifiedproofofperformance,andvisiblecommitments
+toservicecontinuityarelikelytomatterasmuchastechnologicalor
+pricingadvantages.Theresultsfurthersuggestthataworking‐capital
+strategyandmarketingstrategyshouldnotbeseparatedinfirmsex‐
+posed to long receivables cycles. Managers may need to prioritize
+customer segments with more manageable payment terms, redesign
+pricinglogictoreflectfinancingburdens,andsequencecapabilityinvest‐
+menttowardmarketingstrategieswithvisibleconversionandretention
+effects.Atthecapabilitylevel,digitalmarketingshouldbedesignedas
+aclosed‐loopconversionarchitecture,whilesolutionsellingshouldbe
+built through repeatable diagnosis–design–evidence processes rather
+thanadhocproposalwriting.
+Overall, the discussion suggests that the “constraint loop” identi‐
+fied in the case is best interpreted not as a universal model, but as
+ananalyticallygeneralizablemechanism.Ithelpsexplainwhyregional
+environmentalservicefirmsmaystruggletoconverttechnicalandenvi‐
+ronmentalcompetenceintomarketdifferentiation,whenlegitimacyis
+localized,paymentcyclesarelong,andmarketingcapabilityformation
+isfinanciallyconstrained.Inthatsense,thepapercontributestosus‐
+tainabilityresearchbyshowingthatsustainablevaluecommunication
+inB2GandB2Benvironmentalservicesdependsontheinterplayof
+institutions,finance,andcapabilities,ratherthanongreenmessaging
+alone.
+5.3 Limitations and Future Research
+Thisstudyhasseverallimitations.Firstly,itisbasedonasingle‐case
+design and therefore does not support statistical generalization. The
+valueofthisstudyliesintheorybuildingandelaborationofmechanisms
+ratherthanpopulation‐levelinference.Secondly,althoughthestudytri‐
+angulatesmultiplesourcesofevidence,someinterviewaccountsmay
+still reflect retrospection or self‐justification in making sense of past
+actions.Thirdly,thesurveysamplewasconcentratedlargelyinonere‐
+gionalcontextandfunctionedasadiagnosticinstrumentratherthanas
+abasisforformalcausalmodelling.Fourthly,whilethepaperaddresses
+sustainability‐orientedmarketinginenvironmentalservicemarkets,it
+doesnotdirectlymeasureenvironmental‐effectivenessoutcomes.The
+studythereforecannotdemonstratewhetherfinancialandprocurement
+frictionsdegradetheenvironmentalperformanceitself.Thestudycan
+onlyshowhowthesefactorsconstrainthedevelopmentofthecapabili‐
+tiesneededtoarticulate,provideevidencefor,andscaleenvironmental
+value.
+Futureresearchcouldbuildonthisstudyinseveralways.Multi‐case
+comparisonsacrossregionsandsub‐sectorscouldassesstheboundary
+conditionsoftheproposedmechanisms.Larger‐samplestudiescould
+test the links between payment pressure, capability investment, and
+customerdiversificationmoreformally.Furtherresearchcouldalsoex‐
+aminehowenvironmentalservicefirmsconvertverifiedsustainability
+outcomes into procurement legitimacy and buyer value perceptions
+overtime.Futureresearchcouldalsoexaminewhethertheconstraint
+transmissionmechanismoperatesdifferentlyacrosshiddenmarketor
+policystates.Inthisrespect,regime‐identificationapproachessuchas
+thoseusedby Lietal. (2026)mayofferusefulmethodologicalinspira‐
+tionformodelingstate‐dependentvariationinhowfinancialpressure,
+informationflows,andstrategicresponsesinteractovertime.
+6 CONCLUSIONS
+Thisstudyexaminedhowaregionalenvironmentalserviceproviderin
+Chinaadaptsitsmarketingstrategywheremarketaccessisfocusedon
+relationshipbuilding,procurementpricepressure,andlongreceivables
+cycles.Usingamixed‐methodsingle‐casedesign,thepapershowsthat
+thecorebottleneckisnotsimplyweakpromotionorinsufficientman‐
+agerialintent.Rather,itisaconstraint‐sensitivecapabilityproblem:pro‐
+curement and cash‐cycle conflicts suppress discretionary investment,
+which weakens digital conversion governance, customer relationship
+routines,andsolution/valuearticulationcapabilities.Thesedeficitsre‐
+duce differentiation, constrain cross‐regional legitimacy transfer, and
+reinforcedependenceonfamiliarpublicchannels.
+The study makes three main contributions. Firstly, this study con‐
+tributestosustainability‐orientedB2Bmarketingbyshowingthatenvi‐
+ronmentalvaluemustbecredible,documented,andrelevanttobuyers
+through organizational competence and routines, not simply commu‐
+nicated through generic claims of the potential benefits to the envi‐
+ronment.ThispointisincreasinglycentralinrecentB2Bsustainability
+research,whichstressesthatfirmsmustconnectcommercialviability
+withsocialandenvironmentalvaluecreationinmuchmoreconcrete
+ways than earlier marketing frameworks assumed (Khan et al.2023,
+Vrontisetal. 2025).Secondly,thisstudycontributestocapabilityre‐
+searchbyshowingthatcapabilitydevelopmentisshapedbyfeasibility
+andsequencingunderconstraint.Recentresearchondynamiccapabil‐
+ities, AI‐enabled CRM, and data‐driven B2B marketing suggests that
+capabilitiesemergethroughcoordinatedactionsandlearningprocesses,
+ratherthanthroughisolatedinvestmentsintoolsorvisibility( Rahman
+etal. 2023,Ravatetal. 2024,DayanganandAykol 2024).Thirdly,this
+studycontributestolegitimacyresearchbyclarifyinghowlocalizedle‐
+gitimacyandfinancialcapacityjointlyinfluencewhetherafirmcanscale
+beyonditshomeregion( Rivero‐Gutiérrezetal. 2024).
+
+24
+Thepaperdoesnotclaimuniversalinferencefromasinglecase.Its
+contributionisinsteadtoelaborateamechanismthroughwhichinstitu‐
+tionalconditions,paymentfrictions,andmarketingcapabilityformation
+become mutually reinforcing in policy‐shaped environmental service
+markets. Future research should test this mechanism across multiple
+regions,ownershipforms,andenvironmental‐servicesub‐sectors.Fu‐
+tureresearchshouldfurtherexaminehowfirmsverifiedsustainability
+outcomes,andtranslatetheseoutcomesintoprocurementlegitimacy,
+stakeholderconfidence,andvalueperceptionsofbuyersovertime.It
+wouldalsobeusefultoconnectthislineofinquirymorecloselywith
+emergingworkonpublicprocurementconstraints,paymentfrictions,
+and low‐carbon business‐model development in B2B contexts (Kaya
+2024,Flynn2026,SairanenandAarikka‐Stenroos 2024).
+ACKNOWLEDGMENTS
+Theauthorsacknowledgetherespondentsandinterviewparticipants
+whocontributedtothisstudy.
+FINANCIAL DISCLOSURE
+Nonereported.
+CONFLICT OF INTEREST
+Theauthorsdeclarenoconflictofinterest.
+REFERENCES
+Bag, S., Srivastava, G., Gupta, S., Zhang, J.Z. & Kamble, S. (2023)
+Changeadaptationcapability,business‐to‐businessmarketingca‐
+pabilityandfirmperformance:Integratinginstitutionaltheoryand
+dynamic capability view.Industrial Marketing Management, 115,
+470–483.doi:10.1016/j.indmarman.2023.11.003.
+Bajwa,F.A.,Fu,J.,Bajwa,I.A.,Rehman,M.&Abbas,K.(2025)Digital
+financialinclusionanditsdualimpactoneconomicandenviron‐
+mentaloutcomesinaseancountries. DataScienceinFinanceand
+Economics,5(1),53–75.doi:10.3934/DSFE.2025004.
+Boyer, A. (2024) Navigating complexity: Interdisciplinary ap‐
+proachestosustainablesupplychainmanagement. Management
+ResearchQuarterly,1(1),1–3.doi:10.63029/78v84162.
+Crittenden,V.L.,Crittenden,W.F.,Ferrell,L.K.,Ferrell,O.C.&Pin‐
+ney, C.C. (2011) Market‐oriented sustainability: A conceptual
+frameworkandpropositions. JournaloftheAcademyofMarketing
+Science,39(1),71–85.doi:10.1007/s11747‐010‐0217‐2.
+Day, G.S. (1994) The capabilities of market‐driven
+organizations. Journal of Marketing , 58(4), 37–52.
+doi:10.1177/002224299405800404.
+Dayangan,C.&Aykol,B.(2024)Dynamiccapabilitiesresearchin
+international marketing: A systematic literature review and di‐
+rectionforfutureresearch. InternationalMarketingReview ,41(7),
+1618–1672.doi:10.1108/IMR‐08‐2023‐0168.
+Desmarchelier,B.(2024)Exploringorganizationallearningintheera
+ofemergingtechnologies. ManagementResearchQuarterly ,1(2),
+1–3.doi:10.63029/n1pprk28.
+Flynn, A. (2026) Research on sme involvement in public pro‐
+curement: A review, critique and conceptual framework.
+Journal of Purchasing and Supply Management, 32(2), 101052.
+doi:10.1016/j.pursup.2025.101052.
+Guechtouli, M. & Purvis, B. (2024) Social media for information
+sharing in an industrial setting: Evidence from the chinese au‐
+tomotive industry.Management Research Quarterly, 1(1), 4–13.
+doi:10.63029/td1je276.
+Homburg,C.&Wielgos,D.M.(2022)Thevaluerelevanceofdigital
+marketingcapabilitiestofirmperformance. JournaloftheAcademy
+ofMarketingScience ,50(4),666–688.doi:10.1007/s11747‐021‐
+00833‐8.
+Kannan, P.K. & Li, H.A. (2017) Digital marketing: A framework,
+reviewandresearchagenda. InternationalJournalofResearchin
+Marketing,34(1),22–45.doi:10.1016/j.ijresmar.2016.11.006.
+Kaya, O. (2024) The impact of late payments on smes’ access to
+finance:Evidencefromcreditrationingandloanterms. Economic
+Modelling,141,106896.doi:10.1016/j.econmod.2024.106896.
+Khan,H.,Gupta,S.,Kumar,V.&Kumar,B.(2023)Managingclimate
+change risks and creating stakeholders’ value via sustainability‐
+focused b2b brand strategies.Industrial Marketing Management,
+115,198–213.doi:10.1016/j.indmarman.2023.09.017.
+Kohli, A.K. & Jaworski, B.J. (1990) Market orientation: The con‐
+struct,researchpropositions,andmanagerialimplications. Journal
+ofMarketing,54(2),1–18.doi:10.1177/002224299005400201.
+Leonidou, L.C., Katsikeas, C.S. & Morgan, N.A. (2013) “Green‐
+ing” the marketing mix: Do firms do it and does it pay off?
+Journal of the Academy of Marketing Science, 41(2), 151–170.
+doi:10.1007/s11747‐012‐0317‐2.
+Li,Z.,Chen,Z.&Huang,Z.(2026)Modellingthedata‐generating
+mechanism of china’s commodity market by identifying hid‐
+den information flow regimes.Financial Innovation, 12(1), 28.
+doi:10.1186/s40854‐025‐00804‐w.
+Lissillour, R. (2024) Exposing power and inequality in sus‐
+tainable supply chains: A critical research agenda for trans‐
+formative change. Management & Prospective, 41(5), 58–75.
+doi:10.3917/g2000.415.0058.
+Lissillour, R. (2025) Reframing sustainability learning through cer‐
+tification: A practice‐perspective on supply chain management.
+Sustainability,17(13),5761.doi:10.3390/su17135761.
+Lissillour, R. & Silva, M.E. (2024) Going forward and beyond:
+On the track of a practice turn in supply chain sustain‐
+ability studies. RAUSP Management Journal, 59(2), 138–153.
+doi:10.1108/RAUSP‐09‐2023‐0181.
+Morgan, N.A., Slotegraaf, R.J. & Vorhies, D.W. (2009)
+Linking marketing capabilities with profit growth. Inter‐
+national Journal of Research in Marketing, 26(4), 284–293.
+doi:10.1016/j.ijresmar.2009.06.005.
+Morgan, R.M. & Hunt, S.D. (1994) The commitment‐trust theory
+of relationship marketing.Journal of Marketing, 58(3), 20–38.
+doi:10.1177/002224299405800302.
+Narver, J.C. & Slater, S.F. (1990) The effect of a market orienta‐
+tiononbusinessprofitability. JournalofMarketing ,54(4),20–35.
+doi:10.1177/002224299005400403.
+Palmatier, R.W., Dant, R.P., Grewal, D. & Evans, K.R. (2006)
+Factors influencing the effectiveness of relationship market‐
+ing: A meta‐analysis. Journal of Marketing, 70(4), 136–153.
+doi:10.1509/jmkg.70.4.136.
+Payne, A. & Frow, P. (2005) A strategic framework for customer
+relationshipmanagement. JournalofMarketing , 69(4), 167–176.
+doi:10.1509/jmkg.2005.69.4.167.
+Purvis, B. & Fernandez, D.B. (2024) Sustainability in global in‐
+dustrial shipping chains: A positivist perspective of interna‐
+tional relations.Management Research Quarterly, 1(1), 12–22.
+doi:10.63029/6s5ee610.
+Rahman, M.S., Bag, S., Gupta, S. & Sivarajah, U. (2023) Tech‐
+nology readiness of b2b firms and ai‐based customer rela‐
+tionship management capability for enhancing social sustain‐
+ability performance.Journal of Business Research, 156, 113525.
+doi:10.1016/j.jbusres.2022.113525.
+Ravat,L.,Hemonnet‐Goujot,A.&Hollet‐Haudebert,S.(2024)Ex‐
+ploringhowtodevelopdata‐driveninnovationcapabilityofmar‐
+ketingwithinb2bfirms:Towardacapabilitymodelandprocess‐
+orientedapproach. IndustrialMarketingManagement ,118,110–
+125.doi:10.1016/j.indmarman.2023.12.015.
+Rivero‐Gutiérrez, L., Cabanelas, P., Díez‐Martín, F. & Blanco‐
+González, A. (2024) How can companies boost legitimacy in
+
+BreakingtheConstraintLoopinB2GEnvironmentalServices 25
+internationalmarkets?adynamicmarketingcapabilitiesapproach.
+InternationalMarketingReview,41(2),273–301.doi:10.1108/IMR‐
+09‐2022‐0215.
+Sairanen, M. & Aarikka‐Stenroos, L. (2024) Low‐carbon business
+models: Review and typology.IndustrialMarketingManagement ,
+123,222–250.doi:10.1016/j.indmarman.2024.10.001.
+Suchman,M.C.(1995)Managinglegitimacy:Strategicandinstitu‐
+tionalapproaches. AcademyofManagementReview ,20(3),571–
+610.doi:10.2307/258788.
+Teece, D.J. (2007) Explicating dynamic capabilities: The na‐
+ture and microfoundations of (sustainable) enterprise per‐
+formance. Strategic Management Journal, 28(13), 1319–1350.
+doi:10.1002/smj.640.
+Terho,H.,Haas,A.,Eggert,A.&Ulaga,W.(2012)“itisalmostlike
+takingthesalesoutofselling”:Conceptualizingvalue‐basedsell‐
+inginbusinessmarkets. IndustrialMarketingManagement ,41(1),
+174–185.doi:10.1016/j.indmarman.2011.11.011.
+Trainor,K.J.,Andzulis,J.M.,Rapp,A.&Agnihotri,R.(2014)Social
+mediatechnologyusageandcustomerrelationshipperformance:
+Acapabilities‐basedexaminationofsocialcrm. JournalofBusiness
+Research,67(6),1201–1208.doi:10.1016/j.jbusres.2013.05.002.
+Vargo, S.L. & Lusch, R.F. (2004) Evolving to a new domi‐
+nant logic for marketing.Journal of Marketing, 68(1), 1–17.
+doi:10.1509/jmkg.68.1.1.24036.
+Vavrina,J.&Drdla,M.(2024)Governanceofsocialattributesbehind
+esgconceptsinbusinessentities:Anempiricalevidencebasedon
+thebenchmarkingapproach. ManagementResearchQuarterly,1(1),
+33–39.doi:10.63029/67mqjk39.
+Vorhies,D.W.&Morgan,N.A.(2005)Benchmarkingmarketingca‐
+pabilitiesforsustainablecompetitiveadvantage. JournalofMar‐
+keting,69(1),80–94.doi:10.1509/jmkg.69.1.80.55505.
+Vrontis,D.,Shams,R.,Kotabe,M.&Kumar,V.(2025)B2bmarket‐
+ingforpeople,planetandprofit:Theoreticaladvancementand
+empiricalinsights. IndustrialMarketingManagement ,130,A1–A9.
+doi:10.1016/j.indmarman.2025.08.003.
+Wang, J. (2024) Selective coupling in hybrid organization: In‐
+stitutional logic contradiction in the context of erp post‐
+implementation. Management Research Quarterly, 1(2), 15–35.
+doi:10.63029/x78va191.
+Weng,Y.,Charman,K.P.&Vann,R.(2025)Unlockingthegrowth
+of prefabricated construction in china: Policy–market synergy
+as a strategic lever.Management Research Quarterly, 2, 4–22.
+doi:10.63029/xjq49j12.
+AUTHORS BIOGRAPHY
+Renhua Lv is General Manager of Hunan US‐China Environ‐
+mentEcologicalTechnologyCo.,Ltd.andaseniorpractitionerinurban
+services, property management, and integrated city operations. He
+holdsamaster’sdegreefromthePaneuropeanUniversityinPrague,
+hasmorethan20yearsofexperienceacrossthefullurbanservices
+andproperty‐managementvaluechain,andhasspentover15years
+focusingonpropertyservices,subsidiarygroupmanagementandcon‐
+trol,strategicplanning,multi‐businesscoordination,andoperational
+innovation.HisresearchatCEIBABusinessSchoolreflectsonhisex‐
+perienceacrosscommercial,residential,office,municipal,landscaping,
+andwater‐treatmentprojects,aswellashisroleinpromotingdigital
+transformation,new‐energyequipmentapplications,andintegrated
+urbanenvironmental‐servicemodels.
+Kenneth Paul Charman hasafirstdegreeinEconomicandAgri‐
+culturalEconomicsfromNottinghamUniversity(1983),andanMBA
+(1991)andPhD(1998)ininternationalbusinessfromLondonBusi‐
+nessSchool.HestartedhiscareerinthecorporateworldinLondon
+withamajorinternationaloilcompanyandthenconsultingfirm,after
+whichhetookanMBAatLondonBusinessSchool,andthenaPhDin
+Economics(InternationalBusiness),completinghisthesisonInterna‐
+tionalJointVenturesinKazakhstan.Hewasinstrumentalissettingup
+thefirstinternationalbusinessschoolinCentralAsia,inAlmatyinthe
+early1990s,completedhisPhDwithprimarydatafromfirmsinKaza‐
+khstan,andworkedinKazakhstanandallotherCentralAsianStates
+managingtechnicalassistanceanddevelopmentprojects,primarilyfor
+EuropeAidandforotherinternationaldevelopmentagencies.Hewas
+professoratKazakhBritishTechnicalUniversityinAlmatyin2012‐
+2018beforemovingtohiscurrentpositionofprofessoratCamEd
+BusinessSchoolinPhnomPenh,Cambodiain2018.Hehassincecom‐
+pletedseveralpublicationsinhisareaofresearchinterestsofbusiness
+strategy,management,andeconomicdevelopment.Heco‐founded
+andleadstheAsia‐PacificChapteroftheMicroeconomicsofCompet‐
+itivenessNetwork,establishedbyProf.MichaelPorter,andisactive
+inpromotingbusinesseducationacrosstheAsia‐PacificRegion.
+Javier Alfonso Rodríguez EscobarisaprofessoratUniversidadEu‐
+ropeaMigueldeCervantes(UEMC),whereheisaffiliatedwiththeDe‐
+partmentofSocialSciences.HeholdsadegreeinEconomicsfromthe
+UniversityofSantoTomásinColombiaandaPhDinEconomicsand
+BusinessSciencesfromtheUniversityofSalamancainSpain.With
+around15yearsofprofessionalexperienceinthepublicandprivate
+sectorsandmorethanadecadeofuniversityteachingexperience,he
+hasalsoheldarangeofacademicmanagementandleadershiproles.
+Hisresearchandteachingfocusonoperationsmanagement,strategic
+change,qualitymanagement,supplychainmanagement,innovation,
+andstrategicalignment.

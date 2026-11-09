@@ -1,0 +1,1255 @@
+---
+title: Auditing the Grid-Based Placement of Private Label Products on E-commerce Search Result Pages
+url: https://arxiv.org/abs/2407.14650
+category: digital-marketing
+subcategory: empirical
+date: 2024-07
+venue: ''
+authors:
+- Siddharth D Jaiswal
+- Abhisek Dash
+- Nitika Shroff
+- Yashwanth Babu Vunnam
+- Saptarshi Ghosh
+source: arxiv
+pdf_url: https://arxiv.org/pdf/2407.14650
+pages: 11
+chars: 67834
+fetched_at: '2026-11-08T13:18:37+00:00'
+kb_version: 1
+---
+
+# Auditing the Grid-Based Placement of Private Label Products on E-commerce Search Result Pages
+
+Auditing the Grid-Based Placement of Private Label
+Products on E-commerce Search Result Pages
+Siddharth D Jaiswal
+IIT Kharagpur, India
+Yashwanth Babu Vunnam
+UM Amherst, USA
+Abhisek Dash
+MPI-SWS, Germany
+Saptarshi Ghosh
+IIT Kharagpur, India
+Nitika Shroff
+JP Morgan, India
+Animesh Mukherjee
+IIT Kharagpur, India
+Abstract—E-commerce platforms support the needs and liveli-
+hoods of their two most important stakeholders – customers
+and producers/sellers. Multiple algorithmic systems, like “search”
+systems mediate the interactions between these stakeholders by
+connecting customers to producers with relevant items. Search
+results include (i) private label (PL) products that are manu-
+factured/sold by the platform itself, as well as (ii) third-party
+products on advertised / sponsored and organic positions. In
+this paper, we systematically quantify the extent of PL product
+promotion on e-commerce search results for the two largest
+e-commerce platforms operating in India – Amazon.in and
+Flipkart. By analyzing snapshots of search results across the
+two platforms, we discover high PL promotion on the initial
+result pages ( ≈ 15% PLs are advertised on the first SERP of
+Amazon). Both platforms use different strategies to promote
+their PL products, such as placing more PLs on the advertised
+positions – while Amazon places them on the first, middle, and
+last rows of the search results, Flipkart places them on the first
+two positions and the (entire) last column of the search results. We
+discover that these product placement strategies of both platforms
+conform with existing user attention strategies proposed in the
+literature. Finally, to supplement the findings from the collected
+data, we conduct a survey among 68 participants on Amazon
+Mechanical Turk. The click pattern from our survey shows that
+users strongly prefer to click on products placed at positions
+that correspond to the PL products on the search results of
+Amazon, but not so strongly on Flipkart. The click-through rate
+follows previously proposed theoretically grounded user attention
+distribution patterns in a two-dimensional layout.
+I. I NTRODUCTION
+E-commerce marketplaces, e.g., Amazon, Flipkart, Alibaba,
+etc., cater to the needs of two primary stakeholders – cus-
+tomers and sellers of the marketplace. Customers depend
+on them for their purchase needs [1] whereas sellers across
+the world rely on them for their livelihood [2]. Due to
+their scale of operation, several algorithmic systems, e.g.,
+search and recommendation systems, are deployed on these
+platforms for ease of accessibility of the desired products
+(and their sellers) to different customers. Traditionally, most
+of these algorithms are keyed to relevance and/or customer
+satisfaction [3]–[5]. However, realizing that these algorithms
+impact both customers and sellers, researchers have recently
+focused on fairness toward both stakeholders [6]–[10]. Most
+of the work in this space has focused on bias and fairness
+toward various demographic groups or toward an individual
+stakeholder. In contrast, our study focuses on an emerging
+strand of fairness research: potential preferential treatment of
+private label products (products manufactured by the market-
+place platform) in the search results . To this end, we conduct
+detailed experiments on two of the most prevalent e-commerce
+platforms in India – Amazon.in [11] and Flipkart [12]. More
+precisely, the fairness concerns discussed in this work stem
+from (a) interleaving sponsored results within organic search
+results and (b) the over-promotion of private-label products
+using the search apparatus. Note that the above practices
+may significantly affect the mentioned stakeholders of the
+marketplaces. Next, we briefly discuss these practices and their
+fairness concerns.
+Search results on e-commerce platforms: Search engines are
+one of the most popular ways to look for the desired products
+among customers [4]. Figure 1 shows a snapshot of such a
+search operation in Amazon. On these platforms, customers
+enter query words based on their requirements, and many
+products are displayed in decreasing order of relevance to the
+issued query on the search engine result pages (SERPs). Often,
+these results are also accompanied by some metadata regarding
+the product for better decision-making of the customers [13].
+These search results are typically generated by optimizing
+for customer engagement signals such as click-through rate
+(CTR) or sales [4] and are frequently presented in a grid-
+based layout. Traditionally, these search results are said to be
+organic search results as they are derived from past customer
+behaviour. Figure 1 shows the first search engine result page
+(SERP) for Amazon when the customer searches for “blanket”
+– 4⃝ is the first organic result. 1
+Due to the business model of the e-commerce platforms,
+increasingly advertised or sponsored results are being inter-
+leaved amid the organic search results. These results are often
+decided based on second price auctions for different queries.
+These are usually demarcated using a label: ‘Sponsored’ on
+Amazon and ‘Ad’ on Flipkart (see 2⃝ in Fig. 1). Interestingly,
+sponsored search results are placed at fixed positions in the
+SERPs by default and often in very strategic positions. For
+example, on Amazon – the first, middle and last rows of a
+SERP are advertisement positions, whereas on Flipkart – the
+1In some (rare) occasions, the results may be arranged in a single list instead
+of a grid. We do not consider this mode of arrangement in our study.
+arXiv:2407.14650v1  [cs.CY]  19 Jul 2024
+
+Fig. 1: First SERP for the Amazon e-commerce platform. The different markers are – 1⃝ Search bar for typing in the search query, 2⃝ A typical
+private label (PL) product being shown in the sponsored position, 3⃝ A typical third-party (3P) product being shown in the sponsored position, 4⃝
+A typical third-party (3P) product being shown in the organic position.
+first two positions and the entire last column have advertised
+results. In both the platforms (Amazon and Flipkart), spon-
+sored results precede the organic results on SERPs (Fig. 1).
+This may alter the organic ranked list of products which is
+based on customers’ prior preference.
+Customers interaction with e-commerce search interface :
+Prior research in modelling users’ interaction with web pages
+shows that results displayed in prominent positions on the
+SERPs receive more attention [6], [14]. However, in many
+cases, customers do not distinguish between sponsored and
+organic results properly, leading to more clicks for some
+of the sponsored results [15]. Given sponsored results have
+monetary incentives associated with them, platforms attempt
+to put them in pronounced slots on the SERP conforming to
+standard user gaze patterns [16]–[18]. Note that such practices
+impact the utility of both customers and sellers. Such smart
+positioning of sponsored products may steer customers away
+from organic products, which are more relevant based on prior
+customer interactions for the queries at hand. At the same
+time, the sellers of the organic products might be deprived of
+the opportunity to gain some revenue because the attention is
+being diverted to another seller who has outbid others to gain
+the top position of the search result (albeit sponsored).
+Private label vs. third party products on e-commerce
+platforms: This brings us to the second facet of the argument,
+i.e., private label products. Generally, there are two types of
+brands on e-commerce platforms: (1) private label brands and
+(2) third-party brands. The corresponding products from these
+brands are referred to as private label products (PLs) and third
+party products (3Ps), respectively. Private label products are
+produced and sold by the e-commerce platform itself. Amazon
+sells private label products under several private label brands
+such as – AmazonBasics, Amazon Essentials, Pinzon, Presto
+etc. [19]. Similarly, Flipkart sells products from private label
+brands such as – MarQ, Perfect homes, Smart-Buy, Adrenex,
+etc. [20] on their platform. On the other hand, 3P products
+of different third-party brands, e.g. Duracell, Adidas, etc., are
+sold by several sellers on these platforms.
+Notice that products from these private label brands are
+exclusively sold on the corresponding e-commerce plat-
+forms [21]. Hence, selling such products often comes with an
+additional monetary incentive for these platforms [22], [23].
+Another important factor that complicates the matter even
+further is that both PL and 3P products can appear as both
+sponsored and organic search results. In such cases, market-
+place organizations act both as an umpire and a player [22].
+As an umpire, they control the search algorithm deployed
+on the platform, and as a player, their own private label
+products can be placed in organic search results. Similarly,
+as an umpire, they act as an ad exchange to collect bids
+from different sellers for ad spaces and as a player, they
+also place the advertisements of their private label products as
+advertisers. This dual role-play further raises fairness concerns
+on such business practices as it may not be a level playing
+field between the e-commerce marketplace and its competing
+sellers, who rely on them for their revenue. To this end,
+several media articles have recently surfaced which, either with
+anecdotal evidence or internal documents, show how Amazon
+may have potentially rigged search algorithms and/or results to
+nudge customers toward its PL products [23], [24]. To further
+underline the seriousness of the issue, such anti-competitive
+practices have landed e-commerce platforms, e.g., Amazon,
+into many antitrust lawsuits across the globe [25]–[29].
+Research gaps in the existing literature : Modelling of user
+interaction with ranked lists has been studied extensively
+over the years, but users observing grid-based search results
+(commonly shown on e-commerce SERPs) follow different at-
+tention distribution patterns [18]. To the best of our knowledge,
+
+such interactions and their different inadvertent consequences
+are not yet well studied in the literature. The evaluation metrics
+for grid-based results are not the same as standard list-based
+results. Measurement of relevance, fairness, etc., are modified
+to adapt to this change in presentation style. Evaluating and
+auditing grid-based results might require different treatment
+of the problem. Although there have been several works on
+fairness and bias related issues on e-commerce [13], [22],
+[30], preferential treatment or issues of biases toward a set
+of products on sponsored search results has not been studied
+before. To bridge this gap, in this work, we study the impact
+of sponsorship-induced private label promotion on grid-based
+search results by examining the product placement based on
+standard user gaze patterns [16], [17].
+Legal positioning of private label promotion and sponsored
+results: Note that while competition laws in many countries
+prohibit marketplace monopoly by abuse of power, most of
+these laws were written before the digital revolution [31]–[33].
+Similarly, private label promotion is not a new phenomenon ei-
+ther. It also happens in brick-and-mortar shops in the physical
+world. However, none of the aforementioned laws explicitly
+address the concerns of such promotion. Having said that, the
+importance and impact of such practices increase in the digital
+world even further, especially due to the scale and magnitude
+at which they operate. To this end, the newly enforced Digital
+Markets Act (in the European Union) addresses some of these
+concerns. In particular, Article 6.5 of DMA [34] explicitly
+prohibits such practices by mentioning, “The gatekeeper [35]
+shall not treat more favourably, in ranking and related in-
+dexing and crawling, services and products offered by the
+gatekeeper itself than similar services or products of a third
+party. ”2 Similarly, Recital 70 in DMA [34] asks gatekeepers
+not to present results to customers “in a non-neutral manner,
+or using the structure, function or manner of operation of
+a user interface or a part thereof to subvert or impair user
+autonomy, decision-making, or choice.”– which essentially
+can be manipulated by smart positioning of private labels
+as sponsored results on SERPs. On the other hand, since
+private label products are directly in competition with other
+third-party products, the extent of promotion of PLs in e-
+commerce search results has been investigated by authorities.
+In a recent investigation, Amazon claimed that only 2-3% of
+the ad space is allotted to private label products [26]. However,
+non-transparent positioning of PL products in the ad space can
+also potentially increase the price of the remaining ad estate,
+which may affect the third-party advertisers [26]. Therefore,
+we posit that preferential treatment (if any) should not go
+unnoticed, even in the sponsored results.
+The current study : In this study, we systematically quantify
+the extent of private label (PL) product promotion in e-
+commerce search results through simple descriptive measures.
+We differentiate our work from existing audits, done primar-
+2In accordance with the DMA, the European Commission can designate
+online platforms as ‘gatekeepers’ if they act as a gateway between business
+users and end users in relation to core platform services. E-commerce platform
+Amazon is one of the six designated gatekeepers [35].
+ily on list-based search results, by focusing on grid-based
+search results. We study the two most prevalent e-commerce
+platforms in India – Amazon.in [11] and Flipkart [12]. We
+investigate the extent of private label promotion from two
+different aspects: (1) quantitative comparison of the volume
+of private label product promotion on the SERPs of the two
+e-commerce platforms; (2) analysis of the different strategies
+of the positioning of products on the SERPs. To summarise,
+our key contributions and observations are as follows:
+• We collect search results for 101 popular query phrases from
+Amazon and Flipkart over ten days, giving us more than 2000
+temporal queries . We calculate simple, succinct descriptive
+statistics that quantify the extent of private label promotion
+on grid-based search results of e-commerce platforms.
+• We observe that both platforms promote private label
+(PL) products in sponsored / advertised search results, with
+Amazon’s promotion being significantly higher. Across all the
+SERP, we find 11.7% of all ad spaces to be occupied by
+Amazon PLs, and the percentage goes as high as 15.16% for
+the first SERP. This is more than 5× of what has been claimed
+by Amazon in anti-trust hearings [26].
+• These advertisements are positioned in very prominent
+locations on the SERP, e.g., at the top of the SERP (pre-
+ceding organic search results) or just before the pagination
+buttons at the bottom. Such positioning has the potential to
+provide significant exposure to the sponsored results on a two-
+dimensional grid layout as hypothesized in the literature [18].
+• To understand the nudging prowess and effectiveness of
+Amazon and Flipkart’s different private label positioning
+strategies, we survey 68 participants on Amazon MTurk. In
+this survey, we simulate the SERP of e-commerce search and
+ask respondents to explore and order (add to cart) products of
+their choice.
+• The ordering patterns by survey participants show that the
+user-preferred click positions are similar to user click patterns
+hypothesized for grid-based search results in literature [18].
+Specifically, the survey participants’ ordering for Amazon’s
+products follows the middle bias (MB) pattern, where they
+prefer the middle columns of any given row. Similarly, for
+Flipkart’s products, the ordering pattern follows the slower
+decay (SD) pattern, where their attention doesn’t reduce
+monotonically. These click patterns strongly correspond to
+the positions of the private label products on the SERPs esp.
+for Amazon. We note that the platforms perhaps exploit this
+knowledge of users’ behaviour and place their PL products in
+such positions to drive more attention toward them. Through
+a controlled experiment, we observe that Amazon’s nudging
+prowess is more effective than placing PL products randomly.
+In fact, placing products following Amazon’s PL promotion
+strategy triples the number of clicks received by PLs, com-
+pared to a random arrangement of PLs in the SERP.
+We believe that the methodologies discussed in this paper
+can contribute to the deliberation surrounding the operational-
+ization of newly adopted policies for fair competition in digital
+marketplaces, which can interest researchers, regulators and
+marketplace organizations alike.
+
+Prior Works Primary goal Temporal Preferential Multiple Customer
+Snapshots Treatment Platforms Interaction
+Dash et al. [22] Preferential treatment toward Amazon private label products in related item recommendations. ✗ ✓ ✗ ✗
+Yin & Jeffries [30] Preferential treatment in product search toward Amazon Private Label products. ✗ ✓ ✗ ✗
+Jaiswal & Mukherjee [36] Preferential focus on perceived gender rather than clothing item in visual search for non-binary clothing items. ✗ ✗ ✓ ✓
+Dash et al. [13] Two-sided fairness and interpretability issues of conversational voice search in e-commerce. ✓ ✗ ✗ ✓
+Current work Preferential treatment toward private label products in product search in Amazon and Flipkart in the perspective
+of customer interaction with most prevalent SERP interface.
+✓ ✓ ✓ ✓
+TABLE I: Prior audit works on different algorithmic systems of e-commerce marketplaces, and their fundamental
+differences with the current work. Our study analyses the search engine result pages of 20 different temporal snapshots
+across two of the most popular e-commerce platforms in India. We also conduct multiple user surveys to corroborate
+the evidence observed in the empirical analyses of the data collected in our work. None of the prior works touched
+upon all the aspects in their audit studies.
+II. R ELATED WORK
+In this section, we discuss two domains that contextualize
+our current work – (a) algorithmic auditing & (b) result
+placement strategies in search results.
+Algorithmic auditing: Modern AI systems are built on top of
+advanced and complicated algorithms. This has led to many
+potential biases [37] that can have far-reaching consequences.
+Academic researchers perform third-party audits [38], [39] to
+evaluate such AI systems– internet search [7], [40]–[44], social
+media platforms [45]–[47], Youtube [48], [49], recommenda-
+tion platforms [9], [50], [51], e-commerce platforms [22],
+[36], [52], [53], voice assistants [13], and face recognition
+systems [54], [55].
+Differences with close prior works on auditing information
+retrieval systems on e-commerce platforms:Multiple studies
+have audited [22], [30], [50] the different algorithmic systems
+on e-commerce platforms. However, most of these studies
+have been done in the context of Amazon. To succinctly
+differentiate our work from the prior works, we look at four
+important aspects (a) whether multiple temporal snapshots
+are studied, (b) whether preferential treatment of any kind
+is studied, (c) whether the observations can be extended to
+multiple platforms, and finally (d) whether customer engage-
+ment based analyses are a part of it. While Dash et al. [22]
+quantified the biases toward Amazon private labels in related
+item recommendations their study did not consider multiple
+temporal snapshots. Nor did they perform any user study to
+see how customers interact with the different recommendations
+on Amazon product pages. Yin & Jeffries [30] performed an
+interesting study on Amazon search and how private labels
+appear toward the top of search. However, they also did not
+consider if the observations hold across a period of time or
+is it an artifact of the data collected within a specific time
+frame. Much like the previous work, it also did not include
+any user interaction-related surveys. Although Dash et al. [13]
+and Jaiswal & Mukherjee [36] in their studies took care of
+the longitudinal and user interaction aspects, the primary goal
+in these studies were not pertaining to the investigation of
+preferential treatment. Our audit study is primarily different
+from existing ones in the following ways (see Table I for a
+summary) – (1) we audit the SERPs on multiple e-commerce
+platforms for preferential treatment toward PL products, (2)
+our audit is performed on a very diverse set of query categories
+over a period of twenty temporal snapshots, and (3) our survey
+is more extensive and immersive, taken by 68 Amazon MTurk
+workers directly on a mock shopping website. Our proposed
+audit strategy, which identifies the preference of e-commerce
+platforms toward private label (PL) products in the grid-based
+search engine result pages (SERPs), is the first of its kind, to
+our knowledge.
+Placement strategies in search results : Search results are
+arranged on the display screen in multiple formats – list (like
+in Google’s textual SERPs) or grid (like in Google’s image
+SERPs). Each of these has its own merits and the user attention
+patterns change based on this format. Research has shown
+that the user is focused more toward the top left half of the
+screen, and the attention decreases monotonically for list-based
+results [14], whereas the user attention peaks in the middle
+of a row and changes non-monotonically between rows for
+grid-based results [18], [56]. Till date, there has not been any
+effort to link the placement of products on e-commerce SERPs
+with user-attention patterns, as most existing studies have been
+performed on standard grid-based placement for image search.
+E-commerce search results have multiple metadata elements
+for each image in the search results, which may impact the
+attention pattern, and hence, existing observations and metrics
+may not translate directly.
+In this paper, we attempt to operationalize the preference of
+e-commerce platforms toward their private label (PL) products
+on the initial search engine result pages (SERPs), not just
+in terms of count but also in terms of the positions these
+products occupy on a grid-based layout in the SERPs. Our
+observations correlate with theoretical propositions on user
+preferences toward particular locations on the SERPs using
+grid-based layout. To the best of our knowledge, this work is
+the first such audit of its type on the Amazon platform and,
+any type of audit on the Flipkart platform.
+III. D ATASET
+In this section, we describe the dataset collected from
+the Amazon and Flipkart queries as well as the process of
+collecting and cleaning it. We describe here the automated
+process of collecting the queries and their associated results.
+The data for this study was collected from both Amazon and
+Flipkart using the following steps – (1) We first prepared
+a list of popular queries by searching for “common” or
+“most searched” queries on the Internet in the context of
+Amazon [57] and Flipkart [58]–[60] platforms. These queries
+
+Query Category Sample Queries
+Amazon Flipkart
+Queries Products Queries Products PL 3P PL 3P
+Electronics trimmer, headphones, battery 2 11 768 11 263 10695
+Clothes & Apparel jeans, sweaters, backpack 14 327 5042 16 602 15338
+Home Appliances fan, TV stand, kettle 4 33 1524 3 43 2953
+Sports yoga mat, cycles, sports shoes 5 112 1837 7 230 6721
+Furniture table, desk, shoe rack 3 19 1144 9 421 8549
+Cleaning Supplies cleaning gloves, towel, detergent 7 144 2579 2 10 1980
+Kitchen coffee mug, water bottle, flask 3 71 1088 5 78 4904
+Home Decor wall clock, bean bags, pillows 3 110 1050 3 46 2944
+Kids baby footwear, baby innerwear, toy guns ∅ ∅ ∅ 4 282 3706
+Total 41 827 15032 60 1975 57790
+TABLE II: List of queries for which data is collected from each platform. Clothing & Apparel is the category with the largest number of queries
+(and products) and Home Decor has the least. The total number of distinct queries is 78; 23 queries are common. The total number of products
+collected from Amazon is 15,859 and from Flipkart is 59,765.
+belong to various categories like Electronics, Fashion, Home
+Appliances, etc. and are diverse in terms of type, price and
+customer base. A total of 101 queries were collected, out
+of which 23 were common, giving us 78 distinct queries
+on the two platforms across the various categories. Details
+regarding the categories, sample queries and number of queries
+per category are present in Table II. (2) Next, we used the
+Selenium web automation library to collect the results for each
+query. We performed the following steps to collect the data
+for each query in a sequential manner– (a) Open the website
+– https://www.amazon.in/ or https://www.flipkart.com/
+in a new incognito browser window; no cookies are saved
+and the IPs stay the same. (b) Search for the query term
+without logging in, to avoid personalization effects. (c) Save
+the following information for every product in the result set
+- name of product, name of seller, unique product identifier,
+image, price and ratings. (3) The above process was performed
+twice a day with a gap of 8 hours between every two
+snapshots, for a period of 10 days, thus giving 2,020 temporal
+snapshots. This was done to ensure that the observations are
+not skewed due to the time and day of collection, and that the
+results could be generalized. Similarly, multiple snapshots and
+observations across them reduces the chance of stochasticity
+in the results. On Amazon, we have – 41 queries (60 results
+per page); on Flipkart, we have – 60 queries (40 results per
+page). The number of ads on the search engine result pages
+(SERP) always remains stable and does not vary based on any
+parameter, including browsing history.
+IV. P RIVATE LABEL PROMOTION ON
+AMAZON AND FLIPKART SERP S
+In this section, we present our observations on the search
+results of the two platforms based on the dataset that we
+collected as discussed previously. Our analyses aim to answer
+the following questions: (1) what fraction of private label
+products appear as sponsored results in the initial SERPs?
+(2) how prominently are they located on these SERPs?
+A. What fraction of PL products appear as sponsored results
+in the initial SERPs?
+We first analyze the ratio of Private Label (PL) products to
+the total advertised products in the first three SERPs, for both
+Platform SERPs Total Results % PL in Ads
+Amazon
+1 2460 15.16
+1 + 2 4920 13.98
+1 + 2 + 3 7380 13.10
+Flipkart
+1 2400 4.51
+1 + 2 4800 4.47
+1 + 2 + 3 7200 4.56
+TABLE III: Percentage of Private Label (PL) products amongst all
+advertised products on the first three SERPS for both Amazon and
+Flipkart. % PL in Ads indicates what % of advertised products are
+PL. The values are decreasing from SERP 1 to 3. Maximum values are
+in bold.
+Amazon and Flipkart. Note that both Amazon and Flipkart
+provide a larger number of SERPs (usually 7 for Amazon and
+25 for Flipkart); however, majority of the customers never
+view all the search results, with more than 70% not scrolling
+beyond Page 1 [61]. Hence, we focus on the first three SERPs.
+Moreover, we observed similar trends for the later pages, hence
+we omit the results for brevity.
+In Table III, we present the % of PL products among all
+advertised products on the first 3 SERPs (% PL in Ads).
+This measure quantifies the % of all ad-space available in
+the respective pages (cumulatively) that was allotted to private
+label products. We report the mean value for the 20 snapshots
+in our dataset.
+Observations: We notice similar trends on both platforms –
+the % of PLs in advertisements is decreasing (non-increasing)
+from the first SERP to the first two SERPs to the first
+three SERPs (cumulatively). Interestingly, from Table III, we
+observe that for Amazon, ≈ 15% of the advertised positions
+are occupied by PLs on the first SERP, while for Flipkart
+this value is 4.51%. This shows how different these platforms
+are even when they are both designed for the same task– e-
+commerce. This justifies our decision of choosing two different
+platforms for our study.
+Note that, in an anti-trust hearing [26], the committee asked
+Amazon – “For each month since July 2018, please identify
+the percentage of all space eligible for advertising on Amazon
+that has been devoted to Amazon’s private label products. ”
+To this, Amazon responded that PL products take up 2–
+3% of the total ad-space. In contrast, we observe that this
+
+1 2 3 4
+Columns
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15 Rows
+(a) Grid results for A MAZON
+1 2 3 4
+Columns
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 Rows (b) Grid results for F LIPKART
+Fig. 2: Counts of the Private Label (PL) products and advertisement
+positions (highlighted by blue rectangles) on the first SERP of the Amazon
+and Flipkart platforms. PL products are present on the entire page,
+irrespective of the platform. On Amazon, the maximum occurrences of
+PL products are on the advertisement positions. On Flipkart, a higher
+count of PL products is shown in the top half (first 4 rows) of the SERP.
+percentage is 11.7% considering all the search pages in our
+dataset. While we acknowledge that our dataset is limited to
+SERPs of only 41 queries, the differences in the percentages
+are noteworthy. Second, only the e-commerce platforms can
+answer what fraction of the entire ad space is provided to their
+private labels. However, this observation is important because
+70% of the shoppers never go beyond the first SERP [61]. So,
+while the number may dilute when it is calculated across all
+available ad estate, its distribution in pages that are frequently
+visited by customers is of utmost importance.
+We also calculate the ‘% PL in Ads’ per query category
+for the first SERP. For queries on Amazon in ‘Home Decor’
+category, PLs occupy ≈ 26% of the ad space whereas for
+‘Furniture’ category, this is 2.9%. Similarly, for Flipkart, the
+query category with the highest ‘% PL in Ads’ is ‘Kids’ with
+14.3% and the lowest is ‘Cleaning Supplies’ with 0%.
+Thus, we make the following observations from Table III.
+• Both Amazon and Flipkart promote PL products in spon-
+sored / advertised search result on the initial SERPs.
+Thus, even though both platforms are designed for the
+same task of e-commerce, the extent of promotion in
+Amazon is way higher than Flipkart.
+• These observations consistently appear across SERPs for
+queries of different categories.
+B. How prominently are the PLs positioned in the initial
+SERPs?
+Now that we have seen both Amazon and Flipkart placing
+PL products on the initial SERPs, we next look at the position-
+ing of these products. That the position of a product/result in
+a SERP determines how much attention / exposure it receives
+from users, is a well-studied phenomenon [13], [22], [62]. We
+now analyse the positions in the SERPs where the PLs are
+displayed.
+The heatmaps in Figure 2 shows the positioning of the
+search results for both Amazon and Flipkart. This figure
+shows the frequency of PL product appearance aggregated for
+all queries across the 20 snapshots at the different positions
+on the SERP grid. The intensity of color on the heatmaps
+indicates the count of PL products at a given position and
+the blue rectangular boxes indicate the positions reserved for
+advertisements on the SERP.
+Observations on Amazon : For the Amazon platform, we
+observe that the PL products are distributed across the entire
+SERP grid; however, the intensity reduces as we go down
+the grid. Interestingly, in Fig 2a, we see that significantly
+higher counts are observed in rows 1, 6 and 15, which are
+already reserved for advertisements. While Amazon may claim
+that it forgoes the ad revenue that it may have collected
+from the said positions (if they had shown a sponsored
+third-party product) [26], many media articles and experts
+provide a counterargument of how the exposure gained for PL
+products may out-weigh the short-term loss in ad revenue [22],
+[63]. Since the first 6 rows already have a higher count of
+PL products than the lower 9 rows, the aggregate attention
+received by the PLs would also be high. Thus, Amazon uses
+its sponsored result positions significantly for promoting its
+private label products as compared to the organic positions on
+the SERP. This, in turn, may directly contribute to increased
+exposure and revenue for the PL products on the platform.
+Observations on Flipkart : Taking a look at the heatmaps
+for the Flipkart platform in Fig. 2b, we see that in the grid
+representation, the PL products are clustered in the top half
+of the page (rows 1-4) similar to Amazon. However, unlike
+Amazon, many of these PLs are shown in organic search
+result positions. The advertised positions (marked with blue
+rectangles) are very different - the first two positions in
+row 1 (i.e., positions 1 and 2 of the SERP), and column 4.
+While private label positioning on Flipkart is still top-heavy,
+they appear more often on organic positions rather than on
+sponsored result positions.
+Key differences in positioning of PLs by Amazon and
+Flipkart: Amazon is very systematic in PL advertising and
+positioning of PLs in the advertisement spaces. For example,
+Amazon’s ad positioning covers the first row entirely which
+gathers the most exposure; followed by middle row and the
+final row (above the pagination buttons). Such positions indeed
+provide extra exposure to products appearing there and the
+same is also in line with some of the popular eye gazing
+attention patterns in the literature [16], [17]. In contrast,
+Flipkart’s ad and PL placement strategies are very different.
+Flipkart reserves the top-left corner of the SERP for ads, much
+like Amazon does. However, the similarity ends there, another
+evidence that necessitates the study of multiple platforms.
+In the next section, we analyze the effectiveness of the two
+platforms’ PL placement strategies to understand the benefits
+that they could possibly garner in terms of clicks and orders.
+V. S URVEY TO UNDERSTAND POSITIONAL PREFERENCES
+The previous section shows how both platforms – Amazon
+and Flipkart - place advertised search results on the search
+engine result pages (SERPs) in a grid layout and how they
+use this advertising infrastructure to promote their private
+label products. We now conduct a survey to investigate the
+
+Amazon Flipkart
+Bean bag Shower Curtain Bean Bags Table
+Blanket Sweaters Beds Sweaters
+Desk Table Lamp Bedsheet Toilet brush
+Dumbbells and Weights Tissue paper Cleaning Gloves Power Bank
+Jeans Trimmer Coffee Mugs Sports shoes
+Pans Wall Clock Cycles Wall Clock
+Paper Towel Water Bottle Fan Mobile covers
+Shoe Rack Yoga Mat Kettle Lunch box
+TABLE IV: Queries used in the survey for the Amazon and Flipkart
+platforms. For each query, we show the SERP as it appears on the
+original platform in the W O websites and a randomized version of the
+SERP in the W R websites.
+two platforms for the following questions – (Q1) Do the
+two platforms’ strategies of private label product placement
+in advertised search results have any nudging prowess for
+a customer? , and (Q2) Do the clicking patterns of users
+share any correlation with expected user attention patterns
+from literature, such as [18]? To answer these questions, we
+design a mock e-commerce website that simulates a real-world
+shopping experience, and get Amazon Mechanical Turk [64]
+workers to participate in the study.
+A. Design of the survey
+We create four mock shopping platforms using a free Word-
+press [65] website, hosted on individual AWS EC2 instances,
+with the open-source WooCommerce [66] e-commerce plugin,
+with a fixed set of queries. Two of the mock platforms show
+the first SERP for the queries exactly as they appear on
+the Amazon and Flipkart websites. The remaining two mock
+platforms show the first SERP’s results in a randomized order.
+Randomizing only within the advertised positions is not very
+meaningful as the number of such positions is limited and
+fixed. Hence we randomize the entire SERP’s results, which
+provides a more meaningful baseline. We refer to the first
+set of platforms as W O A and W O F for Amazon and Flipkart
+respectively. Similarly, the platforms with the randomized
+arrangement of results are– W R A and W R F .
+To choose the queries for the mock websites, we first prune
+our dataset to a single snapshot. From this, we randomly chose
+sixteen representative queries (due to budget restrictions) as
+shown in Table IV. The same set of queries are present in
+both the W O and W R websites. Only results from the first
+search engine result page (SERP) was displayed to reduce the
+cognitive workload of the survey participant. W O A and W R A
+have 60 results (grid of 15 × 4, similar to Amazon’s SERP)
+in the SERP for each query. Similarly, W O F and W R F have 40
+results (grid of 10 × 4, similar to Flipkart’s SERP) per SERP.
+Both websites had the same base template and differed only
+in terms of the queries and associated results. On the SERPs,
+we show some of the important intrinsic properties of every
+item – product photos, names, brands, sizes, etc. However,
+we categorically avoid showing any ratings. We also avoid
+showing the “Sponsored” and “Ad” labels on the products to
+understand the participants’ preference for the positions on
+the SERP irrespective of the label that the product has. These
+steps are meant to ensure that the survey participants’ choices
+are not biased toward certain products due to their historical
+preferences.
+Steps of the survey: The survey is performed as follows–
+(1) The participant opens the landing page of the mock e-
+commerce website where they are informed of the goals of
+the survey and they consent to participate in the survey. (2)
+The second page shows the list of queries and the instructions
+that the participant must follow to complete the survey. (3)
+The instructions state that the participant must choose at least
+eight queries of their choice and visit the results page for these.
+In the results page, they may choose to view a product by
+‘clicking’ on its link or, ‘ add’ it to cart. Both these actions are
+tracked in an aggregated manner to understand which products
+(thereby positions on the SERP) are interesting for the shopper.
+(4) Once the participant has added the products (at least one
+per query) of their choice to the cart, they can proceed to
+the checkout page where they enter their PII details (these are
+never used for anything other than the aggregated demographic
+information) along with a short explanation for their choices.
+Following this, they may submit and end the survey.
+We recognize a limitation of our survey method that simply
+adding to cart does not imply real shopping behaviour. How-
+ever, asking respondents to actually purchase products is not
+feasible for third-party academic researchers like ourselves,
+due to budgetary concerns. We believe our survey format is
+the closest one can get to real world A/B testing.
+Note that, for such surveys, our institute does not require an
+IRB approval unless there is a medical intervention into the
+respondent’s body. We refrain from collecting and disclosing
+any personal sensitive information from the respondents. In
+addition, the goals of the survey are mentioned on both the
+MTurk survey page as well as the landing page of our websites
+and explicit consent is sought from the participants before the
+survey begins.
+Overall, 29 Amazon Mechanical Turk participants took
+the survey for the website with Amazon’s queries and 39
+participants took the survey for the website with Flipkart’s
+queries. A majority of the respondents belong to the 18 − 25
+age group and are undergraduate students. ≈ 43% of them
+identify themselves as male and ≈ 45% identify themselves
+as females; ≈ 12% candidates opt not to disclose their gender.
+The maximum time allowed for the survey was 30 minutes
+on Amazon Mechanical Turk (MTurk), and each worker was
+remunerated with $0.50 if they successfully completed the
+survey by following the instructions described above. The
+average time taken per worker was ≈ 14 minutes.
+B. Observations from order patterns in the survey
+We record the orders of the respondents in the survey.
+In Figure 3 we compare the orders received for products at
+different positions for all queries on each platform’s survey.
+The intensity of the color of each cell corresponds to the
+number of orders the product at the position had gotten during
+our user survey.
+Insights from order patterns of respondents : From Fig. 3a
+we can see that a majority of the participants’ clicks (and
+therefore their attention) is focused on the first three rows
+of the search results. This observation is in line with multiple
+
+1 2 3 4
+Columns
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15 Rows
+(a) Orders for A MAZON
+1 2 3 4
+Columns
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 Rows (b) Orders for F LIPKART
+Fig. 3: Orders for all queries on the websites with original SERPs for
+Amazon (W O A ) and Flipkart (W O F ). For Amazon, the orders are clustered toward the top whereas they are distributed throughout the SERP for
+Flipkart, but with a higher ratio on the last column. This indicates that
+placing PLs at such positions can lead to more attention and orders for
+the same. These observation also falls in line with our observation of PL
+product placement in Figure 2.
+prior observation on biases that appear on web-page browsing.
+The observations from Fig. 3b shows that the users have a
+preference toward the last column and bottom half of the
+SERP.
+Positions getting more orders ≡ positions where PLs get
+placed more? : Interestingly, the order patterns on the indi-
+vidual heatmaps correlate with the observed advertised PL
+positioning from Fig. 2a. For instance, the maximum number
+of orders in Fig. 3a are on the first row and second row. This
+is similar to the placement of advertisement slots and dense
+private label positioning on Amazon SERPs (see Fig. 2a). On
+the other hand, the order pattern from Fig. 3b are focused
+on the bottom half of the SERP, mostly the middle columns,
+deviating from the placement position of the private label
+products as seen in Fig. 2b.
+Thus we are able to successfully answer our first question
+– The e-commerce platform’s strategy of private label product
+placement in advertised search results can have nudging
+prowess for a customer , as observed from the orders pattern
+on both the websites. However, Amazon’s ad positioning,
+especially on the first row of the SERP has the most sig-
+nificant effect on customer behavior as compared to Flipkart’s
+positioning on the right most column.
+Correlation with user attention patterns from literature : To
+answer the second question, we calculate the correlation be-
+tween the order pattern in our user surveys and the theoretical
+user attention as per [18]. Even though e-commerce search
+results are not equivalent to image search results, they share
+some similarities – presence of large images of the products
+and grid-like search result placement. We know that there exist
+multiple attention patterns for grid based image search results
+that users may follow–
+• Middle Bias (MB): Users may focus more on the items in
+the middle columns of a row than on the outer columns.
+The stopping probability, i.e., the probability that a user
+views a particular item in a given row and column is
+calculated as Qi−1 j=0 f (c(i))Cj(1 − Ci), where c(i) is the
+column of item at rank i, f () is a function of the column,
+and Ci is the continuation probability at position i to
+examine (i + 1)th result. From [18], f (c(i)) = eg(c(i)),
+where g(c(i)) = 1√ 2πσ 2 e− (c(i)−M P−µ)2 2σ2 . Here M Pis the
+column index of the middle position of a given row r(i).
+• Slower Decay (SD): User attention may not reduce mono-
+tonically and/or dramatically with the rank of items, espe-
+cially across rows. The stopping probability is calculated
+as Qi−1 j=0 βr(i)Cj(1−Ci), where β is a constant parameter
+and r(i) is the row of item at rank i.
+The continuation probability is Ci = p for both the above
+attention patterns. To calculate the correlations, we do the
+following – for each cell, we calculate the rank from the
+number of orders. Similarly, we use the formulae described
+above to calculate the rank of each cell based on the parame-
+ters listed below. Then we calculate the Pearson correlation
+between the two ranked lists to judge whether the survey
+participant clicking pattern is positively correlated to what has
+been hypothesized in the literature.
+For middle bias, we set the middle position (MP) = 2,
+σ = 0 .5, p = 0 .8. The list-based metric we use for our
+calculations is RBP [67]. For the survey on Amazon’s queries,
+we observe a Pearson correlation coefficient of 0.403 (p-
+value = 0.0013) and for the survey on Flipkart’s queries, the
+correlation coefficient is −0.260 (p-value = 0.104). Thus, we
+see a positive correlation between the theoretically expected
+user attention and the one observed in our survey for Amazon
+and a negative one for Flipkart.
+For slower decay, the parameters are β = 1.5 and p =
+0.8. Interestingly, here the Pearson correlation coefficients are
+−0.087 (p-value = 0.50) for Amazon, indicating a negative
+correlation, and 0.114 (p-value = 0.48) for Flipkart, indicating
+a weak positive correlation.
+The above results show that on Amazon, while the users in
+our survey are more inclined to click on the middle columns
+within a row (middle bias), their attention does not drop non-
+monotonically with a decrease in rank (no slower decay). The
+opposite is true for Flipkart. The non-correlation on Amazon
+with slower decay may be attributed to the following– the
+model proposed by [18] is defined for image search and is not
+directly applicable to e-commerce search due to the presence
+of other features along with the image like price, ratings,
+etc. Thus, we confirm that the observed clicking patterns for
+Amazon do indeed share a highly positive correlation with
+one of the expected user attention patterns from literature,
+i.e., middle bias (MB). Similarly, we see a positive correlation
+on the Flipkart website with the slower decay (SD) attention
+pattern.
+C. Comparing original against random PL placement
+Previously, we mentioned that for each platform, in one
+survey website, we show the results as they appear in the
+original SERP whereas in the other website, we randomize
+the order of the results. We now compare the counts of orders
+
+AMAZON FLIPKART0
+50
+100Orders
+Random Original
+Fig. 4: Comparison of orders between queries where the PL products
+are placed randomly and where the PL products are placed as per the
+original distribution observed in the collected data. The uptick in number
+of clicks and orders for Amazon PLs further underpins the effectiveness
+of their PL promotion strategy. For Flipkart, the drop is marginal.
+received by the PL products between the two sets in Figure 4 to
+understand how effective are the two PL promotion strategies.
+Note that, if we observe marginal or no differences in the
+volume of orders received by PL products in the random and
+original positioning setups, that brushes aside any concern of
+biases due to the corresponding promotion strategy.
+Insights from orders received by PLs : We look at the compar-
+ison between the two sets of queries for orders in Figure 4.
+Here, we notice for Amazon that the survey participants click
+on PLs more often (upwards of 3×) if they are placed as
+per the original distribution (25 orders) obtained from the
+dataset rather than randomly (7 orders). For Flipkart, this trend
+doesn’t hold true; infact participants prefer ordering products
+slightly more often (72 order) if they arranged as per a random
+distribution than the original distribution (66 orders).
+Thus, from the results in Figs. 3 and 4 we see that Amazon
+reaps significant benefits from the positionining of the PL
+products as opposed to the Flipkart, where the positioning does
+not provide any discernible benefit. Not only are Amazon’s PL
+products clicked more often, but the survey participants order
+them more often as well. This further demonstrates that the
+systematic and sophisticated private label product promotion
+on the Amazon e-commerce platform can have a direct impact
+on revenue while the same may not be so pronounced for
+Flipkart.
+From the clicking and ordering patterns of respondents in
+the conducted survey, we make the following observations.
+(1) The ordering (therefore purchase) pattern of survey partic-
+ipants falls in line with the PL product promotion (through
+advertisements) of the Amazon e-commerce platforms that
+we studied. (2) The clicking pattern of survey participants
+is strongly positively correlated to the user attention patterns
+described in the literature and both the platforms exploit this
+to position their PL products so that they garner the maximum
+attention. Amazon follows the Middle bias pattern while
+Flipkart follows the Slower decay pattern. (3) Through the
+controlled experiment, we observe that the nudging prowess
+of Amazon’s PL product promotion is more effective than that
+of Flipkart.
+Significance of the observations: The fact that products
+appearing towards the top of the search results derive more
+exposure (e.g., clicks and orders) has been well established
+in the literature of search ranking [6], [14]. Currently e-
+commerce platforms are using these positions extensively
+for product advertisements. As shown earlier, the same po-
+sitions are also dominated by their private label products
+(see Figure 2). So, had these positions not been reserved by
+the private label product ads, the same exposure could have
+been distributed over other third party products (and their
+corresponding producers and sellers). This, in fact, is also
+corroborated by our controlled experiment (explained above)
+where the PLs obtain much higher exposure (orders) when
+they are strategically placed (following Amazon’s strategies)
+than when they are placed randomly. Hence, the insights from
+the click patterns coupled with the empirical observations in
+the previous section further show that placing PL products
+strategically and giving them preferential exposure directly
+translates to an increase in attention and revenue for the said
+platform.
+VI. D ISCUSSION & FUTURE WORK
+Summary of results: Our audit study on Amazon and Flipkart
+shows that Amazon advertises a significant amount of private
+label (PL) products ( ≈ 15%) on the SERPs, specially on the
+first page (Table III). The numbers for Flipkart are compara-
+tively lower ( 4.5%). From Figure 2, we observe that Amazon
+does most of its PL promotion on the top, middle and bottom
+rows of the grid-based SERP. Flipkart does the same in the
+top two results and the rightmost column of the SERP. These
+product positions also coincide with existing user attention
+patterns proposed in the literature. Moreover, our survey using
+a mock shopping website shows that users are more prone
+to following the middle bias attention pattern as opposed to
+the slower decay attention pattern. Both the platforms seem
+to exploit this knowledge of the user attention being middle-
+biased to place their PL products so that these products garner
+the maximum attention. Figure 4 shows that Amazon benefits
+from its placement of the PL products on the advertised rows
+remarkably as compared to a random arrangement, whereas
+Flipkart’s PL product placement strategy performs similar to
+a random PL product placement strategy.
+Bridging the gap between legal principles and their opper-
+ationalisation: While new digital acts e.g., Digital Services
+Act [68] and Digital Markets Act [34] are already in force,
+the gap between the regulations and how organizations and
+auditors will operationalise them still exists. The methods
+adopted in this work can be seen as attempts to bridge these
+gaps and answer some of the questions systematically. Table V
+shows some key recommendations of DMA and a question
+from US antitrust hearing and some insights drawn from the
+current study in their contexts.
+However, readers are cautioned that the analyses performed
+in this work are in the context of Indian marketplaces. At
+the same time, since the design choices adopted by global
+platforms e.g., Amazon are consistent across the globe, some
+of these methodologies can be utilised in other marketplaces
+as well. We by no means try to refute the answer given by
+Amazon to US antitrust subcommittee since our work does not
+have access to the statistics based on all possible web-pages
+
+Legal questions and / or recommendations Potential answers from the current study
+Gatekeepers should not engage in behaviour... Such behaviour includes the
+design used by the gatekeeper, the presentation of end-user choices in a
+non-neutral manner, or using the structure, function or manner of operation
+of a user interface or a part thereof to subvert or impair user autonomy,
+decision-making, or choice.
+E-commerce platforms put sponsored results (which also contain their
+private label products) at strategic positions on the SERP interface which
+appeal to customers the most as per prior research and the conducted survey
+in this study. 62.5% (W O A ) of all adding to cart or clicks happen from the
+first row of the Amazon SERP during our survey.
+The gatekeeper shall not treat more favourably, in ranking and related
+indexing and crawling, services and products offered by the gatekeeper
+itself than similar services or products of a third party.
+The strategic positioning of the private label products make them 3× (W O A
+vs W R A ) more likely to be added to cart or clicked as opposed to any random
+positioning of the same set of products (as per our survey).
+Please identify the percentage of all space eligible for advertising on
+Amazon that has been devoted to Amazon’s private label products.
+We find 11.7% of all ad-spaces analysed in our Amazon dataset to be
+occupied by Amazon PLs and the percentage goes as high as 15.16% for
+the ad spaces in first SERP.
+TABLE V: Some legal recommendations and / or questions posed to e-commerce platforms and our relevant observations.
+Positioning in SERP interfaces and interleaving sponsored results may have subtle effects on customers.
+and queries on Amazon. Hence the readers are cautioned to
+perceive these insights only in the context of the queries and
+dataset analysed in this study.
+Takeaways for different stakeholders: As mentioned above,
+the methodologies adopted in this work can broadly be of
+interest to both platforms and regulators for establishing
+compliance / non-compliance for some of the legal recommen-
+dations (as shown in Table V). Specific details of the methods
+may change, e.g., instead of a survey on AMT, e-commerce
+platforms can conduct A/B testings across their customer-base
+to understand and quantify the efficacy and compliance of their
+different product placement strategies regularly. Historically,
+‘customer benefits’ has been the primary defense strategy of e-
+commerce platforms in anti-trust investigations [26]. However,
+when the implications of these different design choices are
+evaluated in the perspective of different platforms – and
+especially while keeping customers in the loop – it often
+unfolds different dimensions of the narrative. For example,
+we observe that the ad and private label positioning strategy
+of Amazon is not only significantly more effective in drawing
+clicks than that of a random SERP, but also seems to be more
+effective than the strategy adopted by Flipkart. Further, based
+on the survey observations, one can conclude that customers
+may not have any significant preference toward private label
+products either; they are rather are more influenced by the
+positioning of these products on the SERP.
+Thus not only algorithms, but also design choices (e.g.,
+ad placement) adopted across the different platforms need
+to be considered for understanding which one is providing
+a comparatively fair competition on its marketplace or better
+utility for customers. For customers, the primary takeaway is to
+be more judicious and cautious while interacting with different
+SERP interfaces. Similarly, given e-commerce platforms are
+adopting such business models – these findings may also
+motivate sellers to improve their business strategies in terms
+of investing in promoting their products, selecting platforms
+for conducting their business, etc.
+Broader perspective : Audit studies, such as ours, can lead
+to a better understanding of the algorithms deployed on
+these platforms and their effects on all stakeholders. First,
+these platforms are highly complex and a single audit cannot
+evaluate the entire platform. Hence, individual audits like
+ours, are needed to comprehensively evaluate the different
+algorithms for a platform. Next, our study has shown that
+platforms exercise huge power in terms of nudging customers
+toward certain products of their choice by placing these in a
+certain way, irrespective of how the organic results are ranked
+or displayed.
+Note that, in this study, our goal is not to compare between
+Amazon and Flipkart. We allude to the fact that even platforms
+designed for the same task (e-commerce) have significant dif-
+ferences in how they approach placement of PL products and
+advertising positions. These differences are not just superficial,
+but may lead to deeper concerns surrounding biases.
+Our audit will make the platform developers aware of their
+nudging actions as well as inform policy makers about private
+label (PL) product exposure, not just in terms of quantity
+of products but also their placement. Our methodology and
+measurement metrics are simple and succinct, hence easily
+reproducible and can be used by other third-party auditors to
+audit similar platforms.
+REFERENCES
+[1] UNCTAD, “Global e-commerce jumps to $26.7 trillion, covid-19 boosts
+online sales,” https://tinyurl.com/2s4dmapw, 2022.
+[2] L. Montenegro, “The importance of e-commerce for small businesses,”
+https://tinyurl.com/yfhdn3pe, 2021.
+[3] G. Linden, B. Smith, and J. York, “Amazon. com recommendations:
+Item-to-item collaborative filtering,” IEEE Internet computing , vol. 7,
+no. 1, 2003.
+[4] D. Sorokina and E. Cantu-Paz, “Amazon search: The joy of ranking
+products,” in ACM SIGIR, 2016.
+[5] B. Smith and G. Linden, “Two decades of recommender systems at
+amazon. com,” Ieee internet computing , vol. 21, no. 3, 2017.
+[6] A. Singh and T. Joachims, “Fairness of exposure in rankings,” in ACM
+SIGKDD, 2018.
+[7] R. Mehrotra, A. Anderson, F. Diaz, A. Sharma, H. Wallach, and
+E. Yilmaz, “Auditing search engines for differential satisfaction across
+demographics,” in WWW companion, 2017.
+[8] G. K. Patro, A. Biswas, N. Ganguly, K. P. Gummadi, and
+A. Chakraborty, “Fairrec: Two-sided fairness for personalized recom-
+mendations in two-sided platforms,” in The Web conference, 2020, pp.
+1194–1204.
+[9] A. Dash, A. Chakraborty, S. Ghosh, A. Mukherjee, and K. P. Gummadi,
+“Fairir: Mitigating exposure bias from related item recommendations in
+two-sided platforms,” IEEE TCSS, 2022.
+[10] R. Mehrotra, J. McInerney, H. Bouchard, M. Lalmas, and F. Diaz,
+“Towards a fair marketplace: Counterfactual evaluation of the trade-off
+between relevance, fairness & satisfaction in recommendation systems,”
+in ACM CIKM, 2018, pp. 2243–2251.
+[11] Amazon, “Amazon.in,” https://www.amazon.in, 2022.
+[12] Flipkart, “Flipkart.com,” https://www.flipkart.com, 2022.
+[13] A. Dash, A. Chakraborty, S. Ghosh, A. Mukherjee, and K. P. Gummadi,
+“Alexa, in you, i trust! fairness and interpretability issues in e-commerce
+search through smart speakers,” in ACM Web Conference, 2022.
+
+[14] R. Baeza-Yates, “Bias on the web,” ACM CACM, vol. 61, 2018.
+[15] M. Graham, “Amazon is turning advertising into its next huge
+business– here’s how,” https://www.cnbc.com/2019/07/17/how-amazon-
+advertising-works.html, July 2019.
+[16] S. Bradley, “3 design layouts: Gutenberg diagram, z-pattern, and f-
+pattern,” https://vanseodesign.com/web-design/3-design-layouts/, 2011.
+[17] J. Weissberg, “Website design for viewer eye patterns,”
+https://socalwebworx.com/wordpress/website-design-for-viewer-eye-
+patterns/, 2010.
+[18] X. Xie, J. Mao, Y . Liu, M. de Rijke, Y . Shao, Z. Ye, M. Zhang, and
+S. Ma, “Grid-based evaluation metrics for web image search,” in The
+world wide web conference , 2019, pp. 2103–2114.
+[19] Amazon, “Amazon private label brands,” https://www.amazon.com/b?i
+e=UTF8&node=17602470011, 2022.
+[20] Y . Malik, “Flipkart puts focus back on private labels, launches in-house
+sports brand,” https://tinyurl.com/yr8b67p7, 2019.
+[21] G. Edelman, “Amazon doesn’t favor its own brands—except
+when it does,” https://www.wired.com/story/amazon-gating-private-
+labels-antitrust/, 2019.
+[22] A. Dash, A. Chakraborty, S. Ghosh, A. Mukherjee, and K. P. Gummadi,
+“When the umpire is also a player: Bias in private label product
+recommendations on e-commerce marketplaces,” in ACM FAccT, 2021.
+[23] A. Kalra and S. Steve, “Amazon copied products and rigged
+search results to promote its own brands, documents show,”
+https://www.reuters.com/investigates/special-report/amazon-india-
+rigging/, Oct 2021.
+[24] J. Creswell, “How amazon steers shoppers to its own products,”
+https://bit.ly/3Hp0DhC, 2018.
+[25] U. House Committee on the Judiciary, “Judiciary antitrust subcommittee
+investigation reveals digital economy highly concentrated, impacted by
+monopoly power,” https://bit.ly/3yQmlo3, Oct 2020.
+[26] U. G. P. Office, “Hearing of the subcommittee on antitrust, commercial,
+and administrative law, committee on the judiciary, entitled “online
+platforms and market power, part 2: Innovation and entrepreneurship”,”
+https://tinyurl.com/yc8pzjuw, 2019.
+[27] E. P. Release, “Antitrust: Commission sends statement of objections
+to amazon for the use of non-public independent seller data and
+opens second investigation into its e-commerce business practices,”
+https://bit.ly/3h8jAIR, 2020.
+[28] CCI, “Competition commission of india case no. 40 of 2019,”
+https://www.cci.gov.in/antitrust/orders/details/110/0, 2019.
+[29] U. FTC, “Ftc sues amazon for illegally maintaining monopoly power,”
+https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-
+amazon-illegally-maintaining-monopoly-power, 2023.
+[30] L. Yin and A. Jeffries, “How we analyzed amazon’s treatment of its
+“brands” in search results,” https://bit.ly/420SiKG, 2021.
+[31] N. Archives, “Sherman antitrust act (1890),”
+https://www.archives.gov/milestone-documents/sherman-anti-trust-act,
+1890.
+[32] EC, “Consolidated version of the treaty on the functioning of the
+european union,” https://bit.ly/3u2SoET, 2016.
+[33] GOI, “The competition act, 2002,” https://www.cci.gov.in/legal-
+framwork/act, 2002.
+[34] EC, “Regulation (eu) 2022/1925 of the european parliament and of
+the council of 14 september 2022 on contestable and fair markets in
+the digital sector and amending directives (eu) 2019/1937 and (eu)
+2020/1828 (digital markets act),” https://bit.ly/3O6v1Bh, 2022.
+[35] ——, “Digital markets act: Commission designates six gatekeepers,”
+https://bit.ly/47B1fvj, 2023.
+[36] S. Jaiswal and A. Mukherjee, “Marching with the pink parade: Evalu-
+ating visual search recommendations for non-binary clothing items,” in
+Extended Abstracts ACM SIGCHI , 2022.
+[37] N. Mehrabi, F. Morstatter, N. Saxena, K. Lerman, and A. Galstyan, “A
+survey on bias and fairness in machine learning,” ACM CSUR, vol. 54,
+2021.
+[38] C. Sandvig, K. Hamilton, K. Karahalios, and C. Langbort, “Auditing
+algorithms: Research methods for detecting discrimination on internet
+platforms,” Data and discrimination: converting critical concerns into
+productive inquiry, vol. 22, 2014.
+[39] D. Metaxa, J. S. Park, R. E. Robertson, K. Karahalios, C. Wilson,
+J. Hancock, C. Sandvig et al. , “Auditing algorithms: Understanding
+algorithmic systems from the outside in,” Foundations and Trends® in
+Human–Computer Interaction, vol. 14, 2021.
+[40] R. E. Robertson, S. Jiang, K. Joseph, L. Friedland, D. Lazer, and
+C. Wilson, “Auditing partisan audience bias within google search,”
+PACM HCI (CSCW), vol. 2, 2018.
+[41] R. E. Robertson, S. Jiang, D. Lazer, and C. Wilson, “Auditing auto-
+complete: Suggestion networks and recursive algorithm interrogation,”
+in ACM WebSci, 2019.
+[42] D. Hu, S. Jiang, R. E. Robertson, and C. Wilson, “Auditing the
+partisanship of google search snippets,” in WWW, 2019.
+[43] R. E. Robertson, D. Lazer, and C. Wilson, “Auditing the personalization
+and composition of politically-related search engine results pages,” in
+WWW, 2018.
+[44] R. E. Robertson and C. Wilson, “Websearcher: Tools for auditing
+web search,” in Proceedings of the 2020 Computation+ Journalism
+Symposium (Boston, MA, USA)(C+ J 2020) , 2020.
+[45] M. Ali, P. Sapiezynski, M. Bogen, A. Korolova, A. Mislove, and
+A. Rieke, “Discrimination through optimization: How facebook’s ad
+delivery can lead to biased outcomes,” PACM HCI (CSCW) , vol. 3,
+2019.
+[46] P. Sapiezynski, A. Ghosh, L. Kaplan, A. Mislove, and A. Rieke,
+“Algorithms that” don’t see color”: Comparing biases in lookalike and
+special ad audiences,” arXiv preprint arXiv:1912.07579 , 2019.
+[47] G. Venkatadri, P. Sapiezynski, E. M. Redmiles, A. Mislove, O. Goga,
+M. Mazurek, and K. P. Gummadi, “Auditing offline data brokers via
+facebook’s advertising platform,” in WWW, 2019.
+[48] M. H. Ribeiro, R. Ottoni, R. West, V . A. Almeida, and W. Meira Jr,
+“Auditing radicalization pathways on youtube,” in ACM FAT*, 2020.
+[49] E. Hussein, P. Juneja, and T. Mitra, “Measuring misinformation in video
+search platforms: An audit study on youtube,” PACM HCI (CSCW) ,
+vol. 4, 2020.
+[50] A. Dash, A. Mukherjee, and S. Ghosh, “A network-centric framework
+for auditing recommendation systems,” in IEEE INFOCOM, 2019.
+[51] C. Wilson, A. Ghosh, S. Jiang, A. Mislove, L. Baker, J. Szary, K. Trindel,
+and F. Polli, “Building and auditing fair algorithms: A case study in
+candidate screening,” in ACM FAccT, 2021.
+[52] A. Suvarna, K. Dey, S. Nagar, N. Madaan, and S. Mehta, “Handling
+gender biases in e-commerce product specifications,” in IEEE GHCI ,
+2019.
+[53] P. Juneja and T. Mitra, “Auditing e-commerce platforms for algorithmi-
+cally curated vaccine misinformation,” in ACM SIGCHI, 2021.
+[54] J. Buolamwini and T. Gebru, “Gender shades: Intersectional accuracy
+disparities in commercial gender classification,” in PMLR FAT*, 2018.
+[55] S. Jaiswal, K. Duggirala, A. Dash, and A. Mukherjee, “Two-face:
+Adversarial audit of commercial face recognition systems,” in AAAI
+ICWSM, 2022.
+[56] R. Guo, X. Zhao, A. Henderson, L. Hong, and H. Liu, “Debiasing
+grid-based product search in e-commerce,” in ACM SIGKDD, 2020, pp.
+2852–2860.
+[57] C. Ang, “Ranked: The top 100 product searches on amazon,”
+https://www.visualcapitalist.com/top-100-product-searches-on-amazon/,
+2020.
+[58] Flipkart, “Products in demand,” https://seller.flipkart.com/sell-
+online/resources/products-demand, 2019.
+[59] T. I. Express, “Flipkart reveals most searched products; smartphones top
+the list,” https://tinyurl.com/9rf5yuak, 2020.
+[60] PTI, “Flipkart reveals top searched items during lockdown 3.0: Gas
+stoves, trimmers among top 10,” https://tinyurl.com/4pza4jjh, 2020.
+[61] C. Rubin, “Cracking amazon’s a9 algorithm: Increase your amazon
+ranking to sell more,” https://tinyurl.com/4yfr9vah, 2019.
+[62] N. Craswell, O. Zoeter, M. Taylor, and B. Ramsey, “An experimental
+comparison of click position-bias models,” in ACM WSDM, 2008.
+[63] R. Dudley, “Amazon’s new competitive advantage: Putting its own
+products first,” https://tinyurl.com/nb28cdk6, 2020.
+[64] Amazon, “Amazon mechanical turk,” https://www.mturk.com/, 2005.
+[65] Wordpress, “Wordpress.org,” https://wordpress.org/, 2022.
+[66] Automattic, “Woocommerce,” https://wordpress.org/plugins/woocommerce/,
+2022.
+[67] A. Moffat and J. Zobel, “Rank-biased precision for measurement of
+retrieval effectiveness,” ACM TOIS, pp. 1–27, 2008.
+[68] EC, “Regulation (eu) 2022/2065 of the european parliament and
+of the council of 19 october 2022 on a single market for digital
+services and amending directive 2000/31/ec (digital services act),”
+https://bit.ly/47TWoFX, 2022.
