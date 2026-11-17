@@ -472,6 +472,8 @@ def main():
     parser.add_argument("--sleep", type=float, default=1.5)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--categories", default=None, help="Comma-separated subset of category keys")
+    parser.add_argument("--max-categories", type=int, default=0,
+                        help="Cap the number of categories processed per run (0=unlimited, spread across taxonomy)")
 
     parser.add_argument("--local", action="store_true", help="Run locally without modifying remote repos")
     args = parser.parse_args()
@@ -490,6 +492,18 @@ def main():
         terms_list = [(c, t) for c, t in category_terms if c in wanted]
     else:
         terms_list = category_terms
+
+    # Fair budget distribution: if --max-categories is set, limit the number
+    # of categories processed so each repo gets equal share of the budget.
+    # We keep the taxonomy's natural order (primary topics first) for
+    # reproducible, priority-ordered coverage.
+    if args.max_categories and args.max_categories > 0:
+        total_cats = len(terms_list)
+        if total_cats > args.max_categories:
+            terms_list = terms_list[:args.max_categories]
+            print(f"FAIR MODE: limiting to {args.max_categories}/{total_cats} categories (primary topics first)", flush=True)
+        else:
+            print(f"FAIR MODE: {total_cats} categories (<= max of {args.max_categories})", flush=True)
 
     # Use 6 months if --full-history, otherwise use args.months
     months = max(args.months, 36) if args.full_history else args.months
