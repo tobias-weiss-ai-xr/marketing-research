@@ -1,0 +1,12 @@
+{
+  "task": "R5-priorart",
+  "attempt": 1,
+  "worker": "saia-qwen397b",
+  "model": "saia/qwen3.5-397b-a17b",
+  "wall_clock_s": 296.839973673,
+  "tokens": 364993,
+  "ts": 1794010477,
+  "outcome": "merged",
+  "error": null,
+  "cost_micros": null
+}

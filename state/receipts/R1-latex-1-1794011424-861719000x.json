@@ -1,0 +1,12 @@
+{
+  "task": "R1-latex",
+  "attempt": 1,
+  "worker": "tud-glm52",
+  "model": "tud/glm-5.2-awq",
+  "wall_clock_s": 2423.737049885,
+  "tokens": 1967078,
+  "ts": 1794011424,
+  "outcome": "failed",
+  "error": "harness: provider http 400: {\"error\":{\"message\":\"litellm.BadRequestError: OpenAIException - litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: Hosted_vllmExceptio",
+  "cost_micros": null
+}

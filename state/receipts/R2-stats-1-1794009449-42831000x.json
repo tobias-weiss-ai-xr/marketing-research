@@ -1,0 +1,12 @@
+{
+  "task": "R2-stats",
+  "attempt": 1,
+  "worker": "saia-qwen397b",
+  "model": "saia/qwen3.5-397b-a17b",
+  "wall_clock_s": 447.80368524,
+  "tokens": 1180503,
+  "ts": 1794009449,
+  "outcome": "merged",
+  "error": null,
+  "cost_micros": null
+}

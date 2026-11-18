@@ -1,0 +1,12 @@
+{
+  "task": "R1-latex",
+  "attempt": 2,
+  "worker": "local-deepseek",
+  "model": "local/deepseek-v4-flash/local",
+  "wall_clock_s": 3.598023204,
+  "tokens": null,
+  "ts": 1794011445,
+  "outcome": "failed",
+  "error": "acceptance gate failed (exit 1): ; work kept on branch tf/R1-latex-rejected-2-1794011444",
+  "cost_micros": null
+}

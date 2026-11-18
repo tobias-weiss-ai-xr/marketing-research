@@ -1,0 +1,12 @@
+{
+  "task": "R6-limits",
+  "attempt": 1,
+  "worker": "saia-qwen397b",
+  "model": "saia/qwen3.5-397b-a17b",
+  "wall_clock_s": 210.334225347,
+  "tokens": 449629,
+  "ts": 1794010687,
+  "outcome": "merged",
+  "error": null,
+  "cost_micros": null
+}

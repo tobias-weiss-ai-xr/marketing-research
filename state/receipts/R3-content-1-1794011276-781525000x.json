@@ -1,0 +1,12 @@
+{
+  "task": "R3-content",
+  "attempt": 1,
+  "worker": "local-deepseek",
+  "model": "local/deepseek-v4-flash/local",
+  "wall_clock_s": 2275.498150253,
+  "tokens": 2072612,
+  "ts": 1794011276,
+  "outcome": "merged",
+  "error": null,
+  "cost_micros": null
+}

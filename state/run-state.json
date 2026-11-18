@@ -1,0 +1,50 @@
+{
+  "R6-limits": {
+    "state": "done",
+    "attempts": 1,
+    "last_error": null,
+    "phase": "gate_passed",
+    "attempt_started_ts": 1794010477,
+    "attempt_worker": "saia-qwen397b"
+  },
+  "R5-priorart": {
+    "state": "done",
+    "attempts": 1,
+    "last_error": null,
+    "phase": "gate_passed",
+    "attempt_started_ts": 1794010180,
+    "attempt_worker": "saia-qwen397b"
+  },
+  "R3-content": {
+    "state": "done",
+    "attempts": 1,
+    "last_error": null,
+    "phase": "gate_passed",
+    "attempt_started_ts": 1794009001,
+    "attempt_worker": "local-deepseek"
+  },
+  "R1-latex": {
+    "state": "failed",
+    "attempts": 2,
+    "last_error": "acceptance gate failed (exit 1): ; work kept on branch tf/R1-latex-rejected-2-1794011444",
+    "phase": "agent_done",
+    "attempt_started_ts": 1794011441,
+    "attempt_worker": "local-deepseek"
+  },
+  "R2-stats": {
+    "state": "done",
+    "attempts": 1,
+    "last_error": null,
+    "phase": "gate_passed",
+    "attempt_started_ts": 1794009001,
+    "attempt_worker": "saia-qwen397b"
+  },
+  "R4-repro": {
+    "state": "done",
+    "attempts": 1,
+    "last_error": null,
+    "phase": "gate_passed",
+    "attempt_started_ts": 1794009449,
+    "attempt_worker": "saia-qwen397b"
+  }
+}

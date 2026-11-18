@@ -1,0 +1,980 @@
+== attempt 1 on worker saia-qwen397b (saia/qwen3.5-397b-a17b) ==
+-- agent --
+harness: turn 1/128
+tool bash {"command": "find paper -type f -name \"*.tex\" -o -name \"*.md\" 2>/dev/null | head -20"}
+  -> exit 0
+paper/g4_academic_paper.tex
+paper/g4_situational_awareness_framework.md
+paper/g6_haas_integration.md
+paper/gaps_deep_dive.md
+paper/lit_review_agentic_contextual.md
+paper/g6_b2b_contextual_intelligence.md
+paper/g4_academic_paper.md
+paper/reviews/review_stats.md
+paper/reviews/review_repro.md
+
+harness: turn 2/128
+tool bash {"command": "cat paper/g4_academic_paper.tex"}
+  -> exit 0
+% CAM-Sim: A Reproducible Benchmark for Situational-Awareness Ablations in Marketing Agents
+% DRAFT v1.6 -- snapshot 2026-11-03
+% Author: Tobias Weiss
+% File: paper/g4\_academic\_paper.tex
+% Build: tectonic g4\_academic\_paper.tex
+% Source of truth: paper/g4\_academic\_paper.md
+% All numbers auto-generated from CAM-Sim (cam\_sim.py v0.4 + extensions)
+% ==============================================================================
+\PassOptionsToPackage{svgnames,dvipsnames}{xcolor}
+\documentclass[10pt,a4paper,twocolumn]{article}
+
+% --- packages ---------------------------------------------------------------
+\usepackage[margin=0.9in]{geometry}
+\usepackage{microtype,parskip}
+\usepackage{amsmath,amssymb,amsthm,bm}
+\usepackage[table]{xcolor}
+\usepackage{siunitx}
+\sisetup{detect-all,exponent-product=\times}
+\usepackage{booktabs,array,multirow,tabularx,longtable}
+% standalone tablenotes (tables use table*/tabular directly, not threeparttable)
+\newenvironment{tablenotes}{\par\vspace{1ex}\footnotesize\begin{itemize}[leftmargin=1.5em,labelsep=0.4em]}{\end{itemize}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\usepackage{graphicx,caption,subcaption}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=2em,topsep=0ex,itemsep=0.25ex,partopsep=0ex,parsep=0ex}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\usepackage[breaklinks,pdfusetitle]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=MidnightBlue,
+  citecolor=ForestGreen,
+  urlcolor=BrickRed,
+  pdftitle={CAM-Sim: A Reproducible Benchmark for Situational-Awareness Ablations in Marketing Agents},
+  pdfauthor={Tobias Weiss}
+}
+
+% --- macros ------------------------------------------------------------------
+\newcounter{camfinding}
+\newcommand{\finding}[1]{{\par\vspace{1ex}\noindent\textbf{F\stepcounter{camfinding}\thecamfinding}~#1\par}}
+\newcommand{\Fx}[1]{\S\ref{#1}}
+\newcommand{\pv}[1]{$\!p\!=\!#1$}
+\newcommand{\pvl}[1]{$\!p\!<\!#1$}
+\newcommand{\ci}[1]{[#1]}
+\newcommand{\Ag}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\srho}{{\small $\rho$}}
+\newcommand{\tnote}[1]{{\footnotesize\textbf{Note:} #1}}
+\newcommand{\resolved}[2]{%
+  \par\smallskip\noindent\textbf{Resolved (\S#1):}~#2\par}
+
+% --- title ------------------------------------------------------------------
+\title{\textbf{CAM-Sim: A Reproducible Benchmark for\\Situational-Awareness Ablations in Marketing Agents}}
+\author{Tobias Weiss \\ \smallskip {\footnotesize DRAFT v1.6 -- snapshot 2026-11-03}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  We present \textbf{CAM-Sim}, a reproducible paired-seed benchmark for situational-awareness ablations in marketing agents: 50 seeds $\times$ 200 scenarios, eleven agents on a ladder from context-blind baseline through signal-based classifiers to a labeled oracle. Multi-signal situation classification raises match from 87.5\% to 98.7\% and profit from +\$155 to +\$205 (+\$50, \pv{8.5\!\times\!10^{-32}}, $d_z\!=\!3.96$). A matched-family ablation isolates the gain as signal-driven (+\$103.85, \pv{5.16\!\times\!10^{-46}}; +\$103.10 learned-vs-learned, \pv{1.60\!\times\!10^{-45}}). Standard baselines confirm the advantage across three classifier families (LR +\$65.48, \pvl{10^{-40}}; RF +\$75.98, \pvl{10^{-37}}). A context-blind policy search reveals a channel-cost arbitrage: EDUCATIONAL on EMAIL at bid 0.3 earns +\$252, beating every deployable context-aware agent in 7 environments. The advantage replicates across 9 environments (per-seed \srho $\ge0.93$), survives 30\% label noise and budget pacing, checked by paired-difference bootstrap (B $=\!2000$), macro-F1, and common random numbers. v1.5 executes the pre-registered zero-shot LLM baseline (74--83\% accuracy, macro-recall 50--61\% vs. 65.9\%, 4-of-6 blind spots). v1.6 shows blindness is prior-driven, prompt remediation is a trade-off, and end-to-end LLM action selection exceeds \Ag{am_multisignal} with no fitted component (+\$250--273 vs. +\$206--220).
+
+  \medskip\noindent\textbf{Keywords:} Benchmark, Agentic AI, Situational Awareness, Marketing Automation, Ablation Study, LLM Agents
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{The Agentic Revolution in Marketing}
+The marketing research corpus (snapshot 2026-11-02; over 15,700 papers) shows at least 100 agentic papers (all from 2025--2026) --- the highest-momentum trend. Yet zero papers connect agentic capabilities with marketing situational awareness (at least 250 contextual papers, a small number of situational papers, none combined with agentic).
+
+\begin{quote}\small
+\textbf{Research Gap:} Agents can plan and execute, but cannot \textit{understand marketing context}.
+\end{quote}
+
+\subsection{The Häglund Prior Art Problem}
+Emil Häglund's 2025 thesis (`Contextual intelligence: leveraging AI for targeted marketing', Umeå University, Dept. of Computing Science) stakes the phrase in CS/NLP. His work provides technical foundations (opinion-unit extraction, aspect-based sentiment, media-context effects) but does not define a marketing construct.
+
+\subsection{Research Questions}
+\begin{itemize}
+\item \textbf{RQ1 (Benchmark):} What environment variations and agent designs does CAM-Sim discriminate, and does the discrimination replicate across 9 environments?
+\item \textbf{RQ2 (Ablation):} Is the multi-signal gain signal-driven or classifier-capacity-driven? \textbf{Resolved} (Section~\ref{sec:baselines}): Standard classifiers confirm signal-driven.
+\item \textbf{RQ3 (Performance):} Do context-aware agents outperform non-context-aware agents on marketing outcomes?
+\item \textbf{RQ4 (Mechanism):} Through which mechanisms does situational awareness improve marketing performance?
+\end{itemize}
+
+% ==============================================================================
+\section{Theoretical Foundation}
+\label{sec:theory}
+
+\subsection{Situational Awareness Theory (Endsley, 1988/1995)}
+CAM is grounded in Endsley's Three-Level Model (Table~\ref{ab:endsley}).
+
+\begin{table*}[t]
+\centering\small
+\caption{Endsley's three-level SA model mapped onto CAM.}
+\label{ab:endsley}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{2.5cm}p{4.0cm}p{7.0cm}@{}}
+\toprule
+\textbf{SA Level} & \textbf{Definition} & \textbf{CAM Mapping} \\ \midrule
+Level 1:\newline Perception & Awareness of status, attributes, and dynamics of elements in environment & \textbf{Sensing Layer} --- real-time ingestion of multi-modal marketing signals \\ \addlinespace
+Level 2:\newline Comprehension & Understanding of the current situation & \textbf{Context Model} --- unified representation of audience, channel, temporal, situational, social, market context \\ \addlinespace
+Level 3:\newline Projection & Ability to predict future states & \textbf{Awareness Engine} (Context Predictor) --- next context prediction layer \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Endsley, M.~R. (1988). Design and Evaluation for Situation Awareness Enhancement. \textit{Proc. HFES}. \\
+\item Endsley, M.~R. (1995). Toward a Theory of Situation Awareness in Dynamic Systems. \textit{Human Factors}, 37(1), 32--64.
+\end{tablenotes}
+\end{table*}
+
+\subsection{Agent Theory (Russell \&  Norvig, 2020)}
+Russell \& Norvig define an \textit{agent} as ``anything that can be viewed as perceiving its environment through sensors and acting through actuators.'' CAM as rational agent:
+\begin{itemize}\itemsep=0ex
+\item \textbf{Percepts:} Context signals (Sensing Layer)
+\item \textbf{Actions:} Marketing actions (Action Layer)
+\item \textbf{Performance Measure:} ROAS, match rate, profit
+\item \textbf{Environment:} Marketing ecosystem (competitive, consumer, platform)
+\end{itemize}
+
+\subsection{Marketing Automation Context}
+Foundational work --- Peppers \& Rogers (1993) \textit{The One to One Future}; Godin (1999) \textit{Permission Marketing}; Kotler \& Armstrong (2021) \textit{Principles of Marketing}. \textbf{Gap:} None address situational awareness in autonomous agents.
+
+% ==============================================================================
+\section{Related Work}
+\label{sec:related}
+
+\subsection{The Agentic Literature in Marketing}
+From the marketing-research corpus (15,700+ papers; snapshot 2026-11-02): $\ge$100 papers mention ``agentic'' in title/abstract --- all from 2025--2026, concentrated in AI-Marketing ($\ge$60) and Digital-Marketing ($\ge$15). Common themes: agent-based simulation, world models for marketing, autonomous decision systems. Yet none connect agentic with situational awareness.
+
+\subsection{The Contextual Literature in Marketing}
+$\ge$250 papers mention ``contextual'' in the corpus, concentrated in 2024--2026, across AI-Marketing, Survey, Consumer-Behavior, Digital-Marketing, etc. Common themes: contextual advertising, context-aware recommendations, contextual targeting.
+
+\textbf{Gap:} All are implicitly human-driven systems.
+
+\subsection{The Near-Zero-Intersection Problem}
+\textbf{Critical Finding (snapshot 2026-11-02):}
+\begin{itemize}\itemsep=0ex
+\item 11 papers mention both ``agentic'' and ``contextual'' (all 2026; lexical co-mentions)
+\item 1 paper mentions both ``agentic'' and ``situational'' (Darwin-Claw; not marketing)
+\item 0 papers mention both ``agentic'' and ``situational awareness'' (exact phrase)
+\item \textbf{No paper} systematically bridges agentic reasoning with an explicit situational-awareness framework
+\end{itemize}
+
+\textbf{Scope caveat:} Keyword co-occurrence (title/abstract) within 15,700-paper live corpus --- not a systematic review. Adjacent literatures (contextual bandits, context-aware recommenders) address context-aware action selection but use different terminology. Near-zero intersection is a \textit{terminological} gap, not evidence of conceptual novelty.
+
+\subsection{Häglund (2025) --- CS/NLP}
+Häglund (2025) provides technical foundations (opinion-unit extraction, aspect-based sentiment, media-context effects) but does not define a marketing construct.
+
+\renewcommand{\arraystretch}{1.0}
+\begin{table*}[t]
+\centering\small
+\caption{Positioning CAM vs. prior work.}
+\label{ab:positioning}
+\begin{tabular}{@{}p{2.3cm}cccccc@{}}
+\toprule
+ & \multicolumn{2}{c}{\textbf{Häglund}} & \multicolumn{2}{c}{\textbf{Contextual}} & \multicolumn{2}{c}{\textbf{CAM (this work)}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+ & CS/NLP & Context-aware & SA in Agents & CS/NLP & Context-aware & SA in Agents \\ \midrule
+Domain & CS/NLP & Marketing & Marketing & CS/NLP & Marketing & Marketing \\
+Focus & Text understanding & Optimized action & n/a & Text understanding & Optimized action & Action + SA \\
+Construct & --- & Context vector & --- & --- & Context vector & Contextual Intel. in Marketing (CIM) \\
+Level & Algorithm/method & Algorithm/policy & --- & Algorithm/method & Algorithm/policy & System/capability framework \\
+Agentic & No & Partially & No & No & Partially & Yes \\
+Marketing Construct & No & Partially & --- & No & Partially & Yes \\
+SA (Endsley L1--3) & No & No & --- & No & No & Yes \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\textbf{Positioning vs contextual bandits:} Contextual bandits select actions from context signals, deployed at scale in ad platforms. CAM differs: (1) bandits optimize scalar reward from fixed arms; CAM introduces a \textit{situation taxonomy} (6 archetypes) that mediates context-to-action mapping; (2) bandits learn online from observed rewards; CAM-Sim evaluates \textit{offline classification quality against ground-truth labels}; (3) bandits are context-aware but not situation-aware (no Endsley Level 2).
+
+% ==============================================================================
+\section{CAM Framework}
+\label{sec:framework}
+
+\subsection{Overview}
+\textbf{Context-Aware Agentic Marketing (CAM)} = Situational Awareness for Marketing Agents. Four layers built on Endsley's SA model:
+
+\begin{center}\small
+\begin{tabular}{@{}L{4.5cm}L{5.8cm}@{}}
+\toprule
+ & CAM Layer \\ \midrule
+ SA Level 3 --- Projection & \textbf{Awareness Engine} (Context Predictor) \\
+ SA Level 2 --- Comprehension & \textbf{Context Model} (unified representation) \\
+ SA Level 1 --- Perception & \textbf{Sensing Layer} (signal ingestion) \\ \midrule
+ & \textbf{Action Layer} (context-conditioned actuators) \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Layer 1: Sensing Layer (SA Level 1: Perception)}
+\textbf{Purpose:} Real-time ingestion of multi-modal marketing context signals.
+
+\begin{table*}[t]
+\centering\small
+\caption{Signal categories in CAM's Sensing Layer.}
+\label{ab:signals}
+\begin{tabular}{@{}L{1.8cm}L{2.2cm}L{2.0cm}L{1.4cm}L{4.2cm}@{}}
+\toprule
+Category & Signals & Sources & Latency & SA Mapping \\ \midrule
+Audience & Intent vectors, behavior graphs, preferences & CRM, CDP, Web Analytics & <100ms & Perception of consumer state \\
+Channel & Platform state, inventory, competitive density, placement quality & DSPs, SSPs & <500ms & Perception of environment \\
+Temporal & Time-of-day, day-of-week, seasonality, holidays, trends & Calendar APIs & <1s & Perception of time \\
+Situational & Device, location, network speed, surrounding content, weather & Device APIs & <100ms & Perception of physical context \\
+Social & Sentiment, trending topics, peer activity, influencer mentions & Social APIs & <1s & Perception of social context \\
+Market & Competitor prices, macroeconomic indicators & Market Data & <5min & Perception of competitive context \\ \bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Layer 2: Context Model (SA Level 2: Comprehension)}
+\textbf{Purpose:} Transform raw signals into unified understanding.
+
+\textbf{Core Entities:} Audience Context, Channel Context, Temporal Context, Situational Context, Social Context, Market Context.
+
+\textbf{Definition:} The \textbf{Context State C$_t$} is a structured representation that unifies all six context dimensions at time t.
+
+\begin{eqnarray*}
+ C_t = \{A_t, Ch_t, T_t, S_t, So_t, M_t\}
+\end{eqnarray*}
+where A$=$Audience, Ch$=$Channel, T$=$Temporal, S$=$Situational, So$=$Social, M$=$Market.
+
+\subsection{Layer 3: Awareness Engine (SA Level 2: Comprehension + Level 3: Projection)}
+\textbf{Purpose:} Evaluate context relevance and predict future states.
+
+\begin{table*}[t]
+\centering\small
+\caption{Components of the Awareness Engine.}
+\label{ab:aware-engine}
+\begin{tabular}{@{}L{3.2cm}L{4.0cm}L{4.5cm}L{4.5cm}@{}}
+\toprule
+Component & Purpose & Method & Theoretical Grounding \\ \midrule
+Context Scorer & Calculate overall context relevance for a given action & Weighted algorithm (intent + temporal + channel + audience + competitive) & Multi-criteria decision making \\
+Situation Classifier & Map context to situational archetypes & Nearest-Centroid classifier (6 classes) & Pattern recognition \\
+Context Predictor & Predict next context state & LSTM-based sequence model & Temporal prediction \\
+Action Mapper & Map situation -> optimal action set & Rule-based + learned mapping & Decision theory \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[]{Implementation: CAM-Sim (Section~\ref{sec:design}) implements simplified surrogates (nearest-centroid classification on 3 signals; threshold/interval rules) to isolate the value of signal structure without conflating it with classifier capacity. Standard baselines (LR, RF) are benchmarked in Section~\ref{sec:baselines}. The Context Predictor (Level-3 projection) is specified but not benchmarked.}
+\end{tablenotes}
+\end{table*}
+
+\textbf{Situational Archetypes (6):} Exploration (early research, low intent, high curiosity), Consideration (active evaluation, medium intent), Decision (ready to purchase, high intent), Crisis (negative sentiment, competitive threat), Opportunity (surge demand, trending alignment), Retention (post-purchase, loyalty).
+
+\subsection{Layer 4: Action Layer (Actuators)}
+\textbf{Purpose:} Execute context-conditioned marketing actions.
+
+\begin{table*}[t]
+\centering\small
+\caption{Action-Situation Matrix.}
+\label{ab:action-matrix}
+\begin{tabular}{@{}L{2.5cm}L{2.7cm}cL{2.3cm}L{2.5cm}@{}}
+\toprule
+Situation & Primary Action Type & Budget Multiplier & Urgency Score & Channel \\ \midrule
+Exploration & Educational content & 0.8$\times$ & Low & SEARCH \\
+Consideration & Comparative content, testimonials & 1.2$\times$ & Medium &
+harness: turn 3/128
+tool bash {"command": "cat paper/g4_academic_paper.tex | head -300 | tail -100"}
+  -> exit 0
+\begin{tabular}{@{}L{1.8cm}L{2.2cm}L{2.0cm}L{1.4cm}L{4.2cm}@{}}
+\toprule
+Category & Signals & Sources & Latency & SA Mapping \\ \midrule
+Audience & Intent vectors, behavior graphs, preferences & CRM, CDP, Web Analytics & <100ms & Perception of consumer state \\
+Channel & Platform state, inventory, competitive density, placement quality & DSPs, SSPs & <500ms & Perception of environment \\
+Temporal & Time-of-day, day-of-week, seasonality, holidays, trends & Calendar APIs & <1s & Perception of time \\
+Situational & Device, location, network speed, surrounding content, weather & Device APIs & <100ms & Perception of physical context \\
+Social & Sentiment, trending topics, peer activity, influencer mentions & Social APIs & <1s & Perception of social context \\
+Market & Competitor prices, macroeconomic indicators & Market Data & <5min & Perception of competitive context \\ \bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Layer 2: Context Model (SA Level 2: Comprehension)}
+\textbf{Purpose:} Transform raw signals into unified understanding.
+
+\textbf{Core Entities:} Audience Context, Channel Context, Temporal Context, Situational Context, Social Context, Market Context.
+
+\textbf{Definition:} The \textbf{Context State C$_t$} is a structured representation that unifies all six context dimensions at time t.
+
+\begin{eqnarray*}
+ C_t = \{A_t, Ch_t, T_t, S_t, So_t, M_t\}
+\end{eqnarray*}
+where A$=$Audience, Ch$=$Channel, T$=$Temporal, S$=$Situational, So$=$Social, M$=$Market.
+
+\subsection{Layer 3: Awareness Engine (SA Level 2: Comprehension + Level 3: Projection)}
+\textbf{Purpose:} Evaluate context relevance and predict future states.
+
+\begin{table*}[t]
+\centering\small
+\caption{Components of the Awareness Engine.}
+\label{ab:aware-engine}
+\begin{tabular}{@{}L{3.2cm}L{4.0cm}L{4.5cm}L{4.5cm}@{}}
+\toprule
+Component & Purpose & Method & Theoretical Grounding \\ \midrule
+Context Scorer & Calculate overall context relevance for a given action & Weighted algorithm (intent + temporal + channel + audience + competitive) & Multi-criteria decision making \\
+Situation Classifier & Map context to situational archetypes & Nearest-Centroid classifier (6 classes) & Pattern recognition \\
+Context Predictor & Predict next context state & LSTM-based sequence model & Temporal prediction \\
+Action Mapper & Map situation -> optimal action set & Rule-based + learned mapping & Decision theory \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[]{Implementation: CAM-Sim (Section~\ref{sec:design}) implements simplified surrogates (nearest-centroid classification on 3 signals; threshold/interval rules) to isolate the value of signal structure without conflating it with classifier capacity. Standard baselines (LR, RF) are benchmarked in Section~\ref{sec:baselines}. The Context Predictor (Level-3 projection) is specified but not benchmarked.}
+\end{tablenotes}
+\end{table*}
+
+\textbf{Situational Archetypes (6):} Exploration (early research, low intent, high curiosity), Consideration (active evaluation, medium intent), Decision (ready to purchase, high intent), Crisis (negative sentiment, competitive threat), Opportunity (surge demand, trending alignment), Retention (post-purchase, loyalty).
+
+\subsection{Layer 4: Action Layer (Actuators)}
+\textbf{Purpose:} Execute context-conditioned marketing actions.
+
+\begin{table*}[t]
+\centering\small
+\caption{Action-Situation Matrix.}
+\label{ab:action-matrix}
+\begin{tabular}{@{}L{2.5cm}L{2.7cm}cL{2.3cm}L{2.5cm}@{}}
+\toprule
+Situation & Primary Action Type & Budget Multiplier & Urgency Score & Channel \\ \midrule
+Exploration & Educational content & 0.8$\times$ & Low & SEARCH \\
+Consideration & Comparative content, testimonials & 1.2$\times$ & Medium & SEARCH \\
+Decision & Promotions, urgency signals & 1.8$\times$ & High & SEARCH \\
+Crisis & Damage control, support escalation & 2.0$\times$ & Critical & SEARCH \\
+Opportunity & Targeted surge, conquesting & 1.5$\times$ & High & SEARCH \\
+Retention & Loyalty rewards, upsells & 1.0$\times$ & Medium & SEARCH \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[]{\tnote{Action and channel assignments are determined by \Ag{SITUATION_ACTION} and \Ag{SITUATION_CHANNEL} mappings in the code.}}
+\end{tablenotes}
+\end{table*}
+
+\subsection{Hypotheses}
+\begin{itemize}\itemsep=0.5ex
+\item[H1:] Context-aware agents will achieve a higher \textbf{context match rate} than the context-blind baseline
+\item[H2:] Context-aware agents will generate higher \textbf{profit} than the baseline
+\item[H3:] Context-aware agents will achieve higher \textbf{aggregate ROAS} than the baseline
+\item[H4:] Performance will increase with situational-awareness quality across 9 environment presets (Section~\ref{sec:env})
+\end{itemize}
+
+\textbf{General null mediation note:} Mediation of profit by context match was deferred --- under the oracle, match rate has zero variance and cannot mediate. A mediation design requires a continuum of perception levels.
+
+\textbf{Benchmark scope:} CAM-Sim operationalizes the Context Scorer, Situation Classifier, and Action Mapper. The Context Predictor (Level-3 projection) is specified but NOT benchmarked.
+
+% ==============================================================================
+\section{Research Design}
+\label{sec:design}
+
+\subsection{CAM-Sim: Synthetic Marketing Simulation}
+\textbf{Why simulation?} Reproducible, controlled evaluation without live ad spend or customer data.
+
+\textbf{Design (v0.4 --- ablation-based):}
+\begin{itemize}\itemsep=0.5ex
+\item Environment: Synthetic marketing scenarios with ground-truth context; reward table maps action-type x situation to base reward, plus context-match bonus (+/-0.5/-0.3), bid-efficiency adjustment (+/-0.3/0.1/-0.2), and competitive discount. Optional regime knobs: media \textbf{budget cap} per episode (actions skipped once exhausted) and \textbf{concave returns to bid} (reward x (bid/clearing price)$^\alpha$)
+\item \textbf{Fair pairing:} Scenarios are generated ONCE per seed; every agent acts on the identical context sequence --- removing the scenario-draw confound and legitimizing seed-level paired tests
+\item \textbf{Full reproducibility:} Both environment (numpy) and agents (stdlib random) are seeded per run; identical seeds reproduce identical outputs (verified)
+\end{itemize}
+
+\textbf{Agents (situational-awareness ladder):}
+\begin{itemize}\itemsep=0.3ex
+\item baseline --- random channel/action, fixed bid table (context-blind floor)
+\item channel\_only --- context-aware bidding, NO situation knowledge
+\item situation\_only --- correct situation-to-action mapping, FLAT bidding
+\item noisy50/noisy80 --- perceives true situation with probability p; on miss, re-draws uniformly from all 6 (effective accuracy ~ p + (1-p)/6 = 58.3/83.3")
+
+harness: turn 4/128
+tool bash {"command": "cat paper/g4_academic_paper.tex | grep -n \"situation\" | head -30"}
+  -> exit 0
+64:  We present \textbf{CAM-Sim}, a reproducible paired-seed benchmark for situational-awareness ablations in marketing agents: 50 seeds $\times$ 200 scenarios, eleven agents on a ladder from context-blind baseline through signal-based classifiers to a labeled oracle. Multi-signal situation classification raises match from 87.5\% to 98.7\% and profit from +\$155 to +\$205 (+\$50, \pv{8.5\!\times\!10^{-32}}, $d_z\!=\!3.96$). A matched-family ablation isolates the gain as signal-driven (+\$103.85, \pv{5.16\!\times\!10^{-46}}; +\$103.10 learned-vs-learned, \pv{1.60\!\times\!10^{-45}}). Standard baselines confirm the advantage across three classifier families (LR +\$65.48, \pvl{10^{-40}}; RF +\$75.98, \pvl{10^{-37}}). A context-blind policy search reveals a channel-cost arbitrage: EDUCATIONAL on EMAIL at bid 0.3 earns +\$252, beating every deployable context-aware agent in 7 environments. The advantage replicates across 9 environments (per-seed \srho $\ge0.93$), survives 30\% label noise and budget pacing, checked by paired-difference bootstrap (B $=\!2000$), macro-F1, and common random numbers. v1.5 executes the pre-registered zero-shot LLM baseline (74--83\% accuracy, macro-recall 50--61\% vs. 65.9\%, 4-of-6 blind spots). v1.6 shows blindness is prior-driven, prompt remediation is a trade-off, and end-to-end LLM action selection exceeds \Ag{am_multisignal} with no fitted component (+\$250--273 vs. +\$206--220).
+73:The marketing research corpus (snapshot 2026-11-02; over 15,700 papers) shows at least 100 agentic papers (all from 2025--2026) --- the highest-momentum trend. Yet zero papers connect agentic capabilities with marketing situational awareness (at least 250 contextual papers, a small number of situational papers, none combined with agentic).
+87:\item \textbf{RQ4 (Mechanism):} Through which mechanisms does situational awareness improve marketing performance?
+106:Level 2:\newline Comprehension & Understanding of the current situation & \textbf{Context Model} --- unified representation of audience, channel, temporal, situational, social, market context \\ \addlinespace
+125:Foundational work --- Peppers \& Rogers (1993) \textit{The One to One Future}; Godin (1999) \textit{Permission Marketing}; Kotler \& Armstrong (2021) \textit{Principles of Marketing}. \textbf{Gap:} None address situational awareness in autonomous agents.
+132:From the marketing-research corpus (15,700+ papers; snapshot 2026-11-02): $\ge$100 papers mention ``agentic'' in title/abstract --- all from 2025--2026, concentrated in AI-Marketing ($\ge$60) and Digital-Marketing ($\ge$15). Common themes: agent-based simulation, world models for marketing, autonomous decision systems. Yet none connect agentic with situational awareness.
+143:\item 1 paper mentions both ``agentic'' and ``situational'' (Darwin-Claw; not marketing)
+144:\item 0 papers mention both ``agentic'' and ``situational awareness'' (exact phrase)
+145:\item \textbf{No paper} systematically bridges agentic reasoning with an explicit situational-awareness framework
+174:\textbf{Positioning vs contextual bandits:} Contextual bandits select actions from context signals, deployed at scale in ad platforms. CAM differs: (1) bandits optimize scalar reward from fixed arms; CAM introduces a \textit{situation taxonomy} (6 archetypes) that mediates context-to-action mapping; (2) bandits learn online from observed rewards; CAM-Sim evaluates \textit{offline classification quality against ground-truth labels}; (3) bandits are context-aware but not situation-aware (no Endsley Level 2).
+236:Situation Classifier & Map context to situational archetypes & Nearest-Centroid classifier (6 classes) & Pattern recognition \\
+238:Action Mapper & Map situation -> optimal action set & Rule-based + learned mapping & Decision theory \\ \bottomrule
+274:\item[H4:] Performance will increase with situational-awareness quality across 9 environment presets (Section~\ref{sec:env})
+290:\item Environment: Synthetic marketing scenarios with ground-truth context; reward table maps action-type x situation to base reward, plus context-match bonus (+/-0.5/-0.3), bid-efficiency adjustment (+/-0.3/0.1/-0.2), and competitive discount. Optional regime knobs: media \textbf{budget cap} per episode (actions skipped once exhausted) and \textbf{concave returns to bid} (reward x (bid/clearing price)$^\alpha$)
+295:\textbf{Agents (situational-awareness ladder):}
+298:\item channel\_only --- context-aware bidding, NO situation knowledge
+299:\item situation\_only --- correct situation-to-action mapping, FLAT bidding
+300:\item noisy50/noisy80 --- perceives true situation with probability p; on miss, re-draws uniformly from all 6 (effective accuracy ~ p + (1-p)/6 = 58.3/83.3")
+301:\item cam\_inferred --- infers situation from INTENT alone (~76\% accuracy; 4-of-6 class handicap)
+306:\item oracle --- ground-truth situation access (labeled upper bound; validates environment consistency)
+307:\item bid\_calibrated --- oracle situation + bid numerically CALIBRATED to mechanism; knows reward table, bonuses, costs, curvature; maximizes expected profit per context via grid search. Deterministic; byte-identical when appended.
+315:\item \textbf{Robustness:} full ladder additionally run across 9 environment presets (--robustness) that vary situation distribution (uniform, decision-, crisis-, retention-heavy), media costs ($\times$2), budget (\$250/episode cap), returns-to-bid structure (reward proportional to (bid/clearing price)$^\alpha$ with $\alpha\in[0,1.5]$), and context-match payoff strength --- while holding situation-to-action language fixed. Calibration samples for learned classifiers are drawn with fixed seed (999999), independent of evaluation seeds.
+354:\textbf{situation\_only} & \textbf{100.0} & & \textbf{+\$294.27} & \textbf{2.613} & \textbf{+1.613} \\
+382:situation\_only   & +\$464.30 & \ci{+456.3,+472.3} & \pv{3.7\!\times\!10^{-61}} & 22.57 & yes \\
+402:\finding{The bid surprise (refined): situation\_only (+\$294.27) outperforms oracle (+\$210.00). bid\_calibrated (+\$530.45) nearly doubles flat bidding. Bid modulation is not worthless --- it is worth +\$236 when calibrated to the mechanism, and value-destroying when miscalibrated: oracle's hand-set multipliers burn -\$84 vs flat. The ordering flat > heuristic holds in 8 of 9 environments, including under doubled costs (only heuristic-bid agent in profit at +\$111.60) and budget caps.}
+404:\finding{Action matching is the dominant value driver (+\$464.30 from situation knowledge alone); bid optimization alone adds +\$59.88 but cannot cross into profitability without situation knowledge. Full value requires both, correctly weighted: situation + calibrated bidding (+\$530) > situation + flat (+\$294) > situation + miscalibrated (+\$210) > everything else.}
+409:Nine presets vary the environment economics while holding the situation-to-action language fixed: distribution shifts (uniform, decision-, crisis-, retention-heavy), doubled costs, weakened context payoffs, budget cap (\$250/episode), and concave returns (reward x (bid/clearing price)$^{0.5}$, capped at 2x). \Ag{am_learned} is fit once on default samples; \Ag{am_recalibrated} is refit per environment.
+431:\item Abbreviations: base$=$baseline, sit.only$=$situation\_only, camsig$=$cam\_multisignal, cam\_inf$=$cam\_inferred, cam\_lrn$=$cam\_learned, recal$=$cam\_recalibrated, msrec$=$cam\_multisignal\_recalibrated, n80$=$noisy80, bid.cal$=$bid\_calibrated.
+432:\item $\rho$ = per-seed Spearman, all CIs lower bound $\ge 0.93$. F3 column (situation\_only $>$ oracle) holds in 8/9 (fails only under concave returns).
+438:\finding{Recalibration is the remedy -- and multi-signal is the better remedy (F6): Refitting the same learner per distribution recovers most of the F5 loss (crisis\_heavy -\$66.8 $\rightarrow$ +\$27.1; retention\_heavy -\$15.5 $\rightarrow$ +\$164.5). Multi-signal recalibration tracks the hand-set multi-signal agent closely and dominates intent-only recalibration. Exception: under uniform\_situations intent-only recalibration earns less than noisy50 under label noise (-\$26.1 vs +\$7.9) despite a higher match rate (67.0\%) --- error placement, not quantity, drives the profit relationship. Match rate is not profit.}
+
+harness: turn 5/128
+tool bash {"command": "cat paper/g4_academic_paper.tex | grep -n \"SITUATION\\|situation type\\|archetype\\|DECISION\\|EXPLORATION\\|LOYALTY\\|CRISIS\\|RETENTION\\|ONBOARDING\" | head -40"}
+  -> exit 0
+174:\textbf{Positioning vs contextual bandits:} Contextual bandits select actions from context signals, deployed at scale in ad platforms. CAM differs: (1) bandits optimize scalar reward from fixed arms; CAM introduces a \textit{situation taxonomy} (6 archetypes) that mediates context-to-action mapping; (2) bandits learn online from observed rewards; CAM-Sim evaluates \textit{offline classification quality against ground-truth labels}; (3) bandits are context-aware but not situation-aware (no Endsley Level 2).
+236:Situation Classifier & Map context to situational archetypes & Nearest-Centroid classifier (6 classes) & Pattern recognition \\
+265:\item[]{\tnote{Action and channel assignments are determined by \Ag{SITUATION_ACTION} and \Ag{SITUATION_CHANNEL} mappings in the code.}}
+540:Context-blind & LOYALTY & EMAIL & 0.3 & 10.2\% & +\$50.36 \\
+588:An agent with perfect 3-signal classification (98.9\% match) but a deranged action mapping (EXPLORATION$\rightarrow$PROMOTIONAL, \ldots, RETENTION$\rightarrow$URGENT) achieves 0.4\% match against the true ideal action and profit -\$268.88 (worse than the random baseline, -\$170.03). Contrast vs \Ag{am_multisignal}: +\$475.01 (\pv{5.23\!\times\!10^{-96}}, d = 29.28). Perfect classification with a wrong mapping is catastrophic; the benchmark is falsifiable via profit.
+604:Default crisis response is \Ag{CRISIS_RESPONSE} with 2.0x bid multiplier. Alternatives (50 seeds x 200): default env --- pause (bid 0) +\$225.10, normal (1.0x) +\$215.62, counter (2.0x) +\$206.13; crisis\_heavy --- pause +\$243.79, normal +\$192.87, counter +\$141.93. Pausing consistently beats counter-messaging: the 2.0x multiplier overbids in low-reward crisis situations. This does not invalidate the action mapping (CRISIS$\rightarrow$CRISIS\_RESPONSE) but suggests bid multipliers should be calibrated, not hardcoded.
+
+harness: turn 6/128
+tool bash {"command": "cat paper/g4_academic_paper.md"}
+  -> exit 0
+# CAM-Sim: A Reproducible Benchmark for Situational-Awareness Ablations in Marketing Agents
+## Benchmark Paper
+
+> **TL;DR (1 page):** CAM-Sim is a reproducible paired-seed benchmark (50 seeds × 200 scenarios)
+> for situational-awareness ablations in marketing agents. Multi-signal situation classification
+> (intent + competitive density + channel quality) raises match from 87.5% to 98.7% and profit
+> from +$155 to +$205 (+$50, p = 8.5e-32). The gain is **signal-driven, not
+> classifier-capacity-driven** (confirmed across NCC, logistic regression, and random forest).
+> A context-blind policy search reveals a channel-cost arbitrage (cheapest channel dominates
+> when reward is channel-independent). The advantage replicates across 9 environments,
+> survives 30% label noise and budget pacing, and is checked by paired-difference bootstrap
+> (B = 2,000), macro-F1, and common random numbers. All profits are scaled-reward proxies.
+> Online learners with a reward-feedback loop recover up to 83% of the fixed-mapping value
+> without any labeled action data (§8.18); under mid-episode distribution drift, recalibration
+> to the post-shift distribution is net-negative — multi-signal inference is the drift-robust
+> remedy (§8.19). Zero-shot API LLM classifiers (temperature 0, qualitative definitions only)
+> land at 74–83% raw accuracy — profit-competitive with the hand-tuned classifier (four of five
+> beat it on profit) but below it on balanced accuracy (macro-recall 50–61% vs 65.9%), with the
+> same emergent 4-of-6 blind spots (from a LAN-local model to a 128B dense model) — confirming
+> that labels, not prompting, close the gap (§8.21); zero-shot LLM classification is balanced-inferior and prior-inflated (macro 50–61% vs 65.9%; profit beats only the handicapped single-signal classifier, 610/630-way corrected), while end-to-end LLM action selection (v1.6) exceeds the supervised multi-signal classifier without any fitted component (+$250–273 vs +$206–220).
+> **Practical takeaway:** invest first in multi-signal situation
+> classification, then in mechanism-calibrated bidding — never in unvalidated bid heuristics.
+
+
+> **File:** `g4_academic_paper.md`  
+> **Status:** DRAFT (v1.6); snapshot 2026-11-03 — results auto-generated from the CAM-Sim benchmark (v0.4 core + v1.3/v1.4/v1.5/v1.6 extensions); peer-reviewed (5 rounds: stats-audit, citation-audit, threats-to-validity, 5× journal-editor, 5× adversarial-reviewer, 5× domain-expert, 5× ml-methodology); all numbers regenerate from cam_sim.py, cam_sim_ablations.py, cam_sim_extensions.py, cam_sim_v14.py, cam_sim_v15_llm.py, cam_sim_v16_arms.py, and results/cam_sim_v16.md  
+> **Target:** *NeurIPS Datasets & Benchmarks* / *KDD* / *Journal of Interactive Marketing* / *Journal of Marketing Analytics* (reframed as benchmark paper per round-3 reviewer consensus: JM/MS requires field data; computational venues reward reproducible benchmarks)  
+> **Type:** Empirical (Reproducible Benchmark + Ablation Study)  
+> **Word Target:** 8,000-10,000 words  
+> **Key Contribution:** A reproducible paired-seed benchmark (CAM-Sim) for situational-awareness ablations in marketing agents: 11-agent ladder, 9 environments, matched-family ablation (same NCC classifier, 1 vs 3 signals, +$103.85 signal-driven gap), standard classifier baselines (LR + RF on 1 and 3 signals — multi-signal gain confirmed across 3 classifier families: NCC +$103.85, LR +$65.48, RF +$75.98), context-blind policy search (channel-cost arbitrage: EDUCATIONAL|EMAIL|bid 0.3 = +$252 beats every deployable context-aware agent in 7 of 9 environments — §8.7), macro-F1 per-class metric, CRN check, paired-difference bootstrap (B = 2000); v1.3: adversarial-mapping condition (0.4% match, -$269), channel-dependent reward (arbitrage fixed), bandit baselines (epsilon-greedy, LinUCB), class-conditional noise, convergence trend (Spearman + Geweke), perception dose-response (rho=0.998), crisis bid policy (pause > counter), sensing fidelity (identical); v1.4: online reward-feedback learning (UCB1 recovers 83.0% of the fixed-mapping value with zero labeled action data), mid-episode distribution drift (post-drift recalibration is net-negative; multi-signal inference is drift-robust), flat-taxonomy confusion quantification (intent-only 11.0% cross-axis confusion vs 1.0% multi-signal); v1.5: LLM zero-shot classification baseline (§8.21) — five models across five providers (incl. a university-hosted 128B Mistral and a LAN-local reasoning model) at temperature 0 reach 74–83% accuracy at $0 API cost, profit-competitive with the hand-tuned single-signal classifier but below it on balanced accuracy (macro-recall 50–61% vs 65.9%), all losing to 2,000-label supervised classifiers, with emergent ≤4-of-6 blind spots (never predicting crisis/retention) mirroring the hand-tuned classifier's structural handicap  
+**Caveat:** The "first" claim rests on a title/abstract keyword search of our corpus of over 15,700 papers (snapshot 2026-11-02), not a systematic review; contextual-bandit and context-aware-recommender literatures are adjacent but use different terminology (§5.3, §9.2 #13)  
+
+---
+
+## 1. Title & Running Head
+
+**Proposed Title:** *CAM-Sim: A Reproducible Benchmark for Situational-Awareness Ablations in Marketing Agents*  
+**Running Head:** CAM-Sim Benchmark  
+**Keywords:** Benchmark, Agentic AI, Situational Awareness, Marketing Automation, Ablation Study
+
+---
+
+## 2. Abstract (150-200 words)
+
+**DRAFT:**
+We present **CAM-Sim**, a reproducible paired-seed benchmark for situational-awareness ablations in marketing agents: 50 seeds × 200 scenarios, eleven agents on a ladder from context-blind baseline through signal-based classifiers to a labeled oracle. Multi-signal situation classification raises match from 87.5% to 98.7% and profit from +$155 to +$205 (+$50, p = 8.5e-32, d_z = 3.96). A matched-family ablation (same NCC family, 1 vs 3 signals) isolates the gain as signal-driven (+$103.85 (hand-set 3-signal vs fitted 1-signal), p = 5.16e-46; +$103.10 (fitted 3-signal vs fitted 1-signal), p = 1.60e-45). Standard classifier baselines (logistic regression, random forest) on 1 and 3 signals confirm the multi-signal advantage is classifier-family-robust (LR +$65.48, p = 2.2e-40; RF +$75.98, p = 3.2e-37; RF-3 achieves 100% match, slightly beating NCC). A context-blind policy search reveals a **channel-cost arbitrage**: EDUCATIONAL on EMAIL (cost $0.05) at bid 0.3 earns +$252, beating every deployable context-aware agent in 7 of 9 environments — the reward is channel-independent, so the cheapest channel dominates (§8.7). The advantage replicates across 9 environments (per-seed ρ ≥ 0.93), survives 30% label noise and budget pacing, and is checked by paired-difference bootstrap (B = 2000), macro-F1 (per-class), and common random numbers. We contribute a reproducible benchmark, environment-consistency evidence, and a pre-specified field-validation design. Eight v1.3 extensions (adversarial mapping, channel-dependent reward, bandit baselines, class-conditional noise, convergence trend, perception dose-response, crisis bid policy, sensing fidelity) close the remaining simulatable threats to validity. Three v1.4 extensions push further: online reward-feedback learners recover up to 83% of the fixed-mapping value from observed profit alone (§8.18); recalibrating to a mid-episode distribution shift is net-negative (−$15.08, p = 1.6e-05), refining the recalibration remedy (§8.19); and the flat taxonomy's predicted confusions are quantified (11.0% cross-axis confusion for intent-only vs 1.0% multi-signal, §8.20). A v1.5 extension executes the pre-registered LLM baseline: zero-shot classifiers (temperature 0, qualitative definitions only; five models from LAN-local to 128B hosted) reach 74–83% raw accuracy — profit-competitive with the hand-tuned classifier but below it on balanced accuracy (macro-recall 50–61% vs 65.9%), losing to supervised classifiers, with emergent ≤4-of-6 blind spots (§8.21); the v1.6 extension shows the blindness is prior-driven (0/210 counterfactual probes ever elicit crisis/retention), prompt remediation restores recall only at a profit/accuracy cost (hints: Mistral +$7.49, glm -$57.75; few-shot: both -$69 to -$88), and end-to-end LLM action selection exceeds cam_multisignal without any fitted component (+$250–273 vs +$206–220).
+
+---
+
+## 3. Introduction
+
+### 3.1 The Agentic Revolution in Marketing
+The marketing corpus (snapshot 2026-11-02; over 15,700 papers) shows **at least 100 agentic papers** (all from 2025-2026; the count is a live lower bound — the corpus only grows) — the highest-momentum trend. Yet **zero papers** connect agentic capabilities with **marketing situational awareness** (at least 250 contextual papers, a small number of situational papers, and none combined with agentic).
+
+**Research Gap:** Agents can plan and execute, but cannot **understand marketing context**.
+
+### 3.2 The Häglund Prior Art Problem
+Emil Häglund's 2025 thesis (*"Contextual intelligence: leveraging AI for targeted marketing"*, Umeå University, Dept. of Computing Science) stakes the phrase in **CS/NLP**. His work provides **technical foundations** (opinion-unit extraction, aspect-based sentiment, media-context effects) but **does not define a marketing construct**.
+
+**Positioning:** While Häglund (2025) operationalizes contextual understanding in **text**, our work operationalizes **situational awareness** in **marketing agents**.
+
+### 3.3 Research Questions
+- **RQ1 (Benchmark):** What environment variations and agent designs does CAM-Sim discriminate, and does the discrimination replicate across 9 environments?
+- **RQ2 (Ablation):** Which signal and bid components drive the profit differences — is the multi-signal gain signal-driven or classifier-capacity-driven? **Resolved (§8.8):** standard classifiers (LR, RF) on 1 and 3 signals confirm the gain is signal-driven across three classifier families (NCC +$103.85, LR +$65.48, RF +$75.98).
+- **RQ3 (Performance):** Do context-aware agents outperform non-context-aware agents on marketing outcomes?
+- **RQ4 (Mechanism):** Through which mechanisms does situational awareness improve marketing performance?
+
+**Key Insight:** No paper in our corpus combines agentic reasoning with an explicit situational-awareness framework (agentic ∩ "situational awareness" = 0; agentic ∩ "situational" = 1 — Darwin-Claw, a lexical co-mention about agent self-evolution, not marketing situational awareness); agentic ∩ contextual has exactly 11 lexical co-mentions (snapshot 2026-11-02).
+
+---
+
+## 4. Theoretical Foundation
+
+### 4.1 Situational Awareness Theory (Endsley, 1988/1995)
+CAM is theoretically grounded in **Endsley's Three-Level Model** of Situational Awareness:
+
+| SA Level | Definition | CAM Mapping |
+|----------|-----------|-------------|
+| **Level 1: Perception** | Awareness of status, attributes, and dynamics of elements in environment | **Sensing Layer** — real-time ingestion of multi-modal signals |
+| **Level 2: Comprehension** | Understanding of the current situation | **Context Model** — unified representation of audience, channel, temporal, situational, social, market context |
+| **Level 3: Projection** | Ability to predict future states | **Awareness Engine** — Context Predictor for next-best context |
+
+**Citation:** Endsley, M. R. (1988). Design and Evaluation for Situation Awareness Enhancement. Proceedings of the Human Factors Society Annual Meeting, 32(2), 97–101. Endsley, M. R. (1995). Toward a Theory of Situation Awareness in Dynamic Systems. Human Factors, 37(1), 32–64.
+
+### 4.2 Agent Theory (Russell & Norvig, 2020)
+Russell & Norvig define an **agent** as "anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators."
+
+**CAM as Rational Agent:**
+- **Percepts:** Context signals (Sensing Layer)
+- **Actions:** Marketing actions (Action Layer)
+- **Performance Measure:** ROAS, Context Match Rate, Profit
+- **Environment:** Marketing ecosystem (competitive, consumer, platform)
+
+**Citation:** Russell, S. J., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach (4th ed.).
+
+### 4.3 Marketing Automation Context
+**Foundational Work:**
+- **Personalization:** Peppers & Rogers (1993) — The One-to-One Future
+- **Contextual Targeting:** Godin (1999) — Permission Marketing
+- **Autonomous Marketing:** Importance of autonomy in marketing decision-making (REFS from corpus)
+
+**Gap:** None of these address **situational awareness** in autonomous agents.
+
+---
+
+## 5. Related Work
+
+### 5.1 The Agentic Literature in Marketing (≥100 papers from corpus)
+From our marketing-research corpus (over 15,700 papers; snapshot 2026-11-02; counts are live lower bounds — the corpus only grows):
+- **Definition:** Works that mention "agentic" in title/abstract
+- **Total:** ≥100 papers, all from 2025–2026 (a sustained, highest-momentum trend; the exact total grows with the corpus)
+- **Categories:** concentrated in AI-Marketing (≥60) and Digital-Marketing (≥15), with smaller counts across Consumer-Behavior, Brand, Survey, and B2B
+
+**Common Themes:**
+- Agent-based simulation
+- World models for marketing
+- Autonomous decision systems
+
+**Gap:** No paper systematically bridges agentic capabilities with contextual intelligence (11 lexical co-mentions as of 2026-11-02; §5.3). Zero papers combine agentic with situational awareness (exact phrase).
+
+### 5.2 The Contextual Literature in Marketing (≥250 papers from corpus)
+- **Total:** ≥250 papers mentioning "contextual" (live lower bound)
+- **Recency:** concentrated in 2024–2026, with a strong 2026 uptick
+- **Categories:** most common in AI-Marketing and Survey, followed by Consumer-Behavior, Digital-Marketing, Social-Media, and Brand; the remainder spread across CX-Retail, Privacy-Data, Content-Marketing, Analytics, and B2B
+
+**Common Themes:**
+- Contextual advertising (Kotler & Armstrong, 2021)
+- Context-aware recommendations
+- Contextual targeting in privacy-preserving ways
+
+**Gap:** No address **agentic systems**. All contextual work assumes **human-driven** systems.
+
+### 5.3 The Near-Zero-Intersection Problem
+**Critical Finding (snapshot 2026-11-02):**
+- **11 papers** in the corpus mention both "agentic" and "contextual" (all 2026); the closest is "Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation" (2026-08, AI-Marketing), and all are lexical co-mentions
+- **1 paper** mentions both "agentic" and "situational" (Darwin-Claw, about agent self-evolution — not marketing situational awareness); **0 papers** mention both "agentic" and "situational awareness" (exact phrase) — the intersection relevant to this paper's construct
+- **No paper** systematically bridges agentic reasoning with an explicit situational-awareness framework
+
+**Scope caveat:** This is a keyword co-occurrence search (title/abstract) within our corpus of over 15,700 papers (snapshot 2026-11-02), not a systematic literature review, and the corpus is live and growing — counts drift between snapshots. Adjacent literatures — **contextual bandits** (Agrawal & Goyal, 2013; Li et al., 2010; production deployments at every major ad platform), **context-aware recommender systems** (Adomavicius & Tuzhilin, 2011), and **pervasive/ubiquitous computing** (Dey, 2001) — address context-aware action selection but do not use the "agentic + situational awareness" terminology. The near-zero-intersection finding is a terminological gap, not evidence of conceptual novelty; a systematic review is needed to substantiate a first-mover claim (§9.2 #13). A combined literature review (agentic + contextual intelligence, PRISMA-lite over the corpus, construct-level screening) is now in progress: `paper/lit_review_agentic_contextual.md` — its §5 refines the claim to a construct-level gap (two substantive candidates exist — a retail-pricing multi-agent framework and a contextualized-persuasion study — but neither defines a marketing construct); PRISMA flow: `paper/prisma_flow.svg`.
+
+### 5.4 Häglund (2025) — CS/NLP
+**Key Differentiation:**
+| Aspect | Häglund (2025) | Contextual Bandits | This Work (CAM) |
+|--------|---------------|-------------------|------------------|
+| **Domain** | Computer Science / NLP | Online advertising, recommender systems | Marketing |
+| **Focus** | Opinion-unit extraction, aspect-based sentiment | Context-aware act
+harness: turn 7/128
+tool bash {"command": "cat paper/g4_academic_paper.md | grep -n \"SITUATION\\|situation type\\|archetype\\|DECISION\\|EXPLORATION\\|LOYALTY\\|CRISIS\\|RETENTION\\|ONBOARDING\\|Consideration\\|Opportunity\" | head -50"}
+  -> exit 0
+153:**Positioning vs contextual bandits:** Contextual bandits (Li et al., 2010; Agrawal & Goyal, 2013) are the closest algorithmic neighbor — they select actions from context signals and are deployed at scale in ad platforms. CAM differs in three respects: (1) bandits optimize a scalar reward from a fixed arm set; CAM introduces a **situation taxonomy** (6 archetypes) that mediates context→action mapping; (2) bandits learn online from observed rewards; CAM-Sim evaluates offline classification quality against ground-truth labels; (3) bandits do not model **situational awareness** (Endsley Levels 1–3) — they are context-aware but not situation-aware. A systematic comparison with contextual-bandit baselines is deferred to future work (§10.3).
+219:| **Situation Classifier** | Map context to situational archetypes | RandomForest classifier (6 classes) | Pattern recognition |
+227:- **Consideration:** Active evaluation, medium intent
+230:- **Opportunity:** Surge demand, trending alignment
+240:| Consideration | Comparative content, Testimonials | 1.2× | Medium |
+243:| Opportunity | Targeted surge, conquesting | 1.5× | High |
+447:| Context-blind | LOYALTY | EMAIL | 0.3 | 10.2% | +$50.36 |
+491:- `cam_inferred`: 0.4696 (emits only 4 of 6 classes — never CRISIS or RETENTION)
+500:The channel-cost arbitrage (Section 8.7) arises because BASE_REWARDS are indexed by (action_type, situation), not channel: a context-blind EMAIL policy (EDUCATIONAL|EMAIL|bid 0.3) earns +$252.41, beating every deployable context-aware agent. We test a channel-dependent reward condition (`channel_mismatch_penalty = 0.5`): when the agent's channel differs from SITUATION_CHANNEL[situation], total reward is multiplied by 0.5. Results (50 seeds x 200 scenarios): cb_edu_email_030 drops from +$252.41 to +$132.72 (-47.5%), while cam_multisignal is nearly unchanged (+$206.13 -> +$205.77, -0.2%). The arbitrage disappears: cam_multisignal now beats cb_edu_email_030 by $73.05. situation_only (+$294.27) and oracle (+$210.00) are unaffected (they always use the correct channel). This confirms the arbitrage is a reward-design artifact, not a feature of context-aware decisioning.
+504:To test whether the benchmark can falsify a wrong mapping (Section 9.2 #1), we construct an agent with perfect 3-signal classification (98.9% situational match) but a deranged action mapping (EXPLORATION->PROMOTIONAL, CONSIDERATION->CRISIS_RESPONSE, DECISION->EDUCATIONAL, CRISIS->LOYALTY, OPPORTUNITY->COMPARISON, RETENTION->URGENT). Results: 0.4% match against the true IDEAL_ACTION, profit -$268.88 (worse than the random baseline, -$170.03). The contrast vs cam_multisignal is +$475.01 (p = 5.23e-96, d = 29.28). Perfect classification with a wrong mapping is catastrophic, not merely suboptimal: the mapping itself carries the value, and the benchmark is falsifiable via profit.
+524:The default crisis response is CRISIS_RESPONSE with a 2.0x bid multiplier (Section 6.5). We test three alternatives (Section 9.2 #23, Section 10.3 #17): pause (bid = 0.0), normal (bid = 1.0, no multiplier), and counter (2.0x, current default). Results (50 seeds x 200 scenarios): in the default environment, pause earns +$225.10, normal +$215.62, counter +$206.13. In the crisis_heavy environment (25% crisis situations), the gap widens: pause +$243.79, normal +$192.87, counter +$141.93. Pausing (bid = 0) is consistently better than counter-messaging (2.0x): the 2.0x crisis multiplier overbids in low-reward crisis situations. This finding does not invalidate the action mapping (CRISIS->CRISIS_RESPONSE is still correct) but suggests the bid multiplier should be calibrated, not hardcoded.
+532:The §8.12 bandit baselines were **offline-trained** — the Agent ABC has no reward-feedback loop (§10.3 #12, §9.2 #13). Yet §8.11 showed the mapping itself carries the value. We therefore ask: **can an agent learn the situation→action mapping from observed profit alone, within a single 200-step episode?** Two online agents mirror `cam_multisignal` exactly — same 3-signal classifier, same channel rule (`SITUATION_CHANNEL[sit_est]`), same heuristic bid — and differ *only* in the action decision, which comes from a learned policy instead of the fixed `IDEAL_ACTION` table:
+580:The pre-registered protocol of §10.3 #24, executed on 2026-11-02 (`paper/cam_sim_v15_llm.py`; results `results/cam_sim_v15.json`, response cache `results/llm_cache/`). Each context is textualized into a natural-language observation — intent strength, competitive density, channel quality, and the verbatim signals list *including the decoy `quality_score`* — and sent to an LLM at temperature 0 whose system prompt states the six situations as **qualitative marketing definitions only** (no numeric centroids, no examples; the full prompt is in the repo for audit). The returned label drives the same fixed pipeline as every CAM agent: `IDEAL_ACTION` action type, `SITUATION_CHANNEL` channel, oracle-style bid. The agent is therefore *identical to `cam_multisignal` except for the classifier* — any profit difference is attributable to classification quality alone. Evaluation runs on the identical per-seed context sequences (pairing-guard asserted against `run_online_env` byte-identically).
+603:This v1.6 extension localizes the 8.21 blindness cause and tests remediation vs end-to-end agency. It is a strict pre-registration addition (item 24 follow-up), all numbers from `results/cam_sim_v16.md`, no fitted components, seed-level bootstrap CIs (10k reps, RNG 20261103). Eight arms: A order-permutation, B minimal-labels, C counterfactual-archetype probes, D decoy-removal, E qualitative-hints, F few-shot, G self-consistency, H end-to-end action selection. Arms A, B, C, D, G are descriptive diagnostics (no confirmatory claim); arms E, F, H carry inferential contrasts (profit means and model-vs-reference CIs).
+605:**(A) Diagnostics — order, minimal-labels, decoy, self-consistency, counterfactual probes.** Arm A (Mistral, seed 1): six fixed permutations of the six class-definition blocks yield accuracy 86.5 / 86.5 / 86.5 / 86.5 / 84.0 / 86.5 — order-insensitive (max spread 2.5pp, same emission pattern). Arm B (minimal-labels, seed 1): Mistral 86.5% with definitions = 86.5% without — definitions contribute nothing to Mistral; glm-4.7 drops 83.0% (with definitions) → 74.0% (bare) — definitions matter for glm only. Arm D (decoy-removal, Mistral, seed 1): removing the decoy quality_score yields 86.5% with vs 86.5% without, delta exactly 0.0pp — decoy fully ignored. Arm G (self-consistency, seeds 1-5, crisis+retention contexts only, k=5 at temperature 0.7, majority vote): both families crisis recall 0/36 and retention recall 0/105, identical to zero-shot — sampling cannot rescue a prior collapse. Arm C (counterfactual archetypes, all five 8.21 models, 42 probes each = 210): synthetic observations at the six canonical centroids plus +/-0.15 scalar nudges. NO model EVER emits crisis or retention across all 210 probes, INCLUDING the exact crisis centroid (intent 0.8, competitive 0.85, quality 0.2 → all five say decision/consideration) and the exact retention centroid (0.3/0.15/0.8 → all say exploration). Blind spots are **prior-driven** emission collapse, not in-distribution discriminability failure: no scalar configuration induces the labels.
+636:5. **`cam_inferred` is a structurally handicapped comparator:** its threshold rule can emit only 4 of 6 situation classes (never CRISIS or RETENTION), so its 75.7% match and distribution-shift collapse (F5) partly reflect a missing-class artifact. `cam_learned` (87.5%, emit-any-class) is the fairer intent-only comparator; the qualitative F5 story survives, but the magnitude is overstated by `cam_inferred`.
+
+harness: turn 8/128
+tool bash {"command": "grep -r \"SITUATIONS\\|situation_types\\|SITUATION_\" paper/ --include=\"*.py\" --include=\"*.md\" --include=\"*.tex\" 2>/dev/null | head -30"}
+  -> exit 0
+paper/g4_academic_paper.tex:\item[]{\tnote{Action and channel assignments are determined by \Ag{SITUATION_ACTION} and \Ag{SITUATION_CHANNEL} mappings in the code.}}
+paper/cam_sim_ablations.py:    ENVIRONMENT_PRESETS, FullContext, IDEAL_ACTION, SITUATION_CHANNEL,
+paper/cam_sim_ablations.py:        channel = SITUATION_CHANNEL[situation]
+paper/cam_sim_ablations.py:SITUATIONS = list(SituationType)
+paper/cam_sim_ablations.py:SIT_TO_IDX = {s: i for i, s in enumerate(SITUATIONS)}
+paper/cam_sim_ablations.py:IDX_TO_SIT = {i: s for i, s in enumerate(SITUATIONS)}
+paper/cam_sim_ablations.py:        channel = SITUATION_CHANNEL[situation]
+paper/cam_sim_ablations.py:        channel = SITUATION_CHANNEL[situation]
+paper/cam_sim_v15_llm.py:IDEAL_ACTION/SITUATION_CHANNEL pipeline and oracle-style bid, and evaluate on
+paper/cam_sim_v15_llm.py:                     ChannelType, IDEAL_ACTION, SITUATION_CHANNEL,
+paper/cam_sim_v15_llm.py:    type, SITUATION_CHANNEL channel, oracle-style bid) except the situation
+paper/cam_sim_v15_llm.py:        channel = SITUATION_CHANNEL[st]
+paper/cam_sim_v14.py:    comparison: same classifier, same channel rule (SITUATION_CHANNEL[sit_est]),
+paper/cam_sim_v14.py:                     IDEAL_ACTION, SITUATION_CHANNEL, SimulationEnvironment,
+paper/cam_sim_v14.py:      channel  = SITUATION_CHANNEL[sit_est]                        (same)
+paper/cam_sim_v14.py:        return Action(self.actions_taken, at, SITUATION_CHANNEL[s],
+paper/cam_sim_v14.py:    (IDEAL_ACTION, SITUATION_CHANNEL, oracle-style bid for s_pred) under
+paper/cam_sim_v14.py:                a = Action(0, IDEAL_ACTION[s_pred], SITUATION_CHANNEL[s_pred],
+paper/cam_sim_v16_arms.py:from cam_sim import (Action, ActionType, CAMOracle, ChannelType, IDEAL_ACTION, SITUATION_CHANNEL,
+paper/cam_sim_v16_arms.py:        action = Action(0, IDEAL_ACTION[sit], SITUATION_CHANNEL[sit], round(oracle._bid(sit,c), 2))
+paper/cam_sim_v16_arms.py:                action = Action(0, IDEAL_ACTION[sit], SITUATION_CHANNEL[sit], round(oracle._bid(sit,c), 2))
+paper/cam_sim.py:SITUATION_CHANNEL = {
+paper/cam_sim.py:SITUATION_CHANNEL_QUALITY = {
+paper/cam_sim.py:SITUATION_COMPETITIVE_DENSITY = {
+paper/cam_sim.py:# Match SITUATION_*_QUALITY/DENSITY means; the classifier uses Euclidean distance.
+paper/cam_sim.py:# (IDEAL_ACTION / SITUATION_CHANNEL); what varies is the ECONOMICS: situation
+paper/cam_sim.py:    SITUATION_MULTIPLIERS = {
+paper/cam_sim.py:                * self.SITUATION_MULTIPLIERS[situation]
+paper/cam_sim.py:        channel = SITUATION_CHANNEL[situation]
+paper/cam_sim.py:        channel = SITUATION_CHANNEL[situation]
+
+harness: turn 9/128
+tool bash {"command": "grep -n \"class Situation\\|SITUATION_\\|EXPLORATION\\|DECISION\\|LOYALTY\\|CRISIS\\|RETENTION\\|ONBOARDING\\|CONSIDERATION\\|OPPORTUNITY\" cam_sim.py | head -50"}
+  -> exit 0
+
+grep: cam_sim.py: No such file or directory
+
+harness: turn 10/128
+tool bash {"command": "find . -name \"cam_sim.py\" -type f 2>/dev/null"}
+  -> exit 0
+./paper/cam_sim.py
+
+harness: turn 11/128
+tool bash {"command": "grep -n \"class Situation\\|SITUATION_\\|EXPLORATION\\|DECISION\\|LOYALTY\\|CRISIS\\|RETENTION\\|ONBOARDING\\|CONSIDERATION\\|OPPORTUNITY\" paper/cam_sim.py | head -60"}
+  -> exit 0
+58:class SituationType(Enum):
+60:    EXPLORATION = "exploration"
+61:    CONSIDERATION = "consideration"
+62:    DECISION = "decision"
+63:    CRISIS = "crisis"
+64:    OPPORTUNITY = "opportunity"
+65:    RETENTION = "retention"
+82:    CRISIS_RESPONSE = "crisis_response"
+84:    LOYALTY = "loyalty"
+103:    situation: SituationType = SituationType.EXPLORATION
+155:    SituationType.EXPLORATION: ActionType.EDUCATIONAL,
+156:    SituationType.CONSIDERATION: ActionType.COMPARISON,
+157:    SituationType.DECISION: ActionType.PROMOTIONAL,
+158:    SituationType.CRISIS: ActionType.CRISIS_RESPONSE,
+159:    SituationType.OPPORTUNITY: ActionType.URGENT,
+160:    SituationType.RETENTION: ActionType.LOYALTY,
+163:SITUATION_CHANNEL = {
+164:    SituationType.EXPLORATION: ChannelType.SEARCH,
+165:    SituationType.CONSIDERATION: ChannelType.SOCIAL,
+166:    SituationType.DECISION: ChannelType.SEARCH,
+167:    SituationType.CRISIS: ChannelType.SOCIAL,
+168:    SituationType.OPPORTUNITY: ChannelType.DISPLAY,
+169:    SituationType.RETENTION: ChannelType.EMAIL,
+177:SITUATION_CHANNEL_QUALITY = {
+178:    SituationType.EXPLORATION: 0.30,
+179:    SituationType.CONSIDERATION: 0.50,
+180:    SituationType.DECISION: 0.70,
+181:    SituationType.CRISIS: 0.40,
+182:    SituationType.OPPORTUNITY: 0.80,
+183:    SituationType.RETENTION: 0.60,
+186:SITUATION_COMPETITIVE_DENSITY = {
+187:    SituationType.EXPLORATION: 0.20,
+188:    SituationType.CONSIDERATION: 0.40,
+189:    SituationType.DECISION: 0.60,
+190:    SituationType.CRISIS: 0.80,
+191:    SituationType.OPPORTUNITY: 0.30,
+192:    SituationType.RETENTION: 0.30,
+196:# Match SITUATION_*_QUALITY/DENSITY means; the classifier uses Euclidean distance.
+198:    SituationType.EXPLORATION: (0.20, 0.20, 0.30),
+199:    SituationType.CONSIDERATION: (0.60, 0.40, 0.50),
+200:    SituationType.DECISION: (0.90, 0.60, 0.70),
+201:    SituationType.CRISIS: (0.80, 0.80, 0.40),
+202:    SituationType.OPPORTUNITY: (0.70, 0.30, 0.80),
+203:    SituationType.RETENTION: (0.30, 0.30, 0.60),
+215:        return SituationType.EXPLORATION
+217:        return SituationType.CONSIDERATION
+219:        return SituationType.OPPORTUNITY
+220:    return SituationType.DECISION
+235:    best = SituationType.EXPLORATION
+249:# (IDEAL_ACTION / SITUATION_CHANNEL); what varies is the ECONOMICS: situation
+336:        ChannelType.EMAIL: ActionType.LOYALTY,
+357:    SITUATION_MULTIPLIERS = {
+358:        SituationType.EXPLORATION: 0.8,
+359:        SituationType.CONSIDERATION: 1.2,
+360:        SituationType.DECISION: 1.8,
+361:        SituationType.CRISIS: 2.0,
+362:        SituationType.OPPORTUNITY: 1.5,
+363:        SituationType.RETENTION: 1.0,
+382:                * self.SITUATION_MULTIPLIERS[situation]
+390:        channel = SITUATION_CHANNEL[situation]
+
+harness: turn 12/128
+tool bash {"command": "cat paper/g4_academic_paper.md | head -300 | tail -100"}
+  -> exit 0
+- **Situational Context:** device, location, network, environment (weather, local_events)
+- **Social Context:** sentiment_vector, trending_topics, influencer_mentions
+- **Market Context:** competitor_prices, macro_indicators
+
+**Definition:**
+> The **Context State C_t** is a structured representation that unifies all six context dimensions at time t.
+
+**Formally:**
+C_t = {A_t, Ch_t, T_t, S_t, So_t, M_t}
+
+### 6.4 Layer 3: Awareness Engine (SA Level 2: Comprehension + Level 3: Projection)
+**Purpose:** Evaluate context relevance and predict future states.
+
+**Components:**
+
+| Component | Purpose | Method | Theoretical Grounding |
+|-----------|---------|--------|------------------------|
+| **Context Scorer** | Calculate overall context relevance for a given action | Weighted algorithm (intent + temporal + channel + audience + competitive) | Multi-criteria decision making |
+| **Situation Classifier** | Map context to situational archetypes | RandomForest classifier (6 classes) | Pattern recognition |
+| **Context Predictor** | Predict next context state | LSTM-based sequence model | Temporal prediction |
+| **Action Mapper** | Map situation → optimal action set | Rule-based + learned mapping | Decision theory |
+
+> **Implementation note:** The framework specifies RandomForest and LSTM components; CAM-Sim (§7) implements simplified surrogates — nearest-centroid classification (3 signals) and threshold/interval rules — to isolate the value of signal structure without conflating it with classifier capacity. **Standard classifier baselines (LR, RF) are benchmarked in §8.8** to test whether the multi-signal advantage survives a different classifier family. The Context Predictor (Level-3 projection) is specified but not benchmarked (§6.6).
+
+**Situational Archetypes (6):**
+- **Exploration:** Early research, low intent, high curiosity
+- **Consideration:** Active evaluation, medium intent
+- **Decision:** Ready to purchase, high intent
+- **Crisis:** Negative sentiment, competitive threat
+- **Opportunity:** Surge demand, trending alignment
+- **Retention:** Post-purchase, loyalty
+
+### 6.5 Layer 4: Action Layer (Actuators)
+**Purpose:** Execute context-conditioned marketing actions.
+
+**Action-Situation Matrix:**
+| Situation | Primary Action Type | Budget Multiplier | Urgency Score |
+|-----------|---------------------|-------------------|---------------|
+| Exploration | Educational content | 0.8× | Low |
+| Consideration | Comparative content, Testimonials | 1.2× | Medium |
+| Decision | Promotions, urgency signals | 1.8× | High |
+| Crisis | Damage control, support escalation | 2.0× | Critical |
+| Opportunity | Targeted surge, conquesting | 1.5× | High |
+| Retention | Loyalty rewards, upsells | 1.0× | Medium |
+
+### 6.6 Hypotheses
+- **H1:** Context-aware agents will achieve a higher **context match rate** than the context-blind baseline
+- **H2:** Context-aware agents will generate higher **profit** than the baseline
+- **H3:** Context-aware agents will achieve higher **aggregate ROAS** than the baseline
+- **H4 (environment-consistency):** Performance will increase with situational-awareness quality — tested both by label-ordering under default economics and label-free (Spearman ρ of match rate vs. profit across agents) across 9 environment presets (Section 8.4)
+
+*Mediation of profit by context match was considered and deferred: under the oracle, match rate has zero variance (100% by construction) and cannot mediate. A mediation design requires a continuum of perception levels (e.g., p ∈ [0,1] in fine increments) — future work.*
+
+**Benchmark scope note:** CAM-Sim operationalizes the Context Scorer, Situation Classifier, and Action Mapper. The **Context Predictor (Level-3 projection) is specified but NOT benchmarked** — the evaluation covers Endsley Levels 1–2 (perception quality, situation comprehension) plus action mapping only.
+
+---
+
+## 7. Research Design
+
+### 7.1 CAM-Sim: Synthetic Marketing Simulation
+**Why Simulation?** Reproducible, controlled evaluation without live ad spend or customer data.
+
+**Design (v0.4 — ablation-based):**
+- **Environment:** Synthetic marketing scenarios with ground-truth context; reward table maps action-type × situation to base reward, plus context-match bonus (±0.5/−0.3), bid-efficiency adjustment (±0.3/0.1/−0.2), and competitive discount. Optional regime knobs: media **budget cap** per episode (actions skipped once exhausted) and **concave returns to bid** (reward × (bid/clearing price)^α) — see §7.2
+- **Fair pairing:** Scenarios are generated ONCE per seed; **every agent acts on the identical context sequence** — removing the scenario-draw confound and legitimizing seed-level paired tests
+- **Full reproducibility:** Both the environment (numpy) and agents (stdlib random) are seeded per run; identical `--seeds` reproduce identical outputs (verified)
+- **Agents (situational-awareness ladder):**
+  - `baseline` — random channel/action, fixed bid table (context-blind floor)
+  - `channel_only` — context-aware bidding, NO situation knowledge
+  - `situation_only` — correct situation→action mapping, FLAT bidding
+  - `noisy50` / `noisy80` — perceives true situation with probability p; on a miss, re-draws uniformly from all 6 situations (effective accuracy ≈ p + (1−p)/6 = 58.3% / 83.3%, not 50% / 80%; graded Endsley Level-1 error)
+  - `cam_inferred` — infers situation from **intent alone** (hand-tuned threshold classifier, ~76% accuracy due to genuine signal overlap — crisis↔decision and retention↔exploration are conflated)
+  - `cam_multisignal` — infers situation from **three signals** (intent + competitive density + channel quality) via nearest-centroid classification (98.9% match — tests the CAM framework's core claim that multi-signal awareness outperforms single-signal). **Note:** the hand-set centroids are the true generative means; 98.9% is the nearest-centroid lower bound, not the Bayes rate (a prior-weighted MAP classifier achieves ≈99.2% on these features). The learned variant (`cam_multisignal_learned`, 98.7%) is the fair empirical result.
+  - `cam_learned` — interval classifier **fit on 2,000 labeled calibration samples** from the default distribution (87.5% match — the single-signal ceiling: intent alone cannot resolve crisis↔decision and retention↔exploration confusions)
+  - `cam_multisignal_learned` — nearest-centroid classifier **fit on 2,000 labeled 3-signal samples** (98.7% match — tests whether learned multi-signal beats hand-set)
+  - `cam_recalibrated` / `cam_multisignal_recalibrated` — the same learners, **refit per environment** on 2,000 labeled samples from that distribution (tests the F5 remedy: does recalibration fix distribution-shift bias? Both intent-only and multi-signal variants are tested)
+  - `oracle` — ground-truth situation access (**labeled upper bound; validates environment consistency, not real-world performance**)
+  - `bid_calibrated` — oracle situation knowledge + bid **numerically calibrated to the environment mechanism** (knows reward table, bonuses, costs, curvature; maximizes expected profit per context via grid search). This is the per-mechanism profit *ceiling* — it tests whether the bid surprise (F3) survives when bidding is actually optimal. Deterministic, so appending it does not perturb the other agents' random streams (verified: all prior-agent results byte-identical)
+
+### 7.2 Experimental Setup
+- **Seeds:** 50 independent seeds (1–50)
+- **Scenarios per seed:** 200 (10,000 total per agent)
+- **Robustness:** the full ladder is additionally run across **9 environment presets** (`--robustness`) that vary situation distribution (uniform, decision-, crisis-, retention-heavy), media costs (×2), budget (a $250/episode cap), returns-to-bid structure (reward ∝ (bid/price)^α), and the strength of context-matching payoffs — while holding the situation→action language fixed. Calibration samples for the learned classifiers are drawn with a fixed seed (999999), independent of evaluation seeds
+- **Stress tests:** three dedicated probes close the remaining validity gaps (§8.5): a curvature sweep (α ∈ {0, 0.25, 0.5, 0.75, 1.0, 1.5}) locating the F3 reversal; label-noise corruption (ε up to 0.3) of the recalibration sample; and budget-aware *pacing* wrappers (bid ≤ remaining/moments per channel cost) under the budget cap
+- **Comparison:** every agent vs. baseline (seed-level paired t-tests); H4 tested both by label-ordering (§8.3 F2) and label-free as the per-seed distribution of Spearman ρ(match rate, profit) across agents (§8.4)
+
+### 7.3 Statistical Methods
+- **Paired t-test** (scipy.stats.ttest_rel) across seeds for each agent-vs-baseline metric comparison
+- **Cohen's d** (between-group pooled, d_pooled) for effect size; paired within-subject d_z = |t|/√n is 1.4–1.5× smaller (e.g., cam_multisignal: d_pooled = 16.65, d_z = 10.78)
+- **95% CIs** from seed-level standard error (mean ± 1.96·SE; at n = 50 the t-quantile t(49, 0.975) = 2.01 differs by 2.5%, negligible at these effect sizes)
+- **Bootstrap BCa CIs** (§9.2.2, 200 resamples) provide a non-parametric check on the normal-approximation CIs (diagnostic, not confirmatory — §9.2 #15)
+- **α = 0.05**; p-values reported in scientific notation
+- **Multiplicity:** 10 agents × 6 metrics vs baseline per environment (60 tests); the smallest p-value is 3.3e-70 and the largest is 8.5e-15, both far below a Bonferroni-corrected α = 0.05/60 = 8.3e-4, so all reported comparisons survive familywise correction within a single environment. Across 9 environments plus exploratory grids (α-sweep, label-noise, budget-pacing), the full family is 540 confirmatory tests (10 agents × 6 metrics × 9 environments) + 3 ablation contrasts + 5 context-blind policies + 5 standard-baseline contrasts (LR/RF, §8.8) + 12 v1.3 extension contrasts (§8.10–§8.17) + 5 v1.4 extension contrasts (§8.18–§8.20) + 40 v1.5 LLM-baseline contrasts (8 per model × 5 models: 4 seed-level + 4 scenario-level, §8.21) + 20 v1.6 prompt-variant contrasts (arms E/F/H profit means and model-vs-reference contrasts, section 8.22) = 630 total; all confirmatory p-values remain far below any reasonable correction; the §9.2.1 near-equivalence caveat (p = 2.5e-04) does not survive Bonferroni at α/565, which itself confirms the agents are near-identical.
+- ROAS computed at **aggregate level** (total value / total spend), not as a mean of per-action ratios (which is unstable under near-zero-cost actions)
+- **Interpretation — simulation, not sampling:** The environment and all agents are deterministic given the seed; the only randomness is the seed. Reported p-values (as small as 3.3e-70) therefore quantify *simulation reproducibility across seeds*, not sampling error from a population of real campaigns. Effect sizes (Δ profit, Δ match rate) and their CIs are the interpretable quantities; p-values are reported for completeness and must not be read as field-deployment evidence. Accordingly, d_z is a reproducibility index (t/√n on a deterministic paired comparison), not a generalizable effect size.
+
+---
+
+## 8. Results
+
+
+harness: turn 13/128
+tool bash {"command": "cat paper/lit_review_agentic_contextual.md | head -100"}
+  -> exit 0
+# Agentic AI and Contextual Intelligence in Marketing
+## A Systematic Review of the Construct Gap (WIP)
+
+> **File:** `lit_review_agentic_contextual.md`
+> **Status:** DRAFT v0.6 — 10 disciplinary lenses applied; second-coder κ screen complete (κ = 1.00, 18/18); standalone submission (IJRM/JBR) + related-work backbone for CAM-Sim & 2027 WP
+> **Purpose:** (a) substantiate the near-zero-intersection claim that motivates the CAM/G4 program (resolves the §5.3 caveat in `g4_academic_paper.md`), (b) anchor the G1 construct-definition gap and the G6 B2B line, (c) feed the related-work section of the CAM-Sim paper (§5.3) and the 2027 Working Paper
+> **Evidence base:** this repo's corpus (15,000+ papers; snapshot 2026-10-31 — counts below are live lower bounds, the corpus only grows) + externally verified anchors
+> **Lead Author:** Tobias Weiss (proposed) + [TBD co-authors]
+> **Target Venues:** *Journal of Business Research*, *Industrial Marketing Management*, *International Journal of Research in Marketing* (review track), or as the related-work backbone of the 2027 Working Paper
+> **Last Updated:** 2026-10-29
+
+---
+
+## TL;DR
+
+Agentic AI is entering marketing research fast (≥100 corpus papers, all 2025–2026) but almost entirely as *capability demonstrations* — agents that shop, sell, price, and run campaigns. Contextual intelligence, meanwhile, exists in marketing mainly as *advertising targeting* (contextual ads, context-aware attribution) — a narrow, channel-level usage. At the intersection there are 18 lexical co-mentions, of which only 2 are substantive (3–4 if machine-customer/buyer-side agents are counted — a construct-scope sensitivity documented in Appendix A), and **none defines a marketing construct for agent-level situational/contextual intelligence**. The construct exists only outside marketing: in Endsley's human-factors situational-awareness tradition, in CS/NLP (Häglund 2025), and in B2B sales research as a *human* competence (Böhm et al. 2020 — value opportunity recognition). The review surfaces five gaps and maps each to the repo's research program.
+
+---
+
+**Contribution.** This review makes three contributions: (1) it provides the first corpus-bounded systematic screen of the agentic × contextual intersection in marketing (≤18 papers, 2 substantive); (2) it refines the "zero intersection" claim to a precise construct-level gap (no paper defines what a marketing agent should know about its context, or how that knowledge should be structured); (3) it identifies the theoretical anchors (Endsley, Böhm et al.) that the CAM/G4 program synthesizes into a marketing construct — converting a rhetorical gap into a researchable, well-grounded agenda. The review is designed to serve as the related-work backbone for both the CAM-Sim benchmark paper and the 2027 Working Paper.
+
+## 1. Motivation & Research Questions
+
+The corpus trend data shows two curves rising simultaneously: **agentic** (the corpus's highest-momentum trend, ≥100 papers, all from 2025–2026) and **contextual** (≥250 papers mentioning "contextual", strongly concentrated in 2024–2026). The paper program (CAM/G4, B2B-CI/G6, the 2027 Working Paper) rests on the claim that these two streams have **not yet been joined by a marketing construct**.
+
+This review tests that claim and synthesizes both streams.
+
+**Regulatory boundaries.** Agentic marketing systems that sense and act on contextual data operate under emerging regulatory constraints: the EU AI Act (high-risk AI systems, transparency requirements), GDPR (data minimization, purpose limitation, automated decision-making rights under Art. 22), and consumer protection law (unfair commercial practices). The corpus's privacy-data category (475 papers) treats these as *constraints on data use*, but no paper examines how regulatory boundaries should shape an agent's *situational-awareness model* — e.g., which context dimensions an agent may legally sense, or how consent status should gate context collection. The construct should arguably include a "regulatory boundary" layer. This is adjacent to Gap 1 and Gap 4 (measurement).
+
+**Positioning vs. existing marketing context research.** Marketing already "handles context" in several mature streams — market orientation (Jaworski & Kohli, 1993), market sensing (Day, 1994), customer-journey mapping (Lemon & Verhoef, 2016), and customer-data platforms. The claim here is not that marketing ignores context; it is that none of these streams defines what a *marketing agent* should know about its situation — they are human-organizational or channel-level constructs, not agent-level situational-awareness models. The review therefore distinguishes "context as organizational capability" (well-studied) from "context as agent capability" (absent).
+
+**Ethics and responsible AI.** The review's construct gap has an ethical dimension that the literature does not address: agentic marketing systems that sense and act on context raise questions of consumer consent (what context may an agent use?), manipulation (when does context-aware persuasion cross into exploitation?), transparency (should consumers know an agent is acting on situational signals?), and fairness (do context-aware systems disadvantage certain consumer segments?). The corpus's ethics-related papers (AI ethics in marketing, privacy-data category) treat these as *constraints on targeting*, not as *dimensions of the agent's own situational awareness*. A complete marketing construct for agent-level contextual intelligence should arguably include an ethical boundary layer — what context an agent should *not* use — but no paper in the corpus approaches this. This is a sixth gap (see §9 #6).
+
+**RQ1:** How is agentic AI entering marketing research — as what phenomena, in which roles?
+**RQ2:** How is contextual intelligence / context-awareness treated in marketing research — as what construct, at what level?
+**RQ3:** What exists at the *intersection* (agents + context), inside marketing and in adjacent fields?
+**RQ4:** What does the B2B sales literature contribute on context (value-based selling, value opportunity recognition)?
+
+---
+
+## 2. Method (PRISMA-lite)
+
+**Corpus.** The repo's curated corpus: 15,000+ papers (15,773 at snapshot 2026-10-31), auto-discovered via taxonomy-aware arXiv/OpenAlex/Crossref/dblp queries, each entry carrying one category (11 marketing domains) and one lens (empirical / framework / review / case-study / theory / measurement). Full list in `PAPERS.md`; machine-readable in `docs/papers.json`.
+
+**Search & screening.** Title/abstract keyword searches over the corpus:
+- `agentic` → ≥100 papers (167 at snapshot; all 2025–2026); of these, ≥60 (64) also mention sales/lead/B2B/CRM/selling/buyer
+- `contextual intelligence` OR `context-aware`/`context aware` → ≥25 papers (27)
+- intersection of both → ≤18 papers, using broadened agent vocabulary (`agentic` OR `multi-agent` OR `autonomous agent` OR `ai agent` OR `llm agent`; agent-broad pool 384, context pool 380), screened individually (§5)
+- `value opportunity` → 0 papers
+
+**Inclusion.** Papers whose *substance* (not just vocabulary) addresses (a) agents acting in marketing/sales roles, (b) context as a targeting/decision input in marketing, or (c) both. Preprints (arXiv, SSRN, Research Square, Zenodo) are included but flagged as non-peer-reviewed.
+
+**Exclusion.** Papers mentioning both terms only lexically (e.g., an unrelated "agent" such as chemical agents, or "context" in a passage) without substantive engagement.
+
+**Method justification (why "PRISMA-lite").** The corpus is auto-ingested and corpus-bounded; a full PRISMA flow (database-independent search across WoS/Scopus) is not feasible within the corpus's design. The review therefore follows PRISMA *screening* discipline (explicit eligibility, documented counts, PRISMA flow diagram in `paper/prisma_flow.svg`) but not PRISMA *search* (no database-independent search). This is a deliberate scope choice: the review's construct-gap claim is framed as "no construct in a 15,000+ paper marketing corpus" (§12 #1), not as global absence. **Screen limitation:** "value opportunity" → 0 is a single-keyword screen; the construct might appear as "value recognition", "opportunity sensing", or "value opportunity identification". The 0-count is a lower bound on the construct's *visibility*, not proof of its absence.
+
+**Honest caveats.** (1) This is a *corpus-bounded* review: it covers what this curated corpus contains, not the full literature — useful for construct-gap claims within the corpus's coverage, not as proof of global absence. (2) Counts are lower bounds tied to a snapshot (2026-10-31); the corpus grows weekly. (3) The agentic stream is less than two years old; much of it sits in preprints and low-tier venues — quality varies widely. (4) **Vocabulary noise.** "Agentic" is used loosely in the corpus: the 167-title/abstract matches include false positives (chemical agents, stock-trading agents, gaming agents) alongside genuine marketing/sales agents. The sub-stream analysis (§3.1–3.3) was hand-screened for substance, but the headline count (≥100) is a lexical upper bound, not a precise population count. (5) **Vocabulary inconsistency.** The base rate uses "agentic" only; the intersection screen uses five agent terms (agentic/multi-agent/autonomous/ai agent/llm agent). This broadening captures context-aware agent papers that avoid the word "agentic", but it also widens the denominator — the "18 lexical co-mentions" is an upper bound on the intersection, and the true substantive count (2) is the conservative figure. (6) **Venue-quality distribution.** The corpus's top venues by count are Zenodo (1,152), SSRN (149), and book series — the agentic stream inherits this distribution (most matches are preprints or low-tier venues). The review weights the peer-reviewed anchors (*JBR* 2026-01, *RaFT* 2026-09, *Applied Sciences* 2026-09) more heavily than preprints, but the overall quality of the agentic literature is lower than the corpus average. (7) **Bibliometric depth.** This review uses keyword screening only; co-citation analysis, bibliographic coupling, or topic modeling could strengthen (or challenge) the gap claim. These are deferred to the 2027 Working Paper (RQ H7).
+
+---
+
+## 3. Theme A — Agentic AI Entering Marketing (RQ1)
+
+Three sub-streams, all emerging 2025–2026:
+
+### 3.1 The consumer side: agentic shopping and machine customers
+- *Shopping by algorithm: How agentic AI deploys human heuristics as a surrogate consumer* (Wadi & Ma, arXiv, 2026-09) — agents as consumer surrogates.
+- *When AI Shops for Us: A Systematic Literature Review on Agentic AI and the Algorithmic Consumer* (OPUS BW, 2026-09, preprint) — first corpus SLR on the agentic-consumer phenomenon.
+- *When the customer is a machine: a systematic literature review and integrative framework* (Moghaddam, Alipour & Grunert, Research Square, 2026-10, preprint) — machine customers as a new research object; the most explicit signal that the *counterparty* of marketing is becoming an agent.
+- *Marketing to Machines: Strategic Frameworks for Engagement with Autonomous Agentic AI* (book chapter, 2026-10) — strategy frameworks aimed at machine audiences.
+
+**Reading:** a coherent, fast-forming conversation — marketing's target shifts from humans to agents, with implications for segmentation, persuasion, and measurement.
+
+**Consumer-psychological dimension (underdeveloped).** The "machine customer" stream (§3.1) raises consumer-behavior questions that the corpus does not yet address: How do human consumers *trust* an agent acting on their behalf? What happens to consumer *agency* when purchase decisions are delegated to agents? Does agent-mediated consumption reduce or amplify reactance? The consumer-behavior literature on trust calibration, anthropomorphism, and consumer autonomy (well-represented in the corpus's consumer-behavior category, 1,731 papers) has not been applied to agentic consumption. This is a research opportunity adjacent to Gap 1.
+
+### 3.2 The firm side: agents in sales, CRM, and marketing operations
+- *AI agents, agentic AI, and the future of sales* (Gonzalez, Habel & Hunter) — *Journal of Business Research* (2026-01). The strongest peer-reviewed anchor in the corpus: positions agents across the sales function.
+- *The Augmented Rep: Agentic AI Across the Enterprise Sales Cycle* (IRJAEM, 2026-06, preprint) — stage-by-stage agent augmentation of the sales cycle.
+- *Agentic Agent, Better Agent: Evidence from Agentic AI in Telemarketing* (SSRN working paper, 2026-04) — rare *empirical* evidence on agentic (vs. generative) AI effects.
+- *The Dual-Journey Model of Marketing in the Agentic Era* (SSRN, 2026-01) — conceptualizes parallel human/agent journeys.
+- *GENIE CRM: An Agentic AI-Powered Customer Relationship Management System* (ISJEM, 2026-04, preprint) — system-level design artifact.
+- *Calibrating Professional Discretion in Artificial Intelligence-Supported B2B Selling* (RaFT, 2026-09) — human discretion vs. agent automation in B2B selling.
+- *From Data Quality to Quality of Agentic Data Use: A Conceptual Framework* (Applied Sciences, 2026-09).
+
+### 3.3 Infrastructure: benchmarks, metrics, and governance
+- *GTM-Bench: Evaluating Agentic AI Systems for Buyer/Seller Coherence in Go-to-Market Workflows* (technical report, 2026-09) — first go-to-market agent benchmark in the corpus.
+- *Can AI Agents Simulate A/B Test Outcomes? A Validation Framework for Agentic Experimentation* (arXiv, 2026-08).
+- *AI Win-Rate: A Board Metric for AI-Mediated Buying (Methodology v1.0)* (Zenodo, 2026-09, preprint).
+- *AI, Agents, and the Marketing Operating System* (Routledge, 2026-10) — the "marketing OS" framing.
+- *Privacy Preference Controls for Agentic Systems* (arXiv, 2026-10) — governance of agent behavior.
+
+**IS/technology-adoption perspective.** The review's "agents demonstrated, not contextualized" gap (Gap 2) has an organizational-readiness dimension that the IS literature addresses but marketing does not: how do organizations *adopt* agentic marketing AI? The corpus's digital-marketing and analytics categories contain technology-adoption studies (TAM/UTAUT-based), but none applies adoption theory to *contextual* (vs. generic) agentic systems. Key open questions: Does organizational readiness for agentic AI differ when the system requires multi-signal context integration? How does the "capability trap" (§3.3 So-what) affect adoption decisions? The IS literature on human-in-the-loop systems and IT-business alignment (well-developed outside this corpus) is relevant but not engaged.
+
+**Forward-snowball (outside the corpus).** Citations of the JBR anchor (Semantic Scholar, 2026-10-31) show the field consolidating in top sales journals: a *JBR* field consolidation of AI in sales (2017–early 2026, 2027), and *JPSSM* papers on AI maturity in buyer–seller exchange and salesperson AI wisdom along the B2B buying journey. The agentic conversation is entering peer-reviewed sales research faster than the corpus's ingestion reflects — the corpus-bounded screen undercounts the peer-reviewed core (see §12 #1).
+
+**Reading (RQ1 answer).** Agentic AI enters marketing as (i) a *new customer type* (machine customers), (ii) a *workforce layer* (sales/CRM agents), and (iii) *infrastructure* (benchmarks, metrics, governance). What it is **not**, anywhere in the corpus: a treatment of what agents need to *know about marketing context* in order to act well. Capability is demonstrated; the informational substrate — the situational context that makes an action appropriate — is assumed.
+
+**Synthesis (RQ1):** The agentic stream is a capability-first literature. It demonstrates what agents *can do* (shop, sell, price, govern) but assumes the informational substrate they need to act appropriately. This confirms the gap is not merely a lack of papers, but a lack of conceptualization of agent-level contextual intelligence.
+
+**So what for practice.** Practitioners deploying agentic AI today (sales agents, shopping agents, pricing agents) are operating without a theory of what their agent needs to *know* about the marketing situation. The result: agents that act confidently on incomplete context — the "capability trap" where better execution amplifies the cost of wrong situational judgment. Before investing in more agentic capability, invest in mu
+harness: turn 14/128
+tool bash {"command": "mkdir -p paper/reviews"}
+  -> exit 0
+
+harness: turn 15/128
+tool write {"path": "paper/reviews/review_priorart.md", "content": "# Prior-Art and Positioning Review: CAM-Sim Paper\n\n**Task ID:** R5-priorart  \n**Reviewer:** Autonomous Coding Agent  \n**Date:** 2026-11-03  \n**Files Reviewed:** `paper/g4_academic_paper.tex`, `paper/g4_academic_paper.md`, `paper/lit_review_agentic_contextual.md`\n\n---\n\n## Summary\n\nThis review examines the theoretical foundations, related-work positioning, and prior-art claims in the CAM-Sim benchmark paper. The paper presents CAM-Sim as a re
+  -> wrote paper/reviews/review_priorart.md (15865 bytes)
+harness: turn 16/128
+tool bash {"command": "test -f paper/reviews/review_priorart.md && [ $(wc -c < paper/reviews/review_priorart.md) -gt 500 ] && grep -q 'Summary' paper/reviews/review_priorart.md && grep -q 'Issues Found' paper/reviews/review_priorart.md && echo \"ACCEPTANCE CRITERIA PASSED\""}
+  -> exit 0
+ACCEPTANCE CRITERIA PASSED
+
+harness: turn 17/128
+tool bash {"command": "git add paper/reviews/review_priorart.md && git commit -m \"R5-priorart: Add prior-art and positioning review\n\n- Review of Endsley 3-level model mapping to CAM framework\n- Assessment of Russell & Norvig agent architecture mapping\n- Evaluation of near-zero-intersection claim substantiation\n- Analysis of Häglund (2025) positioning\n- Review of 6 situation types motivation from marketing literature\n- Assessment of differentiation from marketing automation systems\n- Identification of missing
+  -> exit 0
+[tf/R5-priorart c5596a2] R5-priorart: Add prior-art and positioning review
+ Committer: Tobias Weiß <weissto@mwla0700.WLAN.Uni-Marburg.DE>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 218 insertions(+)
+ create mode 100644 paper/reviews/review_priorart.md
+
+harness: turn 18/128
+tool bash {"command": "git log --oneline -1 && echo \"---\" && wc -c paper/reviews/review_priorart.md && echo \"---\" && grep -c 'Summary' paper/reviews/review_priorart.md && grep -c 'Issues Found' paper/reviews/review_priorart.md"}
+  -> exit 0
+c5596a2 R5-priorart: Add prior-art and positioning review
+---
+   15865 paper/reviews/review_priorart.md
+---
+1
+1
+
+harness: turn 19/128
+harness: done after 19 turn(s), 364993 tokens
+harness: stop=Normal turns=19 tokens=364993
+
+
+## Summary
+
+Completed TASK ID: R5-priorart — Prior-art and positioning review of the CAM-Sim academic paper.
+
+**Review file created:** `paper/reviews/review_priorart.md` (15,865 bytes)
+
+**Key findings:**
+
+| Severity | Issue |
+|----------|-------|
+| **CRITICAL** | Situation types mismatch: paper uses EXPLORATION, CONSIDERATION, DECISION, CRISIS, OPPORTUNITY, RETENTION — not LOYALTY/ONBOARDING as task listed |
+| **CRITICAL** | Near-zero-intersection claim is corpus-bounded (keyword search), not a systematic review — appropriately caveated but language could be softened |
+| **CRITICAL** | Endsley Level 3 (Projection) is specified but NOT benchmarked — paper claims 3-level grounding but only validates Levels 1-2 |
+| **MAJOR** | Russell & Norvig mapping incomplete — agent function formalism not explicit |
+| **MAJOR** | Häglund (2025) positioning lacks technical detail on actual contributions |
+| **MAJOR** | 6 situation types lack marketing literature citations |
+| **MAJOR** | Limited differentiation from existing marketing automation (segmentation, journey orchestration, CDPs) |
+| **MINOR** | Missing related works: Minsky, Maes, Wielinga, recent LLM agent papers |
+| **MINOR** | Theoretical foundation section (§4) is somewhat thin |
+| **MINOR** | External validity (simulation→field) discussion could be stronger |
+
+**Acceptance criteria verified:** ✓ File exists, ✓ >500 bytes, ✓ contains 'Summary', ✓ contains 'Issues Found'
+
+**Committed:** `c5596a2` on current branch
+-- gate --
+-- merged --
